@@ -13,6 +13,8 @@ Track bugs found during scenario testing. Fix and document.
 | 3 | Minor | puzzle-plan skill | Skill references paths like `puzzle-hunt/PRINCIPLES.md` but in the toolkit structure the path is `toolkit/PRINCIPLES.md`. Path references need to be relative to the scenario, not hardcoded. | AoE Stage 1 |
 | 4 | Minor | puzzle-author skill | Skill references `puzzle-hunt/FINAL-52.md` which is project-specific. Generic toolkit should reference the scenario's `PUZZLES.md` instead. | AoE Stage 1 |
 | 5 | Minor | puzzle-test skill | Skill references `puzzle-hunt/TEST-CREWS.md` which is project-specific. Generic toolkit should reference the scenario's `PUZZLES.md` tester assignments. | AoE Stage 1 |
+| 6 | Major | toolkit CLAUDE.md + answer protocol | Periodic table encoding is OUR project-specific secret — don't ship it in the generic toolkit. During /puzzle-plan Stage 1, ASK the user to choose their own encoding. Never hardcode one system. | AoE Stage 3 |
+| 7 | Blocking | All git-tracked files | Plaintext answers must NEVER appear in git-tracked files — searchable in history forever. Answers only in .claude/ project memory (gitignored) or encoded. Puzzle pool descriptions must not contain answer words. | AoE Stage 3 |
 
 ## Fixed
 

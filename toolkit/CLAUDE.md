@@ -137,17 +137,18 @@ Tell Claude: "Let's work on the my-hunt scenario." All operations target that di
 
 ## Answer Security
 
-Encode answers using A1Z26 → periodic table element symbols:
+**Plaintext answers must NEVER appear in git-tracked files.** They're searchable in history forever.
 
-```
-A=H  B=He  C=Li  D=Be  E=B   F=C   G=N   H=O   I=F   J=Ne
-K=Na L=Mg  M=Al  N=Si  O=P   P=S   Q=Cl  R=Ar  S=K   T=Ca
-U=Sc V=Ti  W=V   X=Cr  Y=Mn  Z=Fe
-```
+During `/puzzle-plan` Stage 1, choose your encoding system:
 
-PUZZLE → S·Sc·Fe·Fe·Mg·B
+| Option | How it works | Pros | Cons |
+|--------|-------------|------|------|
+| **ROT13** | Shift each letter 13 positions | Universal, trivial to decode | Well-known, easy to crack |
+| **Base64** | Standard encoding | Looks like gibberish, any tool decodes | Not thematic |
+| **Custom cipher** | Your own mapping (A→?, B→?, etc.) | Thematic, unique to your hunt | Must document the key |
+| **Don't store answers** | Keep them only in your head | Maximum security | Risky if you forget |
 
-Store encoded answers in `.claude/` project memory, not in the repo.
+Store encoded answers in `.claude/` project memory (gitignored), not in the repo. Document your encoding key in `.claude/` as well — never in a committed file.
 
 ---
 

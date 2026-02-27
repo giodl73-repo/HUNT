@@ -144,17 +144,8 @@ Track what changed and why. Learn from test failures.
 
 ## Answer Encoding Reference
 
-Answers in this file are encoded, not plaintext. Default encoding:
+Answers in this file are encoded, not plaintext. **Plaintext answers must never appear in git-tracked files.**
 
-**A1Z26 → Periodic Table Element Symbols**
-```
-A=H   B=He  C=Li  D=Be  E=B   F=C   G=N   H=O   I=F   J=Ne
-K=Na  L=Mg  M=Al  N=Si  O=P   P=S   Q=Cl  R=Ar  S=K   T=Ca
-U=Sc  V=Ti  W=V   X=Cr  Y=Mn  Z=Fe
-```
+Choose your encoding during `/puzzle-plan` Stage 1. Options: ROT13, Base64, custom cipher, or store answers only in `.claude/` project memory.
 
-Example: The word PUZZLE encodes as S·Sc·Fe·Fe·Mg·B
-
-To decode: element symbol → atomic number → letter at that A1Z26 position.
-
-You can use any encoding you prefer. Just document it here so future sessions can decode.
+Document your chosen encoding key in `.claude/` project memory (gitignored), NOT here.
