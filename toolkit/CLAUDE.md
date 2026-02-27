@@ -31,7 +31,7 @@ claude
 | File/Directory | Purpose |
 |---------------|---------|
 | `CLAUDE.md` | This file — Claude reads it automatically |
-| `PRINCIPLES.md` | 18 design principles with tests (the quality bar) |
+| `PRINCIPLES.md` | 20 design principles with tests (the quality bar) |
 | `GETTING-STARTED.md` | Step-by-step tutorial (10 steps from blank to ship) |
 | `HINTS.md` | Hint system design template |
 | `profiles/` | 12 expert reviewer personas for blind testing |
@@ -47,11 +47,13 @@ claude
 
 | Command | What it does |
 |---------|-------------|
-| `/hunt plan` | 8-stage design workflow with review gates |
+| `/hunt plan` | 11-stage design workflow with review gates |
+| `/hunt world` | Fictional universe design — canon, data tables, lock protocol |
 | `/hunt review full <file>` | 12-expert panel reviews any document |
 | `/hunt review rank <file>` | Panel ranks a puzzle pool |
 | `/hunt status` | Pipeline dashboard |
 | `/hunt meta` | Meta design, verification, grid building |
+| `/hunt edit` | Editorial review of author submissions before blind testing |
 | `/hunt modules` | Module assignment and tracking |
 | `/hunt authors` | Author registry and workload |
 | `/hunt schedule` | Build schedule and dependencies |
