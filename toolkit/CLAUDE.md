@@ -35,24 +35,44 @@ claude
 | `GETTING-STARTED.md` | Step-by-step tutorial (10 steps from blank to ship) |
 | `HINTS.md` | Hint system design template |
 | `profiles/` | 12 expert reviewer personas for blind testing |
-| `skills/` | 5 Claude Code skills (plan, review, author, test, status) |
+| `skills/hunt/` | Hunt-level skills (plan, review, status, meta, admin) |
+| `skills/puzzle/` | Puzzle-level skills (manage, author, test) |
 | `templates/` | Puzzle page template + 20 puzzle type guides |
 
 ---
 
-## The 5 Skills
+## Skills — Two Namespaces
 
-After installing to `~/.claude/skills/`:
+### `/hunt` — Hunt-level (the admin runs these)
 
 | Command | What it does |
 |---------|-------------|
-| `/puzzle-plan` | 8-stage design workflow with expert review gates |
-| `/puzzle-review full <file>` | 12-expert panel reviews any design document |
-| `/puzzle-review rank <file>` | Panel ranks a puzzle pool and picks the best |
-| `/puzzle-author <id>` | Write a complete puzzle from its brief |
-| `/puzzle-test <id>` | 3 experts solve the puzzle blind, score 6 dimensions |
-| `/puzzle-test iterate <id>` | Fix issues and retest until passing (≥22/30) |
-| `/puzzle-status` | Pipeline dashboard — what's authored, tested, passing |
+| `/hunt plan` | 8-stage design workflow with review gates |
+| `/hunt review full <file>` | 12-expert panel reviews any document |
+| `/hunt review rank <file>` | Panel ranks a puzzle pool |
+| `/hunt status` | Pipeline dashboard |
+| `/hunt meta` | Meta design, verification, grid building |
+| `/hunt modules` | Module assignment and tracking |
+| `/hunt authors` | Author registry and workload |
+| `/hunt schedule` | Build schedule and dependencies |
+| `/hunt checklist` | Pre-ship integration checklist |
+| `/hunt onboard` | Generate brief for a new author |
+| `/hunt honor <callsign>` | Claim a NATO phonetic callsign |
+
+### `/puzzle` — Puzzle-level (authors use these)
+
+| Command | What it does |
+|---------|-------------|
+| `/puzzle <id>` | Overview — brief, status, scores, history |
+| `/puzzle <id> brief` | View/edit the full puzzle brief |
+| `/puzzle <id> author` | Write the puzzle from its brief |
+| `/puzzle <id> test` | 3 experts solve it blind, score it |
+| `/puzzle <id> test iterate` | Fix and retest until passing (≥22/30) |
+| `/puzzle <id> check` | Run against 18 design principles |
+| `/puzzle <id> comment <text>` | Add a note |
+| `/puzzle <id> status <code>` | Update status |
+| `/puzzle list` | List all puzzles with status |
+| `/puzzle board` | Kanban view |
 
 ---
 
