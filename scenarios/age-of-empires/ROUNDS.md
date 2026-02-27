@@ -1,140 +1,99 @@
-# Rounds — Hunt Structure
+# Rounds — Wololo
 
-Define rounds, puzzle flow, meta architecture, and how rounds connect. Filled out during Stage 2 (Structure).
+**Stage 2: STRUCTURE**
 
 ---
 
-## Hunt Architecture
+## Architecture
 
-### Round Map
+Single round. 5 puzzles. 1 meta. The simplest possible hunt — validating the toolkit pipeline.
 
-<!-- Draw your round structure. Examples: -->
-
-#### Example: Linear (3 rounds + super-meta)
 ```
-Round 1 (8 puzzles) → Meta 1
-Round 2 (8 puzzles) → Meta 2
-Round 3 (8 puzzles) → Meta 3
-                          ↓
-              Meta 1 + Meta 2 + Meta 3
-                          ↓
-                     Super-Meta
-                          ↓
-                     Final Answer
-```
-
-#### Example: Branching (unlock-based)
-```
-Round 1 (6 puzzles) → Meta 1 → unlocks Round 2 + Round 3
-Round 2 (8 puzzles) → Meta 2 ─┐
-Round 3 (8 puzzles) → Meta 3 ─┤→ Super-Meta → Final Answer
-Round 4 (6 puzzles) → Meta 4 ─┘
-                               (Round 4 unlocks after Meta 2 OR Meta 3)
-```
-
-#### Your architecture:
-```
-(draw yours here)
+I   (Civilizations) ─┐
+II  (Units)          ├─→ Meta (∞) → Final Answer: WOLOLO
+III (Technologies)   │
+IV  (Maps)           │
+V   (Strategy)      ─┘
 ```
 
 ---
 
-## Round Definitions
-
-### Round 1
+## Round 1: The Ages
 
 | Field | Value |
 |-------|-------|
-| **Name** | |
-| **Theme** | |
-| **Puzzles** | (count) |
-| **Difficulty range** | (1-5 warm-up to expert) |
-| **Section(s) covered** | |
-| **Meta mechanism** | |
-| **Unlocks** | (what does solving this round open?) |
-| **Narrator voice** | (if applicable) |
+| **Name** | The Ages |
+| **Theme** | Each puzzle represents an Age advancement |
+| **Puzzles** | 5 |
+| **Difficulty range** | 2-3 (accessible to any AoE player) |
+| **Sections covered** | Civilizations, Units, Technologies, Maps, Strategy |
+| **Meta mechanism** | Crossword — 5 answer words fill a small grid, highlighted squares spell WOLOLO |
+| **Narrator** | The Monk — short, present tense, no exclamation marks |
 
-**Puzzle slots:**
+### Puzzle slots
 
-| Slot | Section | Puzzle type | Difficulty | Status |
-|------|---------|-------------|------------|--------|
-| 1.1 | | | | — |
-| 1.2 | | | | — |
-| 1.3 | | | | — |
-| ... | | | | — |
+| Slot | Age | Domain | Puzzle type | Difficulty | Answer (encoded) |
+|------|-----|--------|-------------|------------|-----------------|
+| I | Dark | Civilizations | Identification — match 8 unique bonuses to civs | 2 | TBD |
+| II | Feudal | Units | Counter chain — trace what beats what in a cycle | 2 | TBD |
+| III | Castle | Technologies | Tech tree path — fill 6 missing techs in a research chain | 3 | TBD |
+| IV | Imperial | Maps | Map features — identify 5 standard maps from terrain descriptions | 2 | TBD |
+| V | Post-Imperial | Strategy | Build order — sequence 8 steps to reach Castle Age optimally | 3 | TBD |
 
-**Meta 1:**
-
-| Field | Value |
-|-------|-------|
-| **Mechanism** | |
-| **Feeds from** | (which puzzle slots) |
-| **Answer (encoded)** | |
-| **80% rule** | Can it be solved with N-1 of N feeder answers? |
-
----
-
-### Round 2
-
-*(Copy the Round 1 template and fill in)*
-
----
-
-### Round N
-
-*(Copy as needed)*
-
----
-
-## Super-Meta (if applicable)
+### Meta (∞ — Wonder Victory)
 
 | Field | Value |
 |-------|-------|
-| **Feeds from** | (which round metas) |
-| **Mechanism** | |
-| **Answer (encoded)** | |
-| **Relationship to round metas** | (how do they combine?) |
-| **The aha** | (what does the solver realize when it clicks?) |
+| **Mechanism** | Small crossword grid. 5 answer words cross. Highlighted squares spell the meta answer. |
+| **Feeds from** | All 5 puzzles |
+| **Answer** | WOLOLO (the Monk's conversion sound) |
+| **80% rule** | 5-word crossword — solvable with 4 of 5 answers via crossing constraints |
+| **Backsolving** | Possible — crossing letters + WOLOLO constraint narrow missing answers |
 
 ---
 
 ## Difficulty Curve
 
-Map difficulty across the full hunt:
-
 ```
 Difficulty
-5 |                                          ██
-4 |                          ██    ██    ██  ██
-3 |              ██    ██    ██    ██    ██  ██
-2 |    ██    ██  ██    ██    ██
-1 |    ██    ██
-  └──────────────────────────────────────────────
-    R1.1  R1.4  R2.1  R2.4  R3.1  R3.4  Meta  Super
+3 |              ██              ██
+2 |    ██    ██         ██
+1 |
+  └──────────────────────────────
+    I     II    III    IV    V
 ```
 
----
-
-## Unlock Logic
-
-How do rounds gate each other?
-
-| Condition | Unlocks |
-|-----------|---------|
-| Complete Round 1 meta | Round 2, Round 3 |
-| Complete any 2 round metas | Super-Meta |
-| Solve N puzzles in Round X | Round X meta becomes available |
-| (define yours) | |
+Gentle start (matching), ramp for tech tree and build order.
 
 ---
 
-## Numbering System
+## Numbering
 
-| Round | Puzzle numbering | Rationale |
-|-------|-----------------|-----------|
-| Round 1 | 1-8 / or custom | |
-| Round 2 | 9-16 / or custom | |
-| Meta | M1, M2... | |
-| Super | S1 | |
+Roman numerals I through V = the five Ages. Meta = ∞ (Wonder Victory — the game's "infinite" win condition).
 
-If using thematic numbering (atomic numbers, fibonacci, etc.), document the system here.
+---
+
+## Narrator Voice — The Monk
+
+Adapted from toolkit principles:
+- Short sentences. Present tense. No exclamation marks.
+- Speaks as if the game world is real. "The villagers gather. The barracks trains."
+- References game mechanics naturally. "Research costs food and gold."
+- Catchphrase "Wololo" appears exactly once — when the solver completes the meta.
+
+### Sample intros:
+
+**Puzzle I (Civilizations):**
+> Eight civilizations stand before you. Each one carries a gift no other has. Name them.
+
+**Puzzle III (Technologies):**
+> The research queue is broken. Six technologies are missing from the tree. The Castle Age waits.
+
+**Meta (∞):**
+> You have advanced through all five ages. One sound remains. You know what it is.
+
+---
+
+## Stage 2 Status: COMPLETE
+
+Ready for review gate → send SCOPE.md + ROUNDS.md to the panel.

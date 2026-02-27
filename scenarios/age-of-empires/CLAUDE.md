@@ -23,7 +23,7 @@ This hunt uses AoE game knowledge as its content library. There are no encyclope
 | File | Stage | Status |
 |------|-------|--------|
 | `SCOPE.md` | Stage 1 | ✅ Complete |
-| `ROUNDS.md` | Stage 2 | Template — needs filling |
+| `ROUNDS.md` | Stage 2 | ✅ Complete — 5 puzzles + 1 meta, roman numeral ages, WOLOLO |
 | `PUZZLES.md` | Stage 4 | Template — needs filling |
 | `HINTS.md` | Stage 8 | Template |
 | `meta/META-DESIGN.md` | Stage 5 | Template |
