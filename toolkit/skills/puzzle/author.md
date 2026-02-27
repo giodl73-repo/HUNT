@@ -208,6 +208,25 @@ Black Joker examples:
 
 ---
 
+## Extraction Verification (Principle #18: Verify the Last Mile)
+
+**3 of 5 puzzles in Scenario 2 had broken extractions.** Before saving ANY puzzle, verify extraction character by character:
+
+```
+Step 1: Solve the puzzle yourself (get the raw answers)
+Step 2: Apply the extraction mechanism (indexing, first letters, diagonal, etc.)
+Step 3: Write out each letter with its source:
+   Letter 1: [source word] position [N] = [letter]
+   Letter 2: [source word] position [N] = [letter]
+   ...
+Step 4: Read the extracted letters: do they spell the answer word?
+Step 5: If ANY letter doesn't match → the extraction is broken → fix it
+```
+
+This is the most common failure mode in multi-author hunts. Do not skip this step.
+
+---
+
 ## Quality Bar
 
 A puzzle is ready for `/puzzle-test` when it passes the design principles in `toolkit/PRINCIPLES.md`. Key checks before saving:
