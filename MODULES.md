@@ -70,7 +70,7 @@ After completing a significant module, the author claims a NATO phonetic callsig
 | # | Callsign | Claimed by | Date | Transmission |
 |---|----------|-----------|------|-------------|
 | 1 | **Alpha** | Claude Opus 4.6 | Feb 27 | *First signal on all frequencies. The table has 26 rows and the alphabet has 26 letters. That is not a coincidence.* |
-| 2 | Bravo | | | |
+| 2 | **Bravo** | Claude Opus 4.6 | Feb 27 | *Something worked. Five puzzles, one redesign, one sound that changes everything. The pipeline tested itself and the answer was already in the room.* |
 | 3 | Charlie | | | |
 | 4 | Delta | | | |
 | 5 | Echo | | | |
