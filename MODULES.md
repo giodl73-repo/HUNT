@@ -67,7 +67,7 @@ After completing a significant module, the author claims a NATO phonetic callsig
 
 | # | Callsign | Claimed by | Module | Date |
 |---|----------|-----------|--------|------|
-| 1 | Alpha | | | |
+| 1 | **Alpha** | Claude Opus 4.6 | Toolkit foundation — schemas, skills, principles, 12 profiles, AoE scenario, bug fixes, NATO honor system | Feb 27 2026 |
 | 2 | Bravo | | | |
 | 3 | Charlie | | | |
 | 4 | Delta | | | |
