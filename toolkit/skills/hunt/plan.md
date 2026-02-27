@@ -30,21 +30,23 @@ This keeps the scenario CLAUDE.md as the single source of truth. Any Claude inst
 Each stage produces a deliverable. Each gate requires a panel review before proceeding. You can loop back to any earlier stage if the review surfaces issues.
 
 ```
-Stage 1: SCOPE          → what's the hunt about?
+Stage 1: SCOPE           → what's the hunt about?
     ↓ review gate
-Stage 2: STRUCTURE      → how many rounds, puzzles, metas?
+Stage 2: WORLD BUILDING  → research and verify the knowledge base
     ↓ review gate
-Stage 3: PUZZLE POOL    → brainstorm all candidate puzzles
+Stage 3: STRUCTURE       → how many rounds, puzzles, metas?
+    ↓ review gate
+Stage 4: PUZZLE POOL     → brainstorm all candidate puzzles
     ↓ review gate (panel ranks the pool)
-Stage 4: ASSIGNMENT     → assign puzzles to slots
+Stage 5: ASSIGNMENT      → assign puzzles to slots
     ↓ review gate
-Stage 5: META DESIGN    → design meta puzzles for each round
+Stage 6: META DESIGN     → design meta puzzles for each round
     ↓ review gate
-Stage 6: AUTHORING      → write every puzzle
+Stage 7: AUTHORING       → write every puzzle
     ↓ testing gate (blind test each puzzle)
-Stage 7: INTEGRATION    → assemble into books/rounds, verify crossings
+Stage 8: INTEGRATION     → assemble into books/rounds, verify crossings
     ↓ review gate
-Stage 8: POLISH         → final pass, answer verification, difficulty curve
+Stage 9: POLISH          → final pass, answer verification, difficulty curve
     ↓ ship it
 ```
 
@@ -78,11 +80,42 @@ The scenario CLAUDE.md is the **persistent context file**. Every subsequent skil
 - READS it to know the hunt's identity, voice, and state
 - UPDATES it when producing deliverables (marking stages ✅, adding notes)
 
-**Review gate:** `/puzzle-review full SCOPE.md` — panel evaluates scope for feasibility, audience fit, and narrative coherence.
+**Review gate:** `/hunt review full SCOPE.md` — panel evaluates scope for feasibility, audience fit, and narrative coherence.
 
 ---
 
-## Stage 2: STRUCTURE
+## Stage 2: WORLD BUILDING
+
+**Goal:** Research and verify the knowledge base the hunt is built on. Every fact a puzzle will use must live here.
+
+**Process:**
+1. Create `world/` directory in the scenario
+2. Create `world/WORLD.md` — overview listing all data domains
+3. For each content domain in the hunt, create a reference file:
+   - Identify the key facts, rules, data tables, relationships
+   - Research thoroughly (game wikis, official docs, encyclopedias, primary sources)
+   - Format as clean, scannable tables
+   - Mark uncertain facts with `[VERIFY]`
+4. Cross-check: does every puzzle concept from the SCOPE have supporting data?
+
+**Questions to answer:**
+- What are the content domains? (For AoE: civilizations, units, techs, maps, economy)
+- What's the primary source? (Game data? Encyclopedia? Official docs?)
+- How much data does each puzzle need? (A matching puzzle needs 8+ entries. A calculation puzzle needs exact numbers.)
+- Are there conflicts between sources? (Different game versions, errata, community disputes)
+
+**Deliverables:**
+1. `world/WORLD.md` — overview with data file index and verification rules
+2. `world/*.md` — one file per domain, with verified reference tables
+3. Updated scenario `CLAUDE.md` (Stage 2 ✅, world/ files listed)
+
+**Quality bar:** An author who has never played the game (or read the encyclopedia) should be able to write a factually correct puzzle using ONLY the world/ files.
+
+**Review gate:** `/hunt review full world/WORLD.md` — panel evaluates completeness and accuracy. Gottlieb checks for systemic consistency. Rosenthal checks accessibility (is enough context given for non-experts?).
+
+---
+
+## Stage 3: STRUCTURE
 
 **Goal:** Define rounds, puzzle counts, and meta architecture.
 
@@ -130,7 +163,7 @@ Meta answers from early rounds are inputs to later rounds
 
 ---
 
-## Stage 3: PUZZLE POOL
+## Stage 4: PUZZLE POOL
 
 **Goal:** Generate more puzzle ideas than you need. The panel will rank them.
 
@@ -146,7 +179,7 @@ Meta answers from early rounds are inputs to later rounds
 
 ---
 
-## Stage 4: ASSIGNMENT
+## Stage 5: ASSIGNMENT
 
 **Goal:** Assign specific puzzles to specific slots based on pool rankings.
 
@@ -162,7 +195,7 @@ Meta answers from early rounds are inputs to later rounds
 
 ---
 
-## Stage 5: META DESIGN
+## Stage 6: META DESIGN
 
 **Goal:** Design the meta puzzle(s) that combine feeder answers.
 
@@ -183,7 +216,7 @@ Meta answers from early rounds are inputs to later rounds
 
 ---
 
-## Stage 6: AUTHORING
+## Stage 7: AUTHORING
 
 **Goal:** Write every puzzle.
 
@@ -202,7 +235,7 @@ For each puzzle in the assignment:
 
 ---
 
-## Stage 7: INTEGRATION
+## Stage 8: INTEGRATION
 
 **Goal:** Assemble puzzles into the final hunt format.
 
@@ -222,7 +255,7 @@ For each puzzle in the assignment:
 
 ---
 
-## Stage 8: POLISH
+## Stage 9: POLISH
 
 **Goal:** Final quality pass.
 
