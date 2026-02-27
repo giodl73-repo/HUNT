@@ -1,109 +1,101 @@
 # V — Post-Imperial
 
-**The Monk** · Economy · Round 1
+**The Monk** · Strategy · Round 1
 
 ---
 
-> Forty villagers. One goal. The economy does not forgive waste.
+> A game was played. The record survives. Six moments demand an answer. The replay shows what happened — your knowledge of the game tells you the rest.
 
 ---
 
 ## The Puzzle
 
-Six questions about the economy. Every number you need is in the game. No tricks, no traps — just clean arithmetic.
+Below is an annotated replay of a 1v1 on Arabia. At six moments, the observer poses a question. Each answer is a number between 1 and 26. Convert to a letter (A=1, B=2, ... Z=26). Read the six letters in order.
 
-Each answer is a number. Convert each number to a letter: A=1, B=2, C=3 ... Z=26.
-
-Read the six letters in order.
+The replay does not repeat what a student of the game already knows. Costs, training times, tech effects, age-up requirements — look them up.
 
 ---
 
-### Question 1
+## The Replay
 
-Advancing to the Castle Age costs 800 food.
+### Moment 1 — The Resource Dump (19:00)
 
-A Villager costs 50 food to train.
+Blue reaches Castle Age with **400 wood** and **720 gold** stockpiled. No food. No stone. Blue spends every last resource training a single unit type from the Archery Range. Both wood and gold hit zero — no remainder.
 
-**How many Villagers could that food train?**
+Several Archery Range units cost wood and gold. Only one allows Blue to spend both stockpiles exactly to zero.
 
-Answer: _____
+**How many units does Blue train?**
 
----
-
-### Question 2
-
-A standard game begins. You have a Town Center, a Scout, and three Villagers.
-
-**How many Scout Cavalry do you start with?**
-
-Answer: _____
+Answer 1: ___
 
 ---
 
-### Question 3
+### Moment 2 — The Shortcut (22:00)
 
-Advancing to the Imperial Age costs 1000 food.
+Blue is already thinking about Imperial Age. The standard requirement is two Castle Age buildings. But there is an alternative — a single building type that satisfies the Imperial Age prerequisite on its own.
 
-A Villager costs 50 food to train.
+**How many of that building does the shortcut require?**
 
-**How many Villagers could that food train?**
-
-Answer: _____
+Answer 2: ___
 
 ---
 
-### Question 4
+### Moment 3 — The Crossbow Rush (23:00 – 32:00)
 
-The Mill researches three farm upgrades, each costing wood:
+Blue runs a single Archery Range nonstop for exactly 9 minutes, training Crossbowmen. No idle time.
 
-| Technology | Wood Cost |
-|-----------|-----------|
-| Horse Collar | 75 |
-| Heavy Plow | 125 |
-| Crop Rotation | 250 |
+**How many Crossbowmen does the Range produce?**
 
-A House costs 25 wood.
+*The Crossbowman does not train at the same speed as the Archer it upgraded from.*
 
-**How many Houses could the total farm-upgrade wood cost build?**
-
-Answer: _____
+Answer 3: ___
 
 ---
 
-### Question 5
+### Moment 4 — The Cavalry Pivot (32:00 – 41:00)
 
-Upgrading Knights to Cavaliers costs 300 food and 300 gold.
+Blue shifts to cavalry. One Stable, running nonstop for 9 minutes, producing Knights. No idle time.
 
-A Militia costs 60 food and 20 gold to train.
+**How many Knights does the Stable produce?**
 
-**How many Militia could the Cavalier upgrade's gold alone train?**
-
-Answer: _____
+Answer 4: ___
 
 ---
 
-### Question 6
+### Moment 5 — The Upgrade Question (41:00)
 
-An Archer takes 35 seconds to train at an Archery Range.
+Blue wants to upgrade those Knights to Cavaliers. The upgrade costs food and gold.
 
-A battle begins in 7 minutes. You have one Archery Range running nonstop from the start.
+Meanwhile, Blue eyes the Barracks. The Militia — the most basic infantry — also costs gold to train.
 
-**How many Archers are ready when the battle begins?**
+**Divide the Cavalier upgrade's gold cost by the Militia's per-unit gold cost. What is the result?**
 
-Answer: _____
+Answer 5: ___
 
 ---
 
-## Worksheet
+### Moment 6 — The Conversion Range (50:00)
 
-| Question | Answer (number) | Letter (A=1, B=2 ... Z=26) |
-|----------|-----------------|---------------------------|
-| 1 | _____ | [ ] |
-| 2 | _____ | [ ] |
-| 3 | _____ | [ ] |
-| 4 | _____ | [ ] |
-| 5 | _____ | [ ] |
-| 6 | _____ | [ ] |
+Post-Imperial. Blue's Monks have Block Printing researched — the Monastery technology that extends conversion reach.
+
+A Monk has a base conversion range. Block Printing increases it.
+
+**What is the Monk's conversion range after Block Printing?**
+
+Answer 6: ___
+
+---
+
+## Extraction
+
+| Moment | Answer (number) | Letter (A=1 ... Z=26) |
+|--------|-----------------|----------------------|
+| 1 | ___ | [ ] |
+| 2 | ___ | [ ] |
+| 3 | ___ | [ ] |
+| 4 | ___ | [ ] |
+| 5 | ___ | [ ] |
+| 6 | ___ | [ ] |
 
 Read the six letters in order.
 
