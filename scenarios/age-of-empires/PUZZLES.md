@@ -1,15 +1,6 @@
-# Puzzles — Master Registry
+# Puzzles — Wololo Master Registry
 
-Every puzzle in the hunt. Filled out during Stage 4 (Assignment), maintained through authoring and testing. This is the single source of truth for puzzle status.
-
----
-
-## How to Use
-
-1. **Stage 4** — fill in the assignment table (ID, round, section, type, answer, testers)
-2. **Stage 6** — update status as each puzzle is authored and tested
-3. **Stage 7** — verify all puzzles pass before integration
-4. Run `/puzzle-status` to generate a live dashboard from this file
+**Stage 4: ASSIGNMENT**
 
 ---
 
@@ -17,15 +8,15 @@ Every puzzle in the hunt. Filled out during Stage 4 (Assignment), maintained thr
 
 | Field | Value |
 |-------|-------|
-| **Hunt name** | |
-| **Content library** | (path to your content) |
-| **Rounds** | (number) |
-| **Puzzles per round** | |
-| **Total puzzles** | |
-| **Metas** | (number — one per round? plus super-meta?) |
-| **Format** | (book / website / live event / hybrid) |
-| **Audience** | (solo / team of N / public) |
-| **Estimated solve time** | |
+| **Hunt name** | Wololo |
+| **Content library** | Age of Empires game knowledge (AoE2 primary) |
+| **Rounds** | 1 |
+| **Puzzles per round** | 5 |
+| **Total puzzles** | 5 + 1 meta |
+| **Metas** | 1 (crossword → WOLOLO) |
+| **Format** | Printable Markdown / PDF |
+| **Audience** | Solo AoE player |
+| **Estimated solve time** | 2-3 hours |
 
 ---
 
@@ -36,116 +27,72 @@ Every puzzle in the hunt. Filled out during Stage 4 (Assignment), maintained thr
 | Code | Meaning |
 |------|---------|
 | `—` | Not started |
-| `BRIEF` | Brief written (Stage 3/4) |
+| `BRIEF` | Brief written |
 | `AUTHORED` | Full puzzle written |
 | `TESTING` | Sent to testers |
-| `PASS` | Passed testing (≥22/30, all dims ≥4) |
-| `REVISE` | Failed testing, revision needed |
-| `REVISED` | Revised, awaiting retest |
-| `SHIP` | Final, ready for integration |
+| `PASS` | Passed testing (≥22/30) |
+| `REVISE` | Failed testing |
+| `SHIP` | Ready for integration |
 
-### The Registry
+### The 5 Puzzles
 
-<!-- Copy rows as needed. One row per puzzle. -->
+| ID | Age | Domain | Puzzle type | Answer (encoded) | Difficulty | Status | Score | Tester 1 | Tester 2 | Tester 3 |
+|----|-----|--------|-------------|-----------------|------------|--------|-------|----------|----------|----------|
+| I | Dark | Civilizations | Bonus Matcher — match 8 civ bonuses, interlocking pairs | (see ANSWERS.md) | 2 | BRIEF | — | Rosenthal | Miller | Dana |
+| II | Feudal | Units | Tournament Bracket — 8-unit elimination, predict winners by counter logic | (see ANSWERS.md) | 2 | BRIEF | — | Katz | Selinker | Blow |
+| III | Castle | Technologies | Tech Tree Gap-Fill — 6 missing techs in dependency chain | (see ANSWERS.md) | 3 | BRIEF | — | Huang | Snyder | Gottlieb |
+| IV | Imperial | Maps | Resource Map — plot spawn locations, dots trace letters | (see ANSWERS.md) | 3 | BRIEF | — | Sarrett | Miller | Dana |
+| V | Post-Imp | Strategy | Economy Puzzle — allocate villagers under constraints | (see ANSWERS.md) | 3 | BRIEF | — | Huang | Kenny | Katz |
 
-| ID | Round | Section | Puzzle type | Answer (encoded) | Difficulty | Status | Score | Tester 1 | Tester 2 | Tester 3 | Notes |
-|----|-------|---------|-------------|-----------------|------------|--------|-------|----------|----------|----------|-------|
-| | | | | | | — | | | | | |
-| | | | | | | — | | | | | |
-| | | | | | | — | | | | | |
-| | | | | | | — | | | | | |
-| | | | | | | — | | | | | |
-| | | | | | | — | | | | | |
-| | | | | | | — | | | | | |
-| | | | | | | — | | | | | |
+### Meta
 
-### Column guide
-
-| Column | What to fill in |
-|--------|----------------|
-| **ID** | Unique identifier (number, element symbol, code — your choice) |
-| **Round** | Which round this puzzle belongs to (1, 2, 3... or "meta") |
-| **Section** | Which content section it references |
-| **Puzzle type** | Mechanism (cipher, crossword, logic grid, identification, calculation, etc.) |
-| **Answer (encoded)** | The answer word, encoded per your answer security protocol. NEVER plaintext. |
-| **Difficulty** | 1-5 scale (1=warm-up, 5=expert) |
-| **Status** | See status codes above |
-| **Score** | Test score (N/30) — filled after testing |
-| **Tester 1-3** | Which reviewer personas test this puzzle (from profiles/) |
-| **Notes** | Issues, revision history, special considerations |
-
----
-
-## Meta Registry
-
-| Meta ID | Round(s) | Feeds from | Mechanism | Answer (encoded) | Status | Score |
-|---------|----------|-----------|-----------|-----------------|--------|-------|
-| | | | | | — | |
-| | | | | | — | |
-| | | | | | — | |
-
-### Super-meta (if applicable)
-
-| Field | Value |
-|-------|-------|
-| **Feeds from** | (which round metas) |
-| **Mechanism** | |
-| **Answer (encoded)** | |
-| **Status** | |
+| ID | Mechanism | Feeds from | Answer (encoded) | Status |
+|----|-----------|-----------|-----------------|--------|
+| ∞ | Crossword — 5 answers fill grid, highlighted squares spell answer | I, II, III, IV, V | (see ANSWERS.md) | BRIEF |
 
 ---
 
 ## Tester Assignments
 
-Pre-assign 3 testers per puzzle based on puzzle type. Use this table or create your own.
+Rationale for crew selection:
 
-| Puzzle type | Recommended testers |
-|------------|-------------------|
-| Cipher / code-breaking | Huang, Blow, Snyder |
-| Logic grid / deduction | Huang, Katz, Pope |
-| Crossword / word puzzle | Katz, Dana, Rosenthal |
-| Calculation / diagram | Kenny, Snyder, Sarrett |
-| Identification / matching | Pope, Miller, Rosenthal |
-| Visual / physical | Sarrett, Miller, Blow |
-| Narrative / timeline | Selinker, Katz, Rosenthal |
-| Cross-section synthesis | Blow, Selinker, Katz |
+| ID | Type | Why these testers |
+|----|------|------------------|
+| I | Identification | Rosenthal (accessibility), Miller (world-as-puzzle), Dana (book test) |
+| II | Bracket deduction | Katz (structure), Selinker (fun/narrative), Blow (epiphany) |
+| III | Dependency reasoning | Huang (rigor), Snyder (craftsmanship), Gottlieb (systems) |
+| IV | Spatial drawing | Sarrett (physical/Chicago Fire), Miller (diegetic), Dana (visual) |
+| V | Constrained optimization | Huang (rigor), Kenny (buildability), Katz (calibration) |
 
-Customize based on your hunt. Spread load evenly (8-13 tests per reviewer max).
+---
+
+## Answer Words — Design Constraints
+
+Each answer must:
+1. Be an AoE-related word (thematic)
+2. Work in the crossword grid (crossing letters must match)
+3. Not be guessable from the puzzle domain alone (Surprise the Answer principle)
+4. Be encodable in ROT13 for ANSWERS.md
+
+The meta answer WOLOLO constrains the crossword: highlighted squares must spell W-O-L-O-L-O across the 5-word grid. This means at least 2 answer words must contain O and at least 2 must contain L.
+
+Answer words will be chosen during authoring (Stage 6) and added to ANSWERS.md encoded.
 
 ---
 
 ## Progress Summary
 
-*Updated by `/puzzle-status` or manually.*
-
 | Metric | Count |
 |--------|-------|
-| Total puzzles | |
-| Authored | |
-| Tested | |
-| Passed | |
-| Need revision | |
-| Ship-ready | |
-| Metas designed | |
-| Metas tested | |
+| Total puzzles | 5 + 1 meta |
+| Briefed | 5 |
+| Authored | 0 |
+| Tested | 0 |
+| Passed | 0 |
+| Ship-ready | 0 |
 
 ---
 
-## Revision Log
+## Stage 4 Status: COMPLETE
 
-Track what changed and why. Learn from test failures.
-
-| Puzzle ID | Version | Score | Verdict | Key issue | Fix applied | New score |
-|-----------|---------|-------|---------|-----------|-------------|-----------|
-| | v1 | | | | | |
-| | v2 | | | | | |
-
----
-
-## Answer Encoding Reference
-
-Answers in this file are encoded, not plaintext. **Plaintext answers must never appear in git-tracked files.**
-
-Choose your encoding during `/puzzle-plan` Stage 1. Options: ROT13, Base64, custom cipher, or store answers only in `.claude/` project memory.
-
-Document your chosen encoding key in `.claude/` project memory (gitignored), NOT here.
+Ready for Stage 5 (Meta Design) then Stage 6 (Authoring).

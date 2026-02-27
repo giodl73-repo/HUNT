@@ -24,7 +24,7 @@ This hunt uses AoE game knowledge as its content library. There are no encyclope
 |------|-------|--------|
 | `SCOPE.md` | Stage 1 | ✅ Complete |
 | `ROUNDS.md` | Stage 2 | ✅ Complete — 5 puzzles + 1 meta, roman numeral ages, WOLOLO |
-| `PUZZLES.md` | Stage 4 | Template — needs filling |
+| `PUZZLES.md` | Stage 4 | ✅ Complete — 5 puzzles assigned, testers assigned, WOLOLO meta |
 | `HINTS.md` | Stage 8 | Template |
 | `meta/META-DESIGN.md` | Stage 5 | Template |
 | `puzzles/` | Stage 6 | Empty |

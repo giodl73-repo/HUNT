@@ -16,6 +16,8 @@ Track bugs found during scenario testing. Fix and document.
 | 6 | Major | toolkit CLAUDE.md + answer protocol | Periodic table encoding is OUR project-specific secret — don't ship it in the generic toolkit. During /puzzle-plan Stage 1, ASK the user to choose their own encoding. Never hardcode one system. | AoE Stage 3 |
 | 7 | Blocking | All git-tracked files | Plaintext answers must NEVER appear in git-tracked files — searchable in history forever. Answers only in .claude/ project memory (gitignored) or encoded. Puzzle pool descriptions must not contain answer words. | AoE Stage 3 |
 | 8 | Major | toolkit structure | Need `admin/` directory with skills for post-plan administration: module assignment, author onboarding, progress tracking, review scheduling, integration checklist. Currently only creative skills, no admin tooling. | AoE Stage 3 |
+| 9 | Major | PUZZLES.md + puzzle briefs | Registry needs more detail per puzzle for handoff to other authors. Need full briefs: mechanism, interlock design, extraction, references, voice draft. Either expand PUZZLES.md or link to per-puzzle brief files. An interactive script or `/puzzle-brief` skill that walks through brief creation would help. | AoE Stage 4 |
+| 10 | Minor | /puzzle-plan | Should offer an interactive walkthrough mode that asks questions step-by-step rather than requiring the user to know what to fill in. Like a wizard/script. | AoE Stage 4 |
 
 ## Fixed
 
