@@ -255,16 +255,71 @@ For each puzzle in the assignment:
 
 ---
 
-## Stage 9: POLISH
+## Stage 9: LIVE TEST
 
-**Goal:** Final quality pass.
+**Goal:** Simulate a full team solving the hunt end-to-end.
+
+**Three teams, three stages of testing:**
+
+### Team 1: Design Team (Stages 4-7)
+Selected during `/hunt plan` Stage 4. The admin picks 12 reviewers from the 29-profile panel who best match the hunt's content domains. These reviewers evaluate puzzle briefs, rank the pool, and blind-test individual puzzles during authoring. **The admin can change the roster** between stages — different experts for different puzzles.
+
+### Team 2: Beta Testers (Stage 8)
+Same 12-person panel roster, but now they test the ASSEMBLED hunt (not individual puzzles). They see the full round structure, difficulty curve, and meta. They test integration, not just individual puzzles. **The admin can swap reviewers** if domain expertise is needed.
+
+### Team 3: Live Solve Simulation (Stage 9) — THE REAL TEST
+**12 fresh agents simulate a real team solving the hunt.**
+
+This is NOT expert review. This is a play-test. 12 agents are spawned, each with a DIFFERENT solver personality:
+
+| Agent | Personality | Behavior |
+|-------|-----------|----------|
+| Captain | Organized, delegates, tracks progress | Assigns puzzles to team members |
+| Speedster | Grabs puzzles fast, solves quickly, sometimes wrong | First to attempt, first to get stuck |
+| Methodical | Slow, thorough, rarely wrong | Takes 3x longer but never needs revision |
+| Lateral | Makes unexpected connections, sees meta patterns early | Skips feeders, jumps to meta prematurely |
+| Newbie | First puzzle hunt, needs hand-holding | Tests accessibility — if they're lost, the hunt fails |
+| Specialist | Deep knowledge in 1-2 domains, useless elsewhere | Tests domain balance |
+| Social | Talks to everyone, shares partial answers | Tests whether sharing helps or hurts |
+| Skeptic | "This clue must be wrong" — tests robustness | Finds edge cases and alternate interpretations |
+| Artist | Focuses on physical/visual puzzles, ignores text-heavy ones | Tests if the hunt works for visual learners |
+| Sprinter | Wants to finish fast, skips hard puzzles | Tests 80% rule — can you get the meta without 100%? |
+| Lurker | Reads everything, says nothing, solves alone | Tests solo experience within a team |
+| Cheerleader | Celebrates every solve, keeps morale up | Tests emotional arc — is the hunt FUN? |
+
+**How it works:**
+1. All 12 agents are spawned in parallel
+2. The Captain assigns puzzles (or agents self-select)
+3. Each agent works in character — solving, getting stuck, asking for help, sharing answers
+4. Agents update a shared solve-state file (which puzzles are solved, what answers are known)
+5. When enough feeders are solved, agents attempt the meta
+6. The simulation produces: solve order, time estimates, stuck points, team dynamics, meta discovery moment
+
+**What it measures:**
+- Total simulated solve time
+- Which puzzles caused the most stuckness
+- Whether the meta was discoverable with the team's partial answers
+- Whether the Newbie could participate
+- Whether the Sprinter could shortcut to the meta
+- Whether the hunt was FUN (the Cheerleader's vibe check)
+
+**Deliverable:** `tests/live-solve-simulation.md` — full transcript of the 12-agent solve with timing, dynamics, and recommendations.
+
+**This is the final gate.** If the live simulation exposes problems, loop back to Stage 7 (fix puzzles) or Stage 6 (fix meta).
+
+---
+
+## Stage 10: POLISH
+
+**Goal:** Final quality pass after live test.
 
 - [ ] Answer verification: every puzzle's extraction produces the correct answer
-- [ ] Difficulty curve: play-test the full hunt in order
+- [ ] Difficulty curve: confirmed by live simulation
 - [ ] Hint system: do you provide hints? If so, write them
 - [ ] Answer confirmation: how does a solver know they got the right answer?
 - [ ] Answer encoding: encode the master answer key (see CLAUDE.md § Answer Security)
 - [ ] Print/publish prep: formatting, page breaks, templates
+- [ ] Live test passed: no blocking issues from 12-agent simulation
 
 **Deliverable:** Ship-ready hunt.
 
