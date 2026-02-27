@@ -153,6 +153,8 @@ scenarios/
 
 Tell Claude: "Let's work on the my-hunt scenario." All operations target that directory.
 
+**Important:** Every scenario needs a `world/` directory with verified reference data. This is the knowledge base puzzles are built on. See `world/WORLD.md` for the overview and data files for specific domains. Authors verify all puzzle facts against world/ files — not memory.
+
 ---
 
 ## Answer Security

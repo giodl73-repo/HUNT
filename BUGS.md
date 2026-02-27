@@ -19,6 +19,7 @@ Track bugs found during scenario testing. Fix and document.
 | 9 | Major | PUZZLES.md + puzzle briefs | Registry needs more detail per puzzle for handoff to other authors. Need full briefs: mechanism, interlock design, extraction, references, voice draft. Either expand PUZZLES.md or link to per-puzzle brief files. An interactive script or `/puzzle-brief` skill that walks through brief creation would help. | AoE Stage 4 |
 | 10 | Minor | /puzzle-plan | Should offer an interactive walkthrough mode that asks questions step-by-step rather than requiring the user to know what to fill in. Like a wizard/script. | AoE Stage 4 |
 | 11 | Major | /puzzle-author, /puzzle-test | These skills don't leverage /puzzle — they should use /puzzle <id> brief to read the full brief, /puzzle <id> status to update status, /puzzle <id> comment to log actions. Currently each skill independently reads PUZZLES.md. The /puzzle skill should be the single data layer all other skills go through. | AoE Stage 4 |
+| 12 | Major | Scenario structure | Each scenario needs a `world/` directory with verified reference data (facts, rules, data tables). Puzzles reference this — not the author's memory or web searches. For AoE: civs, units, techs, maps, counters. For any hunt: the knowledge base the puzzles are built on. Also need a `World.md` overview and a _vocab entity for facts. Without this, puzzle authors make inconsistent claims. | AoE Stage 5 |
 
 ## Fixed
 

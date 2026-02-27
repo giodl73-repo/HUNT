@@ -1,0 +1,27 @@
+{
+  "entity": "ph_fact",
+  "display": "Fact",
+  "description": "A verified piece of knowledge from the world reference. Puzzles reference facts, not memory.",
+  "optionsets": {
+    "ph_fact_status": {
+      "display": "Verification Status",
+      "options": [
+        {"value": 1, "label": "verified"},
+        {"value": 2, "label": "unverified"},
+        {"value": 3, "label": "disputed"},
+        {"value": 4, "label": "deprecated"}
+      ]
+    },
+    "ph_fact_source": {
+      "display": "Source Type",
+      "options": [
+        {"value": 1, "label": "game_data"},
+        {"value": 2, "label": "official_docs"},
+        {"value": 3, "label": "encyclopedia"},
+        {"value": 4, "label": "primary_source"},
+        {"value": 5, "label": "community_wiki"},
+        {"value": 6, "label": "author_knowledge"}
+      ]
+    }
+  }
+}

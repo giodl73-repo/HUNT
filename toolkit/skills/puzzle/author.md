@@ -25,7 +25,15 @@ Read the active scenario's `PUZZLES.md` and find the puzzle by ID. Extract:
 
 Also read the scenario's `CLAUDE.md` for voice rules, theme, and content library path.
 
-### 2. Read the Encyclopedia Content
+### 2. Read the World Reference
+
+Read the scenario's `world/WORLD.md` and the specific data files relevant to this puzzle's domain. **Every fact the puzzle uses must be traceable to a world/ file.** Do not rely on memory or web knowledge alone — verify against the world reference.
+
+If a fact is not in world/, either:
+- Add it to the appropriate world/ file (with source), or
+- Tag it `[VERIFY]` in the puzzle and flag for review
+
+### 3. Read the Content Library
 
 Read the relevant encyclopedia section files to understand the content the puzzle will reference. For a Red Joker puzzle, read:
 - The section's `00-OVERVIEW.md`
