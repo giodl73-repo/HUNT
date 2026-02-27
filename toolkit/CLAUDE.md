@@ -54,6 +54,9 @@ claude
 | `/hunt status` | Pipeline dashboard |
 | `/hunt meta` | Meta design, verification, grid building |
 | `/hunt edit` | Editorial review of author submissions before blind testing |
+| `/hunt print` | Generate print-ready PDFs for puzzles, props, labels, game manual |
+| `/hunt props` | Physical asset logistics — inventory, team kits, distribution, day-of checklist |
+| `/hunt site` | Hunt website — scaffold, theme, puzzle pages, standings, answer submission |
 | `/hunt modules` | Module assignment and tracking |
 | `/hunt authors` | Author registry and workload |
 | `/hunt schedule` | Build schedule and dependencies |

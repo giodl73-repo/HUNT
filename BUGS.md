@@ -20,17 +20,16 @@ Track bugs found during scenario testing. Fix and document.
 | 10 | Minor | /puzzle-plan | Should offer an interactive walkthrough mode that asks questions step-by-step rather than requiring the user to know what to fill in. Like a wizard/script. | AoE Stage 4 |
 | 11 | Major | /puzzle-author, /puzzle-test | These skills don't leverage /puzzle — they should use /puzzle <id> brief to read the full brief, /puzzle <id> status to update status, /puzzle <id> comment to log actions. Currently each skill independently reads PUZZLES.md. The /puzzle skill should be the single data layer all other skills go through. | AoE Stage 4 |
 | 12 | Major | Scenario structure | Each scenario needs a `world/` directory. **Real-world hunts**: fact-checked external data. **Fictional hunts**: invented canon locked before authoring. Fictional world-building is Stage 1/2 work — design data tables to fit puzzle mechanisms. | AoE Stage 5 |
-| 13 | Major | Pipeline — no delivery system | No skills or templates for how puzzles get to solvers. Need: website build (themed puzzle pages, answer submission), print formatting (PDFs, printer-ready layouts), physical asset templates. Stage 9 DELIVERY BUILD is in the pipeline but has no skill backing it. | Identified pre-Scenario 3 |
-| 14 | Major | Pipeline — no UX/interactive support | No skill or template for interactive puzzle components: mini-games, fake UIs (achievement screens, inventory, game portals), web apps embedded in puzzles. Especially critical for video game hunts. | Identified pre-Scenario 3 |
-| 15 | Major | Pipeline — no asset pipeline | No handling for non-text puzzle assets: images, audio, video, printable components (cipher wheels, punch cards). No naming convention, no storage location, no reference system in puzzle files. | Identified pre-Scenario 3 |
-| 16 | Minor | Pipeline — no hunt theming skill | No skill for establishing visual/narrative design language across a hunt: color palette, fonts, layout, website skin, print template. Each puzzle page should feel like it belongs to the same hunt. | Identified pre-Scenario 3 |
+| 14 | Major | Pipeline — no UX/interactive support | No skill or template for interactive puzzle components: mini-games, fake UIs (achievement screens, inventory, game portals), web apps embedded in puzzles. Especially critical for video game hunts. Scenario 3 will exercise this — skill to be designed based on findings. | Identified pre-Scenario 3 |
 
 ## Fixed
 
 | # | Severity | Location | Description | Fix | Fixed in |
 |---|----------|----------|-------------|-----|---------|
 | 12 | Major | Scenario structure | Each scenario needs a `world/` directory. Added `/hunt world` skill with init, systems, data, lock, audit commands. `world_build` scope type added to MODULES.md. Fictional world-building is Stage 1/2 work — design data tables to fit puzzle mechanisms. | Added `toolkit/skills/hunt/world.md` + `world_build` scope | a24c1e6 |
-| 13 | Major | Pipeline (hunt/plan) | Missing EDITORIAL REVIEW stage between Authoring and Testing. In multi-author hunts, admin must review submissions before blind testing: check brief compliance, flag errors, trim verbosity, evaluate deviations. Without this, bad puzzles burn test cycles. | Added `/hunt edit` skill + Stage 7 EDITORIAL in pipeline. Now 11 stages. | ae059ac |
+| 13 | Major | Pipeline — no delivery system | No skills for how puzzles get to solvers. | Added `/hunt print` (PDFs, label sheets, game manual), `/hunt props` (physical asset logistics, team kits, distribution plan, day-of checklist), `/hunt site` (static website, standings, answer submission, admin panel). `delivery/` directory structure defined. | this commit |
+| 15 | Major | Pipeline — no asset pipeline | No handling for printable components, physical props, or labeled items. | `/hunt props` covers prop registry, label generation, and distribution. `/hunt print` covers all print output including label sheets (Avery templates). Asset naming convention defined in `delivery/` structure. | this commit |
+| 16 | Minor | Pipeline — no hunt theming skill | No visual design language across a hunt. | `/hunt site theme` and `/hunt print` both use `delivery/THEME.md` as single source of truth — fonts, colors, aesthetic applied to both web and print output consistently. | this commit |
 
 ---
 

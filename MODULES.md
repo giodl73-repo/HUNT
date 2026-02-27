@@ -24,6 +24,7 @@ A module is a unit of work: one author, one deliverable, one review cycle. Modul
 | `website` | The hunt delivery website (puzzle pages, answer submission, theme) |
 | `print_assets` | Print-formatted puzzle pages, physical handouts, PDFs |
 | `world_build` | Fictional universe design — world data tables, canon lock (see /hunt world) |
+| `props_logistics` | Physical asset design, labeling, team distribution plan, day-of checklist |
 
 ---
 
