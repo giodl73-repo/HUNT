@@ -70,9 +70,20 @@ Reusing solver profiles as author personalities — tests whether the profiles a
 | `world/codenames.md` | Stage 2 | ✅ Grid, spymaster/operative, clue rules, key card |
 | `ROUNDS.md` | Stage 3 | ✅ 1 round, 5 puzzles, 1 meta, Host narrator |
 | `PUZZLE-POOL.md` | Stage 4 | ✅ 15 candidates (3 per game), starred picks |
-| `PUZZLES.md` | Stage 5 | — |
-| `ANSWERS.md` | Stage 5 | — |
-| `modules/M1-M6` | Stage 7 | Created |
+| `PUZZLES.md` | Stage 5 | ✅ Full registry, 5 puzzles assigned, answer words locked |
+| `ANSWERS.md` | Stage 5 | ✅ ROT13-encoded answers + solution paths |
+| `MODULE-LOG.md` | Stage 7 | ✅ Multi-author dynamics log |
+| `modules/M1-chess/brief.md` | Stage 5 | ✅ Brief issued |
+| `modules/M1-chess/puzzle.md` | Stage 7 | ✅ Authored by The Methodical (needs editing for length) |
+| `modules/M2-settlers/brief.md` | Stage 5 | ✅ Brief issued |
+| `modules/M2-settlers/puzzle.md` | Stage 7 | ✅ Authored by The Speedster (has known bugs, needs v3) |
+| `modules/M3-risk/brief.md` | Stage 5 | ✅ Brief issued |
+| `modules/M3-risk/puzzle.md` | Stage 7 | ✅ Authored by The Skeptic (includes editorial commentary) |
+| `modules/M4-pandemic/brief.md` | Stage 5 | ✅ Brief issued |
+| `modules/M4-pandemic/puzzle.md` | Stage 7 | ✅ Authored by The Social (working notes need cleanup) |
+| `modules/M5-codenames/brief.md` | Stage 5 | ✅ Brief issued |
+| `modules/M5-codenames/puzzle.md` | Stage 7 | ✅ Authored by The Lurker (spoiler section needs removal) |
+| `modules/M6-meta/` | Stage 6 | Pending — all 5 answers locked, meta can now be designed |
 | `meta/` | Stage 6 | — |
 
 ## What This Scenario Tests
