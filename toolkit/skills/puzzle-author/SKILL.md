@@ -1,14 +1,12 @@
 # /puzzle-author — Write a Puzzle from its Brief
 
-Author a complete puzzle page for the Red or Black Joker book. Takes a puzzle brief (element/compound assignment, answer word, mechanism, section) and produces a fully playable puzzle with Joker intro, the puzzle itself, worksheets, and extraction.
+Author a complete puzzle page for a puzzle hunt. Takes a puzzle brief from the scenario's `PUZZLES.md` and produces a fully playable puzzle with narrator intro, the puzzle itself, worksheets, and extraction.
 
 ## Usage
 
 ```
-/puzzle-author <element-or-compound>   — author a puzzle from FINAL-52.md assignment
-/puzzle-author Si                      — author Silicon (Computing, Cipher Decryption, ALGORITHM)
-/puzzle-author NaCl                    — author Salt (Social + Language, compound puzzle)
-/puzzle-author list                    — show all assigned puzzles and their status
+/puzzle-author <puzzle-id>    — author a puzzle from the scenario's PUZZLES.md
+/puzzle-author list           — show all assigned puzzles and their status
 ```
 
 ---
@@ -17,13 +15,15 @@ Author a complete puzzle page for the Red or Black Joker book. Takes a puzzle br
 
 ### 1. Look Up the Assignment
 
-Read `puzzle-hunt/FINAL-52.md` and find the element or compound. Extract:
-- Element/compound name, symbol, atomic number or molecular weight
-- Section(s) referenced
+Read the active scenario's `PUZZLES.md` and find the puzzle by ID. Extract:
+- Puzzle ID, round, section
 - Puzzle type (from brief)
-- Answer word (if Tier 1)
-- Card archetype invoked
-- Tier (T1 meta-feeder or T2 companion)
+- Answer word (encoded — decode from answer registry)
+- Narrator/archetype identity (if applicable)
+- Tier (meta-feeder or companion)
+- Tester assignments
+
+Also read the scenario's `CLAUDE.md` for voice rules, theme, and content library path.
 
 ### 2. Read the Encyclopedia Content
 
@@ -46,7 +46,7 @@ Each puzzle page has these components, in order:
 ```
 
 #### b. Joker's Intro
-2-4 sentences in the Joker's voice. Follow the voice rules from `puzzle-hunt/JOKER-VOICE.md`:
+2-4 sentences in the Joker's voice. Follow the voice rules from `scenario CLAUDE.md (voice rules section)`:
 - No exclamation marks
 - No questions
 - Short sentences (rarely > 15 words)
@@ -202,7 +202,7 @@ Black Joker examples:
 
 ## Quality Bar
 
-A puzzle is ready for `/puzzle-test` when it passes the design principles in `puzzle-hunt/PRINCIPLES.md`. Key checks before saving:
+A puzzle is ready for `/puzzle-test` when it passes the design principles in `toolkit/PRINCIPLES.md`. Key checks before saving:
 
 - [ ] **The Riven Standard**: the puzzle IS what the section does, not overlaid on it
 - [ ] **Solving = Proving Understanding**: the solver knows more after solving

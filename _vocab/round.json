@@ -1,0 +1,27 @@
+{
+  "entity": "ph_round",
+  "display": "Round",
+  "optionsets": {
+    "ph_round_status": {
+      "display": "Status",
+      "options": [
+        {"value": 1, "label": "planned"},
+        {"value": 2, "label": "pool_complete"},
+        {"value": 3, "label": "assigned"},
+        {"value": 4, "label": "authoring"},
+        {"value": 5, "label": "testing"},
+        {"value": 6, "label": "complete"},
+        {"value": 7, "label": "integrated"}
+      ]
+    },
+    "ph_unlock": {
+      "display": "Unlock Type",
+      "options": [
+        {"value": 1, "label": "always_open"},
+        {"value": 2, "label": "sequential"},
+        {"value": 3, "label": "solve_count"},
+        {"value": 4, "label": "meta_gated"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "ph_review",
+  "display": "Review",
+  "optionsets": {
+    "ph_review_type": {
+      "display": "Review Type",
+      "options": [
+        {"value": 1, "label": "scope"},
+        {"value": 2, "label": "structure"},
+        {"value": 3, "label": "pool_rank"},
+        {"value": 4, "label": "assignment"},
+        {"value": 5, "label": "meta_design"},
+        {"value": 6, "label": "puzzle_test"},
+        {"value": 7, "label": "integration"},
+        {"value": 8, "label": "asset_blind"}
+      ]
+    },
+    "ph_verdict": {
+      "display": "Verdict",
+      "options": [
+        {"value": 1, "label": "pass"},
+        {"value": 2, "label": "revise"},
+        {"value": 3, "label": "redesign"}
+      ]
+    }
+  }
+}

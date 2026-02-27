@@ -1,0 +1,30 @@
+{
+  "entity": "ph_stage",
+  "display": "Pipeline Stage",
+  "optionsets": {
+    "ph_stage_id": {
+      "display": "Stage",
+      "options": [
+        {"value": 1, "label": "scope"},
+        {"value": 2, "label": "structure"},
+        {"value": 3, "label": "puzzle_pool"},
+        {"value": 4, "label": "assignment"},
+        {"value": 5, "label": "meta_design"},
+        {"value": 6, "label": "authoring"},
+        {"value": 7, "label": "integration"},
+        {"value": 8, "label": "polish"}
+      ]
+    },
+    "ph_gate_status": {
+      "display": "Gate Status",
+      "options": [
+        {"value": 1, "label": "not_started"},
+        {"value": 2, "label": "in_progress"},
+        {"value": 3, "label": "review_pending"},
+        {"value": 4, "label": "review_passed"},
+        {"value": 5, "label": "review_failed"},
+        {"value": 6, "label": "complete"}
+      ]
+    }
+  }
+}

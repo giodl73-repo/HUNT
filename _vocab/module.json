@@ -1,0 +1,30 @@
+{
+  "entity": "ph_module",
+  "display": "Module",
+  "description": "A unit of work assigned to an author. One author, one module, one review cycle.",
+  "optionsets": {
+    "ph_module_status": {
+      "display": "Status",
+      "options": [
+        {"value": 1, "label": "unassigned"},
+        {"value": 2, "label": "assigned"},
+        {"value": 3, "label": "in_progress"},
+        {"value": 4, "label": "review_pending"},
+        {"value": 5, "label": "revision_needed"},
+        {"value": 6, "label": "complete"},
+        {"value": 7, "label": "integrated"}
+      ]
+    },
+    "ph_module_scope": {
+      "display": "Scope",
+      "options": [
+        {"value": 1, "label": "single_puzzle"},
+        {"value": 2, "label": "round"},
+        {"value": 3, "label": "meta"},
+        {"value": 4, "label": "physical_build"},
+        {"value": 5, "label": "narrative"},
+        {"value": 6, "label": "testing_pass"}
+      ]
+    }
+  }
+}

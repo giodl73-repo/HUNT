@@ -1,0 +1,25 @@
+{
+  "entity": "ph_test",
+  "display": "Test",
+  "optionsets": {
+    "ph_dimension": {
+      "display": "Scoring Dimension",
+      "options": [
+        {"value": 1, "label": "clarity"},
+        {"value": 2, "label": "solvability"},
+        {"value": 3, "label": "elegance"},
+        {"value": 4, "label": "reading_reward"},
+        {"value": 5, "label": "fun"},
+        {"value": 6, "label": "confirmation"}
+      ]
+    },
+    "ph_issue_severity": {
+      "display": "Issue Severity",
+      "options": [
+        {"value": 1, "label": "blocking"},
+        {"value": 2, "label": "major"},
+        {"value": 3, "label": "minor"}
+      ]
+    }
+  }
+}

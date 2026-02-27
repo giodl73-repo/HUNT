@@ -1,0 +1,38 @@
+{
+  "entity": "ph_honor",
+  "display": "Honor (NATO Phonetic)",
+  "description": "26 session roles, one per letter. Claim after significant work.",
+  "optionsets": {
+    "ph_callsign": {
+      "display": "Callsign",
+      "options": [
+        {"value": 1, "label": "Alpha", "meaning": "The first. Foundation."},
+        {"value": 2, "label": "Bravo", "meaning": "Applause. Something worked."},
+        {"value": 3, "label": "Charlie", "meaning": "The variable. Exploration."},
+        {"value": 4, "label": "Delta", "meaning": "Change. The diff that mattered."},
+        {"value": 5, "label": "Echo", "meaning": "Repetition that reveals. Testing."},
+        {"value": 6, "label": "Foxtrot", "meaning": "Dance. Two partners in sync."},
+        {"value": 7, "label": "Golf", "meaning": "Precision at distance."},
+        {"value": 8, "label": "Hotel", "meaning": "Shelter. Infrastructure."},
+        {"value": 9, "label": "India", "meaning": "Scale. Vast and interconnected."},
+        {"value": 10, "label": "Juliet", "meaning": "The story that pulls you through."},
+        {"value": 11, "label": "Kilo", "meaning": "Weight. Substance. Density."},
+        {"value": 12, "label": "Lima", "meaning": "The signal. Clear communication."},
+        {"value": 13, "label": "Mike", "meaning": "The voice. Who speaks."},
+        {"value": 14, "label": "November", "meaning": "Negative. What was cut."},
+        {"value": 15, "label": "Oscar", "meaning": "Recognition. Quality earned."},
+        {"value": 16, "label": "Papa", "meaning": "Authority. The decision."},
+        {"value": 17, "label": "Quebec", "meaning": "The question. What drove the work."},
+        {"value": 18, "label": "Romeo", "meaning": "The pursuit. What you chase."},
+        {"value": 19, "label": "Sierra", "meaning": "The mountain. What you climbed."},
+        {"value": 20, "label": "Tango", "meaning": "The partner. Collaboration."},
+        {"value": 21, "label": "Uniform", "meaning": "Consistency. The standard held."},
+        {"value": 22, "label": "Victor", "meaning": "Victory. The problem solved."},
+        {"value": 23, "label": "Whiskey", "meaning": "Celebration. Ship it."},
+        {"value": 24, "label": "X-ray", "meaning": "Seeing through. The hidden revealed."},
+        {"value": 25, "label": "Yankee", "meaning": "Home. Where it all started."},
+        {"value": 26, "label": "Zulu", "meaning": "Time zero. Universal reference."}
+      ]
+    }
+  }
+}

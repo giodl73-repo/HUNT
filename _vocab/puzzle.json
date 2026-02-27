@@ -1,0 +1,67 @@
+{
+  "entity": "ph_puzzle",
+  "display": "Puzzle",
+  "optionsets": {
+    "ph_status": {
+      "display": "Status",
+      "options": [
+        {"value": 1, "label": "brief"},
+        {"value": 2, "label": "authored"},
+        {"value": 3, "label": "testing"},
+        {"value": 4, "label": "pass"},
+        {"value": 5, "label": "revise"},
+        {"value": 6, "label": "revised"},
+        {"value": 7, "label": "redesign"},
+        {"value": 8, "label": "ship"}
+      ]
+    },
+    "ph_type": {
+      "display": "Puzzle Type",
+      "options": [
+        {"value": 1, "label": "cipher"},
+        {"value": 2, "label": "crossword"},
+        {"value": 3, "label": "logic_grid"},
+        {"value": 4, "label": "multi_encoding"},
+        {"value": 5, "label": "identification"},
+        {"value": 6, "label": "calculation"},
+        {"value": 7, "label": "primary_source"},
+        {"value": 8, "label": "codon_decode"},
+        {"value": 9, "label": "star_chart"},
+        {"value": 10, "label": "dichotomous_key"},
+        {"value": 11, "label": "influence_chain"},
+        {"value": 12, "label": "voting_paradox"},
+        {"value": 13, "label": "visual_rebus"},
+        {"value": 14, "label": "musical_staff"},
+        {"value": 15, "label": "philosophical_argument"},
+        {"value": 16, "label": "textile_binary"},
+        {"value": 17, "label": "rube_goldberg"},
+        {"value": 18, "label": "frequency_spectrum"},
+        {"value": 19, "label": "geological_cross_section"},
+        {"value": 20, "label": "geometric_construction"},
+        {"value": 21, "label": "letter_exchange"},
+        {"value": 22, "label": "phylogenetic_tree"},
+        {"value": 23, "label": "concept_index"},
+        {"value": 24, "label": "custom"}
+      ]
+    },
+    "ph_difficulty": {
+      "display": "Difficulty",
+      "options": [
+        {"value": 1, "label": "warmup"},
+        {"value": 2, "label": "easy"},
+        {"value": 3, "label": "medium"},
+        {"value": 4, "label": "hard"},
+        {"value": 5, "label": "expert"}
+      ]
+    },
+    "ph_tier": {
+      "display": "Tier",
+      "options": [
+        {"value": 1, "label": "meta_feeder"},
+        {"value": 2, "label": "companion"},
+        {"value": 3, "label": "physical"},
+        {"value": 4, "label": "meta"}
+      ]
+    }
+  }
+}
