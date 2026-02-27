@@ -11,11 +11,11 @@ To encode: same operation (ROT13 is its own inverse).
 
 | ID | Encoded answer |
 |----|---------------|
-| I | |
-| II | |
-| III | |
-| IV | |
-| V | |
+| I | PNFGYR |
+| II | BANTRE |
+| III | YBBZ |
+| IV | GBJRE |
+| V | CNGEHY |
 
 ## Meta
 

@@ -27,7 +27,7 @@ This hunt uses AoE game knowledge as its content library. There are no encyclope
 | `ROUNDS.md` | Stage 3 | ✅ Complete — 5 puzzles + 1 meta, roman numeral ages, WOLOLO |
 | `PUZZLES.md` | Stage 5 | ✅ Complete — 5 puzzles assigned, testers assigned, WOLOLO meta |
 | `HINTS.md` | Stage 8 | Template |
-| `meta/META-DESIGN.md` | Stage 5 | Template |
+| `meta/META-DESIGN.md` | Stage 6 | ✅ Complete — WOLOLO crossword, 5 answer words (CASTLE, ONAGER, LOOM, TOWER, PATROL) |
 | `puzzles/` | Stage 6 | Empty |
 | `reviews/` | — | Empty |
 | `tests/` | — | Empty |
