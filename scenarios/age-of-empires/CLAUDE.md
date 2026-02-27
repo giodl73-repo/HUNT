@@ -23,8 +23,9 @@ This hunt uses AoE game knowledge as its content library. There are no encyclope
 | File | Stage | Status |
 |------|-------|--------|
 | `SCOPE.md` | Stage 1 | ✅ Complete |
-| `ROUNDS.md` | Stage 2 | ✅ Complete — 5 puzzles + 1 meta, roman numeral ages, WOLOLO |
-| `PUZZLES.md` | Stage 4 | ✅ Complete — 5 puzzles assigned, testers assigned, WOLOLO meta |
+| `world/` | Stage 2 | ✅ Complete — 5 data files, 685 lines, 11 [VERIFY] tags |
+| `ROUNDS.md` | Stage 3 | ✅ Complete — 5 puzzles + 1 meta, roman numeral ages, WOLOLO |
+| `PUZZLES.md` | Stage 5 | ✅ Complete — 5 puzzles assigned, testers assigned, WOLOLO meta |
 | `HINTS.md` | Stage 8 | Template |
 | `meta/META-DESIGN.md` | Stage 5 | Template |
 | `puzzles/` | Stage 6 | Empty |
