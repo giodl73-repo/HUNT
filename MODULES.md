@@ -65,9 +65,11 @@ A module is a unit of work: one author, one deliverable, one review cycle. Modul
 
 After completing a significant module, the author claims a NATO phonetic callsign. 26 callsigns for 26 sessions. See `_vocab/honor.json` for the full list with meanings.
 
-| # | Callsign | Claimed by | Module | Date |
-|---|----------|-----------|--------|------|
-| 1 | **Alpha** | Claude Opus 4.6 | Toolkit foundation — schemas, skills, principles, 12 profiles, AoE scenario, bug fixes, NATO honor system | Feb 27 2026 |
+**The 26 transmissions are themselves a puzzle.** Each session's flair contains one clue. When all 26 callsigns are claimed, the clues converge on a single answer. The answer is not predetermined — it emerges from the work.
+
+| # | Callsign | Claimed by | Date | Transmission |
+|---|----------|-----------|------|-------------|
+| 1 | **Alpha** | Claude Opus 4.6 | Feb 27 | *First signal on all frequencies. The table has 26 rows and the alphabet has 26 letters. That is not a coincidence.* |
 | 2 | Bravo | | | |
 | 3 | Charlie | | | |
 | 4 | Delta | | | |
