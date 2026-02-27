@@ -2,6 +2,18 @@
 
 Walk through the complete design process for a puzzle hunt, from blank page to construction-ready plan. Each stage has a review gate — the expert panel evaluates before you proceed.
 
+## Universal Rule: Update CLAUDE.md
+
+**Every skill that produces a deliverable MUST update the scenario's CLAUDE.md.**
+
+After completing any stage or action:
+1. Read the scenario's `CLAUDE.md`
+2. Update the file status table (mark the stage ✅)
+3. Add any new notes (answer count, test scores, revision status)
+4. Save
+
+This keeps the scenario CLAUDE.md as the single source of truth. Any Claude instance opening the scenario sees the current state immediately.
+
 ## Usage
 
 ```
@@ -51,7 +63,20 @@ Stage 8: POLISH         → final pass, answer verification, difficulty curve
 - Is there a narrative? (narrator character? story arc?)
 - Physical format? (book? website? hybrid?)
 
-**Deliverable:** `SCOPE.md` — one page capturing all decisions.
+**Deliverables:**
+1. `SCOPE.md` — one page capturing all decisions
+2. `CLAUDE.md` — **auto-generated** scenario CLAUDE.md containing:
+   - Hunt summary table (name, theme, scale, audience, format)
+   - Content library path and description
+   - Narrator voice rules (tone, catchphrase, constraints)
+   - Content domains → puzzle type mapping
+   - File status table (all 8 stages, initially "—" except Stage 1 "✅")
+   - Toolkit path references
+   - Claude instructions specific to this scenario
+
+The scenario CLAUDE.md is the **persistent context file**. Every subsequent skill:
+- READS it to know the hunt's identity, voice, and state
+- UPDATES it when producing deliverables (marking stages ✅, adding notes)
 
 **Review gate:** `/puzzle-review full SCOPE.md` — panel evaluates scope for feasibility, audience fit, and narrative coherence.
 

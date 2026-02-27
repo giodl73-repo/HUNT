@@ -8,7 +8,11 @@ Track bugs found during scenario testing. Fix and document.
 
 | # | Severity | Location | Description | Found during |
 |---|----------|----------|-------------|-------------|
-| | | | | |
+| 1 | Major | puzzle-plan skill | Stage 1 should auto-generate the scenario CLAUDE.md from scope answers. Currently the scenario CLAUDE.md must be written manually — the skill doesn't produce it. | AoE Stage 1 |
+| 2 | Major | All skills | Skills should update the scenario CLAUDE.md status table as they produce deliverables (e.g., mark Stage 1 ✅ when SCOPE.md is written, Stage 2 ✅ when ROUNDS.md is filled). Currently no skill touches the scenario CLAUDE.md. | AoE Stage 1 |
+| 3 | Minor | puzzle-plan skill | Skill references paths like `puzzle-hunt/PRINCIPLES.md` but in the toolkit structure the path is `toolkit/PRINCIPLES.md`. Path references need to be relative to the scenario, not hardcoded. | AoE Stage 1 |
+| 4 | Minor | puzzle-author skill | Skill references `puzzle-hunt/FINAL-52.md` which is project-specific. Generic toolkit should reference the scenario's `PUZZLES.md` instead. | AoE Stage 1 |
+| 5 | Minor | puzzle-test skill | Skill references `puzzle-hunt/TEST-CREWS.md` which is project-specific. Generic toolkit should reference the scenario's `PUZZLES.md` tester assignments. | AoE Stage 1 |
 
 ## Fixed
 
