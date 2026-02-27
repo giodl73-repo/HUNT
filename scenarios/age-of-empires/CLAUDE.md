@@ -28,7 +28,7 @@ This hunt uses AoE game knowledge as its content library. There are no encyclope
 | `PUZZLES.md` | Stage 5 | ✅ Complete — 5 puzzles assigned, testers assigned, WOLOLO meta |
 | `HINTS.md` | Stage 8 | Template |
 | `meta/META-DESIGN.md` | Stage 6 | ✅ Complete — WOLOLO crossword, 5 answer words (CASTLE, ONAGER, LOOM, TOWER, PATROL) |
-| `puzzles/` | Stage 6 | Empty |
+| `puzzles/` | Stage 7 | ✅ Complete — 5 puzzles authored (CASTLE, ONAGER, LOOM, TOWER, PATROL) |
 | `reviews/` | — | Empty |
 | `tests/` | — | Empty |
 
