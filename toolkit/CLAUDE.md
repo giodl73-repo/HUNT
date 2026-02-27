@@ -79,21 +79,27 @@ claude
 ## The Pipeline
 
 ```
-Stage 1: SCOPE        → what's the hunt about?
+Stage 1:  SCOPE           → what's the hunt about?
   ↓ review gate
-Stage 2: STRUCTURE    → rounds, puzzle counts, metas
+Stage 2:  STRUCTURE       → rounds, puzzle counts, metas
   ↓ review gate
-Stage 3: PUZZLE POOL  → brainstorm candidates
+Stage 3:  PUZZLE POOL     → brainstorm candidates
   ↓ review gate (panel ranks)
-Stage 4: ASSIGNMENT   → assign puzzles to slots
+Stage 4:  ASSIGNMENT      → assign puzzles to slots
   ↓ review gate
-Stage 5: META DESIGN  → how feeder answers combine
+Stage 5:  META DESIGN     → how feeder answers combine
   ↓ review gate
-Stage 6: AUTHORING    → write every puzzle
+Stage 6:  AUTHORING       → write every puzzle
   ↓ testing gate (blind test each)
-Stage 7: INTEGRATION  → assemble, verify crossings
+Stage 7:  EDITORIAL       → admin reviews submissions (/hunt edit)
+  ↓ edit gate
+Stage 8:  INTEGRATION     → assemble, verify crossings
   ↓ review gate
-Stage 8: POLISH       → final pass, hints, answer encoding
+Stage 9:  DELIVERY BUILD  → website, print, UX components
+  ↓ build gate
+Stage 10: PLATFORM TEST   → puzzles work in actual delivery medium
+  ↓ test gate
+Stage 11: POLISH          → final pass, hints, answer encoding
   ↓ ship it
 ```
 
@@ -122,7 +128,7 @@ Each gate is a checkpoint. The expert panel evaluates before you proceed. You ca
 
 ---
 
-## 18 Design Principles (Summary)
+## 20 Design Principles (Summary)
 
 The full list with sources and tests is in `PRINCIPLES.md`. The top 5:
 

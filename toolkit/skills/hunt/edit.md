@@ -31,7 +31,7 @@ Are all facts correct against world/ data?
 - Check game-specific rules (the Speedster often gets these wrong)
 
 ### 3. Principles Check
-Run against the 18 design principles:
+Run against the 20 design principles:
 - Riven Standard: is the puzzle IS the game?
 - No Over-Scaffolding: does the worksheet do the work?
 - No Computation Without Deduction: is there a deduction step?

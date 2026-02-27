@@ -20,6 +20,9 @@ A module is a unit of work: one author, one deliverable, one review cycle. Modul
 | `physical_build` | A physical puzzle component (cipher wheel, punch card, etc.) |
 | `narrative` | Narrator voice, intros, closing text |
 | `testing_pass` | Test all puzzles in a round (no authoring, just testing) |
+| `ux_app` | An interactive puzzle component (mini-game, fake UI, web app) |
+| `website` | The hunt delivery website (puzzle pages, answer submission, theme) |
+| `print_assets` | Print-formatted puzzle pages, physical handouts, PDFs |
 
 ---
 

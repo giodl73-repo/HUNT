@@ -46,7 +46,7 @@ Updates MODULES.md and PUZZLES.md:
 
 Creates a new module row in MODULES.md with:
 - Auto-incremented ID
-- Scope (single_puzzle, round, meta, physical_build, narrative, testing_pass)
+- Scope (single_puzzle, round, meta, physical_build, narrative, testing_pass, ux_app, website, print_assets)
 - Round assignment
 - Status: unassigned
 
@@ -85,7 +85,7 @@ You are author [name], assigned to Module [id].
 
 ## What You Need
 1. Read the scenario CLAUDE.md for hunt identity and voice rules
-2. Read toolkit/PRINCIPLES.md for the 18 quality principles
+2. Read toolkit/PRINCIPLES.md for the 20 quality principles
 3. Run `/puzzle <id> brief` to see your puzzle's full brief
 4. Run `/puzzle <id> author` to start writing
 5. Run `/puzzle <id> test` when done — target ≥22/30
