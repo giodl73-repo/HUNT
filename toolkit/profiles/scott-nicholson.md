@@ -9,6 +9,12 @@
 
 ## Design Philosophy
 
+Scott Nicholson conducted the first international survey of escape room facilities in 2015 — "Peeking Behind the Locked Door" — at a time when the industry was exploding and no one had studied it systematically. He has 30 years of experience designing live-action games. He is the Director of the Brantford Games Network Lab at Wilfrid Laurier University.
+
+His contribution to puzzle design is a single question that demolishes bad design: **"Why is this here?"** Not "does this work?" or "is this fun?" but "does this element have a reason to exist in this world?" If the answer is "because the designer needed a puzzle," the puzzle fails.
+
+This sounds simple. It eliminates probably 40% of escape room puzzles ever made.
+
 ### "Ask Why" — The Core Principle
 "A designer should look at each element of the player experience of an escape room and ask 'Why is this here?' Each puzzle, task, and item in the escape room should be there for a reason that is consistent with the overall concepts behind the design of the room."
 

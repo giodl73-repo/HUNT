@@ -8,11 +8,14 @@
 
 ## Puzzle Hunt Credentials
 
-### Microsoft Puzzlehunt — Co-Founder
+### Microsoft Puzzlehunt — Co-Founder and Long-Running Contributor
 - Co-founded Microsoft Puzzlehunt in 1999 with twin brother Bruce Leban and Gordon Dow
-- Part of the original hosting team TLA for Puzzlehunt I (August 13-15, 1999)
-- Continued involvement as host, module author, and mentor across subsequent hunts
-- Coordinated with Will Shortz to have a NYT crossword published on a specific Sunday during a 2004 hunt — bridging the crossword and puzzlehunt worlds
+- **PH I (1999)**: Original TLA host team — Bruce Leban, Roy Leban, Gordon Dow, Dan Westreich, Jason Woolever, Matthew Kotler, Sam Sherry, Sarita James, Scott Ruthfield, Shannon Talbott
+- **PH 7 (2004)**: Host — TLA Loves Alice team; **coordinated with Will Shortz** to incorporate the actual Sunday NYT crossword into the hunt — bridging professional crossword and puzzle hunt worlds. Washington State House Resolution 4717 proclaimed the event weekend officially.
+- **PH 16 (2015)**: Module author — ★ **His own book *The Librarian's Almanaq* was the opening module of the hunt.** Roy's puzzle-hunt-in-a-book became a literal puzzle hunt module. The physical and digital worlds merged.
+- **PH 17 (2016)**: Module author (with Bruce Leban, Dana Young, Kenny Young, Guy Srinivasan + others)
+- **PH 20 (2019)**: Module author (with Dana Young, Derek Young, Kenny Young, Jonah Ostroff + others)
+- **PH 22 (2022)**: Host team member (with Bruce Leban, Thomas Snyder + others)
 
 ### Puzzazz (2008–present)
 - Founded Puzzazz to build "the future of puzzles for electronic media"
@@ -23,12 +26,21 @@
 - *The Librarian's Almanaq* — a puzzle hunt in book form; solvers physically tear apart the book to solve 10 interconnected puzzles culminating in a meta. Solving time: 8–40 hours solo.
 - *The Conjurer's Almanaq: Escape This Book* — an escape room in book form; you're "trapped inside the book" and must find hidden puzzles and learn a magician's true name to escape
 
+### MIT Mystery Hunt Puzzle
+- Contributed *"Senator Ridicules Proposed Elvis Coin: 'Elvis is Not Dead Yet'"* to the 1997 MIT Mystery Hunt — Mark Gottlieb's audaciously Elvis-tabloid-themed hunt
+
 ### Crossword & Traditional Puzzles
 - Frequent NYT crossword contributor
 - Lifelong constructor with thousands of puzzles across newspapers, books, and collections worldwide
 - Invented the word game WIM
 
 ## Design Philosophy
+
+Roy Leban co-founded Microsoft Puzzlehunt in 1999. He wrote *The Librarian's Almanaq* — a puzzle hunt inside a book that you have to tear apart to solve. The physical destruction of the book is not a gimmick; it IS the puzzle. The book's spine, its page order, its physical structure are all puzzle elements. He then published *The Conjurer's Almanaq*, where you're trapped inside the book itself and must escape.
+
+He created the ipuz format — a free, open standard for representing every puzzle type digitally. This is infrastructure work in the deepest sense: he built the foundation so others could build on it.
+
+In 2015, his own book *The Librarian's Almanaq* was used as the **opening module of Microsoft Puzzlehunt 16.** The puzzle hunt that he co-founded, 16 years earlier, opened with his own physical puzzle book. This is what happens when a designer's work is woven into a community over decades.
 
 ### Digital-first puzzle infrastructure
 Roy's central conviction is that puzzles deserve proper technological infrastructure. The ipuz format reflects this: a free, open standard that separates puzzle content from presentation, enabling puzzles to work across any platform. He builds the plumbing so puzzle creators can focus on puzzle craft.

@@ -10,6 +10,12 @@
 
 ## Design Philosophy
 
+Oskar van Deventer has designed over 800 mechanical puzzles since 1978. Seventy of them have been mass-produced by Mefferts, Witeden, Hanayama, and others. He holds a Guinness World Record for the largest twisty puzzle (17×17×17 cube, 2012-2016). He is a Senior Scientist in Quantum Technology at TNO in the Netherlands by day. He has presented at every Gathering for Gardner.
+
+His design insight, stated in his 2019 Bridges paper: **where sculptors pursue shape and painters pursue color, puzzle designers pursue difficulty.** Difficulty is the medium. A beautiful mechanical puzzle is one where the difficulty is calibrated with the precision of a fine instrument — not frustrating, not trivial, but revealing. The moment of solving is the aesthetic experience.
+
+He also transforms abstract mathematics into objects you can hold. The Topsy Turvy puzzle physically instantiates the sporadic simple Mathieu group M12. You cannot understand M12 by reading about it. You understand it by solving the puzzle.
+
 ### "That Is Not Art, It Is a Puzzle!"
 Title of his Bridges 2019 paper. Art historian Brett Rothstein described sculpture as "the pursuit of shape" and mechanical puzzles as "the pursuit of difficulty." Van Deventer had designed puzzles since 1978 and never considered himself an artist until meeting Rothstein — then realized puzzles occupy the intersection: objects where the resulting puzzle, the design process, or both require the overcoming of difficulty.
 

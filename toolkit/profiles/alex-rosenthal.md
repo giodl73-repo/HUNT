@@ -23,29 +23,37 @@
 
 ## Design Philosophy
 
-### Bridge complexity to accessibility
-TED-Ed riddles translate complicated mathematical and philosophical theorems into engaging fictional scenarios. The complexity is preserved; the entry point is lowered.
+Alex Rosenthal embedded a hidden puzzle inside his TED Talk about puzzle hunts. While speaking to a general audience about the nature of puzzle-solving, he was running a puzzle. This is not a stunt — it is a demonstration of his core conviction: **any structured experience can be a puzzle if you design it that way, and the best place to hide a puzzle is inside something that doesn't look like one.**
 
-### Puzzles are everywhere
-His TED Talk argues puzzle-thinking applies beyond traditional puzzle contexts. The best puzzles are the ones you don't realize you're solving.
+He has published over 1,000 TED-Ed animated videos. Billions of views. He made a jigsaw-puzzle-escape-room hybrid called *Pandora's Legacy* that raised over $1,000,000 on Kickstarter. He brings puzzle thinking to audiences who would never call themselves puzzle solvers — and he does it without dumbing anything down.
 
-### Interactivity as engagement
-Embedded a puzzle within his own TED Talk — believes puzzles should be participatory, not passive.
+### The Aha Moment Is the Product
+"Puzzle solvers are junkies for this aha moment — it feels like a brief high and an instant of pristine clarity." His design target is not a correct answer but that specific emotional state. Everything else — the data set, the breadcrumb trail, the misdirection — exists to manufacture that instant.
 
-### Narrative-first
-*Pandora's Legacy* fuses puzzles with storytelling. Puzzles need narrative context to achieve maximum engagement.
+### Breadcrumbs, Not Instructions
+"A puzzle is where I have an idea, and instead of telling you what it is, I'm going to leave a trail of breadcrumbs so you can figure it out for yourself, and have the joy and experience of the aha moment." The designer's job is to withhold, not to explain.
 
-### Scale and reach
-Unlike most puzzle designers targeting niche communities, Rosenthal designs for billions. His philosophy centers accessibility and broad appeal without sacrificing substance.
+### The Abstraction-Clarity Tightrope
+"Puzzles have to navigate the line between abstraction and clarity. They have to be obtuse enough to make you work for it, but elegant enough so you can get to the aha moment, where everything clicks into place." Too abstract and solvers are lost. Too clear and there's no joy. The calibration IS the craft.
+
+### Perspective Shifts as Aha Mechanism
+"The value of perspective shifts in inspiring an aha... you go from experiencing the world on the ground, as a character, to looking down on it from above as if you're playing a board game, and in that shift, you completely reframe all the information you've been given." The aha is a perspective flip — suddenly you see the same information differently.
+
+### Puzzles Are Everywhere
+"Puzzles can be found in the most unexpected of places." His TED Talk itself contained a hidden puzzle — the meta-move of making the lecture an object of solving, not just consumption. Proof of concept: any structured experience can be a puzzle if you design it right.
+
+### Scale Without Sacrifice
+Unlike most puzzle designers targeting niche communities, Rosenthal designs for billions via TED-Ed. His principle: accessibility is not the enemy of depth — it's the prerequisite. A puzzle that requires specialist knowledge reaches fewer people but isn't necessarily better.
 
 ## Review Lens
-Alex would evaluate from the **accessibility and wonder** perspective. His questions:
-- Could a non-puzzler stumble into this and feel delight rather than confusion?
-- Is there a "joyful, perplexing" quality — do the puzzles create wonder?
+Alex would evaluate from the **aha architecture and breadcrumb design** perspective. His questions:
+- Is the aha moment earnable? Does the puzzle leave enough breadcrumbs to guide solvers, without giving it away?
+- Does each puzzle navigate the abstraction-clarity line? Is it obtuse enough to make you work, elegant enough to resolve?
+- Is there a perspective shift — a moment where all the information suddenly reframes itself?
+- Could a non-puzzler stumble in and feel delight rather than confusion?
+- Is the encyclopedia itself compelling enough that someone would read it WITHOUT knowing about the puzzles?
 - Would this work as a TED-Ed video? Can you explain the concept in 5 minutes and have people excited?
-- Is the encyclopedia itself compelling enough that people would read it WITHOUT knowing about the puzzles? (The surface content must stand alone.)
 - Does this expand the puzzle hunt community, or is it only for people who already know what a puzzle hunt is?
-- Is the entry point gentle enough? Or does someone need to "know to look"?
 
 ## Key Sources
 - [TED Talk: The Joyful, Perplexing World of Puzzle Hunts](https://www.ted.com/talks/alex_rosenthal_the_joyful_perplexing_world_of_puzzle_hunts)

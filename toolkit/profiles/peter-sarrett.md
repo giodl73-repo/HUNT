@@ -11,13 +11,14 @@
 ### Microsoft Puzzlehunt — Team "Cracking Good Toast"
 Captain/core member of one of the most successful MS Puzzlehunt teams in history.
 
-| Hunt | Year | Role |
-|------|------|------|
-| Puzzlehunt III (Game Shows) | 2000 | Host |
-| Puzzlehunt VI (TimeCorps) | 2003 | Host — 8-hour win margin (largest in history) |
-| Puzzlehunt 8 (The Hard Way) | 2005 | Winner — first three-time champion |
-| Puzzlehunt 123 | 2009 | Co-host (with Kenny/Dana Young) |
-| Puzzlehunt 21 | 2021 | Full module author |
+| Hunt | Year | Role | Notes |
+|------|------|------|-------|
+| PH III: You Don't Know Puzzles | 2000 | **Host** | Cracking Good Toast: Jack Bridges, Jennifer Gosnell, Mark Lambert, Alex Mogilevsky, Tom Powers, Brian Sanderson, **Peter Sarrett**, Ken Wong, Mark Engelberg |
+| PH VI: TimeCorps | 2003 | **Host** | Cracking Good Toast: Andrew Becker, Rolf Buchner, Thomas Coon, Greg Hermann, Victor Kozyrev, Mike Marcelais, Don Munsil, **Peter Sarrett**, Roger Wolff; 8-hour win margin — largest in hunt history |
+| PH 8: The Hard Way | 2005 | **Winner** | Part of Cracking Good Toast winning team — first three-time champion team |
+| PH 123: Jeopardy!/Puzzlehaunt! | 2009 | **Co-host** | Cracking Good Toast contingent with Usual Suspects + Dana/Kenny Young |
+| PH 20: Theater | 2019 | **Author** | Modular author alongside Dana Young, Derek Young, Kenny Young, Jonah Ostroff, Roy Leban |
+| PH 21: Video Games | 2021 | **Author** | Modular author alongside Dana Young, Kenny Young, Derek Young, Matt Du |
 
 ### Signature Innovations
 - **"Chicago Fire" puzzle** (PH VI, 2003): Crossword printed on red construction paper. Solvers had to pour water on it — Scotch-Guarded squares remained legible, revealing the answer. Legendary physical/tactile puzzle design.
@@ -40,6 +41,14 @@ Captain/core member of one of the most successful MS Puzzlehunt teams in history
 | Destiny 2: Forsaken (Gambit) | 2018 | Senior Technical Designer — designed PvE/PvP hybrid mode |
 
 ## Design Philosophy
+
+Peter Sarrett designed the Chicago Fire puzzle. Solvers received a crossword printed on red construction paper and had to pour water on it. The Scotch-Guarded squares stayed legible. The rest washed away. The answer appeared.
+
+This is the puzzle hunt community's most cited example of physical design done right. It's cited not because it was spectacular — though it was — but because **the physical medium was the mechanic.** You weren't doing a crossword and then doing a physical thing. The physical interaction was the solve. The paper wasn't a delivery vehicle for the puzzle; the paper was the puzzle.
+
+Sarrett is also the designer of Gambit mode for Destiny 2, which 150 million players have experienced. He spent GDC 2019 explaining how his team killed their own design pillars when those pillars couldn't answer basic player questions. He won $250,000 on Who Wants to Be a Millionaire. He runs Puzzlehop, puzzle hunts in theme parks where the park itself is the medium.
+
+The through-line: **the environment is never just a setting.** It is always a constraint, a collaborator, a puzzle piece.
 
 ### "Focus on what players are already doing"
 Keep mechanics intuitive. Don't force novel behavior — build on existing instincts.

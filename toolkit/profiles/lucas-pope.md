@@ -8,8 +8,17 @@
 
 ## Design Philosophy
 
+Lucas Pope works alone, ships games that sell millions of copies, wins BAFTAs, and then returns to his self-imposed constraints to start over. His method is: find the constraint that makes the interesting problem, then solve it. This produces games that feel inevitable — as though no one else could have made them, as though they had to exist in exactly this form.
+
+The Rule of Three in Obra Dinn is the clearest demonstration of his thinking at the puzzle level: **never confirm a deduction until it's part of a cluster, because the system must be unsolvable by brute force.** He designed anti-cheating into the confirmation mechanic. The puzzle teaches you to think in clusters, not answers.
+
 ### Constraint-Driven Design
 "If there's no problem, then I'm not that interested. But if there's a problem, if there's some restriction or limitation, then I'm interested suddenly." Every game starts with a self-imposed constraint. The game emerges from solving the problems that constraint creates.
+
+Concrete examples:
+- Papers, Please: "Can you play a game by just playing the role of an immigration officer and checking documents?" — a whole game from a single absurd constraint
+- Obra Dinn: "Can you play a modern 3D game with 1-bit graphics?" — aesthetic constraint driving all visual and technical decisions
+- "I realized that just moving documents is fun, so I was convinced that I could create a game based on this."
 
 ### Rigid Core Mechanics
 "I'm a big fan of rigid core mechanics." In Obra Dinn: "something very basic and simple that you're doing is filling out a matrix of features for your list of identities." Simple system, deep consequences.

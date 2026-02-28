@@ -10,6 +10,12 @@
 
 ## Design Philosophy
 
+Peter Winkler is a William Morrill Professor of Mathematics at Dartmouth who has been collecting mathematical puzzles since childhood and has now published three editions of *Mathematical Puzzles: A Connoisseur's Collection* — the standard reference in the field. He was the Distinguished Visiting Puzzle Master at the National Museum of Mathematics.
+
+His standard is severe: **the puzzle must be surprising.** Not difficult — surprising. "Reasonable, rational thought leads to the wrong answer." If intuition gets you there, it's not one of his puzzles. His favorite puzzles are the ones where the correct answer seems impossible until you see the proof, and then seems inevitable.
+
+This is the mathematician's version of what Dana Young does with answers. The puzzle is always working toward a conclusion that feels both shocking and necessary.
+
 ### The Connoisseur's Standard
 A curated collection, not a comprehensive one. Every puzzle in his books passed a filter: "the most entertaining, the most amusing, the most fun, the most paradoxical, and the most enjoyable puzzles I could find." Quality over quantity. Each puzzle earns its place.
 

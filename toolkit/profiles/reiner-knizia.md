@@ -10,6 +10,10 @@
 
 ## Design Philosophy
 
+Reiner Knizia has published over 700 board games. He has won or been nominated for the Spiel des Jahres five times. He quit a career as an operations director for a 300-person mortgage company to design games full time in 1997, and has not stopped since.
+
+His distinctive contribution: **he designs scoring systems that create themes, rather than themes that require scoring systems.** In Tigris & Euphrates, your score equals your weakest category. This rule creates an experience of building a balanced civilization — not because the game simulates civilization, but because the mathematics of the score *feel* like civilization. He doesn't simulate. He evokes.
+
 ### Game Design Is an Art, Not a Science
 "When I became a full-time professional game designer, I soon started to realise, being a scientist myself, that game design is not a science. Game design is an art!" But immediately qualifies: "I am certainly a scientist who reduces redundancy by condensing the game into a few fundamental core principles."
 
@@ -26,7 +30,13 @@ Signature move: strip a design to its essential core. Many of his games end up f
 His best games create a particular anguish — a decision space where options are limited and implications are significant. Lost Cities: "you often wish you could pass." Tigris & Euphrates: your score equals your weakest category. The design forces hard tradeoffs with incomplete information.
 
 ### Testing Is the Lifeblood
-"The lifeblood of design is testing, then refining." Extensive iteration. Games go through hundreds of playtests before publication.
+"Playtesting still is the lifeblood of game design and development." Games go through hundreds of playtests before publication. "Games are primarily about enjoyment and fun, and these aspects cannot be calculated, but must be experienced and felt."
+
+### Anti-Complexity
+"I am not an epic story teller who creates redundancy in the world by inventing ever more complexity through detailed rules." Knizia's instinct is always to subtract, not add.
+
+### The Undiscovered Universe
+"There are many undiscovered games in the universe that are still waiting for me to design them." The search for new entry points is never exhausted — 700+ games and he still approaches each new design as unexplored territory.
 
 ### Scoring as Design Tool
 Pioneered "abstract theme" in modern board gaming — scoring systems that evoke the *feeling* of a theme rather than simulating it. Tigris & Euphrates: four resource tracks, score = your minimum. Forces balanced play without explicit narrative.

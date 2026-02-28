@@ -8,6 +8,10 @@
 
 ## Design Philosophy
 
+Jonathan Blow made The Witness with 135 hidden anamorphic puzzles that most players never found. They exist because he believes there should always be another layer if you look carefully enough — and because he was willing to hire real architects to make sure the environment earned that attention.
+
+The key to his thinking: **epiphany is not a reward for solving, it is the point of solving.** The game exists to manufacture the experience of sudden understanding. Everything else is in service of that.
+
 ### Truth as Foundation
 "To design a good puzzle, create a situation, examine what the 'truth' of the situation is, and use that." Games are instruments for observing truth — like telescopes or electron microscopes.
 

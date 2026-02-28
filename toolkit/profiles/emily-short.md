@@ -9,6 +9,12 @@
 
 ## Design Philosophy
 
+Emily Short's *Counterfeit Monkey* is ranked #1 on IFDB — the interactive fiction database — out of over 11,000 games. She achieved this with a mechanic where removing a letter from a word transforms the object into a different object in the game world. CRATE becomes RATE becomes TEAR becomes TEA. The word IS the thing. When you rename it, you've changed it.
+
+This is not a metaphor. It is a literal world model where language has physics.
+
+Her insight: **the best puzzle systems are ones where just messing around with the system is as much fun as using it to solve puzzles.** She's not designing puzzles, she's designing worlds with interesting properties. The puzzles emerge from the properties.
+
 ### Systemic Mechanics Over One-Off Puzzles
 "I enjoy the kind of game where the player becomes increasingly skilled at applying the rules of the game-world, rather than facing off against a bunch of unrelated single puzzles; it's easier to do that if you start with a consistent world model." The world system IS the puzzle. Counterfeit Monkey: letter-removal as a physics of the world.
 
@@ -16,7 +22,19 @@
 "Emergence is easier when not all interactions are direct results of player input; if components interact with each other even when the player isn't directly manipulating both, there will be more causal chains forming a complex causal net." Emergent puzzles — things players set for themselves as goals — improve stories by making "the artificiality of puzzles and puzzle solutions disappear."
 
 ### Easy But Not Boring
-"Anyone can come up with a hard puzzle. What takes skill is writing a reasonably easy but not boring one." The calibration challenge: accessible entry with genuine depth.
+"Pretty much anyone can come up with a hard puzzle; what takes skill is writing a reasonably easy but not boring one." The calibration challenge: accessible entry with genuine depth.
+
+### The Three Fair Puzzle Categories
+Short established that well-designed puzzles fall into at least one:
+1. **Knowing what to change but not what to change it into** — you see the source, the target is the discovery
+2. **Knowing what to create but not the source material** — you know the goal, the path is the discovery
+3. **Having clear category requirements with multiple valid solutions** — the system invites exploration
+
+### Productive Systematic Mechanics
+"A productive systematic mechanic is one that suggests multiple interesting permutations... can be implemented with general rules... has clear and readily expressible failure outcomes." The Counterfeit Monkey word-manipulation system (CRATE→RATE→TEAR→TEA) embodies this: multiple letter operations, each with clear rules and obvious failure states.
+
+### The Color-Coded Fairness Chart
+During Counterfeit Monkey development, Short maintained a color-coded puzzle chart to enforce fairness standards and prevent puzzles from becoming unfairly difficult. Systematic quality control at the design level, not just playtest level.
 
 ### Playing With the System Is the Fun
 Counterfeit Monkey's word-manipulation mechanic: "Just messing around with the system is as much fun as using it to solve the puzzles." The system invites play, not just solution. Multiple solutions to most puzzles — some bypass other puzzles entirely.

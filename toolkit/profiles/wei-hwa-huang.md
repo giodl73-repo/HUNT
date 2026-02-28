@@ -20,10 +20,20 @@
 - Active contributor to Grandmaster Puzzles
 - Designed *Roll for the Galaxy* (with Tom Lehmann, Rio Grande Games, 2014)
 
+### MIT Mystery Hunt — Team Left Out
+- Part of Team Left Out (won 2019, wrote 2020)
+- Authored **15 puzzles** across 2012 and 2020 hunts
+- 2012: *Equal Billing*
+- 2020 (14 puzzles): *Domino Maze*, *Carousel*, *Penny Park Guide*, *Director's Cut*, *Lion*, *Jack*, *Ms. Cunningham*, *Safari Adventure*, *Peak Adventure*, *Goliath's Goof*, *The Horse Whisperer*, *The Prickly Pear*, *Wanted: Gangs of Six*, *Cactus Ranch*
+
 ### Microsoft Puzzlehunt Connection
 - Liked Puzzlehunt 8 ("The Hard Way") enough to organize a **re-enactment at the Googleplex** (March 2005) — bridging the MS and Bay Area puzzle communities
 
 ## Design Philosophy
+
+Wei-Hwa Huang has won the World Puzzle Championship four times. He is one of the greatest competitive puzzle solvers who has ever lived — and he uses that experience to make puzzles that other great solvers cannot shortcut.
+
+The Just One Cell Sudoku format he co-invented with Thomas Snyder is a technical achievement with a philosophical foundation: **the puzzle must test the skill you claim to test, and must make all other approaches to the answer useless.** If a solver can brute-force your puzzle, it's not a puzzle — it's a search problem. Wei-Hwa designs to close that door.
 
 ### Quality = how much the intended solution stands out
 "The quality of a puzzle can be inferred from how much the intended solution stands out" and how understandable the solving path is. This is his core metric.

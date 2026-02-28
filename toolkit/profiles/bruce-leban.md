@@ -8,11 +8,13 @@
 
 ## Puzzle Hunt Credentials
 
-### Microsoft Puzzlehunt — Primary Founder
+### Microsoft Puzzlehunt — Primary Founder and Long-Running Contributor
 - Founded Microsoft Puzzlehunt in 1999 with twin brother Roy Leban and Gordon Dow
-- Led the original hosting team TLA (with Dan Westreich, Jason Woolever, Matthew Kotler, Sam Sherry, Sarita James, Scott Ruthfield, Shannon Talbott)
-- Coined the term "puzzlehunt" in 1998 to name the format — the word itself entered the puzzle community's vocabulary from Bruce's usage
-- Continued hosting and organizing across subsequent Puzzlehunt iterations
+- **PH I (1999)**: Original TLA host team — Bruce Leban, Roy Leban, Gordon Dow, Dan Westreich, Jason Woolever, Matthew Kotler, Sam Sherry, Sarita James, Scott Ruthfield, Shannon Talbott
+- **PH 7 (2004)**: Co-host — TLA Loves Alice (with Roy Leban, Gordon Dow, Elan Lee, Kiran Kedlaya + others); negotiated with Will Shortz to embed the actual Sunday NYT crossword in the hunt; hunt received Washington State House Resolution 4717
+- **PH 17 (2016)**: Module author (with Dana Young, Kenny Young, Roy Leban, Guy Srinivasan + others)
+- **PH 22 (2022)**: Host team member (with Roy Leban, Thomas Snyder, Guy Srinivasan + others); first threaded format hunt
+- Coined the term "puzzlehunt" in 1998 — the word entered the community's vocabulary from his usage
 
 ### National Puzzlers' League
 - Assistant editor of *The Enigma*, the NPL's monthly puzzle magazine, for over 10 years
@@ -22,25 +24,32 @@
 - Over 20 years of puzzle construction
 - NYT crossword constructor (with David Steinberg, 2015)
 - Created COCOA (Conundrum Cognitive Assessment) — a puzzle-based cognitive test
-- Created "Alice in Puzzlehunt" — a themed puzzle experience
+- Created "Alice in Puzzlehunt" — a themed puzzle experience (themed on Lewis Carroll's *Alice*)
 - Published *Jumping to Conclusions*, a book of hangman riddles
+- MIT Mystery Hunt 2001: authored *Snakes*
 
 ## Design Philosophy
 
+Bruce Leban coined the word "puzzlehunt" in 1998. Before that word existed, the format couldn't spread — it had no name, no genre identity, no way to be recognized as a distinct thing. After he named it, teams started organizing around the concept, the format grew, and 26 years later it is an international phenomenon.
+
+He also co-founded Microsoft Puzzlehunt with his twin brother Roy Leban and Gordon Dow, ran it for its first event, and has continued contributing for 25 years. He spent over a decade editing *The Enigma*, the National Puzzlers' League monthly magazine — developing the editorial instinct that every clue must be fair, every ambiguity intentional.
+
+**His legacy is structural:** he named a genre, built its first instance, and spent a decade editing its standards.
+
+### Naming creates genres
+Bruce coined the word "puzzlehunt" in 1998 — and this act was consequential, not incidental. By naming the format, he gave the community a shared vocabulary and a genre identity distinct from crosswords, scavenger hunts, and trivia. Naming is design: it defines the edges of a thing and makes it reproducible. Before the word existed, the format couldn't spread. After the word, it could.
+
 ### The "quirky puzzle" aesthetic
-Bruce gravitates toward puzzles that are surprising, playful, and slightly off-kilter. COCOA turns a cognitive assessment into a series of conundrums. "Alice in Puzzlehunt" wraps puzzle mechanics in Carrollian whimsy. The design signature is puzzles that make you smile while you solve.
+Bruce gravitates toward puzzles that are surprising, playful, and slightly off-kilter. COCOA turns a cognitive assessment into conundrums. "Alice in Puzzlehunt" wraps mechanics in Carrollian whimsy. The hangman-riddle book uses a familiar framework to deliver unexpected logic. His signature: puzzles that make you smile while you solve them.
 
-### Puzzlehunt as a distinct genre
-By coining "puzzlehunt," Bruce wasn't just naming an event — he was asserting that the format is its own genre, distinct from crosswords, scavenger hunts, or trivia contests. A puzzlehunt has a specific structural grammar: solve-to-unlock progression, meta-puzzle architecture, team-based collaboration.
+### Editorial precision from a decade at *The Enigma*
+Ten-plus years editing the NPL's monthly puzzle magazine instilled a rigorous editorial standard: every clue must be fair, every answer checkable, every ambiguity intentional. The NPL tradition — which Bruce lived from the inside — holds that cleverness is mandatory but difficulty is optional. A puzzle can be hard OR easy; it cannot be unfair.
 
-### Editorial discipline from NPL tradition
-A decade editing *The Enigma* means Bruce approaches puzzle construction with magazine-editor rigor: every clue must be fair, every answer must be checkable, every ambiguity must be intentional. The NPL tradition values precision and cleverness over difficulty.
+### Puzzlehunt as social infrastructure
+Microsoft Puzzlehunt was designed from the start as a team event inside a workplace. The puzzle is the *excuse* for the social experience — colleagues who would never interact discovering shared problem-solving capabilities. Bruce understood this from the founding moment: the format's power isn't intellectual, it's social.
 
-### Puzzles as social objects
-Microsoft Puzzlehunt was designed from the start as a team event inside a workplace. The puzzle is the excuse for the social experience — colleagues who would never interact discovering shared problem-solving capabilities.
-
-### Accessibility through humor
-The hangman-riddle book, COCOA, and "Alice in Puzzlehunt" all use humor and familiar cultural frames to lower the barrier to entry. Solvers engage because the wrapper is inviting, then discover the puzzle depth underneath.
+### Accessibility through humor and familiar frames
+COCOA, "Alice in Puzzlehunt," and *Jumping to Conclusions* all use humor and recognizable cultural frameworks to lower the entry barrier. Solvers engage because the wrapper is inviting, then discover the puzzle depth underneath. The whimsy is structural — it does the work of onboarding.
 
 ## Review Lens
 Bruce would evaluate from the **genre definition and editorial precision** perspective. His questions:

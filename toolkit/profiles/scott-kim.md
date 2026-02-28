@@ -10,6 +10,12 @@
 
 ## Design Philosophy
 
+Scott Kim is "the Escher of the Alphabet." He and John Langdon independently co-discovered ambigrams — words written so that they read the same (or differently) from multiple orientations. He earned his PhD under Donald Knuth at Stanford. He designed puzzle configurations for Tetris, Bejeweled, and Rush Hour. He published a monthly puzzle column in *Discover* magazine for over a decade.
+
+His TED talk in 2008 defined puzzles for a generation: *a problem that is fun to solve and has a right answer.* Three elements, each doing work. Most things called puzzles fail at least one of these. Most things that feel like puzzles aren't puzzles at all — they're toys (no right answer) or work (not fun) or games (you beat another player, not a problem).
+
+**He thinks in spatial transformation.** Ambigrams are his native language: the same marks encode two things simultaneously, and the revelation of the second reading is the puzzle.
+
 ### Definition: A Puzzle Is a Problem That Is Fun to Solve and Has a Right Answer
 His canonical definition. Three elements, each doing work: *problem* (there is a challenge), *fun* (the solving process is enjoyable, not just the solution), *right answer* (there is closure — you know when you're done). Distinct from a game (beat another player) or a toy (open-ended play).
 

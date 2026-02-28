@@ -9,11 +9,17 @@
 ## Puzzle Hunt Credentials
 
 ### Microsoft Puzzlehunt — Staggering Geniuses
-- **Puzzlehunt 8 ("The Hard Way")** — Host. The Las Vegas-themed hunt featured a 3D-construction meta where solvers built a model of buildings, positioned it on a map, and shone light through it to cast shadows forming a phone number. GAMES magazine published portions of this hunt.
-- Won PH 7, hosted PH 8.
+- **Won PH 7** (Alice in Puzzlehunt, 2004) — Staggering Geniuses were the only team to finish; earned the right to host
+- **Hosted PH 8** (The Hard Way, 2005) with Mark Gottlieb, Amanda O'Connor, Sean Trowbridge, Matt Ruhlen, Greg Lewis, Jason Alcock, Matt Dixon, Ron Giesen, Matt Jones, Chris McBride, Chris Pearo
+- Las Vegas theme: 57 teams (643 players), 6 finishing teams
+- ★ Signature puzzle mechanic: Las Vegas travel brochure with 7 embedded puzzles + metapuzzle; building cutout models positioned on a map — when illuminated, shadows revealed a phone number
+- First hunt with three-time winner; first team to solve ALL puzzles (non-winning team)
+- Featured in **November 2005 GAMES World of Puzzles**
 
 ### MIT Mystery Hunt
-- Wrote puzzles for 2007 and 2009 hunts.
+- Wrote puzzles for 2007 and 2009 hunts — **60 puzzles total**, one of the largest single-person contributions across those years
+- **2007** (22 puzzles): *Really Really Evil Certificate Meta-Meta*, *Team Dynamics*, *Episodic Disorder*, *The Continental DiViDe*, *DRUGGLE*, *Writing Nerds*, *Round V Meta*, *I Love These 80*, *Crescent City Blues*, *Cambridge Tea Party*, *Round VIII Meta*, *1 - 1 = 1*, *Creature Discomforts*, *For Gearheads Only*, Greed/Envy events, and more
+- **2009** (38 puzzles): *pluHarmony*, *Invasion of the Micronauts*, *Timecop*, *Pimp Your Starcrafts*, *Discworld*, *Supercollider*, *Our Favorite Martian*, *Robots in Disguise*, *The Satellite of Love*, *I Can Haz Zyzzlburger*, *Track Meet*, *Initial Reactions*, and many more
 
 ### Published Puzzles
 - *Chicago Tribune*, *New York Times*, *Games Magazine* (started at age 15)
@@ -33,6 +39,10 @@
 - *The Maze of Games* — interactive puzzle novel
 
 ## Design Philosophy
+
+Mike Selinker designed puzzles for the New York Times at age 15. He co-hosted Microsoft Puzzlehunt 8 with Mark Gottlieb, writing 22 puzzles in a single hunt. He authored 38 more for the 2009 MIT Mystery Hunt — by which point he was serving as the hunt's puzzle developer, the person who assigned and developed the entire 150-puzzle event. He founded Lone Shark Games, "the most respected puzzle event business in the country," and in 2024 published *The Hunting of the Shark* with 100 of the top puzzle designers in the world.
+
+His conviction: **story is not what happens between puzzles — it's what puzzles are made of.** A puzzle that could have any theme has no theme. A puzzle that could only have *this* theme has a story.
 
 ### Narrative is load-bearing, not decorative
 "Games aren't just mechanics. The stories we tell during gameplay are as essential as the rules themselves." Puzzles embedded in stories should feel like genuine narrative experiences.

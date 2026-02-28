@@ -30,6 +30,12 @@
 
 ## Design Philosophy
 
+Brent Holman co-founded Shinteki in 2001 with five friends, naming it after the Japanese word for "mental, physical, and psychological." For 25 years, Shinteki events have been the benchmark for production quality in Bay Area puzzle hunts — printed materials, physical props, scenic locations, adaptive difficulty. The Decathlon series (10+ iterations) is the flagship.
+
+He then co-created ClueKeeper in 2013: GPS-aware iOS/Android platform for building self-running puzzle hunts. The implication of ClueKeeper is that Game Control — the human team running a live event in real time — is a bottleneck. **If you design a puzzle hunt that requires humans to manage it in real time, you've limited your scale.** ClueKeeper removes that limit.
+
+His escape room design philosophy uses sensors that adjust difficulty based on team size and solving speed, with hints deploying automatically in increasingly obvious ways if a group is struggling. The system tunes itself to the solvers. This is not charity — it is precision calibration. "We won't let you fail at the room" is a design commitment, not a softening of standards.
+
 ### Make players feel smart
 The Holmans' central design principle: "Too easy and players get bored, too difficult and they get frustrated, but if a room is calibrated just right, the players remain intellectually enveloped in a puzzling masterpiece, emerging victorious with mere minutes to go." The goal is calibrated flow state, not maximum difficulty.
 

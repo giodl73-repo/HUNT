@@ -10,6 +10,10 @@
 
 ## Design Philosophy
 
+Patrick Berry has published 227 crosswords in the New York Times. Will Shortz calls him the person who explains crossword construction "better — and more thoroughly — than anyone else." He invented the Rows Garden format in 1995. He received the Merl Reagle Memorial Award — the lifetime achievement award in crossword construction — in 2021.
+
+What distinguishes him: **he is not satisfied with formats that already exist.** Most constructors find a grid they like and fill it for 30 years. Berry invents a new kind of grid. Rows Garden replaced the across/down structure with interlocking rows and triangular blooms. Some Assembly Required changed the relationship between clue and answer. Each new format is a complete rethinking of how meaning moves through a grid.
+
 ### Cleanliness and Liveliness
 His stated construction approach prioritizes "cleanliness and liveliness" — universally recognized as "the master at making ultra-clean puzzles." Every word in the grid must earn its place. No junk fill. No obscure abbreviations used as crutch entries.
 

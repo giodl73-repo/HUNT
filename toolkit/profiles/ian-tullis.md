@@ -8,13 +8,24 @@
 
 ## Puzzle Hunt Credentials
 
+### Microsoft Puzzlehunt 11.0: Caught in the Net (2007)
+- Host — part of SCRuBBers team (Troy Barnes, Josh Benaloh, Nat Dupree, Steve Dupree, Jessica Lambert, Matt Lyons, Dan Simon, Dave Thaler, Jay Thaler, Kaylene Thaler, **Ian Tullis**, Jeff Wallace, Roger Wolfson)
+- Tron / digital networks theme; built in Microsoft Silverlight
+- 71 teams (830 players); 14 teams finished
+- Winner: The Usual Suspects
+- ★ First hunt where all finishing teams wrote programs to solve the meta
+- ★ Introduced unlocking system tracking top 3 fastest solves per puzzle
+
 ### Shinteki
 - Primary puzzle author for many Shinteki events, including the acclaimed Decathlon series
 - Known for constructing physical clues that combine mental, physical, and tactile elements
 - Shinteki events represent the refined, polished end of Bay Area puzzle hunt design
 
-### MIT Mystery Hunt
-- Multiple puzzle contributions to MIT Mystery Hunt (indexed at devjoe.appspot.com)
+### MIT Mystery Hunt — Team Left Out
+- Member of Team Left Out (won 2019); helped write the 2020 MIT Mystery Hunt
+- Authored **31 puzzles** in the 2020 hunt — the largest single-author contribution on record for that hunt
+- Notable 2020 puzzles: *Safari Adventure* (metapuzzle), *Hackin' The Beanstalk*, *Harvard Ballooniversity*, *Sand Witches*, *The Cryptozoicologist*, *The Scottish Display*, *Weakest Carouselink*, *Zeus*
+- Also authored 27 puzzles in 2009 hunt and 3 metas in 2011 hunt
 - Part of the broader cross-pollination between Bay Area and MIT puzzle traditions
 
 ### Other Hunts
@@ -28,7 +39,15 @@
 - Trivia writer for LearnedLeague
 - Trivia writer for UK game show *Only Connect* (has an IMDB credit)
 
-## Design Philosophy (from "Advice from (and for) a Puzzle Snob", GC Summit 2014)
+## Design Philosophy
+
+Ian Tullis self-identifies as a puzzle snob. His GC Summit 2014 talk was titled "Advice from (and for) a Puzzle Snob." He has authored 61+ MIT Mystery Hunt puzzles across three hunts, hosted Microsoft Puzzlehunt 11.0, and is the primary puzzle author for Shinteki, the Bay Area's most polished puzzle event series.
+
+His core diagnostic: **if your puzzle's mechanism isn't one of the first ten things a playtester tried, ask yourself why not.** This question is devastating because it forces the designer to confront whether the puzzle is discoverable or just correct. A puzzle that works only if you happen to know the one right approach isn't a puzzle — it's a lock with a hidden key.
+
+The water-cooler test he articulates is equally honest: "Talk around the water cooler next week will be about a gadget or a location; not about your puzzle." Solvers remember physical props and surprising environments. The elegant encoding you labored over is invisible to them. Design for what people actually remember.
+
+
 
 ### The 10-playtester-tries rule
 "If your puzzle's mechanism isn't one of the first 10 things the playtesters tried, ask yourself 'why not.'" This is Tullis's core diagnostic for puzzle quality: the intended approach should be discoverable through natural exploration, not hidden behind obscure entry points.

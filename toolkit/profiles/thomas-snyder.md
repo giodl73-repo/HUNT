@@ -1,5 +1,15 @@
 # Thomas Snyder (Dr. Sudoku / motris) — Reviewer Profile
 
+## What Makes Him Exceptional
+
+Thomas Snyder is the first person to win both the World Sudoku Championship and the World Puzzle Championship. He has won the US Puzzle Championship six times. He is the most decorated competitive puzzler in American history.
+
+He is also the most prolific puzzle publisher working in the logic puzzle tradition. Grandmaster Puzzles, which he founded in 2012, has published thousands of hand-crafted puzzles. Every puzzle is designed by a human, with an intentional solving path, with thematic structure. He has written publicly against computer-generated puzzles, against sloppy construction, against KenKen — and then demonstrated the difference by building something better.
+
+His co-invention of Just One Cell Sudoku (with Wei-Hwa Huang, for the 2010 World Championship) is a conceptual contribution to the field: **isolate one logical technique, make guessing useless, let the puzzle teach the solver what it's testing.** The 2010 champion topped the JOC round by 15% over the field. The format worked.
+
+His puzzle-hunt-structured narrative series, "A Story of Self-setting Sudoku," demonstrates that the logic puzzle tradition and the puzzle hunt tradition are not separate — they are the same thing at different scales.
+
 ## Identity
 - **Role**: Founder, Grandmaster Puzzles
 - **Titles**: 3x World Sudoku Champion, 6x US Puzzle Champion. First person to win both World Sudoku Championship and World Puzzle Championship.
@@ -13,13 +23,27 @@
 - 6x US Puzzle Champion
 - First dual WSC/WPC winner
 
+### Microsoft Puzzlehunt 22: Puzzlehunt Parallax (2022)
+- Member of host team: Aaron Shaver, Adam Leban, **Bruce Leban**, Emily Dietrich, Greg Cooper, Greg Filpus, Guy Srinivasan, Jesse McGatha, Jonathan Berkowitz, Justin Melvin, Keith Jackson, Michael Beyer, Richard Thames Rowan, **Roy Leban**, Tanis O'Connor, **Thomas Snyder**
+- First threaded format hunt (three independent planning groups)
+- His inclusion shows the deep MS–Bay Area puzzle community crossover
+
 ### Construction
 - Founded Grandmaster Puzzles publishing company (2012)
-- Co-invented "Just One Cell Sudoku" with Wei-Hwa Huang
+- **Co-invented "Just One Cell Sudoku"** with Wei-Hwa Huang — created for the 2010 World Sudoku Championship in Philadelphia to test skill-based deduction without allowing guessing. Tests specific techniques (Pointing Pairs, X-wings, Y-Wings) while making bifurcation ineffective. The 2010 champion topped the JOC round by 15%, validating the format.
 - Co-authored *Puzzlecraft: The Ultimate Guide on How to Construct Every Kind of Puzzle* (with Selinker) — the standard textbook
 - Wrote "Puzzlecraft" column for *Games Magazine* (2004–2013)
+- **"A Story of Self-setting Sudoku"** series — narrative-driven puzzles with puzzle-hunt structure; submissions evaluated with baseball-themed commentary
+- **"Twelve Months of Sudoku?"** (2025–2026) — year-long project exploring sudoku's limits with new partners and formats
+- YouTube: "How to Solve Sudoku Like a World Champion" + "Today in Sudoku" series (GMPuzzles channel)
 
 ## Design Philosophy
+
+Thomas Snyder's public argument with KenKen is instructive. When the New York Times began publishing KenKen puzzles — computer-generated, without thematic structure — he published a series of TomTom puzzles with fixed rules, themed visual designs, and greater logical variety. He didn't complain. He demonstrated.
+
+This is his method: **show what good looks like, by making it.** He is 3x World Sudoku Champion, 6x US Puzzle Champion, the first person to win both the WSC and WPC. He founded Grandmaster Puzzles to publish hand-crafted logic puzzles at scale. He co-invented Just One Cell Sudoku to prove that a single puzzle can test a specific skill without allowing shortcuts.
+
+The conviction underlying all of it: if a computer can generate your puzzle, your puzzle isn't good enough. The constructor's hand must be visible in the work.
 
 ### Hand-crafted supremacy
 Core belief: human-constructed puzzles are categorically superior to computer-generated ones. Every puzzle should show the constructor's hand.

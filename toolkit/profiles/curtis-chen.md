@@ -33,6 +33,12 @@
 
 ## Design Philosophy
 
+Curtis Chen recorded 213 episodes of SnoutCast between 2009 and 2015. He organized the GC Summit — the puzzle hunt community's design conference — for years. He co-founded Puzzled Pint in Portland in 2010, a monthly pub puzzle night that has now spread to cities worldwide. He ran complete puzzle hunts on the JoCo Cruise. He published the canonical Game Control resource at snout.org.
+
+He is the person who documented the community's operational knowledge when everyone else was busy being brilliant. His contribution is **institutional memory** — the GC Summit talks, the SnoutCast episodes, the resource pages — all of which mean that when a new team wants to run their first puzzle hunt, they don't have to rediscover everything from scratch.
+
+His deepest insight: "I will come up with three widely varying puzzles and then discard the two that testers don't like." The process, not individual brilliance, generates quality. This is the antidote to designer ego.
+
 ### "This Clue Is Not The Game"
 A SnoutCast episode title that captures a key Snout principle: individual clues serve the larger experience. Game Control should design for the arc of the entire event, not optimize individual puzzles at the expense of flow.
 

@@ -13,10 +13,22 @@
 - **Constructed 2 hunts** (1995 and 1997)
 - **His team won 3 times** (won → wrote → won → wrote → won)
 - **MIT senior thesis**: "Secrets of the MIT Mystery Hunt: an exploration of the theory underlying the construction of a multi-puzzle contest" (1996) — possibly the first academic treatment of puzzle hunt design theory
+- **Returned in 2007** (10 puzzles including *Really Really Evil Certificate Meta-Meta*, *Pyramid Scheme*, *Captain Red Herring's Buried Pirate Booty*) and **2009** (6 puzzles)
+- **MIT Mystery Hunt 2020** — 24 puzzles including: *Goldilocks*, *Pied Piper*, *Storybook Pals*, *The Nauseator*, *The Ferris of Them All*, *Film Clips*, *Filming on Location*, *Michael Bay's Editing Bay*, *Director's Cut*, *Tall Tales*
+
+### The 1997 Elvis Tabloid Hunt
+The hunt Gottlieb wrote in 1997 had an audacious comedic theme: **every puzzle was titled as a tabloid headline about Elvis Presley**. Examples:
+- *"Two MIT Students Claim Elvis Was Their 6.001 TA!"*
+- *"Elvis Warned that Wind and Cold Erode Our Precious Resources; Calls for Global Warming!"*
+- *"Psychic Ray on Saturn Reveals to Oprah that 87% of Literature Classics Were Originally About Elvis!"*
+- *"Six-Year-Old Surgeon Supplied by Ronco Operated on Elvis!"*
+
+37 puzzles, all Elvis. This is the systems-engineering/creative-writing MIT double major in full flight: a unified thematic architecture applied with absolute comedic commitment across an entire hunt.
 
 ### Microsoft Puzzlehunt — Staggering Geniuses
-- **Puzzlehunt 8 ("The Hard Way")** — Host/organizer. Las Vegas themed.
-- Won PH 7 ("Alice in Puzzlehunt"), earning the right to host PH 8.
+- **Won PH 7** (Alice in Puzzlehunt, 2004) — only team to finish; earned right to host
+- **Hosted PH 8** (The Hard Way, 2005) alongside Mike Selinker, Amanda O'Connor, Sean Trowbridge, Matt Ruhlen, Greg Lewis, Jason Alcock, Matt Dixon, Ron Giesen, Matt Jones, Chris McBride, Chris Pearo
+- Las Vegas theme: 57 teams (643 players), 6 finishing teams; featured in November 2005 GAMES World of Puzzles
 
 ### Magic: The Gathering
 - **Longest-serving Rules Manager** for MTG
@@ -29,7 +41,13 @@
 - National Puzzlers' League member (nom: "Wombat")
 - Puzzles in NYT, Wired, Technology Review
 
-## Design Philosophy (Inferred from thesis and career)
+## Design Philosophy
+
+Mark Gottlieb wrote his MIT senior thesis on puzzle hunt design theory in 1996. He was 22. He titled it "Secrets of the MIT Mystery Hunt: an exploration of the theory underlying the construction of a multi-puzzle contest." It may be the first piece of academic writing ever produced about puzzle hunt design as a field of study.
+
+He then spent nearly two decades as the longest-serving Rules Manager in Magic: The Gathering's history — maintaining internal consistency across thousands of cards, ensuring that the interaction of any two cards produces a fair, predictable, and interesting result. This is puzzle design at industrial scale. Every card is a constraint. The system must hold.
+
+When he designed the 1997 MIT Mystery Hunt, every single puzzle was named as a tabloid headline about Elvis Presley. Thirty-seven puzzles. Unified absurdist theme. Complete commitment. This is what the double major in Creative Writing and Electrical Engineering produces: someone who knows how to build a coherent system and how to commit to a joke.
 
 ### Academic rigor applied to puzzle construction
 His MIT thesis treated puzzle hunt design as a subject worthy of formal analysis — structure, theory, construction principles. He approaches puzzles as an engineering discipline, not just creative play.

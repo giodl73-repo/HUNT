@@ -8,8 +8,12 @@
 
 ## Design Philosophy
 
+Rand Miller built a world on an island and sold 15 million copies of the experience of being dropped into it with no instructions. He did this by believing something most designers don't: **the puzzle is not the obstacle between the player and the experience — the puzzle IS the experience.** When you understand the world, you've solved the puzzle. When you've solved the puzzle, you understand the world. These are the same event.
+
+Myst had no tutorial because the world doesn't have a tutorial. Riven had no puzzles because Riven had no puzzles — it had a civilization, and if you paid attention to how the civilization worked, you could operate it. The "Third School" of puzzle design isn't a design philosophy; it's a statement about what reality is.
+
 ### The Three-Legged Stool
-"Puzzle, story, environment — balance all three. No leg dominates."
+"There's three components to it: the environment... the story... and then there's the friction, which is the puzzles. Those three things don't always fit together nicely. They pull on each other... our hallmark is we like to balance them."
 
 ### Setting Before Puzzles (but recursive)
 "The setting has always come before the puzzles." But the process is recursive: "As we would draw a place we would talk about the story. Story would fuel puzzles. And recursively, puzzles would feedback to support more of the environment."

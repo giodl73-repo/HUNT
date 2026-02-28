@@ -9,11 +9,12 @@
 
 ## Puzzle Hunt Credentials
 
-### P&A Magazine (2006–present)
-- Single-handedly writes and publishes a bimonthly puzzle hunt magazine
-- Each issue contains 8–10 standalone warmup puzzles ("Pieces of Bamboo") plus a full puzzle hunt round with ~12 puzzles and a metapuzzle
-- The most prolific solo puzzle hunt output in the community — publishing consistently for nearly 20 years
-- Moved toward accessibility over time by adding easier warmup word puzzles without alienating the core audience
+### P&A Magazine / Panda Magazine (2006–present)
+- Single-handedly writes and publishes a bimonthly puzzle hunt magazine (also called "Panda Magazine")
+- **104 issues through May 2024** — the most prolific solo puzzle hunt output in the community
+- Each issue: 8–10 standalone warmup "Pieces of Bamboo" + a full round of ~12 puzzles + metapuzzle
+- Leaderboard for meta submissions; solutions to warmup in same issue, main round solutions in next issue
+- Moved toward accessibility over time, adding easier entry-level word puzzles without alienating the core audience
 
 ### Puzzle Boat Series (9+ editions)
 - Large-scale online puzzle hunts with 100+ puzzles, multiple rounds of metapuzzles, and a final meta-meta
@@ -27,6 +28,10 @@
 - Cited on EnigMarch resources page as essential reading for aspiring puzzle constructors
 
 ## Design Philosophy
+
+Foggy Brume has published a puzzle hunt magazine bimonthly for 18 years, alone, without missing an issue. 104 issues. Thousands of puzzles. He is the most prolific solo puzzle hunt author alive, and he operates at a quality level that larger teams struggle to match. Dan Katz called Puzzle Boat "always smart, fair, and well-constructed."
+
+The solo discipline created a clarity of principle you don't see in committee-built hunts. Working alone, you can't hide behind "someone else will catch that" — every decision is final, every mechanic is chosen, every a-ha moment is intentional. The result is a body of work with unusual internal consistency: Foggy Brume puzzles have a recognizable voice.
 
 ### The a-ha count rule
 "No a-has is dull, one a-ha is fun, two a-has is a stretch, and three a-has is a slog." This is Foggy Brume's signature contribution to puzzle design theory. Every puzzle should have a clear, satisfying insight moment. Stacking too many required breakthroughs makes a puzzle feel like a series of walls rather than a journey.

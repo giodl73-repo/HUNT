@@ -12,6 +12,7 @@
 - Member of Team Left Out, the west-coast Mystery Hunt team
 - Team won the 2019 MIT Mystery Hunt
 - Wrote/helped run the 2020 MIT Mystery Hunt as part of the winning team's obligation
+- Authored 7 puzzles in 2020 hunt: *Rumpelstiltskin's Cottage*, *Charming*, *Monkey*, *Snake*, *Whirlwind*, *Courthouse*, *Spaghetti Western*
 - Remote-solved many Mystery Hunts with the left-coast contingent
 
 ### Bay Area Puzzle Hunt Scene
@@ -25,6 +26,12 @@
 - Active participant in the Game Control community's knowledge-sharing tradition
 
 ## Design Philosophy
+
+Larry Hosken describes himself as "a mediocre puzzle constructor who uses computer programs." He is being unfair to himself, but the self-assessment reveals something important: he builds systems, not puzzles. The 2-Tone Game is a location-based puzzle hunt in San Francisco that can be played by anyone, anytime, forever. The Octothorpean teaches people how to do puzzle hunts by having them do puzzle hunts — no manual, no tutorial, just puzzles that progressively introduce the conventions.
+
+His deepest insight comes from instructional design: **"If you let them 'earn' knowledge by solving, they're more likely to value that knowledge — they worked for it."** This isn't a clever learning trick. It's a theory of why puzzle hunts work at all: the knowledge you extract through solving belongs to you in a way that knowledge handed to you doesn't.
+
+He wrote 7 puzzles for the 2020 MIT Mystery Hunt and has run Bay Area puzzle events for decades. He thinks about the community that persists after each event ends.
 
 ### Puzzle hunts should be permanently playable
 The 2-Tone Game was born from a simple insight: most puzzle hunts happen once and disappear. By making a location-based hunt that's always available, Hosken ensures newcomers always have a way in. This is puzzle hunt design as public infrastructure, not one-time performance.

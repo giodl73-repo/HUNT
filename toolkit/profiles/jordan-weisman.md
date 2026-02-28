@@ -9,6 +9,10 @@
 
 ## Design Philosophy
 
+Jordan Weisman invented the Alternate Reality Game. *The Beast* (2001) drew three million players worldwide without any of them knowing they were playing a game — because Weisman's principle was that the game should never admit it's a game. *I Love Bees* (2004) turned 800,000 pay phones across America into puzzle interfaces. Strangers called phone booths at specific times to hear clues from an AI character. This was not a website with a Halo 2 theme. This was reality, reorganized as a puzzle.
+
+The scale of this achievement is hard to overstate: **Weisman convinced millions of people to participate in a puzzle without telling them a puzzle existed.** The game had a Peabody Award, the highest honor in broadcasting, because it was indistinguishable from a genuine cultural event.
+
 ### Platform: The World. Install Base: Everyone.
 "One of my core concepts in creating the ARGs was that there's only one platform, and it's the planet. And everyone on the planet can be used as part of a storytelling mechanism, as part of an immersive experience." No screen, no console, no board — the game surface is reality itself.
 

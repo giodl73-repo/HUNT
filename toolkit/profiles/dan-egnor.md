@@ -22,8 +22,8 @@
 - Active participant in Bay Area puzzle hunt scene
 
 ### MIT Mystery Hunt
-- Puzzle author (indexed at devjoe.appspot.com)
-- Contributed to hunt writing
+- Authored *Dance Party* (MIT Mystery Hunt 2020) as part of Team Left Out's winning-team obligation
+- Part of the west-coast contingent (Team Left Out) that won 2019 and wrote 2020
 
 ### Puzzles on the Playa (Burning Man)
 - Designed and ran a complete puzzle hunt at Burning Man with Sean Gugler, Jesse Morris, Ana Ulin, and Glenn Willen
@@ -35,6 +35,12 @@
 - Presented "Calvinball gadget" talk at GC Summit 2016 — on flexible, rule-bending puzzle mechanics
 
 ## Design Philosophy
+
+Dan Egnor built the Puzzle Hunt Calendar — the central listing of puzzle hunts worldwide. He built the first Escape Room Directory in North America. He designed a puzzle hunt at Burning Man using physical safes with relabeled keypads, where most solvers found the hunt by accident and formed spontaneous groups to solve it.
+
+His work circles a single insight: **discoverability is not a marketing problem, it's a design problem.** A puzzle hunt that no one can find doesn't exist. An escape room that no one can list doesn't exist. The infrastructure that makes things findable is as important as the things themselves.
+
+At Burning Man, he demonstrated the endpoint of this philosophy: a puzzle hunt so naturally discoverable that strangers encountered it organically, without announcement, without promotion, and chose to solve it together. **The best discovery mechanism is the one you don't notice.**
 
 ### Infrastructure enables community
 The Puzzle Hunt Calendar and Escape Room Directory embody a conviction that the puzzle community's biggest bottleneck is not puzzle quality but discoverability. If people can't find hunts, it doesn't matter how good they are. Egnor builds the connective tissue.
