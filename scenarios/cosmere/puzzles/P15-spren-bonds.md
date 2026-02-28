@@ -1,6 +1,6 @@
 # P15 — Spren Bonds
 
-*Module C (Knights Radiant) | Truthwatchers (#5) | Difficulty: ★★★*
+*Module C (Knights Radiant) | Truthwatchers (#5) | Difficulty: ★★★★*
 
 ---
 

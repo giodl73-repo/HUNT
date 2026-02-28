@@ -124,6 +124,9 @@ Each round page displays its 12 puzzle links plus the round meta (locked until a
 
 **Module C (Knights Radiant):** P13-P18 listed with Order names as badges.
 **Module D (Roshar World):** P19-P24 listed.
+
+**Knowledge Guide:** A brief note below the round header, in Hoid's voice: "Round 2 draws heavily from The Stormlight Archive. If one has not read it, one would be wise to pair with a teammate who has. The reference sheets carry the facts. The stories carry the rest."
+
 **Round Meta:** THE OATHS — locked card reads "Only those who have sworn deeply enough can speak here. Solve all twelve."
 
 #### Round 3: THE COSMERE

@@ -4,7 +4,7 @@
 
 ---
 
-Four and a half thousand years is a long time to remain sane. Some managed better than others. Six accounts survive from the last days — each describing a Herald's condition. The accounts are filed by ward number.
+Four and a half thousand years is a long time to remain sane. Some manage better than others. Six accounts survive from the last days — each describing a Herald's condition. The accounts are filed by ward number.
 
 The Heralds held Honorblades. Honorblades belonged to Orders. Orders claimed gemstones. Gemstones have letters. The ward number marks which letter to take.
 

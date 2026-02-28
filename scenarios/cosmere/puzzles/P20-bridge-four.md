@@ -4,7 +4,7 @@
 
 ---
 
-> They carried a bridge. Then they carried each other. Nine names from that crew are scrambled below, but something else has infiltrated the ranks. Six of the nine carry an extra letter — a stowaway that does not belong. Three are clean. The strays, read in order, have something to say.
+> They carry a bridge. Then they carry each other. Nine names from that crew are scrambled below, but something else has infiltrated the ranks. Six of the nine carry an extra letter — a stowaway that does not belong. Three are clean. The strays, read in order, have something to say.
 
 ---
 

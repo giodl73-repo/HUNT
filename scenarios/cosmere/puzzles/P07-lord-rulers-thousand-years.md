@@ -4,7 +4,7 @@
 
 ---
 
-> A millennium is a long time to sit on a throne. Events pile up. Memory blurs. The trick is getting them in the right order — the same trick Rashek himself could never quite manage, what with all that rewriting of history. Ten moments define his rise and fall. They arrive here scrambled, as history so often does.
+> A millennium is a long time to sit on a throne. Events pile up. Memory blurs. The trick is getting them in the right order. Rashek himself never manages it, what with all that rewriting of history. Ten moments define his rise and fall. They arrive here scrambled, as history so often does.
 
 ---
 

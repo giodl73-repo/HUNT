@@ -53,6 +53,8 @@ For each genuine vignette, write the specific Cosmere term for the ability or in
 | VII | [ ] | _ _ _ _ _ _ _ _ _ | `[3]` | [_] |
 | VIII | [ ] | | | |
 
+All terms are written as a single word for extraction purposes. Spaces are removed.
+
 Read the marked letters from the six genuine vignettes, I through VIII.
 
 **The answer:** _ _ _ _ _ _

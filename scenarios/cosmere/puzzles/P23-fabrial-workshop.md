@@ -4,7 +4,7 @@
 
 ---
 
-> Navani Kholin traps spren in gemstones and calls it scholarship. Others call it cruelty. Either way, the devices work. Seven fabrials sit on the workshop bench. Each one does something. Each one holds a gem. Each gem carries a name tied to an Essence of Roshar. Match the device to its stone. The stones have something to say.
+> Navani Kholin traps spren in gemstones and calls it scholarship. Others call it cruelty. Either way, the devices work. Seven fabrials sit on the workshop bench. Each one does something. Each one holds a gem. Each gem carries a name tied to an Essence of Roshar. Match the device to its stone. A spanreed writes because its ruby remembers the spark of connection. Every gemstone-effect pairing follows the same logic. The stones have something to say.
 
 ---
 

@@ -310,3 +310,74 @@ These changes break all 4 triplets without altering puzzle content.
 **Discovered:** Stage 10 (live solve simulation, confirming BUG-S6-011 and BUG-S7-005)
 **Description:** The Specialist chain-solves P18 in 10 minutes with no branching or backtracking. The 4-star rating is too high for what is effectively a lookup chain. The simulation confirms the editorial review's assessment.
 **Fix:** Downgrade P18 from 4-star to 3-star at Stage 11. Accept the resulting triplet (P15/P16/P18 at 3 stars) as a structural limitation.
+
+---
+
+## Stage 11 Bugs (Polish)
+
+### BUG-S11-001: No HINTS.md existed
+**Severity:** Medium
+**Discovered:** Stage 11 (polish pass)
+**Description:** The hunt had no hint system. HINTS.md was missing entirely.
+**Fix:** Created `HINTS.md` with 3-tier hints for all 36 puzzles + 4 metas. P30 Tier 2 hint specifically addresses the anchor step to reduce cold-start friction.
+**Status:** FIXED.
+
+### BUG-S11-002: P19 and P23 Round 2 aha weakness
+**Severity:** MAJOR (PT-002 pacing)
+**Discovered:** Stage 11 (response to PT-002 Round 2 pacing)
+**Description:** P19 (Singer Forms) and P23 (Fabrial Workshop) had the weakest thematic "aha" moments in Round 2, contributing to slower engagement.
+**Fix:** Added one sentence of Rosharan flavor to each:
+- P19: rhythm/form connection sentence linking each form to its sound
+- P23: spanreed/ruby example showing the Essence-gemstone-effect logic
+**Status:** FIXED.
+
+### BUG-S11-003: Round 2 Newbie engagement not acknowledged
+**Severity:** MAJOR (PT-003)
+**Discovered:** Stage 11 (response to PT-003)
+**Description:** Round 2 requires Stormlight Archive knowledge, and the hunt had no acknowledgment of this for partial-knowledge teams.
+**Fix:** Added a "Knowledge Guide" line to the Round 2 page spec in SITE-SPEC.md, in Hoid's voice.
+**Status:** FIXED.
+
+### BUG-S11-004: All 14 past-tense violations resolved
+**Severity:** Low (BUG-S7-002)
+**Discovered:** Stage 7, deferred to Stage 11
+**Description:** 14 past-tense violations in 10 puzzle intros. Changed to present tense in all cases.
+**Files modified:** P08, P09, P10, P13, P16, P19, P20, P25, P35.
+**Status:** FIXED.
+
+### BUG-S11-005: 4 difficulty triplets broken
+**Severity:** MAJOR (BUG-INT-003)
+**Discovered:** Stage 8, deferred to Stage 11
+**Description:** Reclassified P15, P22, P27, P32 from 3-star to 4-star.
+**Files modified:** P15, P22, P27, P32 puzzle files + CLAUDE.md registry.
+**Status:** FIXED.
+
+### BUG-S11-006: cosmere-answers.md ORELO typo
+**Severity:** MINOR (BUG-PT-007)
+**Discovered:** Stage 10
+**Description:** Verification chain line 116 had ORELO instead of ORELY.
+**Fix:** Updated to ORELY.
+**Status:** FIXED.
+
+### BUG-S11-007: P33 NAHELBOND term ambiguity
+**Severity:** MINOR (BUG-PT-004)
+**Description:** Solvers could write "NAHEL BOND" with a space and miscount.
+**Fix:** Added note: "All terms are written as a single word for extraction purposes. Spaces are removed."
+**Status:** FIXED.
+
+### BUG-S11-008: P36 direct/indirect distinction
+**Severity:** MINOR (BUG-PT-005)
+**Description:** The direct/indirect classification needed a concrete example.
+**Fix:** Added a canonical example after the definition paragraph: storytelling is direct; someone else's victory is indirect.
+**Status:** FIXED.
+
+### BUG-S11-009: P07 26-word sentence
+**Severity:** Low (BUG-S7-001)
+**Description:** P07 intro had a 26-word sentence violating voice rule 3.
+**Fix:** Split into two sentences. Now 13 + 12 words.
+**Status:** FIXED.
+
+### BUG-S11-010: SUPER-META.md RAIB truncation
+**Severity:** MAJOR (BUG-INT-002 / BUG-PT-006)
+**Description:** Checked during Stage 11. Both lines 28 and 59 of SUPER-META.md already show RAIBL. The fix was applied at some point between Stage 8 and Stage 10.
+**Status:** ALREADY FIXED (verified).

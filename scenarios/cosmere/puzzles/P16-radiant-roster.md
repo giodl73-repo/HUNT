@@ -4,7 +4,7 @@
 
 ---
 
-A roster of twelve names once hung in the Tower. Some names glowed. Some did not. The glow meant a bond — a spren, an oath, a burden. The ones without glow carried burdens of a different kind.
+A roster of twelve names hangs in the Tower. Some names glow. Some do not. The glow meant a bond — a spren, an oath, a burden. The ones without glow carried burdens of a different kind.
 
 Each entry below describes one figure from the war for Roshar. No names are given. Each description contains one word that matters more than the rest. It is marked.
 

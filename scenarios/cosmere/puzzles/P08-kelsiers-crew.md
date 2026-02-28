@@ -4,7 +4,7 @@
 
 ---
 
-> Every great heist needs a crew. This one had eight. Some burned metals. Some did not. All of them mattered — though the ones who burn a single metal carry a street name, and street names carry letters. A number hides in every portrait below. The street knows what to do with it.
+> Every great heist needs a crew. This one has eight. Some burned metals. Some did not. All of them mattered — though the ones who burn a single metal carry a street name, and street names carry letters. A number hides in every portrait below. The street knows what to do with it.
 
 ---
 

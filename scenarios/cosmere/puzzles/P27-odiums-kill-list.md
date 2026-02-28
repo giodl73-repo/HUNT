@@ -1,6 +1,6 @@
 # P27 — Odium's Kill List
 
-*Module E (The 16 Shards) | Odium | Difficulty: ★★★*
+*Module E (The 16 Shards) | Odium | Difficulty: ★★★★*
 
 ---
 

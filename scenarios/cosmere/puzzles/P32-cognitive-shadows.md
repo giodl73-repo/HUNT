@@ -1,6 +1,6 @@
 # P32 — Cognitive Shadows
 
-*Module F (Hoid & Worldhoppers) | Harmony | Difficulty: ★★★*
+*Module F (Hoid & Worldhoppers) | Harmony | Difficulty: ★★★★*
 
 ---
 

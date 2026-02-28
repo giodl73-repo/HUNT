@@ -113,7 +113,7 @@ Orders with 3+ Ideals, extract at Ideal-count depth:
 - Skybreakers(2, 5 Ideals): FJBEA[5] = A
 - Edgedancers(4, 3 Ideals): QRIBGR[3] = I
 - Lightweavers(6, 3 Ideals): REBQRQ[3] = B
-- Bondsmiths(10, 4 Ideals): ORELO[4] = L
+- Bondsmiths(10, 4 Ideals): ORELY[4] = L
 Result: R-A-I-B-L = RAIBL ✓
 
 ### Meta III: ADONALSIUM

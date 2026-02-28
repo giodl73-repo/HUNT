@@ -4,7 +4,7 @@
 
 ---
 
-One has perfect memory. Or one did, until recently. In the final moments of a conversation with a new god — a god wearing the face of an old king — something was taken. Altered. The memories are still there, but some of them are wrong now, and the worst part is not knowing which ones.
+One has perfect memory. Or one does, until recently. In the final moments of a conversation with a new god — a god wearing the face of an old king — something is taken. Altered. The memories are still there, but some of them are wrong now, and the worst part is not knowing which ones.
 
 Below are eight of the wanderer's memories. Each describes an event the wanderer witnessed across the Cosmere. Six of these memories have been tampered with — one detail in each has been changed. The alteration is subtle: a wrong name, a wrong metal, a wrong Shard, a wrong place. The kind of error that feels almost right.
 

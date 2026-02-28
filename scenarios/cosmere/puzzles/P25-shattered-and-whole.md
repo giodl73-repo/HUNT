@@ -4,7 +4,7 @@
 
 ---
 
-Sixteen pieces of a god. Some endure. Some were broken. Some chose stranger fates. One was there when it happened and took nothing — but that is a different story.
+Sixteen pieces of a god. Some endure. Some are broken. Some chose stranger fates. One was there when it happened and took nothing — but that is a different story.
 
 Below are sixteen fragments, each described by what became of it. The Intent has been excised. Six descriptions carry a number in brackets. That number marks a position within the Intent's name. The marked letters, read first through sixth, have something to say.
 

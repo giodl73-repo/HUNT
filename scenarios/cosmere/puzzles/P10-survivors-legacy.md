@@ -4,7 +4,7 @@
 
 ---
 
-> The Survivor died once. It did not take. Three hundred years later his fingerprints remain on everything — every law, every church, every quiet arrangement made in back rooms. Eight threads stretch from his Era to the next. Match each cause to its consequence, name the bridge between them, and the Survivor's true nature reveals itself.
+> The Survivor dies once. It does not take. Three hundred years later his fingerprints remain on everything — every law, every church, every quiet arrangement made in back rooms. Eight threads stretch from his Era to the next. Match each cause to its consequence, name the bridge between them, and the Survivor's true nature reveals itself.
 
 ---
 

@@ -1,6 +1,6 @@
 # P22 — The Chasms Below
 
-**Lightweavers** · Module D · Round 2 (Roshar)
+**Lightweavers** · Module D · Round 2 (Roshar) · Difficulty: ★★★★
 
 ---
 

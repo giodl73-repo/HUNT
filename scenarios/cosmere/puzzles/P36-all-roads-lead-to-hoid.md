@@ -10,6 +10,8 @@ Twelve events from across the Cosmere are described below. Every one of them con
 
 For each event, identify what occurred and determine the nature of the connection. A **direct** connection means the wanderer was present and active — he stood in the room, he spoke, he gave, he initiated. An **indirect** connection means the event's consequences reached him from afar — he was changed by it, or he benefited from it, but he did not participate.
 
+*Example: If the wanderer told someone a story, that is direct — he chose to act. If someone else's victory later changed the world the wanderer walks through, that is indirect — consequences, not participation.*
+
 ---
 
 ## The Twelve Events

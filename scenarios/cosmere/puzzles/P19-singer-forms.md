@@ -4,7 +4,7 @@
 
 ---
 
-> The Singers were here before any of us. They sang to rhythms older than memory. They wore forms the way others wear masks — each one a different self, shaped by spren and need. A people of change. And yet the humans called them simple.
+> The Singers are here before any of us. They sing to rhythms older than memory. They wear forms the way others wear masks — each one a different self, shaped by spren and need. A people of change. The rhythm shifts with the form — warform drums hard and fast, mateform hums something softer. And yet the humans call them simple.
 
 ---
 

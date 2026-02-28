@@ -44,7 +44,7 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 | 8. INTEGRATION | Done (conditional) | `reviews/integration-check.md` | 1 BLOCKER (UNITY in P10 word bank), 2 MAJOR (SUPER-META truncation, difficulty triplets). Fix BLOCKER before Stage 9. |
 | 9. DELIVERY BUILD | Done | `delivery/` | Site spec, homepage, theme system, print spec |
 | 10. PLATFORM TEST | Done | `tests/platform-test.md` | Site: PASS. Solve sim (5 solvers, 11-12h): PASS. All 4 metas verified. UNITY moment lands. 0 blockers, 3 MAJOR, 8 MINOR for Stage 11. |
-| 11. POLISH | -- | Final pass, hints, encoding | |
+| 11. POLISH | Done | `HINTS.md`, all fixes applied | Callsign: SIERRA. 14 past-tense fixes, 4 difficulty reclassifications, P30 hints, P33/P36 notes, Round 2 knowledge guide, answers typo fix. |
 
 ## World Systems
 
@@ -98,7 +98,7 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 |----|-------|---------|-----------|------------|-------|--------|
 | P13 | Herald's Madness | C-06 | Identification (behavioral) + mapping | ★★ | Dustbringers | Authored |
 | P14 | Ideals and Oaths | C-02 | Fill-in-blank + acrostic | ★★★ | Edgedancers | Authored |
-| P15 | Spren Bonds | C-04 | Identification (narrative) + mapping | ★★★ | Truthwatchers | Authored |
+| P15 | Spren Bonds | C-04 | Identification (narrative) + mapping | ★★★★ | Truthwatchers | Authored |
 | P16 | Radiant Roster | C-07 | Character ID + conditional indexing | ★★★ | Skybreakers | Authored |
 | P17 | The Double Eye | C-01 | Ring topology logic + multi-attribute | ★★★★ | Windrunners | Authored |
 | P18 | The Surge Wheel | C-05 | Circular constraint placement | ★★★★ | Lightweavers (dup) | Authored |
@@ -110,7 +110,7 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 | P19 | Singer Forms | D-04 | Identification + indexing | ★★ | Stonewards | Authored |
 | P20 | Bridge Four | D-12 | Anagram + indexing | ★★ | Windrunners (dup) | Authored |
 | P21 | Rhythm of Answers | D-01 | Identification + name extraction | ★★★ | Willshapers | Authored |
-| P22 | The Chasms Below | D-07 | Cryptic crossword (Cosmere-themed) | ★★★ | Lightweavers (crit) | Authored |
+| P22 | The Chasms Below | D-07 | Cryptic crossword (Cosmere-themed) | ★★★★ | Lightweavers (crit) | Authored |
 | P23 | Fabrial Workshop | D-03 | Triple-matching (effect/type/gem) | ★★★ | Bondsmiths | Authored |
 | P24 | Stormwall | D-02 | Spatial/directional logic | ★★★★ | Elsecallers | Authored |
 
@@ -120,7 +120,7 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 |----|-------|---------|-----------|------------|-------|--------|
 | P25 | Shattered and Whole | E-03 | Categorization + count indexing | ★★ | Honor | Authored |
 | P26 | Vessel Roll Call | E-02 | Identification + extraction | ★★★ | Preservation | Authored |
-| P27 | Odium's Kill List | E-04 | ID + chronological ordering | ★★★ | Odium | Authored |
+| P27 | Odium's Kill List | E-04 | ID + chronological ordering | ★★★★ | Odium | Authored |
 | P28 | Investiture Types | E-08 | Magic-system ID + chained mapping | ★★★ | Endowment | Authored |
 | P29 | The 4x4 Shard Grid | E-07 | Grid logic (axis deduction) | ★★★★ | Autonomy | Authored |
 | P30 | The Shattering | E-11 | Circular logic (seating arrangement) | ★★★★★ | Virtuosity | Authored |
@@ -130,7 +130,7 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 | ID | Title | Pool ID | Mechanism | Difficulty | Shard | Status |
 |----|-------|---------|-----------|------------|-------|--------|
 | P31 | The Wanderer's Aliases | F-01 | ID (presence/absence) + alias extraction | ★★★ | Ruin | Authored |
-| P32 | Cognitive Shadows | F-04 | Identification + system matching | ★★★ | Harmony | Authored |
+| P32 | Cognitive Shadows | F-04 | Identification + system matching | ★★★★ | Harmony | Authored |
 | P33 | Collected Powers | F-02 | Triple ID (ability/world/Shard) | ★★★★ | Cultivation | Authored |
 | P34 | Letters to a Dragon | F-06 | Attribution (author ID from style) | ★★★★ | Devotion | Authored |
 | P35 | The Memory Thief | F-11 | Error detection (true/false) | ★★★★ | Whimsy | Authored |

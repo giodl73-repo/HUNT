@@ -4,7 +4,7 @@
 
 ---
 
-> Rashek built his empire in layers. Every soul in a slot. Every slot on a rung. The rungs were never meant to move. Six tiers. A thousand years. One ladder. The descriptions below arrive out of order — as the Lord Ruler's subjects often did, when they tried to climb.
+> Rashek builds his empire in layers. Every soul in a slot. Every slot on a rung. The rungs are never meant to move. Six tiers. A thousand years. One ladder. The descriptions below arrive out of order — as the Lord Ruler's subjects often did, when they tried to climb.
 
 ---
 
