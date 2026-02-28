@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Evidence Correlation Log</title>
+<style>
+  @page { size: letter; margin: 0; }
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+    padding: 0.75in;
+    max-width: 8.5in;
+    margin: 0 auto;
+  }
+  .header-box {
+    border: 3px double #1a1a1a;
+    padding: 14px 20px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', serif;
+    margin-bottom: 30px;
+  }
+  .header-box h1 { font-size: 14pt; margin: 0 0 4px 0; letter-spacing: 2px; }
+  .header-box .subtitle { font-size: 12pt; margin: 4px 0; }
+  .header-box .field { font-size: 9pt; margin: 2px 0; font-family: 'Courier New', monospace; }
+  h2 {
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 11pt;
+    margin: 24px 0 12px 0;
+  }
+  .finding {
+    margin: 16px 0;
+    padding: 8px 0;
+  }
+  .finding-label {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .answer-blanks {
+    letter-spacing: 8px;
+    font-size: 14pt;
+    margin-top: 4px;
+  }
+  .blank {
+    display: inline-block;
+    width: 22px;
+    border-bottom: 1.5px solid #1a1a1a;
+    text-align: center;
+    margin: 0 2px;
+  }
+  .correlation-box {
+    border: 1px solid #1a1a1a;
+    padding: 16px 20px;
+    margin: 20px 0;
+    background: #fafaf5;
+  }
+  .correlation-row {
+    margin: 10px 0;
+    font-size: 11pt;
+  }
+  .final-answer {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    border: 2px solid #1a1a1a;
+  }
+  .answer-grid {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin: 12px 0;
+  }
+  .answer-cell {
+    width: 36px;
+    height: 36px;
+    border: 2px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18pt;
+    font-weight: bold;
+  }
+  .submit-note {
+    text-align: center;
+    font-size: 10pt;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #ccc;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-box">
+  <h1>CITY POLICE DEPARTMENT</h1>
+  <div class="subtitle">EVIDENCE CORRELATION LOG</div>
+  <div class="field">Case No.: 47-1011-GL</div>
+  <div class="field">Investigating Officer: _____________________________ (your team)</div>
+</div>
+
+<h2>Findings</h2>
+
+<div class="finding">
+  <div class="finding-label">Exhibit A &mdash; The Police Report</div>
+  <div>The primary SUSPECT is:</div>
+  <div class="answer-blanks">
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+  </div>
+</div>
+
+<div class="finding">
+  <div class="finding-label">Exhibit B &mdash; The Hotel Receipt</div>
+  <div>The critical LOCATION was:</div>
+  <div class="answer-blanks">
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+  </div>
+</div>
+
+<div class="finding">
+  <div class="finding-label">Exhibit C &mdash; The Floor Plan</div>
+  <div>The decisive TIME was:</div>
+  <div class="answer-blanks">
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+  </div>
+</div>
+
+<div class="finding">
+  <div class="finding-label">Exhibit D &mdash; The Witness Statement</div>
+  <div>The key OBJECT was:</div>
+  <div class="answer-blanks">
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+    <span class="blank">&nbsp;</span>
+  </div>
+</div>
+
+<h2>Case Correlation</h2>
+
+<div class="correlation-box">
+  <p>A calling card was recovered at the scene (see physical evidence in your dossier). The card bears four numbers: a sequence the thief left as a signature.</p>
+  <p>Using the calling card, take the indicated letter from each finding:</p>
+
+  <div class="correlation-row">
+    From EXHIBIT A, take letter #<span class="blank">&nbsp;</span> : <span class="blank">&nbsp;</span>
+  </div>
+  <div class="correlation-row">
+    From EXHIBIT B, take letter #<span class="blank">&nbsp;</span> : <span class="blank">&nbsp;</span>
+  </div>
+  <div class="correlation-row">
+    From EXHIBIT C, take letter #<span class="blank">&nbsp;</span> : <span class="blank">&nbsp;</span>
+  </div>
+  <div class="correlation-row">
+    From EXHIBIT D, take letter #<span class="blank">&nbsp;</span> : <span class="blank">&nbsp;</span>
+  </div>
+</div>
+
+<div class="final-answer">
+  <h2 style="text-decoration: none; margin: 0 0 12px 0;">THE METHOD</h2>
+  <p>How was the painting stolen?</p>
+  <div class="answer-grid">
+    <div class="answer-cell"></div>
+    <div class="answer-cell"></div>
+    <div class="answer-cell"></div>
+    <div class="answer-cell"></div>
+  </div>
+  <p style="font-size: 9pt;">(4 letters)</p>
+</div>
+
+<div class="submit-note">
+  Submit your final answer at the answer submission site.<br>
+  Case closed.
+</div>
+
+</body>
+</html>
