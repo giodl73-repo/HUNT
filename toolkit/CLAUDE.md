@@ -53,6 +53,7 @@ claude
 | `/hunt review rank <file>` | Panel ranks a puzzle pool |
 | `/hunt resume` | Resume pipeline from next incomplete stage (crash-safe) |
 | `/hunt publish` | Build clean solver-facing distribution zip (strips answers, working files) |
+| `/hunt script` | Generate full game architecture script — scenes, navigation, state machine, widget map |
 | `/hunt status` | Pipeline dashboard |
 | `/hunt meta` | Meta design, verification, grid building |
 | `/hunt edit` | Editorial review of author submissions before blind testing |
