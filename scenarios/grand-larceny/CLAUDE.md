@@ -40,7 +40,7 @@ Cover sheet: official police briefing voice. No exclamation marks. No questions.
 | 7. EDITORIAL | Done | `reviews/editorial-review.md` | All 4+meta approved |
 | 8. INTEGRATION | Done | `reviews/integration-check.md` | All cross-refs verified, meta extraction confirmed |
 | 9. DELIVERY BUILD | Done | `delivery/` files | Props, print layouts, site spec complete. See delivery notes below. |
-| 10. PLATFORM TEST | -- | Test checklists | |
+| 10. PLATFORM TEST | Done | `tests/platform-test.md` | Dossier physical check, 2-solver sim, meta verified, 4 blockers (P2/P3/P4 HTML + submit.html) |
 | 11. POLISH | -- | Final pass | |
 
 ## World Systems
