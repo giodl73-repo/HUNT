@@ -39,8 +39,8 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 | 3. PUZZLE POOL | Done | `PUZZLE-POOL.md` | 72 candidates (12/module), panel ranked, 36 recommended |
 | 4. ASSIGNMENT | Done | `PUZZLES.md` | 36 briefs, all 36 answer words coordinated with metas |
 | 5. META DESIGN | Done | `meta/` | 3 round metas + 1 super-meta, all verified |
-| 6. AUTHORING | In Progress | `puzzles/` | Module A (P01-P06) complete, 30 remaining |
-| 7. EDITORIAL | -- | `reviews/editorial-review.md` | |
+| 6. AUTHORING | Done | `puzzles/` | All 36 puzzles authored (P01-P36) |
+| 7. EDITORIAL | Done | `reviews/editorial-review.md` | Voice: PASS w/ advisories. Extractions: 36/36 PASS. Metas: 4/4 PASS. 3 bugs fixed, 5 new logged. |
 | 8. INTEGRATION | -- | `reviews/integration-check.md` | |
 | 9. DELIVERY BUILD | -- | `delivery/` | Website + print |
 | 10. PLATFORM TEST | -- | `tests/platform-test.md` | |
@@ -85,56 +85,56 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 
 | ID | Title | Pool ID | Mechanism | Difficulty | Metal | Status |
 |----|-------|---------|-----------|------------|-------|--------|
-| P07 | The Lord Ruler's 1000 Years | B-02 | Chronological ordering + acrostic | ★★ | Electrum (#10) | Assigned |
-| P08 | Kelsier's Crew | B-01 | Identification + positional extraction | ★★ | Gold (#9) | Assigned |
-| P09 | The Social Ladder | B-05 | Categorization + ordered extraction | ★★★ | Cadmium (#11) | Assigned |
-| P10 | The Survivor's Legacy | B-11 | Cross-era matching (cause/effect) | ★★★ | Chromium (#15) | Assigned |
-| P11 | The Siege of Luthadel | B-03 | Logic grid (multi-variable deduction) | ★★★★ | Bendalloy (#12) | Assigned |
-| P12 | The Roughs Justice | B-06 | Deduction (Twinborn ability ID) | ★★★★ | Duralumin (#14) | Assigned |
+| P07 | The Lord Ruler's 1000 Years | B-02 | Chronological ordering + acrostic | ★★ | Electrum (#10) | Authored |
+| P08 | Kelsier's Crew | B-01 | Identification + positional extraction | ★★ | Gold (#9) | Authored |
+| P09 | The Social Ladder | B-05 | Categorization + ordered extraction | ★★★ | Cadmium (#11) | Authored |
+| P10 | The Survivor's Legacy | B-11 | Cross-era matching (cause/effect) | ★★★ | Chromium (#15) | Authored |
+| P11 | The Siege of Luthadel | B-03 | Logic grid (multi-variable deduction) | ★★★★ | Bendalloy (#12) | Authored |
+| P12 | The Roughs Justice | B-06 | Deduction (Twinborn ability ID) | ★★★★ | Duralumin (#14) | Authored |
 
 ### Module C — Knights Radiant (Team Gamma)
 
 | ID | Title | Pool ID | Mechanism | Difficulty | Order | Status |
 |----|-------|---------|-----------|------------|-------|--------|
-| P13 | Herald's Madness | C-06 | Identification (behavioral) + mapping | ★★ | Dustbringers | Assigned |
-| P14 | Ideals and Oaths | C-02 | Fill-in-blank + acrostic | ★★★ | Edgedancers | Assigned |
-| P15 | Spren Bonds | C-04 | Identification (narrative) + mapping | ★★★ | Truthwatchers | Assigned |
-| P16 | Radiant Roster | C-07 | Character ID + conditional indexing | ★★★ | Skybreakers | Assigned |
-| P17 | The Double Eye | C-01 | Ring topology logic + multi-attribute | ★★★★ | Windrunners | Assigned |
-| P18 | The Surge Wheel | C-05 | Circular constraint placement | ★★★★ | Lightweavers (dup) | Assigned |
+| P13 | Herald's Madness | C-06 | Identification (behavioral) + mapping | ★★ | Dustbringers | Authored |
+| P14 | Ideals and Oaths | C-02 | Fill-in-blank + acrostic | ★★★ | Edgedancers | Authored |
+| P15 | Spren Bonds | C-04 | Identification (narrative) + mapping | ★★★ | Truthwatchers | Authored |
+| P16 | Radiant Roster | C-07 | Character ID + conditional indexing | ★★★ | Skybreakers | Authored |
+| P17 | The Double Eye | C-01 | Ring topology logic + multi-attribute | ★★★★ | Windrunners | Authored |
+| P18 | The Surge Wheel | C-05 | Circular constraint placement | ★★★★ | Lightweavers (dup) | Authored |
 
 ### Module D — Roshar World (Team Delta)
 
 | ID | Title | Pool ID | Mechanism | Difficulty | Order | Status |
 |----|-------|---------|-----------|------------|-------|--------|
-| P19 | Singer Forms | D-04 | Identification + indexing | ★★ | Stonewards | Assigned |
-| P20 | Bridge Four | D-12 | Anagram + indexing | ★★ | Windrunners (dup) | Assigned |
-| P21 | Rhythm of Answers | D-01 | Identification + name extraction | ★★★ | Willshapers | Assigned |
-| P22 | The Chasms Below | D-07 | Cryptic crossword (Cosmere-themed) | ★★★ | Lightweavers (crit) | Assigned |
-| P23 | Fabrial Workshop | D-03 | Triple-matching (effect/type/gem) | ★★★ | Bondsmiths | Assigned |
-| P24 | Stormwall | D-02 | Spatial/directional logic | ★★★★ | Elsecallers | Assigned |
+| P19 | Singer Forms | D-04 | Identification + indexing | ★★ | Stonewards | Authored |
+| P20 | Bridge Four | D-12 | Anagram + indexing | ★★ | Windrunners (dup) | Authored |
+| P21 | Rhythm of Answers | D-01 | Identification + name extraction | ★★★ | Willshapers | Authored |
+| P22 | The Chasms Below | D-07 | Cryptic crossword (Cosmere-themed) | ★★★ | Lightweavers (crit) | Authored |
+| P23 | Fabrial Workshop | D-03 | Triple-matching (effect/type/gem) | ★★★ | Bondsmiths | Authored |
+| P24 | Stormwall | D-02 | Spatial/directional logic | ★★★★ | Elsecallers | Authored |
 
 ### Module E — The 16 Shards (Team Epsilon)
 
 | ID | Title | Pool ID | Mechanism | Difficulty | Shard | Status |
 |----|-------|---------|-----------|------------|-------|--------|
-| P25 | Shattered and Whole | E-03 | Categorization + count indexing | ★★ | Honor | Assigned |
-| P26 | Vessel Roll Call | E-02 | Identification + extraction | ★★★ | Preservation | Assigned |
-| P27 | Odium's Kill List | E-04 | ID + chronological ordering | ★★★ | Odium | Assigned |
-| P28 | Investiture Types | E-08 | Magic-system ID + chained mapping | ★★★ | Endowment | Assigned |
-| P29 | The 4x4 Shard Grid | E-07 | Grid logic (axis deduction) | ★★★★ | Autonomy | Assigned |
-| P30 | The Shattering | E-11 | Circular logic (seating arrangement) | ★★★★★ | Virtuosity | Assigned |
+| P25 | Shattered and Whole | E-03 | Categorization + count indexing | ★★ | Honor | Authored |
+| P26 | Vessel Roll Call | E-02 | Identification + extraction | ★★★ | Preservation | Authored |
+| P27 | Odium's Kill List | E-04 | ID + chronological ordering | ★★★ | Odium | Authored |
+| P28 | Investiture Types | E-08 | Magic-system ID + chained mapping | ★★★ | Endowment | Authored |
+| P29 | The 4x4 Shard Grid | E-07 | Grid logic (axis deduction) | ★★★★ | Autonomy | Authored |
+| P30 | The Shattering | E-11 | Circular logic (seating arrangement) | ★★★★★ | Virtuosity | Authored |
 
 ### Module F — Hoid & Worldhoppers (Team Zeta)
 
 | ID | Title | Pool ID | Mechanism | Difficulty | Shard | Status |
 |----|-------|---------|-----------|------------|-------|--------|
-| P31 | The Wanderer's Aliases | F-01 | ID (presence/absence) + alias extraction | ★★★ | Ruin | Assigned |
-| P32 | Cognitive Shadows | F-04 | Identification + system matching | ★★★ | Harmony | Assigned |
-| P33 | Collected Powers | F-02 | Triple ID (ability/world/Shard) | ★★★★ | Cultivation | Assigned |
-| P34 | Letters to a Dragon | F-06 | Attribution (author ID from style) | ★★★★ | Devotion | Assigned |
-| P35 | The Memory Thief | F-11 | Error detection (true/false) | ★★★★ | Whimsy | Assigned |
-| P36 | All Roads Lead to Hoid | F-12 | Connection mapping (cross-reference) | ★★★★★ | Valor | Assigned |
+| P31 | The Wanderer's Aliases | F-01 | ID (presence/absence) + alias extraction | ★★★ | Ruin | Authored |
+| P32 | Cognitive Shadows | F-04 | Identification + system matching | ★★★ | Harmony | Authored |
+| P33 | Collected Powers | F-02 | Triple ID (ability/world/Shard) | ★★★★ | Cultivation | Authored |
+| P34 | Letters to a Dragon | F-06 | Attribution (author ID from style) | ★★★★ | Devotion | Authored |
+| P35 | The Memory Thief | F-11 | Error detection (true/false) | ★★★★ | Whimsy | Authored |
+| P36 | All Roads Lead to Hoid | F-12 | Connection mapping (cross-reference) | ★★★★★ | Valor | Authored |
 
 ### Metas
 

@@ -51,7 +51,7 @@
 | P20 | Bridge Four | Windrunners (dup) | OEVQTR |
 | P21 | Rhythm of Answers | Willshapers | PUNAG |
 | P22 | The Chasms Below | Lightweavers (crit) | REBQRQ |
-| P23 | Fabrial Workshop | Bondsmiths | ORELO |
+| P23 | Fabrial Workshop | Bondsmiths | ORELY |
 | P24 | Stormwall | Elsecallers | GRZCRFG |
 
 ### Module E — The 16 Shards (P25-P30)

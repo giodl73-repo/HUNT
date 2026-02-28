@@ -2,7 +2,7 @@
 
 ## Answer
 
-**ROT13:** RAIB
+**ROT13:** RAIBL
 
 (Decoded: 5 letters. One who carries a message between parties. What the Knights Radiant are to Honor.)
 

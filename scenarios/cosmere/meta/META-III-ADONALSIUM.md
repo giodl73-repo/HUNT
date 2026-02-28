@@ -96,8 +96,8 @@ Each of the 12 Cosmere feeder puzzles references one of these Shards:
 | Puzzle | Shard Referenced | Connection |
 |--------|-----------------|------------|
 | P25 | Honor | The Shard's splintering and current status |
-| P26 | Odium | The Shard's campaign of destruction |
-| P27 | Preservation | The Shard's magic system (Allomancy) and sacrifice |
+| P26 | Preservation | The Shard's magic system (Allomancy) and sacrifice |
+| P27 | Odium | The Shard's campaign of destruction |
 | P28 | Endowment | BioChromatic Breath and the Returned |
 | P29 | Autonomy | Sand Mastery, isolation, avatars |
 | P30 | Virtuosity | Self-Splintering and its consequences |

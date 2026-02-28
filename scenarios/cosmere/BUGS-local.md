@@ -178,3 +178,42 @@ Local bug tracker. Do NOT write to `../../BUGS.md`.
 **Discovered:** Stage 6 (authoring P30, Team Epsilon)
 **Description:** A 16-seat circular arrangement with 10 placed Vessels and 14 constraint clues initially had 2 valid solutions (Koravellium Avast and Bavadin could swap seats 10 and 11). Additionally, without an anchoring clue, all solutions had 16 rotational equivalents.
 **Resolution:** Added clue 12 ("Aona holds seat 1") as anchor and clue 13 ("Koravellium Avast holds an even-numbered seat") to force unique solution. Final arrangement verified: 1-Aona, 2-Skai, 4-Rayse, 6-Ati, 7-Leras, 9-Edgli, 10-Koravellium Avast, 11-Bavadin, 13-Ulas Dal, 15-Tanavast. Seats 3,5,8,12,14,16 are unknown Vessels.
+
+---
+
+## Stage 7 Bugs (Editorial Review)
+
+### BUG-S7-001: P07 intro sentence is 26 words
+**Severity:** Low
+**Discovered:** Stage 7 (editorial voice audit)
+**Description:** P07's intro contains "The trick is getting them in the right order -- the same trick Rashek himself could never quite manage, what with all that rewriting of history." at 26 words. Voice rule 3 says "Rarely more than 15 words."
+**Impact:** Single sentence. The humor lands, but it exceeds the guideline substantially.
+**Mitigation:** Split into two sentences: "The trick is getting them in the right order. Rashek himself never managed it, what with all that rewriting of history."
+
+### BUG-S7-002: 14 past-tense violations across 10 puzzles
+**Severity:** Low
+**Discovered:** Stage 7 (editorial voice audit)
+**Description:** SCOPE.md rule 2 says "Present tense default. Past tense only for Shattering-era events." Fourteen instances of past tense in non-Shattering-era contexts were found in puzzle intro/flavor text: P08 ("had"), P09 ("built," "were"), P10 ("died," "did not take"), P13 ("managed"), P16 ("hung," "glowed," "did"), P19 ("were," "sang," "wore"), P20 ("carried"), P25 ("were broken"), P35 ("did," "was taken").
+**Impact:** All violations are in introductory flavor text, not puzzle instructions. They read naturally in Hoid's storytelling voice. The voice rule may be overly strict for historical narration.
+**Mitigation:** Either (a) rewrite all intros to present tense (straightforward but may lose flavor), or (b) amend SCOPE.md rule 2: "Past tense permitted in brief historical setup (1-2 sentences) when Hoid is explicitly recounting events." Recommend option (b).
+
+### BUG-S7-003: 17 adjacent same-difficulty violations across all 6 modules
+**Severity:** Medium
+**Discovered:** Stage 7 (editorial difficulty curve check)
+**Description:** The difficulty curve rule ("No two adjacent puzzles in the same module at the same difficulty") is violated 17 times. Every module has at least 2 adjacent pairs at the same difficulty. This is structurally caused by 6 puzzles per module with only 3 difficulty tiers (2,3,4 stars in Rounds 1-2; 2/3,3,4,5 in Round 3).
+**Impact:** Mathematically unavoidable without half-star ratings. The macro ramp (start low, end high) is correct in every module.
+**Mitigation:** Accept as structural limitation, or introduce half-star ratings. Priority targets for reclassification: P15 (3->4), P22 (3->4), P27 (3->4), P32 (3->4).
+
+### BUG-S7-004: Inconsistent solution verification sections
+**Severity:** Low
+**Discovered:** Stage 7 (editorial consistency check)
+**Description:** P31-P36 (Module F) contain HTML-comment solution verification sections ("AUTHOR ONLY -- not for solvers"). P01-P30 lack these sections. Inconsistency across modules.
+**Impact:** No solver impact (HTML comments are invisible). Creates inconsistency for author teams.
+**Mitigation:** Either add verification sections to all 36 puzzles at Stage 11 (POLISH), or strip them from P31-P36 at Stage 9 (DELIVERY). Recommend adding to all for author reference, then stripping at delivery.
+
+### BUG-S7-005: P18 difficulty potentially overstated
+**Severity:** Low
+**Discovered:** Stage 7 (editorial difficulty assessment, confirming BUG-S6-011)
+**Description:** P18 (The Surge Wheel, rated 4-star) is a mechanical chain-lookup with no branching or backtracking. Given Windrunners as anchor, each position follows uniquely. The puzzle functions as a knowledge test, not constraint satisfaction. A 3-star rating may be more accurate.
+**Impact:** Downgrading to 3-star does not improve the difficulty curve (creates P15/P16/P18 triplet at 3 stars). The overrating is minor.
+**Mitigation:** Leave at 4 stars unless the author team wants to differentiate it from P17. Note: the extraction step (7 marked positions spelling PATTERN) adds modest complexity beyond the placement.
