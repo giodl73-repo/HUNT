@@ -182,32 +182,25 @@ Each feeder value's **parity** (odd/even) indicates whether the station was invo
 | R2-05 | 9 | Odd | Yes — fault occurred |
 | R2-06 | 4 | Even | No — reactor nominal |
 
-Three systems were involved (odd parity): ODN Network, Shield Array, EPS Circuit.
+Three systems were involved (odd parity): ODN Network (7), Shield Array (65), EPS Circuit (9).
 
-The meta asks: *"The first command during the gap came from which station? Enter that station's position in the duty roster as the starting position."*
+The meta asks: *"Which station issued the first alert? Its duty roster position is the starting point."*
 
-The three involved stations have roster positions: COMPUTER/ENG=6, TAC=1, ENG=5. The **earliest** system to show anomaly during the gap is the shield array (tactical alert is always the first response to contact). TAC's roster position is 1.
+### Mechanism: First Alert by Lowest Odd Value
 
-But the actual mechanism uses the feeder values differently. The three odd values are 7, 65, 9. Sorted: 7, 9, 65. The meta presents a **First Response Protocol** lookup:
+The First Response Protocol lookup is simple: among the odd-parity feeder values, the **lowest value** identifies the system that generated the first alert. Lower values mean lower node/component IDs — these are always the primary sensors, which detect contacts first.
 
-The first command during any Contact Protocol comes from the station that detected the contact. In the surviving logs, the system with the **lowest odd feeder value** responded first. Value 7 (Data Breach, node ID 7) corresponds to the COMPUTER station, which detected the unauthorized data flow before tactical picked up the contact on sensors.
+| Odd values | 7 (R2-02), 9 (R2-05), 65 (R2-04) |
+|---|---|
+| Lowest | **7** — Data Breach, ODN Node 7 |
+| Controlling station | COMPUTER |
+| Crew roster position | **3** (KWON — COMPUTER officer on duty) |
 
-COMPUTER station's position in the circular crew roster: **position 3** (KWON — the COMPUTER officer on duty during the gap).
-
-This becomes the starting position for the CyclicGroupDisplay.
-
-### Actual Mechanism (Simplified)
-
-The six values, when placed in puzzle order (R2-01 through R2-06), form a sequence: 2, 7, 14, 65, 9, 4. The meta panel presents this as a command sequence and asks: *"Which station issued the first alert? Its duty roster position is the starting point."*
-
-The meta provides a **Response Sequence Decoder**:
-1. Take the feeder values in order: 2, 7, 14, 65, 9, 4
-2. The first value that exceeds normal operating range for its system = the first alert
-3. Normal ranges: Conduits (1-3), ODN Node (1-15), Grid Coord (1-25), Shield % (0-100), Component ID (1-20), Throttle (1-8)
-4. All values are within range. BUT the question is which station's reading appeared in a CLASSIFIED log sector (values present only in the purged data, reconstructed by the solver).
-5. Cross-reference with the Standing Orders: during GQ-CP, station alerts are issued in sensor-priority order. The contact was at bearing 213 (from R1-03). Station closest to bearing 213 on the bridge layout = station position **3**.
+The meta panel presents the Station Command Log with controlling station assignments and roster positions. The solver identifies the three odd-parity systems, finds the lowest value, looks up its station, and reads the roster position.
 
 **Output: Starting position = 3**
+
+*(KWON at COMPUTER detected the unauthorized data flow first — before tactical even had the contact on sensors. This is consistent with R3-01: Kwon's stress response began at GAP+00:14, the exact moment of the data breach.)*
 
 ### 80% Rule
 
