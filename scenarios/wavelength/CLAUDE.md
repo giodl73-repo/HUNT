@@ -38,7 +38,7 @@
 | 7. EDITORIAL | `reviews/editorial-review.md` | done |
 | 8. INTEGRATION | Integration checklist | done |
 | 9. DELIVERY BUILD | `delivery/` | done |
-| 10. PLATFORM TEST | `tests/live-solve-simulation.md` | -- |
+| 10. PLATFORM TEST | `tests/platform-test.md` | done |
 | 11. POLISH | Ship-ready | -- |
 
 ## World Data Files
