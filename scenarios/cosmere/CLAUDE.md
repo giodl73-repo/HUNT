@@ -36,7 +36,7 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 |-------|--------|-------------|-------|
 | 1. SCOPE | Done | `SCOPE.md`, `CLAUDE.md` | Identity, structure, narrator, meta target |
 | 2. WORLD BUILD | Done | `world/` — 6 systems | Allomancy, Knights Radiant, Shards, Hoid, Scadrial, Roshar |
-| 3. PUZZLE POOL | -- | `PUZZLE-POOL.md` | |
+| 3. PUZZLE POOL | Done | `PUZZLE-POOL.md` | 72 candidates (12/module), panel ranked, 36 recommended |
 | 4. ASSIGNMENT | -- | `PUZZLES.md` | 36 briefs, all answers coordinated |
 | 5. META DESIGN | -- | `meta/` | 3 round metas + 1 super-meta |
 | 6. AUTHORING | -- | `puzzles/` | 36 puzzle files |
