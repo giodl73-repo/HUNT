@@ -94,6 +94,20 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
 - **Impact:** Low. META-DESIGN.md is a design document, not solver-facing.
 - **Fix:** Update META-DESIGN.md table to match the authored roster positions.
 
+**BUG-L10: CLAUDE.md duration estimates are stale (v1 or pre-reference-card)**
+- CLAUDE.md "Duration" field says "8-12 hours (team), 15-20 hours (solo)."
+- Stage 10 platform test simulation estimates: 1-2h (expert team), 3-5h (novice team), 5-8h (solo).
+- The v2 reference-card design makes puzzles significantly faster than v1 classification puzzles.
+- **Impact:** Major. Sets incorrect expectations for playtesters and event scheduling.
+- **Fix:** Update CLAUDE.md duration to match Stage 10 estimates.
+
+**BUG-L11: HINTS.md R2-02 near-solution says "Comms Computer" for node 7**
+- HINTS.md R2-02 near-solution hint: "The breach entry point is node 7 -- the Comms Computer node."
+- Should say "Security Computer" per world data and authored puzzle file.
+- Extension of BUG-L05 (PUZZLES.md has same issue).
+- **Impact:** Major. Solver-facing hint text has wrong label (answer value 7 is correct).
+- **Fix:** Update HINTS.md R2-02 near-solution to say "Security Computer."
+
 ## Closed
 
 **BUG-L02** — closed 2026-02-28. Resolved in R2-META authoring (parity-based mechanism).

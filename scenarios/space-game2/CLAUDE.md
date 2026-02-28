@@ -47,7 +47,7 @@ The instruments speak. Terse. No flavor text. Evidence only.
 | 7. EDITORIAL | Done | `reviews/editorial-review.md` | 0 blockers, 3 major (1 open — R2-META mechanism), 7 minor. In-place fixes applied. |
 | 8. INTEGRATION | Done | `reviews/integration-check.md` | 8/8 checks PASS. 3 round metas authored. BUG-L02/L06 resolved. BUG-L09 new (low). |
 | 9. DELIVERY BUILD | -- | `delivery/` | |
-| 10. PLATFORM TEST | -- | `tests/platform-test.md` | |
+| 10. PLATFORM TEST | Done | `tests/platform-test.md` | 0 blockers, 2 major, 4 minor. Dual-solver PASS on all 20 puzzles. Narrative arc PASS. Meta chain verified. |
 | 11. POLISH | -- | Final pass | |
 
 ## Round Overview
