@@ -6,6 +6,23 @@
 
 ## Design Philosophy
 
+### Two solver types — both must succeed
+
+Every puzzle must work for two very different players:
+
+**The Panel Expert** — knows what a Lissajous figure is. Has used a spectrum analyzer. Understands phase lock. For them: the instrument feels real, the physics is right, achieving the win condition is fast and satisfying. They feel like they're actually operating the ship.
+
+**The Panel Novice** — has never touched an oscilloscope. Doesn't know what FFT means. For them: the panel teaches them what they need. They can learn inductively — tune a control, watch the display change, understand what they're looking for, find it. They feel clever, not lost.
+
+**How to achieve both:** The panel is its own tutorial.
+- Every instrument has a visible reference card showing what the key states look like
+- The "not there yet" state and the "achieved" state are visually distinct and unmistakable
+- Controls are labeled well enough that a novice can reason from them without prior knowledge
+- The win condition is visible before you reach it — you can see the drifting figure and understand you're looking for it to stabilize
+- An expert skips the reference card and goes straight to the controls. A novice reads it and catches up. Both solve it.
+
+**Testing requirement:** Every puzzle must be blind-tested by both types. Stage 10 platform test explicitly simulates one expert and one novice per puzzle. If the novice can't solve it from the panel alone, the panel needs a better reference card — not a hint system.
+
 ### Controls-based, not social
 
 This is a controls-based puzzle game. Story unfolds through instrument data, not dialogue or crew interaction. There are no conversations, no NPCs to question, no social deduction. The player is alone with the panels. The intrigue reveals itself through what the instruments *show* — a medical scanner registering cortisol spike at the exact moment of contact, a power reroute to an unauthorized compartment, a badge swipe that couldn't have happened if the person was where they claimed. The player pieces together the conspiracy through physical operation of equipment. The instruments don't lie. Someone wishes they did.
