@@ -21,6 +21,7 @@ Track bugs found during scenario testing. Fix and document.
 | 11 | Major | /puzzle-author, /puzzle-test | These skills don't leverage /puzzle — they should use /puzzle <id> brief to read the full brief, /puzzle <id> status to update status, /puzzle <id> comment to log actions. Currently each skill independently reads PUZZLES.md. The /puzzle skill should be the single data layer all other skills go through. | AoE Stage 4 |
 | 12 | Major | Scenario structure | Each scenario needs a `world/` directory. **Real-world hunts**: fact-checked external data. **Fictional hunts**: invented canon locked before authoring. Fictional world-building is Stage 1/2 work — design data tables to fit puzzle mechanisms. | AoE Stage 5 |
 | 14 | Major | Pipeline — no UX/interactive support | No skill or template for interactive puzzle components: mini-games, fake UIs (achievement screens, inventory, game portals), web apps embedded in puzzles. Especially critical for video game hunts. Scenario 3 will exercise this — skill to be designed based on findings. | Identified pre-Scenario 3 |
+| 17 | Blocking | Real-world music domain | Reproducing song lyrics — even short excerpts under fair-use framing — triggers content filtering. Toolkit must explicitly prohibit lyrics in puzzle content. Hidden-word puzzles must use song TITLES only (not copyrightable), not lyric text. Rule: for music hunts, puzzle content may reference titles, artist names, album names, chart positions, music theory facts — never lyric text. | WAVELENGTH Stage 6 |
 
 ## Fixed
 
