@@ -34,6 +34,44 @@
 **Impact:** META-I breaks (spells REALF instead of REALM). Super-meta unaffected.
 **Fix:** Either revise P01 to produce UMBRA (matching META-DESIGN), or update META-DESIGN to use USHER (requires redesigning META-I extraction). META-DESIGN is the higher-authority document since it was verified for the full meta chain.
 
+### ISS-001: P03 hex intimidation factor
+**Severity:** Low (Stage 11 polish)
+**Stage:** 10 (Platform Test)
+**Description:** Novice solver found hex dumps intimidating initially. Consider adding a brief "how to read hex" sidebar on the P03 wiki page. Once the solver knows which offsets to check, the puzzle is a straightforward lookup.
+**Action:** Add hex tutorial note to P03 wiki page in Stage 11.
+
+### ISS-002: P05 DEF=1 below documented range
+**Severity:** Low (Stage 11 polish)
+**Stage:** 10 (Platform Test)
+**Description:** Log 5 computes DEF=1, which is below the documented stat range of 5-60. BattleMath_99's note about modded encounters explains this, but a solver might hesitate. Add an in-character clarification.
+**Action:** Add note to BattleMath_99's post in Stage 11.
+
+### ISS-003: META-II display order vs solve order
+**Severity:** Low (Stage 11 polish)
+**Stage:** 10 (Platform Test)
+**Description:** META-II display order (LOTUS, EMBER, GLEAM, HELIX, ORBIT) does not match puzzle-slot order (LOTUS, ORBIT, EMBER, GLEAM, HELIX). The solver must trust the on-page display order. Could cause brief confusion.
+**Action:** Add visual cue: "Read the secrets from top to bottom, as displayed."
+
+### ISS-004: Super-meta "position" ambiguity
+**Severity:** Low (informational)
+**Stage:** 10 (Platform Test)
+**Description:** DataMiner_X's post says "each one has a number -- its position in the archive." The word "position" might be ambiguous. Consider clarifying the ordering or adding an explicit numbered list.
+**Action:** Clarify ordering in DataMiner_X's super-meta post.
+
+### ISS-005: P08 Oathbreaker near-miss
+**Severity:** Info
+**Stage:** 10 (Platform Test)
+**Description:** Novice solver initially marked #13 Oathbreaker as fake due to the slight description difference ("were meant to break" vs "were meant to be broken"). This is intentional design — it tests careful reading. Keep as-is per The Social's notes.
+**Action:** No change. Working as intended.
+
+---
+
 ## Closed
 
-(none)
+### BUG-001: P02 answer mismatch — CLOSED
+**Fixed in:** Commit 0e969c8 (P01+P02 answer revision)
+**Resolution:** P02 revised to use hex ID extraction from crafted items. Answer QUELL verified in platform test.
+
+### BUG-005: P01 answer mismatch — CLOSED
+**Fixed in:** Commit 0e969c8 (P01+P02 answer revision)
+**Resolution:** P01 revised with enemy swap and new extraction. Answer UMBRA verified in platform test. META-I correctly extracts REALM.

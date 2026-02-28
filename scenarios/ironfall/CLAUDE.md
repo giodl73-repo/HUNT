@@ -34,7 +34,7 @@ The archive speaks. Past tense for forum memories. Present tense for the countdo
 | 7. EDITORIAL | Done | `reviews/editorial-review.md` | Voice consistent; P02 answer mismatch flagged |
 | 8. INTEGRATION | Done | `reviews/integration-check.md` | P03-P10 pass; P01+P02 need answer revision |
 | 9. DELIVERY BUILD | Done | `delivery/` files | Site spec, homepage, theme guide, manual page |
-| 10. PLATFORM TEST | -- | Test checklists | |
+| 10. PLATFORM TEST | Done | `tests/platform-test.md` | Full team sim, all 3 meta levels verified, 5 issues for Stage 11 |
 | 11. POLISH | -- | Final pass, hints, encoding | |
 
 ## World Systems
