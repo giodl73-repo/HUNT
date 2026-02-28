@@ -1,6 +1,6 @@
 # DEAD RECKONING v2 — Game Architecture & Scene Script
 
-**Document type:** Blueprint for React/TypeScript game developer
+**Document type:** Blueprint for Phaser 4/TypeScript game developer
 **Audience:** The person building the interactive experience
 **Covers:** Ship architecture, navigation system, full scene script, state machine, multi-ship future
 
@@ -1581,7 +1581,19 @@ Incident reconstruction complete.
 
 ---
 
-## Section 4: React State Machine
+## Section 4: Phaser 4 State Machine
+
+### Implementation Notes (Phaser 4 specific)
+
+State is managed via **Phaser Registry** (`this.registry.set/get`) — a global key/value store accessible from any Scene. The `GameState` interface below defines the shape. On each puzzle solve, fire a scene event; the active Scene listens and triggers the appropriate unlock and cutscene.
+
+**Scene structure:**
+- One Scene per deck/major location (e.g., `Deck1Bridge`, `Deck2OpsWing`, `Deck5Engineering`)
+- Room transitions: `this.scene.start('Deck2-COMMS')` or `this.scene.sleep()` / `this.scene.wake()`
+- Cutscene sequences: `this.tweens.createTimeline()` for timed text reveals (e.g., the 3-line badge log appearing 2 seconds apart)
+- Countdown: `this.time.addEvent({ delay: 1000, callback: tickCountdown, loop: true })`
+- Widget instances: instantiated as Phaser GameObjects from `ConsoleWidgets.ts` and `InteractiveControls.ts`, added to the Scene via `this.add.existing(widget)`
+- Puzzle complete: `this.events.emit('puzzle:solved', 'R1-01')` → Scene Manager listens → unlocks next room → triggers cutscene queue
 
 ### TypeScript Interface
 
@@ -1871,43 +1883,43 @@ interface SaveData {
 // Save slots: 3 manual + 1 auto
 ```
 
-### Widget Component Map
+### Widget Map (Phaser 4 GameObjects)
 
-Each puzzle maps to specific React components. The widget names match the console-widget-catalog.
+All widgets are Phaser 4 GameObjects defined in `Phaser4/src/ui/console/ConsoleWidgets.ts` (displays) and `InteractiveControls.ts` (controls). Instantiate via `new WidgetClass(scene, x, y, config)` and add with `this.add.existing(widget)`.
 
-| Widget Class | React Component | Used By |
-|-------------|----------------|---------|
-| SineWaveDisplay | `<SineWaveDisplay />` | R1-01 |
-| LissajousDisplay | `<LissajousDisplay />` | R1-02 |
-| PhaseInterferenceDisplay | `<PhaseInterferenceDisplay />` | R1-03 |
-| ConicSectionDisplay | `<ConicSectionDisplay />` | R1-04 |
-| RadarSweepDisplay | `<RadarSweepDisplay />` | R1-05 |
-| TargetingReticleDisplay | `<TargetingReticleDisplay />` | R1-05 |
-| CommSignalDisplay | `<CommSignalDisplay />` | R1-06 |
-| ConduitFlowDisplay | `<ConduitFlowDisplay />` | R2-01 |
-| NetworkGridDisplay | `<NetworkGridDisplay />` | R2-02 |
-| HeatMapDisplay | `<HeatMapDisplay />` | R2-03 |
-| ShieldDisplay | `<ShieldDisplay />` | R2-04 |
-| CircuitTopologyDisplay | `<CircuitTopologyDisplay />` | R2-05 |
-| GaugeDisplay | `<GaugeDisplay />` | R2-01, R2-03, R2-06 |
-| ThrottleLever | `<ThrottleLever />` | R2-06 |
-| LifesignsDisplay | `<LifesignsDisplay />` | R3-01 |
-| ModularClockDisplay | `<ModularClockDisplay />` | R3-02 |
-| CayleyTableDisplay | `<CayleyTableDisplay />` | R3-03 |
-| IndicatorPanel | `<IndicatorPanel />` | R1-META, R2-META, R3-04, R3-05 |
-| BatSwitch | `<BatSwitch />` | R3-05 |
-| ScrollingTextDisplay | `<ScrollingTextDisplay />` | R3-02, R3-04, R3-05 |
-| CyclicGroupDisplay | `<CyclicGroupDisplay />` | FINAL META |
-| NumericStepper | `<NumericStepper />` | R1-01, R1-02, R1-04, R1-06, R3-02 |
-| RotaryDial | `<RotaryDial />` | R1-01, R1-02, R1-04, R1-06, R3-01, R3-03 |
-| ToggleSwitch | `<ToggleSwitch />` | R1-03, R2-01, R2-02 |
-| PowerSlider | `<PowerSlider />` | R2-04, R2-06 |
-| LCARSButton | `<LCARSButton />` | R2-03, R2-05, R3-03, FINAL |
-| LightedButton | `<LightedButton />` | R1-05 |
-| LinkedSliderInput | `<LinkedSliderInput />` | R1-03, R3-01 |
-| NumericInput | `<NumericInput />` | R1-META, R2-META, R3-META |
-| MasterAlarm | `<MasterAlarm />` | R3-05 |
-| AutoProcedureButton | `<AutoProcedureButton />` | R3-05 |
+| Widget Class | Source file | Used By | Puzzle Scene |
+|-------------|------------|---------|--------------|
+| SineWaveDisplay | ConsoleWidgets.ts | R1-01 | Deck2-COMMS |
+| LissajousDisplay | ConsoleWidgets.ts | R1-02 | Deck2-NAV |
+| PhaseInterferenceDisplay | ConsoleWidgets.ts | R1-03 | Deck2-SCIENCE |
+| ConicSectionDisplay | ConsoleWidgets.ts | R1-04 | Deck2-SCIENCE |
+| RadarSweepDisplay | ConsoleWidgets.ts | R1-05 | Deck2-TAC |
+| TargetingReticleDisplay | ConsoleWidgets.ts | R1-05 | Deck2-TAC |
+| CommSignalDisplay | ConsoleWidgets.ts | R1-06 | Deck2-SIGNALS |
+| ConduitFlowDisplay | ConsoleWidgets.ts | R2-01 | Deck5-EPS |
+| NetworkGridDisplay | ConsoleWidgets.ts | R2-02 | Deck5-COMPUTER |
+| HeatMapDisplay | ConsoleWidgets.ts | R2-03 | Deck5-ENVIRO |
+| ShieldDisplay | ConsoleWidgets.ts | R2-04 | Deck5-MAIN-ENG |
+| CircuitTopologyDisplay | ConsoleWidgets.ts | R2-05 | Deck5-MAIN-ENG |
+| GaugeDisplay | ConsoleWidgets.ts | R2-01, R2-03, R2-06 | Deck5 scenes |
+| ThrottleLever | InteractiveControls.ts | R2-06 | Deck5-MAIN-ENG |
+| LifesignsDisplay | ConsoleWidgets.ts | R3-01 | Deck3-SICKBAY |
+| ModularClockDisplay | ConsoleWidgets.ts | R3-02 | Deck4-SECURITY |
+| CayleyTableDisplay | ConsoleWidgets.ts | R3-03 | Deck4-CORRIDOR |
+| IndicatorPanel | ConsoleWidgets.ts | R1-META, R2-META, R3-04, R3-05 | Meta/Deck4 scenes |
+| BatSwitch | InteractiveControls.ts | R3-05 | Deck4-EMERGENCY |
+| ScrollingTextDisplay | ConsoleWidgets.ts | R3-02, R3-04, R3-05 | Deck4 scenes |
+| CyclicGroupDisplay | ConsoleWidgets.ts | FINAL META | Deck1-BRIDGE |
+| NumericStepper | InteractiveControls.ts | R1-01, R1-02, R1-04, R1-06, R3-02 | Various |
+| RotaryDial | InteractiveControls.ts | R1-01, R1-02, R1-04, R1-06, R3-01, R3-03 | Various |
+| ToggleSwitch | InteractiveControls.ts | R1-03, R2-01, R2-02 | Various |
+| PowerSlider | InteractiveControls.ts | R2-04, R2-06 | Deck5 scenes |
+| LCARSButton | InteractiveControls.ts | R2-03, R2-05, R3-03, FINAL | Various |
+| LightedButton | InteractiveControls.ts | R1-05 | Deck2-TAC |
+| LinkedSliderInput | InteractiveControls.ts | R1-03, R3-01 | Various |
+| NumericInput | InteractiveControls.ts | R1-META, R2-META, R3-META | Meta scenes |
+| MasterAlarm | InteractiveControls.ts | R3-05 | Deck4-EMERGENCY |
+| AutoProcedureButton | InteractiveControls.ts | R3-05 | Deck4-EMERGENCY |
 
 ---
 
@@ -1999,10 +2011,10 @@ All missions share:
 
 ### Implementation Priority
 
-For the React/TypeScript build, implement in this order:
+For the Phaser 4/TypeScript build, implement in this order:
 
 1. **Navigation engine** — deck maps, room transitions, turbolift, door states
-2. **Widget library** — build each widget as an isolated React component with standardized props
+2. **Widget library** — widgets already exist in `ConsoleWidgets.ts` / `InteractiveControls.ts`; configure each via Phaser constructor config objects
 3. **Puzzle container** — wraps widgets + reference card + answer validation + solve tracking
 4. **State machine** — GameState management, phase transitions, save/load
 5. **Scene system** — cutscene renderer, text display, animation sequences
