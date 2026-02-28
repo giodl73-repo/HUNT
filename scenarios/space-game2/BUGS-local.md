@@ -66,6 +66,23 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
   but the exact mechanism needs the R2-META puzzle to be authored.
 - **Impact:** Medium. Blocks R2-META authoring but not R2 feeder completion.
 
+**BUG-L07: R3-03 and R3-05 timeline summaries were not chronological**
+- R3-03 section 7 listed GAP +01:22 before GAP +00:42 (puzzle order, not chronological).
+- R3-05 section 7 had the same issue plus GAP +01:55 before GAP +01:42.
+- **Impact:** Major. Confusing to solvers reading the timeline reconstruction.
+- **Resolution:** Fixed in Stage 7 editorial. Both timelines reordered to chronological.
+- **Status:** CLOSED.
+
+**BUG-L08: R3-05 binary encoding section self-contradictory**
+- Section 6 "Binary Encoding of Final State" started computing binary, then cut itself
+  off mid-sentence ("C = ON (0... wait)") to correct course.
+- **Impact:** Minor. Developer-facing data section, not solver-facing.
+- **Resolution:** Fixed in Stage 7 editorial. Section rewritten as "Answer Encoding"
+  with clean explanation.
+- **Status:** CLOSED.
+
 ## Closed
 
 **BUG-L03** — closed 2026-02-28. Resolved in R3-05 authoring.
+**BUG-L07** — closed 2026-02-28. Fixed in Stage 7 editorial.
+**BUG-L08** — closed 2026-02-28. Fixed in Stage 7 editorial.

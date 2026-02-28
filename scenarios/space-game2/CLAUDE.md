@@ -43,8 +43,8 @@ The instruments speak. Terse. No flavor text. Evidence only.
 | 3. PUZZLE POOL | Done | `PUZZLE-POOL.md`, `HINTS.md` | 30+ candidates, panel ranked, 17 selected |
 | 4. ASSIGNMENT | Done | `PUZZLES.md` | 17 widget-first briefs, all answers numeric |
 | 5. META DESIGN | Done | `meta/META-DESIGN.md` | CyclicGroupDisplay final meta, 3 round metas |
-| 6. AUTHORING | -- | `puzzles/` | |
-| 7. EDITORIAL | -- | `reviews/editorial-review.md` | |
+| 6. AUTHORING | Done | `puzzles/` | 17 puzzle files authored with widget configs, reference cards, solve paths |
+| 7. EDITORIAL | Done | `reviews/editorial-review.md` | 0 blockers, 3 major (1 open — R2-META mechanism), 7 minor. In-place fixes applied. |
 | 8. INTEGRATION | -- | `reviews/integration-check.md` | |
 | 9. DELIVERY BUILD | -- | `delivery/` | |
 | 10. PLATFORM TEST | -- | `tests/platform-test.md` | |

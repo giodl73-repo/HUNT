@@ -219,9 +219,9 @@ RESULT: OVERRIDE — GRANTED
 ELEMENT 4 MAPS TO: LT. CMDR. REEVES, D. — CHIEF ENGINEER — POSITION 4
 REEVES STATUS AT GAP +01:55: LOGGED AS OFF-DUTY
 
-CHAIN OF EVENTS:
-  GAP +01:22   Kwon collapses at COMPUTER station (R3-01)
+CHAIN OF EVENTS (CHRONOLOGICAL):
   GAP +00:42   Chen accesses Sensor Bay Anteroom (R3-02)
+  GAP +01:22   Kwon collapses at COMPUTER station (R3-01)
   GAP +01:55   Okafor composes Reeves' token to achieve OVERRIDE
 
   Reeves was listed as off-duty. Reeves' authorization token was

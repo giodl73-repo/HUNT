@@ -229,12 +229,9 @@ Time for expert: under 2 minutes (physical execution of 12 clicks).
 | C (COMM) | ON | OPEN (not closed in sequence) | Lit (green) |
 | D (SENSOR) | OFF | CLOSED | Dark |
 
-### Binary Encoding of Final State
+### Answer Encoding
 
-Switches A-D read as a 4-bit binary number (A = MSB, D = LSB):
-- A = ON (1), B = ON (1), C = ON (0... wait)
-
-**Procedure register reading = 12.** This is the answer — the total operation count, not a binary encoding of switch states. The register is the instrument's output.
+The answer is the **procedure register reading** — the total count of physical operations performed (12). This is not a binary encoding of the final switch states. The register counts every guard lift, switch flip, and guard close. The 12-operation sequence is the CO confirmation bypass variant; standard procedure would produce 14.
 
 ### Answer
 
@@ -270,11 +267,11 @@ SEQUENCE ANALYSIS:
   One person had the knowledge, the authority, and the physical
   presence to execute the 12-operation bypass: Captain Vasquez.
 
-TIMELINE RECONSTRUCTION (ROUND 3):
-  GAP +01:22   Kwon collapses — COMPUTER station unmonitored
+TIMELINE RECONSTRUCTION (ROUND 3 — CHRONOLOGICAL):
   GAP +00:42   Chen enters Sensor Bay — pre-authorized code
-  GAP +01:55   Reeves' token composes OVERRIDE permission
+  GAP +01:22   Kwon collapses — COMPUTER station unmonitored
   GAP +01:42   Vasquez forces Sensor Bay Anteroom door
+  GAP +01:55   Reeves' token composes OVERRIDE permission
   GAP +02:10   12-operation bypass executed — deflector reconfigured
   GAP +02:38   Vasquez forces Comm Array Junction
   GAP +03:34   Vasquez forces Computer Core Anteroom — purge initiated

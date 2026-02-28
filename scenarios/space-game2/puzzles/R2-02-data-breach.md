@@ -12,7 +12,7 @@
 
 **Win condition:** The rogue packet's network entry point identified. When the entry node is disabled, the red packet never appears on the network.
 
-**Answer value:** 7 (the breach entry node ID — Node 7, the Comms Computer)
+**Answer value:** 7 (the breach entry node ID — Node 7, the Security Computer)
 
 ---
 
