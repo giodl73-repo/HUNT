@@ -42,7 +42,7 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 | 6. AUTHORING | Done | `puzzles/` | All 36 puzzles authored (P01-P36) |
 | 7. EDITORIAL | Done | `reviews/editorial-review.md` | Voice: PASS w/ advisories. Extractions: 36/36 PASS. Metas: 4/4 PASS. 3 bugs fixed, 5 new logged. |
 | 8. INTEGRATION | Done (conditional) | `reviews/integration-check.md` | 1 BLOCKER (UNITY in P10 word bank), 2 MAJOR (SUPER-META truncation, difficulty triplets). Fix BLOCKER before Stage 9. |
-| 9. DELIVERY BUILD | -- | `delivery/` | Website + print |
+| 9. DELIVERY BUILD | Done | `delivery/` | Site spec, homepage, theme system, print spec |
 | 10. PLATFORM TEST | -- | `tests/platform-test.md` | |
 | 11. POLISH | -- | Final pass, hints, encoding | |
 

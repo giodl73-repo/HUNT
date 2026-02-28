@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE SIXTEENTH SHARD — A Cosmere Puzzle Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Alegreya:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* === RESET === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* === CUSTOM PROPERTIES === */
+    :root {
+      --bg-deep: #0a0a0f;
+      --text-primary: #e0dcd4;
+      --text-muted: #8a8478;
+      --border-subtle: #2a2a30;
+      --scadrial-accent: #d4a843;
+      --scadrial-bg: #1a1a1f;
+      --scadrial-text: #b8b0a8;
+      --scadrial-border: #3a352e;
+      --roshar-accent: #00e5ff;
+      --roshar-bg: #0d1520;
+      --roshar-text: #c0c8d0;
+      --roshar-border: #253040;
+      --roshar-glow: rgba(0, 229, 255, 0.08);
+      --cosmere-accent: #c0c0c0;
+      --cosmere-bg: #050508;
+      --cosmere-text: #a0a0a0;
+      --cosmere-border: #1a1a20;
+      --font-display: 'Cinzel', Georgia, serif;
+      --font-body: 'Alegreya', Palatino, serif;
+      --font-mono: 'JetBrains Mono', Consolas, monospace;
+      --content-max: 48rem;
+      --page-max: 64rem;
+    }
+
+    /* === BASE === */
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* === LAYOUT === */
+    .page {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    /* === COUNTDOWN BANNER === */
+    .countdown {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--scadrial-accent);
+      padding: 1rem 0;
+      letter-spacing: 0.05em;
+      animation: pulse-slow 4s ease-in-out infinite;
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    /* === HEADER === */
+    .site-title {
+      text-align: center;
+      margin: 6rem 0 1rem;
+    }
+    .site-title h1 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 2.5rem;
+      color: var(--cosmere-accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .site-title .subtitle {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* === MONOLOGUE === */
+    .monologue {
+      margin: 5rem 0;
+      max-width: 36rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .monologue p {
+      margin-bottom: 1.25rem;
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* === ROUND CARDS === */
+    .rounds {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 1.5rem;
+      margin: 4rem 0;
+    }
+    .round-card {
+      border: 1px solid var(--border-subtle);
+      padding: 2rem 1.5rem;
+      text-decoration: none;
+      transition: border-color 0.3s ease;
+      display: block;
+    }
+    .round-card:hover {
+      border-color: var(--text-primary);
+    }
+    .round-card .round-number {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .round-card h2 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .round-card .round-subtitle {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.9375rem;
+      margin-bottom: 1rem;
+    }
+    .round-card .puzzle-count {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .round-card .round-quote {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    /* Scadrial card */
+    .round-card.scadrial {
+      border-color: var(--scadrial-border);
+    }
+    .round-card.scadrial:hover {
+      border-color: var(--scadrial-accent);
+    }
+    .round-card.scadrial .round-number,
+    .round-card.scadrial h2 {
+      color: var(--scadrial-accent);
+    }
+    .round-card.scadrial .round-subtitle,
+    .round-card.scadrial .round-quote {
+      color: var(--scadrial-text);
+    }
+
+    /* Roshar card */
+    .round-card.roshar {
+      border-color: var(--roshar-border);
+    }
+    .round-card.roshar:hover {
+      border-color: var(--roshar-accent);
+      box-shadow: 0 0 12px var(--roshar-glow), 0 0 24px var(--roshar-glow);
+    }
+    .round-card.roshar .round-number,
+    .round-card.roshar h2 {
+      color: var(--roshar-accent);
+    }
+    .round-card.roshar .round-subtitle,
+    .round-card.roshar .round-quote {
+      color: var(--roshar-text);
+    }
+
+    /* Cosmere card */
+    .round-card.cosmere {
+      border-color: var(--cosmere-border);
+    }
+    .round-card.cosmere:hover {
+      border-color: var(--cosmere-accent);
+    }
+    .round-card.cosmere .round-number,
+    .round-card.cosmere h2 {
+      color: var(--cosmere-accent);
+    }
+    .round-card.cosmere .round-subtitle,
+    .round-card.cosmere .round-quote {
+      color: var(--cosmere-text);
+    }
+
+    /* === SEPARATOR === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 3rem 0;
+    }
+
+    /* === FOOTER === */
+    .site-footer {
+      text-align: center;
+      padding: 4rem 0 2rem;
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 600px) {
+      .site-title h1 { font-size: 1.75rem; letter-spacing: 0.1em; }
+      .rounds { grid-template-columns: 1fr; }
+      .page { padding: 2rem 1rem; }
+      .monologue { margin: 3rem 0; }
+      .site-title { margin: 3rem 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="countdown">
+      This archive closed on 14 Doxil 1175. The puzzles remain.
+    </div>
+
+    <div class="site-title">
+      <h1>The Sixteenth Shard</h1>
+      <p class="subtitle">A Cosmere Puzzle Archive</p>
+    </div>
+
+    <hr>
+
+    <div class="monologue">
+      <p>One has maintained this archive for longer than most civilizations endure. The puzzles were placed across three worlds by someone with too much time and a very particular sense of humor. They encode a message. The message has a single word at its center.</p>
+
+      <p>Scadrial's metals burn with names that have letters in useful positions. Roshar's knights swear oaths with measurable depth. The Cosmere's Shards number sixteen, but the count is never quite right.</p>
+
+      <p>A careful Worldhopper might start with the metals. They have always been the most honest.</p>
+
+      <p>The archive contains thirty-six puzzles, three round revelations, and one final question that has taken an exceptionally long time to phrase correctly. The answer is a single word. One already knows it. The trick is proving that one knows it.</p>
+    </div>
+
+    <hr>
+
+    <div class="rounds">
+
+      <a href="rounds/scadrial.html" class="round-card scadrial">
+        <div class="round-number">Round 1</div>
+        <h2>Scadrial</h2>
+        <div class="round-subtitle">The Metal Arts</div>
+        <div class="puzzle-count">12 puzzles</div>
+        <div class="round-quote">"The metals have names. The names have letters."</div>
+      </a>
+
+      <a href="rounds/roshar.html" class="round-card roshar">
+        <div class="round-number">Round 2</div>
+        <h2>Roshar</h2>
+        <div class="round-subtitle">Words of Radiance</div>
+        <div class="puzzle-count">12 puzzles</div>
+        <div class="round-quote">"The depth of an oath is not measured in volume."</div>
+      </a>
+
+      <a href="rounds/cosmere.html" class="round-card cosmere">
+        <div class="round-number">Round 3</div>
+        <h2>The Cosmere</h2>
+        <div class="round-subtitle">The Shattering</div>
+        <div class="puzzle-count">12 puzzles</div>
+        <div class="round-quote">"Sixteen pieces. Four of them have something to say."</div>
+      </a>
+
+    </div>
+
+    <hr>
+
+    <footer class="site-footer">
+      Maintained by a fool who refused a Shard and has been walking ever since.
+    </footer>
+
+  </div>
+</body>
+</html>
