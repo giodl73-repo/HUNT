@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standings — DEAD RECKONING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+
+  <div class="classification-banner">CLASSIFICATION: RESTRICTED — AUTHORIZED PERSONNEL ONLY</div>
+  <div class="classification-watermark" aria-hidden="true">RESTRICTED</div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__name">
+        <a href="index.html">DEAD RECKONING</a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="puzzles.html">Puzzles</a>
+        <a href="submit.html">Submit</a>
+        <a href="standings.html" class="active">Standings</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="site-main">
+    <div class="container">
+
+      <div class="page-header">
+        <p class="page-header__label">Investigation Registry</p>
+        <h1 class="page-header__title">Standings</h1>
+        <p class="page-header__sub" id="standings-updated">Loading...</p>
+      </div>
+
+      <!-- Certification summary -->
+      <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+        <span class="badge badge--amber">OPERATIONS — R1 cleared</span>
+        <span class="badge badge--orange">ENGINEERING — R2 cleared</span>
+        <span class="badge badge--blue">COMMAND — R3 cleared</span>
+        <span class="badge badge--purple">COMMISSIONED — Final solved</span>
+      </div>
+
+      <!-- Standings table -->
+      <div id="standings-container">
+        <p style="font-size:0.8rem; color:#8b949e;">Loading standings...</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      DEAD RECKONING &mdash; CLASSIFICATION: RESTRICTED
+    </div>
+  </footer>
+
+  <script src="assets/hunt.js"></script>
+  <script>
+    // Load and render standings from data/standings.json
+    (function() {
+
+      const container  = document.getElementById('standings-container');
+      const updatedEl  = document.getElementById('standings-updated');
+
+      async function loadStandings() {
+        try {
+          const root = getSiteRoot();
+          const res  = await fetch(root + 'data/standings.json');
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          renderStandings(data);
+        } catch (err) {
+          container.innerHTML = '<p style="font-size:0.8rem; color:#8b949e;">Standings unavailable.</p>';
+          console.error('Standings load failed:', err);
+        }
+      }
+
+      function renderStandings(data) {
+        // Updated timestamp
+        if (data.updated) {
+          const d = new Date(data.updated);
+          updatedEl.textContent = 'Last updated: ' + d.toUTCString();
+        } else {
+          updatedEl.textContent = '';
+        }
+
+        const teams = data.teams || [];
+
+        if (teams.length === 0) {
+          container.innerHTML = '<p style="font-size:0.8rem; color:#8b949e; letter-spacing:0.05em;">No teams registered. Investigation ongoing.</p>';
+          return;
+        }
+
+        // Sort: commissioned first, then by solved count desc, then by last solve asc
+        teams.sort((a, b) => {
+          if (a.commissioned && !b.commissioned) return -1;
+          if (!a.commissioned && b.commissioned) return 1;
+          if ((b.solved || 0) !== (a.solved || 0)) return (b.solved || 0) - (a.solved || 0);
+          if (a.lastSolve && b.lastSolve) return new Date(a.lastSolve) - new Date(b.lastSolve);
+          return 0;
+        });
+
+        const rows = teams.map((team, i) => {
+          const certs = buildCertBadges(team);
+          const commStatus = team.commissioned
+            ? '<span class="status-commissioned">◉ COMMISSIONED</span>'
+            : '<span class="status-pending">◌ PENDING</span>';
+          const lastSolveStr = team.lastSolve
+            ? new Date(team.lastSolve).toUTCString().replace(' GMT', 'Z')
+            : '—';
+
+          return `
+            <tr>
+              <td style="color:#8b949e; font-size:0.7rem;">${i + 1}</td>
+              <td style="color:#e6edf3;">${escHtml(team.name || 'UNKNOWN')}</td>
+              <td>${escHtml(String(team.solved || 0))}/19</td>
+              <td>${certs}</td>
+              <td>${commStatus}</td>
+              <td style="color:#8b949e; font-size:0.7rem;">${escHtml(lastSolveStr)}</td>
+            </tr>
+          `;
+        }).join('');
+
+        container.innerHTML = `
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Team</th>
+                  <th>Solved</th>
+                  <th>Certifications</th>
+                  <th>Commission</th>
+                  <th>Last Solve</th>
+                </tr>
+              </thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+        `;
+      }
+
+      function buildCertBadges(team) {
+        const badges = [];
+        if (team.certOperations)  badges.push('<span class="badge badge--amber">OPS</span>');
+        if (team.certEngineering) badges.push('<span class="badge badge--orange">ENG</span>');
+        if (team.certCommand)     badges.push('<span class="badge badge--blue">CMD</span>');
+        if (badges.length === 0)  return '<span style="color:#8b949e; font-size:0.7rem;">NONE</span>';
+        return badges.join(' ');
+      }
+
+      function escHtml(str) {
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      loadStandings();
+
+    })();
+  </script>
+</body>
+</html>

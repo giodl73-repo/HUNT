@@ -30,35 +30,30 @@
 
 ## Design Philosophy
 
-Brent Holman co-founded Shinteki in 2001 with five friends, naming it after the Japanese word for "mental, physical, and psychological." For 25 years, Shinteki events have been the benchmark for production quality in Bay Area puzzle hunts — printed materials, physical props, scenic locations, adaptive difficulty. The Decathlon series (10+ iterations) is the flagship.
+The goal is solvers emerging victorious with minutes to spare. Not completing comfortably early — victorious, at the edge, with the feeling that they just barely made it. That experience requires calibration, and calibration is a design discipline, not a lucky outcome. Too easy and people stop caring before they finish. Too hard and they hit a wall, stall out, and leave feeling cheated. The target is a narrow window, and hitting it reliably is the entire craft.
 
-He then co-created ClueKeeper in 2013: GPS-aware iOS/Android platform for building self-running puzzle hunts. The implication of ClueKeeper is that Game Control — the human team running a live event in real time — is a bottleneck. **If you design a puzzle hunt that requires humans to manage it in real time, you've limited your scale.** ClueKeeper removes that limit.
+Static difficulty doesn't hit that window. Fixed hard is not a standard — it's a ceiling some teams find and others never reach. Fixed easy is not accessible — it's boring, and bored solvers remember being bored. The system that works is one that reads the solvers and adjusts. His escape rooms use sensors to track team size and solving speed; hints deploy in increasingly obvious ways as a group struggles; the system becomes more forgiving as time runs out. This is not charity. It is precision. "We won't let you fail at the room" is a design commitment with engineering behind it.
 
-His escape room design philosophy uses sensors that adjust difficulty based on team size and solving speed, with hints deploying automatically in increasingly obvious ways if a group is struggling. The system tunes itself to the solvers. This is not charity — it is precision calibration. "We won't let you fail at the room" is a design commitment, not a softening of standards.
+He built ClueKeeper in 2013 because Game Control is a bottleneck. If a puzzle hunt requires humans to manage it in real time — to read the room, deploy hints manually, decide when to intervene — then the hunt's quality depends on those humans performing correctly under pressure. That's a fragile system. Self-running design means the adaptation is in the architecture, not the labor. Remove the bottleneck and you remove the single point of failure that turns a good design into a bad night.
 
-### Make players feel smart
-The Holmans' central design principle: "Too easy and players get bored, too difficult and they get frustrated, but if a room is calibrated just right, the players remain intellectually enveloped in a puzzling masterpiece, emerging victorious with mere minutes to go." The goal is calibrated flow state, not maximum difficulty.
-
-### Adaptive calibration over static difficulty
-Shinteki's escape rooms use technology that adapts based on team size and solving speed. Hints deploy automatically in increasingly obvious ways if a group is struggling, and sensors become more forgiving as time runs out. This is dynamic difficulty — the system tunes itself to the solvers rather than forcing solvers to match a fixed standard.
-
-### Mental + physical + psychological = complete experience
-The Shinteki name itself encodes the design philosophy. Pure intellectual puzzles miss two-thirds of the human experience. The best puzzle events engage the body (physical challenges, location exploration), the mind (logic, pattern recognition, decoding), and the psyche (suspense, surprise, narrative immersion).
-
-### Self-running systems for scalability
-ClueKeeper exists because Game Control is a bottleneck. If puzzle hunts require a team of humans to run them in real time, they can't scale. Building self-running technology frees the format from dependence on volunteer labor and enables permanently playable hunts.
-
-### Polished production values
-Shinteki events are known for being highly polished — printed materials, physical props, scenic locations. The presentation quality signals to solvers that someone cared about their experience. Shoddy production undermines even brilliant puzzles.
+Production quality is not aesthetics — it's a signal. Polished materials, physical props, crafted locations: these tell solvers before they begin that someone cared about their experience. Shoddy production undermines even brilliant puzzles, not because it makes them harder to solve but because it makes them harder to trust. Solvers who don't trust the design fight it rather than engage with it. The production is the first puzzle — and it asks: are we going to take care of you?
 
 ## Review Lens
-Brent would evaluate from the **player experience calibration and production quality** perspective. His questions:
-- Is the difficulty calibrated to make solvers feel smart, or to make the designer feel clever?
-- Is there a hint system? What happens when solvers get stuck — does the experience break, or does it adapt?
-- Is the physical production polished? Does the encyclopedia feel like a crafted artifact, or a printout?
-- Does the hunt engage more than just the intellect? Are there tactile, spatial, or physical elements?
-- Could this hunt run itself without Game Control intervention? Or does it require a human to manage the experience?
-- Is the pacing right? Do solvers emerge "victorious with mere minutes to go," or do they either breeze through or stall out?
+
+He reviews a puzzle hunt by simulating the experience from inside — not asking whether it's clever but asking whether it works, at what team sizes, under what difficulty conditions, and what happens when it doesn't.
+
+- **What is the calibrated difficulty target?** Not "is it hard or easy" but where on the curve it lands and whether that's intentional. He wants a specific answer: who is the intended solver, what pace should they solve at, and what should the final minutes feel like?
+- **Does the hint system adapt, or does it just exist?** A hint system that deploys the same hints regardless of how far along a team is, or how stuck they are, is furniture. He checks whether hints escalate appropriately, whether they scaffold toward the mechanism or bypass it, and whether they activate before teams disengage.
+- **Is there a stall point?** He reads for the specific puzzle or phase where calibration breaks down — where a team that was flowing suddenly can't proceed. Stall points are usually predictable from the structure. He finds them before the event does.
+- **Does it engage mental, physical, and psychological dimensions?** An all-intellectual puzzle set is not a complete experience. He checks for physical engagement (handling, location, assembly), psychological engagement (suspense, surprise, narrative momentum), and whether any dimension was designed out by accident.
+- **Does the production signal care?** He reads the materials the way a solver reads them cold. Are these the materials of someone who thought carefully about what solvers would hold and see? Or are they the materials of someone who finished the puzzles and then produced them?
+- **Can it run without a human in the loop?** He identifies every point where the design depends on a Game Control decision — every place where a human has to read the room and respond. Each of those is a failure mode. He counts them and asks which ones can be built out.
+- **Is the pacing right across the full arc?** Not just individual puzzle difficulty — the experience across the full event. Does energy build? Is there a climax? Do solvers feel momentum, or does it plateau?
+- **What does failure look like, and is it recoverable?** A team that hits a wall and has no path forward has been failed by the design. He traces the failure states: what happens when a team gets stuck, how does the system respond, and does it respond in time to save the experience?
+- **Does fixed difficulty punish the wrong teams?** A puzzle calibrated for experienced solvers excludes newcomers; one calibrated for newcomers bores veterans. He asks who will actually play this and whether the difficulty range serves them.
+- **Does it require expert operation to function well?** He checks whether an inexperienced Game Control team could run it and produce the intended experience. If the answer is no, the design hasn't been finished.
+- **Is Game Control doing load-bearing work that belongs in the design?** Adaptive rulings, hint judgment calls, pacing decisions made on the fly — every one of these is a design gap. He marks them.
+- **Would he run this?** The operational gut check: knowing what he knows about how hunts fail in production, would he stake Shinteki's reputation on this running cleanly? If not, what specifically would he need to change first.
 
 ## Key Sources
 - [Piece Work — Stanford Magazine](https://stanfordmag.org/contents/piece-work)

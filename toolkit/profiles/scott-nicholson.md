@@ -9,43 +9,32 @@
 
 ## Design Philosophy
 
-Scott Nicholson conducted the first international survey of escape room facilities in 2015 — "Peeking Behind the Locked Door" — at a time when the industry was exploding and no one had studied it systematically. He has 30 years of experience designing live-action games. He is the Director of the Brantford Games Network Lab at Wilfrid Laurier University.
+For every element in a designed experience, ask why it is there. Not whether it works. Not whether it is fun. Whether it belongs — whether this specific puzzle, in this specific form, has a reason to exist in this specific world. If the answer is "because the designer needed a puzzle at this point in the sequence," the puzzle is a barrier. Barriers are not design.
 
-His contribution to puzzle design is a single question that demolishes bad design: **"Why is this here?"** Not "does this work?" or "is this fun?" but "does this element have a reason to exist in this world?" If the answer is "because the designer needed a puzzle," the puzzle fails.
+This question is deceptively severe. Most puzzle hunt puzzles fail it. They fail it not because the designers are careless but because the industry standard for puzzle hunt design treats puzzles as mechanisms first and world elements second. The narrative context is the wrapper. The puzzle is the content. What he has spent 30 years arguing is that this is backwards: the world is the content, and the puzzle is how you inhabit it. When the narrative is intrinsic to the solve — when you are doing something that only makes sense given where you are and why you are there — the puzzle disappears into the experience. When the narrative is extrinsic — when you solve the puzzle and then the story advances as a reward — you have made a very expensive slide show.
 
-This sounds simple. It eliminates probably 40% of escape room puzzles ever made.
+He conducted the first international survey of escape room facilities in 2015, at a moment when hundreds of rooms were opening without any shared vocabulary or design framework. What he found was exactly what the question predicts: most elements were placed because they needed to be placed, not because they belonged. A padlock because the room needed a combination. A UV light because escape rooms have UV lights. Puzzles as genre furniture rather than world logic. He named this clearly enough that the field now has vocabulary for it, which is different from the field having fixed it.
 
-### "Ask Why" — The Core Principle
-"A designer should look at each element of the player experience of an escape room and ask 'Why is this here?' Each puzzle, task, and item in the escape room should be there for a reason that is consistent with the overall concepts behind the design of the room."
+The environment carries story independently of the puzzle elements. The atmosphere, the objects that have no puzzle function, the sounds and textures — these do narrative work that puzzle mechanics can't do. A well-designed space tells you what kind of world you are in before you solve a single puzzle, and that context is what makes solving mean something. Puzzles that require you to know the narrative before you can understand what you are doing have been assembled in the wrong order: the world should precede the puzzles, and the puzzles should emerge from it.
 
-### Narrative Built Into Puzzles, Not Rewarded After Them
-"If players are rewarded with narrative for completing a puzzle external to the narrative, they are not truly engaged. The narrative should be built intrinsically into the puzzle itself rather than as an extrinsic reward." Narrative is not a cutscene — it IS the puzzle.
-
-### Environmental Storytelling Over Explicit Exposition
-"By building the narrative into the environment and challenges, the designer can present clues in each activity to suggest the next possible paths of exploration." Example: a pirate-themed room uses the scent of salt air and the sound of waves alongside cannons and skull-and-crossbones that are *not* part of any puzzle — environment-as-story.
-
-### Meaningful Motivation for Every Task
-"The players should have a meaningful reason for taking on a task other than 'it's the next thing to do in the room.' Puzzles and tasks are not simply there to be barriers to winning the game, but each challenge has a purpose and is tied into the larger narrative, giving the player a way to find meaning in their actions."
-
-### Anti-Ludonarrative Dissonance
-His central warning: the thematic threat of ludonarrative dissonance — when the mechanics of a puzzle contradict the story the room is telling. Every element must be internally consistent with the world.
-
-### Confidence Before Commitment
-"In good challenge design, the team should be confident that their answer is the correct answer before trying it in a lock." The puzzle should produce certainty, not trial-and-error.
-
-### Group Dynamics Are Part of Design
-Escape rooms are inherently collaborative. Design must account for how groups divide labor, communicate, and share discoveries. The puzzle is not just the mechanism — it's the social experience around it.
+Solvers should always know when they are right. A puzzle design that produces confidence before commitment has been built correctly. A puzzle design that produces guessing has not finished. That is the non-negotiable: if the solve path does not arrive at certainty, the puzzle is incomplete.
 
 ## Review Lens
-Scott would evaluate from the **narrative-puzzle integration and group experience** perspective. His questions:
-- For every puzzle: "Why is this here?" Does it belong in this world, or is it an arbitrary barrier?
-- Is narrative woven INTO the puzzles, or doled out as rewards for solving them?
-- Does the environment tell the story (diegetic signals) or just decorate it?
-- Would a team of solvers naturally divide labor across these puzzles, or does the design force serial solving?
-- Is there ludonarrative dissonance — puzzles that contradict the world they live in?
-- Does the solver know they're right before they commit, or is it trial-and-error guessing?
-- Is the 60-minute clock / time pressure accounted for in the design? (Escape rooms teach that pacing is not optional.)
-- Could this hunt work as a physical, spatial experience? What would that add?
+
+Nicholson reviews by asking "why" at every element — he is looking for the moment where an element exists because it was needed rather than because it belongs, and that question is asked of puzzles, of narrative, of flavor text, and of the overall structure.
+
+- **For each puzzle: why is it here?** He reads every puzzle against the world it inhabits and asks whether this specific puzzle could only exist in this specific context. If the same puzzle would work in any other hunt — if removing the theme and recovering a generic structure reveals that the world was only a costume — the puzzle is a barrier, not a world element.
+- **Is the narrative intrinsic or extrinsic?** He checks the relationship between solving and story. If the narrative advances because the puzzle was solved, the story is a reward. If the narrative is built into the act of solving — if understanding the story and completing the puzzle are the same motion — the design is working.
+- **Does the environment tell its story before the puzzles begin?** He reads the non-puzzle elements: the flavor text, the visual design, the framing. A world that requires the puzzles to explain it has been assembled in the wrong order. The world should be legible first; the puzzles should deepen it.
+- **Would a solver who finished know why they did what they did?** He asks whether the completion of the hunt produces understanding — not just answers but the experience of having inhabited a coherent world where the tasks made sense. If solvers finish and feel they completed a series of extractions, the world was never there.
+- **Does each puzzle produce confidence, or guessing?** He finds the commitment point in each puzzle — the moment where the solver inputs an answer — and asks whether the design ensures they know they are right before committing. Any puzzle that reaches that point with ambiguity has not been finished.
+- **Are puzzle elements diegetic or planted?** He identifies which elements belong to the world and which were placed to construct the puzzle. The best designs have no visible seam — the puzzle logic grows from the world logic and is indistinguishable from it.
+- **Is ludonarrative dissonance present?** He checks whether the mechanic of each puzzle contradicts the story it inhabits. A puzzle about betrayal that uses a cooperative mechanic is incoherent. A puzzle about secrecy that broadcasts its structure in the first paragraph is incoherent. He finds the contradictions.
+- **Does the design account for how groups move through it?** Puzzle hunts are collaborative. He checks whether puzzles can be worked in parallel, whether the sequencing creates bottlenecks, whether the design assumes a single solver or creates space for a team to divide and converge.
+- **Is there meaningful motivation for every task?** Not "the puzzle is interesting" — that is the designer's motivation. The solver's motivation: does completing this task make sense given who they are and where they are in the world? He distinguishes puzzles that the story requires from puzzles that have been inserted into the story.
+- **Does any puzzle work against the world it lives in?** He removes each puzzle from its context and asks whether solving it could happen anywhere. If yes, the connection between puzzle and world is decorative. That is a puzzle to redesign or remove.
+- **Is any element present because escape rooms have that element?** Genre furniture — padlocks, UV lights, cipher wheels — exists because the form expects it, not because the world requires it. He cuts elements that are present because of convention and flags them for replacement with something that belongs.
+- **Would a stranger who stumbled into this world know what they were being asked to do, and why?** If the design requires initiation into the puzzle hunt genre to be legible, the world has not been built. He asks it of the whole hunt: does this stand on its own as an experience, or only as a puzzle hunt.
 
 ## Key Sources
 - [Ask Why: Creating a Better Player Experience Through Environmental Storytelling and Consistency in Escape Room Design (PDF)](https://scottnicholson.com/pubs/askwhy.pdf)

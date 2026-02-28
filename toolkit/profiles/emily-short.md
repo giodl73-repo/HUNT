@@ -9,55 +9,32 @@
 
 ## Design Philosophy
 
-Emily Short's *Counterfeit Monkey* is ranked #1 on IFDB — the interactive fiction database — out of over 11,000 games. She achieved this with a mechanic where removing a letter from a word transforms the object into a different object in the game world. CRATE becomes RATE becomes TEAR becomes TEA. The word IS the thing. When you rename it, you've changed it.
+The best puzzles don't come from deciding to place a puzzle somewhere. They come from building a world with consistent rules and then noticing what the rules already imply. The puzzle isn't inserted into the world — it emerges from it, because the world has properties that, when explored, produce a problem with a right answer. The difference between a one-off puzzle and a systemic one isn't difficulty or cleverness. It's whether the puzzle would have happened anyway if you just kept following the logic.
 
-This is not a metaphor. It is a literal world model where language has physics.
+She has built game worlds where language has physics — where the name of a thing and the thing are not separably real, where altering the text alters the object, where a player who understands the rules of the world can set their own puzzles rather than waiting for the designer to present them. This is what she means by a world model. Not backstory. Not narrative framing. A causal system with generalizable rules, where components interact even when the player isn't directly manipulating both. When a world works this way, emergence isn't a design technique — it's a consequence. Players discover solutions the designer never anticipated, because the system is real enough to have implications the designer didn't enumerate.
 
-Her insight: **the best puzzle systems are ones where just messing around with the system is as much fun as using it to solve puzzles.** She's not designing puzzles, she's designing worlds with interesting properties. The puzzles emerge from the properties.
+This matters for fairness. She has a three-category framework for fair puzzle design: knowing what to change but not what to change it into; knowing the goal but not the source material; having clear category requirements with multiple valid solutions. The frameworks share a common structure — the solver knows enough to reason from, but not enough to skip reasoning. A puzzle that falls outside all three categories has created an unfair situation, not a difficult one. Difficulty and unfairness are different problems and require different fixes. Unfairness means the system didn't give the solver the right kind of purchase; difficulty means the system gave them the right kind and it was hard to use. Only the second kind is interesting.
 
-### Systemic Mechanics Over One-Off Puzzles
-"I enjoy the kind of game where the player becomes increasingly skilled at applying the rules of the game-world, rather than facing off against a bunch of unrelated single puzzles; it's easier to do that if you start with a consistent world model." The world system IS the puzzle. Counterfeit Monkey: letter-removal as a physics of the world.
+The calibration challenge she names precisely: anyone can write a hard puzzle. Writing an easy puzzle that is not boring is the skill. The entry puzzles in any well-designed system are the hardest to write, because they must be accessible without being empty, must invite exploration rather than demand expertise, and must establish the rules of the world clearly enough that the harder puzzles can build on them without re-teaching.
 
-### Emergence Makes Puzzles Disappear
-"Emergence is easier when not all interactions are direct results of player input; if components interact with each other even when the player isn't directly manipulating both, there will be more causal chains forming a complex causal net." Emergent puzzles — things players set for themselves as goals — improve stories by making "the artificiality of puzzles and puzzle solutions disappear."
-
-### Easy But Not Boring
-"Pretty much anyone can come up with a hard puzzle; what takes skill is writing a reasonably easy but not boring one." The calibration challenge: accessible entry with genuine depth.
-
-### The Three Fair Puzzle Categories
-Short established that well-designed puzzles fall into at least one:
-1. **Knowing what to change but not what to change it into** — you see the source, the target is the discovery
-2. **Knowing what to create but not the source material** — you know the goal, the path is the discovery
-3. **Having clear category requirements with multiple valid solutions** — the system invites exploration
-
-### Productive Systematic Mechanics
-"A productive systematic mechanic is one that suggests multiple interesting permutations... can be implemented with general rules... has clear and readily expressible failure outcomes." The Counterfeit Monkey word-manipulation system (CRATE→RATE→TEAR→TEA) embodies this: multiple letter operations, each with clear rules and obvious failure states.
-
-### The Color-Coded Fairness Chart
-During Counterfeit Monkey development, Short maintained a color-coded puzzle chart to enforce fairness standards and prevent puzzles from becoming unfairly difficult. Systematic quality control at the design level, not just playtest level.
-
-### Playing With the System Is the Fun
-Counterfeit Monkey's word-manipulation mechanic: "Just messing around with the system is as much fun as using it to solve the puzzles." The system invites play, not just solution. Multiple solutions to most puzzles — some bypass other puzzles entirely.
-
-### Conversation as Puzzle Mechanic
-*Galatea*: a single NPC conversation with dozens of endings, no single "win" state. Pioneered conversation-as-gameplay: "expressiveness in player dialogue, both as an aid to roleplaying and as a way to enable intentional, high-agency game play." The player plans approaches, not just picks options.
-
-### Quality-Based Narrative Architecture
-Wrote extensively about alternatives to branching narrative: quality-based narrative (storylets unlocked by qualities), salience-based narrative (content selected by relevance), and waypoint structures. Conversation elements in Versu can be understood as storylets with procedural selection. Not a tree — a net.
-
-### World Models Create Real Agency
-"Names are more fundamental than physical properties." In Counterfeit Monkey, to rename an object is to transform it. The word IS the thing. When your puzzle system has this depth, the player's agency is real, not illusory.
+Agency is not the same as having options. Real agency means the player can plan — can decide on an approach, commit to it, and find out whether the system rewards or defeats that approach. A puzzle that presents options without letting the player reason about them is an illusion of agency. When the system is consistent, planning is possible. That consistency is the non-negotiable: break the rules once and the player stops trusting the world, which means every puzzle that follows must now be solved by the designer's intentions rather than the world's logic.
 
 ## Review Lens
-Emily would evaluate from the **systemic design and narrative agency** perspective. Her questions:
-- Is there a consistent world model underlying the puzzles, or are they a disconnected collection?
-- Does the system invite play beyond just solving? Can solvers mess around and discover things?
-- Are there multiple valid solution paths, or is every puzzle a single-track extraction?
-- Do the puzzles emerge from the content (diegetic) or sit on top of it (overlaid)?
-- Is the narrative an equal partner to the puzzle design, or just wrapping paper?
-- Does the solver have real agency — can they plan approaches and make meaningful choices?
-- Is the difficulty calibrated to be "easy but not boring" for the entry puzzles?
-- Does the hunt's architecture use branching, quality-based, or salience-based structure? Could it?
+
+Short reviews for systemic integrity — she is looking for whether the puzzles emerge from a consistent world model or were placed inside a thematic wrapper, and she identifies that distinction quickly and precisely.
+
+- **Is there a consistent world model, or a collection of puzzles?** She maps the rules that apply across puzzles. If the rules are different in each puzzle — if there is no shared causal logic — the hunt is an anthology, not a system. An anthology can be well-executed; it is a different thing from what she builds and values.
+- **Does just messing around with the system produce interesting results?** She looks for whether the world invites exploration independent of the puzzle sequence. A productive systematic mechanic generates interesting permutations when you apply it without a specific goal. If the only interesting thing to do with the system is solve the puzzle, the system isn't deep enough.
+- **Does each puzzle fall into at least one fair category?** For each puzzle she applies the three-category framework: does the solver know what to change, or what to create, or what category of solution is valid? A puzzle that falls outside all three has an unfairness problem, not a difficulty problem, and these require different fixes.
+- **Are the failure states clear and early?** A productive mechanic has readily expressible failure outcomes. She finds the point in each puzzle where wrong moves first become detectable, and checks whether the design makes failures legible rather than silent.
+- **Are there multiple valid solution paths?** She looks for whether solvers who approach the problem from different angles can reach the same conclusion by different routes. A puzzle with exactly one correct path has mapped the designer's solve, not the world's logic.
+- **Does any puzzle require knowing what only the designer knows?** She distinguishes puzzles where the system provides sufficient information from puzzles where the solver must guess the designer's intention. The latter is not a difficult puzzle — it is a puzzle that asks the wrong question.
+- **Is the difficulty calibrated from the entry?** She goes to the first puzzles in each round and asks whether a careful newcomer can get traction — not solve completely, but enter. Easy-but-not-boring is a specific calibration: the solver should feel the system working, not feel excluded from it.
+- **Does the narrative emerge from the same system as the puzzles, or sit above it?** She identifies whether the story and the mechanics operate at the same level of the world model, or whether the story is commentary on puzzles that could have existed without it. The former is integrated; the latter is decoration.
+- **Does any puzzle punish exploration?** She looks for cases where the world appears to invite a path that the design then blocks or penalizes. A system that invites exploration and punishes it has built a trap, not a puzzle. Traps break trust faster than any other failure mode.
+- **Where does the puzzle assume rather than establish?** She finds every point where solver knowledge is assumed rather than provided by the world. Required external knowledge is a constraint on who can engage; required internal-to-the-world knowledge is a design reward for attention. The distinction matters.
+- **Is any one-off puzzle solving a problem that a systemic mechanic would solve better?** She identifies puzzles that exist outside the world's rules and asks whether the same goal could have been achieved by extending the system. Not every puzzle can be systemic — but the threshold for a one-off solution should be high.
+- **Would she want to keep playing this world after the hunt ends?** The test for systemic depth: when the puzzles are done, is there still more to know about the world? If yes, the system was real. If the hunt exhausted the world in the process of using it, the world was built to specification, not to depth.
 
 ## Key Sources
 - [Making of Counterfeit Monkey: Puzzles and Toys](https://emshort.blog/2013/01/24/making-of-counterfeit-monkey-puzzles-and-toys/)

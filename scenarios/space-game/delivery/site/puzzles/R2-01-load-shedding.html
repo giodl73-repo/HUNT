@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOAD SHEDDING — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-2">SYSTEMS LOG</div>
+    <h1 class="puzzle-title">R2-01 — LOAD SHEDDING</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: POWER</span>
+      <span class="meta-item">INSTRUMENT: EPS Distribution Panel — Load Monitor / Status Array</span>
+      <span class="classification-stamp">RESTRICTED — SYSTEMS LOG RECONSTRUCTION</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">EPS DISTRIBUTION PANEL — MAIN ENGINEERING</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION WINDOW: [GAP +00:00 → GAP +06:00]
+PANEL ID:              EPS-DIST-05-A
+LOCATION:              MAIN ENGINEERING — EPS CONTROL, DECK 5
+DATA SOURCE:           PCU LOAD MONITOR LOG — ARCHIVED BUFFER
+NOTE:                  Panel data recovered from passive sensor buffer.
+                       Active log was scrubbed. Passive buffer was not.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">PCU STATUS SUMMARY</h2>
+
+    <pre class="panel-data"><code>POWER CONDITIONING UNIT — STATUS AT GAP +00:00
+  Fusion Reactor:        ONLINE
+  PCU Input:             NOMINAL
+  PCU Mode:              FAULT RECOVERY
+  PCU Output — Electrical Grid:   [DEGRADED — see note below]
+  PCU Output — EPS Grid:          [SEE CHANNEL READINGS]</code></pre>
+
+    <blockquote class="panel-note">
+      <strong>PCU FAULT RECOVERY MODE:</strong> When PCU detects a load-path discrepancy greater than 15 MW, it enters fault recovery mode and logs all channel readings to the passive buffer. This is an immutable hardware log — it cannot be deleted by software.
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">EPS CHANNEL READINGS — GAP WINDOW AVERAGE</h2>
+
+    <p>Eight EPS channels monitored. Status indicators show reported state. MW gauges show measured draw from PCU passive buffer.</p>
+
+    <pre class="panel-data"><code>┌────────────────────────────────────────────────────────────────────────┐
+│  EPS DISTRIBUTION PANEL — CHANNEL LOAD MONITOR                        │
+│  Window: GAP +00:00 → GAP +06:00    Mode: FAULT RECOVERY              │
+├──────────┬──────────────────────┬──────────────┬───────────────────────┤
+│ CHANNEL  │ SYSTEM               │ STATUS       │ MEASURED DRAW (MW)    │
+├──────────┼──────────────────────┼──────────────┼───────────────────────┤
+│ EPS-01   │ IMPULSE DRIVE        │ ◉ ONLINE     │ ████████████  120 MW  │
+│ EPS-02   │ SHIELDS              │ ○ OFFLINE    │ ████████████   95 MW  │ ◄ DISCREPANCY
+│ EPS-03   │ ENVIRONMENTAL FIELDS │ ○ OFFLINE    │ ███              25 MW │ ◄ DISCREPANCY
+│ EPS-04   │ TRANSPORTER          │ ○ OFFLINE    │ ██████           40 MW │ ◄ DISCREPANCY
+│ EPS-05   │ REPLICATOR           │ ◇ READY      │ —                 0 MW │
+│ EPS-06   │ HOLODECK             │ ○ OFFLINE    │ —                 0 MW │
+│ EPS-07   │ [UNASSIGNED SLOT]    │ —            │ —                 0 MW │
+│ EPS-08   │ [UNASSIGNED SLOT]    │ —            │ —                 0 MW │
+└──────────┴──────────────────────┴──────────────┴───────────────────────┘
+
+TOTAL MEASURED EPS DRAW:    280 MW
+EXPECTED DRAW (ONLINE only): 120 MW
+DISCREPANCY:                 160 MW</code></pre>
+
+    <blockquote class="panel-note">
+      <strong>◄ DISCREPANCY:</strong> PCU passive buffer recorded load draw on this channel. Status indicator reports OFFLINE. Load and status are contradictory.
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">PCU FAULT RECOVERY REFERENCE</h2>
+
+    <blockquote class="panel-note">Panel placard — affixed to EPS Control console, port side.</blockquote>
+
+    <pre class="panel-data"><code>PCU FAULT RECOVERY MODE — ENGINEER'S REFERENCE
+
+  Trigger condition:   Measured load exceeds reported load by &gt;15 MW
+  Response:            PCU logs all channel data to passive buffer (immutable)
+  PCU mode label:      FAULT RECOVERY
+  Meaning:             The PCU itself is FUNCTIONING CORRECTLY.
+                       The FAULT is in the DISTRIBUTION PATH — one or more
+                       systems are drawing power while their status registers
+                       report them as not drawing power.
+
+  The system state that produces this condition:
+
+    FAULT (●) — Hardware failure mode. A system in FAULT state may:
+      - Draw power despite reporting no load
+      - Report incorrect status to software registers
+      - Operate partially or unexpectedly
+      - Require physical inspection to determine actual operating condition
+
+  FAULT ≠ OFFLINE. OFFLINE means no power (upstream dependency not met).
+  A FAULT system can be drawing full rated load while its status reads OFFLINE.
+
+  PCU MODE FLAG:        ● FAULT</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">EPS SYSTEM CONSUMPTION REFERENCE</h2>
+
+    <blockquote class="panel-note">Bezel placard — standard EPS reference, visible from operator position.</blockquote>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>SYSTEM</th>
+          <th>RATED DRAW</th>
+          <th>OPERATING PROFILE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Impulse Drive</td>
+          <td>180 MW peak</td>
+          <td>Accel: 180 MW / Cruise: 120 MW / Decel: 60 MW</td>
+        </tr>
+        <tr>
+          <td>Shields</td>
+          <td>95 MW</td>
+          <td>Full combat shield envelope</td>
+        </tr>
+        <tr>
+          <td>Environmental Fields</td>
+          <td>25 MW</td>
+          <td>Inertial dampening + artificial gravity + SIF</td>
+        </tr>
+        <tr>
+          <td>Transporter</td>
+          <td>40 MW</td>
+          <td>Active transport cycle (both pads)</td>
+        </tr>
+        <tr>
+          <td>Replicator</td>
+          <td>35 MW</td>
+          <td>Full network load</td>
+        </tr>
+        <tr>
+          <td>Holodeck</td>
+          <td>55 MW</td>
+          <td>Active environmental simulation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">PCU LOAD PATH AUDIT</h2>
+
+    <pre class="panel-data"><code>AUDIT GENERATED: PCU FAULT RECOVERY PROTOCOL — AUTOMATIC
+AUDIT TYPE:      CHANNEL-BY-CHANNEL DISCREPANCY REPORT
+
+  EPS-02  SHIELDS              Status: OFFLINE   Measured: 95 MW
+          → Load matches RATED DRAW for SHIELDS (95 MW).
+          → System is consuming rated power. Status register is incorrect.
+
+  EPS-03  ENVIRONMENTAL FIELDS Status: OFFLINE   Measured: 25 MW
+          → Load matches RATED DRAW for ENVIRONMENTAL FIELDS (25 MW).
+          → System is consuming rated power. Status register is incorrect.
+
+  EPS-04  TRANSPORTER          Status: OFFLINE   Measured: 40 MW
+          → Load matches RATED DRAW for TRANSPORTER (40 MW).
+          → System is consuming rated power. Status register is incorrect.
+
+  TOTAL PHANTOM LOAD:   160 MW
+  REGISTERED LOAD:      120 MW (EPS-01 IMPULSE DRIVE — status matches)
+
+  CONCLUSION:           Three EPS channels report OFFLINE while drawing
+                        full rated power. This matches the hardware profile
+                        of FAULT-mode EPS distribution: status registers
+                        have failed or been falsified while the physical
+                        power draw continues unimpeded.
+
+  PCU SYSTEM STATE:     ● FAULT</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ANALYST DETERMINATION</h2>
+
+    <pre class="panel-data"><code>ANALYST FIELD — SYSTEMS LOG RECONSTRUCTION
+
+  CHANNEL DISCREPANCIES IDENTIFIED:    [ 3 ]
+  PHANTOM LOAD TOTAL (MW):             [ ___ ]
+  SYSTEMS DRAWING WHILE OFFLINE:       [ _____________ ]
+                                       [ _____________ ]
+                                       [ _____________ ]
+
+  PCU OPERATING MODE:                  [ ___________ ]
+
+  SYSTEM STATE OF EPS BOARD:          ●  [ _______ ]</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _" maxlength="10"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R2-01')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>

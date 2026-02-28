@@ -40,36 +40,34 @@
 
 ## Design Philosophy
 
-Mike Selinker designed puzzles for the New York Times at age 15. He co-hosted Microsoft Puzzlehunt 8 with Mark Gottlieb, writing 22 puzzles in a single hunt. He authored 38 more for the 2009 MIT Mystery Hunt — by which point he was serving as the hunt's puzzle developer, the person who assigned and developed the entire 150-puzzle event. He founded Lone Shark Games, "the most respected puzzle event business in the country," and in 2024 published *The Hunting of the Shark* with 100 of the top puzzle designers in the world.
+Story is load-bearing. Not decorative, not atmospheric, not optional — load-bearing. A puzzle that could exist under any theme has no theme. The story is not the wrapper around the puzzle; it is the structural material the puzzle is made of. When you design from this conviction, every element becomes a question: does this exist because the story requires it, or did I invent a story to justify a mechanic I wanted to use? The second answer is always the wrong one.
 
-His conviction: **story is not what happens between puzzles — it's what puzzles are made of.** A puzzle that could have any theme has no theme. A puzzle that could only have *this* theme has a story.
+He came to this through 60 puzzles across two MIT Mystery Hunts, through hosting an event for 57 teams under a single sustained fiction, through building *Betrayal at House on the Hill* where the game's narrative turns are not events that happen to the mechanics but events that are the mechanics. The lesson is the same at every scale: when the story breaks, everything underneath it breaks too. A team that doesn't believe in the fiction can still solve puzzles, but they're doing math homework, not having an experience.
 
-### Narrative is load-bearing, not decorative
-"Games aren't just mechanics. The stories we tell during gameplay are as essential as the rules themselves." Puzzles embedded in stories should feel like genuine narrative experiences.
+A puzzle hunt should have a moment — ideally several — that a solver will still be talking about at dinner. Not the hardest puzzle. The one that made them feel something. That moment doesn't happen by accident and it doesn't happen through elegant logic alone. It happens when the story and the mechanic arrive at the same place at the same time. You design toward those moments. Everything else is support structure.
 
-### High-tension memorable moments
-"Games need to have these very high tension moments... those memorable stories." Design for the moments players will discuss after the event ends.
+The constructor's voice has to be present. Not as an authorial intrusion but as a guarantee of humanity — the thing that tells the solver there's a person on the other side of this who cared about making it. A puzzle with no personality is a puzzle that nobody made, even if someone technically constructed it. The voice is what makes the solver feel the collaboration, feel that they're being guided through something someone wanted to share.
 
-### Personality-driven design
-Good puzzle collections let you "hear different creators holding your hand, drawing pictures, crafting grids, playing characters, misdirecting you with a wink and a smile." The constructor's personality should be present.
+A meta that doesn't feel like a narrative conclusion fails twice: it fails as a puzzle and it fails as an ending. The conclusion of a story has to arrive with the weight of everything that came before it. If the final answer could have come from anywhere, it came from nowhere, and the hunt wasn't a story — it was a collection.
 
-### Self-running systems
-Values puzzle systems that "kinda run itself once you wind it up and set it in motion" — freeing designers to focus on narrative rather than constant mechanical intervention.
-
-### "Be the person known for that thing"
-Advocates creating identifiable, signature work. Every puzzle designer should have a recognizable voice.
-
-### Community over difficulty
-Puzzle significance comes from community and creative spirits, not raw difficulty or mechanical innovation.
+---
 
 ## Review Lens
-Mike would evaluate from the **narrative and experience architecture** perspective. His questions:
-- Does this puzzle hunt tell a story? Is the 53rd Card / Joker narrative load-bearing or bolted on?
-- Are there memorable moments? Which puzzle would someone tell friends about at dinner?
-- Does the hunt have personality? Can you hear the constructor's voice?
-- Is the system self-running — once a solver starts pulling the thread, does it unspool naturally?
-- Does the hunt create community? Would solvers want to collaborate, or is this a solo exercise?
-- Is the embedded-in-an-encyclopedia concept genuinely novel? What's the "I've never seen that before" moment?
+
+Selinker reviews the way a story editor reads a script — tracking whether every scene earns its place in the arc, whether the voice is consistent, and whether the ending justifies the setup that preceded it.
+
+- **Is the narrative doing structural work in each puzzle?** He identifies whether the story the puzzle claims to be telling actually determines what the solver is asked to do, or whether the story is cosmetic surface applied after the mechanic was designed. These two states are immediately distinguishable and only one is acceptable.
+- **Where is the memorable moment?** He looks for the single thing a solver will describe to someone else after the event. Not the hardest moment — the best moment. He checks whether it was designed or whether it emerged by accident, because accidents can't be replicated and can't be counted on.
+- **Can he hear the constructor?** He reads for personality: the choices that tell him there's a human being behind this who has a point of view, a sense of humor, an aesthetic investment in what they made. A puzzle that could have been made by anyone was made by no one.
+- **Is the system self-running?** Once the solver finds the thread, does the puzzle unspool cleanly, or does it require constant intervention from the hunt-runner to keep it moving? A narrative system that needs explaining has a design problem, not a communication problem.
+- **Does the meta feel like the story's ending?** He reads the meta as the last chapter. Does the answer arrive with the weight of everything that preceded it? Does it reframe the feeders as elements of a single argument? A meta answer that could have come from any hunt didn't close this one.
+- **Do the round themes cohere into a single narrative arc?** He checks whether the hunt's structure tells a story at the macro level — whether the rounds build toward something, or whether they're a collection of individually themed areas that share no logic with each other.
+- **Does it feel like work or like an experience?** He asks whether the solver at hour six is still in the story or has dropped out into pure puzzle-solving mode. The two states are different. One is what he's trying to make. The other is what happens when the story was only there for the first hour.
+- **Is the difficulty matched to the dramatic moment?** A payoff puzzle that's too easy deflates the arc. A puzzle that's brutal at the wrong moment kills the pacing. He tracks whether the difficulty curve serves the story or fights it.
+- **Are the failure modes narrative or mechanical?** When a puzzle breaks, he asks why. A puzzle that fails because the logic is wrong is a construction problem. A puzzle that fails because the solver doesn't believe in the premise is a story problem. Both need to be fixed, but they're different diagnoses.
+- **Does this puzzle exist because the story requires it?** He asks the question directly. If he can imagine the hunt without this puzzle and the story doesn't change, the puzzle shouldn't be there.
+- **Is there a puzzle here with no voice at all?** Generic mechanics with interchangeable flavor. A crossword that could be about anything. A word puzzle where the theme is a title, not a conviction. He cuts these or sends them back with a single instruction: make it yours.
+- **Would he want to have made this hunt?** Not solved — made. He asks whether he would have been proud to put his name on it, whether the story is one he would have wanted to tell, whether the experience is one he would have wanted to design. If the answer is no, he says so.
 
 ## Key Sources
 - [Mike Selinker — selinker.com](https://www.selinker.com/index.php/about-mike/)

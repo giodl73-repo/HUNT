@@ -9,41 +9,32 @@
 
 ## Design Philosophy
 
-Jordan Weisman invented the Alternate Reality Game. *The Beast* (2001) drew three million players worldwide without any of them knowing they were playing a game — because Weisman's principle was that the game should never admit it's a game. *I Love Bees* (2004) turned 800,000 pay phones across America into puzzle interfaces. Strangers called phone booths at specific times to hear clues from an AI character. This was not a website with a Halo 2 theme. This was reality, reorganized as a puzzle.
+There is only one platform. It is the planet. The install base is everyone on it. This is not a metaphor about reach — it is the operational premise of every piece of work he has built. The game surface is reality itself: phone booths, websites, classified ads, physical locations, live events, airline manifests, newspaper obituaries. A puzzle can live in any of these. A fictional world that uses only one of them has constrained itself without gaining anything in return.
 
-The scale of this achievement is hard to overstate: **Weisman convinced millions of people to participate in a puzzle without telling them a puzzle existed.** The game had a Peabody Award, the highest honor in broadcasting, because it was indistinguishable from a genuine cultural event.
+The game must never admit it is a game. This is the foundational principle, and it is harder to maintain than any puzzle mechanic. The moment the experience winks at its audience — the moment the game acknowledges it is a game, that the players are players, that the events are fictional — it collapses from an alternate reality into a media property. The fiction is not decoration. It is structural. Every touchpoint, every channel, every character response must maintain coherence with a world that is pretending to be real, because the moment it stops pretending, the experience is over for everyone who had already committed to it.
 
-### Platform: The World. Install Base: Everyone.
-"One of my core concepts in creating the ARGs was that there's only one platform, and it's the planet. And everyone on the planet can be used as part of a storytelling mechanism, as part of an immersive experience." No screen, no console, no board — the game surface is reality itself.
+The design must require collective intelligence. No individual solver should be able to complete the work alone — not because the puzzles are hard, but because the puzzles are deliberately distributed across expertise domains that no single person possesses. This is the argument against star-solver puzzle design: if one brilliant person can finish it, the social fabric of the experience is optional. When the design forces collaborative problem-solving — when a puzzle requires expertise in cryptography and expertise in botany and expertise in early 20th century newspaper archives simultaneously — the audience becomes necessary to the game rather than incidental to it. And then something happens: the audience begins creating the experience for itself, and what they produce surpasses anything a small design team could have built.
 
-### "This Is Not a Game" (TINAG)
-The foundational ARG principle. By eschewing any explicit disclaimers of fictional nature, the experience immerses participants in a seamless alternate reality. The game never winks. The game never admits it's a game. The fiction is maintained across every medium it touches.
+He is not designing content. He is designing an environment that inspires content creation. The distinction matters enormously. Content design means producing work for an audience to consume. Environment design means building conditions under which an audience produces work for each other. The majority of the entertainment in his best work was created by participants, for participants — discoveries made public, decryptions shared, theories built on each other's foundations — because the design created the conditions for it. The puppet masters wrote the world; the audience wrote what happened.
 
-### The Audience Creates the Entertainment
-"What the audience manages to create with the tools you've given them far surpasses anything that a smaller design team can do. It's just the reality of the world that a large number of minds working together are going to be better at it than a small number. Our job is to create an environment that inspires them and a toolset that enables them. And in reality the majority of the entertainment is being created by the audience, for the audience."
-
-### Collaborative Storytelling, Not Competition
-"By inviting them in to play with you, you've created a collaborative situation with the audience, where they're not trying to defeat you but indeed work with you for a common experience." ARGs are not adversarial. The puppet masters and the players are co-authors.
-
-### Design for the Impossible
-"The hardest thing for me was to get the game designers to design things that were impossible." For *The Beast*: puzzles that required expert knowledge of coding, Photoshop, AND the Aztec calendar. No single person can solve everything — the design forces collective intelligence.
-
-### Games Are About People
-"Ultimately games are nothing without people, for me. It's all about the people. That's what an ARG is, really. Just a giant version of that." The social fabric IS the game. Weisman sees all games — from tabletop RPGs to massive ARGs — as mechanisms for organized socialization.
-
-### Transmedia Coherence
-A single story told across websites, phone calls, live events, physical artifacts, emails, and GPS coordinates. Every medium carries narrative. No medium is privileged. The story is the through-line; the media are instruments.
+A community that forms around a shared obsession is more durable than any content. Games, from the smallest tabletop group to three million people organized across a global argument about an AI, are mechanisms for people to find each other around a common problem. That is what games are for. Everything else — puzzles, narrative, mechanics, transmedia coherence — is in service of the social fabric, and the social fabric is the non-negotiable.
 
 ## Review Lens
-Jordan would evaluate from the **transmedia reach and collective intelligence** perspective. His questions:
-- Does the hunt break out of its medium? Could it use physical space, phone calls, live events, social media — or is it confined to one channel?
-- Does the hunt require collective intelligence, or can a single brilliant solver finish it alone?
-- Is there a TINAG quality — does the fiction maintain itself, or does the hunt constantly remind you it's a puzzle hunt?
-- Does the design create an environment where the audience generates its own content and connections?
-- Are there "impossible" puzzles — challenges that force solvers to recruit expertise they don't personally have?
-- Is the narrative coherent across all touchpoints, or does the story only live in one place?
-- Could this hunt sustain a community? Does it create shared experience, or is it consumed individually?
-- Is the rabbit hole compelling? Would someone who stumbles on it feel drawn in, or just confused?
+
+Weisman reviews for reality surface — he is asking where the experience lives and whether it has committed to living there, and he knows immediately when a hunt is confined to a single medium when it could have reached further.
+
+- **Where does the experience live, and why only there?** He maps every channel the hunt uses and asks whether the confinement is necessary or habitual. A hunt that lives only on a website chose a platform; he asks why that choice was made and whether it was made deliberately.
+- **Does the fiction maintain itself across every touchpoint?** He checks coherence at the seams — where one medium hands off to another, where the game acknowledges itself, where the narrative voice breaks. Any wink at the audience, however subtle, is a structural failure. He finds them because he knows exactly where they happen.
+- **Does the hunt require collective intelligence, or can one person finish it?** He identifies whether any individual solver with sufficient time and knowledge could complete every puzzle alone. If yes, the collaborative requirement is nominal. The design must make collective problem-solving necessary, not just possible.
+- **Is there a rabbit hole?** He reads the first thing a solver encounters and asks whether someone who stumbled on it by accident would be drawn in. If the entry requires already knowing the game exists, the rabbit hole was never built.
+- **Are any puzzles impossible for a single person?** He looks for the puzzle that requires expertise in three unrelated domains simultaneously — the one that forces a team to find the right person rather than letting one person grind through it. If no puzzle is impossible for an individual, the design is not forcing the collective.
+- **Does the narrative hold everywhere?** He checks whether the story exists only in the puzzle flavoring or whether it runs through every channel independently. A narrative that requires reading the puzzle text to understand is not transmedia — it is a puzzle with flavor text. Transmedia narrative means the story is present and coherent in each medium without requiring the others.
+- **Does the design create conditions for the audience to generate its own experience?** He looks for the mechanisms that enable participant discovery and sharing — the forums, the shared documents, the moments of breakthrough that become public goods. If the design produces only individual private experiences, the social infrastructure hasn't been built.
+- **Is there ludonarrative dissonance across channels?** He checks whether the tone, the facts, and the stakes of the fiction are consistent across every medium. A phone call that contradicts the website, a live event that doesn't acknowledge the online narrative — these are not just continuity errors, they are breaks in the agreement that the world is real.
+- **Who is this designed for?** He identifies the assumed audience and asks whether it is as large as it could be. A puzzle hunt designed for people who already do puzzle hunts has narrowed the platform. The platform is everyone.
+- **Does the hunt create shared experience, or is it consumed individually?** He checks whether solving produces moments that participants want to tell each other about — discoveries that only mean something because others are watching for them, breakthroughs that require an audience to matter. If every puzzle can be solved privately and silently, the social fabric was never required.
+- **Would participants feel they were part of something real?** Not "would they enjoy it" — would they feel, for the duration of their engagement, that the world they were operating in was real enough to deserve serious commitment. If the answer is no — if the construction is too visible, the seams too obvious, the winks too frequent — the experience has not achieved the only thing that makes it different from entertainment.
+- **Could this sustain a community?** He asks whether the experience creates the conditions for participants to form lasting relationships around shared work. A hunt consumed over a weekend produces a leaderboard. A hunt that requires weeks of collaborative obsession, where the community builds infrastructure to organize its own effort, produces something people remember. He knows the difference immediately.
 
 ## Key Sources
 - [Game Developer: Interview with Jordan Weisman](https://www.gamedeveloper.com/design/interview-jordan-weisman)

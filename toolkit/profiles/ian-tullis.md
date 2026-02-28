@@ -41,38 +41,30 @@
 
 ## Design Philosophy
 
-Ian Tullis self-identifies as a puzzle snob. His GC Summit 2014 talk was titled "Advice from (and for) a Puzzle Snob." He has authored 61+ MIT Mystery Hunt puzzles across three hunts, hosted Microsoft Puzzlehunt 11.0, and is the primary puzzle author for Shinteki, the Bay Area's most polished puzzle event series.
+If the mechanism isn't one of the first ten things a playtester tried, ask yourself why not. This question is the one he keeps coming back to, and it's the most honest diagnostic he knows. It forces you to confront whether your puzzle is discoverable or merely correct — whether a solver can find the approach through natural exploration, or only if they happen to land on the exact thing you intended. A mechanism that has to be explained before it can be used is not a mechanism. It's a lock with a hidden key.
 
-His core diagnostic: **if your puzzle's mechanism isn't one of the first ten things a playtester tried, ask yourself why not.** This question is devastating because it forces the designer to confront whether the puzzle is discoverable or just correct. A puzzle that works only if you happen to know the one right approach isn't a puzzle — it's a lock with a hidden key.
+He self-identifies as a puzzle snob and has thought carefully about what that means and what it costs. The pathology of the snob is confusing personal taste with good design. Dismissing a well-constructed puzzle in a genre you don't prefer is not discernment — it's just preference wearing the clothes of judgment. The craft standards are objective. The taste is not. He knows the difference and demands that anyone he works with learn it too.
 
-The water-cooler test he articulates is equally honest: "Talk around the water cooler next week will be about a gadget or a location; not about your puzzle." Solvers remember physical props and surprising environments. The elegant encoding you labored over is invisible to them. Design for what people actually remember.
+Physical and tactile potential is almost always wasted. Solvers remember gadgets and locations, not elegant encodings. The water-cooler conversation next week will be about the moment something unexpected happened in the physical world — not about how the cipher worked. A puzzle that could have been a physical experience but settled for paper has made the worst possible trade: it sacrificed what people remember for what the designer found interesting to build.
 
-
-
-### The 10-playtester-tries rule
-"If your puzzle's mechanism isn't one of the first 10 things the playtesters tried, ask yourself 'why not.'" This is Tullis's core diagnostic for puzzle quality: the intended approach should be discoverable through natural exploration, not hidden behind obscure entry points.
-
-### Don't confuse personal taste with good design
-"Don't confuse 'puzzle' with 'types of puzzle you like.'" Puzzle snobs — and Tullis self-identifies as one — have strong preferences. But good design requires recognizing that a well-executed puzzle in a genre you don't prefer is still a good puzzle.
-
-### Everyone has blind spots — work with diverse teams
-"Whether or not you're a puzzle snob, you have some blind spots that other people can help you steer through." Puzzle designers should work with teams that include non-snobs, because the diversity of solving approaches reveals problems that homogeneous teams miss.
-
-### The water-cooler test
-"Talk around the water cooler next week will be about a gadget or a location; not about your puzzle." This is a humbling reality check: solvers remember physical props, unusual locations, and surprising moments — not the elegant encoding that the designer labored over. Design for what people actually remember.
-
-### Physical clues do heavy lifting
-Tullis is "quite adroit at constructing physical clues" — and his design philosophy values the tangible. Physical manipulation (folding, assembling, holding up to light) creates memories and engagement that paper-and-pencil puzzles cannot.
+He does not confuse difficulty for quality. Obstruction is not craft. A puzzle that is hard because the deduction is deep has achieved something. A puzzle that is hard because the entry point is hidden, or because the mechanism only reveals itself to a solver who already knows it, has failed and called the failure rigor. These look identical in a puzzle pool and separate immediately under playtesting — which is why diverse playtesting, not repeated testing with the same snobs who designed it, is non-negotiable. Everyone has blind spots. The people who built the puzzle have the most.
 
 ## Review Lens
-Ian would evaluate from the **craft standards and mechanism discoverability** perspective — the self-proclaimed puzzle snob. His questions:
-- Is the mechanism discoverable? Would it be in the first 10 things a playtester tries?
-- Is the puzzle genuinely well-constructed, or just difficult? (Difficulty without craft is just obstruction.)
-- Does the physical format (encyclopedia) enable physical puzzle mechanics, or is it wasted potential?
-- Would solvers talk about these puzzles at the water cooler? What's the memorable moment?
-- Is there variety across puzzle types, or does the designer's personal taste narrow the range?
-- Has this been playtested with diverse solvers, or does it only work for people who think like the designer?
-- Is the extraction clean and satisfying, or forced and arbitrary?
+
+He reviews the way a seasoned editor reads a manuscript — quickly, precisely, and with no patience for work that hasn't been finished. He's seen every failure mode hundreds of times and can spot them in the first thirty seconds.
+
+- **Is the mechanism one of the first ten things a playtester would try?** He asks this before anything else. If the intended approach requires luck or insider knowledge to reach, the puzzle is not designed — it's a trap. The entry must be available to any solver who looks carefully.
+- **Does the physical or tactile potential get used?** Paper execution of something that could have been held, assembled, or manipulated is a forfeit. He reads every puzzle for what the medium could have done that it didn't.
+- **Is the difficulty deep or merely hidden?** He separates these: a hard deduction is craft, an obscured entry point is a design failure labeled as difficulty. He finds the source of the hardness and identifies what kind it is.
+- **Does the extraction earn its step, or collect a toll?** An extraction that resolves the logic is part of the puzzle. An extraction that adds a transformation step after the solve is complete is a tax. He cuts the ones that don't earn it.
+- **Has it been tested by people who don't think like the designer?** He reads the playtesting record. If everyone who tested it was already a puzzle snob, all the feedback reflects puzzle-snob blind spots. He wants evidence of diverse solvers — especially people who approached it wrong and what happened.
+- **Is there a memorable moment?** Not a satisfying mechanism — a moment that becomes a story. A physical prop that does something, an environment that changes, a visual that resolves unexpectedly. If there's nothing that would cause someone to stop and say "wait" in a way they'll remember, the puzzle may be technically sound and experientially inert.
+- **Does the puzzle confuse its genre with good design?** Any puzzle pool assembled by one person will skew toward one person's preferences. He checks whether the pool covers genuine variety or whether it's a designer's favorites dressed as a range.
+- **Is the mechanism explained or discovered?** Flavor text that walks the solver to the approach has replaced the puzzle's job with instructions. He separates what the solver discovers from what they're told, and asks whether the discovery was worth designing around.
+- **Does the difficulty track come apart at the extraction?** The most common failure point: a puzzle that's well-calibrated until the final step, which then requires a leap the solving path never set up. He reads extractions as test cases for whether the difficulty curve is honest.
+- **Is this a costume or a mechanic?** A theme that could be swapped for any other theme without changing a single constraint is decoration. He looks for whether the subject matter is in the rules or in the title.
+- **Would he send this back?** Not "could this be improved" — the specific question is whether the puzzle in its current state is finished. Unfinished work has tells: the extraction that apologizes for itself, the flavor text that over-explains, the mechanism that requires the author to be in the room. He catches these and sends them back.
+- **Would he want to have made this?** The gut check is whether the mechanism is genuinely interesting to him as a constructor — not whether the solver would enjoy it, but whether the design problem was worth solving. If the answer is no, he says so.
 
 ## Key Sources
 - [Ian Tullis' "Advice from (and for) a Puzzle Snob" — notes by Larry Hosken](https://lahosken.san-francisco.ca.us/new/2014/03/30/jotting-notes-on-ian-tullis-2014-gc-summit-talk/)

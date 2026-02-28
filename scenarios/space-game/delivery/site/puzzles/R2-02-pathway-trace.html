@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PATHWAY TRACE — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-2">SYSTEMS LOG</div>
+    <h1 class="puzzle-title">R2-02 — PATHWAY TRACE</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: COMPUTER</span>
+      <span class="meta-item">INSTRUMENT: ODN Junction Board — Node Topology / Maintenance Event Log</span>
+      <span class="classification-stamp">RESTRICTED — SYSTEMS LOG RECONSTRUCTION</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">ODN JUNCTION BOARD — MAIN ENGINEERING COMPUTER SECTION</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION WINDOW: [GAP +00:00 → GAP +06:00]
+PANEL ID:              ODN-JCT-05-C
+LOCATION:              MAIN ENGINEERING — COMPUTER SECTION, DECK 5
+DATA SOURCE:           ODN JUNCTION STATE LOG — PASSIVE CACHE
+NOTE:                  Junction toggle events are logged in passive cache
+                       on each physical junction. Cannot be remotely deleted.
+                       Node-level connectivity inferred from junction states.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ODN NODE TOPOLOGY — CURRENT STATE</h2>
+
+    <p>The ODN connects 15 computer nodes through a series of junctions. Each junction can be ACTIVE (passes data) or PASSIVE (blocks data). Nodes that cannot receive data from Primary Computer are considered OFFLINE regardless of power state.</p>
+
+    <p><strong>Routing rule:</strong> Primary Computer must maintain live data paths to ALL nodes it serves. A node is OFFLINE if every data path between it and Primary Computer passes through at least one PASSIVE junction.</p>
+
+    <pre class="panel-data"><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ODN TOPOLOGY — NODE MAP (current junction states)                           │
+│                                                                              │
+│  KEY:  ═══ ACTIVE path (data flows)   ─ ─ ─ PASSIVE path (blocked)         │
+│        [JCT-nn] Junction ID           ◉ ONLINE   ○ OFFLINE                 │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│   SENSORS ══════════════════════════════════════════════[JCT-01]═══════╗    │
+│                                                                         ║    │
+│   COMMS IN ═════════════════════════════════════════════[JCT-02]═══════╣    │
+│                                                                         ║    │
+│                                                          ◉  NODE-01    ║    │
+│                                                     PRIMARY COMPUTER ══╝    │
+│                                                          ║                   │
+│                              ┌───────────────[JCT-03]═══╬══[JCT-04]─ ─ ─╗  │
+│                              ║                           ║               ║  │
+│                         ◉ NODE-03                   ◉ NODE-02         ○ NODE-05 │
+│                      NAV COMPUTER              SECONDARY COMPUTER   COMMS COMPUTER │
+│                              ║                       ║                   │  │
+│               ┌──[JCT-05]═══╣              ┌──[JCT-06]══╗               │  │
+│               ║             ║              ║            ║                   │
+│          ◉ NODE-04      ◉ NODE-15     ◉ NODE-07    ◉ NODE-06               │
+│       TAC COMPUTER   SENSOR COMPUTER  SEC COMPUTER  ENV COMPUTER            │
+│               ║                                         ║                   │
+│        [JCT-07]═══════════╗                      [JCT-08]═══════╗         │
+│               ║           ║                             ║        ║         │
+│          ◉ NODE-08    ◉ NODE-09                    ◉ NODE-10  ◉ NODE-11    │
+│       ENG COMPUTER   SCI COMPUTER              REPL COMPUTER  TRANS COMPUTER │
+│               ║                                                              │
+│        [JCT-09]══════════════╬══════════════════[JCT-11]═══════╗          │
+│               ║              ║                                  ║          │
+│          ◉ NODE-13      ─ ─[JCT-10]─ ─                    ◉ NODE-12       │
+│      TURBOLIFT COMP          ║                           HOLO COMPUTER     │
+│                         ○ NODE-14                                           │
+│                      DIAG COMPUTER                                          │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ODN NODE ROSTER</h2>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>Node ID</th>
+          <th>Computer</th>
+          <th>Department</th>
+          <th>Current Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>NODE-01</td><td>Primary Computer</td><td>CMD</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-02</td><td>Secondary Computer</td><td>CMD</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-03</td><td>Navigation Computer</td><td>NAV</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-04</td><td>Tactical Computer</td><td>TAC</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-05</td><td>Comms Computer</td><td>OPS</td><td>○ OFFLINE</td></tr>
+        <tr><td>NODE-06</td><td>Environmental Computer</td><td>OPS</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-07</td><td>Security Computer</td><td>SEC</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-08</td><td>Engine Computer</td><td>ENG</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-09</td><td>Science Computer</td><td>SCI</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-10</td><td>Replicator Computer</td><td>OPS</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-11</td><td>Transporter Computer</td><td>OPS</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-12</td><td>Holographic Computer</td><td>OPS</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-13</td><td>Turbolift Computer</td><td>ENG</td><td>◉ ONLINE</td></tr>
+        <tr><td>NODE-14</td><td>Diagnostic Computer</td><td>ENG</td><td>○ OFFLINE</td></tr>
+        <tr><td>NODE-15</td><td>Sensor Computer</td><td>NAV</td><td>◉ ONLINE</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">JUNCTION MAINTENANCE EVENT LOG</h2>
+
+    <blockquote class="panel-note">
+      Recovered from physical junction passive cache. Junction ID only — technician ID and node labels were redacted from the log header. Timestamps are intact.
+    </blockquote>
+
+    <pre class="panel-data"><code>JUNCTION MAINTENANCE LOG — ODN SECTION 5-C
+  Log source:    Passive cache (immutable — hardware-level write)
+  Auth source:   [REDACTED]
+  Node labels:   [REDACTED]
+
+  Toggle sequence definition:
+    PASSIVE → ACTIVE  =  path opened
+    ACTIVE → PASSIVE  =  path closed (blocks data)</code></pre>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Timestamp</th>
+          <th>Junction</th>
+          <th>From State</th>
+          <th>To State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>GAP +00:08</td><td>JCT-01</td><td>PASSIVE</td><td>ACTIVE</td></tr>
+        <tr><td>2</td><td>GAP +00:11</td><td>JCT-02</td><td>PASSIVE</td><td>ACTIVE</td></tr>
+        <tr><td>3</td><td>GAP +00:31</td><td>JCT-04</td><td>ACTIVE</td><td>PASSIVE</td></tr>
+        <tr><td>4</td><td>GAP +01:14</td><td>JCT-03</td><td>ACTIVE</td><td>ACTIVE <em>(no change — duplicate entry)</em></td></tr>
+        <tr><td>5</td><td>GAP +02:05</td><td>JCT-10</td><td>ACTIVE</td><td>PASSIVE</td></tr>
+        <tr><td>6</td><td>GAP +04:18</td><td>JCT-07</td><td>ACTIVE</td><td>ACTIVE <em>(no change — duplicate entry)</em></td></tr>
+        <tr><td>7</td><td>GAP +05:44</td><td>JCT-11</td><td>PASSIVE</td><td>ACTIVE</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ODN ROUTING PROTOCOL — BEZEL REFERENCE</h2>
+
+    <blockquote class="panel-note">Placard affixed to ODN junction board, starboard face.</blockquote>
+
+    <pre class="panel-data"><code>ODN DATA ROUTING — ENGINEERING REFERENCE
+
+  ACTIVE junction:   Data passes. Both connected nodes can communicate.
+  PASSIVE junction:  Data blocked. Nodes on either side are isolated
+                     from each other through this path.
+
+  A node is OFFLINE (data) if:
+    — ALL paths from Primary Computer to that node pass through
+      at least one PASSIVE junction.
+    — Power state is irrelevant to data connectivity.
+      A powered node with no data path = ○ OFFLINE (data).
+
+  CRITICAL REQUIREMENT:
+    Primary Computer (NODE-01) must maintain live data paths to:
+      — Navigation Computer (NODE-03)   [flight safety]
+      — Comms Computer (NODE-05)        [emergency comms]
+
+  Note: A PASSIVE junction can isolate an entire branch.
+  Trace the full path from NODE-01 to each node to verify connectivity.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">PRE-GAP JUNCTION STATES</h2>
+
+    <blockquote class="panel-note">Recovered from last scheduled ODN snapshot prior to deletion window. Confirms initial configuration before toggle sequence began.</blockquote>
+
+    <pre class="panel-data"><code>PRE-GAP SNAPSHOT — ODN JUNCTION STATES
+  Snapshot taken:  [PRE-GAP −00:05]
+
+  JCT-01   PASSIVE      (sensor input trunk — pre-gap maintenance)
+  JCT-02   PASSIVE      (comms input trunk — pre-gap maintenance)
+  JCT-03   ACTIVE
+  JCT-04   ACTIVE
+  JCT-05   ACTIVE
+  JCT-06   ACTIVE
+  JCT-07   ACTIVE
+  JCT-08   ACTIVE
+  JCT-09   ACTIVE
+  JCT-10   ACTIVE
+  JCT-11   PASSIVE      (holographic branch — scheduled offline)</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">PATH TRACE WORKSHEET</h2>
+
+    <pre class="panel-data"><code>ANALYST FIELD — SYSTEMS LOG RECONSTRUCTION
+
+  Apply all 7 toggle events to pre-gap junction states.
+
+  POST-GAP JUNCTION STATES:
+
+    JCT-01  [ PASSIVE → ? ]    JCT-07  [ ACTIVE → ? ]
+    JCT-02  [ PASSIVE → ? ]    JCT-08  [ ACTIVE ]
+    JCT-03  [ ACTIVE ]         JCT-09  [ ACTIVE ]
+    JCT-04  [ ACTIVE → ? ]     JCT-10  [ ACTIVE → ? ]
+    JCT-05  [ ACTIVE ]         JCT-11  [ PASSIVE → ? ]
+    JCT-06  [ ACTIVE ]
+
+  PATH FROM NODE-01 TO NODE-05 (Comms Computer):
+    NODE-01 → [JCT-04] → NODE-05
+    Path state: [ CLEAR / BLOCKED ]
+
+  PATH FROM NODE-01 TO NODE-14 (Diagnostic Computer):
+    NODE-01 → [JCT-03] → NODE-03 → [JCT-05] → NODE-08 → [JCT-09] → [JCT-10] → NODE-14
+    Path state: [ CLEAR / BLOCKED ]
+
+  NODES WITHOUT DATA PATH TO PRIMARY COMPUTER:  [ _______ ]  [ _______ ]
+
+  STATE IMPOSED ON ISOLATED NODES:              ○  [ _______ ]</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _ _ _" maxlength="10"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R2-02')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>

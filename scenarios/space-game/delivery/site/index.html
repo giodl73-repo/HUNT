@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEAD RECKONING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+
+  <div class="classification-banner">CLASSIFICATION: RESTRICTED — AUTHORIZED PERSONNEL ONLY</div>
+  <div class="classification-watermark" aria-hidden="true">RESTRICTED</div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__name">
+        <a href="index.html">DEAD RECKONING</a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="puzzles.html">Puzzles</a>
+        <a href="submit.html">Submit</a>
+        <a href="standings.html">Standings</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="site-main">
+    <div class="container--narrow">
+
+      <!-- HUNT TITLE -->
+      <section class="hunt-title" aria-label="Hunt title">
+        <p class="hunt-title__label">INVESTIGATION BRIEF — CLASSIFICATION DELTA</p>
+        <h1 class="hunt-title__name">DEAD RECKONING</h1>
+        <p class="hunt-title__tagline">Six hours. Four systems. One question.</p>
+      </section>
+
+      <!-- MISSION BRIEFING -->
+      <section class="mission-briefing" aria-label="Mission briefing">
+        <div class="mission-briefing__header">MISSION BRIEFING — EYES ONLY</div>
+        <p>
+          Six hours of ship logs were deleted. Not corrupted. Deleted.
+          You have been assigned to the investigation.
+          Solve it and you will have proven something no simulation could:
+          that you can operate under real conditions.
+          Clear all three evidence rounds.
+          Earn your commission.
+        </p>
+      </section>
+
+      <!-- ROUND OVERVIEW -->
+      <section aria-label="Round overview">
+        <div class="page-header">
+          <p class="page-header__label">Investigation Structure</p>
+          <h2 class="page-header__title">Evidence Rounds</h2>
+          <p class="page-header__sub">Sequential unlock. Clear each round to proceed.</p>
+        </div>
+
+        <div class="round-cards">
+
+          <div class="round-card">
+            <p class="round-card__number">ROUND 1</p>
+            <p class="round-card__name text-amber">TELEMETRY</p>
+            <p class="round-card__status">
+              5 puzzles + meta<br>
+              <span class="badge badge--amber">OPERATIONS</span>
+            </p>
+            <p class="round-card__status" style="margin-top:0.5rem;">
+              External sensors — what was out there.
+            </p>
+          </div>
+
+          <div class="round-card">
+            <p class="round-card__number">ROUND 2</p>
+            <p class="round-card__name text-orange">SYSTEMS LOG</p>
+            <p class="round-card__status">
+              5 puzzles + meta<br>
+              <span class="badge badge--orange">ENGINEERING</span>
+            </p>
+            <p class="round-card__status" style="margin-top:0.5rem;">
+              Internal records — how the ship responded.
+            </p>
+          </div>
+
+          <div class="round-card">
+            <p class="round-card__number">ROUND 3</p>
+            <p class="round-card__name text-blue">CREW RECORD</p>
+            <p class="round-card__status">
+              5 puzzles + meta<br>
+              <span class="badge badge--blue">COMMAND</span>
+            </p>
+            <p class="round-card__status" style="margin-top:0.5rem;">
+              Personnel files — who gave the order.
+            </p>
+          </div>
+
+          <div class="round-card">
+            <p class="round-card__number">FINAL</p>
+            <p class="round-card__name text-purple">THE COMMISSION</p>
+            <p class="round-card__status">
+              1 puzzle<br>
+              <span class="badge badge--purple">COMMISSIONED OFFICER</span>
+            </p>
+            <p class="round-card__status" style="margin-top:0.5rem;">
+              Reconstruct the incident. Earn your rank.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- UNLOCK NOTES -->
+      <section class="system-msg system-msg--info" aria-label="Unlock rules">
+        UNLOCK PROTOCOL — Round 1 opens immediately. Round meta unlocks after 4 of 5 feeders solved.
+        Next round unlocks when round meta is solved. All feeders within a round are available simultaneously.
+      </section>
+
+      <!-- BEGIN BUTTON -->
+      <div class="cta-wrap">
+        <a href="puzzles.html" class="btn btn--cta">BEGIN INVESTIGATION</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- COMMISSION OVERLAY (shown if FINAL already solved) -->
+  <div class="commission-overlay" role="dialog" aria-modal="true" aria-label="Commission earned">
+    <div class="commission-overlay__box">
+      <p class="commission-overlay__label">Investigation Status</p>
+      <p class="commission-overlay__title">COMMISSIONED OFFICER</p>
+      <p class="commission-overlay__text">
+        You have solved it.<br>
+        The deleted hours are accounted for.<br>
+        Report to the bridge.
+      </p>
+      <button class="commission-overlay__dismiss">DISMISS</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      DEAD RECKONING &mdash; CLASSIFICATION: RESTRICTED
+    </div>
+  </footer>
+
+  <script src="assets/hunt.js"></script>
+</body>
+</html>

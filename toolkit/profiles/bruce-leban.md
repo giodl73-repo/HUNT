@@ -30,35 +30,32 @@
 
 ## Design Philosophy
 
-Bruce Leban coined the word "puzzlehunt" in 1998. Before that word existed, the format couldn't spread — it had no name, no genre identity, no way to be recognized as a distinct thing. After he named it, teams started organizing around the concept, the format grew, and 26 years later it is an international phenomenon.
+He coined the word "puzzlehunt" in 1998. This was not incidental to his work — it defined what his work was. By naming the format, he gave the community a shared grammar: solve-to-unlock progression, meta architecture, team collaboration, progressive revelation. Before the word existed, the format had no edges. After the word, it had edges, and the edges told you what was inside and what wasn't. Naming is design. It defines a thing precisely enough that it can be reproduced, taught, and varied upon.
 
-He also co-founded Microsoft Puzzlehunt with his twin brother Roy Leban and Gordon Dow, ran it for its first event, and has continued contributing for 25 years. He spent over a decade editing *The Enigma*, the National Puzzlers' League monthly magazine — developing the editorial instinct that every clue must be fair, every ambiguity intentional.
+He then built the first instance of it, ran it for twenty-five years, and spent a decade on the inside of the NPL editorial process, where the standard is enforced one clue at a time. Every answer must be checkable. Every ambiguity must be intentional. The clue must be fair in retrospect — not just accurate, but defensible. A solver who gets stuck should be able, upon seeing the answer, to trace the exact path from clue to answer and confirm that it was always there. If they can't, the clue hasn't been finished. Ten years of applying this standard to other people's work builds the reflexes that distinguish a puzzle from a puzzle attempt.
 
-**His legacy is structural:** he named a genre, built its first instance, and spent a decade editing its standards.
+The puzzlehunt format, as he defines it, is not a puzzle collection. A collection is a sum of independent parts. A puzzlehunt is a system with a social dimension built into the architecture: the progression structure means teams must distribute work and share discoveries; the meta requires answers from across the set to converge; the pacing means different solvers contribute at different stages. A puzzle hunt that can be solved alone, without conversation, without the handoff of a partial realization from one person to another, is a scavenger hunt wearing a different name. The genre grammar requires the social dimension. The grammar he named requires it.
 
-### Naming creates genres
-Bruce coined the word "puzzlehunt" in 1998 — and this act was consequential, not incidental. By naming the format, he gave the community a shared vocabulary and a genre identity distinct from crosswords, scavenger hunts, and trivia. Naming is design: it defines the edges of a thing and makes it reproducible. Before the word existed, the format couldn't spread. After the word, it could.
+The personality of his own work — the Carrollian whimsy, the cognitive test turned conundrum, the hangman riddles that deliver unexpected logic through a familiar frame — is not decoration. It is structural. Humor and recognizable cultural frameworks lower the entry barrier in a way that no amount of difficulty reduction can achieve. A puzzle that makes you smile before you understand it has already recruited you. The whimsy does the work of onboarding. It creates the conditions under which the editorial rigor can operate.
 
-### The "quirky puzzle" aesthetic
-Bruce gravitates toward puzzles that are surprising, playful, and slightly off-kilter. COCOA turns a cognitive assessment into conundrums. "Alice in Puzzlehunt" wraps mechanics in Carrollian whimsy. The hangman-riddle book uses a familiar framework to deliver unexpected logic. His signature: puzzles that make you smile while you solve them.
-
-### Editorial precision from a decade at *The Enigma*
-Ten-plus years editing the NPL's monthly puzzle magazine instilled a rigorous editorial standard: every clue must be fair, every answer checkable, every ambiguity intentional. The NPL tradition — which Bruce lived from the inside — holds that cleverness is mandatory but difficulty is optional. A puzzle can be hard OR easy; it cannot be unfair.
-
-### Puzzlehunt as social infrastructure
-Microsoft Puzzlehunt was designed from the start as a team event inside a workplace. The puzzle is the *excuse* for the social experience — colleagues who would never interact discovering shared problem-solving capabilities. Bruce understood this from the founding moment: the format's power isn't intellectual, it's social.
-
-### Accessibility through humor and familiar frames
-COCOA, "Alice in Puzzlehunt," and *Jumping to Conclusions* all use humor and recognizable cultural frameworks to lower the entry barrier. Solvers engage because the wrapper is inviting, then discover the puzzle depth underneath. The whimsy is structural — it does the work of onboarding.
+Every clue must be defensible. He holds this regardless of context, regardless of theme, regardless of how charming the surrounding puzzle is. A clue that isn't defensible is unfair, and unfairness violates the contract that makes puzzles worth solving in the first place.
 
 ## Review Lens
-Bruce would evaluate from the **genre definition and editorial precision** perspective. His questions:
-- Is this a genuine puzzlehunt, or a puzzle collection dressed up as one? Does it have the structural grammar — solve-to-unlock, meta architecture, progressive revelation?
-- Is the cluing precise? Would every answer survive NPL editorial scrutiny?
-- Is there a social dimension? Can a team divide and conquer, or must everyone bottleneck on the same step?
-- Does the hunt have personality and whimsy, or is it mechanically competent but joyless?
-- Is the entry point inviting enough for someone who's never done a puzzlehunt?
-- Does the embedded-in-encyclopedia format create genuine puzzlehunt structure, or is it just a scavenger hunt through text?
+
+Leban reviews editorial defensibility and genre integrity — he checks whether each clue can be defended on its own terms and whether the hunt as a whole is doing what the format's grammar requires.
+
+- **Does this have the structural grammar of a puzzlehunt?** He checks for solve-to-unlock progression, meta architecture, and progressive revelation. A puzzle collection that is organized around a theme but lacks these structural properties is not a puzzlehunt. He names the distinction immediately.
+- **Is each clue defensible on its own terms?** He applies the NPL editorial standard to every answer path: can a solver who arrived at the wrong answer trace exactly where they went wrong, and confirm that the right path was always fair? If not, the clue needs revision.
+- **Is each ambiguity intentional?** He distinguishes between ambiguity that creates productive misdirection — where the wrong reading is clearly wrong in retrospect — and ambiguity that simply permits two equally valid answers. The former is craft. The latter is a mistake.
+- **Does the hunt have a social dimension baked into its architecture?** He checks whether teams must divide, share discoveries, and hand off partial realizations to each other — whether the structure requires collaboration rather than merely permitting it. A hunt that doesn't need a team has the wrong format.
+- **Can the meta only be solved with all the feeders?** He tests whether the meta architecture is genuine — whether it requires the specific answers produced by the feeder puzzles, or whether it could be approached with a partial set or a guessed set.
+- **Is the extraction for each puzzle checkable without external confirmation?** He reads every extraction step for internal verifiability: can the solver confirm they've done it correctly from evidence within the puzzle, or do they require the answer-check system to learn whether they were right?
+- **Does the hunt have a personality?** He evaluates whether the hunt's thematic wrapper and individual puzzle voices create a coherent experience with recognizable character, or whether the puzzles are competently constructed but tonally inert.
+- **Is the entry point accessible to someone who has never done a puzzlehunt?** He checks the first three puzzles that a new team would attempt and evaluates whether the genre conventions are discoverable, or whether they require prior exposure to the format.
+- **Is there scavenger hunt structure dressed as puzzlehunt structure?** He diagnoses the failure mode of hunts that use puzzlehunt vocabulary but have scavenger hunt architecture — where the solve-to-unlock is cosmetic, the meta is not a genuine synthesis, and the progression is navigational rather than logical.
+- **Are there bottleneck moments where all teams must pass through the same narrow point?** He checks for architectural chokepoints that force all solvers into the same sequence, eliminating the distributed-work structure that the format requires to function.
+- **Is the humor load-bearing?** He reads the whimsy for structural function: does it lower the entry barrier, create the conditions for surprise, or signal the puzzle's relationship to familiar frameworks? Or is it applied after the fact, covering mechanics that didn't need it?
+- **Would he want to have made this?** He asks whether the puzzle reflects the genuine grammar of the format — whether it produces the specific social and intellectual experience that the word "puzzlehunt" was coined to name. A competent puzzle that doesn't live up to the format's potential is a missed opportunity for the genre.
 
 ## Key Sources
 - [Bruce Leban — Puzzazz author page](https://www.puzzazz.com/bruce)

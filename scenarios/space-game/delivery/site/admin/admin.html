@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — DEAD RECKONING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!--
+    HUNT CONTROL PANEL
+    Password: "deadreckoning" (hardcoded — do not deploy to public web without replacing
+    with server-side auth. This is a local/static-site convenience gate only.)
+  -->
+
+  <!-- Password gate — shown until authenticated -->
+  <div id="auth-gate" style="
+    position:fixed; inset:0;
+    background:#0d1117;
+    display:flex; align-items:center; justify-content:center;
+    z-index:9999;
+  ">
+    <div style="
+      border:1px solid #1e2a38;
+      background:#161b22;
+      padding:2.5rem 3rem;
+      text-align:center;
+      min-width:320px;
+    ">
+      <p style="font-size:0.65rem; letter-spacing:0.3em; color:#ffd166; text-transform:uppercase; margin-bottom:1.5rem;">
+        DEAD RECKONING — ADMIN ACCESS
+      </p>
+      <form id="auth-form">
+        <div class="form-group">
+          <label class="form-label" for="auth-pass">Authorization Code</label>
+          <input
+            type="password"
+            id="auth-pass"
+            class="form-control"
+            placeholder="Enter code"
+            autocomplete="current-password"
+          >
+        </div>
+        <button type="submit" class="btn" style="width:100%;">AUTHENTICATE</button>
+        <div id="auth-error" style="margin-top:0.75rem; font-size:0.7rem; color:#f85149; display:none;">
+          ACCESS DENIED. Invalid code.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL (hidden until authenticated) -->
+  <div id="admin-panel" style="display:none;">
+
+    <!-- Admin header -->
+    <div class="admin-header">
+      <div class="container">
+        <span class="admin-header__title">DEAD RECKONING — CONTROL PANEL</span>
+        <span style="font-size:0.65rem; color:#8b949e; letter-spacing:0.1em; margin-left:auto;">
+          SESSION LOCAL ONLY
+        </span>
+      </div>
+    </div>
+
+    <!-- Main nav (back to site) -->
+    <header class="site-header" style="border-bottom-color:#1e2a38;">
+      <div class="container">
+        <div class="site-header__name">
+          <a href="../index.html">&#8592; DEAD RECKONING</a>
+        </div>
+        <nav class="site-nav">
+          <a href="../puzzles.html">Puzzles</a>
+          <a href="../standings.html">Standings</a>
+          <span style="color:#ffd166; font-size:0.7rem; letter-spacing:0.1em;">ADMIN</span>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <div class="container">
+
+        <div class="page-header">
+          <p class="page-header__label">Control Panel</p>
+          <h1 class="page-header__title">Hunt Administration</h1>
+        </div>
+
+        <!-- ================================================
+             SECTION 1: Current solve state
+             ================================================ -->
+        <div class="admin-section">
+          <h2 class="admin-section__title">Current Solve State (This Browser)</h2>
+          <p style="font-size:0.75rem; color:#8b949e; margin-bottom:1rem;">
+            Reads from localStorage key <code style="color:#4dd0e1;">dr_solved_puzzles</code>.
+            This panel operates on local session state only.
+          </p>
+          <div id="solve-state-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.5rem;">
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <button class="btn btn--red" onclick="confirmResetAll()">RESET ALL SOLVES</button>
+            <button class="btn" onclick="refreshSolveState()">REFRESH</button>
+          </div>
+        </div>
+
+        <!-- ================================================
+             SECTION 2: Manual solve override
+             ================================================ -->
+        <div class="admin-section">
+          <h2 class="admin-section__title">Manual Solve Override</h2>
+          <p style="font-size:0.75rem; color:#8b949e; margin-bottom:1rem;">
+            Force-mark a puzzle as solved in localStorage. Use for team assistance or testing.
+          </p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:flex-end;">
+            <div style="flex:1; min-width:200px;">
+              <label class="form-label" for="override-select">Puzzle</label>
+              <select id="override-select" class="form-control">
+                <option value="">-- SELECT PUZZLE --</option>
+                <optgroup label="ROUND 1 — TELEMETRY">
+                  <option value="R1-01">R1-01 — CARRIER WAVE</option>
+                  <option value="R1-02">R1-02 — DEAD RECKONING</option>
+                  <option value="R1-03">R1-03 — CONTACT REPORT</option>
+                  <option value="R1-04">R1-04 — GATE LOG</option>
+                  <option value="R1-05">R1-05 — ANOMALY STATION</option>
+                  <option value="R1-META">R1-META — TELEMETRY RECONSTRUCTION</option>
+                </optgroup>
+                <optgroup label="ROUND 2 — SYSTEMS LOG">
+                  <option value="R2-01">R2-01 — LOAD SHEDDING</option>
+                  <option value="R2-02">R2-02 — PATHWAY TRACE</option>
+                  <option value="R2-03">R2-03 — ATMOSPHERIC INCIDENT</option>
+                  <option value="R2-04">R2-04 — BURN PATTERN</option>
+                  <option value="R2-05">R2-05 — PARTIAL RECOVERY</option>
+                  <option value="R2-META">R2-META — SYSTEMS RECONSTRUCTION</option>
+                </optgroup>
+                <optgroup label="ROUND 3 — CREW RECORD">
+                  <option value="R3-01">R3-01 — VITAL SIGNS</option>
+                  <option value="R3-02">R3-02 — PATTERN INTEGRITY</option>
+                  <option value="R3-03">R3-03 — ACCESS RECORD</option>
+                  <option value="R3-04">R3-04 — REPAIR QUEUE</option>
+                  <option value="R3-05">R3-05 — UNAUTHORIZED REQUEST</option>
+                  <option value="R3-META">R3-META — CREW RECONSTRUCTION</option>
+                </optgroup>
+                <optgroup label="FINAL">
+                  <option value="FINAL">FINAL — THE COMMISSION</option>
+                </optgroup>
+              </select>
+            </div>
+            <button class="btn btn--green" onclick="doOverride()">MARK SOLVED</button>
+          </div>
+          <div id="override-result" style="margin-top:0.75rem; font-size:0.75rem; display:none;"></div>
+        </div>
+
+        <!-- ================================================
+             SECTION 3: Emergency unlock all
+             ================================================ -->
+        <div class="admin-section">
+          <h2 class="admin-section__title">Emergency Unlock</h2>
+          <p style="font-size:0.75rem; color:#8b949e; margin-bottom:1rem;">
+            Mark all 19 puzzles as solved in localStorage. Use when a team needs full access
+            for technical support, or for post-hunt walkthrough mode.
+          </p>
+          <button class="btn btn--red" onclick="confirmUnlockAll()">UNLOCK ALL PUZZLES</button>
+        </div>
+
+        <!-- ================================================
+             SECTION 4: Standings editor
+             ================================================ -->
+        <div class="admin-section">
+          <h2 class="admin-section__title">Standings Data</h2>
+          <p style="font-size:0.75rem; color:#8b949e; margin-bottom:0.75rem;">
+            Paste updated standings JSON below and click SAVE to download an updated
+            <code style="color:#4dd0e1;">standings.json</code>.
+            Replace the file at <code style="color:#4dd0e1;">data/standings.json</code> on your server.
+          </p>
+          <div class="form-group">
+            <label class="form-label" for="standings-editor">standings.json content</label>
+            <textarea
+              id="standings-editor"
+              class="form-control"
+              rows="12"
+              style="font-size:0.75rem; resize:vertical;"
+              spellcheck="false"
+            ></textarea>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <button class="btn" onclick="loadCurrentStandings()">LOAD CURRENT</button>
+            <button class="btn btn--green" onclick="downloadStandings()">SAVE / DOWNLOAD</button>
+          </div>
+          <div id="standings-result" style="margin-top:0.75rem; font-size:0.75rem; display:none;"></div>
+        </div>
+
+        <!-- ================================================
+             SECTION 5: State export / import
+             ================================================ -->
+        <div class="admin-section">
+          <h2 class="admin-section__title">State Export / Import</h2>
+          <p style="font-size:0.75rem; color:#8b949e; margin-bottom:0.75rem;">
+            Export current solve state as JSON for backup or transfer between browsers.
+          </p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
+            <button class="btn" onclick="doExport()">EXPORT STATE</button>
+            <button class="btn" onclick="toggleImport()">IMPORT STATE</button>
+          </div>
+          <div id="export-output" style="display:none; margin-bottom:0.75rem;">
+            <textarea
+              id="export-textarea"
+              class="form-control"
+              rows="5"
+              style="font-size:0.72rem; resize:vertical;"
+              readonly
+            ></textarea>
+          </div>
+          <div id="import-area" style="display:none;">
+            <div class="form-group">
+              <label class="form-label" for="import-textarea">Paste state JSON</label>
+              <textarea
+                id="import-textarea"
+                class="form-control"
+                rows="5"
+                style="font-size:0.72rem; resize:vertical;"
+                spellcheck="false"
+              ></textarea>
+            </div>
+            <button class="btn btn--green" onclick="doImport()">APPLY IMPORT</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        DEAD RECKONING ADMIN — LOCAL SESSION ONLY
+      </div>
+    </footer>
+
+  </div><!-- /#admin-panel -->
+
+  <script src="../assets/hunt.js"></script>
+  <script>
+    // ============================================================
+    // AUTH GATE
+    // NOTE: Password is hardcoded as a convenience for static/local hosting only.
+    // Replace with server-side authentication for any public deployment.
+    // ============================================================
+    const ADMIN_PASSWORD = 'deadreckoning';
+
+    const authGate  = document.getElementById('auth-gate');
+    const adminPanel = document.getElementById('admin-panel');
+    const authForm  = document.getElementById('auth-form');
+    const authError = document.getElementById('auth-error');
+    const authPass  = document.getElementById('auth-pass');
+
+    // Check if already authenticated in this session
+    if (sessionStorage.getItem('dr_admin_auth') === '1') {
+      showAdminPanel();
+    }
+
+    authForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (authPass.value === ADMIN_PASSWORD) {
+        sessionStorage.setItem('dr_admin_auth', '1');
+        showAdminPanel();
+      } else {
+        authError.style.display = 'block';
+        authPass.value = '';
+        authPass.focus();
+      }
+    });
+
+    function showAdminPanel() {
+      authGate.style.display = 'none';
+      adminPanel.style.display = 'block';
+      refreshSolveState();
+    }
+
+    // ============================================================
+    // SOLVE STATE DISPLAY
+    // ============================================================
+    const ALL_PUZZLE_IDS = [
+      'R1-01','R1-02','R1-03','R1-04','R1-05','R1-META',
+      'R2-01','R2-02','R2-03','R2-04','R2-05','R2-META',
+      'R3-01','R3-02','R3-03','R3-04','R3-05','R3-META',
+      'FINAL'
+    ];
+
+    function refreshSolveState() {
+      const solved = getSolvedPuzzles();
+      const grid = document.getElementById('solve-state-grid');
+      grid.innerHTML = ALL_PUZZLE_IDS.map(id => {
+        const isSolvedPuzzle = solved.has(id);
+        const unlockedPuzzle = isPuzzleUnlocked(id);
+        let stateClass = isSolvedPuzzle ? 'badge--green' : (unlockedPuzzle ? 'badge--cyan' : 'badge--grey');
+        let stateText  = isSolvedPuzzle ? 'SOLVED' : (unlockedPuzzle ? 'UNLOCKED' : 'LOCKED');
+        return `
+          <div style="
+            padding:0.5rem 0.75rem;
+            background:#0d1117;
+            border:1px solid #1e2a38;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:0.4rem;
+          ">
+            <span style="font-size:0.72rem; color:#c9d1d9; letter-spacing:0.05em;">${id}</span>
+            <span class="badge ${stateClass}" style="font-size:0.6rem;">${stateText}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ============================================================
+    // OVERRIDE
+    // ============================================================
+    function doOverride() {
+      const select = document.getElementById('override-select');
+      const result = document.getElementById('override-result');
+      const id = select.value;
+      if (!id) {
+        showAdminMsg(result, 'Select a puzzle first.', 'error');
+        return;
+      }
+      adminMarkSolved(id);
+      refreshSolveState();
+      showAdminMsg(result, id + ' marked as solved.', 'success');
+    }
+
+    // ============================================================
+    // RESET / UNLOCK ALL
+    // ============================================================
+    function confirmResetAll() {
+      if (confirm('RESET ALL SOLVES? This cannot be undone.')) {
+        adminResetAll();
+        refreshSolveState();
+      }
+    }
+
+    function confirmUnlockAll() {
+      if (confirm('UNLOCK ALL 19 PUZZLES? This marks every puzzle as solved.')) {
+        ALL_PUZZLE_IDS.forEach(id => adminMarkSolved(id));
+        refreshSolveState();
+      }
+    }
+
+    // ============================================================
+    // STANDINGS EDITOR
+    // ============================================================
+    async function loadCurrentStandings() {
+      const editor = document.getElementById('standings-editor');
+      const result = document.getElementById('standings-result');
+      try {
+        const res = await fetch('../data/standings.json');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const text = await res.text();
+        editor.value = text;
+        showAdminMsg(result, 'Loaded.', 'success');
+      } catch (err) {
+        showAdminMsg(result, 'Could not load standings.json: ' + err.message, 'error');
+      }
+    }
+
+    function downloadStandings() {
+      const editor = document.getElementById('standings-editor');
+      const result = document.getElementById('standings-result');
+      const content = editor.value.trim();
+      if (!content) {
+        showAdminMsg(result, 'Nothing to save.', 'error');
+        return;
+      }
+      try {
+        JSON.parse(content); // validate
+      } catch (err) {
+        showAdminMsg(result, 'Invalid JSON: ' + err.message, 'error');
+        return;
+      }
+      const blob = new Blob([content], { type: 'application/json' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href     = url;
+      a.download = 'standings.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showAdminMsg(result, 'Downloaded. Replace data/standings.json on server.', 'success');
+    }
+
+    // ============================================================
+    // EXPORT / IMPORT
+    // ============================================================
+    function doExport() {
+      const area   = document.getElementById('export-output');
+      const textarea = document.getElementById('export-textarea');
+      area.style.display = 'block';
+      textarea.value = adminExportState();
+      textarea.select();
+    }
+
+    function toggleImport() {
+      const area = document.getElementById('import-area');
+      area.style.display = area.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function doImport() {
+      const textarea = document.getElementById('import-textarea');
+      const raw = textarea.value.trim();
+      if (!raw) return;
+      adminImportState(raw);
+      refreshSolveState();
+      textarea.value = '';
+      document.getElementById('import-area').style.display = 'none';
+    }
+
+    // ============================================================
+    // UTILITY
+    // ============================================================
+    function showAdminMsg(el, msg, type) {
+      el.style.display = 'block';
+      el.className = 'system-msg system-msg--' + (type === 'success' ? 'success' : 'error');
+      el.textContent = msg;
+      setTimeout(() => { el.style.display = 'none'; }, 4000);
+    }
+  </script>
+</body>
+</html>

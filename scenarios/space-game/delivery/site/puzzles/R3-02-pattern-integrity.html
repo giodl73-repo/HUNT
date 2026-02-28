@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PATTERN INTEGRITY — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-3">CREW RECORD</div>
+    <h1 class="puzzle-title">R3-02 — PATTERN INTEGRITY</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: TRANSIT</span>
+      <span class="meta-item">INSTRUMENT: Transporter Targeting Screen — Pattern Lock / Signal Integrity Monitor</span>
+      <span class="classification-stamp">RESTRICTED — CREW RECORD RECONSTRUCTION</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">TRANSPORTER CONTROL — PAD ALPHA TARGETING DISPLAY</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION WINDOW: [GAP +00:00 → GAP +06:00]
+TERMINAL ID:           TRANS-CTRL-02-A
+LOCATION:              TRANSPORTER ROOM — DECK 2
+DATA SOURCE:           TARGETING MEMORY ARCHIVE — PASSIVE READ-ONLY BUFFER
+NOTE:                  Transporter active log was purged. Targeting memory
+                       archive retains lock signatures and buffer state records
+                       for all pattern acquisitions. This buffer is write-once
+                       hardware and cannot be cleared by software command.
+
+RECOVERED ENTRIES:     7 transport events — GAP +00:00 → GAP +06:00</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">TARGETING RETICLE DISPLAY — ALL ACQUIRED PATTERNS</h2>
+
+    <blockquote class="panel-note">The targeting screen shows each acquired pattern as a spatial reticle with lock quality readout. Coordinates are in kilometers from ship center. Lock quality is expressed as percentage signal integrity at time of acquisition.</blockquote>
+
+    <pre class="panel-data"><code>╔══════════════════════════════════════════════════════════════════════════════════╗
+║  TARGETING SCREEN — PAD ALPHA — PATTERN LOCK ARCHIVE                           ║
+║  Axes: X = port/starboard (km)   Y = fore/aft (km)                             ║
+╠══════════╦═══════════╦══════════════════╦══════════╦═════════╦══════════════════╣
+║ RETICLE  ║ PERSONNEL ║ COORDINATES      ║ LOCK %   ║ STATUS  ║ TIMESTAMP        ║
+╠══════════╬═══════════╬══════════════════╬══════════╬═════════╬══════════════════╣
+║ RET-01   ║ CREW-3301 ║ X: +0.00         ║  99 %    ║ NOMINAL ║ GAP +00:38:14    ║
+║          ║           ║ Y: +0.00         ║          ║         ║ (11:38:14)       ║
+╠══════════╬═══════════╬══════════════════╬══════════╬═════════╬══════════════════╣
+║ RET-02   ║ CREW-0882 ║ X: +0.00         ║  97 %    ║ NOMINAL ║ GAP +01:05:51    ║
+║          ║           ║ Y: +0.00         ║          ║         ║ (12:05:51)       ║
+╠══════════╬═══════════╬══════════════════╬══════════╬═════════╬══════════════════╣
+║ RET-03   ║ CREW-1174 ║ X: +0.00         ║  98 %    ║ NOMINAL ║ GAP +02:14:30    ║
+║          ║           ║ Y: +0.00         ║          ║         ║ (13:14:30)       ║
+╠══════════╬═══════════╬══════════════════╬══════════╬═════════╬══════════════════╣
+║ RET-04   ║ CREW-5509 ║ X: +0.00         ║  96 %    ║ NOMINAL ║ GAP +02:44:07    ║
+║          ║           ║ Y: +0.00         ║          ║         ║ (13:44:07)       ║
+╠══════════╬═══════════╬══════════════════╬══════════╬═════════╬══════════════════╣
+║ RET-05   ║ CREW-2266 ║ X: +0.00         ║  97 %    ║ NOMINAL ║ GAP +03:29:58    ║
+║          ║           ║ Y: +0.00         ║          ║         ║ (14:29:58)       ║
+╠══════════╬═══════════╬══════════════════╬══════════╬═════════╬══════════════════╣
+║ RET-06   ║ UNKNOWN-  ║ X: -2.41         ║  78 %    ║ DEGRADED║ GAP +04:07:22 ▐  ║
+║          ║ ENTITY    ║ Y: +1.87         ║          ║         ║ (15:07:22)    ▐  ║
+╠══════════╬═══════════╬══════════════════╬══════════╬═════════╬══════════════════╣
+║ RET-07   ║ CREW-7741-║ X: -2.44         ║  82 %    ║ DEGRADED║ GAP +04:09:11 ▐  ║
+║          ║ OMICRON   ║ Y: +1.85         ║          ║         ║ (15:09:11)    ▐  ║
+╚══════════╩═══════════╩══════════════════╩══════════╩═════════╩══════════════════╝
+
+▐ = simultaneous buffer occupancy flag — see BUFFER STATUS LOG below</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">BEZEL PLACARD — LOCK QUALITY REFERENCE</h2>
+
+    <blockquote class="panel-note">Standard placard affixed to transporter console, visible from operator position.</blockquote>
+
+    <pre class="panel-data"><code>LOCK QUALITY — SIGNAL INTEGRITY REFERENCE
+══════════════════════════════════════════════════════
+
+  &gt; 95 %   NOMINAL LOCK       Transport safe to execute
+  70–94 %  DEGRADED LOCK      Elevated pattern variance — acceptable risk
+            (Senior Officer authorization recommended for degraded locks)
+  &lt; 70 %   CRITICAL LOCK      Pattern degradation risk — abort recommended
+
+  NOTE: Lock quality is recorded at acquisition. Transport may proceed
+  at operator discretion within established safety thresholds.
+
+  IMPORTANT: Standard buffer architecture supports ONE pattern at a time.
+  Simultaneous multi-pattern occupancy requires non-standard buffer
+  expansion — this is a Senior Officer configuration function.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">BUFFER STATUS LOG</h2>
+
+    <blockquote class="panel-note">Secondary display panel, lower console. Shows buffer memory state for the full reconstruction window. Buffer memory is recorded by the hardware write-once archive — cannot be purged by software.</blockquote>
+
+    <pre class="panel-data"><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  PATTERN BUFFER — MEMORY STATE LOG                                           │
+│  Standard capacity: 1 pattern    Expansion capability: 2 patterns (SO auth) │
+├────────────────────┬────────────────┬────────────────┬───────────────────────┤
+│ TIME WINDOW        │ BUFFER CAPACITY│ PATTERNS HELD  │ CONFIGURATION         │
+├────────────────────┼────────────────┼────────────────┼───────────────────────┤
+│ 11:00 – 15:06      │ 1×  (standard) │ 0 or 1         │ DEFAULT               │
+│ 15:06:55 – 15:11:04│ 2×  (expanded) │ 2 simultaneous │ NON-STANDARD ◄ FLAGGED│
+│ 15:11 – 17:00      │ 1×  (standard) │ 0 or 1         │ DEFAULT               │
+└────────────────────┴────────────────┴────────────────┴───────────────────────┘
+
+BUFFER EXPANSION WINDOW:    15:06:55 → 15:11:04   (duration: 4 min 09 sec)
+PATTERNS HELD SIMULTANEOUSLY:
+    RET-06  UNKNOWN-ENTITY     acquired 15:07:22  ─┐
+    RET-07  CREW-7741-OMICRON  acquired 15:09:11  ─┘ simultaneous occupancy
+
+BUFFER EXPANSION AUTHORIZATION:  [LOG ENTRY ABSENT — not recorded or purged]
+CONFIGURATION CHANGE AGENT:      [UNKNOWN]
+
+◄ FLAGGED: Buffer expanded beyond standard capacity during this window.
+  Standard architecture does not support simultaneous multi-pattern storage.
+  Non-standard buffer expansion requires manual reallocation of buffer memory.
+  This is not an automatic function.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">SIGNAL TRACE — RETICLES 6 AND 7</h2>
+
+    <blockquote class="panel-note">Spatial plot showing origin coordinates of RET-06 and RET-07. Both targets were acquired from approximately the same external position — outside the ship hull, starboard ventral section.</blockquote>
+
+    <pre class="panel-data"><code>      SPATIAL PLOT — EXTERNAL COORDINATE FIELD
+      Origin: ship center (0.00, 0.00)
+
+  Y (fore)
+   +3.0 ┤
+   +2.0 ┤
+   +1.0 ┤
+    0.0 ┼─────────────────────── [SHIP CENTER] ─────
+   -1.0 ┤
+   -2.0 ┤
+         │
+         X (port)  -3.0   -2.0   -1.0    0.0
+
+                     ⊕ RET-06  (-2.41, +1.87)  UNKNOWN-ENTITY
+                     ⊕ RET-07  (-2.44, +1.85)  CREW-7741-OMICRON
+
+  NOTE: Both acquisition points cluster at the same external location —
+        consistent with a single vessel or structure outside the ship at
+        approximately 2.4 km to port, 1.9 km forward of center.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ANALYST DETERMINATION</h2>
+
+    <pre class="panel-data"><code>ANALYST FIELD — CREW RECORD RECONSTRUCTION
+
+  TRANSPORT EVENTS RECOVERED:      [ 7 ]
+  EVENTS WITH NOMINAL LOCK:        [ ___ ]
+  EVENTS WITH DEGRADED LOCK:       [ ___ ]
+
+  WERE ANY PATTERNS HELD SIMULTANEOUSLY IN BUFFER?
+  (Circle one)     YES   /   NO
+
+  SIMULTANEOUS OCCUPANCY WINDOW:   [ _______ → _______ ]
+  PATTERNS INVOLVED:               [ _________________ ]
+                                   [ _________________ ]
+
+  BUFFER COMPONENT THAT WAS EXPANDED TO NON-STANDARD CAPACITY:
+
+                                   [ _________________ ]</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _ _" maxlength="15"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R3-02')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>

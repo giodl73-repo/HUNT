@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNAUTHORIZED REQUEST — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-3">CREW RECORD</div>
+    <h1 class="puzzle-title">R3-05 — UNAUTHORIZED REQUEST</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: REPLICATOR</span>
+      <span class="meta-item">INSTRUMENT: Replicator Terminal — Pattern Database Display / Authorization Log</span>
+      <span class="classification-stamp">RESTRICTED — CREW RECORD RECONSTRUCTION</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">REPLICATOR CONTROL TERMINAL — STATION ALPHA</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION WINDOW: [GAP +00:00 → GAP +06:00]
+TERMINAL ID:           REP-TERM-04-A
+LOCATION:              REPLICATOR CONTROL — SUPPORT DECK, DECK 4
+DATA SOURCE:           PATTERN AUTHORIZATION LOG — IMMUTABLE HARDWARE RECORD
+NOTE:                  Active replication log was purged. The authorization
+                       log is written to isolated hardware memory and cannot
+                       be cleared by any software command, including those
+                       issued with Senior Officer credentials. This record
+                       is complete and unmodified.
+
+RECOVERED ENTRIES:     20 replication requests — GAP +00:00 → GAP +06:00</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">PATTERN DATABASE DISPLAY — LEFT PANEL</h2>
+
+    <blockquote class="panel-note">Left panel shows all replication requests during the reconstruction window: request ID, pattern name, quantity, timestamp, and security flag.</blockquote>
+
+    <pre class="panel-data"><code>┌──────────────────────────────────────────────────────────────────────────────────────────┐
+│  PATTERN DATABASE DISPLAY — REPLICATION REQUESTS                                         │
+│  Window: 11:00 → 17:00                                Terminal: REP-TERM-04-A            │
+├──────────┬──────────────────────────────────┬─────┬──────────────────┬───────────────────┤
+│ REQ ID   │ PATTERN NAME                     │ QTY │ TIMESTAMP        │ SECURITY FLAG     │
+├──────────┼──────────────────────────────────┼─────┼──────────────────┼───────────────────┤
+│ REQ-0031 │ Crew meal — standard ration      │   4 │ 11:07:14         │ OPEN              │
+│ REQ-0032 │ Synthetic analgesic (mild)       │   2 │ 11:14:39         │ BIO               │
+│ REQ-0033 │ Plasma conduit coupling          │   6 │ 11:22:05         │ OPEN              │
+│ REQ-0034 │ Engineering lubricant compound   │   1 │ 11:36:18         │ HAZ               │
+│ REQ-0035 │ Crew meal — vegetarian option    │   2 │ 11:44:52         │ OPEN              │
+│ REQ-0036 │ Diagnostic probe assembly        │   3 │ 11:58:30         │ BIO               │
+│ REQ-0037 │ EPS manifold coupler             │   4 │ 12:07:11         │ OPEN              │
+│ REQ-0038 │ Botanical culture medium         │   1 │ 12:19:44         │ BIO               │
+│ REQ-0039 │ Crew meal — standard ration      │   6 │ 12:31:09         │ OPEN              │
+│ REQ-0040 │ Acetylene torch fuel cell        │   2 │ 12:44:27         │ HAZ               │
+│ REQ-0041 │ Crew meal — standard ration      │   4 │ 13:02:55         │ OPEN              │
+│ REQ-0042 │ Sedative compound (mild)         │   1 │ 13:18:33         │ BIO               │
+│ REQ-0043 │ Sterile field generator          │   1 │ 13:27:08         │ BIO               │
+│ REQ-0044 │ Crew meal — vegetarian option    │   3 │ 13:55:41         │ OPEN              │
+│ REQ-0045 │ Hull patch compound — Class B    │   2 │ 14:09:17         │ OPEN              │
+│ REQ-0046 │ Crew meal — standard ration      │   5 │ 14:38:02         │ OPEN              │
+│ REQ-0047 │ Personal defense weapon — Mk. IV │   1 │ 14:51:29         │ SEC            ◄◄ │
+│ REQ-0051 │ Encrypted comm device — shielded │   1 │ 15:03:44         │ SEC            ◄◄ │
+│ REQ-0058 │ Surveillance sensor array        │   2 │ 15:28:11         │ SEC            ◄◄ │
+│ REQ-0063 │ Restraint system — heavy duty    │   1 │ 16:09:37         │ SEC            ◄◄ │
+└──────────┴──────────────────────────────────┴─────┴──────────────────┴───────────────────┘
+
+◄◄ = security-flagged items — cross-reference authorization log (right panel)</code></pre>
+
+    <blockquote class="panel-note">NOTE: Request IDs are not sequential. Entries REQ-0048 through REQ-0050, REQ-0052 through REQ-0057, and REQ-0059 through REQ-0062 were processed at a different terminal and are not included in this terminal's log. The four ◄◄ entries are the complete set of SEC-flagged requests across both terminals during the window.</blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">AUTHORIZATION LOG — RIGHT PANEL</h2>
+
+    <blockquote class="panel-note">Right panel shows the authorization record for each request: who approved it, how many authorizations were logged, and whether the required authorization count was met.</blockquote>
+
+    <pre class="panel-data"><code>┌──────────────────────────────────────────────────────────────────────────────────────────┐
+│  AUTHORIZATION LOG — APPROVAL RECORD                                                     │
+│  Window: 11:00 → 17:00                                Terminal: REP-TERM-04-A            │
+├──────────┬───────────────────┬─────────────────────────────────────────────┬─────────────┤
+│ REQ ID   │ FLAG              │ AUTHORIZATIONS LOGGED                        │ STATUS      │
+├──────────┼───────────────────┼─────────────────────────────────────────────┼─────────────┤
+│ REQ-0031 │ OPEN              │ (none required)                              │ FULFILLED   │
+│ REQ-0032 │ BIO               │ CREW-0812 (Medical, Tier 1)                  │ FULFILLED   │
+│ REQ-0033 │ OPEN              │ (none required)                              │ FULFILLED   │
+│ REQ-0034 │ HAZ               │ CREW-3301 (Engineering, Tier 1)              │ FULFILLED   │
+│ REQ-0035 │ OPEN              │ (none required)                              │ FULFILLED   │
+│ REQ-0036 │ BIO               │ CREW-1174 (Science, Tier 1)                  │ FULFILLED   │
+│ REQ-0037 │ OPEN              │ (none required)                              │ FULFILLED   │
+│ REQ-0038 │ BIO               │ CREW-0812 (Medical, Tier 1)                  │ FULFILLED   │
+│ REQ-0039 │ OPEN              │ (none required)                              │ FULFILLED   │
+│ REQ-0040 │ HAZ               │ CREW-3301 (Engineering, Tier 1)              │ FULFILLED   │
+│ REQ-0041 │ OPEN              │ (none required)                              │ FULFILLED   │
+│ REQ-0042 │ BIO               │ CREW-0812 (Medical, Tier 1)                  │ FULFILLED   │
+│ REQ-0043 │ BIO               │ CREW-1174 (Science, Tier 1)                  │ FULFILLED   │
+│ REQ-0044 │ OPEN              │ (none required)                              │ FULFILLED   │
+│ REQ-0045 │ OPEN              │ (none required)                              │ FULFILLED   │
+│ REQ-0046 │ OPEN              │ (none required)                              │ FULFILLED   │
+│ REQ-0047 │ SEC  (needs 2)    │ CREW-7741-OMICRON (1 of 2) — NO 2ND AUTH  ◄ │ IRREGULAR   │
+│ REQ-0051 │ SEC  (needs 2)    │ CREW-7741-OMICRON (1 of 2) — NO 2ND AUTH  ◄ │ IRREGULAR   │
+│ REQ-0058 │ SEC  (needs 2)    │ CREW-7741-OMICRON (1 of 2) — NO 2ND AUTH  ◄ │ IRREGULAR   │
+│ REQ-0063 │ SEC  (needs 2)    │ CREW-7741-OMICRON (1 of 2) — NO 2ND AUTH  ◄ │ IRREGULAR   │
+└──────────┴───────────────────┴─────────────────────────────────────────────┴─────────────┘
+
+◄ = single authorization logged where two are required — see security flag reference</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">BEZEL PLACARD — REPLICATOR SECURITY FLAGS</h2>
+
+    <blockquote class="panel-note">Authorization tier reference affixed to terminal bezel. Standard replicator operator reference.</blockquote>
+
+    <pre class="panel-data"><code>REPLICATOR SECURITY FLAGS — AUTHORIZATION REFERENCE
+════════════════════════════════════════════════════════════════════════════════
+
+  FLAG    AUTHORIZATION TIER    REQUIREMENTS
+  ──────  ────────────────────  ──────────────────────────────────────────────
+  OPEN    Tier 0 (Open)         No authorization required. Any crew member.
+
+  BIO     Tier 1 (Department)   Science or Medical department personnel.
+                                Trained staff. Single authorization.
+
+  HAZ     Tier 1 (Department)   Engineering department personnel.
+                                Certified. Single authorization. Logged.
+
+  POISON  Tier 2 (Specialist)   Medical clearance only.
+                                CMO authorization required for lethal qty.
+
+  SEC     Tier 3 (Restricted)   Security Chief + Commanding Officer.
+                                DUAL authorization required — both must sign.
+                                No exceptions. No single-person approval.
+
+  UNK     Tier 4 (Unknown)      Science Officer + department head review.
+                                Additional Science clearance required.
+
+════════════════════════════════════════════════════════════════════════════════
+
+  TIER 3 (RESTRICTED) — ADDITIONAL NOTES:
+    SEC-flagged items require exactly 2 authorizations: Security Chief
+    and Commanding Officer. A single authorization — regardless of
+    rank or clearance level — does not fulfill Tier 3 requirements.
+    Items with one authorization and SEC flag status: IRREGULAR.
+    IRREGULAR fulfillments are logged and flagged for Security review.
+    IRREGULAR fulfillments should not have been completed — the system
+    accepted them due to a manual override of the confirmation gate.
+
+════════════════════════════════════════════════════════════════════════════════</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ANALYST DETERMINATION</h2>
+
+    <pre class="panel-data"><code>ANALYST FIELD — CREW RECORD RECONSTRUCTION
+
+  TOTAL REQUESTS:                         [ 20 ]
+  REQUESTS FULFILLED NORMALLY:            [ ___ ]
+  REQUESTS WITH STATUS = IRREGULAR:       [ ___ ]
+
+  IRREGULAR REQUEST IDs:
+    [ _______ ]  [ _______ ]  [ _______ ]  [ _______ ]
+
+  SECURITY FLAG ON ALL IRREGULAR REQUESTS:   [ ______ ]
+
+  AUTHORIZATION TIER BYPASSED:              Tier ___
+
+  NAME OF BYPASSED AUTHORIZATION TIER:
+
+                                   [ _________________ ]
+
+  CREW MEMBER WHO APPROVED ALL FOUR IRREGULAR REQUESTS:
+
+                                   [ CREW-7741-________ ]</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _ _ _ _ _ _" maxlength="15"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R3-05')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>

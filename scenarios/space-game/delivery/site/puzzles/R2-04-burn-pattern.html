@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BURN PATTERN — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-2">SYSTEMS LOG</div>
+    <h1 class="puzzle-title">R2-04 — BURN PATTERN</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: PROPULSION</span>
+      <span class="meta-item">INSTRUMENT: Impulse Console — EPS Strip Chart Recorder</span>
+      <span class="classification-stamp">RESTRICTED — SYSTEMS LOG RECONSTRUCTION</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">IMPULSE CONSOLE — STRIP CHART RECORDER</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION WINDOW: [GAP +00:00 → GAP +06:00]
+PANEL ID:              PROP-IMP-05-B
+LOCATION:              MAIN ENGINEERING — PROPULSION SECTION, DECK 5
+DATA SOURCE:           EPS STRIP CHART RECORDER — IMPULSE CHANNEL ONLY
+NOTE:                  Strip chart recorder is a mechanical-electrical hybrid.
+                       Analog trace burned onto physical tape — cannot be
+                       remotely deleted. Tape recovered from engineering archive.
+                       Time axis: GAP +00:00 at left, GAP +06:00 at right.
+                       Power axis: 0 MW at bottom, 200 MW at top.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">STRIP CHART TRACE — IMPULSE EPS CHANNEL</h2>
+
+    <blockquote class="panel-note">Read left to right. Each row covers 45 minutes of the 6-hour window.</blockquote>
+
+    <pre class="panel-data"><code>╔════════════════════════════════════════════════════════════════════════════════╗
+║  IMPULSE DRIVE — EPS POWER DRAW  ║  TIME: GAP +00:00 → GAP +06:00           ║
+║  Scale: 0–200 MW vertical        ║  Resolution: 5-minute intervals           ║
+╠════╦═══════════════════════════════════════════════════════════════════════════╣
+║200 ║       ▓▓▓▓▓▓                                    ▓▓▓▓▓▓                  ║
+║    ║     ▓▓      ▓▓                                ▓▓      ▓▓                ║
+║180 ║    ▓▓         ▓▓                             ▓▓         ▓▓              ║
+║ MW ║   ▓▓            ▓▓                          ▓▓            ▓▓            ║
+║160 ║  ▓▓               ▓▓                       ▓▓               ▓▓          ║
+║    ║ ▓▓                  ▓▓                    ▓▓                  ▓▓▓▓▓▓▓▓  ║
+║140 ║▓▓                     ▓▓                ▓▓                            ▓▓║
+║    ║                         ▓▓            ▓▓                                ║
+║120 ║                           ▓▓▓▓▓▓▓▓▓▓▓▓                                 ║
+║ MW ║                                                                          ║
+║100 ║                                                                          ║
+║    ║                                                                          ║
+║ 80 ║                                                                          ║
+║    ║                                                                          ║
+║ 60 ║                                              (see segment 4 note)        ║
+║ MW ║                                                                          ║
+║ 40 ║                                                                          ║
+║    ║                                                                          ║
+║ 20 ║                                                                          ║
+║    ║                                                                          ║
+║  0 ║──────────────────────────────────────────────────────────────────────────║
+║ MW ║                                                                          ║
+╠════╩═══════════════════════════════════════════════════════════════════════════╣
+║ TIME║ +00:00  +00:30  +01:00  +01:30  +02:00  +02:30  +03:00  +03:30  +04:00 ║
+╚════╩═══════════════════════════════════════════════════════════════════════════╝</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">STRIP CHART EVENT LOG — SEGMENT BREAKDOWN</h2>
+
+    <blockquote class="panel-note">Mechanical event markers were burned onto the tape margin alongside the power trace. Recovered and transcribed here.</blockquote>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>Seg</th>
+          <th>Timestamp</th>
+          <th>Duration</th>
+          <th>MW Reading</th>
+          <th>Margin Event Marker</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>GAP +00:00 → +00:22</td>
+          <td>22 min</td>
+          <td>0 → 180 MW (ramp)</td>
+          <td>ACCELERATION BURN INITIATED</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>GAP +00:22 → +01:15</td>
+          <td>53 min</td>
+          <td>120 MW (plateau)</td>
+          <td>CRUISE PHASE</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>GAP +01:15 → +01:37</td>
+          <td>22 min</td>
+          <td>120 → 60 → 0 MW (ramp down)</td>
+          <td>DECELERATION BURN / ALL STOP</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>GAP +01:37 → +02:04</td>
+          <td>27 min</td>
+          <td>0 MW (flat)</td>
+          <td>STATION HOLD — FULL STOP</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>GAP +02:04 → +02:26</td>
+          <td>22 min</td>
+          <td>0 → 180 MW (ramp)</td>
+          <td>ACCELERATION BURN — SECOND SEQUENCE</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>GAP +02:26 → +04:55</td>
+          <td>149 min</td>
+          <td>120 MW (plateau)</td>
+          <td>CRUISE PHASE</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>GAP +04:55 → +05:17</td>
+          <td>22 min</td>
+          <td>120 → 60 MW (ramp down)</td>
+          <td>DECELERATION BURN</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>GAP +05:17 → +06:00</td>
+          <td>43 min</td>
+          <td>120 MW (plateau)</td>
+          <td>CRUISE — WINDOW CLOSES</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote class="panel-note">
+      <strong>Segment 4 note:</strong> During GAP +01:37 → +02:04, trace ran at 0 MW. Deceleration from segment 3 brought impulse drive to full stop. Segment 5 ramp-up resumes from cold start. Two complete maneuver sequences within the window.
+    </blockquote>
+
+    <blockquote class="panel-note">
+      <strong>Segment 8 note:</strong> Window closes while ship is under impulse power at cruise velocity. Drive was ONLINE and actively maneuvering at end of recorded window.
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">IMPULSE DRIVE OPERATING PROFILE — BEZEL REFERENCE</h2>
+
+    <blockquote class="panel-note">Placard affixed to impulse console, overhead bezel.</blockquote>
+
+    <pre class="panel-data"><code>IMPULSE DRIVE — EPS OPERATING PROFILE
+  Source: Engineering Operations Manual, Section 4 — Propulsion
+
+  POWER PHASE       EPS DRAW    DESCRIPTION
+  ─────────────────────────────────────────────────────────
+  Acceleration      180 MW      Peak draw. Drive at maximum thrust output.
+                                Full EPS channel saturation. Duration
+                                proportional to desired final velocity.
+
+  Cruise            120 MW      Steady-state. Thrust maintains current
+                                velocity against residual drag. Sustainable
+                                indefinitely at rated power.
+
+  Deceleration      60 MW       Reduced thrust. Drive in braking mode.
+                                Some energy recovered to EPS. Duration
+                                mirrors acceleration phase for same delta-v.
+
+  Full Stop / Idle  0 MW        Drive offline. No EPS draw. Ship holds
+                                current position (drift only — no active
+                                station-keeping).
+
+  IDENTIFICATION NOTE:
+    Any EPS draw on the impulse channel &gt; 0 MW indicates the drive is
+    ONLINE and executing a maneuver. Zero draw confirms drive offline.
+    A ship in STATION HOLD should show 0 MW for the entire window.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">OFFICIAL FLIGHT LOG — EXCERPT</h2>
+
+    <blockquote class="panel-note">Recovered from Navigation Computer partial log. This entry survived scrubbing.</blockquote>
+
+    <pre class="panel-data"><code>NAVIGATION LOG — OFFICIAL RECORD
+  Window:    [GAP +00:00 → GAP +06:00]
+  Entry:     SHIP STATUS — STATIONARY
+             Ship position: [REDACTED]
+             Impulse drive: OFFLINE
+             Heading: FIXED
+             Station-keeping: NONE REQUIRED
+             Nav record: NO COURSE CHANGES LOGGED
+
+  Signed: [REDACTED — NAV OFFICER]</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">STRIP CHART CROSS-REFERENCE ANALYSIS</h2>
+
+    <pre class="panel-data"><code>ANALYST FIELD — PROPULSION RECONSTRUCTION
+
+  Official log states: Impulse drive OFFLINE, ship STATIONARY.
+
+  Strip chart is a mechanical record — cannot be remotely altered.
+
+  SEGMENT ANALYSIS:
+
+    Segments with EPS draw &gt; 0 MW (drive ONLINE):
+      Seg 1: 0 → 180 MW   [ ACCELERATION / DECELERATION / CRUISE / STOP ]
+      Seg 2: 120 MW        [ ACCELERATION / DECELERATION / CRUISE / STOP ]
+      Seg 3: 120 → 0 MW   [ ACCELERATION / DECELERATION / CRUISE / STOP ]
+      Seg 4: 0 MW          [ ACCELERATION / DECELERATION / CRUISE / STOP ]
+      Seg 5: 0 → 180 MW   [ ACCELERATION / DECELERATION / CRUISE / STOP ]
+      Seg 6: 120 MW        [ ACCELERATION / DECELERATION / CRUISE / STOP ]
+      Seg 7: 120 → 60 MW  [ ACCELERATION / DECELERATION / CRUISE / STOP ]
+      Seg 8: 120 MW        [ ACCELERATION / DECELERATION / CRUISE / STOP ]
+
+    Segments with EPS draw = 0 MW (drive offline):
+      Seg [ __ ] only.
+
+  DISCREPANCY BETWEEN OFFICIAL LOG AND STRIP CHART:
+    Official log: STATIONARY — impulse drive OFFLINE for full 6 hours.
+    Strip chart:  Impulse drive drew power for [ __ ] of 8 segments.
+
+  CONCLUSION:
+    The impulse drive was [ OFFLINE / ONLINE ] during the gap window.
+    It executed [ ___ ] complete acceleration-cruise-deceleration sequences.
+    At window close, the drive was at [ ___ ] MW — [ maneuvering / stopped ].
+
+  IMPULSE DRIVE SYSTEM STATE:    ◉  [ _______ ]</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _ _" maxlength="10"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R2-04')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>

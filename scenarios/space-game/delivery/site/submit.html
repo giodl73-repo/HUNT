@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Answer — DEAD RECKONING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+
+  <div class="classification-banner">CLASSIFICATION: RESTRICTED — AUTHORIZED PERSONNEL ONLY</div>
+  <div class="classification-watermark" aria-hidden="true">RESTRICTED</div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__name">
+        <a href="index.html">DEAD RECKONING</a>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="puzzles.html">Puzzles</a>
+        <a href="submit.html" class="active">Submit</a>
+        <a href="standings.html">Standings</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="site-main">
+    <div class="container--narrow">
+
+      <div class="page-header">
+        <p class="page-header__label">Answer Entry</p>
+        <h1 class="page-header__title">Submit Answer</h1>
+        <p class="page-header__sub">Answers are not case-sensitive. Spaces and hyphens are preserved where required.</p>
+      </div>
+
+      <!-- SUBMIT FORM -->
+      <section aria-label="Answer submission form">
+        <form id="submit-form" novalidate>
+
+          <div class="form-group">
+            <label class="form-label" for="team-name">Team Name</label>
+            <input
+              type="text"
+              id="team-name"
+              name="team-name"
+              class="form-control"
+              placeholder="Enter team designation"
+              autocomplete="off"
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="puzzle-select">Puzzle</label>
+            <select id="puzzle-select" name="puzzle-id" class="form-control">
+              <option value="">-- SELECT PUZZLE --</option>
+              <optgroup label="ROUND 1 — TELEMETRY">
+                <option value="R1-01">R1-01 — CARRIER WAVE</option>
+                <option value="R1-02">R1-02 — DEAD RECKONING</option>
+                <option value="R1-03">R1-03 — CONTACT REPORT</option>
+                <option value="R1-04">R1-04 — GATE LOG</option>
+                <option value="R1-05">R1-05 — ANOMALY STATION</option>
+                <option value="R1-META">R1-META — TELEMETRY RECONSTRUCTION</option>
+              </optgroup>
+              <optgroup label="ROUND 2 — SYSTEMS LOG">
+                <option value="R2-01">R2-01 — LOAD SHEDDING</option>
+                <option value="R2-02">R2-02 — PATHWAY TRACE</option>
+                <option value="R2-03">R2-03 — ATMOSPHERIC INCIDENT</option>
+                <option value="R2-04">R2-04 — BURN PATTERN</option>
+                <option value="R2-05">R2-05 — PARTIAL RECOVERY</option>
+                <option value="R2-META">R2-META — SYSTEMS RECONSTRUCTION</option>
+              </optgroup>
+              <optgroup label="ROUND 3 — CREW RECORD">
+                <option value="R3-01">R3-01 — VITAL SIGNS</option>
+                <option value="R3-02">R3-02 — PATTERN INTEGRITY</option>
+                <option value="R3-03">R3-03 — ACCESS RECORD</option>
+                <option value="R3-04">R3-04 — REPAIR QUEUE</option>
+                <option value="R3-05">R3-05 — UNAUTHORIZED REQUEST</option>
+                <option value="R3-META">R3-META — CREW RECONSTRUCTION</option>
+              </optgroup>
+              <optgroup label="FINAL">
+                <option value="FINAL">FINAL — THE COMMISSION</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="answer-field">Answer</label>
+            <input
+              type="text"
+              id="answer-field"
+              name="answer"
+              class="form-control form-control--uppercase"
+              placeholder="ENTER ANSWER"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="characters"
+              spellcheck="false"
+            >
+            <div id="answer-hint" style="margin-top:0.35rem; font-size:0.65rem; color:#8b949e; letter-spacing:0.05em;"></div>
+          </div>
+
+          <div>
+            <button type="submit" class="btn btn--cta">SUBMIT ANSWER</button>
+          </div>
+
+        </form>
+
+        <!-- Result display -->
+        <div id="submit-result" style="margin-top:1.25rem; display:none;"></div>
+
+      </section>
+
+      <hr class="divider">
+
+      <!-- SOLVE HISTORY -->
+      <section aria-label="Solve history">
+        <div class="page-header" style="margin-bottom:1rem;">
+          <p class="page-header__label">Session Log</p>
+          <h2 class="page-header__title" style="font-size:1rem;">Solved This Session</h2>
+        </div>
+        <div id="solve-history">
+          <p style="font-size:0.8rem; color:#8b949e;">No solves recorded yet.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- COMMISSION OVERLAY -->
+  <div class="commission-overlay" role="dialog" aria-modal="true" aria-label="Commission earned">
+    <div class="commission-overlay__box">
+      <p class="commission-overlay__label">Investigation Status</p>
+      <p class="commission-overlay__title">COMMISSIONED OFFICER</p>
+      <p class="commission-overlay__text">
+        You have solved it.<br>
+        The deleted hours are accounted for.<br>
+        Report to the bridge.
+      </p>
+      <button class="commission-overlay__dismiss">DISMISS</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      DEAD RECKONING &mdash; CLASSIFICATION: RESTRICTED
+    </div>
+  </footer>
+
+  <script src="assets/hunt.js"></script>
+  <script>
+    // Submit-page specific logic
+    (function() {
+
+      // Puzzle metadata for hint display
+      const PUZZLE_META = {
+        'R1-01':   { length: 6,  hint: '6 letters' },
+        'R1-02':   { length: 16, hint: '2 words, 16 letters including space' },
+        'R1-03':   { length: 16, hint: '2 words, 16 letters including space' },
+        'R1-04':   { length: 13, hint: '2 words, 13 letters including space' },
+        'R1-05':   { length: 17, hint: '2 words, 17 letters including space' },
+        'R1-META': { length: 16, hint: 'Hyphenated phrase, 16 characters' },
+        'R2-01':   { length: 5,  hint: '5 letters' },
+        'R2-02':   { length: 7,  hint: '7 letters' },
+        'R2-03':   { length: 7,  hint: '7 letters' },
+        'R2-04':   { length: 6,  hint: '6 letters' },
+        'R2-05':   { length: 5,  hint: '5 letters' },
+        'R2-META': { length: 7,  hint: '7 letters' },
+        'R3-01':   { length: 6,  hint: '6 letters' },
+        'R3-02':   { length: 6,  hint: '6 letters' },
+        'R3-03':   { length: 6,  hint: '6 letters' },
+        'R3-04':   { length: 6,  hint: '6 letters' },
+        'R3-05':   { length: 10, hint: '10 letters' },
+        'R3-META': { length: 14, hint: '2 words, 14 letters including space' },
+        'FINAL':   { length: 9,  hint: '9 letters' },
+      };
+
+      const form          = document.getElementById('submit-form');
+      const selectEl      = document.getElementById('puzzle-select');
+      const answerEl      = document.getElementById('answer-field');
+      const hintEl        = document.getElementById('answer-hint');
+      const resultEl      = document.getElementById('submit-result');
+      const historyEl     = document.getElementById('solve-history');
+
+      // Force uppercase on answer input
+      answerEl.addEventListener('input', function() {
+        const pos = this.selectionStart;
+        this.value = this.value.toUpperCase();
+        this.setSelectionRange(pos, pos);
+      });
+
+      // Show hint when puzzle selected
+      selectEl.addEventListener('change', function() {
+        const meta = PUZZLE_META[this.value];
+        if (meta) {
+          hintEl.textContent = 'Expected length: ' + meta.hint;
+        } else {
+          hintEl.textContent = '';
+        }
+        // Clear result
+        resultEl.style.display = 'none';
+        resultEl.className = '';
+        resultEl.textContent = '';
+        answerEl.classList.remove('answer-input--correct', 'answer-input--incorrect');
+      });
+
+      // Handle form submission
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const puzzleId = selectEl.value;
+        const answer   = answerEl.value.trim();
+
+        if (!puzzleId) {
+          showResult('error', 'Select a puzzle before submitting.');
+          return;
+        }
+        if (!answer) {
+          showResult('error', 'Enter an answer before submitting.');
+          return;
+        }
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        resultEl.style.display = 'none';
+        answerEl.classList.remove('answer-input--correct', 'answer-input--incorrect');
+
+        try {
+          const result = await checkAnswer(puzzleId, answer);
+
+          if (result.correct) {
+            answerEl.classList.add('answer-input--correct');
+            showResult('success', result.flavor || 'CORRECT. Log updated.');
+            renderHistory();
+            if (puzzleId === 'FINAL') {
+              triggerCommissionReveal();
+            }
+          } else {
+            answerEl.classList.add('answer-input--incorrect');
+            showResult('error', 'INCORRECT. No match in log.');
+          }
+        } catch (err) {
+          showResult('error', 'ERROR. Verification unavailable.');
+          console.error(err);
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+
+      function showResult(type, msg) {
+        resultEl.style.display = 'block';
+        resultEl.className = 'system-msg system-msg--' + (type === 'success' ? 'success' : 'error');
+        resultEl.textContent = msg;
+      }
+
+      function renderHistory() {
+        const solved = getSolvedPuzzles();
+        if (solved.size === 0) {
+          historyEl.innerHTML = '<p style="font-size:0.8rem; color:#8b949e;">No solves recorded yet.</p>';
+          return;
+        }
+        const lines = [...solved].map(id => {
+          return `<div style="font-size:0.75rem; color:#3fb950; letter-spacing:0.1em; margin-bottom:0.25rem;">◉ ${id}</div>`;
+        }).join('');
+        historyEl.innerHTML = lines;
+      }
+
+      // Render history on load
+      renderHistory();
+
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANOMALY STATION — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-1">TELEMETRY</div>
+    <h1 class="puzzle-title">R1-05 — ANOMALY STATION</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: SCIENCE</span>
+      <span class="meta-item">INSTRUMENT: Six-Band False-Color Spectral Analyzer — Anomaly Signature Array</span>
+      <span class="classification-stamp">RESTRICTED — TELEMETRY RECONSTRUCTION LOG</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">SCIENCE STATION — SPECTRAL ANALYSIS CONSOLE</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION WINDOW: [GAP –00:15 → GAP +06:15]
+SIGNATURES ISOLATED:   8
+SPECTRAL BANDS:        6  [RADIO | MICROWAVE | INFRARED | VISIBLE | UV | X-RAY]
+AMPLITUDE SCALE:       0 (absent) → 5 (saturation)
+NOISE FLOOR:           amplitude 1 in all bands (background cosmic radiation)</code></pre>
+
+    <blockquote class="panel-note">
+      Each signature represents an isolated anomalous reading from the passive array.
+      Amplitudes shown are net signal above noise floor. Amplitude 0 = at or below noise floor.
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">SIGNATURE DATA TABLE</h2>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>SIG</th>
+          <th>RADIO</th>
+          <th>MICROWAVE</th>
+          <th>INFRARED</th>
+          <th>VISIBLE</th>
+          <th>UV</th>
+          <th>X-RAY</th>
+          <th>NOTES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SIG-01</td>
+          <td>4</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>5</td>
+          <td>Compact, intense, periodic</td>
+        </tr>
+        <tr>
+          <td>SIG-02</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>4</td>
+          <td>3</td>
+          <td>0</td>
+          <td>Diffuse, expanding plume</td>
+        </tr>
+        <tr>
+          <td>SIG-03</td>
+          <td>0</td>
+          <td>3</td>
+          <td>4</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>Point source, high albedo</td>
+        </tr>
+        <tr>
+          <td>SIG-04</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>4</td>
+          <td>5</td>
+          <td>Compact, intense, periodic</td>
+        </tr>
+        <tr>
+          <td>SIG-05</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>4</td>
+          <td>3</td>
+          <td>0</td>
+          <td>Diffuse, turbulent boundary</td>
+        </tr>
+        <tr>
+          <td>SIG-06</td>
+          <td>0</td>
+          <td>3</td>
+          <td>4</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>Point source, high albedo</td>
+        </tr>
+        <tr>
+          <td>SIG-07</td>
+          <td>4</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>5</td>
+          <td>Compact, intense, periodic</td>
+        </tr>
+        <tr>
+          <td>SIG-08</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>**</td>
+          <td>0</td>
+          <td>0</td>
+          <td>Visible band only — see detail</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote class="panel-note">** SIG-08 visible amplitude: anomalous. See EXPANDED READOUT below.</blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">EXPANDED READOUT — SIG-08</h2>
+
+    <pre class="panel-data"><code>BAND:     VISIBLE (400–700 nm)
+SENSOR:   Passive optical array, Deck 07, aft-ventral mount
+
+BACKGROUND FIELD (surrounding region):
+  370 nm:  amplitude 1.2  (background)
+  400 nm:  amplitude 1.1  (background)
+  450 nm:  amplitude 1.1  (background)
+  500 nm:  amplitude 1.1  (background)
+  514 nm:  amplitude 0.0  ◀◀ ANOMALY — signal drops to zero
+  515 nm:  amplitude 0.0  ◀◀ ANOMALY — signal drops to zero
+  516 nm:  amplitude 0.0  ◀◀ ANOMALY — signal drops to zero
+  550 nm:  amplitude 1.0  (background)
+  600 nm:  amplitude 1.1  (background)
+  650 nm:  amplitude 1.0  (background)
+  700 nm:  amplitude 1.1  (background)
+
+  AFFECTED RANGE:   514–516 nm  (bandwidth: ~2 nm)
+  SUPPRESSION:      amplitude drops from 1.1 to 0.0 — below noise floor
+  DURATION:         continuous throughout observation window (6h 30m)
+  POSITION:         bearing 157°, range indeterminate (passive only)
+  EXTENT:           subtends &lt; 0.1 arcsecond (point-source or smaller)
+
+  EMISSION PROFILE: none. This signature is a DEFICIT, not a source.
+                    SIG-08 does not emit. SIG-08 absorbs.
+
+  SURROUNDING REGION: all bands within ±20° bearing show normal background.
+  ADJACENT SPECTRUM:  all wavelengths outside 514–516 nm show normal background.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">BEZEL REFERENCE — SPECTRAL CLASSIFICATION STANDARD</h2>
+
+    <blockquote class="panel-note">Object classes and expected spectral signatures.</blockquote>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>OBJECT CLASS</th>
+          <th>RADIO</th>
+          <th>MICROWAVE</th>
+          <th>INFRARED</th>
+          <th>VISIBLE</th>
+          <th>UV</th>
+          <th>X-RAY</th>
+          <th>DISTINGUISHING FEATURE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Neutron Star</td>
+          <td>✓</td>
+          <td>✗</td>
+          <td>✗</td>
+          <td>✗</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>Compact; intense; periodic pulsar timing</td>
+        </tr>
+        <tr>
+          <td>Plasma Plume</td>
+          <td>✗</td>
+          <td>✗</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✗</td>
+          <td>Diffuse; expanding; temperature gradient</td>
+        </tr>
+        <tr>
+          <td>Metallic Debris</td>
+          <td>✗</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✗</td>
+          <td>✗</td>
+          <td>High albedo; radar reflective</td>
+        </tr>
+        <tr>
+          <td>Gravitational Lens</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Distorts all bands uniformly; not a source</td>
+        </tr>
+        <tr>
+          <td>Absorption Shadow</td>
+          <td>✗</td>
+          <td>✗</td>
+          <td>✗</td>
+          <td>✗*</td>
+          <td>✗</td>
+          <td>✗</td>
+          <td>Specific band: signal BELOW noise floor</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote class="panel-note">
+      * Absorption Shadow may appear in any band — including visible. The signature is not emission.
+      It is suppression of background signal at a specific frequency by an absorbing medium or field.
+      A genuine Absorption Shadow shows amplitude at or below noise floor in the affected band
+      while adjacent bands and the surrounding spatial region remain at normal background levels.
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">CLASSIFICATION SUMMARY</h2>
+
+    <pre class="panel-data"><code>SCIENCE STATION — AUTOMATED PRE-CLASSIFICATION
+
+  SIG-01:  Radio ✓ / UV ✓ / X-ray ✓   → [ANALYST TO CLASSIFY]
+  SIG-02:  Infrared ✓ / Visible ✓ / UV ✓  → [ANALYST TO CLASSIFY]
+  SIG-03:  Microwave ✓ / Infrared ✓ / Visible ✓  → [ANALYST TO CLASSIFY]
+  SIG-04:  Radio ✓ / UV ✓ / X-ray ✓   → [ANALYST TO CLASSIFY]
+  SIG-05:  Infrared ✓ / Visible ✓ / UV ✓  → [ANALYST TO CLASSIFY]
+  SIG-06:  Microwave ✓ / Infrared ✓ / Visible ✓  → [ANALYST TO CLASSIFY]
+  SIG-07:  Radio ✓ / UV ✓ / X-ray ✓   → [ANALYST TO CLASSIFY]
+  SIG-08:  Visible suppression only   → [ANALYST TO CLASSIFY]
+
+  Flag: SIG-08 does not fit any standard emission profile.
+  Flag: SIG-08 amplitude in visible band is 0.0 — BELOW BACKGROUND.
+  Flag: All other bands for SIG-08 are at background or absent.
+
+  Interference type at SIG-08 location:  [ANALYST TO CLASSIFY]</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ANALYST NOTE — AUTO-GENERATED</h2>
+
+    <pre class="panel-data"><code>SCIENCE ARRAY FUSION v5.2.0
+
+SIG-01, -04, -07: identical band profile (radio/UV/X-ray); compact; periodic.
+  Recommend classification as neutron stars or pulsars. Three independent sources.
+
+SIG-02, -05: identical band profile (IR/visible/UV); diffuse expanding signature.
+  Recommend classification as plasma plumes.
+
+SIG-03, -06: identical band profile (microwave/IR/visible); point source, high albedo.
+  Recommend classification as metallic debris fields.
+
+SIG-08: DOES NOT MATCH any emission-class object.
+  Visible band reads 0.0 at 514–516 nm. Background at same location reads 1.1.
+  Something at bearing 157° is absorbing visible light at 514–516 nm.
+  The source of that absorption is not a detected emitter — it is a present, absorbing medium.
+
+  This signature is classified as an interference phenomenon, not an astronomical source.
+  Interference type:  [ANALYST TO CLASSIFY]</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _ _ _ _ _ _   _ _ _ _ _ _" maxlength="30"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R1-05')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>

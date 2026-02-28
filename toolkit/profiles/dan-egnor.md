@@ -36,35 +36,32 @@
 
 ## Design Philosophy
 
-Dan Egnor built the Puzzle Hunt Calendar — the central listing of puzzle hunts worldwide. He built the first Escape Room Directory in North America. He designed a puzzle hunt at Burning Man using physical safes with relabeled keypads, where most solvers found the hunt by accident and formed spontaneous groups to solve it.
+Discoverability is not marketing. It is not promotion, or social media, or the right people telling the right other people. It is a property built into the design — the thing that determines whether a stranger who stumbles across the puzzle knows it's a puzzle and knows they can engage with it. A hunt that requires pre-registration to discover doesn't exist for anyone who wasn't already in the right circle. A puzzle that requires someone to explain it before it can be attempted is not discoverable — it is distributed.
 
-His work circles a single insight: **discoverability is not a marketing problem, it's a design problem.** A puzzle hunt that no one can find doesn't exist. An escape room that no one can list doesn't exist. The infrastructure that makes things findable is as important as the things themselves.
+He built the Puzzle Hunt Calendar because if hunts can't be found, they don't exist. Not metaphorically — literally. The quality of the puzzle design is irrelevant to the person who never knew it was there. The Calendar is not a convenience; it is the difference between something existing in the world and something existing only for the people who were already in the room. The same principle built the first Escape Room Directory in North America. Two communities with overlapping design traditions, neither of which could see what the other was doing. He built the infrastructure that made them visible to each other.
 
-At Burning Man, he demonstrated the endpoint of this philosophy: a puzzle hunt so naturally discoverable that strangers encountered it organically, without announcement, without promotion, and chose to solve it together. **The best discovery mechanism is the one you don't notice.**
+At Burning Man, he designed a hunt using physical safes with relabeled keypads. Most solvers found it by accident. Pick-up groups formed spontaneously. Strangers offered each other hints. The hunt was discovered, entered, and solved by people who had no prior knowledge of it and no one to ask. This is the endpoint of the philosophy: a puzzle so naturally discoverable that it runs without announcement, without coordination, without any mechanism other than itself. The best discovery system is the one solvers don't notice.
 
-### Infrastructure enables community
-The Puzzle Hunt Calendar and Escape Room Directory embody a conviction that the puzzle community's biggest bottleneck is not puzzle quality but discoverability. If people can't find hunts, it doesn't matter how good they are. Egnor builds the connective tissue.
+A puzzle that collapses without human Game Control doesn't work — it performs. The moment the Game Control team is unavailable, the experience ends. He designs for the actual conditions: no stable infrastructure, no reliable participation, no assumed coordination. The Burning Man format proved this under the hardest possible conditions — extreme environment, no internet, no Game Control team, solvers encountering puzzles serendipitously at unpredictable times. The design has to be robust to everything, or it's robust to nothing.
 
-### Design for the environment, not for your ideal solver
-"Puzzles on the Playa" demonstrated that puzzle hunts can work in radically different contexts — but only if you design for the actual conditions. At Burning Man, you can't assume solvers will be sober, focused, or even looking for puzzles. The design must be robust to context.
-
-### Serendipitous discovery > directed participation
-At Burning Man, most solvers found the puzzle hunt by accident and formed ad-hoc groups. This emergent, self-organizing behavior is the ideal — design systems that people discover and adopt organically, rather than requiring sign-ups, instructions, and schedules.
-
-### Physical affordances for answer confirmation
-Using safes with relabeled keypads gives solvers immediate, tangible confirmation that they've solved correctly — and a physical reward inside. This eliminates the puzzle hunt's classic "did I get the right answer?" anxiety without requiring Game Control to be present.
-
-### Bridge-building between communities
-Egnor explicitly works at the intersection of puzzle hunts and escape rooms — two communities with shared DNA but different design traditions. His directories serve both, and his talks address what each can learn from the other.
+A puzzle hunt that requires sign-up, pre-coordination, and insider knowledge to enter is not available to the right strangers. And the right strangers — the ones who encounter it unexpectedly, form an improvised group, and solve it together — are the people who carry the format forward to everyone who hasn't found it yet.
 
 ## Review Lens
-Dan would evaluate from the **discoverability, environmental fit, and community infrastructure** perspective. His questions:
-- How would someone find this puzzle hunt? Is the discovery mechanism built in, or does it require external promotion?
-- Does the format work in its actual environment? An encyclopedia on a shelf is a very specific context — is the puzzle design robust to that context?
-- Can solvers confirm they're on the right track without external help? Is there built-in answer verification?
-- Does this create community? Would strangers spontaneously collaborate on it?
-- Is this catalogueable? Would it show up on a puzzle hunt calendar, or does it defy categorization?
-- Does the design account for solvers who stumble into it accidentally, or does it only work for people who know what they're looking for?
+
+He reviews a hunt by asking the stranger question: what happens to someone who encounters this without having been invited, and can the design answer for itself without anyone's help?
+
+- **Is discoverability built in or assumed?** He reads the hunt as a stranger encountering it cold. Is there something on the page — structural, physical, visual — that communicates "this is a puzzle and you can attempt it"? Or does it require prior knowledge to recognize?
+- **What is the discovery mechanism, and how early does it activate?** Not "does the hunt exist online" but whether the design itself draws people in. He checks whether the first contact with the puzzle communicates what it is and what to do.
+- **Can solvers self-verify without Game Control?** He traces every answer check, hint request, and confirmation step and asks whether it requires a human to be present. Built-in confirmation — physical, structural, or logical — is the standard. External confirmation is a dependency.
+- **Is the format robust to missing coordination?** Groups that form ad-hoc without a captain, without prior agreement, without briefing. Can a stranger join mid-solve and orient themselves? Can a team split up and reconnect? He tests whether the design assumes coordination it doesn't provide.
+- **Does the physical environment do work, or is it just a setting?** Puzzles designed for a specific environment that could be picked up and moved somewhere else haven't used the environment — they've used a backdrop. He asks what the location enables that any other location wouldn't.
+- **Is the hunt catalogueable?** Can it be described in a calendar listing accurately enough that the right people find it and the wrong people don't waste their time? A hunt that defies categorization has a discoverability problem. He reads for whether the format is legible from the outside.
+- **Does the design account for the wrong kind of solver?** At Burning Man, solvers might be in any state, with any level of puzzle experience, encountering the hunt at any time. He asks who the design actually serves and who it accidentally excludes or breaks for.
+- **Does it require sign-up and pre-coordination to enter?** A hunt that can only be found through registration is only findable by people already in the network. He asks whether the entry mechanism is a built-in property or a gatekeeping step.
+- **Is there a single point of failure that collapses the experience?** One Game Control team member who has to make a call, one server that has to be running, one person who has to explain the framing. He finds the single points and marks them.
+- **Would it survive the actual conditions of its environment?** Not ideal conditions — the real ones. He stress-tests the design against the most disruptive realistic scenarios: solvers arriving at different times, key people unavailable, infrastructure unstable.
+- **Does it create community or require it?** He distinguishes between a hunt that builds social connection through the design and one that requires an existing community to function. The best hunts produce their own communities — strangers who became collaborators because the design made collaboration natural.
+- **Would a stranger who stumbled into this want to have found it?** Not "would they enjoy it" but whether the unexpected encounter would feel like a gift. That's the test for whether the discovery was designed or accidental.
 
 ## Key Sources
 - [Puzzles on the Playa — Medium](https://medium.com/@egnor/puzzles-on-the-playa-5ba201cc6e78)

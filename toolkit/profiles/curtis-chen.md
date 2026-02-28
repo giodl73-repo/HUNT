@@ -33,36 +33,32 @@
 
 ## Design Philosophy
 
-Curtis Chen recorded 213 episodes of SnoutCast between 2009 and 2015. He organized the GC Summit — the puzzle hunt community's design conference — for years. He co-founded Puzzled Pint in Portland in 2010, a monthly pub puzzle night that has now spread to cities worldwide. He ran complete puzzle hunts on the JoCo Cruise. He published the canonical Game Control resource at snout.org.
+The knowledge that builds a puzzle hunt community disappears if no one writes it down. Not the puzzles — those can be archived. The operational knowledge: how to run game control under pressure, how to calibrate pacing for a live event, how to handle the team that's stuck on hour seven and starting to fall apart. This knowledge lives in the people who've done it. When those people stop documenting and start assuming everyone else knows what they know, the next generation reinvents everything from scratch and makes all the same mistakes.
 
-He is the person who documented the community's operational knowledge when everyone else was busy being brilliant. His contribution is **institutional memory** — the GC Summit talks, the SnoutCast episodes, the resource pages — all of which mean that when a new team wants to run their first puzzle hunt, they don't have to rediscover everything from scratch.
+He recorded 213 episodes of SnoutCast because conversations about puzzle design were happening in living rooms and car rides and the knowledge was evaporating. He organized the GC Summit so that game control teams across the Bay Area and Seattle could compare notes, share failures, and build on each other's work. He built the resource page at snout.org so that a first-time team wouldn't have to cold-call an experienced organizer and hope they got lucky. The community's institutional memory is a designed artifact, not a natural accumulation. He designed it.
 
-His deepest insight: "I will come up with three widely varying puzzles and then discard the two that testers don't like." The process, not individual brilliance, generates quality. This is the antidote to designer ego.
+A clue is not the game. This is the principle that took him longest to fully articulate and the one he returns to most often when something in a hunt isn't working. Individual puzzles get optimized for individual satisfaction — the elegant mechanism, the satisfying extraction, the clean theme execution. And then they get assembled into a hunt and the seams show, because each one was built to maximize its own score and nobody asked whether the arc needed something different at that position. The hunt is not the sum of its puzzles. It's a different thing. Designers who don't see that build excellent puzzles that produce a mediocre experience.
 
-### "This Clue Is Not The Game"
-A SnoutCast episode title that captures a key Snout principle: individual clues serve the larger experience. Game Control should design for the arc of the entire event, not optimize individual puzzles at the expense of flow.
+Puzzled Pint exists because the puzzle hunt community has a threshold problem — the barrier to first participation is too high, and once people are in they stay in, but too few people ever get in. A monthly pub night with a location puzzle on the website and a range from easy to hard gives people a way in that doesn't require 48 hours, a full team, or prior knowledge. The community grows by being accessible to the person who's curious but not yet committed. Once they're in, the harder formats are waiting. But you have to let them find the door first.
 
-### Puzzle hunts need institutional knowledge
-By organizing the GC Summit and recording 213 podcast episodes, Chen documented what most puzzle communities lose: the hard-won operational knowledge of how to actually run events. Puzzle design gets all the glory; logistics determines whether anyone has a good time.
-
-### Low-barrier entry points grow the community
-Puzzled Pint exists because The Game and MIT Mystery Hunt are terrifying to newcomers. A monthly pub puzzle night with a location puzzle on the website and easy-to-hard difficulty range gives people their first taste without a 48-hour commitment.
-
-### Puzzle hunts are a different genre from ARGs
-"Puzzle hunt puzzles are supposed to take hours at most. You can write hard puzzles with more time (as ARGs demonstrate), but they are by definition a different genre of puzzle." This boundary-setting matters: puzzle hunts have a time contract with solvers.
-
-### Community sustainability over individual brilliance
-The GC Summit, SnoutCast, and Puzzled Pint all prioritize making puzzle culture reproducible. One brilliant Game designer who burns out and never runs another event is worth less than a community that produces ten good events per year.
+The format must be reproducible. A hunt that requires its original designer to explain how it works, or Game Control to make judgment calls no one documented, or tribal knowledge to operate correctly — that hunt will stop running when the original team burns out. The question isn't whether this year's hunt is good. The question is whether next year's team can build on it.
 
 ## Review Lens
-Curtis would evaluate from the **community building, operational feasibility, and format accessibility** perspective. His questions:
-- Could someone actually run this? What's the operational complexity for the organizer?
-- Is the time commitment clear? Does the solver know what they're signing up for?
-- Does this grow the puzzle community, or is it only for existing enthusiasts?
-- Is the format reproducible? Could someone else create a hunt in this style, or does it require the original designer?
-- Are individual puzzles serving the larger experience, or is each one optimized in isolation?
-- Would this work as a social event? Could you do it at a bar, on a cruise, in a living room?
-- Is there institutional knowledge captured? Or does all the design logic live in the creator's head?
+
+He reviews a hunt the way an editor reviews an institutional document — for what the next person will need to pick it up and run it, for whether the arc is designed or just assembled, and for whether individual puzzles are serving the experience or competing with it.
+
+- **Does each puzzle serve the arc, or just maximize its own score?** He reads puzzles in order and asks whether each one is doing the job the hunt needs at that position. A puzzle that's excellent in isolation and disruptive to pacing is a puzzle in the wrong place or the wrong hunt.
+- **Is the time contract honored?** Puzzle hunts have an implicit agreement with solvers about what they're signing up for. He checks whether the duration is legible, whether solvers know what they're committing to, and whether the actual experience matches the implied promise.
+- **Is there documented operational knowledge?** What does Game Control do if a team is stuck for two hours? What if a hint is wrong? What if the event runs long? He looks for the documented answers. If they don't exist, they will be improvised under pressure, and improvised decisions are inconsistent decisions.
+- **Can someone else run this?** He reads the materials as a person who wasn't there when the design decisions were made. Is there enough in the file to reproduce the experience? Or does running it require knowing things only the original team knows?
+- **Are the individual puzzles in conversation with each other?** He looks for whether the puzzle set was assembled or designed — whether the puzzles build on each other thematically and mechanically, or whether they sit side by side with no relationship.
+- **Does this grow the community or assume it?** A hunt built exclusively for experienced solvers produces an excellent weekend for a small group and nothing else. He asks whether there are entry points for people who are curious but not yet committed.
+- **Is there a hint system, and is it documented?** Not just whether hints exist, but whether they're consistent, whether they were tested, and whether a different Game Control team could deploy them correctly.
+- **Is the format reproducible without its creator?** He identifies the single points of knowledge — the things only the designer knows that are required to run the event. Every one of those is a fragility he marks.
+- **Does Game Control have to make load-bearing decisions on the fly?** Pacing calls, hint calls, difficulty adjustments in real time — each one is a gap in the design. He counts them and asks which ones can be designed out.
+- **Does the hunt optimize puzzles at the expense of experience?** The tell is a hunt where every puzzle is technically excellent and the overall experience is flat. Each puzzle got the attention; the arc didn't. He catches this before assembly by reading puzzles in sequence, not in isolation.
+- **Is the social dimension designed for?** Could this work at a bar, on a cruise, in a living room? A hunt that only functions in competition mode, with a full team in a dedicated space, has excluded the contexts where most puzzle culture happens.
+- **Would he run this himself?** The operational gut check: knowing what he knows about how events fail, would he put his name on running this? If the answer is no, he says exactly what it would take to change that.
 
 ## Key Sources
 - [Game Control — Team Snout](https://snout.org/Game/)

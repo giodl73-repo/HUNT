@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TELEMETRY RECONSTRUCTION — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-1">TELEMETRY</div>
+    <h1 class="puzzle-title">R1-META — TELEMETRY RECONSTRUCTION</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: COMMAND</span>
+      <span class="meta-item">INSTRUMENT: Compiled Telemetry Summary Panel — Interference Classification Board</span>
+      <span class="classification-stamp">RESTRICTED — TELEMETRY RECONSTRUCTION LOG</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">COMMAND STATION — TELEMETRY RECONSTRUCTION BOARD</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION WINDOW: [GAP +00:00 → GAP +06:00]
+STATION REPORTS:       5  [COMMS | NAV | TAC | SEC | SCIENCE]
+STATUS:                COMPILATION COMPLETE — AWAITING CLASSIFICATION</code></pre>
+
+    <blockquote class="panel-note">
+      All five department stations have submitted interference findings from the gap window.
+      This board consolidates those findings against the complete interference taxonomy.
+      One classification is unaccounted for.
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">COMPILED STATION FINDINGS</h2>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>STATION</th>
+          <th>INSTRUMENT</th>
+          <th>FINDING (INTERFERENCE TYPE)</th>
+          <th>SOURCE PUZZLE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>COMMS</td>
+          <td>Frequency Spectrum Display</td>
+          <td></td>
+          <td>R1-01</td>
+        </tr>
+        <tr>
+          <td>NAV</td>
+          <td>Multi-Modal Sensor Comparison</td>
+          <td></td>
+          <td>R1-02</td>
+        </tr>
+        <tr>
+          <td>TAC</td>
+          <td>Polar Targeting Display</td>
+          <td></td>
+          <td>R1-03</td>
+        </tr>
+        <tr>
+          <td>SEC</td>
+          <td>Security Access Control Panel</td>
+          <td></td>
+          <td>R1-04</td>
+        </tr>
+        <tr>
+          <td>SCIENCE</td>
+          <td>Six-Band Spectral Analyzer</td>
+          <td></td>
+          <td>R1-05</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">INTERFERENCE CLASSIFICATION TAXONOMY</h2>
+
+    <blockquote class="panel-note">
+      Complete reference. Six types recognized by Fleet Intelligence Directorate.
+      Standing order: all six must be checked against any telemetry reconstruction.
+    </blockquote>
+
+    <pre class="panel-data"><code>┌─────┬──────────────────────┬─────────────────────────────────────────────────────────┐
+│ NO. │ TYPE                 │ SIGNATURE CHARACTERISTICS                               │
+├─────┼──────────────────────┼─────────────────────────────────────────────────────────┤
+│  1  │ DECOYS               │ Phantom contacts; EM-only; no thermal or grav signature  │
+│  2  │ SHATTERED CARRIER    │ Fragmented envelope; irregular sub-peaks; incoherent     │
+│  3  │ HIERATIC TRIPLET     │ Three-contact cluster; 30° separation; 1:2:4 EM ratio   │
+│  4  │ HARMONIC ECHO        │ Access/signal pattern mirrors outbound transmission      │
+│  5  │ PHASE-LOCKED PAIR    │ Two signals in perfect sync; indistinguishable from own  │
+│  6  │ ABSORPTION SHADOW    │ Spectral suppression; amplitude below noise floor        │
+└─────┴──────────────────────┴─────────────────────────────────────────────────────────┘</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">GAP TIMELINE — INTERFERENCE DISTRIBUTION</h2>
+
+    <pre class="panel-data"><code>SHIP TIME    EVENT / WINDOW                        TYPE FLAGGED
+────────────────────────────────────────────────────────────────
+13:50        Normal operations
+14:00        Pre-gap comm burst pattern begins      [SEC: see R1-04]
+14:22:00     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓ GAP BEGINS ▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+             ░ GAP +00:12   Spectrum display active [COMMS: see R1-01]
+             ░ GAP +01:15   Polar display active    [TAC: see R1-03]
+             ░ GAP +00:00   Sensor array active     [NAV: see R1-02]
+             ░ GAP –00:15   Spectral array active   [SCIENCE: see R1-05]
+20:22:00     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓ GAP ENDS ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+20:22        Post-gap comm burst pattern resumes    [SEC: see R1-04]
+20:55        Normal operations resume</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">RECONSTRUCTION STATUS BOARD</h2>
+
+    <pre class="panel-data"><code>TYPE 1 — DECOYS              [ PRESENT — flagged by COMMS ]
+TYPE 2 — SHATTERED CARRIER   [ PRESENT — flagged by NAV   ]
+TYPE 3 — HIERATIC TRIPLET    [ PRESENT — flagged by TAC   ]
+TYPE 4 — HARMONIC ECHO       [ PRESENT — flagged by SEC   ]
+TYPE 5 — PHASE-LOCKED PAIR   [ ????                       ]
+TYPE 6 — ABSORPTION SHADOW   [ PRESENT — flagged by SCIENCE ]</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ANALYST NOTES — COMMAND STATION</h2>
+
+    <pre class="panel-data"><code>TELEMETRY RECONSTRUCTION ENGINE v1.0 — COMMAND INTEGRATION MODULE
+
+Five of six interference types are accounted for in the reconstructed record.
+One type does not appear in any station log.
+
+Cross-reference complete:
+
+  COMMS station (R1-01):    TYPE 1 confirmed — multiple Decoy traces dominant
+  NAV station (R1-02):      TYPE 2 confirmed — fragmented EM carriers on 3 contacts
+  TAC station (R1-03):      TYPE 3 confirmed — cluster of three, 30°/30° separation,
+                                               1:2:4 harmonic ratio
+  SEC station (R1-04):      TYPE 4 confirmed — gate log mirrors outbound comm bursts,
+                                               Δt = 38 seconds, correlation 1.000
+  SCIENCE station (R1-05):  TYPE 6 confirmed — SIG-08, visible band suppression at
+                                               514–516 nm, amplitude 0.0
+
+  TYPE 5 — PHASE-LOCKED PAIR:  ABSENT FROM ALL LOGS.
+
+  Absence is not a gap in the reconstruction. Absence is the finding.
+
+  A PHASE-LOCKED PAIR does not appear as interference. It appears as nothing.
+  Two signals in perfect synchronization with the ship's own transmissions are
+  indistinguishable from the ship's own signal. They leave no anomalous record.
+
+  The contact was not hidden by the noise.
+  The contact was hidden by the silence.
+
+CLASSIFICATION — MISSING INTERFERENCE TYPE:  [ANALYST TO RECORD]</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">FINAL ENTRY — FLEET INTELLIGENCE DIRECTORATE</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION REF: DR-TELEMETRY-R1-FINAL
+AUTHORITY: Fleet Intelligence Directorate, Signal Analysis Division
+
+Per standing protocol, the identified missing interference type from
+the six-hour gap window is to be logged as the primary contact
+classification for DEAD RECKONING telemetry reconstruction.
+
+All five present types are consistent with a deliberate masking operation.
+
+The absence of TYPE 5 is the signal.
+
+RECORD CLASSIFICATION:  ________________________</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _   _ _ _ _ _ _   _ _ _ _" maxlength="30"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R1-META')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>

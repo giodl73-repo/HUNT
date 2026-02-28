@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT REPORT — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-1">TELEMETRY</div>
+    <h1 class="puzzle-title">R1-03 — CONTACT REPORT</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: TAC</span>
+      <span class="meta-item">INSTRUMENT: Polar Targeting Display — Contact Classification Array</span>
+      <span class="classification-stamp">RESTRICTED — TELEMETRY RECONSTRUCTION LOG</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">TACTICAL STATION — POLAR TARGETING DISPLAY</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION WINDOW: [GAP +01:15 → GAP +01:52]
+CONTACTS TRACKED:      8
+RANGE RINGS:           10,000 km / 25,000 km / 50,000 km
+BEARING FORMAT:        000° – 359° (clockwise from bow)
+REFERENCE HEADING:     242° (ship course during window)</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">POLAR GRID — CONTACT POSITIONS</h2>
+
+    <pre class="panel-data"><code>                        BEARING 000°
+                            |
+              315° ─────────┼───────── 045°
+                   \    ·   |   ·    /
+                    \  [C3] | [C2]  /
+                     \      |      /
+        270° ─── [C8]─────  ┼  ─────── [C1] ─── 090°
+                     /      |      \
+                    / [C6]  | [C5]  \
+                   /  [C7]  | [C4]   \
+              225° ─────────┼───────── 135°
+                            |
+                        BEARING 180°
+
+  RANGE RINGS:  [inner] 10,000 km   [mid] 25,000 km   [outer] 50,000 km
+
+  C1: bearing 088°, range 18,400 km
+  C2: bearing 041°, range 22,100 km
+  C3: bearing 318°, range 31,700 km
+  C4: bearing 101°, range 14,600 km  ◀ CLUSTER-A
+  C5: bearing 071°, range 14,900 km  ◀ CLUSTER-A
+  C6: bearing 220°, range 28,300 km
+  C7: bearing 196°, range 33,100 km
+  C8: bearing 271°, range 41,200 km</code></pre>
+
+    <blockquote class="panel-note">
+      CLUSTER-A notation applied automatically by targeting computer.
+      See classification panel for cluster criteria.
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">CONTACT DATA TABLE</h2>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>CONTACT</th>
+          <th>BEARING</th>
+          <th>RANGE (km)</th>
+          <th>RADAR XS (m²)</th>
+          <th>THERMAL (kW)</th>
+          <th>EM EMISSION (dBm)</th>
+          <th>MANEUVER PATTERN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>C1</td>
+          <td>088°</td>
+          <td>18,400</td>
+          <td>1,840</td>
+          <td>187</td>
+          <td>–44</td>
+          <td>Non-repeating — evasive</td>
+        </tr>
+        <tr>
+          <td>C2</td>
+          <td>041°</td>
+          <td>22,100</td>
+          <td>210</td>
+          <td>3.1</td>
+          <td>–31</td>
+          <td>Loop: 14-second repeat</td>
+        </tr>
+        <tr>
+          <td>C3</td>
+          <td>318°</td>
+          <td>31,700</td>
+          <td>180</td>
+          <td>2.8</td>
+          <td>–34</td>
+          <td>Loop: 14-second repeat</td>
+        </tr>
+        <tr>
+          <td>C4</td>
+          <td>101°</td>
+          <td>14,600</td>
+          <td>195</td>
+          <td>2.9</td>
+          <td>–32</td>
+          <td>Loop: 14-second repeat</td>
+        </tr>
+        <tr>
+          <td>C5</td>
+          <td>071°</td>
+          <td>14,900</td>
+          <td>200</td>
+          <td>3.0</td>
+          <td>–33</td>
+          <td>Loop: 14-second repeat</td>
+        </tr>
+        <tr>
+          <td>C6</td>
+          <td>220°</td>
+          <td>28,300</td>
+          <td>220</td>
+          <td>3.3</td>
+          <td>–30</td>
+          <td>Loop: 17-second repeat</td>
+        </tr>
+        <tr>
+          <td>C7</td>
+          <td>196°</td>
+          <td>33,100</td>
+          <td>2,100</td>
+          <td>214</td>
+          <td>–41</td>
+          <td>Non-repeating — patrol</td>
+        </tr>
+        <tr>
+          <td>C8</td>
+          <td>271°</td>
+          <td>41,200</td>
+          <td>210</td>
+          <td>3.2</td>
+          <td>–31</td>
+          <td>Loop: 14-second repeat</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">THERMAL / CROSS-SECTION CORRELATION CHART</h2>
+
+    <blockquote class="panel-note">Reference printed on bezel — expected thermal output by vessel size.</blockquote>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>RADAR XS CLASS</th>
+          <th>EXPECTED THERMAL</th>
+          <th>NOTES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&lt; 500 m²</td>
+          <td>&lt; 10 kW</td>
+          <td>Small craft, probe, autonomous unit</td>
+        </tr>
+        <tr>
+          <td>500–2,000 m²</td>
+          <td>40–200 kW</td>
+          <td>Mid-size: escort, freighter</td>
+        </tr>
+        <tr>
+          <td>2,000–5,000 m²</td>
+          <td>150–500 kW</td>
+          <td>Large: destroyer, heavy transport</td>
+        </tr>
+        <tr>
+          <td>&gt; 5,000 m²</td>
+          <td>&gt; 400 kW</td>
+          <td>Capital ship</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Flag condition:</strong> EM emission disproportionately high relative to thermal suggests active broadcast unit, not genuine propulsion/operations signature.</p>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">BEZEL REFERENCE — TACTICAL CLASSIFICATION STANDARD</h2>
+
+    <p><strong>REAL VESSEL:</strong></p>
+    <ul class="panel-list">
+      <li>Thermal output: correlated with radar cross-section (within expected band)</li>
+      <li>EM emission: correlated with cross-section</li>
+      <li>Maneuver trace: non-repeating; reactive to environment</li>
+    </ul>
+
+    <p><strong>DECOY UNIT:</strong></p>
+    <ul class="panel-list">
+      <li>EM emission: disproportionately high relative to thermal</li>
+      <li>Thermal: near-zero (cannot generate heat, only broadcast)</li>
+      <li>Maneuver trace: repeating loop pattern — autonomous program</li>
+    </ul>
+
+    <p><strong>HIERATIC TRIPLET:</strong></p>
+    <ul class="panel-list">
+      <li>Exactly three contacts</li>
+      <li>Bearing separation: ~30° between adjacent units (±5°)</li>
+      <li>Maneuver programs: synchronized — identical loop period</li>
+      <li>Spectral signature: three harmonically-spaced peaks at 1:2:4 ratio within each contact's EM return</li>
+    </ul>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">EM SPECTRAL DETAIL — CLUSTER-A CONTACTS</h2>
+
+    <blockquote class="panel-note">Targeting computer isolated these three for expanded spectral analysis.</blockquote>
+
+    <h3 class="panel-subsection">C4 — BEARING 101°</h3>
+    <pre class="panel-data"><code>EM SPECTRUM (1.0–4.0 GHz, 100 MHz resolution):
+  1.0 GHz: –61 dBm   ████
+  2.0 GHz: –52 dBm   ████████
+  4.0 GHz: –49 dBm   ██████████████████
+
+  Peak ratio check:   1.0 : 2.0 : 4.0 GHz → amplitude ratio 1 : 2 : 4  ✓
+  Loop period:        14.1 seconds</code></pre>
+
+    <h3 class="panel-subsection">C5 — BEARING 071°</h3>
+    <pre class="panel-data"><code>EM SPECTRUM (1.0–4.0 GHz, 100 MHz resolution):
+  1.0 GHz: –62 dBm   ████
+  2.0 GHz: –53 dBm   ████████
+  4.0 GHz: –50 dBm   ██████████████████
+
+  Peak ratio check:   1.0 : 2.0 : 4.0 GHz → amplitude ratio 1 : 2 : 4  ✓
+  Loop period:        14.1 seconds</code></pre>
+
+    <h3 class="panel-subsection">C2 — BEARING 041°</h3>
+    <pre class="panel-data"><code>EM SPECTRUM (1.0–4.0 GHz, 100 MHz resolution):
+  1.0 GHz: –60 dBm   ████
+  2.0 GHz: –51 dBm   ████████
+  4.0 GHz: –48 dBm   ██████████████████
+
+  Peak ratio check:   1.0 : 2.0 : 4.0 GHz → amplitude ratio 1 : 2 : 4  ✓
+  Loop period:        14.2 seconds</code></pre>
+
+    <blockquote class="panel-note">
+      Bearing 041° — Bearing 071° — Bearing 101°<br>
+      Separation: 30° / 30°
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ANALYST NOTE — AUTO-GENERATED</h2>
+
+    <pre class="panel-data"><code>TACTICAL FUSION v7.0.4
+CLUSTER-A flag: C2, C4, C5 — three contacts, ~30° bearing separation,
+synchronized maneuver programs, identical EM spectral profile (1:2:4 ratio).
+Bearing delta: C2→C5 = 30°, C5→C4 = 30°. Confirmed.
+
+Additional decoy contacts: C3, C6, C8 — repeating loop maneuver, EM/thermal
+mismatch. Classified as standard decoy units.
+
+Real vessel contacts: C1, C7 — thermal/cross-section correlated, non-repeating
+maneuver trace.
+
+Interference type for CLUSTER-A:  [ANALYST TO CLASSIFY]</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _ _ _ _   _ _ _ _ _ _ _" maxlength="30"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R1-03')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>

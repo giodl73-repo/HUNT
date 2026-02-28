@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSTEMS RECONSTRUCTION — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-2">SYSTEMS LOG</div>
+    <h1 class="puzzle-title">R2-META — SYSTEMS RECONSTRUCTION</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: ENGINEERING (ALL SECTIONS)</span>
+      <span class="meta-item">INSTRUMENT: Compiled Systems Summary Panel — Round Assessment Terminal</span>
+      <span class="classification-stamp">RESTRICTED — SYSTEMS LOG RECONSTRUCTION</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">SYSTEMS RECONSTRUCTION — COMPILED ASSESSMENT TERMINAL</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION SUMMARY: GAP WINDOW [+00:00 → +06:00]
+TERMINAL ID:             SYS-RECON-COMPILED
+LOCATION:                MAIN ENGINEERING — DAMAGE CONTROL, DECK 5
+ANALYST AUTHORITY:       SENIOR ENGINEER / RECONSTRUCTION BOARD
+PURPOSE:                 Collate all internal system log findings from
+                         the gap window. Identify which system states
+                         were recorded. Flag anomalies for review board.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">COMPILED FINDINGS — SYSTEM STATE EVENTS RECORDED</h2>
+
+    <blockquote class="panel-note">Summary of findings from five engineering department log reconstructions. Each entry shows the system analyzed, the log source, and the system state identified in the records.</blockquote>
+
+    <pre class="panel-data"><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  SYSTEMS LOG RECONSTRUCTION — FINDINGS SUMMARY                               │
+├──────────┬──────────────────────┬──────────────────────────┬─────────────────┤
+│ LOG ITEM │ DEPARTMENT           │ SYSTEM / FINDING         │ STATE RECORDED  │
+├──────────┼──────────────────────┼──────────────────────────┼─────────────────┤
+│ ITEM-01  │ POWER                │ EPS Distribution Board   │ ●               │
+│          │                      │ PCU in fault recovery    │ [ ___________ ] │
+│          │                      │ Phantom loads on 3 OFFLINE│                │
+│          │                      │ channels: 160 MW total   │                 │
+├──────────┼──────────────────────┼──────────────────────────┼─────────────────┤
+│ ITEM-02  │ COMPUTER             │ ODN Junction Board       │ ○               │
+│          │                      │ Toggle sequence isolated  │ [ ___________ ] │
+│          │                      │ 2 nodes from primary      │                 │
+│          │                      │ computer data path        │                 │
+├──────────┼──────────────────────┼──────────────────────────┼─────────────────┤
+│ ITEM-03  │ ENVIRO               │ Chemistry Panel          │ ◌               │
+│          │                      │ Automation paused on     │ [ ___________ ] │
+│          │                      │ Decks 3 & 4; atmosphere  │                 │
+│          │                      │ drifted without correction│                 │
+├──────────┼──────────────────────┼──────────────────────────┼─────────────────┤
+│ ITEM-04  │ PROPULSION           │ Impulse Strip Chart      │ ◉               │
+│          │                      │ Drive executed 2 complete│ [ ___________ ] │
+│          │                      │ maneuver sequences while  │                 │
+│          │                      │ official log shows static │                 │
+├──────────┼──────────────────────┼──────────────────────────┼─────────────────┤
+│ ITEM-05  │ AUXILIARY            │ Master Diagnostics Feed  │ ◇               │
+│          │                      │ Combat systems configured │ [ ___________ ] │
+│          │                      │ for immediate activation: │                 │
+│          │                      │ Shields, Transporter,     │                 │
+│          │                      │ Weapons-FC               │                 │
+└──────────┴──────────────────────┴──────────────────────────┴─────────────────┘</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">COMPLETE SYSTEM STATE REFERENCE</h2>
+
+    <blockquote class="panel-note">Standard six-state reference. Mounted on all engineering panels. Source: Engineering Operations Manual, Section 1 — System Architecture.</blockquote>
+
+    <pre class="panel-data"><code>╔═════════════════════════════════════════════════════════════════════════════╗
+║  SYSTEM STATES — COMPLETE REFERENCE                                         ║
+╠══════════╦══════════════════════════════════════════════════════════════════╣
+║  SYMBOL  ║  STATE       DEFINITION                                          ║
+╠══════════╬══════════════════════════════════════════════════════════════════╣
+║    ◉     ║  ONLINE    — System running. Actively doing work (ACTIVE) or    ║
+║          ║              monitoring at idle (IDLE). Power draw confirmed.    ║
+╠══════════╬══════════════════════════════════════════════════════════════════╣
+║    ◇     ║  READY     — Power available. System can be activated on        ║
+║          ║              command. Awaiting activation order.                 ║
+╠══════════╬══════════════════════════════════════════════════════════════════╣
+║    ◌     ║  STANDBY   — Was running. Put to sleep. Setpoints and state     ║
+║          ║              retained. Instant wake on RESUME command.           ║
+╠══════════╬══════════════════════════════════════════════════════════════════╣
+║    ⊘     ║  LOCKED    — Power available but restricted. Requires           ║
+║          ║              deliberate action to unlock before system can       ║
+║          ║              be activated. Activation blocked until unlocked.    ║
+╠══════════╬══════════════════════════════════════════════════════════════════╣
+║    ○     ║  OFFLINE   — No power. Upstream power dependency not met.       ║
+║          ║              System cannot be activated without restoring        ║
+║          ║              power upstream.                                     ║
+╠══════════╬══════════════════════════════════════════════════════════════════╣
+║    ●     ║  FAULT     — Hardware failure. System needs physical repair.    ║
+║          ║              May operate unexpectedly or not at all.             ║
+╚══════════╩══════════════════════════════════════════════════════════════════╝</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ENGINEERING OPERATIONS PROTOCOL — LOCKED STATE</h2>
+
+    <blockquote class="panel-note">Excerpt from Engineering Operations Manual, Section 3 — System Control Procedures. Posted in all engineering sections.</blockquote>
+
+    <pre class="panel-data"><code>SECTION 3.4 — LOCKED SYSTEM PROCEDURE
+
+  When a system is placed in LOCKED (⊘) state:
+
+    — The system has power available at its input.
+    — The system CANNOT be activated without deliberate unlock action.
+    — Activation commands are ignored until LOCKED state is cleared.
+    — LOCKED state is used when a system must be available for rapid
+      activation but must not activate accidentally or without authorization.
+
+  Common uses of LOCKED state:
+    — Weapons during docking operations (power available, firing blocked)
+    — Emergency systems during routine operations
+    — Any system placed under restricted access by command authority
+
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  OPERATIONAL PROCEDURE FOR LOCKED SYSTEMS:                      │
+  │                                                                 │
+  │  When the Duty Officer declares a system in LOCKED (⊘) state,  │
+  │  all engineering personnel must execute:                        │
+  │                                                                 │
+  │  PROCEDURE:   L _ _ _ O _ T                                    │
+  │  (Full procedure name on file — Duty Officer will specify)      │
+  │                                                                 │
+  │  This procedure covers: access verification, override sequence, │
+  │  two-person authorization, and system state log annotation.     │
+  └─────────────────────────────────────────────────────────────────┘
+
+  The LOCKED procedure name is drawn from the state itself:
+  the standard term for the operational response to a LOCKED system.</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">RECONSTRUCTION BOARD — ASSESSMENT QUESTIONS</h2>
+
+    <pre class="panel-data"><code>ANALYST FIELD — FINAL ASSESSMENT
+
+  QUESTION 1:
+  ─────────────────────────────────────────────────────────────────────
+  The five system log items above record five distinct system states.
+  List the five states recorded in the gap window:
+
+    Item-01: ● [ ___________ ]
+    Item-02: ○ [ ___________ ]
+    Item-03: ◌ [ ___________ ]
+    Item-04: ◉ [ ___________ ]
+    Item-05: ◇ [ ___________ ]
+
+  ─────────────────────────────────────────────────────────────────────
+  QUESTION 2:
+  ─────────────────────────────────────────────────────────────────────
+  The complete system state reference lists SIX states.
+
+  Cross-reference your five findings against the six-state reference.
+
+  Which system state does NOT appear anywhere in the internal records?
+
+    Symbol: [ __ ]   State: [ ___________ ]
+
+  ─────────────────────────────────────────────────────────────────────
+  QUESTION 3:
+  ─────────────────────────────────────────────────────────────────────
+  Refer to the Engineering Operations Manual excerpt above.
+
+  What is the operational procedure executed when critical systems
+  are placed in the state identified in Question 2?
+
+    PROCEDURE: [ ___________ ]
+
+  ─────────────────────────────────────────────────────────────────────
+  LOG THIS ANSWER TO THE RECONSTRUCTION BOARD.</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _ _ _" maxlength="10"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R2-META')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>

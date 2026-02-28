@@ -1,0 +1,1042 @@
+/* ============================================================
+   DEAD RECKONING — Site Theme
+   Ship computer terminal aesthetic. Dark, monospace, functional.
+   All measurements in rem unless pixel-precision is needed.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   RESET / BASE
+   ---------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #4dd0e1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #80e8f4;
+  text-decoration: underline;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* ----------------------------------------------------------
+   LAYOUT CONTAINER
+   ---------------------------------------------------------- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container--narrow {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ----------------------------------------------------------
+   HEADER
+   ---------------------------------------------------------- */
+.site-header {
+  background-color: #0d1117;
+  border-bottom: 1px solid #1e2a38;
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header__name {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  color: #e6edf3;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.site-header__name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header__name a:hover {
+  color: #4dd0e1;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-nav a {
+  color: #8b949e;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #4dd0e1;
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------------
+   MAIN CONTENT AREA
+   ---------------------------------------------------------- */
+.site-main {
+  padding: 2.5rem 0 4rem;
+}
+
+/* ----------------------------------------------------------
+   PAGE HEADER
+   ---------------------------------------------------------- */
+.page-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #1e2a38;
+}
+
+.page-header__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #8b949e;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.page-header__title {
+  font-size: 1.6rem;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  color: #e6edf3;
+  text-transform: uppercase;
+}
+
+.page-header__sub {
+  font-size: 0.8rem;
+  color: #8b949e;
+  margin-top: 0.35rem;
+  letter-spacing: 0.05em;
+}
+
+/* ----------------------------------------------------------
+   HUNT TITLE (splash / index)
+   ---------------------------------------------------------- */
+.hunt-title {
+  text-align: center;
+  padding: 4rem 0 3rem;
+}
+
+.hunt-title__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: #8b949e;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.hunt-title__name {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: normal;
+  letter-spacing: 0.25em;
+  color: #e6edf3;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hunt-title__tagline {
+  font-size: 0.95rem;
+  color: #8b949e;
+  letter-spacing: 0.08em;
+}
+
+/* Boot-screen cursor blink on title */
+.hunt-title__name::after {
+  content: '_';
+  animation: blink 1.2s step-end infinite;
+  color: #4dd0e1;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ----------------------------------------------------------
+   MISSION BRIEFING
+   ---------------------------------------------------------- */
+.mission-briefing {
+  background-color: #161b22;
+  border: 1px solid #1e2a38;
+  padding: 1.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 680px;
+}
+
+.mission-briefing__header {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: #4dd0e1;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #1e2a38;
+  padding-bottom: 0.5rem;
+}
+
+.mission-briefing p {
+  color: #c9d1d9;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* ----------------------------------------------------------
+   ROUND BADGES
+   ---------------------------------------------------------- */
+.badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.15em 0.6em;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.badge--amber {
+  color: #ffd166;
+  border-color: #ffd166;
+  background-color: rgba(255, 209, 102, 0.06);
+}
+
+.badge--orange {
+  color: #ef8c4a;
+  border-color: #ef8c4a;
+  background-color: rgba(239, 140, 74, 0.06);
+}
+
+.badge--blue {
+  color: #58a6ff;
+  border-color: #58a6ff;
+  background-color: rgba(88, 166, 255, 0.06);
+}
+
+.badge--purple {
+  color: #b083f0;
+  border-color: #b083f0;
+  background-color: rgba(176, 131, 240, 0.06);
+}
+
+.badge--cyan {
+  color: #4dd0e1;
+  border-color: #4dd0e1;
+  background-color: rgba(77, 208, 225, 0.06);
+}
+
+.badge--green {
+  color: #3fb950;
+  border-color: #3fb950;
+  background-color: rgba(63, 185, 80, 0.06);
+}
+
+.badge--red {
+  color: #f85149;
+  border-color: #f85149;
+  background-color: rgba(248, 81, 73, 0.06);
+}
+
+.badge--grey {
+  color: #8b949e;
+  border-color: #8b949e;
+  background-color: rgba(139, 148, 158, 0.06);
+}
+
+/* ----------------------------------------------------------
+   ROUND SECTION
+   ---------------------------------------------------------- */
+.round-section {
+  margin-bottom: 3rem;
+}
+
+.round-section__header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #1e2a38;
+}
+
+.round-section__name {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: #e6edf3;
+  text-transform: uppercase;
+}
+
+.round-section__progress {
+  font-size: 0.7rem;
+  color: #8b949e;
+  letter-spacing: 0.1em;
+}
+
+/* ----------------------------------------------------------
+   PUZZLE CARDS
+   ---------------------------------------------------------- */
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+.puzzle-card {
+  background-color: #161b22;
+  border: 1px solid #1e2a38;
+  padding: 1rem 1.25rem;
+  position: relative;
+  transition: border-color 0.15s ease;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* Locked state */
+.puzzle-card--locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.puzzle-card--locked .puzzle-card__title {
+  color: #8b949e;
+}
+
+/* Unlocked state */
+.puzzle-card--unlocked {
+  border-color: #1e2a38;
+  cursor: pointer;
+}
+
+.puzzle-card--unlocked:hover {
+  border-color: #4dd0e1;
+  background-color: #161b22;
+}
+
+.puzzle-card--unlocked:hover .puzzle-card__title {
+  color: #4dd0e1;
+}
+
+/* Solved state */
+.puzzle-card--solved {
+  border-color: #3fb950;
+  background-color: rgba(63, 185, 80, 0.04);
+}
+
+.puzzle-card--solved .puzzle-card__title {
+  color: #e6edf3;
+}
+
+/* Card header row */
+.puzzle-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.puzzle-card__id {
+  font-size: 0.65rem;
+  color: #8b949e;
+  letter-spacing: 0.1em;
+}
+
+.puzzle-card__title {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: #e6edf3;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.puzzle-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.puzzle-card__title a:hover {
+  color: #4dd0e1;
+  text-decoration: none;
+}
+
+/* Card footer row */
+.puzzle-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* Status indicator */
+.puzzle-status {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.puzzle-status--locked {
+  color: #f85149;
+}
+
+.puzzle-status--unlocked {
+  color: #8b949e;
+}
+
+.puzzle-status--solved {
+  color: #3fb950;
+}
+
+/* Solved answer display */
+.puzzle-card__answer {
+  font-size: 0.7rem;
+  color: #3fb950;
+  letter-spacing: 0.12em;
+  margin-top: 0.25rem;
+}
+
+/* ----------------------------------------------------------
+   ROUND OVERVIEW CARDS (index page)
+   ---------------------------------------------------------- */
+.round-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin: 2rem 0;
+}
+
+.round-card {
+  background-color: #161b22;
+  border: 1px solid #1e2a38;
+  padding: 1.25rem;
+}
+
+.round-card__number {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: #8b949e;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.round-card__name {
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: #e6edf3;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.round-card__status {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #8b949e;
+}
+
+/* ----------------------------------------------------------
+   ANSWER INPUT & SUBMIT
+   ---------------------------------------------------------- */
+.answer-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.answer-input {
+  background-color: #0d1117;
+  border: 1px solid #1e2a38;
+  color: #e6edf3;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  padding: 0.5rem 0.75rem;
+  text-transform: uppercase;
+  flex: 1;
+  min-width: 160px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.answer-input:focus {
+  border-color: #4dd0e1;
+}
+
+.answer-input::placeholder {
+  color: #8b949e;
+  text-transform: none;
+  letter-spacing: 0.05em;
+}
+
+.answer-input--correct {
+  border-color: #3fb950;
+  color: #3fb950;
+}
+
+.answer-input--incorrect {
+  border-color: #f85149;
+  color: #f85149;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid #4dd0e1;
+  color: #4dd0e1;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background-color: #4dd0e1;
+  color: #0d1117;
+}
+
+.btn:disabled {
+  border-color: #1e2a38;
+  color: #8b949e;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background-color: transparent;
+  color: #8b949e;
+}
+
+.btn--green {
+  border-color: #3fb950;
+  color: #3fb950;
+}
+
+.btn--green:hover {
+  background-color: #3fb950;
+  color: #0d1117;
+}
+
+.btn--red {
+  border-color: #f85149;
+  color: #f85149;
+}
+
+.btn--red:hover {
+  background-color: #f85149;
+  color: #0d1117;
+}
+
+/* Answer result message */
+.answer-result {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  display: none;
+}
+
+.answer-result--correct {
+  color: #3fb950;
+  display: block;
+}
+
+.answer-result--incorrect {
+  color: #f85149;
+  display: block;
+}
+
+/* ----------------------------------------------------------
+   CLASSIFICATION STAMP
+   ---------------------------------------------------------- */
+.classification {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 0.2em 0.75em;
+  border: 1px solid #f85149;
+  color: #f85149;
+  opacity: 0.6;
+  transform: rotate(-2deg);
+  user-select: none;
+}
+
+/* Watermark variant — full-page overlay */
+.classification-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 0.4em;
+  color: rgba(248, 81, 73, 0.04);
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Page-level classification banner */
+.classification-banner {
+  text-align: center;
+  padding: 0.3rem 0;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #f85149;
+  border-bottom: 1px solid rgba(248, 81, 73, 0.3);
+  background-color: rgba(248, 81, 73, 0.04);
+}
+
+/* ----------------------------------------------------------
+   FORM ELEMENTS (submit page / admin)
+   ---------------------------------------------------------- */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: #8b949e;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.form-control {
+  background-color: #0d1117;
+  border: 1px solid #1e2a38;
+  color: #e6edf3;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-control:focus {
+  border-color: #4dd0e1;
+}
+
+.form-control--uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%238b949e'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+/* ----------------------------------------------------------
+   DATA TABLE (standings, admin)
+   ---------------------------------------------------------- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.data-table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: #8b949e;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #1e2a38;
+  font-weight: normal;
+}
+
+.data-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid rgba(30, 42, 56, 0.5);
+  color: #c9d1d9;
+  vertical-align: middle;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:hover td {
+  background-color: rgba(22, 27, 34, 0.6);
+}
+
+/* ----------------------------------------------------------
+   STATUS INDICATORS
+   ---------------------------------------------------------- */
+.status-commissioned {
+  color: #3fb950;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.status-pending {
+  color: #8b949e;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+/* ----------------------------------------------------------
+   COMMISSION OVERLAY
+   ---------------------------------------------------------- */
+.commission-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(13, 17, 23, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.commission-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.commission-overlay__box {
+  border: 1px solid #b083f0;
+  background-color: #161b22;
+  padding: 3rem 4rem;
+  text-align: center;
+  max-width: 520px;
+  width: 90%;
+}
+
+.commission-overlay__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: #8b949e;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.commission-overlay__title {
+  font-size: 1.4rem;
+  letter-spacing: 0.2em;
+  color: #b083f0;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.commission-overlay__text {
+  font-size: 0.85rem;
+  color: #c9d1d9;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.commission-overlay__dismiss {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: #8b949e;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+.commission-overlay__dismiss:hover {
+  color: #c9d1d9;
+}
+
+/* ----------------------------------------------------------
+   SYSTEM MESSAGE / NOTICE
+   ---------------------------------------------------------- */
+.system-msg {
+  padding: 0.75rem 1rem;
+  border: 1px solid #1e2a38;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
+.system-msg--info {
+  border-color: #4dd0e1;
+  color: #4dd0e1;
+  background-color: rgba(77, 208, 225, 0.04);
+}
+
+.system-msg--success {
+  border-color: #3fb950;
+  color: #3fb950;
+  background-color: rgba(63, 185, 80, 0.04);
+}
+
+.system-msg--error {
+  border-color: #f85149;
+  color: #f85149;
+  background-color: rgba(248, 81, 73, 0.04);
+}
+
+.system-msg--warn {
+  border-color: #ffd166;
+  color: #ffd166;
+  background-color: rgba(255, 209, 102, 0.04);
+}
+
+/* ----------------------------------------------------------
+   BEGIN / CTA BUTTON
+   ---------------------------------------------------------- */
+.cta-wrap {
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+.btn--cta {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  padding: 0.75rem 2.5rem;
+  border-color: #4dd0e1;
+  color: #4dd0e1;
+}
+
+.btn--cta:hover {
+  background-color: #4dd0e1;
+  color: #0d1117;
+}
+
+/* ----------------------------------------------------------
+   FOOTER
+   ---------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid #1e2a38;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #8b949e;
+  letter-spacing: 0.1em;
+  margin-top: auto;
+}
+
+/* ----------------------------------------------------------
+   SECTION DIVIDER
+   ---------------------------------------------------------- */
+.divider {
+  border: none;
+  border-top: 1px solid #1e2a38;
+  margin: 2rem 0;
+}
+
+/* ----------------------------------------------------------
+   UTILITY
+   ---------------------------------------------------------- */
+.text-bright   { color: #e6edf3; }
+.text-primary  { color: #c9d1d9; }
+.text-secondary { color: #8b949e; }
+.text-cyan     { color: #4dd0e1; }
+.text-green    { color: #3fb950; }
+.text-red      { color: #f85149; }
+.text-amber    { color: #ffd166; }
+.text-orange   { color: #ef8c4a; }
+.text-blue     { color: #58a6ff; }
+.text-purple   { color: #b083f0; }
+
+.uppercase { text-transform: uppercase; }
+.mono      { font-family: 'Share Tech Mono', 'Courier New', monospace; }
+.sr-only   {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ----------------------------------------------------------
+   ADMIN PANEL SPECIFICS
+   ---------------------------------------------------------- */
+.admin-header {
+  background-color: #161b22;
+  border-bottom: 1px solid #ffd166;
+  padding: 0.5rem 0;
+}
+
+.admin-header .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-header__title {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #ffd166;
+  text-transform: uppercase;
+}
+
+.admin-section {
+  background-color: #161b22;
+  border: 1px solid #1e2a38;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-section__title {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #8b949e;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #1e2a38;
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVE
+   ---------------------------------------------------------- */
+@media (max-width: 640px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .site-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .puzzle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .round-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hunt-title {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .commission-overlay__box {
+    padding: 2rem 1.5rem;
+  }
+
+  .answer-form {
+    flex-direction: column;
+  }
+
+  .answer-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-nav {
+    gap: 0.6rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* ----------------------------------------------------------
+   PRINT
+   ---------------------------------------------------------- */
+@media print {
+  .site-header,
+  .site-footer,
+  .site-nav,
+  .classification-watermark,
+  .commission-overlay,
+  .answer-form,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .puzzle-card {
+    border: 1px solid #ccc;
+    background: #fff;
+    break-inside: avoid;
+  }
+
+  .page-header__title {
+    color: #000;
+  }
+
+  .classification-banner {
+    color: #cc0000;
+    border-color: #cc0000;
+    background: none;
+  }
+}

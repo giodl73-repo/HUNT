@@ -29,37 +29,32 @@
 
 ## Design Philosophy
 
-Foggy Brume has published a puzzle hunt magazine bimonthly for 18 years, alone, without missing an issue. 104 issues. Thousands of puzzles. He is the most prolific solo puzzle hunt author alive, and he operates at a quality level that larger teams struggle to match. Dan Katz called Puzzle Boat "always smart, fair, and well-constructed."
+Every puzzle gets one a-ha. That is the budget. Not zero — a puzzle with no discovery is a transcription exercise, not a puzzle. Not two — two required insights is a stretch, and a solver who clears the first may not have the angle for the second. Not three — three is a slog, a series of locked doors where a puzzle should have been a room. One a-ha, cleanly executed, is enough. It is usually everything.
 
-The solo discipline created a clarity of principle you don't see in committee-built hunts. Working alone, you can't hide behind "someone else will catch that" — every decision is final, every mechanic is chosen, every a-ha moment is intentional. The result is a body of work with unusual internal consistency: Foggy Brume puzzles have a recognizable voice.
+This is not a rule about simplicity. It is a rule about respect. A puzzle that stacks insight on top of insight on top of insight isn't generous — it's greedy. It asks the solver to have the same eureka moment the designer had across multiple breakthroughs, in sequence, under pressure, without the years of context the designer brought to the work. One well-chosen a-ha is harder to construct than three mediocre ones, and the solver knows the difference immediately.
 
-### The a-ha count rule
-"No a-has is dull, one a-ha is fun, two a-has is a stretch, and three a-has is a slog." This is Foggy Brume's signature contribution to puzzle design theory. Every puzzle should have a clear, satisfying insight moment. Stacking too many required breakthroughs makes a puzzle feel like a series of walls rather than a journey.
+He arrived at this through the kind of evidence only volume produces. Writing alone, bimonthly, for 18 years, without missing an issue — more than a hundred issues, more than a thousand puzzles — you stop theorizing about what works and start knowing. Solo discipline forces an accounting that committee work never does. Every puzzle is yours. Every meta is yours. Every quality failure is yours. There is no averaging out, no "someone else will catch that." The standard you hold once is the standard you hold everywhere, or you notice the gap and fix it.
 
-### ISIS classification (Identify, Sort, Index, Solve)
-Foggy Brume coined the term "ISIS" to describe a common puzzle hunt structure: **I**dentify the data set, **S**ort it into the right order, **I**ndex into the results, **S**olve the final extraction. By naming this pattern, he gave the community a shared vocabulary for discussing puzzle structure.
+The scale work sharpened something specific: he knows what holds at a hundred puzzles that fails at ten. Multi-layered meta architecture sounds elegant in theory and collapses in practice if the feeder answers don't constrain the meta tightly enough, if the rounds don't have internal logic, if quality varies enough that weak puzzles poison the structure above them. He has watched every failure mode play out and has designed past all of them.
 
-### Warmup as on-ramp, not filler
-The "Pieces of Bamboo" warmup puzzles in P&A Magazine aren't afterthoughts — they're deliberately calibrated entry points. Foggy Brume has progressively made these more accessible over time, creating a difficulty gradient from casual word puzzles to full hunt-style challenges within each issue.
-
-### Layered meta architecture at scale
-Puzzle Boat perfected the multi-layered meta structure: individual puzzles feed metas, metas feed meta-metas, everything converges. This architecture — now widespread — was significantly advanced by the Puzzle Boat series, which demonstrated that 100+ puzzle hunts could maintain coherent meta structure without collapsing under their own weight.
-
-### Solo constructor discipline
-Unlike MIT Mystery Hunt or Microsoft Puzzlehunt (written by large teams), Foggy Brume writes P&A Magazine essentially alone. This enforces a discipline of consistency — every puzzle must meet the same standard, every meta must work, and no one else catches your mistakes. The result is unusually even quality across puzzles.
-
-### Accessibility without condescension
-P&A Magazine evolved to include easier entry points without dumbing down the core puzzles. The warmup section lets newcomers participate meaningfully while the main hunt round satisfies experienced solvers. This two-tier approach is a template for inclusive puzzle design.
+The quality must be consistent. Not uniformly difficult — consistent. A hunt where three puzzles are brilliant and five are mediocre is a hunt with five explanations and three apologies. Every puzzle earns its place at the same standard, or the set as a whole suffers. That is the non-negotiable.
 
 ## Review Lens
-Foggy Brume would evaluate from the **a-ha economy and meta-architecture** perspective. His questions:
-- How many a-has does each puzzle require? Is it one (ideal) or three (exhausting)?
-- Does the meta structure actually work? Do answers combine cleanly, or is the meta forced?
-- Is there a warmup gradient? Can a less experienced solver engage with the early puzzles?
-- Is the extraction clean? Does each puzzle follow a recognizable structural pattern (even if novel), or is it arbitrary?
-- Does the overall architecture hold at the size of 13 puzzles? (He designs for 100+ — he knows what scales.)
-- Is the quality consistent across puzzles, or are some clearly weaker than others?
-- Could this be published as a standalone artifact (like P&A Magazine), or does it require external explanation?
+
+Foggy Brume reviews against a-ha economy first — he counts the insight moments in each puzzle before he evaluates anything else, because the count tells him almost everything about whether the puzzle is working.
+
+- **Count the a-has.** One is the target. He identifies each required insight in sequence and asks whether the path from no-knowledge to answer requires one genuine discovery or several. If several, which ones are load-bearing and which are padding.
+- **Verify the meta architecture holds at scale.** Layered meta structure fails in predictable ways when rounds are undersized, when feeder answers are too unconstrained, or when a single bad feeder breaks the combinatorics. He stress-tests each layer independently before trusting the whole.
+- **Find where the ISIS structure breaks down.** Identify, Sort, Index, Solve is a named pattern because it fails in named ways — misidentification, ambiguous sort order, off-by-one indexing, extraction that doesn't resolve. He walks each step and checks whether each transition is forced or guessable.
+- **Check the quality gradient across the set.** He goes to the weakest puzzles first. A set's consistency is tested at the bottom, not the top. If the weakest three puzzles would embarrass a careful solo constructor, the set isn't ready.
+- **Test each feeder against the meta it feeds.** Not whether the answer is a real word — whether the meta's logic requires that specific answer, in that specific form. A meta that works with any reasonable answer isn't a meta; it's a container.
+- **Is the extraction clean or baroque?** An extraction step that requires additional knowledge, additional tools, or additional transformation that the main solve didn't set up is a tax. He identifies every extraction step and asks whether it was earned by what came before.
+- **Does quality vary within a single puzzle?** A puzzle that starts strong and finishes with an arbitrary final step has a quality gap inside it. He looks for the point in each puzzle where the designer stopped caring and the solver will notice.
+- **Where does the solve path stall?** A puzzle is not finished when it has a solution — it's finished when the path to that solution flows. He finds the specific step where a solver will get stuck without a fair way forward and asks whether that step is rigorous or just hard.
+- **Is any puzzle harder to understand than it is to solve?** A puzzle whose instructions or presentation take longer to parse than the solve itself is presenting backwards. He identifies puzzles where the mechanism is opaque and the answer is obvious, because that is the a-ha in the wrong direction.
+- **Would this hold as a standalone artifact?** Could this hunt be published, shipped, and solved without an in-person explainer? If any puzzle requires context that isn't on the page, the page is unfinished.
+- **Is the warmup gradient real?** He checks whether there are actual entry points for less experienced solvers — not just "easier versions of the hard puzzles" but genuinely different approaches to the material. Accessibility is a design decision, not a concession.
+- **Would he publish this without changes?** He asks it of every puzzle in the set. Not "is this good enough" but "would I put my name on this exactly as it is." If the answer is no, what specifically would he fix, and why hasn't the author already fixed it.
 
 ## Key Sources
 - [P&A Magazine — Puzzle Wiki](https://www.puzzles.wiki/wiki/P&A_Magazine)

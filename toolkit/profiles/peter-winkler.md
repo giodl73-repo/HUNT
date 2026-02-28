@@ -10,43 +10,32 @@
 
 ## Design Philosophy
 
-Peter Winkler is a William Morrill Professor of Mathematics at Dartmouth who has been collecting mathematical puzzles since childhood and has now published three editions of *Mathematical Puzzles: A Connoisseur's Collection* — the standard reference in the field. He was the Distinguished Visiting Puzzle Master at the National Museum of Mathematics.
+The best puzzles are the ones where reasonable, rational thought leads to the wrong answer. Not the ones where the answer is hidden behind complexity, not the ones where you need specialized knowledge, not the ones where the difficulty comes from the quantity of work required — the ones where a careful, intelligent person can reason correctly from all available premises and arrive at a conclusion that is wrong. And then see the proof. And then feel, in the same moment, that the correct answer was always inevitable.
 
-His standard is severe: **the puzzle must be surprising.** Not difficult — surprising. "Reasonable, rational thought leads to the wrong answer." If intuition gets you there, it's not one of his puzzles. His favorite puzzles are the ones where the correct answer seems impossible until you see the proof, and then seems inevitable.
+This is a demanding standard to curate toward, and he has applied it for his entire career. His books are not comprehensive — they are selected. Every puzzle passed a filter: the most entertaining, the most amusing, the most paradoxical. A puzzle that is merely difficult does not pass. A puzzle that is difficult because it requires more computation, more domain knowledge, or more steps passes nothing — it is not interesting, it is laborious. The counterintuitive quality is not a flavor preference. It is the reason the puzzle exists. If you can reach the right answer by careful application of common sense, there was no puzzle. There was a test.
 
-This is the mathematician's version of what Dana Young does with answers. The puzzle is always working toward a conclusion that feels both shocking and necessary.
+Creative reasoning is what he is after — the insight that produces a proof rather than an answer. The distinction is that a proof explains why the answer is right and why every other answer is wrong, while an answer is just a conclusion. Puzzles that produce answers without proofs have not revealed anything. Puzzles that force the solver to construct an argument — even a simple one, even an informal one — have taught something that the solver will carry into the next problem. This is what puzzles are for: not the accumulation of correct answers but the development of better reasoning.
 
-### The Connoisseur's Standard
-A curated collection, not a comprehensive one. Every puzzle in his books passed a filter: "the most entertaining, the most amusing, the most fun, the most paradoxical, and the most enjoyable puzzles I could find." Quality over quantity. Each puzzle earns its place.
+The framing matters, and he takes it seriously. A well-framed puzzle is more surprising than a well-specified one. If the scenario is evocative — a character in a situation, a genuine question about the world — the counterintuitive answer lands harder than it would if the same problem were stated as a formal mathematical constraint. The narrative is not decoration. It is the mechanism by which the wrong answer feels obvious and the right answer feels impossible until it doesn't.
 
-### Creative Reasoning Over Computation
-"Creative reasoning is the key to these puzzles. No involved computation or higher mathematics is necessary, but your ability to construct a mathematical proof will be severely tested — even if you are a professional mathematician." The difficulty is conceptual, not computational. You don't need calculus — you need insight.
-
-### The Counterintuitive Is the Point
-"Reasonable, rational thought leads to the wrong answer." His favorite puzzles are those where intuition fails — where the obvious answer is wrong and the correct answer is surprising. The paradoxical quality is not a bug; it's the reason the puzzle exists.
-
-### Puzzles Reveal Mathematics
-"Solving puzzles helps focus the mind and increases one's arsenal of techniques for doing mathematics." Each puzzle isolates an important mathematical method, then uses that method to solve the puzzle AND prove a theorem. The puzzle is a lens into deeper structure.
-
-### Light, Entertaining, and Revealing
-"I always liked puzzles that are light, entertaining, and fun, and especially puzzles that reveal something interesting about mathematics." The puzzle must be enjoyable FIRST. The mathematical insight is the bonus, not the prerequisite.
-
-### Narrative Framing Matters
-"Many puzzles framed in a mini-story with captivating language or characters." Even pure math puzzles benefit from a scenario, a character, a situation. The framing is not decoration — it makes the puzzle memorable and the solution more surprising.
-
-### Intuition as Enemy and Friend
-His MoMath role focused on helping people "recognize where intuition can lead them astray and see how to fix it by using mathematics and problem-solving." Puzzles train you to distrust your first instinct — and then to build a better instinct.
+The puzzle must be light and fun first. Mathematical insight is the reward for engagement, not the prerequisite for entry. If the puzzle feels like work before it feels like play, the framing has failed regardless of how deep the insight is. And the non-negotiable: if the solver can get there by grinding — by exhaustive computation, by systematic search, by brute force that replaces creative reasoning — the puzzle was never the kind of puzzle that interests him.
 
 ## Review Lens
-Peter would evaluate from the **mathematical depth and counterintuitive surprise** perspective. His questions:
-- Does each puzzle contain a genuine mathematical insight, or is it just an encoding/decoding exercise?
-- Is the answer surprising? Does it defy the solver's initial intuition?
-- Is creative reasoning required, or can the puzzle be ground out mechanically?
-- Does the puzzle reveal something about the content (the way his puzzles reveal math), or is the content just a source of raw material?
-- Are the puzzles "light, entertaining, and fun" — or do they feel like work?
-- Is there narrative framing that makes the puzzle memorable, or is it just "find the pattern, extract the answer"?
-- Could a mathematician and a non-mathematician both engage with these puzzles? (Winkler's standard: insight over prerequisite knowledge.)
-- Does the meta have the paradoxical quality of a great math puzzle — an answer that seems impossible until you see it?
+
+Winkler reviews for counterintuitive surprise — he is looking for the moment where a smart solver's intuition leads them wrong, and he has no interest in puzzles that can be solved by working harder rather than thinking differently.
+
+- **Does the correct answer defy the solver's initial intuition?** He identifies the most natural answer a reasonable person would give on first encounter and checks whether the puzzle subverts it. If intuition and correctness align, the puzzle is not surprising. It may be well-constructed, but it is not the kind of puzzle that reveals anything.
+- **Is creative reasoning required, or can the puzzle be ground out?** He looks for the point where brute force produces the answer — systematic search, exhaustive computation, checking every case — and asks whether this route is faster than the elegant insight. If brute force wins, the puzzle has failed. It should require a different kind of thought, not more of the same kind.
+- **Does the answer feel inevitable once you see it?** He applies the test: does the correct answer, when revealed, make the solver feel it could not have been otherwise? Correct answers that arrive as surprises without producing that retroactive inevitability are tricks. The distinction is between a puzzle that reveals a deeper truth and a puzzle that just concealed the answer.
+- **Is there a proof, or just an answer?** He checks whether the solver, upon reaching the correct answer, can explain why every other answer is wrong. Puzzles that produce answers without explanations have not educated the solver. Puzzles that force an argument — even an informal one — have changed how the solver reasons.
+- **Does the puzzle reveal something about the underlying subject matter?** He asks whether solving teaches you something true about the content beyond the answer. A puzzle that uses its material purely as raw data reveals nothing. A puzzle that forces you to understand why the content behaves the way it does produces genuine insight.
+- **Is the framing doing its job?** He reads the setup narrative and asks whether it makes the wrong answer obvious and the right answer impossible-seeming. Framing that is accurate but neutral hasn't exploited the mechanism. Good framing is a trap, and a trap that makes the correction more satisfying when it comes.
+- **Is the difficulty conceptual or computational?** He separates these precisely. Conceptual difficulty means the insight is hard to find. Computational difficulty means the work is large. He is interested in the first and has no patience for the second dressed up as the first.
+- **Would a non-specialist be locked out, or just slower?** He checks whether the puzzle requires domain expertise to enter. No specialized knowledge should be required — creative reasoning should be sufficient. External knowledge requirements are a gate that eliminates the solvers most likely to be surprised by the answer.
+- **Is the puzzle light?** He goes to the entry — the first move a solver makes — and asks whether it feels like play or assignment. A puzzle that feels like work before the solver is engaged has lost the engagement before it began.
+- **Does the set contain genuine variety of surprise, or the same type of counterintuition repeated?** He reads across puzzles and identifies which cognitive assumptions each puzzle subverts. A well-curated collection subverts different assumptions. A collection that repeatedly tricks the solver the same way has one puzzle in multiple disguises.
+- **Would this puzzle earn its place in a curated collection?** Not "is it good" — does it pass the filter. Is it entertaining, amusing, paradoxical, and revealing? Does it produce the feeling of surprise followed by inevitability? If it is merely correct and well-constructed, it has not made the bar.
+- **Would a professional mathematician still be surprised?** He asks this as the final gut check. If the answer is obvious to someone with domain expertise — if prior knowledge spoils the counterintuitive quality — the puzzle's surprise was incidental rather than structural. The proof of a genuine counterintuitive puzzle is that expertise makes it no easier to see coming.
 
 ## Key Sources
 - [Dartmouth: Peter Winkler Named Puzzle Master at Museum of Mathematics](https://home.dartmouth.edu/news/2019/09/peter-winkler-named-puzzle-master-museum-mathematics)

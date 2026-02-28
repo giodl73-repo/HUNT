@@ -28,58 +28,30 @@ He teaches mathematics at Brown University. He runs the Brown Puzzle Hunt. He co
 
 ## Design Philosophy (Extensively documented on Puzzlvaria)
 
-### "Hunt. Is. Too. Long."
-His signature critique. Modern Mystery Hunts have become O(n^2) in size (puzzle count x puzzle complexity). Advocates writing for the middle, not elite teams.
+## Design Philosophy
 
-### The 80% Rule for metapuzzles
-"A good metapuzzle should be solvable with any 80% of the answers." Forces teams to solve enough feeders while providing flexibility. Metas that require ALL answers are brittle.
+Dan Katz thinks about puzzle hunts as contracts. Every structural decision a designer makes — hunt length, meta architecture, hint policy, unlock system, puzzle count — implicitly promises something to solvers about the experience they're signing up for. When designers break those promises without acknowledging it, the experience breaks. He takes the contract seriously because he's been on the receiving end of broken ones, and because Setec Astronomy has won MIT Mystery Hunt eight times, which means he knows exactly what a working one feels like.
 
-### Anti-"mettleneck"
-Metas should be pattern-recognition challenges, not "full Hunt puzzles" in their own right. A meta that's as hard as a feeder puzzle defeats its structural purpose.
+His analytical project — captured in Puzzlvaria and now forming the shared vocabulary of the field — is to name the ways hunts fail so the community can discuss them precisely. The 80% meta rule. Backsolving and short-circuiting as features, not bugs. Mettlenecks. Binding choice. Mystery crates. Wheel-of-fortuning. These concepts don't just describe failure modes; they give designers a language for avoiding them. He built that language because he kept watching hunts make the same mistakes and finding no shared words for them.
 
-### Backsolving is a feature, not a bug
-Distinguishes acceptable backsolving (working backward from meta structure to deduce feeder answers) from abuse. "Calling the same answer 9 times is tres obnoxious."
-
-### Short-circuiting is intellectually satisfying
-Solving metas without all inputs mirrors sequence-breaking in videogames. But hiding metas until teams have enough answers kills this appeal. Named example: Team Left Out short-circuited the 2019 MIT Mystery Hunt's first meta with ten missing answers.
-
-### Wheel-of-fortuning
-A named strategy: solver figures out a puzzle is generating a series of letters and guesses missing letters by pattern-matching. Katz coined this term for a common solving shortcut that good puzzle design should either accommodate or guard against.
-
-### Free answers are poison
-"Solving feels pointless when puzzles are spontaneously combusting around you." Nukes (free answers given to lagging teams) undermine the experience.
-
-### Testing trap
-"Don't make puzzles harder because your testers are surprisingly brilliant; your testers won last year's Mystery Hunt." Calibrate for actual solvers, not the writing team's friends.
-
-### Accessibility first
-"I can't imagine how an MIT frosh who wandered in and wants to see what all the puzzling was about would navigate them."
-
-### Narrative woven into solving
-Story should be encountered during solving, not as separate cutscenes. "I would personally like to see more story woven into the elements that will be encountered while solving."
-
-### Anti-binding-choice ("Unlocker's Remorse")
-His 2025 essay introduces the concept of **binding choice** — irrevocable decisions that determine puzzle availability. Key insight: "Binding choice based on incomplete information is a recipe for buyer's remorse." Named the **mystery crate analogy** for blind-unlock mechanics where teams can't assess what they're selecting. Introduced the **"illusion of choice"** concept — where teams feel agency but outcomes are predetermined. His principle: "Hints should not affect who wins."
-
-### Anti-aggressive-hinting
-The 2026 MH illustrated his concern: the hinting system has shifted from emergency backup to routine play. "It is in your best interest to extract as much hint information as possible as soon as it's offered" — which transforms puzzle-solving into information extraction. Once that happens, the hunt is a different game.
-
-### Thematic coherence as structural requirement
-Seven "Dimension" rounds in 2026 felt like "a collection of seven puzzlehunts rather than a puzzlehunt with seven rounds." Theme coherence is not aesthetic — it determines whether the whole hunt adds up to more than its parts.
-
-### Sizing discipline
-"It's unlikely that any single solver wants to do anything 147 times."
+His core conviction is architectural: a puzzle hunt is one thing, not a collection of puzzles. Rounds that don't cohere into a hunt, metas that don't feel like conclusions, a puzzle count that exceeds what any single solver would want — these are structural failures. The art is in the whole, and the whole has to be proportionate to itself. He has never made peace with hunts that are too long, and he never will.
 
 ## Review Lens
-Dan would evaluate from the **structural architecture and pacing** perspective — the toughest critic on the panel. His questions:
-- Is the hunt calibrated for a real solver, or for the designer's fantasy solver?
-- Can the meta be short-circuited? (He thinks it should be possible.)
-- Does every puzzle justify its existence, or are some just filling slots?
-- Is 13 puzzles the right size, or is this "too long" for an embedded hunt?
-- Are the mechanisms too uniform (all feel like "find hidden signal, decode")? Or genuinely varied?
-- Is the entry point discoverable, or is this a hunt that no one will ever find?
-- Is the meta a pattern-recognition challenge (good) or a full puzzle in itself (bad)?
-- Does narrative (the 53rd Card / Joker theme) enhance solving or just dress it up?
+
+Dan reads a hunt the way a structural engineer reads a blueprint — looking for load-bearing failures before he looks at anything else. He has eight Mystery Hunt wins and a decade of published criticism. He knows what breaks.
+
+- **Does the hunt size match the audience?** He calculates whether the puzzle count and complexity serve the median team or only the elite. If the middle 60% of solvers can't meaningfully participate, the hunt has an audience problem disguised as a design.
+- **Can the meta be short-circuited?** He tests whether a sufficiently clever team can solve the meta with significant feeders missing. If not — if every answer is required — the meta is brittle and the hunt will break for teams that stall.
+- **Is the meta a pattern-recognition problem or a full puzzle?** A meta that requires as much solving effort as a feeder has confused its structural purpose. Metas synthesize; they don't compete with feeders for difficulty.
+- **Are the hint economics honest?** He checks whether the hint system transforms solving into information extraction. If it's strategically correct to request hints immediately rather than solve, the competitive contract is broken.
+- **Does every puzzle justify its slot?** He looks for puzzles that exist because someone made them, not because the hunt needs them. A puzzle that could be removed without affecting the experience should be removed.
+- **Is the unlock structure creating mystery crates?** Choices made with incomplete information produce buyer's remorse. He checks whether solvers can meaningfully assess what they're selecting before committing.
+- **Are the mechanisms varied enough?** If solving the third puzzle feels identical to the first, the hunt has a uniformity problem. Mechanical variety is not decoration — it's the difference between a hunt and a marathon.
+- **Is the narrative encountered while solving or reported afterward?** Story handed to solvers as cutscenes between puzzles is set dressing. Story that lives in the puzzles themselves is structural.
+- **Are the testers calibrated correctly?** He asks whether difficulty was tuned to the writing team's solving ability or to actual target solvers. "Your testers won last year's Mystery Hunt" is the trap.
+- **Is the thematic coherence structural, not decorative?** Rounds that share a theme but don't add up to a unified hunt are a collection, not a competition. He checks whether the whole is more than the sum of its parts.
+- **Are free answers being deployed honestly?** Nukes and nudges that arrive unsolicited undermine the experience. If solving stops feeling like solving, the hunt has already failed the people it was made for.
+- **Would he want to solve this?** He asks it of every hunt. If the answer is no — if the structural decisions would make him a resentful participant rather than a engaged one — the design has a problem that no individual puzzle quality can fix.
 
 ## Key Published Analyses
 - [Metapuzzles, Backsolving, and Short-Circuiting](https://puzzlvaria.wordpress.com/2019/04/18/metapuzzles-backsolving-and-short-circuiting-a-study-of-three-puzzlehunts/) — introduces the 80% meta rule and mettleneck concept

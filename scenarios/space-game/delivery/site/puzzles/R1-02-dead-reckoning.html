@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEAD RECKONING — DEAD RECKONING</title>
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="../index.html" class="nav-brand">DEAD RECKONING</a>
+    <a href="../puzzles.html">Puzzles</a>
+    <a href="../submit.html">Submit</a>
+    <a href="../standings.html">Standings</a>
+  </nav>
+
+  <!-- PUZZLE HEADER -->
+  <header class="puzzle-header">
+    <div class="round-badge round-1">TELEMETRY</div>
+    <h1 class="puzzle-title">R1-02 — DEAD RECKONING</h1>
+    <div class="puzzle-meta">
+      <span class="meta-item">DEPT: NAV</span>
+      <span class="meta-item">INSTRUMENT: Multi-Modal Sensor Comparison Panel — Four-Window Contact Array</span>
+      <span class="classification-stamp">RESTRICTED — TELEMETRY RECONSTRUCTION LOG</span>
+    </div>
+  </header>
+
+  <!-- PUZZLE CONTENT -->
+  <main class="puzzle-content">
+
+    <h2 class="panel-section">NAVIGATION STATION — SENSOR FUSION DISPLAY</h2>
+
+    <pre class="panel-data"><code>RECONSTRUCTION WINDOW: [GAP +00:00 → GAP +06:00]
+CONTACTS LOGGED:       7
+SENSOR MODALITIES:     4  [GRAV | EM | THERMAL | PARTICLE]
+REFERENCE EPOCH:       SHIP TIME 14:22:00</code></pre>
+
+    <blockquote class="panel-note">
+      Contacts flagged by automated anomaly detection. Multi-modal comparison required
+      for classification. Raw sensor returns — no filtering applied.
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">CONTACT READINGS</h2>
+
+    <table class="panel-table">
+      <thead>
+        <tr>
+          <th>CONTACT</th>
+          <th>GRAV</th>
+          <th>EM (CARRIER)</th>
+          <th>THERMAL</th>
+          <th>PARTICLE TRAIL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CONTACT-1</td>
+          <td>0.0031 mGal</td>
+          <td>Smooth, –62 dBm</td>
+          <td>48 kW</td>
+          <td>Ion trace ✓</td>
+        </tr>
+        <tr>
+          <td>CONTACT-2</td>
+          <td>0.0028 mGal</td>
+          <td><strong>FRAGMENTED</strong> †</td>
+          <td>44 kW</td>
+          <td>Ion trace ✓</td>
+        </tr>
+        <tr>
+          <td>CONTACT-3</td>
+          <td>0.0000 mGal</td>
+          <td>Smooth, –78 dBm</td>
+          <td>0.2 kW</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>CONTACT-4</td>
+          <td>0.0033 mGal</td>
+          <td><strong>FRAGMENTED</strong> †</td>
+          <td>51 kW</td>
+          <td>Ion trace ✓</td>
+        </tr>
+        <tr>
+          <td>CONTACT-5</td>
+          <td>0.0000 mGal</td>
+          <td>Smooth, –91 dBm</td>
+          <td>0.1 kW</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>CONTACT-6</td>
+          <td>0.0029 mGal</td>
+          <td><strong>FRAGMENTED</strong> †</td>
+          <td>46 kW</td>
+          <td>Ion trace ✓</td>
+        </tr>
+        <tr>
+          <td>CONTACT-7</td>
+          <td>0.0000 mGal</td>
+          <td>Smooth, –84 dBm</td>
+          <td>0.3 kW</td>
+          <td>None</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote class="panel-note">
+      † Fragmented carrier: envelope disrupted. Seven to eleven irregular sub-peaks across
+      expected carrier bandwidth. Signal source cannot be ID-tagged. See expanded EM readouts.
+    </blockquote>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">EXPANDED EM READOUTS — FLAGGED CONTACTS ONLY</h2>
+
+    <h3 class="panel-subsection">CONTACT-2 — EM EXPANDED</h3>
+    <pre class="panel-data"><code>CARRIER FREQ (NOMINAL): 2.15 GHz
+OBSERVED BANDWIDTH:     3.8 MHz  [expected: 0.6 MHz]
+ENVELOPE:               ABSENT — no smooth bell curve detected
+SUB-PEAKS IDENTIFIED:   9
+SUB-PEAK SPACING:       irregular — 0.18, 0.41, 0.22, 0.38, 0.19, 0.44, 0.20, 0.37 MHz
+CARRIER COHERENCE:      0.07 (threshold for coherence: 0.80)
+
+[██░███░░░██░░███░░░░░██░░░██░] ← irregular jagged profile</code></pre>
+
+    <h3 class="panel-subsection">CONTACT-4 — EM EXPANDED</h3>
+    <pre class="panel-data"><code>CARRIER FREQ (NOMINAL): 1.88 GHz
+OBSERVED BANDWIDTH:     4.1 MHz  [expected: 0.6 MHz]
+ENVELOPE:               ABSENT — no smooth bell curve detected
+SUB-PEAKS IDENTIFIED:   11
+SUB-PEAK SPACING:       irregular — 0.14, 0.50, 0.18, 0.35, 0.21, 0.44, 0.17, 0.38, 0.22, 0.41 MHz
+CARRIER COHERENCE:      0.04 (threshold for coherence: 0.80)
+
+[░███░░░░██░░██░░░███░░░██░░░░] ← irregular jagged profile</code></pre>
+
+    <h3 class="panel-subsection">CONTACT-6 — EM EXPANDED</h3>
+    <pre class="panel-data"><code>CARRIER FREQ (NOMINAL): 2.61 GHz
+OBSERVED BANDWIDTH:     3.5 MHz  [expected: 0.6 MHz]
+ENVELOPE:               ABSENT — no smooth bell curve detected
+SUB-PEAKS IDENTIFIED:   7
+SUB-PEAK SPACING:       irregular — 0.23, 0.48, 0.19, 0.42, 0.25, 0.33 MHz
+CARRIER COHERENCE:      0.09 (threshold for coherence: 0.80)
+
+[░░██░░░███░░██░░░░░░██░░░███░] ← irregular jagged profile</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">SENSOR MODALITY REFERENCE</h2>
+
+    <blockquote class="panel-note">Panel legend — lower bezel, port side.</blockquote>
+
+    <p><strong>GRAVITATIONAL</strong></p>
+    <ul class="panel-list">
+      <li>Real vessel with mass: 0.001 – 0.010 mGal (scales with displacement)</li>
+      <li>Comm buoy: 0.0001 – 0.0009 mGal</li>
+      <li>Sensor artifact / ghost: 0.0000 mGal</li>
+    </ul>
+
+    <p><strong>ELECTROMAGNETIC</strong></p>
+    <ul class="panel-list">
+      <li>Real vessel: smooth carrier, coherence > 0.80, bandwidth within ±10% nominal</li>
+      <li>Coherence &lt; 0.80: carrier structure suspect</li>
+      <li>Fragmented envelope + irregular sub-peaks: carrier wave compromised</li>
+    </ul>
+
+    <p><strong>THERMAL</strong></p>
+    <ul class="panel-list">
+      <li>Real vessel: proportional to mass (larger grav signature = higher thermal output)</li>
+      <li>Debris: 0.1 – 1.0 kW (residual)</li>
+      <li>Comm artifact: typically &lt; 0.5 kW</li>
+    </ul>
+
+    <p><strong>PARTICLE TRAIL</strong></p>
+    <ul class="panel-list">
+      <li>Warp-capable vessel (active): strong ion trace ✓</li>
+      <li>Impulse-only: weak trace</li>
+      <li>Non-propelled object: none</li>
+    </ul>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">CONTACT CLASSIFICATION WORKSHEET</h2>
+
+    <pre class="panel-data"><code>CONTACT-1:  GRAV ✓  |  EM: coherent  |  THERMAL ✓  |  PARTICLE ✓  → [     ]
+CONTACT-2:  GRAV ✓  |  EM: [     ]   |  THERMAL ✓  |  PARTICLE ✓  → [     ]
+CONTACT-3:  GRAV ✗  |  EM: coherent  |  THERMAL ✗  |  PARTICLE ✗  → [     ]
+CONTACT-4:  GRAV ✓  |  EM: [     ]   |  THERMAL ✓  |  PARTICLE ✓  → [     ]
+CONTACT-5:  GRAV ✗  |  EM: coherent  |  THERMAL ✗  |  PARTICLE ✗  → [     ]
+CONTACT-6:  GRAV ✓  |  EM: [     ]   |  THERMAL ✓  |  PARTICLE ✓  → [     ]
+CONTACT-7:  GRAV ✗  |  EM: coherent  |  THERMAL ✗  |  PARTICLE ✗  → [     ]</code></pre>
+
+    <hr class="panel-divider">
+
+    <h2 class="panel-section">ANALYST NOTE — AUTO-GENERATED</h2>
+
+    <pre class="panel-data"><code>SENSOR FUSION ENGINE v4.1.2
+Anomaly flag: EM carrier integrity failure on CONTACT-2, -4, -6.
+All three contacts show real-vessel signatures in all modalities except EM.
+EM return is structurally damaged on these contacts.
+
+Hypothesis: EM sensor return for these contacts is not a genuine reading.
+The carrier wave reaching this station is DISRUPTED — not by the source
+vessel but by an intervening phenomenon affecting the signal envelope.
+
+Interference type detected:  [ANALYST TO CLASSIFY]
+
+Cross-reference with COMMS and TAC stations for corroboration.</code></pre>
+
+  </main>
+
+  <!-- ANSWER SUBMISSION -->
+  <section class="answer-section">
+    <div class="answer-prompt">ANALYST DETERMINATION:</div>
+    <div class="answer-form">
+      <input type="text" id="answer-input" class="answer-input"
+             placeholder="_ _ _ _ _ _ _ _ _   _ _ _ _ _ _ _" maxlength="30"
+             autocomplete="off" autocapitalize="characters">
+      <button onclick="submitAnswer('R1-02')" class="submit-btn">SUBMIT</button>
+    </div>
+    <div id="answer-result" class="answer-result"></div>
+  </section>
+
+  <script src="../assets/hunt.js"></script>
+</body>
+</html>
