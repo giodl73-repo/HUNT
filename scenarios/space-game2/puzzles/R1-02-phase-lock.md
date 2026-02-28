@@ -160,6 +160,16 @@ HOW TO FIND THE UNKNOWN FREQUENCY
      indicator shows LOCKED.
   4. Count tangencies to confirm the ratio.
   5. The CH2 frequency at lock is the answer.
+
+READING THE DISPLAY AT HIGH MISMATCH
+  When CH2 is far from a harmonic, the figure
+  rotates rapidly and may appear as a filled oval
+  or a smeared region. This is normal — it means
+  you are not near a stable ratio yet.
+  As you approach the correct frequency, the
+  rotation slows to a gentle drift and the figure
+  resolves into a clear lobed shape. A slow drift
+  means you are close. Keep fine-tuning.
 ```
 
 ---

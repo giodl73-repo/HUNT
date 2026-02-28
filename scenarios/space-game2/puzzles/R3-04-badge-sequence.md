@@ -146,6 +146,13 @@ BADGE SWIPE LOG — ANALYSIS REFERENCE
     EXCEPTION: The CO's badge uses the 401 series (legacy
     command badge numbering). CO = VASQUEZ = Badge 401.
 
+    NOTE ON GRANTED ENTRIES: Most GRANTED entries are routine.
+    However, a GRANTED entry accompanied by an exception code
+    (e.g., emergency medical override, damage-control waiver)
+    is still anomalous — it means clearance was granted through
+    a non-standard pathway. Treat such entries as suspicious
+    even though the LED is green.
+
 ═══════════════════════════════════════════════════════════════════
   NOTE: The position of the FIRST forced entry in the sequence
   is the answer. This identifies when the override chain began.

@@ -9,7 +9,7 @@
 | **Scale** | 17 feeders (6 + 6 + 5) + 3 round metas + 1 final meta |
 | **Audience** | Puzzle enthusiasts; physics literacy rewarded but not required |
 | **Format** | Interactive HTML instrument panels + text fallback |
-| **Duration** | 8-12 hours (team), 15-20 hours (solo) |
+| **Duration** | Expert 1-1.5h, Mixed 2-2.5h, Novice 3.5-4h (team of 2); solo 5-8h |
 | **Theme** | Trek/Firefly starship. Six missing hours. Operate instruments to reconstruct the gap. |
 | **Answer format** | Numeric values (frequencies, bearings, time offsets, data rates, etc.) |
 
@@ -48,7 +48,7 @@ The instruments speak. Terse. No flavor text. Evidence only.
 | 8. INTEGRATION | Done | `reviews/integration-check.md` | 8/8 checks PASS. 3 round metas authored. BUG-L02/L06 resolved. BUG-L09 new (low). |
 | 9. DELIVERY BUILD | Done | `delivery/` | Scene architecture, asset list, print reference cards, theme spec |
 | 10. PLATFORM TEST | Done | `tests/platform-test.md` | 0 blockers, 2 major, 4 minor. Dual-solver PASS on all 20 puzzles. Narrative arc PASS. Meta chain verified. |
-| 11. POLISH | -- | Final pass | |
+| 11. POLISH | Done | Final pass | Duration updated, hints complete, BUG-L09/L10/L11 fixed, R3-04/R3-META/R1-02 ref cards improved |
 
 ## Round Overview
 

@@ -184,6 +184,20 @@ AUTHORIZATION CHAIN ANALYSIS — OPERATOR REFERENCE
 
     Chain length = 2
 
+  WORKED EXAMPLE — COUNTING LINKS FROM 5 FEEDER VALUES
+
+    Your five values map to: KWON(3), CHEN(7), REEVES(4),
+    VASQUEZ(5), REEVES(4). Ignore duplicates and casualties:
+      - KWON: casualty (not in the chain)
+      - CHEN: access agent (followed orders, not an authorizer)
+      - VASQUEZ: ordering officer (CO — forced doors herself)
+      - REEVES: executing officer (performed the 12-op bypass)
+
+    The chain is: VASQUEZ ──> REEVES.
+      Link 1: VASQUEZ decided to act (self-authorization).
+      Link 2: VASQUEZ delegated execution to REEVES.
+    Count: 2 links. Enter 2.
+
   WHAT TO ENTER
     Enter the chain length (number of authorization links).
     This sets the step size on the commission decoder.

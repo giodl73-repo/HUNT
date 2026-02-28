@@ -75,7 +75,7 @@ Each puzzle has a 3-tier hint structure:
 |------|------|
 | Nudge | Watch for the red data packet circulating through the network. Toggle nodes OFF one at a time and observe where the red packet stops — it cannot pass through a disabled node. |
 | Direction | Use process of elimination. Disable a node. If the red packet still circulates, that node is not on its route. If the packet stops, the disabled node was on the route. Work from the network edges inward to find where the packet enters the network. |
-| Near-solution | The breach entry point is node 7 — the Comms Computer node. When you disable node 7, the red packet never enters the network at all. All other nodes, when disabled individually, only stop the packet mid-route. |
+| Near-solution | The breach entry point is node 7 — the Security Computer node. When you disable node 7, the red packet never enters the network at all. All other nodes, when disabled individually, only stop the packet mid-route. |
 
 ### R2-03: Heat Source (HeatMapDisplay)
 

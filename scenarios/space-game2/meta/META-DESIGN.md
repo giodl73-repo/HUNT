@@ -164,12 +164,12 @@ The six feeder values encode a sequence of system states during the gap. The R2-
 
 | System | Controlling Station | Station Position in Roster |
 |--------|-------------------|--------------------------|
-| EPS Conduits (Power Path) | OPS | 2 |
-| ODN Network (Data Breach) | COMPUTER/ENG | 6 |
-| Thermal Grid (Heat Source) | ENVIRO | 4 |
-| Shield Array (Shield Profile) | TAC | 1 |
-| EPS Circuit (Fault Trace) | ENG | 5 |
-| Reactor (Reactor State) | ENG | 5 |
+| EPS Conduits (Power Path) | OPS | 0 (TORRES) |
+| ODN Network (Data Breach) | COMPUTER | 3 (KWON) |
+| Thermal Grid (Heat Source) | ENVIRO | 6 (PARK) |
+| Shield Array (Shield Profile) | TAC | 1 (NAKAMURA) |
+| EPS Circuit (Fault Trace) | ENG | 4 (REEVES) |
+| Reactor (Reactor State) | ENG | 4 (REEVES) |
 
 Each feeder value's **parity** (odd/even) indicates whether the station was involved in the gap response:
 

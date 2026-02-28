@@ -84,7 +84,7 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
   with clean explanation.
 - **Status:** CLOSED.
 
-**BUG-L09: META-DESIGN.md station-to-roster table is stale**
+**BUG-L09: META-DESIGN.md station-to-roster table is stale** — RESOLVED in Stage 11
 - META-DESIGN.md R2-META section has a station-to-roster mapping table with positions
   that don't match the actual duty roster (OPS=2, COMPUTER/ENG=6, ENVIRO=4, TAC=1, ENG=5).
 - The authored R2-META-response.md uses the correct roster (OPS=0/TORRES, COMPUTER=3/KWON,
@@ -92,21 +92,24 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
 - The final answer (position 3 = KWON) is correct in both, but the intermediate table
   in META-DESIGN.md is from an earlier design draft.
 - **Impact:** Low. META-DESIGN.md is a design document, not solver-facing.
-- **Fix:** Update META-DESIGN.md table to match the authored roster positions.
+- **Resolution:** Updated META-DESIGN.md table to match authored roster positions.
+- **Status:** CLOSED.
 
-**BUG-L10: CLAUDE.md duration estimates are stale (v1 or pre-reference-card)**
+**BUG-L10: CLAUDE.md duration estimates are stale (v1 or pre-reference-card)** — RESOLVED in Stage 11
 - CLAUDE.md "Duration" field says "8-12 hours (team), 15-20 hours (solo)."
 - Stage 10 platform test simulation estimates: 1-2h (expert team), 3-5h (novice team), 5-8h (solo).
 - The v2 reference-card design makes puzzles significantly faster than v1 classification puzzles.
 - **Impact:** Major. Sets incorrect expectations for playtesters and event scheduling.
-- **Fix:** Update CLAUDE.md duration to match Stage 10 estimates.
+- **Resolution:** Updated CLAUDE.md duration to "Expert 1-1.5h, Mixed 2-2.5h, Novice 3.5-4h (team of 2); solo 5-8h."
+- **Status:** CLOSED.
 
-**BUG-L11: HINTS.md R2-02 near-solution says "Comms Computer" for node 7**
+**BUG-L11: HINTS.md R2-02 near-solution says "Comms Computer" for node 7** — RESOLVED in Stage 11
 - HINTS.md R2-02 near-solution hint: "The breach entry point is node 7 -- the Comms Computer node."
 - Should say "Security Computer" per world data and authored puzzle file.
 - Extension of BUG-L05 (PUZZLES.md has same issue).
 - **Impact:** Major. Solver-facing hint text has wrong label (answer value 7 is correct).
-- **Fix:** Update HINTS.md R2-02 near-solution to say "Security Computer."
+- **Resolution:** Updated HINTS.md R2-02 near-solution to say "Security Computer."
+- **Status:** CLOSED.
 
 ## Closed
 
@@ -115,3 +118,6 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
 **BUG-L06** — closed 2026-02-28. Resolved in R2-META authoring (same as BUG-L02).
 **BUG-L07** — closed 2026-02-28. Fixed in Stage 7 editorial.
 **BUG-L08** — closed 2026-02-28. Fixed in Stage 7 editorial.
+**BUG-L09** — closed 2026-02-28. Fixed in Stage 11 polish (META-DESIGN.md table updated).
+**BUG-L10** — closed 2026-02-28. Fixed in Stage 11 polish (CLAUDE.md duration updated).
+**BUG-L11** — closed 2026-02-28. Fixed in Stage 11 polish (HINTS.md R2-02 label corrected).
