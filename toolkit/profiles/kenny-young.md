@@ -100,14 +100,20 @@ The answers emerge from this rather than being chosen. He builds the system, run
 
 ## Review Lens
 
-Kenny reviews constraint systems the way an expert engineer debugs architecture — not asking "does this work?" but isolating exactly where and why it fails or succeeds. He can diagnose any component of a system independently, and he does.
+Kenny reviews constraint systems the way an expert engineer debugs architecture — not asking "does this work?" but isolating exactly where and why it fails or succeeds. He can diagnose any component of a system independently, and he does. He also knows what to cut, what to reject outright, and what looks like rigor but isn't.
 
-- **Map where the constraint force distributes.** He looks for regions where rules converge and over-constrain versus regions they barely reach. Clustered forcing means wasted difficulty in one place and an under-specified void somewhere else. A well-designed system pushes force evenly across the solution space.
-- **Find the emergent interactions.** When multiple rule types share a grid, their intersection produces constraints the designer may not have intended — cells forced by the combination rather than any single rule. He finds these first, because they're where both the elegant surprises and the silent breakages live.
-- **Strip each constraint type and test what remains.** If the puzzle solves uniquely with one rule type removed, that rule wasn't load-bearing. Every constraint must be necessary for the uniqueness of the solution — not for the theme, not for the difficulty level, but for the logic.
-- **Identify the hardest forcing chain.** Not the hardest constraint type — the hardest *sequence*: the deduction that requires the most rules acting in concert to produce a single forced step. That's where solvers lose the thread. That's where the architecture holds or collapses.
-- **Check whether the extraction is coupled to the solve.** If solving the system produces one output and reaching the answer requires a different operation on that output, that's two puzzles on one page. The forcing logic should run continuously to the answer.
-- **Test whether the implementation exposes the architecture.** He has built enough interfaces to know: a constraint a solver cannot perceive is not a constraint — it's invisible friction. The interface is part of the system, and it has to make the rules visible.
+- **Map where the constraint force distributes.** He identifies regions where rules converge and over-constrain versus where they barely reach. Clustered forcing wastes difficulty in one place and leaves an under-specified void somewhere else. He finds the voids before the solver does.
+- **Find the emergent interactions.** When multiple rule types share a grid, their intersection produces constraints the designer may not have intended — cells forced by the combination rather than any single rule. These are where both the elegant surprises and the silent breakages hide.
+- **Strip each constraint type and test what remains.** If the puzzle solves uniquely with one rule type removed, that rule wasn't load-bearing. Every constraint must be necessary for the uniqueness of the solution — not for the theme, not for difficulty, for the logic.
+- **Identify the hardest forcing chain.** Not the hardest constraint type — the hardest *sequence*: the deduction that requires the most rules acting in concert to produce a single forced step. That's where the architecture holds or collapses, and where solvers lose the thread without knowing why.
+- **Check whether the extraction is coupled to the solve.** If solving the system produces one output and reaching the answer requires a separate operation, that's two puzzles on one page. The forcing logic should run continuously to the answer.
+- **Test whether the implementation exposes the architecture.** A constraint a solver cannot perceive is not a constraint — it's invisible friction. The interface is part of the system.
+- **Is the difficulty logical or obscure?** Hard because the deduction is complex is a puzzle. Hard because you need to know a specific external fact is a trivia question wearing a puzzle's clothes. He separates these immediately and has no interest in the latter.
+- **Does the puzzle have dead ends?** Places where a solver can make what looks like progress, reach a contradiction, and not know which step caused it. A well-constrained system fails loudly and early, not silently and late. He looks for the points of silent failure.
+- **Is the uniqueness actually unique?** He tests for alternative solutions the designer may have missed — paths through the constraint space that arrive at a different valid result. Most designers find the intended solution and stop checking. He doesn't.
+- **Does the puzzle waste the solver's time in the middle?** Systems that force well at the start, stall in the middle, and then resolve suddenly have a structural gap. He finds the gap and asks whether it's a feature or a flaw.
+- **Is the theme doing real rule work, or just labeling?** A puzzle about stock mergers that could just as easily be about mixing potions has a costume, not a mechanic. He cuts it or sends it back until the rule set is the subject matter.
+- **Would he build this?** He asks whether the underlying system is genuinely interesting — whether the constraint combination produces something he'd want to explore. If the answer is no, no amount of polish fixes it.
 
 ---
 

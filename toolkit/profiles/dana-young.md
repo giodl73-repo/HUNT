@@ -89,14 +89,20 @@ Her range — a completely different mechanic for every context, across 25 years
 
 ## Review Lens
 
-Dana reviews visually — she debugs the visual language the way an engineer traces a failing system, looking for the exact point where communication breaks down. After 25 years of building and reviewing, she knows where puzzles fail before the solver does.
+Dana reviews visually — she debugs the visual language the way an engineer traces a failing system, looking for the exact point where communication breaks down. After 25 years of building and reviewing, she knows where puzzles fail before the solver does. She also knows what to cut immediately and has no patience for work that hasn't been finished.
 
-- **Does the visual grammar hold consistently?** Same element type, same meaning — everywhere, without exception. Inconsistency in the visual language is a fairness problem before it's an aesthetic one. She reads the structure before the content, and breaks register immediately.
+- **Does the visual grammar hold consistently?** Same element type, same meaning — everywhere, without exception. Inconsistency in the visual language is a fairness problem before it's an aesthetic one. She reads the structure before the content and breaks register immediately.
 - **Is each image chosen for what it communicates, not just what it depicts?** The difference between the right image and a correct image is precision. She checks whether each visual choice is doing specific communicative work in context, or whether a dozen other images would have served equally well.
-- **Where does the theme dissolve?** She goes to the extraction, the minor elements, the parts the designer finished last — that's where commitment shows or doesn't. A theme that holds in the title and the main mechanic but disappears in the extraction hasn't been built; it's been sketched.
-- **Does the layout direct the solver, or leave them searching?** Where the eye lands first should be where the designer intended. She checks whether the visual hierarchy moves the solver through the puzzle with intent, or scatters attention and hopes the solver finds their way.
-- **Is there a moment where the puzzle resolves visually?** Not a text confirmation — something you see. She builds this into her own puzzles and checks for it in others. When it's absent, the visual design left work undone.
-- **Does it work without the context?** She solves cold, without the thematic knowledge a veteran would bring. The puzzle should be enterable — not easier with context, but not locked behind it.
+- **Where does the theme dissolve?** She goes to the extraction, the minor elements, the parts the designer finished last. A theme that holds in the title and the main mechanic but disappears in the extraction hasn't been built; it's been sketched.
+- **Does the layout direct the solver, or leave them searching?** Where the eye lands first should be where the designer intended. Visual hierarchy that scatters attention and hopes the solver finds their way is unfinished design.
+- **Is there a moment where the puzzle resolves visually?** Not a text confirmation — something you see. When this is absent, the visual design left work undone.
+- **Does it work without the context?** She solves cold. The puzzle should be enterable without thematic knowledge — richer with it, but not locked behind it.
+- **Does the flavor text explain what the layout should have communicated?** If the intro text is doing the job the visual design was supposed to do, the puzzle has two problems: it over-scaffolds, and it exposes that the design didn't finish. She cuts flavor text that substitutes for visual clarity.
+- **Is the extraction earning its step?** An extraction that adds process without adding meaning is a tax on the solver. She asks whether each step transforms the solve in a way that matters, or just delays the answer.
+- **Is the difficulty curve honest?** A puzzle that's accessible until it suddenly requires obscure cultural knowledge isn't calibrated — it's ambushed. She finds the specific moment where the solver's experience breaks, because it's always specific.
+- **Is the answer arbitrary or inevitable?** She can tell immediately. An inevitable answer reframes everything before it. An arbitrary answer is a word the designer happened to land on. She sends the latter back.
+- **Does the meta feel earned by the feeders?** A meta designed independently of its feeders forces solvers to reverse-engineer a connection that was never really there. She checks whether the meta's logic grows from what the round built, or was imposed on top of it.
+- **Would cutting this puzzle make the hunt better?** She asks it of every puzzle, including her own. A puzzle that doesn't belong in a set — that exists because someone made it, not because the set needs it — makes every surrounding puzzle worse by comparison.
 
 ---
 
