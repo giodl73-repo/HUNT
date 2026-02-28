@@ -37,8 +37,8 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 | 1. SCOPE | Done | `SCOPE.md`, `CLAUDE.md` | Identity, structure, narrator, meta target |
 | 2. WORLD BUILD | Done | `world/` — 6 systems | Allomancy, Knights Radiant, Shards, Hoid, Scadrial, Roshar |
 | 3. PUZZLE POOL | Done | `PUZZLE-POOL.md` | 72 candidates (12/module), panel ranked, 36 recommended |
-| 4. ASSIGNMENT | -- | `PUZZLES.md` | 36 briefs, all answers coordinated |
-| 5. META DESIGN | -- | `meta/` | 3 round metas + 1 super-meta |
+| 4. ASSIGNMENT | Done | `PUZZLES.md` | 36 briefs, all 36 answer words coordinated with metas |
+| 5. META DESIGN | Done | `meta/` | 3 round metas + 1 super-meta, all verified |
 | 6. AUTHORING | -- | `puzzles/` | 36 puzzle files |
 | 7. EDITORIAL | -- | `reviews/editorial-review.md` | |
 | 8. INTEGRATION | -- | `reviews/integration-check.md` | |
@@ -61,26 +61,101 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 
 | Module | World | Focus | Puzzles | Author Team | Status |
 |--------|-------|-------|---------|-------------|--------|
-| A | Scadrial | Allomancy chart, metals, powers | P01-P06 | Team Alpha | -- |
-| B | Scadrial | History, characters, Era 1+2 | P07-P12 | Team Beta | -- |
-| C | Roshar | Knights Radiant, orders, surges | P13-P18 | Team Gamma | -- |
-| D | Roshar | Storms, fabrials, Singers | P19-P24 | Team Delta | -- |
-| E | Cosmere | The 16 Shards | P25-P30 | Team Epsilon | -- |
-| F | Cosmere | Hoid, Worldhoppers, crossovers | P31-P36 | Team Zeta | -- |
+| A | Scadrial | Allomancy chart, metals, powers | P01-P06 | Team Alpha | Assigned |
+| B | Scadrial | History, characters, Era 1+2 | P07-P12 | Team Beta | Assigned |
+| C | Roshar | Knights Radiant, orders, surges | P13-P18 | Team Gamma | Assigned |
+| D | Roshar | Storms, fabrials, Singers | P19-P24 | Team Delta | Assigned |
+| E | Cosmere | The 16 Shards | P25-P30 | Team Epsilon | Assigned |
+| F | Cosmere | Hoid, Worldhoppers, crossovers | P31-P36 | Team Zeta | Assigned |
 
 ## Puzzle Registry
 
-| ID | Title | Type | Author | Score | Status |
-|----|-------|------|--------|-------|--------|
-| P01-P36 | (not yet assigned) | -- | -- | -- | -- |
-| META-I | THE WELL | Round meta | Admin | -- | -- |
-| META-II | THE OATHS | Round meta | Admin | -- | -- |
-| META-III | ADONALSIUM | Round meta | Admin | -- | -- |
-| SUPER | THE SEVENTEENTH SHARD | Super-meta | Admin | -- | -- |
+### Module A — Allomancy (Team Alpha)
+
+| ID | Title | Pool ID | Mechanism | Difficulty | Metal | Status |
+|----|-------|---------|-----------|------------|-------|--------|
+| P01 | Burning Through | A-02 | Identification + ordered extraction | ★★ | Iron (#1) | Assigned |
+| P02 | Alloy Partners | A-04 | Pairing + extraction | ★★ | Steel (#2) | Assigned |
+| P03 | Feruchemical Reserves | A-07 | Identification + positional extraction | ★★★ | Zinc (#5) | Assigned |
+| P04 | The Allomantic Table | A-01 | Grid logic / constraint satisfaction | ★★★ | Brass (#6) | Assigned |
+| P05 | Three Arts, One Spike | A-05 | Triple-matching with error detection | ★★★★ | Pewter (#4) | Assigned |
+| P06 | The Coppercloud | A-09 | Deductive logic (constraint satisfaction) | ★★★★ | Bronze (#8) | Assigned |
+
+### Module B — Scadrial History (Team Beta)
+
+| ID | Title | Pool ID | Mechanism | Difficulty | Metal | Status |
+|----|-------|---------|-----------|------------|-------|--------|
+| P07 | The Lord Ruler's 1000 Years | B-02 | Chronological ordering + acrostic | ★★ | Electrum (#10) | Assigned |
+| P08 | Kelsier's Crew | B-01 | Identification + positional extraction | ★★ | Gold (#9) | Assigned |
+| P09 | The Social Ladder | B-05 | Categorization + ordered extraction | ★★★ | Cadmium (#11) | Assigned |
+| P10 | The Survivor's Legacy | B-11 | Cross-era matching (cause/effect) | ★★★ | Chromium (#15) | Assigned |
+| P11 | The Siege of Luthadel | B-03 | Logic grid (multi-variable deduction) | ★★★★ | Bendalloy (#12) | Assigned |
+| P12 | The Roughs Justice | B-06 | Deduction (Twinborn ability ID) | ★★★★ | Duralumin (#14) | Assigned |
+
+### Module C — Knights Radiant (Team Gamma)
+
+| ID | Title | Pool ID | Mechanism | Difficulty | Order | Status |
+|----|-------|---------|-----------|------------|-------|--------|
+| P13 | Herald's Madness | C-06 | Identification (behavioral) + mapping | ★★ | Dustbringers | Assigned |
+| P14 | Ideals and Oaths | C-02 | Fill-in-blank + acrostic | ★★★ | Edgedancers | Assigned |
+| P15 | Spren Bonds | C-04 | Identification (narrative) + mapping | ★★★ | Truthwatchers | Assigned |
+| P16 | Radiant Roster | C-07 | Character ID + conditional indexing | ★★★ | Skybreakers | Assigned |
+| P17 | The Double Eye | C-01 | Ring topology logic + multi-attribute | ★★★★ | Windrunners | Assigned |
+| P18 | The Surge Wheel | C-05 | Circular constraint placement | ★★★★ | Lightweavers (dup) | Assigned |
+
+### Module D — Roshar World (Team Delta)
+
+| ID | Title | Pool ID | Mechanism | Difficulty | Order | Status |
+|----|-------|---------|-----------|------------|-------|--------|
+| P19 | Singer Forms | D-04 | Identification + indexing | ★★ | Stonewards | Assigned |
+| P20 | Bridge Four | D-12 | Anagram + indexing | ★★ | Windrunners (dup) | Assigned |
+| P21 | Rhythm of Answers | D-01 | Identification + name extraction | ★★★ | Willshapers | Assigned |
+| P22 | The Chasms Below | D-07 | Cryptic crossword (Cosmere-themed) | ★★★ | Lightweavers (crit) | Assigned |
+| P23 | Fabrial Workshop | D-03 | Triple-matching (effect/type/gem) | ★★★ | Bondsmiths | Assigned |
+| P24 | Stormwall | D-02 | Spatial/directional logic | ★★★★ | Elsecallers | Assigned |
+
+### Module E — The 16 Shards (Team Epsilon)
+
+| ID | Title | Pool ID | Mechanism | Difficulty | Shard | Status |
+|----|-------|---------|-----------|------------|-------|--------|
+| P25 | Shattered and Whole | E-03 | Categorization + count indexing | ★★ | Honor | Assigned |
+| P26 | Vessel Roll Call | E-02 | Identification + extraction | ★★★ | Preservation | Assigned |
+| P27 | Odium's Kill List | E-04 | ID + chronological ordering | ★★★ | Odium | Assigned |
+| P28 | Investiture Types | E-08 | Magic-system ID + chained mapping | ★★★ | Endowment | Assigned |
+| P29 | The 4x4 Shard Grid | E-07 | Grid logic (axis deduction) | ★★★★ | Autonomy | Assigned |
+| P30 | The Shattering | E-11 | Circular logic (seating arrangement) | ★★★★★ | Virtuosity | Assigned |
+
+### Module F — Hoid & Worldhoppers (Team Zeta)
+
+| ID | Title | Pool ID | Mechanism | Difficulty | Shard | Status |
+|----|-------|---------|-----------|------------|-------|--------|
+| P31 | The Wanderer's Aliases | F-01 | ID (presence/absence) + alias extraction | ★★★ | Ruin | Assigned |
+| P32 | Cognitive Shadows | F-04 | Identification + system matching | ★★★ | Harmony | Assigned |
+| P33 | Collected Powers | F-02 | Triple ID (ability/world/Shard) | ★★★★ | Cultivation | Assigned |
+| P34 | Letters to a Dragon | F-06 | Attribution (author ID from style) | ★★★★ | Devotion | Assigned |
+| P35 | The Memory Thief | F-11 | Error detection (true/false) | ★★★★ | Whimsy | Assigned |
+| P36 | All Roads Lead to Hoid | F-12 | Connection mapping (cross-reference) | ★★★★★ | Valor | Assigned |
+
+### Metas
+
+| ID | Name | Mechanism | Answer Length | Status |
+|----|------|-----------|-------------- |--------|
+| META-I | THE WELL | Allomancy table: Pulling metals, quadrant-depth extraction | 5 | Designed |
+| META-II | THE OATHS | Radiant Oaths: Orders with 3+ Ideals, Ideal-count indexing | 5 | Designed |
+| META-III | ADONALSIUM | 4 missing Shards: first-letter anagram | 4 | Designed |
+| SUPER | THE SEVENTEENTH SHARD | Realms cycle (1-2-3-1-2), positions (1-2-3-4-5) from 3 meta answers | 5 | Designed |
 
 ## Answer Registry
 
-Answers stored in `.claude/` project memory only. ROT13 encoded. No plaintext in git-tracked files.
+Answers stored in `meta/cosmere-answers.md` (ROT13 encoded). No plaintext answers in git-tracked files.
+
+## Meta Architecture Summary
+
+- Round 1 (Scadrial) meta answer feeds super-meta positions 1 and 4
+- Round 2 (Roshar) meta answer feeds super-meta positions 2 and 5
+- Round 3 (Cosmere) meta answer feeds super-meta position 3
+- Super-meta extraction cycles through Realms: Physical-Cognitive-Spiritual-Physical-Cognitive
+- All verification chains confirmed (see `meta/cosmere-answers.md`)
 
 ## File Index
 
@@ -89,8 +164,7 @@ scenarios/cosmere/
 ├── SCENARIO.md          <- scenario brief (read-only)
 ├── CLAUDE.md            <- THIS FILE (status tracker)
 ├── SCOPE.md             <- Stage 1 deliverable
-├── ROUNDS.md            <- Stage 2
-├── PUZZLES.md           <- Stage 4
+├── PUZZLES.md           <- Stage 4 (36 puzzle briefs)
 ├── BUGS-local.md        <- local bug tracker
 ├── world/
 │   ├── WORLD.md         <- universe overview
@@ -102,8 +176,13 @@ scenarios/cosmere/
 │       ├── hoid.md
 │       ├── scadrial.md
 │       └── roshar.md
-├── meta/                <- Stage 5
-├── puzzles/             <- Stage 6
+├── meta/
+│   ├── SUPER-META.md       <- Stage 5: THE SEVENTEENTH SHARD
+│   ├── META-I-WELL.md      <- Stage 5: Scadrial round meta
+│   ├── META-II-OATHS.md    <- Stage 5: Roshar round meta
+│   ├── META-III-ADONALSIUM.md <- Stage 5: Cosmere round meta
+│   └── cosmere-answers.md  <- ROT13 answer registry (all 40 answers)
+├── puzzles/             <- Stage 6 (authoring)
 ├── reviews/             <- editorial + panel output
 ├── tests/               <- blind test results
 └── delivery/            <- Stage 9
