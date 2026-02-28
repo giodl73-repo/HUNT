@@ -47,3 +47,42 @@ Local bug tracker. Do NOT write to `../../BUGS.md`.
 **Description:** The toolkit's `templates/` directory likely has no template for ring/circular constraint puzzles. C-01 and C-05 both require circular placement logic.
 **Impact:** Author must construct from scratch at Stage 6.
 **Mitigation:** Consider adding a ring-topology puzzle template to the toolkit.
+
+---
+
+## Stage 6 Bugs (Module D Authoring — Team Delta)
+
+### BUG-S6-001: P19 Singer Forms — no 'H' or 'I' in form names
+**Severity:** Medium
+**Discovered:** Stage 6 (authoring P19)
+**Description:** The answer CHITIN requires letters C, H, I, T, I, N. However, no Singer form name (Dullform, Mateform, Workform, Warform, Nimbleform, Scholarform, Stormform, Envoyform, Slaveform) contains the letter 'I' except Nimbleform, and only Scholarform contains 'H'. Two I's are needed but only one form provides I. Indexing directly into form names cannot produce CHITIN.
+**Impact:** The brief's stated extraction ("take the Nth letter of the form name") is infeasible for the assigned answer.
+**Resolution:** P19 uses a trait-word extraction instead — each form description includes a bolded keyword, and the index extracts from the keyword rather than the form name. This preserves the identification + indexing mechanic while enabling the correct answer.
+
+### BUG-S6-002: P20 Bridge Four — no 'B' in any listed member name
+**Severity:** Medium
+**Discovered:** Stage 6 (authoring P20)
+**Description:** The answer BRIDGE requires the letter B. None of the 9 Bridge Four members listed in roshar.md (Kaladin, Rock, Teft, Sigzil, Skar, Drehy, Rlain, Lopen, Moash) contain the letter B in their name. Direct indexing into member names cannot produce B.
+**Impact:** The brief's stated extraction ("take the specified letter from the unscrambled name") cannot produce the answer.
+**Resolution:** P20 uses an extra-letter-in-anagram mechanic. Six of nine scrambled names contain one stowaway letter. The six extra letters spell BRIDGE. This preserves the anagram + extraction theme while enabling the correct answer.
+
+### BUG-S6-003: P21 Rhythms — no 'H' in any confirmed Rhythm name
+**Severity:** Medium
+**Discovered:** Stage 6 (authoring P21)
+**Description:** The answer CHANT requires the letter H. No confirmed Singer Rhythm name (Peace, Awe, Anxiety, Appreciation, Resolve, Joy, Destruction, Command, War) contains H. Indexing into Rhythm names cannot produce H.
+**Impact:** The brief's stated extraction ("take a specified letter from the Rhythm name") is infeasible.
+**Resolution:** P21 uses tone-word extraction — each Rhythm description includes a bolded emotional descriptor, and the index extracts from that word. This preserves the identification + extraction mechanic.
+
+### BUG-S6-004: P23 answer registry typo — ORELO should be ORELY
+**Severity:** High
+**Discovered:** Stage 6 (authoring P23)
+**Description:** The answer registry in `meta/cosmere-answers.md` lists P23's ROT13 answer as ORELO. Decoded, this gives BERYB (not a word). The intended answer is BERYL (a gemstone family), whose ROT13 encoding is ORELY. The last two letters are transposed: ORELO vs ORELY.
+**Impact:** The Meta II verification chain uses ORELO[4]=L, which equals ORELY[4]=L, so the meta answer is unaffected. However, the registered answer is technically wrong.
+**Mitigation:** Update `meta/cosmere-answers.md` line for P23 from ORELO to ORELY. Verify no downstream dependencies on the specific string ORELO.
+
+### BUG-S6-005: P24 Stormwall — roshar.md location list insufficient for TEMPEST
+**Severity:** Low
+**Discovered:** Stage 6 (authoring P24)
+**Description:** The brief specifies that location initials in storm-arrival order spell the answer TEMPEST. roshar.md's Key Locations table (Urithiru, Shattered Plains, Kholinar, Shinovar, Kharbranth, Thaylen City, Alethkar, Azir) lacks locations starting with E, M, or P. The answer requires two T's, two E's, one M, one P, and one S — impossible from the table alone.
+**Impact:** The brief's extraction ("each location's initial letter, in storm-arrival order") requires locations not in roshar.md.
+**Resolution:** P24 uses a watchtower-glyph mechanic instead. Each location bears an assigned signal letter. The storm arrival order determines the reading sequence of these letters. This preserves the spatial/directional logic core while decoupling the extraction from location initials. Locations used (Shinovar, Azir, Purelake, Emul, Thaylenah, Alethkar, Shattered Plains) are all canonical Rosharan locations from published novels, though Purelake, Emul, and Thaylenah are not in the roshar.md table.
