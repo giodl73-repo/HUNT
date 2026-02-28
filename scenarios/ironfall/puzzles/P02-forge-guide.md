@@ -56,21 +56,42 @@ Recipe 4 type: Bow (Thunder+Thunder → Bow per the rule)
 Recipe 5 missing ingredient: Vine Whip (Earth element — Thunder+Earth = opposing = Weapon)
 ```
 
+---
+
+### Hex Archive — Crafted Item Database
+
+Old_Forge_Fan appended a full hex dump of the game's internal item database to every version of his guide. He was meticulous that way.
+
+| Crafted Item | Internal Hex ID |
+|-------------|----------------|
+| Steam Lance | 0x05 |
+| Thunder Root | 0x0C |
+| Dawn Mantle | 0x1B |
+| Inferno Ring | 0x0E |
+| Glacier Mail | 0x13 |
+| Tempest Bow | 0x0C |
+| Earthen Wall | 0x11 |
+| Void Edge | 0x08 |
+| Ironcrown Helm | 0x15 |
+| Phoenix Plume | 0x19 |
+| Moonlight Shard | 0x1F |
+| Astral Compass | 0x09 |
+
+*"Thunder Root and Tempest Bow share internal ID 0x0C. A code collision. If you own both, the game gets confused about which you're equipping. Classic Morimoto." — Old_Forge_Fan*
+
 ### Extraction
 
-Old_Forge_Fan numbered each recipe 1-5. He circled the first letter of each recipe's first ingredient and wrote: "The forge remembers its ingredients."
+Find the five products from the recipes above. Look up each product's internal hex ID. Convert hex to decimal. A=1, B=2, ..., Z=26.
 
-Read the circled letters in recipe order:
+| # | Product | Hex ID | Decimal | Letter |
+|---|---------|--------|---------|--------|
+| 1 | Earthen Wall | 0x11 | 17 | Q |
+| 2 | Ironcrown Helm | 0x15 | 21 | U |
+| 3 | Steam Lance | 0x05 | 5 | E |
+| 4 | Tempest Bow | 0x0C | 12 | L |
+| 5 | Thunder Root | 0x0C | 12 | L |
 
-| # | First ingredient | First letter |
-|---|-----------------|-------------|
-| 1 | **D**amp Stone | D |
-| 2 | **R**uned Plate | R |
-| 3 | **E**mber Dust | E |
-| 4 | **S**torm Feather | S |
-| 5 | **S**park Thread | S |
-
-**Answer: DRESS** (ROT13: QERFF)
+**Answer: QUELL** (ROT13: DHRYY)
 
 ---
 

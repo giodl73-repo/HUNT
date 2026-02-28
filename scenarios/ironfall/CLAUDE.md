@@ -54,8 +54,8 @@ The archive speaks. Past tense for forum memories. Present tense for the countdo
 
 | ID | Title | Author | File | Score | Status |
 |----|-------|--------|------|-------|--------|
-| P01 | Bestiary v3.2 — Complete Stats | The Methodical | `puzzles/P01-bestiary-stats.md` | -- | Authored (answer mismatch — see BUGS) |
-| P02 | Forge Guide — by Old_Forge_Fan | The Methodical | `puzzles/P02-forge-guide.md` | -- | Authored (answer mismatch — see BUGS) |
+| P01 | Bestiary v3.2 — Complete Stats | The Methodical | `puzzles/P01-bestiary-stats.md` | -- | FIXED — enemies swapped, answer UMBRA verified |
+| P02 | Forge Guide — by Old_Forge_Fan | The Methodical | `puzzles/P02-forge-guide.md` | -- | FIXED — hex ID extraction, answer QUELL verified |
 | P03 | Save File Deep Dive | The Speedster | `puzzles/P03-save-file-deep-dive.md` | 26/30 | PASS |
 | P04 | World Map — All Connections | The Speedster | `puzzles/P04-world-map-connections.md` | 24/30 | PASS |
 | P05 | Battle Damage Calculator v2 | The Skeptic | `puzzles/P05-battle-damage-calc.md` | 28/30 | PASS |
