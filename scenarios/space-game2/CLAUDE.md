@@ -41,8 +41,8 @@ The instruments speak. Terse. No flavor text. Evidence only.
 | 1. SCOPE | Done | `SCOPE.md`, `CLAUDE.md` | Instrument-based redesign scoped |
 | 2. WORLD BUILD | Done | `world/` | v1 fiction + 6 physics instrument docs |
 | 3. PUZZLE POOL | Done | `PUZZLE-POOL.md`, `HINTS.md` | 30+ candidates, panel ranked, 17 selected |
-| 4. ASSIGNMENT | -- | `PUZZLES.md` | |
-| 5. META DESIGN | -- | `meta/META-DESIGN.md` | |
+| 4. ASSIGNMENT | Done | `PUZZLES.md` | 17 widget-first briefs, all answers numeric |
+| 5. META DESIGN | Done | `meta/META-DESIGN.md` | CyclicGroupDisplay final meta, 3 round metas |
 | 6. AUTHORING | -- | `puzzles/` | |
 | 7. EDITORIAL | -- | `reviews/editorial-review.md` | |
 | 8. INTEGRATION | -- | `reviews/integration-check.md` | |
