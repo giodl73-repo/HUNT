@@ -25,7 +25,7 @@ The three round meta answers are used in a cycling extraction pattern based on t
 | Round | Meta Name | World Association | Realm | Answer (ROT13) |
 |-------|-----------|-------------------|-------|-----------------|
 | I | THE WELL | Scadrial | Physical (metals, matter) | HAVGR |
-| II | THE OATHS | Roshar | Cognitive (oaths, bonds, perception) | RAIB |
+| II | THE OATHS | Roshar | Cognitive (oaths, bonds, perception) | RAIBL |
 | III | ADONALSIUM | Cosmere | Spiritual (Shards, Investiture, Connection) | NZVQ |
 
 ### Extraction
@@ -56,14 +56,14 @@ The position advances 1→2→3→4→5, corresponding to the 5 Ideals of the Kn
 
 ```
 Ebhaq 1 nafjre: HAVGR
-Ebhaq 2 nafjre: RAIB
+Ebhaq 2 nafjre: RAIBL
 Ebhaq 3 nafjre: NZVQ
 
 Fgrc 1: HAVGR[1] = H
-Fgrc 2: RAIB[2] = A
+Fgrc 2: RAIBL[2] = A
 Fgrc 3: NZVQ[3] = V
 Fgrc 4: HAVGR[4] = G
-Fgrc 5: RAIB[5] = L
+Fgrc 5: RAIBL[5] = L
 
 Erfhyg: H-A-V-G-L = HAVGL ✓
 ```

@@ -59,7 +59,7 @@ Eight words name the bridges between eras. They arrive unmatched, like everythin
 | INFAMY |
 | NURTURE |
 | SUCCESSION |
-| UNITY |
+| UNIFICATION |
 
 ---
 
