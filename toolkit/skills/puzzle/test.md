@@ -74,13 +74,25 @@ Your task:
 2. ATTEMPT TO SOLVE IT using the encyclopedia as your reference.
    Show your work step by step. Note where you get stuck.
 3. WRITE YOUR ANSWER on the answer line.
-4. SCORE the puzzle on these 6 dimensions (1-5 each):
-   - Clarity: Was it clear what you were supposed to do?
-   - Solvability: Could you reach the answer with the materials provided?
-   - Elegance: Was the mechanism clean? Was there one satisfying aha?
-   - Reading Reward: Did solving require genuine engagement with the content?
-   - Fun: Did you enjoy this? Would you recommend it to a friend?
-   - Confirmation: Could you tell whether your answer was right?
+4. SCORE the puzzle on these 6 dimensions using the weighted rubric:
+   - Clarity (1-5): Was it clear what you were supposed to do?
+   - Solvability (1-5): Could you reach the answer with the materials provided?
+   - Elegance (1-5, COUNTS DOUBLE): Was the mechanism clean? Was there one satisfying aha?
+   - Reading Reward (1-5, COUNTS DOUBLE): Did solving require genuine engagement with the content?
+   - Fun (1-5): Did you enjoy this? Would you recommend it to a friend?
+   - Confirmation (1-5): Could you tell whether your answer was right?
+
+   - Riven Standard (1-5): Does the puzzle IS what the field does — not overlaid on it? Could a practitioner of this domain recognize their own work in the puzzle?
+     - 5: Mechanic is inseparable from the domain — could not exist in any other context
+     - 4: Domain knowledge is structural — shapes the mechanism, not just the content
+     - 3: Domain provides content but mechanic could be re-skinned to another topic
+     - 2: Theme is decorative — any content could substitute
+     - 1: No thematic integration
+
+   **Scoring formula:** Total = Clarity + Solvability + (Elegance × 2) + (Reading Reward × 2) + Fun + Confirmation + Riven Standard
+   **Maximum: 45 points. Pass threshold: 33/45.**
+
+   Elegance and Reading Reward are double-weighted because empirical testing across 15 puzzle types showed these are the primary quality discriminators. The Riven Standard is the field's highest-order quality criterion and is scored separately to ensure it is always explicitly evaluated.
 5. FLAG any issues:
    - Ambiguous clues (multiple valid answers)
    - Broken paths (references content that doesn't exist)
@@ -107,15 +119,16 @@ Each tester saves to: `tests/[element]-[tester-name].md`
 [What the tester wrote]
 
 ## Scores
-| Dimension | Score (1-5) | Notes |
-|-----------|-------------|-------|
-| Clarity | | |
-| Solvability | | |
-| Elegance | | |
-| Reading Reward | | |
-| Fun | | |
-| Confirmation | | |
-| **Total** | **/30** | |
+| Dimension | Weight | Score (1-5) | Weighted | Notes |
+|-----------|--------|-------------|---------|-------|
+| Clarity | ×1 | | | |
+| Solvability | ×1 | | | |
+| Elegance | ×2 | | | |
+| Reading Reward | ×2 | | | |
+| Fun | ×1 | | | |
+| Confirmation | ×1 | | | |
+| Riven Standard | ×1 | | | |
+| **Total** | | | **/45** | |
 
 ## Principle Checks
 Run every puzzle against `toolkit/PRINCIPLES.md`. Flag violations:
@@ -197,19 +210,22 @@ Each iteration is saved:
 
 ### Passing Criteria
 
-| Dimension | Minimum | Target |
-|-----------|---------|--------|
-| Clarity | 4 | 5 |
-| Solvability | 4 | 5 |
-| Elegance | 4 | 5 |
-| Reading Reward | 4 | 5 |
-| Fun | 4 | 5 |
-| Confirmation | 3 | 4 |
-| **Overall** | **22/30** | **27/30** |
+| Dimension | Weight | Minimum | Target |
+|-----------|--------|---------|--------|
+| Clarity | ×1 | 4 | 5 |
+| Solvability | ×1 | 4 | 5 |
+| Elegance | ×2 | 4 (→8) | 5 (→10) |
+| Reading Reward | ×2 | 4 (→8) | 5 (→10) |
+| Fun | ×1 | 4 | 5 |
+| Confirmation | ×1 | 3 | 4 |
+| Riven Standard | ×1 | 3 | 5 |
+| **Overall** | | **33/45** | **40/45** |
 
-A puzzle PASSES at 22/30 with no dimension below 4 (except Confirmation at 3).
-A puzzle is EXCELLENT at 27/30.
-A puzzle is PERFECT at 30/30.
+A puzzle PASSES at 33/45.
+A puzzle is EXCELLENT at 40/45.
+A puzzle is PERFECT at 45/45.
+
+*Calibration: 33/45 = 73%, same quality threshold as the previous 22/30. Elegance and Reading Reward double-weighted per empirical study (C9 configuration). Riven Standard added as the field's highest-order quality criterion.*
 
 ### Issue Severity
 

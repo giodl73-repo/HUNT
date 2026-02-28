@@ -202,6 +202,47 @@ Not all context files are needed for every review. Use judgment:
 
 ---
 
+## Scoring Rubric (C9 — Empirically Tuned)
+
+All reviews use this weighted rubric. Validated against 15 real puzzles (MIT Mystery Hunt 2023, Huntinality III, Teammate Hunt 2021) across 8 conditions.
+
+| Dimension | Weight | Score | Notes |
+|-----------|--------|-------|-------|
+| Clarity | ×1 | 1–5 | Solver understands what to do |
+| Solvability | ×1 | 1–5 | Appropriate knowledge reaches answer |
+| **Elegance** | **×2** | 1–5 | Mechanism feels clean, not arbitrary |
+| **Reading Reward** | **×2** | 1–5 | Domain knowledge is load-bearing |
+| Fun | ×1 | 1–5 | Enjoyable; creates aha moment |
+| Confirmation | ×1 | 1–5 | Solver knows when they're right |
+| **Riven Standard** | **×1** | 1–5 | Puzzle IS what the field does — not overlaid on it |
+
+**Total: /45. Pass ≥ 33 (73%).**
+
+Formula: `Total = C + S + (E×2) + (RR×2) + F + Conf + RS`
+
+*Why these weights:* Elegance and Reading Reward are the primary tier discriminators across all puzzle types — doubling them achieves 73% better separation between hunt-quality and magazine-quality puzzles vs. equal weighting. The Riven Standard is the field's highest-order quality criterion, scored separately to ensure it is always explicitly evaluated.
+
+---
+
+## Recommended Profile Format
+
+Load reviewer profiles in this order, skipping sections that don't apply:
+
+1. **Authority** (2–3 sentences only) — establishes credibility and scope calibration
+2. **Design Philosophy** (full) — the reviewer's evaluative worldview
+3. **Review Lens** (full) — their operational checklist
+4. ~~Credentials table~~ — skip (low content signal)
+5. ~~Key Published Analyses/Sources~~ — skip (URLs not browsable)
+
+**Always inject these 3 principles** (non-redundant with all profiles):
+- *Verify the Last Mile:* trace letter by letter from solved puzzle to answer word
+- *Blame the Player:* after the reveal, does the solver feel respect or resentment?
+- *Snyder's Computer Test:* write a 10-line script that solves it — if you can, add a deduction layer
+
+This is the **C8 profile format** — empirically equivalent to full profiles on well-constructed puzzles, with additional precision on extraction errors and fairness failures.
+
+---
+
 ## Adding Reviewers
 
 To add a new reviewer to the panel:
