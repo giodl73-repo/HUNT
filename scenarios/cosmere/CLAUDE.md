@@ -39,7 +39,7 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 | 3. PUZZLE POOL | Done | `PUZZLE-POOL.md` | 72 candidates (12/module), panel ranked, 36 recommended |
 | 4. ASSIGNMENT | Done | `PUZZLES.md` | 36 briefs, all 36 answer words coordinated with metas |
 | 5. META DESIGN | Done | `meta/` | 3 round metas + 1 super-meta, all verified |
-| 6. AUTHORING | -- | `puzzles/` | 36 puzzle files |
+| 6. AUTHORING | In Progress | `puzzles/` | Module A (P01-P06) complete, 30 remaining |
 | 7. EDITORIAL | -- | `reviews/editorial-review.md` | |
 | 8. INTEGRATION | -- | `reviews/integration-check.md` | |
 | 9. DELIVERY BUILD | -- | `delivery/` | Website + print |
@@ -74,12 +74,12 @@ Real-world domain. All facts from published Sanderson works and the Coppermind w
 
 | ID | Title | Pool ID | Mechanism | Difficulty | Metal | Status |
 |----|-------|---------|-----------|------------|-------|--------|
-| P01 | Burning Through | A-02 | Identification + ordered extraction | ★★ | Iron (#1) | Assigned |
-| P02 | Alloy Partners | A-04 | Pairing + extraction | ★★ | Steel (#2) | Assigned |
-| P03 | Feruchemical Reserves | A-07 | Identification + positional extraction | ★★★ | Zinc (#5) | Assigned |
-| P04 | The Allomantic Table | A-01 | Grid logic / constraint satisfaction | ★★★ | Brass (#6) | Assigned |
-| P05 | Three Arts, One Spike | A-05 | Triple-matching with error detection | ★★★★ | Pewter (#4) | Assigned |
-| P06 | The Coppercloud | A-09 | Deductive logic (constraint satisfaction) | ★★★★ | Bronze (#8) | Assigned |
+| P01 | Burning Through | A-02 | Identification + bold-word acrostic | ★★ | Iron (#1) | Authored (27/30) |
+| P02 | Alloy Partners | A-04 | Pairing + sentence-initial acrostic | ★★ | Steel (#2) | Authored (27/30) |
+| P03 | Feruchemical Reserves | A-07 | Identification + sentence-initial acrostic | ★★★ | Zinc (#5) | Authored (26/30) |
+| P04 | The Allomantic Table | A-01 | Grid logic + scrambled acrostic | ★★★ | Brass (#6) | Authored (28/30) |
+| P05 | Three Arts, One Spike | A-05 | Triple-matching + intro acrostic | ★★★★ | Pewter (#4) | Authored (27/30) |
+| P06 | The Coppercloud | A-09 | Deductive logic (seating + metals) | ★★★★ | Bronze (#8) | Authored (29/30) |
 
 ### Module B — Scadrial History (Team Beta)
 
