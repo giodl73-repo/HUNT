@@ -14,10 +14,14 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
 - **Impact:** Low. Part 5 was a readiness assessment for v1 puzzles, not a data dependency.
 - **Fix:** Optionally update Part 5 or add a note that it reflects v1 only.
 
-**BUG-L02: R2-META mechanism needs tightening during authoring**
+**BUG-L02: R2-META mechanism needs tightening during authoring** — RESOLVED in R2-META authoring
 - The R2-META "first alert station → starting position = 3" derivation is described at high level in META-DESIGN.md but the exact extraction mechanism (how 6 numeric values produce the number 3) needs a cleaner single-path derivation during Stage 6 authoring.
 - Current design offers two candidate extraction methods; only one should survive to authoring.
 - **Impact:** Medium. Does not block Stage 4/5 but must be resolved before Stage 6.
+- **Resolution:** R2-META-response.md selects parity-based mechanism: odd = ANOMALY,
+  lowest odd value = first alert, controlling station roster position = starting position.
+  Single clean derivation path. Both BUG-L02 and BUG-L06 resolved.
+- **Status:** CLOSED.
 
 **BUG-L03: R3-05 operation count encoding is fragile** — RESOLVED in authoring
 - The 12-operation count for R3-05 depends on a specific shutdown/cleanup sequence (D re-toggled, guards A/B closed) that the solver must discover from the procedure log.
@@ -54,7 +58,7 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
 - **Impact:** Low. Answer value (7) is unchanged. Only the PUZZLES.md label is wrong.
 - **Fix:** Update PUZZLES.md R2-02 narrative to say "Security Computer" instead of "Comms Computer."
 
-**BUG-L06: R2-META derivation still has two candidate mechanisms**
+**BUG-L06: R2-META derivation still has two candidate mechanisms** — RESOLVED in R2-META authoring
 - BUG-L02 noted that META-DESIGN.md describes two candidate extraction methods for
   producing starting position = 3 from the six R2 feeder values.
 - Now that all 6 R2 puzzles are authored, the R2-META authoring (Stage 6) needs to pick one.
@@ -62,9 +66,8 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
   GAP +00:03 (R2-04 shields), GAP +00:14 (R2-02 sensor suppression),
   GAP +00:18 (R2-05 relay failure), GAP +00:22 (R2-01 EPS reroute),
   GAP +00:25 (R2-06 reactor state), GAP +01:08 (R2-03 heat source).
-- This timeline could support a "first event → station → position" derivation,
-  but the exact mechanism needs the R2-META puzzle to be authored.
-- **Impact:** Medium. Blocks R2-META authoring but not R2 feeder completion.
+- **Resolution:** R2-META-response.md authored with parity-based mechanism. See BUG-L02.
+- **Status:** CLOSED.
 
 **BUG-L07: R3-03 and R3-05 timeline summaries were not chronological**
 - R3-03 section 7 listed GAP +01:22 before GAP +00:42 (puzzle order, not chronological).
@@ -81,8 +84,20 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
   with clean explanation.
 - **Status:** CLOSED.
 
+**BUG-L09: META-DESIGN.md station-to-roster table is stale**
+- META-DESIGN.md R2-META section has a station-to-roster mapping table with positions
+  that don't match the actual duty roster (OPS=2, COMPUTER/ENG=6, ENVIRO=4, TAC=1, ENG=5).
+- The authored R2-META-response.md uses the correct roster (OPS=0/TORRES, COMPUTER=3/KWON,
+  ENVIRO=6/PARK, TAC=1/NAKAMURA, ENG=4/REEVES).
+- The final answer (position 3 = KWON) is correct in both, but the intermediate table
+  in META-DESIGN.md is from an earlier design draft.
+- **Impact:** Low. META-DESIGN.md is a design document, not solver-facing.
+- **Fix:** Update META-DESIGN.md table to match the authored roster positions.
+
 ## Closed
 
+**BUG-L02** — closed 2026-02-28. Resolved in R2-META authoring (parity-based mechanism).
 **BUG-L03** — closed 2026-02-28. Resolved in R3-05 authoring.
+**BUG-L06** — closed 2026-02-28. Resolved in R2-META authoring (same as BUG-L02).
 **BUG-L07** — closed 2026-02-28. Fixed in Stage 7 editorial.
 **BUG-L08** — closed 2026-02-28. Fixed in Stage 7 editorial.

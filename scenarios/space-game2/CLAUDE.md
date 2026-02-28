@@ -45,7 +45,7 @@ The instruments speak. Terse. No flavor text. Evidence only.
 | 5. META DESIGN | Done | `meta/META-DESIGN.md` | CyclicGroupDisplay final meta, 3 round metas |
 | 6. AUTHORING | Done | `puzzles/` | 17 puzzle files authored with widget configs, reference cards, solve paths |
 | 7. EDITORIAL | Done | `reviews/editorial-review.md` | 0 blockers, 3 major (1 open — R2-META mechanism), 7 minor. In-place fixes applied. |
-| 8. INTEGRATION | -- | `reviews/integration-check.md` | |
+| 8. INTEGRATION | Done | `reviews/integration-check.md` | 8/8 checks PASS. 3 round metas authored. BUG-L02/L06 resolved. BUG-L09 new (low). |
 | 9. DELIVERY BUILD | -- | `delivery/` | |
 | 10. PLATFORM TEST | -- | `tests/platform-test.md` | |
 | 11. POLISH | -- | Final pass | |
