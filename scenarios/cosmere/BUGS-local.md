@@ -217,3 +217,38 @@ Local bug tracker. Do NOT write to `../../BUGS.md`.
 **Description:** P18 (The Surge Wheel, rated 4-star) is a mechanical chain-lookup with no branching or backtracking. Given Windrunners as anchor, each position follows uniquely. The puzzle functions as a knowledge test, not constraint satisfaction. A 3-star rating may be more accurate.
 **Impact:** Downgrading to 3-star does not improve the difficulty curve (creates P15/P16/P18 triplet at 3 stars). The overrating is minor.
 **Mitigation:** Leave at 4 stars unless the author team wants to differentiate it from P17. Note: the extraction step (7 marked positions spelling PATTERN) adds modest complexity beyond the placement.
+
+---
+
+## Stage 8 Bugs (Integration Check)
+
+### BUG-INT-001: P10 word bank contains "UNITY" (super-meta answer)
+**Severity:** BLOCKER
+**Discovered:** Stage 8 (integration cross-puzzle spoiler check)
+**Description:** P10 (The Survivor's Legacy) includes a word bank of 8 connection words. One of them is UNITY -- the super-meta answer. A solver who encounters UNITY in P10 (Round 1, early in the hunt) and later reaches the super-meta may recall it, drastically reducing the final extraction's difficulty.
+**Impact:** Direct exposure of the super-meta answer in a feeder puzzle. Compromises the hunt's final aha moment.
+**Fix:** Replace UNITY in P10's word bank with UNIFICATION (or UNION). The connection between C7 (Kelsier's rebellion -> conditions for Sazed) and E-e (Harmony) can be named UNIFICATION. The U-initial is preserved for the acrostic extraction. Update the extraction verification accordingly.
+
+### BUG-INT-002: SUPER-META.md has "RAIB" instead of "RAIBL" (truncated)
+**Severity:** MAJOR
+**Discovered:** Stage 8 (integration meta verification)
+**Description:** SUPER-META.md lines 28 and 59 list the Round II meta answer as "RAIB" (4 characters). The correct ROT13 encoding of ENVOY is "RAIBL" (5 characters). The verification block then references RAIB[5]=L, which is invalid for a 4-character string. This was partially flagged at Stage 7 (the META-II-OATHS.md header was corrected from RAIB to RAIBL), but the SUPER-META.md references were not updated.
+**Impact:** Documentation inconsistency. If SUPER-META.md is used during Stage 9 delivery build, the truncated answer could cause confusion or errors.
+**Fix:** Replace "RAIB" with "RAIBL" on lines 28 and 59 of `meta/SUPER-META.md`.
+
+### BUG-INT-003: 4 difficulty triplets across Modules C, D, E, F
+**Severity:** MAJOR
+**Discovered:** Stage 8 (integration difficulty curve analysis)
+**Description:** Four modules contain 3 consecutive puzzles at the same difficulty rating:
+- Module C: P14/P15/P16 all at 3 stars
+- Module D: P21/P22/P23 all at 3 stars
+- Module E: P26/P27/P28 all at 3 stars
+- Module F: P33/P34/P35 all at 4 stars
+These triplets represent genuine progression stalls within modules.
+**Impact:** Teams working linearly through a module face 3 consecutive puzzles with no difficulty variation, reducing the sense of progression.
+**Fix:** Reclassify 4 puzzles (one per triplet) to break each run:
+- P15: 3-star -> 4-star (underdocumented spren identification is harder than stated)
+- P22: 3-star -> 4-star (cryptic crossword requires dual competency)
+- P27: 3-star -> 4-star (deep lore chronology of Splintering events)
+- P32: 3-star -> 4-star (cross-world Cognitive Shadow matching)
+These changes break all 4 triplets without altering puzzle content.
