@@ -126,10 +126,10 @@ All 6 answer words were coordinated before assignment. The meta extraction takes
 
 | ID | Brief | Authored | Editorial | Tested | Final |
 |----|-------|----------|-----------|--------|-------|
-| P1 | done | -- | -- | -- | -- |
-| P2 | done | -- | -- | -- | -- |
-| P3 | done | -- | -- | -- | -- |
-| P4 | done | -- | -- | -- | -- |
-| P5 | done | -- | -- | -- | -- |
-| P6 | done | -- | -- | -- | -- |
+| P1 | done | done | -- | 27.0/30 PASS | -- |
+| P2 | done | done | -- | 28.7/30 PASS | -- |
+| P3 | done | done | -- | 28.0/30 PASS | -- |
+| P4 | done | done | -- | 25.3/30 PASS | -- |
+| P5 | done | done | -- | 26.0/30 PASS | -- |
+| P6 | done | done | -- | 29.0/30 PASS | -- |
 | META | done | -- | -- | -- | -- |
