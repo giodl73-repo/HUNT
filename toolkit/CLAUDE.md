@@ -51,6 +51,8 @@ claude
 | `/hunt world` | Fictional universe design — canon, data tables, lock protocol |
 | `/hunt review full <file>` | 12-expert panel reviews any document |
 | `/hunt review rank <file>` | Panel ranks a puzzle pool |
+| `/hunt resume` | Resume pipeline from next incomplete stage (crash-safe) |
+| `/hunt publish` | Build clean solver-facing distribution zip (strips answers, working files) |
 | `/hunt status` | Pipeline dashboard |
 | `/hunt meta` | Meta design, verification, grid building |
 | `/hunt edit` | Editorial review of author submissions before blind testing |
