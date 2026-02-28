@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WVLG 92.7 FM &mdash; The Long Wave &mdash; Final Broadcast</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #1a1210;
+    color: #c9b88a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1.5rem;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 640px;
+    width: 100%;
+  }
+
+  /* --- Station Header --- */
+  .station-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .call-letters {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #e8c36a;
+    letter-spacing: 6px;
+    margin-bottom: 0.25rem;
+  }
+
+  .frequency {
+    font-size: 1rem;
+    color: #6b6156;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+
+  .on-air {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: #c43c2d;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .on-air-dot {
+    width: 8px;
+    height: 8px;
+    background: #c43c2d;
+    border-radius: 50%;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 4px #c43c2d; }
+    50% { opacity: 0.4; box-shadow: 0 0 1px #c43c2d; }
+  }
+
+  .show-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #c9b88a;
+    margin-top: 0.5rem;
+  }
+
+  .show-subtitle {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.9rem;
+    color: #6b6156;
+    margin-top: 0.25rem;
+  }
+
+  /* --- Dividers --- */
+  .vu-divider {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin: 2rem auto;
+    max-width: 200px;
+  }
+
+  .vu-bar {
+    width: 4px;
+    height: 12px;
+    background: #6b6156;
+    border-radius: 1px;
+  }
+
+  .vu-bar:nth-child(-n+4) { background: #4a9e5c; }
+  .vu-bar:nth-child(n+5):nth-child(-n+7) { background: #e8c36a; }
+  .vu-bar:nth-child(n+8) { background: #c43c2d; }
+
+  .thin-rule {
+    width: 60px;
+    border-top: 1px solid #3a3028;
+    margin: 1.5rem auto;
+  }
+
+  /* --- Tagline / Vee --- */
+  .station-tagline {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6b6156;
+    margin-bottom: 2rem;
+  }
+
+  .vee-voice {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #c9b88a;
+    text-align: center;
+    line-height: 1.8;
+    margin: 2rem 1rem;
+    opacity: 0.85;
+  }
+
+  /* --- Set List --- */
+  .setlist {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #2a211a;
+    border-left: 3px solid #e8c36a;
+  }
+
+  .setlist-header {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #6b6156;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .setlist-item {
+    display: block;
+    padding: 0.6rem 0;
+    color: #c9b88a;
+    text-decoration: none;
+    border-bottom: 1px solid #3a3028;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .setlist-item:last-child {
+    border-bottom: none;
+  }
+
+  .setlist-item:hover {
+    color: #e8c36a;
+  }
+
+  .set-number {
+    color: #6b6156;
+    margin-right: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .set-title {
+    color: inherit;
+  }
+
+  /* --- Meta prompt --- */
+  .meta-prompt {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6b6156;
+    margin: 2rem 0 1rem;
+    line-height: 1.6;
+  }
+
+  /* --- Submit Button --- */
+  .submit-section {
+    text-align: center;
+    margin: 1.5rem 0 3rem;
+  }
+
+  a.submit-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1.5px solid #e8c36a;
+    color: #e8c36a;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  a.submit-btn:hover {
+    background: #e8c36a;
+    color: #1a1210;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #3a3028;
+    margin-top: 3rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+  }
+
+  .footer .years {
+    color: #6b6156;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 480px) {
+    body { padding: 1.5rem 1rem; }
+    .call-letters { font-size: 1.6rem; letter-spacing: 4px; }
+    .show-title { font-size: 1.1rem; }
+    .setlist { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Station Header -->
+  <header class="station-header">
+    <div class="on-air">
+      <span class="on-air-dot"></span>
+      ON AIR
+    </div>
+    <div class="call-letters">WVLG</div>
+    <div class="frequency">92.7 FM</div>
+    <div class="show-title">The Long Wave</div>
+    <div class="show-subtitle">Final Broadcast</div>
+  </header>
+
+  <!-- VU Meter Divider -->
+  <div class="vu-divider">
+    <span class="vu-bar"></span>
+    <span class="vu-bar"></span>
+    <span class="vu-bar"></span>
+    <span class="vu-bar"></span>
+    <span class="vu-bar"></span>
+    <span class="vu-bar"></span>
+    <span class="vu-bar"></span>
+    <span class="vu-bar"></span>
+    <span class="vu-bar"></span>
+  </div>
+
+  <!-- Station Tagline -->
+  <p class="station-tagline">
+    Independent radio since 1983. Signing off tonight.
+  </p>
+
+  <!-- Vee's Opening -->
+  <p class="vee-voice">
+    Forty years. Six sets. One last playlist.<br>
+    You know how this works &mdash; I play, you listen.<br>
+    But tonight, listen closer.
+  </p>
+
+  <div class="thin-rule"></div>
+
+  <!-- Set List -->
+  <nav class="setlist">
+    <div class="setlist-header">Tonight's Sets</div>
+    <a href="set1.html" class="setlist-item">
+      <span class="set-number">SET 1:</span>
+      <span class="set-title">Side A</span>
+    </a>
+    <a href="set2.html" class="setlist-item">
+      <span class="set-number">SET 2:</span>
+      <span class="set-title">Notation</span>
+    </a>
+    <a href="set3.html" class="setlist-item">
+      <span class="set-number">SET 3:</span>
+      <span class="set-title">Deep Cuts</span>
+    </a>
+    <a href="set4.html" class="setlist-item">
+      <span class="set-number">SET 4:</span>
+      <span class="set-title">Chart Toppers</span>
+    </a>
+    <a href="set5.html" class="setlist-item">
+      <span class="set-number">SET 5:</span>
+      <span class="set-title">Between the Lines</span>
+    </a>
+    <a href="set6.html" class="setlist-item">
+      <span class="set-number">SET 6:</span>
+      <span class="set-title">Name That Band</span>
+    </a>
+  </nav>
+
+  <!-- Meta Prompt -->
+  <p class="meta-prompt">
+    When you have decoded all six sets,<br>
+    use the playlist card.
+  </p>
+
+  <!-- Submit Button -->
+  <div class="submit-section">
+    <a href="submit.html" class="submit-btn">Submit the Final Message</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="years">1983 &mdash; 2023</div>
+    WVLG 92.7 FM &middot; The Long Wave<br>
+    Signing off.
+  </footer>
+
+</div>
+
+</body>
+</html>

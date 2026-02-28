@@ -37,7 +37,7 @@
 | 6. AUTHORING | `puzzles/*.md` | done |
 | 7. EDITORIAL | `reviews/editorial-review.md` | done |
 | 8. INTEGRATION | Integration checklist | done |
-| 9. DELIVERY BUILD | `delivery/` | -- |
+| 9. DELIVERY BUILD | `delivery/` | done |
 | 10. PLATFORM TEST | `tests/live-solve-simulation.md` | -- |
 | 11. POLISH | Ship-ready | -- |
 
