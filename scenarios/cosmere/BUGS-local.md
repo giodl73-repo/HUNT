@@ -80,6 +80,54 @@ Local bug tracker. Do NOT write to `../../BUGS.md`.
 **Impact:** The Meta II verification chain uses ORELO[4]=L, which equals ORELY[4]=L, so the meta answer is unaffected. However, the registered answer is technically wrong.
 **Mitigation:** Update `meta/cosmere-answers.md` line for P23 from ORELO to ORELY. Verify no downstream dependencies on the specific string ORELO.
 
+### BUG-S6-006: P13 Herald's Madness — no 'B' in well-documented Herald gemstones
+**Severity:** Medium
+**Discovered:** Stage 6 (authoring P13, Team Gamma)
+**Description:** The answer BROKEN requires 'B'. Among the 6 best-documented Heralds (Jezrien, Nale, Shalash, Kalak, Talenel, Ishar), their gemstones (Sapphire, Smokestone, Garnet, Amethyst, Topaz, Heliodor) contain no 'B'. Only Ruby (Chanarach/Dustbringers) has B. This required including Chanarach (#3, with [VERIFY] status) and substituting Shalash for Kalak to obtain N from Garnet.
+**Impact:** The brief's stated extraction ("Herald number ordering") was replaced with presentation-order extraction using explicit ward numbers. The Herald set was expanded to include one less-documented Herald.
+**Resolution:** P13 uses 6 Heralds (Chanarach, Jezrien, Talenel, Nale, Ishar, Shalash) with explicit ward numbers (3,7,2,4,2,4) that index into gemstone names. Extraction verified: Ruby[3]=B, Sapphire[7]=R, Topaz[2]=O, Smokestone[4]=K, Heliodor[2]=E, Garnet[4]=N = BROKEN.
+
+### BUG-S6-007: P14 Ideals and Oaths — no 'V'-initial word in confirmed Radiant Oaths
+**Severity:** High
+**Discovered:** Stage 6 (authoring P14, Team Gamma)
+**Description:** The answer DEVOTE requires 'V' via acrostic. No confirmed Radiant Oath (First Ideal, Windrunner 2nd-4th, Edgedancer 2nd-3rd, Bondsmith 2nd-3rd, Lightweaver Truths, Skybreaker 2nd-5th) contains any word starting with V. A pure first-letter acrostic cannot produce DEVOTE.
+**Impact:** The brief's stated extraction ("first letters of missing words") is infeasible for V.
+**Resolution:** P14 uses a marked-position extraction instead — each blanked word has one position marked with [_], and the letter at that position is extracted. The word "divide" (Bondsmith 2nd Ideal) provides V at position 3. This preserves the fill-in-the-blank + identification mechanic while enabling DEVOTE. Ordering rule: Ideal number first, then Order number within same Ideal.
+
+### BUG-S6-008: P15 Spren Bonds — Ashspren behavior underdocumented
+**Severity:** Low
+**Discovered:** Stage 6 (authoring P15, Team Gamma)
+**Description:** Ashspren (Dustbringers) have minimal behavioral documentation in knights-radiant.md or published works. The P15 vignette for Ashspren relies on inferring fire/destruction/control themes from the Order's nature rather than confirmed spren behavior.
+**Impact:** The Ashspren vignette may not be uniquely identifiable by all solvers. However, the other 5 spren types in P15 are well-documented, and elimination logic can resolve any ambiguity.
+**Mitigation:** The description emphasizes fire/ember imagery and the destruction/restraint duality, which strongly implies the Dustbringer-associated spren. No other spren type matches this profile.
+
+### BUG-S6-009: P16 Radiant Roster — no 'W' in any Radiant character first name
+**Severity:** High
+**Discovered:** Stage 6 (authoring P16, Team Gamma)
+**Description:** The answer SWORN requires 'W'. No confirmed Radiant character (Kaladin, Szeth, Shallan, Jasnah, Dalinar, Navani, Lift, Renarin, Venli, Malata, Zu) has 'W' in their first name. The brief's stated extraction ("Order number indexes into character name") cannot produce W.
+**Impact:** The extraction mechanism was redesigned.
+**Resolution:** P16 uses a bold-word acrostic — each character description contains one bolded word, and the first letters of the 5 Radiant characters' bold words (sorted by Order number) spell SWORN: Surgeon's(S), White(W), Overlooked(O), Refracted(R), New(N). Non-Radiants' bold words are discarded.
+
+### BUG-S6-010: P17 Double Eye — ring topology conflicts with TOWER extraction
+**Severity:** High
+**Discovered:** Stage 6 (authoring P17, Team Gamma)
+**Description:** The answer TOWER requires 'O'. Only Stonewards[3] and Bondsmiths[2] contain 'O' among Order names. The brief's stated extraction ("Surge pairing position -> letter 1 or 2") creates conflicts: Windrunners and Bondsmiths both need Adhesion for their respective letters (W and O), but Adhesion can only confirm one of them. Similar conflicts arise for T/Stonewards via Tension.
+**Impact:** The Surge-pairing extraction is infeasible for TOWER.
+**Resolution:** P17 uses a Stormlight-depth extraction — 5 of 10 positions are marked as "infused" with depth values (1 or 2) indicating which letter of the Order name to read. Starting from the Soldier's seat (Stonewards) clockwise: Stonewards[2]=T, Bondsmiths[2]=O, Windrunners[1]=W, Edgedancers[1]=E, Truthwatchers[2]=R = TOWER.
+
+### BUG-S6-011: P18 Surge Wheel — ring placement is mechanical chain-deduction
+**Severity:** Low
+**Discovered:** Stage 6 (authoring P18, Team Gamma)
+**Description:** With Windrunners fixed and all 10 Surge names labeled on the wheel, the remaining 9 positions are determined by simple chaining (each position follows uniquely from its neighbor's Surges). No branching, backtracking, or logical deduction is needed beyond lookup.
+**Impact:** The 4-star difficulty rating may be generous. The puzzle functions more as a knowledge test (do you know each Order's two Surges?) than a constraint satisfaction problem.
+**Mitigation:** P18 is positioned as the "reconstruction" complement to P17. The pair covers the Double Eye system comprehensively. The extraction (reading 7 marked positions to spell PATTERN) adds a second step. The puzzle may warrant downgrade to 3 stars at editorial review.
+
+### BUG-S6-012: Toolkit gap confirmed — no ring-topology puzzle template
+**Severity:** Low
+**Discovered:** Stage 6 (authoring P17 and P18, Team Gamma)
+**Description:** Confirms BUG-S3-006. Both P17 and P18 required custom ring-topology designs with no template support. The extraction design for both puzzles required extensive iteration due to letter-availability constraints in Order/Gemstone/Surge names.
+**Mitigation:** Recommend adding a ring-topology template to `toolkit/templates/` with guidance on checking letter availability in cyclic constraint puzzles before committing to answer words.
+
 ### BUG-S6-005: P24 Stormwall — roshar.md location list insufficient for TEMPEST
 **Severity:** Low
 **Discovered:** Stage 6 (authoring P24)
