@@ -36,6 +36,18 @@ Bugs and issues specific to the Games Magazine scenario. Not backported to `../.
 **Description:** The brief in PUZZLES.md says "The 6 changed letters, in order of appearance, spell SECRET." The authored puzzle uses born/burn, lime/line, light/sight, long/lone, tint/tine, bale/bane which spells UNSEEN. The puzzle file and solution page are consistent with each other. The brief was an early design that was revised during authoring.
 **Status:** Puzzle is correct. Brief is outdated. No action needed.
 
+### BUG-GM-006: P3 intro says "remaining eight" but should say "remaining nine"
+**Severity:** Low
+**File:** `puzzles/P3-camouflage-club.md`, line 5
+**Description:** The puzzle intro says "solve the grid using the remaining eight." Since there are 10 clues and 1 is false, the remaining count is 9. The HTML version (page-05-camouflage-club.html) correctly says "remaining nine." The .md source has a residual error from an earlier fix that corrected "nine clues" to "ten clues" but missed updating "eight" to "nine" in the same sentence.
+**Status:** Open. Fix in Stage 11 polish.
+
+### BUG-GM-007: P5 essay grammar mismatch with MICRODOTS answer
+**Severity:** Low
+**File:** `puzzles/P5-redacted.md`, paragraph 2
+**Description:** The essay reads "reduce entire pages of stolen documents to a single [█████████]^2 (9)." The answer is MICRODOTS (plural, 9 letters). "A single" + plural noun is grammatically incorrect. The reader might expect MICRODOT (8 letters, singular) which does not match the enumeration (9). Suggest rephrasing to avoid "a single" before the blank (e.g., "reduce entire pages to [█████████]^2 (9)").
+**Status:** Open. Fix in Stage 11 polish.
+
 ---
 
 ## Pipeline Divergences Noted

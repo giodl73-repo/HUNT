@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IRONFALL-ARCHIVE.NET — Shutting Down</title>
+  <style>
+    /* === RESET === */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* === BODY — 90s tiled background === */
+    body {
+      background-color: #0A0A2E;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='8' height='8' fill='%230D0D35'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%230D0D35'/%3E%3C/svg%3E");
+      color: #C0C0C0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    /* === WRAPPER — 640px centered === */
+    .page-wrapper {
+      width: 640px;
+      margin: 20px auto;
+      border: 3px outset #C0C0C0;
+      background-color: #0A0A2E;
+    }
+
+    /* === HEADER === */
+    .site-header {
+      background-color: #1A1A4E;
+      border-bottom: 2px solid #C0C0C0;
+      padding: 10px;
+      text-align: center;
+    }
+    .site-title {
+      font-family: 'Arial Black', Impact, Arial, sans-serif;
+      font-size: 28px;
+      color: #FFCC00;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 2px 2px 0px #000;
+    }
+    .site-subtitle {
+      font-size: 12px;
+      color: #808080;
+      margin-top: 4px;
+    }
+
+    /* === NAV BAR === */
+    .nav-bar {
+      background-color: #333366;
+      border-bottom: 1px solid #C0C0C0;
+      padding: 6px 10px;
+      text-align: center;
+    }
+    .nav-bar a {
+      color: #00FF00;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 2px 12px;
+      border: 1px outset #808080;
+      background-color: #222255;
+      margin: 0 4px;
+      display: inline-block;
+    }
+    .nav-bar a:hover {
+      background-color: #444488;
+      color: #FFCC00;
+    }
+
+    /* === MARQUEE === */
+    .scroll-bar {
+      background-color: #000;
+      border-bottom: 1px solid #404040;
+      padding: 4px 0;
+      font-size: 12px;
+      color: #FF6600;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .scroll-text {
+      display: inline-block;
+      animation: scroll-left 30s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(640px); }
+      100% { transform: translateX(-200%); }
+    }
+
+    /* === MAIN CONTENT === */
+    .content {
+      padding: 20px;
+    }
+
+    /* === COUNTDOWN === */
+    .countdown-section {
+      text-align: center;
+      padding: 30px 20px;
+      border: 2px double #FF6600;
+      margin: 10px 0 20px 0;
+      background-color: #0D0D15;
+    }
+    .countdown-label {
+      font-family: 'Arial Black', Impact, sans-serif;
+      font-size: 16px;
+      color: #FF6600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    .countdown-timer {
+      font-family: 'Courier New', monospace;
+      font-size: 48px;
+      color: #FF6600;
+      letter-spacing: 6px;
+      margin: 10px 0;
+      text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+    }
+    .countdown-note {
+      font-size: 11px;
+      color: #808080;
+      margin-top: 8px;
+    }
+
+    /* === WELCOME MESSAGE === */
+    .welcome {
+      border: 1px solid #404040;
+      background-color: #111138;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .welcome h2 {
+      font-family: 'Arial Black', Impact, sans-serif;
+      font-size: 16px;
+      color: #FFCC00;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #404040;
+      padding-bottom: 6px;
+    }
+    .welcome p {
+      margin-bottom: 8px;
+      color: #C0C0C0;
+    }
+
+    /* === SECTION LINKS === */
+    .sections {
+      margin: 20px 0;
+    }
+    .section-box {
+      border: 2px outset #808080;
+      background-color: #1A1A3E;
+      margin-bottom: 10px;
+      padding: 12px;
+    }
+    .section-box h3 {
+      font-family: 'Arial Black', Impact, sans-serif;
+      font-size: 14px;
+      color: #00FF00;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .section-box p {
+      font-size: 13px;
+      color: #A0A0A0;
+    }
+    .section-box a {
+      color: #0066FF;
+      text-decoration: underline;
+    }
+    .section-box a:visited {
+      color: #660099;
+    }
+
+    /* === STATS BAR === */
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #404040;
+      background-color: #0D0D20;
+      padding: 8px 12px;
+      margin: 20px 0;
+      font-size: 11px;
+      color: #808080;
+    }
+
+    /* === FORUM PREVIEW === */
+    .forum-preview {
+      border: 1px solid #404040;
+      background-color: #111138;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .forum-preview h2 {
+      font-family: 'Arial Black', Impact, sans-serif;
+      font-size: 14px;
+      color: #FFCC00;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #404040;
+      padding-bottom: 6px;
+    }
+    .forum-post {
+      border-bottom: 1px dotted #333;
+      padding: 6px 0;
+      font-size: 12px;
+    }
+    .forum-post:last-child {
+      border-bottom: none;
+    }
+    .forum-user {
+      color: #00FF00;
+      font-weight: bold;
+    }
+    .forum-date {
+      color: #666;
+    }
+    .forum-text {
+      color: #A0A0A0;
+      margin-top: 2px;
+    }
+
+    /* === FOOTER === */
+    .site-footer {
+      background-color: #1A1A4E;
+      border-top: 2px solid #C0C0C0;
+      padding: 10px;
+      text-align: center;
+      font-size: 11px;
+      color: #808080;
+    }
+    .footer-counter {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      color: #00FF00;
+      background-color: #000;
+      display: inline-block;
+      padding: 2px 8px;
+      border: 1px inset #404040;
+      margin: 6px 0;
+    }
+    .footer-timer {
+      color: #FF6600;
+      font-size: 12px;
+    }
+
+    /* === HR === */
+    hr {
+      border: none;
+      height: 2px;
+      background-color: #C0C0C0;
+      margin: 15px 0;
+    }
+
+    /* === GUESTBOOK LINK === */
+    .guestbook {
+      text-align: center;
+      margin: 15px 0;
+      font-size: 12px;
+    }
+    .guestbook a {
+      color: #FFCC00;
+      text-decoration: none;
+      border: 1px outset #808080;
+      padding: 4px 16px;
+      background-color: #333366;
+    }
+
+    /* === BLINKING (subtle) === */
+    .blink {
+      animation: blink-anim 1.5s step-start infinite;
+    }
+    @keyframes blink-anim {
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="site-header">
+    <div class="site-title">IRONFALL-ARCHIVE.NET</div>
+    <div class="site-subtitle">The Community Archive for IRONFALL (SFC/SNES, 1993) &mdash; Est. 1997</div>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav-bar">
+    <a href="#">HOME</a>
+    <a href="#wiki">WIKI</a>
+    <a href="#forum">FORUM</a>
+    <a href="#secrets">SECRETS</a>
+    <a href="#about">ABOUT</a>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="scroll-bar">
+    <span class="scroll-text">
+      *** IRONFALL-ARCHIVE.NET &mdash; 29 YEARS OF COMMUNITY &mdash; SERVER SHUTDOWN SCHEDULED &mdash; THANK YOU FOR EVERYTHING ***
+    </span>
+  </div>
+
+  <div class="content">
+
+    <!-- COUNTDOWN -->
+    <div class="countdown-section">
+      <div class="countdown-label">Server Shutdown In</div>
+      <div class="countdown-timer" id="countdown">24:00:00</div>
+      <div class="countdown-note">
+        After 29 years, the hosting can no longer be maintained.<br>
+        All pages will be archived to read-only format at shutdown.<br>
+        <span class="blink" style="color: #FF6600;">Download what you need. The clock does not stop.</span>
+      </div>
+    </div>
+
+    <!-- WELCOME -->
+    <div class="welcome">
+      <h2>A Message From the Admin</h2>
+      <p>
+        This is it. Twenty-nine years ago, DarkKnight_97 registered this domain
+        on a student's budget and uploaded a bestiary page with six enemy entries
+        and a note that said "more to come." The community came. The community
+        built this.
+      </p>
+      <p>
+        847,293 visitors. 4,200 forum posts. 312 wiki pages. Every enemy stat
+        hand-counted. Every crafting recipe tested. Every dungeon floor mapped.
+        The work of thousands of hours by people who loved a game that sold
+        200,000 copies and was forgotten by everyone except us.
+      </p>
+      <p>
+        The hosting costs more than I can justify. I tried fundraising. I tried
+        cheaper providers. I tried everything. The server goes dark in 24 hours.
+      </p>
+      <p>
+        But before it does — one last thing. DataMiner_X says he found something.
+        The True Ending. After 30 years. Check the Secrets section.
+      </p>
+      <p style="color: #FFCC00;">
+        Thank you for playing. &mdash; DarkKnight_97, Admin
+      </p>
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <span>Registered Users: 2,847</span>
+      <span>Wiki Pages: 312</span>
+      <span>Forum Posts: 4,200</span>
+      <span>Online Now: 47</span>
+    </div>
+
+    <!-- WIKI SECTION -->
+    <div class="section-box" id="wiki">
+      <h3>[ WIKI ] &mdash; Community Database</h3>
+      <p>
+        The encyclopedia of IRONFALL. Every stat, every item, every location.
+        Built by the community, verified by DataMiner_X.
+      </p>
+      <p style="margin-top: 8px;">
+        <a href="wiki/bestiary">Bestiary v3.2 &mdash; Complete Stats</a>
+        &nbsp;|&nbsp; Edits: 6 &nbsp;|&nbsp; Last: DarkKnight_97<br>
+        <a href="wiki/crafting">Forge Guide &mdash; by Old_Forge_Fan</a>
+        &nbsp;|&nbsp; Edits: 17 &nbsp;|&nbsp; Last: Old_Forge_Fan<br>
+        <a href="wiki/saves">Save File Deep Dive</a>
+        &nbsp;|&nbsp; Edits: 24 &nbsp;|&nbsp; Last: DataMiner_X<br>
+        <a href="wiki/worldmap">World Map &mdash; All Connections</a>
+        &nbsp;|&nbsp; Edits: 9 &nbsp;|&nbsp; Last: LoreHunter<br>
+        <a href="wiki/battle">Battle Damage Calculator v2</a>
+        &nbsp;|&nbsp; Edits: 12 &nbsp;|&nbsp; Last: BattleMath_99
+      </p>
+    </div>
+
+    <!-- FORUM SECTION -->
+    <div class="section-box" id="forum">
+      <h3>[ FORUM ] &mdash; Community Discussion</h3>
+      <p>
+        Where the theories live. Where the arguments happened. Where the
+        discoveries were shared.
+      </p>
+      <p style="margin-top: 8px;">
+        <a href="forum/sightings">Enemy Sightings &mdash; Unconfirmed</a>
+        &nbsp;|&nbsp; Posts: 12 &nbsp;|&nbsp; Started by: IronFan_Kenji<br>
+        <a href="forum/endgame-build">The Perfect Build</a>
+        &nbsp;|&nbsp; Posts: 23 &nbsp;|&nbsp; Started by: CircuitBreaker<br>
+        <a href="forum/100-completion">100% Completion Guide</a>
+        &nbsp;|&nbsp; Posts: 18 &nbsp;|&nbsp; Started by: IronFan_Kenji<br>
+        <a href="forum/speedrun">The Speedrunner's Route</a>
+        &nbsp;|&nbsp; Posts: 31 &nbsp;|&nbsp; Started by: SpeedQueen<br>
+        <a href="forum/anomaly">Anomaly in the Code</a>
+        &nbsp;|&nbsp; Posts: 8 &nbsp;|&nbsp; Started by: DataMiner_X
+      </p>
+    </div>
+
+    <!-- SECRETS SECTION -->
+    <div class="section-box" id="secrets" style="border-color: #FF6600;">
+      <h3 style="color: #FF6600;">[ SECRETS ] &mdash; <span class="blink">NEW</span></h3>
+      <p style="color: #FFCC00;">
+        DataMiner_X has posted something in the Secrets section. After 30 years
+        of searching, he claims to have found the True Ending. This is not a drill.
+      </p>
+      <p style="margin-top: 8px;">
+        <a href="secrets/archive-index">The Archive Index</a>
+        &nbsp;|&nbsp; Restricted &nbsp;|&nbsp; Solve Act I first<br>
+        <a href="secrets/game-secrets">Game Secrets Screen</a>
+        &nbsp;|&nbsp; Restricted &nbsp;|&nbsp; Solve Act II first<br>
+        <a href="secrets/true-ending" style="color: #FF6600;">[SOLVED] The True Ending &mdash; I Found the Code</a>
+        &nbsp;|&nbsp; Posted: June 15, 2026, 11:59 PM
+      </p>
+    </div>
+
+    <hr>
+
+    <!-- RECENT FORUM ACTIVITY -->
+    <div class="forum-preview">
+      <h2>Latest Forum Activity</h2>
+
+      <div class="forum-post">
+        <span class="forum-user">DataMiner_X</span>
+        <span class="forum-date">&mdash; June 15, 2026, 11:59 PM</span>
+        <div class="forum-text">"After 30 years, I finally understand what Morimoto was hiding. It was never in one place. It was spread across everything he built."</div>
+      </div>
+
+      <div class="forum-post">
+        <span class="forum-user">SpeedQueen</span>
+        <span class="forum-date">&mdash; June 15, 2026, 10:22 PM</span>
+        <div class="forum-text">"If DataMiner_X is right, we need to solve every section of the archive before midnight. All of us. Together."</div>
+      </div>
+
+      <div class="forum-post">
+        <span class="forum-user">IronFan_Kenji</span>
+        <span class="forum-date">&mdash; June 15, 2026, 9:45 PM</span>
+        <div class="forum-text">"I have waited 30 years for this. I am not leaving until we find it."</div>
+      </div>
+
+      <div class="forum-post">
+        <span class="forum-user">BattleMath_99</span>
+        <span class="forum-date">&mdash; June 15, 2026, 9:30 PM</span>
+        <div class="forum-text">"The damage formula was just the beginning. Check every number in the archive. Nothing Morimoto built was an accident."</div>
+      </div>
+
+      <div class="forum-post">
+        <span class="forum-user">DarkKnight_97</span>
+        <span class="forum-date">&mdash; June 15, 2026, 8:00 PM</span>
+        <div class="forum-text">"I registered this domain 29 years ago. If we find the True Ending tonight, it will have been worth every cent."</div>
+      </div>
+    </div>
+
+    <!-- GUESTBOOK -->
+    <div class="guestbook">
+      <a href="#guestbook">SIGN THE GUESTBOOK</a>
+      <br><br>
+      <span style="font-size: 10px; color: #666;">
+        "Thank you for 29 years." &mdash; 847,293 visitors and counting
+      </span>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <div class="site-footer">
+    <div>IRONFALL-ARCHIVE.NET &mdash; Online Since 1997</div>
+    <div class="footer-counter">VISITORS: 847293</div>
+    <div class="footer-timer">
+      Server Shutdown: <span id="footer-countdown">24:00:00</span>
+    </div>
+    <div style="margin-top: 6px;">
+      IRONFALL &copy; 1993 Ashfield Interactive. Fan site. Not affiliated.<br>
+      Best viewed in Netscape Navigator 4.0 at 640x480.
+    </div>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<!-- COUNTDOWN TIMER SCRIPT -->
+<script>
+  (function() {
+    // Start at 24 hours
+    var totalSeconds = 24 * 60 * 60;
+    var mainEl = document.getElementById('countdown');
+    var footerEl = document.getElementById('footer-countdown');
+
+    function pad(n) {
+      return n < 10 ? '0' + n : '' + n;
+    }
+
+    function updateTimer() {
+      if (totalSeconds <= 0) {
+        var msg = 'THE ARCHIVE IS CLOSED.';
+        mainEl.textContent = '00:00:00';
+        mainEl.style.color = '#FFFFFF';
+        var label = document.querySelector('.countdown-label');
+        if (label) label.textContent = msg;
+        var note = document.querySelector('.countdown-note');
+        if (note) {
+          note.innerHTML = 'THANK YOU FOR EVERYTHING.';
+          note.style.color = '#FFCC00';
+        }
+        footerEl.textContent = 'CLOSED';
+        return;
+      }
+
+      var h = Math.floor(totalSeconds / 3600);
+      var m = Math.floor((totalSeconds % 3600) / 60);
+      var s = totalSeconds % 60;
+      var display = pad(h) + ':' + pad(m) + ':' + pad(s);
+
+      mainEl.textContent = display;
+      footerEl.textContent = display;
+
+      // Color change under 1 hour
+      if (totalSeconds < 3600) {
+        mainEl.style.color = '#FF0000';
+        mainEl.style.textShadow = '0 0 10px rgba(255,0,0,0.5)';
+      }
+
+      totalSeconds--;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  })();
+</script>
+
+</body>
+</html>

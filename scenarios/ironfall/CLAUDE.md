@@ -33,7 +33,7 @@ The archive speaks. Past tense for forum memories. Present tense for the countdo
 | 6. AUTHORING | Done | `puzzles/` files | All 10 puzzles authored, blind-tested >= 22/30 |
 | 7. EDITORIAL | Done | `reviews/editorial-review.md` | Voice consistent; P02 answer mismatch flagged |
 | 8. INTEGRATION | Done | `reviews/integration-check.md` | P03-P10 pass; P01+P02 need answer revision |
-| 9. DELIVERY BUILD | -- | `delivery/` files | |
+| 9. DELIVERY BUILD | Done | `delivery/` files | Site spec, homepage, theme guide, manual page |
 | 10. PLATFORM TEST | -- | Test checklists | |
 | 11. POLISH | -- | Final pass, hints, encoding | |
 

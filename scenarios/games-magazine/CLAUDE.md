@@ -66,6 +66,7 @@ Page 12:    Solutions + editor's note
 | `delivery/THEME.md` | Stage 9 | ✅ Magazine aesthetic, fonts, colors, CSS |
 | `delivery/print/PRINT-SPEC.md` | Stage 9 | ✅ Magazine print specifications |
 | `delivery/print/layout-guide.md` | Stage 9 | ✅ Per-page layout guide |
+| `tests/platform-test.md` | Stage 10 | ✅ Print proof checklist + reader simulation |
 
 ## Key Divergences from Standard Pipeline
 
@@ -88,10 +89,13 @@ Page 12:    Solutions + editor's note
 | 7 | EDITORIAL REVIEW | ✅ Done | 6 approved, 2 minor revision (grid construction) |
 | 8 | INTEGRATION | ✅ Done | All pages fit, solutions verified |
 | 9 | DELIVERY BUILD | ✅ Done | THEME.md + PRINT-SPEC.md + layout-guide.md |
+| 10 | PLATFORM TEST | ✅ Done | Print proof complete — 8/8 checks pass, 3 minor issues for polish |
 
 **Known construction gaps:** P1 crossword grid, P6 number grid, and P8 word search grid all need professional construction software to verify validity. The mechanisms, theme, and editorial format are sound. See `reviews/editorial-review.md` for details.
 
-**Bugs:** See `BUGS-local.md` for scenario-specific issues (5 logged, 2 fixed).
+**Bugs:** See `BUGS-local.md` for scenario-specific issues (7 logged, 2 fixed).
+
+**Stage 10 findings:** Platform test passed with 3 minor issues for Stage 11 polish: P4 intro under 40-word minimum (34 words), P3 .md intro says "remaining eight" (should be "nine"), P5 essay grammar mismatch ("a single MICRODOTS"). See `tests/platform-test.md`.
 
 ## Toolkit References
 
