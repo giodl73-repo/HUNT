@@ -42,6 +42,30 @@ Route bugs here during concurrent agent work. Do NOT write to the shared `../../
 - **Fix:** Optionally clean up PUZZLES.md R3-05 brief to remove the binary encoding
   discussion and clarify that the answer is the register count.
 
+**BUG-L05: PUZZLES.md R2-02 says node 7 is "Comms Computer" — world data says "Security Computer"**
+- PUZZLES.md R2-02 narrative: "Someone injected unauthorized data into the ODN through node 7 —
+  the Comms Computer node."
+- data-tables.md ODN topology: NODE-07 = Security Computer (SEC). NODE-05 = Comms Computer (OPS).
+- The authored R2-02-data-breach.md uses the correct world data label: node 7 = SECURITY.
+- The narrative revelation in R2-02 says the breach came through "NODE 07 — SECURITY COMPUTER"
+  with payload class "SENSOR DATA OVERRIDE" routed to NODE 15 (SENSOR COMPUTER).
+- The R2-02 narrative that the breach was used "to forge sensor readings" still holds —
+  the Security Computer has access to internal sensor feeds and access control databases.
+- **Impact:** Low. Answer value (7) is unchanged. Only the PUZZLES.md label is wrong.
+- **Fix:** Update PUZZLES.md R2-02 narrative to say "Security Computer" instead of "Comms Computer."
+
+**BUG-L06: R2-META derivation still has two candidate mechanisms**
+- BUG-L02 noted that META-DESIGN.md describes two candidate extraction methods for
+  producing starting position = 3 from the six R2 feeder values.
+- Now that all 6 R2 puzzles are authored, the R2-META authoring (Stage 6) needs to pick one.
+- The narrative revelations establish a clear timeline:
+  GAP +00:03 (R2-04 shields), GAP +00:14 (R2-02 sensor suppression),
+  GAP +00:18 (R2-05 relay failure), GAP +00:22 (R2-01 EPS reroute),
+  GAP +00:25 (R2-06 reactor state), GAP +01:08 (R2-03 heat source).
+- This timeline could support a "first event → station → position" derivation,
+  but the exact mechanism needs the R2-META puzzle to be authored.
+- **Impact:** Medium. Blocks R2-META authoring but not R2 feeder completion.
+
 ## Closed
 
 **BUG-L03** — closed 2026-02-28. Resolved in R3-05 authoring.
