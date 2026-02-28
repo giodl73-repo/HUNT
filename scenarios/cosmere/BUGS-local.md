@@ -252,3 +252,61 @@ These triplets represent genuine progression stalls within modules.
 - P27: 3-star -> 4-star (deep lore chronology of Splintering events)
 - P32: 3-star -> 4-star (cross-world Cognitive Shadow matching)
 These changes break all 4 triplets without altering puzzle content.
+
+---
+
+## Stage 10 Bugs (Platform Test)
+
+### BUG-PT-001: P30 solve time dominates Round 3 (90 min)
+**Severity:** MAJOR
+**Discovered:** Stage 10 (live solve simulation)
+**Description:** P30 (The Shattering, 5-star) consumes one solver for 90 minutes -- the longest single feeder solve in the hunt by a wide margin. The 16-seat circular arrangement with 14 constraint clues is grueling. While thematically justified for a 5-star showpiece, it creates a bottleneck: one solver (the Methodical) is locked on P30 for 1.5 hours while the team works around them.
+**Impact:** P30 absorbs disproportionate team resources in Round 3. Teams without a strong logic solver may stall entirely.
+**Mitigation:** Add an optional hint at Stage 11 that provides the anchoring step (Clue 12: Aona at seat 1) explicitly, reducing cold-start friction without trivializing the puzzle.
+
+### BUG-PT-002: Round 2 pacing runs 15-20% heavy
+**Severity:** MAJOR
+**Discovered:** Stage 10 (live solve simulation timing)
+**Description:** Round 2 (Roshar) takes 4-5 hours of a team's ~11.5 hour total, representing ~38% of solve time. Rounds 1 and 3 take ~30% and ~32% respectively. The Knights Radiant system (10 Orders x Surges x Heralds x Gemstones) has more moving parts than the Allomancy table, creating longer lookup times for identification puzzles.
+**Impact:** Slight pacing imbalance. Teams may feel Round 2 drags relative to the other rounds.
+**Mitigation:** Add a 1-page "Roshar Quick Reference" card to the print companion -- a condensed cheat sheet mapping each Order to its 2 Surges, Herald, and Gemstone on a single page. This reduces lookup time without altering puzzle difficulty.
+
+### BUG-PT-003: Newbie engagement in Round 2 is LOW
+**Severity:** MAJOR
+**Discovered:** Stage 10 (live solve simulation -- Newbie profile)
+**Description:** A solver who has read only Mistborn (not Stormlight Archive) can meaningfully contribute to only 3 of 12 Round 2 puzzles: P19 (identification with reference sheet), P20 (anagram mechanics are domain-neutral), and P24 (pure math). For 9 of 12 puzzles, the Newbie is either idle or serving as a transcription assistant.
+**Impact:** A team member with partial Cosmere knowledge may disengage during Round 2 (the longest round).
+**Mitigation:** This is inherent to the hunt's domain specificity. The print companion's reference sheets partially address it. No structural change recommended -- the Newbie profile is an edge case, and the hunt's target audience is "Cosmere readers who have read at least Mistborn Era 1 and The Stormlight Archive" per SCOPE.md.
+
+### BUG-PT-004: P33 "NAHELBOND" vs "NAHEL BOND" term ambiguity
+**Severity:** MINOR
+**Discovered:** Stage 10 (live solve simulation)
+**Description:** P33's worksheet shows 9 blanks for the VII term, implying a single word. The canonical Cosmere term is usually written "Nahel bond" (two words). A solver who writes "NAHEL BOND" (with a space) will miscount letter positions.
+**Impact:** Potential extraction error for an otherwise correctly identified term.
+**Fix:** Add a note to P33's extraction instructions: "All terms are written as a single word for extraction purposes. Spaces are removed."
+
+### BUG-PT-005: P36 Event X (Taravangian) direct/indirect classification debatable
+**Severity:** MINOR
+**Discovered:** Stage 10 (live solve simulation -- team debate)
+**Description:** Event X describes Taravangian-as-Odium altering Hoid's memories. The correct classification is INDIRECT (Hoid is passive/acted upon). The simulated team debated this for 15 minutes. The clue language uses passive voice for Hoid ("memories are altered in a conversation"), distinguishing it from direct events where Hoid is the agent, but reasonable solvers may interpret "Hoid was present" as sufficient for a direct classification.
+**Impact:** Incorrect classification of Event X would add a noise letter (Y) and remove a signal letter, breaking the extraction. However, the team resolved the debate correctly using close reading.
+**Mitigation:** The debate is a feature of the puzzle -- it rewards careful parsing of the direct/indirect distinction. Consider adding a Stage 11 hint: "Direct means the wanderer chose to act. Passive presence is not direct."
+
+### BUG-PT-006: SUPER-META.md "RAIB" truncation still unfixed
+**Severity:** MINOR (documentation only)
+**Discovered:** Stage 10 (reconfirmed from BUG-INT-002)
+**Description:** SUPER-META.md lines 28 and 59 still show "RAIB" instead of "RAIBL". The editorial review (Stage 7) fixed this in META-II-OATHS.md but not in SUPER-META.md. The integration check (Stage 8) flagged it as MAJOR. It has not been fixed.
+**Impact:** Documentation inconsistency only -- no solver sees this file. But if used during delivery build, could cause confusion.
+**Fix:** Replace "RAIB" with "RAIBL" on lines 28 and 59 of `meta/SUPER-META.md`.
+
+### BUG-PT-007: cosmere-answers.md verification chain has old typo (ORELO vs ORELY)
+**Severity:** MINOR (documentation only)
+**Discovered:** Stage 10 (formal verification)
+**Description:** `meta/cosmere-answers.md` line 116 shows `Bondsmiths(10, 4 Ideals): ORELO[4] = L`. The correct ROT13 for BERYL is ORELY, not ORELO. The answer is correct (both ORELO[4] and ORELY[4] = L), but the verification text has the old transposition.
+**Fix:** Update line 116 to `Bondsmiths(10, 4 Ideals): ORELY[4] = L`.
+
+### BUG-PT-008: P18 difficulty confirmed overstated (4-star should be 3-star)
+**Severity:** MINOR
+**Discovered:** Stage 10 (live solve simulation, confirming BUG-S6-011 and BUG-S7-005)
+**Description:** The Specialist chain-solves P18 in 10 minutes with no branching or backtracking. The 4-star rating is too high for what is effectively a lookup chain. The simulation confirms the editorial review's assessment.
+**Fix:** Downgrade P18 from 4-star to 3-star at Stage 11. Accept the resulting triplet (P15/P16/P18 at 3 stars) as a structural limitation.
