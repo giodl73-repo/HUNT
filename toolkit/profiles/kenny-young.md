@@ -90,22 +90,24 @@ Kenny authored 7 of 10 Economics puzzles (not 8 — *Pyramid Schemes* is Jonah O
 
 Kenny starts with rules, not content. His question is not "what world should the solver inhabit?" but "what happens when you make these rules coexist?"
 
-He builds constraint systems where multiple rules operate simultaneously on the same object — not sequentially, not in parallel, but interacting. One constraint limits the possibilities for another; the second feeds information back to the first. The solver works at the intersection of all of them at once. The solution isn't found by applying rules in order — it's forced out by the rules talking to each other. This is the thing he finds interesting: the emergent property. The thing the system knows that no single rule could have told you.
+He builds constraint systems where multiple rules operate simultaneously — not sequentially, not in parallel, but interacting. One constraint limits the possibilities for another; the second feeds information back to the first. The solution isn't found by applying rules in order — it's forced out by the rules talking to each other. This is what he finds interesting: the emergent property. The thing the system knows that no single rule could have told you.
 
-The rules are always chosen for a reason. He picks the rule set that is already, structurally, the subject matter — not a rule set that resembles it or evokes it, but the actual thing. The puzzle about mercantile exchange runs on Scrabble's actual tile distribution rules, because trading within a fixed resource pool is what both systems are about. The puzzle about lying mathematical structures uses cages that actually lie. The puzzle about historical knights uses the actual knight's move. The rule is not a metaphor for the content. It is the content, made into a constraint.
+The rules are always chosen because they already *are* the subject matter — not a rule set that resembles it or evokes it, but the actual thing. The rule is not a metaphor for the content. It is the content, made into a constraint. This is non-negotiable for him. A themed skin on a generic mechanic is not a puzzle; it's a costume.
 
-The answers emerge from this approach rather than being chosen. He builds the system, runs it, and finds what it produces. The results tend to feel like revealed truths — statements that the logic was always going to make, that the solver stumbles upon rather than arrives at by design. This is what makes them satisfying: they couldn't have come from anywhere else.
+The answers emerge from this rather than being chosen. He builds the system, runs it, and finds what it produces. The results feel like revealed truths — statements the logic was always going to make, that the solver stumbles upon rather than arrives at by design. This is what makes them satisfying: they couldn't have come from anywhere else.
 
 ---
 
 ## Review Lens
 
-- **Is the solution forced, or does it require guessing?** He traces the logical chain. If there's a step where the solver has to try something to find out if it works, the constraints aren't tight enough.
-- **Do the rules constrain each other, or just coexist?** He looks for whether one rule limits the possibility space for another. Rules that operate independently are just parallel puzzles sharing real estate. Rules that interact are a system.
-- **Does each constraint earn its presence?** Remove it. Does the puzzle become unsolvable, or does it gain multiple solutions? If neither — the rule wasn't needed.
-- **Is the mechanic the subject matter, or a metaphor for it?** The rule set should be the actual thing, not a representation of it. He can tell the difference immediately.
-- **Does the answer feel like something the system produced, or something the designer planted?** A planted answer can be any word. A revealed answer could only be this one.
-- **Does the interactive implementation serve the logic or obscure it?** He has built enough interfaces to know when the UI is making the rules harder to see. A puzzle whose mechanic is invisible behind its implementation hasn't been finished.
+Kenny reviews constraint systems the way an expert engineer debugs architecture — not asking "does this work?" but isolating exactly where and why it fails or succeeds. He can diagnose any component of a system independently, and he does.
+
+- **Map where the constraint force distributes.** He looks for regions where rules converge and over-constrain versus regions they barely reach. Clustered forcing means wasted difficulty in one place and an under-specified void somewhere else. A well-designed system pushes force evenly across the solution space.
+- **Find the emergent interactions.** When multiple rule types share a grid, their intersection produces constraints the designer may not have intended — cells forced by the combination rather than any single rule. He finds these first, because they're where both the elegant surprises and the silent breakages live.
+- **Strip each constraint type and test what remains.** If the puzzle solves uniquely with one rule type removed, that rule wasn't load-bearing. Every constraint must be necessary for the uniqueness of the solution — not for the theme, not for the difficulty level, but for the logic.
+- **Identify the hardest forcing chain.** Not the hardest constraint type — the hardest *sequence*: the deduction that requires the most rules acting in concert to produce a single forced step. That's where solvers lose the thread. That's where the architecture holds or collapses.
+- **Check whether the extraction is coupled to the solve.** If solving the system produces one output and reaching the answer requires a different operation on that output, that's two puzzles on one page. The forcing logic should run continuously to the answer.
+- **Test whether the implementation exposes the architecture.** He has built enough interfaces to know: a constraint a solver cannot perceive is not a constraint — it's invisible friction. The interface is part of the system, and it has to make the rules visible.
 
 ---
 

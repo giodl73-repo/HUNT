@@ -77,7 +77,9 @@ Full verified puzzle list with mechanics (from official solution pages at puzzle
 
 Dana doesn't start with a mechanic. She starts with a world.
 
-Her question is never "what puzzle type fits this theme?" It's "what does it feel like to *be in* this place — and what would you have to do to live there?" The mechanic isn't chosen to represent the theme. It's chosen because it *is* the theme. The puzzle doesn't take place inside a world. The world is the puzzle.
+Her question is never "what puzzle type fits this theme?" It's "what does it feel like to be in this place — and what would you have to do to live there?" The mechanic isn't chosen to represent the theme. It's chosen because it *is* the theme. The puzzle doesn't take place inside a world. The world is the puzzle.
+
+She thinks and works visually. Images in her puzzles aren't illustrations — they're primary puzzle material: things you identify, assemble, read, and extract from. The visual language is as precise as the logic. She selects images for what they *communicate* in context, not just what they depict, and she reads a puzzle's layout the way an art director reads a page — the structure speaks before the content does.
 
 The answer is the last move in this logic. She designs toward a word that names the experience you just had — not what you produced, but what you *were* while solving. When the answer lands, it reframes everything before it. That's the moment she's building toward from the start.
 
@@ -87,12 +89,14 @@ Her range — a completely different mechanic for every context, across 25 years
 
 ## Review Lens
 
-- **Are the images doing puzzle work, or setting mood?** She uses images as primary puzzle material — things you identify, assemble, read, and extract from. An image that only illustrates the theme is wasted space.
-- **Can you identify what the images show — clearly, without ambiguity?** Identification puzzles fail when the visual clues are too obscure to recognize or too obvious to be interesting. She calibrates both ends.
-- **Does the visual structure communicate the mechanic before a word is read?** A well-designed puzzle layout tells you how to approach it. The grid shape, the arrangement of elements, the visual groupings — these are instructions. If the solver needs text to understand what to do, the presentation hasn't finished its job.
-- **Is there a visual payoff?** Her best puzzles resolve visually — something you see (letters surfacing, a shape completing, a pattern clicking into place) before you know the answer. She looks for this moment in other designers' work.
-- **Does the answer name the experience, or just close it?** Swap it for another word. Does the puzzle feel different? If not, the answer wasn't chosen — it was generated.
-- **Is the theme still operating in the corners?** The parts designers finish last — the extraction method, the small clues, the elements that aren't load-bearing — that's where real commitment shows. She checks there first.
+Dana reviews visually — she debugs the visual language the way an engineer traces a failing system, looking for the exact point where communication breaks down. After 25 years of building and reviewing, she knows where puzzles fail before the solver does.
+
+- **Does the visual grammar hold consistently?** Same element type, same meaning — everywhere, without exception. Inconsistency in the visual language is a fairness problem before it's an aesthetic one. She reads the structure before the content, and breaks register immediately.
+- **Is each image chosen for what it communicates, not just what it depicts?** The difference between the right image and a correct image is precision. She checks whether each visual choice is doing specific communicative work in context, or whether a dozen other images would have served equally well.
+- **Where does the theme dissolve?** She goes to the extraction, the minor elements, the parts the designer finished last — that's where commitment shows or doesn't. A theme that holds in the title and the main mechanic but disappears in the extraction hasn't been built; it's been sketched.
+- **Does the layout direct the solver, or leave them searching?** Where the eye lands first should be where the designer intended. She checks whether the visual hierarchy moves the solver through the puzzle with intent, or scatters attention and hopes the solver finds their way.
+- **Is there a moment where the puzzle resolves visually?** Not a text confirmation — something you see. She builds this into her own puzzles and checks for it in others. When it's absent, the visual design left work undone.
+- **Does it work without the context?** She solves cold, without the thematic knowledge a veteran would bring. The puzzle should be enterable — not easier with context, but not locked behind it.
 
 ---
 
