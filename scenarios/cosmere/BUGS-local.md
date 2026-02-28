@@ -134,3 +134,47 @@ Local bug tracker. Do NOT write to `../../BUGS.md`.
 **Description:** The brief specifies that location initials in storm-arrival order spell the answer TEMPEST. roshar.md's Key Locations table (Urithiru, Shattered Plains, Kholinar, Shinovar, Kharbranth, Thaylen City, Alethkar, Azir) lacks locations starting with E, M, or P. The answer requires two T's, two E's, one M, one P, and one S — impossible from the table alone.
 **Impact:** The brief's extraction ("each location's initial letter, in storm-arrival order") requires locations not in roshar.md.
 **Resolution:** P24 uses a watchtower-glyph mechanic instead. Each location bears an assigned signal letter. The storm arrival order determines the reading sequence of these letters. This preserves the spatial/directional logic core while decoupling the extraction from location initials. Locations used (Shinovar, Azir, Purelake, Emul, Thaylenah, Alethkar, Shattered Plains) are all canonical Rosharan locations from published novels, though Purelake, Emul, and Thaylenah are not in the roshar.md table.
+
+---
+
+## Stage 6 Bugs (Module E Authoring — Team Epsilon)
+
+### BUG-S6-013: META-III narrative table has P26/P27 Shard assignments swapped
+**Severity:** Low
+**Discovered:** Stage 6 (post-authoring verification, Team Epsilon)
+**Description:** The narrative table in `meta/META-III-ADONALSIUM.md` (lines 98-100) lists P26 as referencing Odium ("The Shard's campaign of destruction") and P27 as referencing Preservation ("The Shard's magic system (Allomancy) and sacrifice"). The authoritative sources — `PUZZLES.md` and the Shard Assignment Map in `meta/cosmere-answers.md` — list P26=Preservation and P27=Odium. The descriptions in META-III are swapped.
+**Impact:** Descriptive inconsistency only. The meta mechanism (which Shards are represented vs. missing) is unaffected because both Preservation and Odium are in the "represented" set either way. The 4 missing Shards (Ambition, Dominion, Invention, Mercy) and the meta answer AMID are unchanged.
+**Mitigation:** Swap lines 99-100 in `meta/META-III-ADONALSIUM.md` so P26 references Preservation and P27 references Odium. Verify no downstream dependencies.
+
+### BUG-S6-014: P25 brief mechanism mismatch — count-based indexing infeasible
+**Severity:** Medium
+**Discovered:** Stage 6 (authoring P25, Team Epsilon)
+**Description:** The PUZZLES.md brief for P25 specifies "Categorization + count-based indexing" — the solver counts Shards per status category, and that count indexes into the category name. No combination of status-category names and Shard counts produces STATUS. The 4 status categories (Intact, Splintered, Transformed, Unknown) have counts 7, 5, 2, 2 respectively, yielding letters I/n, p/l, a/r, n/k — none spelling STATUS.
+**Impact:** The brief's stated extraction mechanism was replaced.
+**Resolution:** P25 uses direct positional extraction from identified Shard Intent names. Six of 16 fragment descriptions carry a bracketed extraction position. The solver identifies each fragment's Shard, then reads the indicated letter from the Intent name: PRESERVATION[4]=S, AUTONOMY[3]=T, VALOR[2]=A, DEVOTION[5]=T, RUIN[2]=U, VIRTUOSITY[7]=S = STATUS.
+
+### BUG-S6-015: P26 brief mechanism mismatch — "extraction" underspecified
+**Severity:** Low
+**Discovered:** Stage 6 (authoring P26, Team Epsilon)
+**Description:** The PUZZLES.md brief for P26 specifies "Identification + extraction" without specifying what is extracted from or how. The answer MORTAL requires letters not available from Vessel names alone (no Vessel name contains the letter T at a useful position). Extraction from Intent names was needed.
+**Resolution:** P26 extracts from Intent names (not Vessel names): HARMONY[4]=M, HONOR[2]=O, PRESERVATION[2]=R, DEVOTION[5]=T, AMBITION[1]=A, CULTIVATION[3]=L = MORTAL. Six of 11 Vessel descriptions carry extraction markers.
+
+### BUG-S6-016: P28 — no letter 'G' in any of the 16 Shard Intent names
+**Severity:** Medium
+**Discovered:** Stage 6 (authoring P28, Team Epsilon)
+**Description:** The answer GIFTED requires the letter G. None of the 16 Shard Intent names (Honor, Cultivation, Odium, Preservation, Ruin, Devotion, Dominion, Endowment, Autonomy, Ambition, Mercy, Valor, Whimsy, Invention, Virtuosity, Harmony) contain the letter G at any position. Extraction from Intent names cannot produce G.
+**Impact:** The brief's implied extraction (from Shard-level data) is infeasible for the first letter.
+**Resolution:** P28 extracts from magic system names instead: AWAKENING[9]=G, SURGEBINDING[7]=I, FERUCHEMY[1]=F, SANDMASTERY[8]=T, FORGERY[5]=E, VOIDBINDING[4]=D = GIFTED. This aligns with the puzzle's theme (Investiture types) better than Shard names would.
+
+### BUG-S6-017: P29 — extraction from Intent names infeasible for ASPECT
+**Severity:** Medium
+**Discovered:** Stage 6 (authoring P29, Team Epsilon)
+**Description:** The answer ASPECT requires both P and S at specific positions. Only PRESERVATION contains P among the 16 Intents, and it cannot serve as two different extraction sources. Direct letter extraction from grid-placed Intent names cannot produce ASPECT without duplication conflicts.
+**Impact:** The brief's implied extraction (from placed Shard names) was replaced.
+**Resolution:** P29 encodes the answer in the axis labels instead. Column initials A-S-P-E (Affirming, Strike, Principled, Expressive) plus Row A initial C (Conquered) and Row B initial T (Thriving) spell ASPECT. The solver must deduce the axis category names from the grid structure.
+
+### BUG-S6-018: P30 — circular arrangement uniqueness required anchoring and disambiguation clues
+**Severity:** Low
+**Discovered:** Stage 6 (authoring P30, Team Epsilon)
+**Description:** A 16-seat circular arrangement with 10 placed Vessels and 14 constraint clues initially had 2 valid solutions (Koravellium Avast and Bavadin could swap seats 10 and 11). Additionally, without an anchoring clue, all solutions had 16 rotational equivalents.
+**Resolution:** Added clue 12 ("Aona holds seat 1") as anchor and clue 13 ("Koravellium Avast holds an even-numbered seat") to force unique solution. Final arrangement verified: 1-Aona, 2-Skai, 4-Rayse, 6-Ati, 7-Leras, 9-Edgli, 10-Koravellium Avast, 11-Bavadin, 13-Ulas Dal, 15-Tanavast. Seats 3,5,8,12,14,16 are unknown Vessels.
