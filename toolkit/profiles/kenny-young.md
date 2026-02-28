@@ -2,13 +2,11 @@
 
 ## What Makes Him Exceptional
 
-Kenny Young has been building puzzle hunts since 1999. He is the reason Microsoft Puzzlehunt has infrastructure — he built PuzzleServer, the server that runs the hunts, and PuzzleJS, the interactive solving framework used across them. He is also the reason the hunts have technically adventurous puzzles.
+Kenny Young builds rule systems and then discovers what they know. He is the person who asks "what happens when you run these two constraint types on the same grid simultaneously?" — and then builds it, and finds that their intersection forces a unique solution. He does this across his entire body of work: combining constraint types, simulating complete game transcripts, writing code that must compile with specific substitutions, building Killer Sudoku grids where some cages deliberately lie. Each puzzle is a system that reveals something when you run it.
 
-His Economics round in PH 23 shows what he does at his best: **every puzzle is a logic or constraint system where the mechanic is inseparable from the subject matter.** Macroeconomics is a C++ code obfuscation puzzle. Mercantile Exchanges is a modified Scrabble game with a tile-bag-as-queue rule system. Guns and Butter combines battleship placement and domino tiling on the same grid — two constraint systems that must be satisfied simultaneously. Supply and Demand is a word classification + anagram system. None of these use a "generic puzzle type with economics flavor text." The economics IS the puzzle.
+He is also the reason Microsoft Puzzlehunt has infrastructure. He built PuzzleServer, the server that runs the hunts. He built PuzzleJS, the interactive solving framework. He built the front-end for the final metameta. This is not support work — it is the same conviction applied at a different scale. The mechanic means nothing if the solver can't interact with it cleanly.
 
-And then there is the **rhombicosidodecahedron meta** from PH 123 (2009). Solvers assembled 30 paper rectangles into a rhombic triacontahedron, then an icosahedron, then a dodecahedron, then combined them into a rhombicosidodecahedron — and found a chess puzzle on its surface. This is what happens when an engineer who builds for fun decides to make a meta.
-
-He has been doing this for 25 years. He never phones it in.
+He has been doing this for 25 years, across hundreds of puzzles. He never coasts.
 
 ## Identity
 - **Role**: Puzzle designer (freelance), former Microsoft software engineer (~29 years)
@@ -90,51 +88,24 @@ Kenny authored 7 of 10 Economics puzzles (not 8 — *Pyramid Schemes* is Jonah O
 
 ## Design Philosophy
 
-Kenny Young and Dana Young share a fundamental conviction: **the mechanic must be an instance of the theme, not a metaphor for it.** They arrived at this independently, in different puzzle types, and have sustained it for 25 years of collaboration. Looking at his PH 23 puzzles confirms this isn't coincidence — it's philosophy.
+Kenny starts with rules, not content. His question is not "what world should the solver inhabit?" but "what happens when you make these rules coexist?"
 
-### The constraint is the content
+He builds constraint systems where multiple rules operate simultaneously on the same object — not sequentially, not in parallel, but interacting. One constraint limits the possibilities for another; the second feeds information back to the first. The solver works at the intersection of all of them at once. The solution isn't found by applying rules in order — it's forced out by the rules talking to each other. This is the thing he finds interesting: the emergent property. The thing the system knows that no single rule could have told you.
 
-Kenny doesn't design puzzles *about* things. He designs puzzles *as* things.
+The rules are always chosen for a reason. He picks the rule set that is already, structurally, the subject matter — not a rule set that resembles it or evokes it, but the actual thing. The puzzle about mercantile exchange runs on Scrabble's actual tile distribution rules, because trading within a fixed resource pool is what both systems are about. The puzzle about lying mathematical structures uses cages that actually lie. The puzzle about historical knights uses the actual knight's move. The rule is not a metaphor for the content. It is the content, made into a constraint.
 
-The Lie Groups puzzle (Math round) makes some Killer Sudoku cages deliberately wrong — they "lie." The grid is a mathematical object where certain cells break the rules. That's what a Lie group is: a mathematical structure that preserves some things while breaking others. The solving experience *is* the concept, not an illustration of it.
-
-The Twelve Knights of the Round Table (History round) is solved by tracing chess knight's moves through a grid. The mechanic is literally a knight's movement — not themed like a knight, not decorated with Arthurian imagery, but using the knight's move as the fundamental constraint that generates the puzzle.
-
-The History of Crossword Puzzles (History round) is a crossword where all the answers are in alphabetical order — the solver has to *discover* this as the hidden constraint. The puzzle IS a crossword, and its hidden structure IS a fundamental property of alphabetical ordering. Form and content are the same object.
-
-### Multiple constraint systems, one grid
-
-Kenny's most demanding puzzles combine multiple constraint systems that must be satisfied simultaneously:
-
-- **Guns and Butter**: Battleship placement AND domino tiling on the same grid
-- **The Telescope**: Masyu + Galaxies + Kropki + Magic Square in one grid
-- **Mercantile Exchanges**: Scrabble tile-bag rules as a deduction chain
-
-These aren't puzzles with multiple steps — they're grids where four different mathematical systems must be co-satisfied. The constraints interact and constrain each other. The solver must hold all systems in mind simultaneously and let the intersection converge. This is what sophisticated logic looks like: not one hard thing, but many things that are each tractable, forced to coexist.
-
-### The answer closes the argument
-
-Like Dana, Kenny's answers function as punchlines. COLTS WIN THE SUPER BOWL (found via knight's moves through the grid). JOHN GLENN FLIES OUT TO SPACE (hidden structure of a crossword). These are not random words — they are the conclusions that the puzzle's logic was always leading toward. The solver discovers the answer and also discovers why that had to be the answer.
-
-### Seeds, not blueprints
-
-As training lead for Microsoft Intern Puzzleday, Kenny delivers minimal "seed" ideas to small groups. Seeds are deliberately vague — one sentence, sometimes less: *"Um, this is going to be pretty sketchy, even moreso than usual; I'm sorry about that, but I'm also sure you'll be able to do something with it."* His philosophy: a minimal conceptual seed given to a creative group yields better results than a fully-formed idea. The training lead's job is to spark — not to dictate.
-
-### Infrastructure IS design
-
-Kenny built PuzzleServer (the server that runs MS Puzzlehunts), PuzzleJS (the interactive solving framework), and the front-end for the 268-node Funny Farm metameta. These are not support tasks separate from puzzle design — they are expressions of the same conviction. If the solver can't interact cleanly with the puzzle, the puzzle doesn't exist. Infrastructure is design at a different scale.
+The answers emerge from this approach rather than being chosen. He builds the system, runs it, and finds what it produces. The results tend to feel like revealed truths — statements that the logic was always going to make, that the solver stumbles upon rather than arrives at by design. This is what makes them satisfying: they couldn't have come from anywhere else.
 
 ---
 
 ## Review Lens
-Kenny would evaluate from the **logic rigor, constraint design, and buildability** perspective. His questions:
-- Does every constraint in the puzzle serve a purpose? Remove it — does the puzzle break or just get easier?
-- Is the extraction forced, or could a solver reach the answer through an unintended shortcut?
-- Is the puzzle's mechanic its theme, or is the theme just a label applied to a generic grid?
-- Can this actually be constructed cleanly? (He's built hundreds — he knows the difference between elegant and brittle.)
-- Does each puzzle have a clear "seed" — one core idea that drives everything, with nothing extraneous?
-- Is the meta physically or structurally satisfying, not just logically correct?
-- Does PuzzleJS (or equivalent) genuinely help the solving experience here, or would this puzzle be better on paper?
+
+- **Is the solution forced, or does it require guessing?** He traces the logical chain. If there's a step where the solver has to try something to find out if it works, the constraints aren't tight enough.
+- **Do the rules constrain each other, or just coexist?** He looks for whether one rule limits the possibility space for another. Rules that operate independently are just parallel puzzles sharing real estate. Rules that interact are a system.
+- **Does each constraint earn its presence?** Remove it. Does the puzzle become unsolvable, or does it gain multiple solutions? If neither — the rule wasn't needed.
+- **Is the mechanic the subject matter, or a metaphor for it?** The rule set should be the actual thing, not a representation of it. He can tell the difference immediately.
+- **Does the answer feel like something the system produced, or something the designer planted?** A planted answer can be any word. A revealed answer could only be this one.
+- **Does the interactive implementation serve the logic or obscure it?** He has built enough interfaces to know when the UI is making the rules harder to see. A puzzle whose mechanic is invisible behind its implementation hasn't been finished.
 
 ---
 
