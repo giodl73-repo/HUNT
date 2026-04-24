@@ -1,0 +1,31 @@
+Generating a single creative artifact with AI --- a poem, a puzzle, a game level --- is now
+routine. Generating a \emph{coherent collection} of such artifacts --- a puzzle hunt, with a
+shared thematic world, a set of interlocking puzzles, an answer-confirming meta-puzzle, and a
+finished delivery package --- is a qualitatively different problem. It requires coordinated
+decisions across scope, authorship, structure, and delivery, and it exposes a gap that
+single-shot generation cannot close: without process structure, AI output quality degrades
+badly across a multi-artifact production task.
+
+We address this gap with a structured, 11-stage generative pipeline for puzzle hunt creation.
+Each stage produces a defined set of artifacts consumed by subsequent stages; two stages
+function as formal review gates --- Stage~3 (puzzle pool ranking) and Stage~7 (editorial
+review) --- where an AI expert panel evaluates candidate puzzles against a published rubric
+and issues pass/revise/cut verdicts. The pipeline is implemented as a library of 13 reusable
+CLAUDE.md skill prompts, requiring no per-scenario code changes.
+
+We evaluate the pipeline across five fully-tested hunt scenarios spanning five distinct domains
+(a real-time strategy game, noir detective fiction, science fiction role-playing, music, and
+print puzzles) and three delivery formats (physical dossier, digital website, print-and-play).
+Across 52 puzzles, the pipeline achieves a 90.4\% first-pass pass rate (47/52) (against the pipeline's AI panel rubric, not an external community standard). The five
+failures are not uniformly distributed: three of the five occur at Stage~8 (testing and
+integration), downstream of both review gates, and zero failures are attributable to Stage~3.
+This distribution confirms that the gates are functioning --- they surface quality problems
+before authoring investment is made --- and that the dominant failure mode is post-gate
+integration, not generation quality per se.
+
+We contribute: (1) a precise specification of the 11-stage pipeline with gate conditions;
+(2) cross-scenario empirical characterization across 52 puzzles and five domains; (3) a
+failure analysis identifying Stage~8 as the concentrated failure point; (4) identification
+of Stages~3 and~7 as highest-leverage interventions; and (5) an open pipeline specification
+reproducible from a public git repository (142 commits, two active days) with no proprietary
+dependencies. The first scenario completed in 3h~17m elapsed wall-clock time; active human effort is not separately measured.

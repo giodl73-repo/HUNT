@@ -1,0 +1,138 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  xbar,
+  bar width=0.45cm,
+  width=0.78\linewidth,
+  height=8.2cm,
+  xmin=0, xmax=46,
+  enlarge y limits=0.10,
+  axis on top=false,
+  tick align=outside,
+  xmajorgrids=true,
+  grid style={dotted, gray!45},
+  xlabel={Score (/45)},
+  xlabel style={font=\small},
+  ytick=data,
+  yticklabels={
+    AX\ (null baseline),
+    AD\ (doctor),
+    AP\ (programmer),
+    A0\ (puzzle designer),
+    AN\ (no job title),
+    AG\ (game designer),
+    AA\ (artist),
+  },
+  y tick label style={font=\small\bfseries, align=right},
+  x tick label style={font=\small},
+  extra x ticks={33},
+  extra x tick labels={},
+  extra x tick style={
+    grid=major,
+    grid style={dashed, thick, red!60!black},
+    tick style={draw=none},
+  },
+  nodes near coords,
+  nodes near coords align={horizontal},
+  every node near coord/.append style={
+    font=\small\bfseries,
+    xshift=4pt,
+    /pgf/number format/fixed,
+    /pgf/number format/precision=1,
+  },
+]
+
+%% One series per condition — different colors encode tier activation
+%% Sorted ascending: lowest at bottom
+\addplot[xbar, fill=gray!38, draw=gray!60]           coordinates {(16.3, 0)}; % AX
+\addplot[xbar, fill=red!60!black, draw=red!75!black] coordinates {(17.7, 1)}; % AD
+\addplot[xbar, fill=blue!50, draw=blue!65!black]     coordinates {(24.0, 2)}; % AP
+\addplot[xbar, fill=blue!45, draw=blue!60!black]     coordinates {(24.7, 3)}; % A0
+\addplot[xbar, fill=gray!32, draw=gray!52]           coordinates {(25.3, 4)}; % AN
+\addplot[xbar, fill=green!45!black, draw=green!60!black, fill opacity=0.80]
+                                                     coordinates {(32.3, 5)}; % AG
+\addplot[xbar, fill=gold!65!black, draw=gold!80!black]
+                                                     coordinates {(40.3, 6)}; % AA
+
+\end{axis}
+
+%% ---- Tier activation labels (placed after axis, in data coords via overlay) ----
+%% Use absolute tikzpicture coords based on axis geometry (approx)
+%% The axis runs roughly: x-data 0..46 mapped to ~0..6.2cm, y 0..6 mapped to ~0..7.0cm
+%% We place labels to right of bars
+
+% AA: gold label
+\node[font=\scriptsize\bfseries, text=gold!70!black,
+      fill=gold!10, draw=gold!50, rounded corners=2pt, inner sep=2pt]
+  at (9.0, 6.85) {Tier~1 activated};
+
+% AG: green label
+\node[font=\scriptsize\bfseries, text=green!45!black,
+      fill=green!8, draw=green!40, rounded corners=2pt, inner sep=2pt]
+  at (7.20, 5.90) {partial Tier~1};
+
+% AN: gray
+\node[font=\scriptsize\bfseries, text=gray!55!black,
+      fill=gray!8, draw=gray!38, rounded corners=2pt, inner sep=2pt]
+  at (6.35, 4.92) {none};
+
+% A0: blue
+\node[font=\scriptsize\bfseries, text=blue!60!black,
+      fill=blue!8, draw=blue!38, rounded corners=2pt, inner sep=2pt]
+  at (6.35, 3.97) {Tier~3 only};
+
+% AP: blue
+\node[font=\scriptsize\bfseries, text=blue!60!black,
+      fill=blue!8, draw=blue!38, rounded corners=2pt, inner sep=2pt]
+  at (6.35, 3.02) {Tier~3 only};
+
+% AD: red
+\node[font=\scriptsize\bfseries, text=red!60!black,
+      fill=red!8, draw=red!38, rounded corners=2pt, inner sep=2pt]
+  at (5.60, 2.07) {Tier~3 inverted};
+
+% AX: gray
+\node[font=\scriptsize\bfseries, text=gray!55!black,
+      fill=gray!8, draw=gray!38, rounded corners=2pt, inner sep=2pt]
+  at (5.35, 1.13) {none};
+
+%% ---- Pass threshold label ----
+\node[font=\scriptsize\bfseries, text=red!65!black,
+      rotate=90, fill=white, inner sep=1pt]
+  at (4.95, 4.0) {pass threshold (33/45)};
+
+%% ---- Bracket: Tier 1 activation passes ----
+\draw[decorate,
+      decoration={brace, amplitude=5pt, mirror},
+      thick, gold!75!black]
+  (9.60, 5.65) -- (9.60, 7.28);
+\node[font=\scriptsize, text=gold!70!black, align=left]
+  at (10.72, 6.47) {Tier~1\\ activation\\ $\to$ passes};
+
+%% ---- Bracket: Tier 3 only fails ----
+\draw[decorate,
+      decoration={brace, amplitude=5pt, mirror},
+      thick, blue!62!black]
+  (9.60, 2.73) -- (9.60, 5.45);
+\node[font=\scriptsize, text=blue!62!black, align=left]
+  at (10.68, 4.07) {Tier~3 only\\ $\to$ fails};
+
+%% ---- Note on AD inversion ----
+\node[font=\scriptsize\itshape, text=red!62!black, align=left,
+      fill=white, inner sep=1pt]
+  at (4.15, 1.73)
+  {domain expertise inverts\\[-1pt]quality when misapplied};
+\draw[-Stealth, red!50!black, thin]
+  (3.45, 1.95) -- (2.55, 2.12);
+
+\end{tikzpicture}
+\caption{Persona conditions sorted by score (/45). Only the artist (AA) and game designer (AG)
+cross the quality threshold at 33/45 (dashed line). The artist activates Tier~1 orientation;
+the game designer partially activates Tier~1 through player-experience framing. All domain-labeled
+professional conditions (puzzle designer, programmer, doctor) activate Tier~3 specificity without
+Tier~1 orientation, producing scores at or below the null baseline (AX = 16.3). The doctor
+condition (AD = 17.7) falls below the null baseline, suggesting that domain-mismatched expertise
+actively inverts quality when applied without an orientation layer.}
+\label{fig:artist-gap}
+\end{figure}

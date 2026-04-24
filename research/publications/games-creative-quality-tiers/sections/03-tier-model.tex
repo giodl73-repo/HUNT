@@ -1,0 +1,216 @@
+\section{The Tier Model}
+\label{sec:tiermodel}
+
+We present the Unified Tier Model of Creative Quality: a three-tier hierarchical
+structure governing the contribution of prompt components to creative output quality,
+identified empirically across authoring and reviewing roles and formalized here as a
+generalizable architecture.
+
+The model organizes the components of a creative AI prompt into three tiers by the
+functional role each plays in quality production. Tier 1 (Orientation) components are
+irreplaceable: removing them causes categorical failure or sub-baseline performance.
+Tier 2 (Lens) components are load-bearing: removing either of two identified
+components drops quality below the publishable threshold, but their positive effect
+depends on the presence of Tier 1. Tier 3 (Specificity) components are amplifying:
+each adds marginal quality beyond the Tier 1+2 base, but none is necessary for
+threshold crossing, and their aggregate effect is bounded. The tiers are not additive
+in a flat sense --- they are ordered in a way that determines which components can
+function at all.
+
+\subsection{Tier 1: Orientation (Irreplaceable)}
+
+Tier 1 is defined as a stance toward the person on the other end of the creative
+interaction. In authoring, this is the solver who will encounter the puzzle. In
+reviewing, this is the reader of the review --- the team that will act on its
+recommendations. In both roles, the orientation takes the form of a single directing
+question: what does the person on the other end experience? This question precedes and
+governs every subsequent creative decision.
+
+The reviewing evidence is provided by the C4 and C5 conditions in the expert panel
+study. C4 tested the design philosophy and worldview component in isolation, with no
+review lens and no credentials, achieving 26.7 out of 30. C5 tested the review lens
+in isolation --- the defect-detection specificity component that defines the reviewer's
+analytical focus --- with no philosophy, achieving 21.7. The bare baseline with no
+persona at all (C0) scored 23.7. The lens-without-philosophy condition therefore fell
+below no-persona: adding domain-specific focus without orientation produced outputs
+worse than unstructured generation. The full principles condition (C3) scored 26.7,
+identical to C4, suggesting that the eleven principles collectively instantiate the
+same orientation that the philosophy states directly. The philosophy is not additive
+to the lens; it is the condition under which the lens produces functional outputs
+rather than noise.
+
+The authoring evidence is provided by the L-T1 ablation in the trait decomposition
+study. The full artist profile scored 41.7. Removing the experience-first trait (T1)
+while retaining all five other traits produced a score of 12.3 --- a drop of 29.4
+points. No other single-trait removal caused a drop of more than 12.7 points, and
+no other removal produced categorical failure. The L-T1 output did not produce a
+degraded puzzle; it produced a list of Age of Empires~II terms with no clue layer,
+no solver path, and no aha moment. The puzzle ceased to exist as a
+solver-experience artifact. The five remaining traits --- elegance drive, visual
+thinking, surprise, rigor, systematic reasoning --- produced domain-appropriate format
+with no experiential content, because there was no organizing question of what the
+solver would experience.
+
+The mechanism is the same in both roles. Orientation establishes what counts as a
+successful output. Without it, the system optimizes for an undefined objective:
+domain-appropriate format, reviewer-appropriate vocabulary, the surface grammar of
+the artifact type. The remaining components then produce outputs that satisfy format
+constraints while failing the experience constraint that is the actual quality
+criterion. Tier 1 is irreplaceable because it is the criterion itself, not a
+contributor to the criterion.
+
+\subsection{Tier 2: Lens (Load-bearing)}
+
+Tier 2 is defined as operational constraints that enforce the Tier 1 orientation
+across specific decision points. Lens components answer the question: given the
+orientation, what are the checkable tests that translate it into creative decisions?
+They are functional rather than aspirational --- they do not state a goal but specify
+a procedure that must be followed to achieve the goal.
+
+The reviewing evidence identifies three non-redundant principles from the full set of
+eleven. Verify the Last Mile requires the reviewer to confirm that the solver can
+complete the final extraction step without implicit author knowledge. Blame the Player
+requires the reviewer to consider whether a reported solver failure reflects design
+ambiguity before attributing it to solver error. Snyder's Computer Test requires the
+reviewer to assess whether the puzzle mechanism could be completed by a mechanical
+process with no human judgment, as a test of whether genuine insight has been
+required. These three principles are non-redundant in the sense that each catches
+defect classes that the others miss and that the full profile's worldview alone does
+not surface. The other eight principles --- including Solving Equals Proving
+Understanding, No Over-Scaffolding, and the Riven Standard --- are subsumed by the
+philosophy: a reviewer who has genuinely internalized the worldview will apply these
+principles implicitly without being instructed to do so.
+
+The load-bearing designation follows from the C7 result. When all eleven principles
+were added to the full profile (C6 = 25.3), quality dropped to 22.3. Discipline
+without orientation produces noise, not signal: principles applied without a
+governing worldview generate contradictory constraints and conservative hedging
+rather than directed assessment. When the three non-redundant principles are added to
+the full profile, quality reaches the best observed condition. The principles are
+load-bearing only in the presence of the Tier 1 orientation; absent it, they are
+harmful.
+
+The authoring evidence identifies two load-bearing traits. Elegance drive (T4) is
+the disposition to remove any element of the puzzle mechanism that does not contribute
+to the aha moment: it operationalizes the Tier 1 experience-first orientation into a
+cutting test applied at each design decision. Rigor and verification (T5) is the
+disposition to test every step of the solver path for unintended solutions, ambiguous
+extractions, and knowledge-assumption failures: it operationalizes the orientation
+into a verification procedure. Removing T4 dropped quality to 30.0, below the 35-point
+publishable threshold (The rubric has seven dimensions: Clarity $\times 1$, Solvability
+$\times 1$, Elegance $\times 2$, Reading Reward $\times 2$, Fun $\times 1$, Confirmation
+$\times 1$, Riven Standard $\times 1$, maximum 45 points; Elegance and Reading Reward are
+double-weighted as the empirically strongest tier discriminators; the 33/45 threshold =
+73\% of maximum, matching the 22/30 = 73\% threshold in Paper~\ref{paper1}, calibrated
+against quality levels at which puzzles in MIT Mystery Hunt and Microsoft Puzzlehunt have
+shipped.). Removing T5 dropped quality to 29.0. Both removals kept the
+output above the catastrophic failure level of L-T1, but produced puzzles that were
+experiential in aspiration but mechanically flawed or unnecessarily complex ---
+orientation without discipline.
+
+The T1+T4+T5 reconstruction condition (R3) is the key evidence for load-bearing
+status. Three traits from six produced 35.7 --- the first threshold crossing in any
+reconstruction condition. The other three traits (visual thinking, surprise,
+systematic reasoning) are together responsible for the gap between 35.7 and 41.7,
+confirming their Tier 3 amplifying role. Tier 2 is the minimum necessary complement
+to Tier 1: orientation states the goal, discipline makes the goal actionable.
+
+\subsection{Tier 3: Specificity (Amplifying)}
+
+Tier 3 is defined as domain-specific knowledge, authority signals, and stylistic
+particulars that enrich output quality beyond the Tier 1+2 base. Specificity
+components answer the question: given orientation and discipline, what domain content
+produces the best possible output in this particular artifact type?
+
+The reviewing evidence identifies two Tier 3 components. The review lens (defect-
+detection specificity) provides a structured analytical framework for identifying
+classes of puzzle defect --- extraction ambiguity, clue-answer mismatch, solver-path
+incompleteness --- that the orientation-only reviewer would identify as problems but
+might not name or categorize consistently. The C4 versus C6 comparison shows that
+adding the lens to the philosophy produces a 26.7 versus 25.3 comparison, a modest
+gain. Credentials and authority signals calibrate scoring conservatism: a reviewer
+whose profile specifies deep experience with high-difficulty puzzles applies scoring
+rubrics at a different point on the scale than an uncalibrated reviewer. The lens
+caught the specific defect in the test puzzle --- a bracket label error --- that
+conditions C0 through C5 all missed; credentials prevented grade inflation in
+conditions where the Tier 1+2 base was present and functional.
+
+The authoring evidence identifies three Tier 3 traits. Surprise (T2) is the
+disposition to seek mechanisms that produce an unexpected but inevitable aha moment;
+it adds 5.4 points to the Tier 1+2 base. Visual thinking (T3) is the disposition to
+reason about the puzzle as a spatial layout that guides the solver's eye; it adds
+4.4 points. Systematic reasoning (T6) is the disposition to enumerate the design space
+before committing to a mechanism; it adds 1.6 points. Domain world data --- the
+corpus of Age of Empires~II civilizations, units, technologies, and map names that
+constitute the puzzle's thematic content --- is also Tier 3: it provides the raw
+material for clue construction but does not determine the mechanism quality or the
+solver experience quality.
+
+The artist versus puzzle designer finding is the most direct Tier 3 evidence. The
+puzzle designer label activates Tier 3 content: puzzle conventions, format
+expectations, the genre grammar of crossword-adjacent mechanisms. The artist label
+activates Tier 1 content: the orientation toward what the viewer or audience will
+experience. The 15.6-point gap between these two single-word labels measures the cost
+of starting at the wrong tier --- domain specificity without orientation.
+
+Domain expertise matters, but it matters last and least. It is necessary for ceiling
+performance and it is substitutable: a Tier 1+2 prompt with incorrect domain content
+still crosses the quality threshold, while a Tier 3 prompt without Tier 1 does not.
+
+\subsection{The Symmetric Structure}
+
+Table~\ref{tab:tier-symmetric} presents the tier structure symmetrically across
+authoring and reviewing roles. The symmetry is structurally informative: it shows that
+the tier model is not an artifact of the authoring domain, the reviewing domain, or
+the specific puzzle-hunt testbed, but a property of the creative quality architecture
+that governs both roles.
+
+\begin{table}[h]
+\centering
+\caption{Tier model symmetric across authoring and reviewing roles.}
+\label{tab:tier-symmetric}
+\begin{tabular}{p{2.2cm} p{5.2cm} p{5.2cm}}
+\toprule
+\textbf{Tier} & \textbf{Reviewing} & \textbf{Authoring} \\
+\midrule
+\textbf{T1: Orientation} (Irreplaceable)
+& Design philosophy and worldview. C5 (lens only) $= 21.7$, below C0 baseline $= 23.7$. C4 (philosophy only) $= 26.7$.
+& Experience-first stance (T1). L-T1 $= 12.3/45$; catastrophic failure; puzzle ceased to function as solver artifact. \\
+\addlinespace
+\textbf{T2: Lens} (Load-bearing)
+& 3 non-redundant principles: Verify the Last Mile, Blame the Player, Snyder's Computer Test. C7 (all 11 principles) $= 22.3 <$ C6 $= 25.3$.
+& Elegance drive (T4) + Rigor/verification (T5). R3 (T1+T4+T5) $= 35.7$, first threshold crossing. \\
+\addlinespace
+\textbf{T3: Specificity} (Amplifying)
+& Review lens + credentials. Lens caught bracket error missed by C0--C5; credentials calibrate conservatism.
+& Surprise (T2), visual thinking (T3), systematic reasoning (T6) + domain world data. Net amplification: $+6.0$ above R3. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The connections to Csikszentmihalyi's creator/domain/field distinction and Dreyfus's
+expertise stages are offered as structural analogues discovered after derivation, not
+causal derivations; the tier model emerges from ablation data, not from these frameworks.
+
+The symmetry follows from a general principle about creative quality. Quality is
+defined from the receiver's perspective: the solver who encounters the puzzle, or the
+team that reads the review and acts on it. The definition of quality is therefore a
+Tier 1 claim, prior to any domain claim. Quality is enforced through operational
+constraints that apply the receiver-first definition at decision points: these are
+Tier 2. Quality is enriched by domain knowledge that populates the artifact with
+specific, appropriate content: this is Tier 3. The ordering holds regardless of role
+because the receiver-first definition is prior to the domain in both cases.
+
+The asymmetry between the tier contents --- philosophy versus experience-first
+orientation, principles versus elegance-and-rigor traits --- reflects the different
+decision structures of the two roles rather than a difference in the tier model itself.
+Reviewers make categorical judgments about completed artifacts; their Tier 2 components
+are classification principles (does this defect class apply?). Authors make
+generative decisions at each design step; their Tier 2 components are process
+constraints (should this element be cut? is this step verified?). The Tier 2 function
+--- operationalizing orientation into checkable tests --- is the same in both roles;
+the specific tests differ because the creative decisions differ.
+
+The OLE formula formalizes this architecture as a prescriptive ordering for AI
+creative prompt design. Section~\ref{sec:ole} develops the formula and its
+generalization beyond the puzzle-hunt testbed.

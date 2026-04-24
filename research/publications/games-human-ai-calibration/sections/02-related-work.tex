@@ -1,0 +1,36 @@
+\section{Related Work}
+\label{sec:related}
+
+\subsection{AI-Simulated Expert Review}
+
+Large language models have been applied as synthetic reviewers across several evaluation contexts. In academic peer review, systems such as MARG~\cite{darcy2024marg} and ReviewerGPT~\cite{liu2023reviewergpt} generate structured critiques of scientific papers, with self-reported consistency but limited external validation against human panel decisions. Shah and Wein~\cite{shah2023ai} analyzed GPT-4 judgments on NeurIPS papers and found moderate rank correlation with human acceptance decisions on average but high variance at the paper level. Liang et al.~\cite{liang2024can} conducted a broader meta-analysis of LLM-as-reviewer systems and found that AI-human correlation is strongest for technical quality dimensions (methodology, soundness) and weakest for impact and novelty assessments---a pattern structurally analogous to our technical-versus-hedonic finding in creative evaluation.
+
+The key methodological difference between academic paper review and creative artifact review is the availability of ground truth. Academic peer review converges on accept/reject decisions that provide at least a proxy ground truth; creative quality evaluation has no comparable convergent outcome. Our study is the first to conduct a calibration study of AI panel scores specifically for creative artifact quality.
+
+Commercially, AI review systems have been deployed for creative writing feedback~\cite{gero2023sparks}, game level evaluation~\cite{charity2020mech}, and interactive narrative quality~\cite{zhu2023calypso}. These systems generally report user satisfaction metrics rather than calibration against expert human judgment. The puzzle hunt domain offers an advantage: unlike creative writing or narrative, puzzle hunt puzzles have explicit quality criteria with documented community standards, enabling more objective calibration.
+
+\subsection{Human Expert Agreement in Creative Evaluation}
+
+A prerequisite for interpreting AI-human correlation is understanding human-human inter-rater reliability in the same domain. Human expert agreement on creative quality is lower than non-experts often assume. Amabile's Consensual Assessment Technique~\cite{amabile1982social} establishes that expert raters in creative domains achieve modest but significant inter-rater agreement, with Intraclass Correlation Coefficients (ICCs) typically in the 0.60--0.85 range for structured rubric dimensions. Augustin et al.~\cite{augustin2012how} found that art experts agree more on compositional and technical quality (ICC $\approx$ 0.75--0.80) than on aesthetic appeal and emotional impact (ICC $\approx$ 0.55--0.65)---a pattern that mirrors our predicted dimension profile.
+
+This human agreement floor is critical for interpreting AI-human correlations: an AI-human correlation of $r = 0.70$ is more impressive if human-human ICC is 0.65 (AI performs comparably to humans) than if human-human ICC is 0.90 (AI falls far short of human consistency). We report human inter-rater reliability for all six dimensions as the interpretation baseline before presenting AI-human correlation results.
+
+Csikszentmihalyi and Sawyer~\cite{csikszentmihalyi1995creative} document that expert-novice divergence in creative evaluation is largest for holistic and experiential dimensions---a finding consistent with our hypothesis that Fun and Elegance are where AI personas (which have no experience of solving) will diverge most from experienced human constructors.
+
+\subsection{Calibration in Machine Learning and Human Judgment}
+
+Probabilistic calibration---the property that a classifier's confidence estimates match empirical frequencies---has a well-developed literature in machine learning~\cite{niculescu2005predicting}. Platt scaling~\cite{platt1999probabilistic} and isotonic regression~\cite{zadrozny2002transforming} are the standard correction techniques. Our calibration study is conceptually related but operates at the level of rubric dimension scores rather than probability estimates. The corrective scaling factors we derive (per-dimension linear regression maps from AI scores to human score predictions) are analogous to Platt scaling applied to ordinal quality scores.
+
+In human judgment and decision making, systematic bias in expert estimates is well-documented. Kahneman et al.~\cite{kahneman2021noise} distinguish bias (systematic directional error) from noise (unsystematic variance) and argue that both must be characterized for judgment systems to be trusted. Our study follows this framework: we characterize both the correlation (signal-to-noise ratio in AI-human agreement) and the signed bias (systematic directional error) separately for each dimension.
+
+\subsection{Subjective vs. Objective Quality in Creative Work}
+
+The distinction between verifiable technical quality and subjective hedonic quality in creative artifacts has been theorized across several traditions. Boden~\cite{boden2004creative} distinguishes P-creativity (personal novelty) from H-creativity (historical novelty); analogously, we distinguish T-quality (technically verifiable: the clue has a unique answer, the path exists, the confirmation mechanism fires) from H-quality (hedonically evaluated: the a-ha moment lands, the theme is delightful, the elegance pleases).
+
+In puzzle construction specifically, Snyder~\cite{snyder2007will} documents the tension between technical correctness (necessary for a puzzle to work at all) and aesthetic pleasure (what separates a publishable puzzle from a technically correct but joyless one). His analysis of the New York Times crossword editing process shows that technical corrections (ambiguous answers, unclear cluing) are handled formulaically, while aesthetic improvements require editorial judgment grounded in the experience of solving thousands of puzzles. This is precisely the gap we expect AI panels to exhibit: reliable on the technical, unreliable on the aesthetic.
+
+\subsection{Expert Community as Calibration Sample}
+
+The use of puzzle hunt community experts as our calibration sample raises methodological questions about generalizability. Ipeirotis et al.~\cite{ipeirotis2010quality} document that crowd-sourced quality assessments require large N to achieve reliability, whereas expert panels with small N achieve reliability through domain knowledge. Our N=5 human expert sample follows the expert panel paradigm: participants are drawn from a community with documented, verifiable expertise, standardized rubric familiarity, and long experience evaluating the specific artifact type. The Microsoft puzzle hunt community, with its 25-year organizational history and documented roster of experienced constructors and administrators, provides a defensible expert sample for this calibration study.
+
+The limitation is external validity: calibration results from this expert community may not transfer to other puzzle hunt communities with different aesthetic traditions. We discuss this limitation in Section~\ref{sec:discussion}.

@@ -1,0 +1,133 @@
+\section{Related Work}
+\label{sec:related}
+
+\subsection{AI-Assisted Creative Systems}
+
+Research on AI-assisted creative generation has overwhelmingly focused on single-artifact
+outputs: a poem, an image, a game level, a short narrative. Systems in this tradition treat
+generation as a single forward pass from prompt to artifact, with quality evaluated against
+criteria defined for that artifact class in isolation. Roemmele and Gordon
+\cite{roemmele2015} demonstrate neural story continuation at the level of individual
+narrative segments; Summerville et al.\ \cite{summerville2018} survey level generation
+systems that produce one playable map at a time. The AI co-authorship literature
+\cite{kreminski2020} similarly takes the individual artifact---a text, a scene, a game
+element---as the unit of generation and the unit of evaluation.
+
+Puzzle hunts, tabletop campaigns, and other multi-artifact creative systems present a
+structurally different problem. The unit of generation is not a single artifact but a
+\emph{coherent collection} of artifacts that must satisfy both per-artifact quality criteria
+and cross-artifact consistency constraints: thematic unity, answer set compatibility,
+difficulty arc, meta-puzzle closure. Generating such systems requires coordinated decisions
+across multiple independent generation events, separated in time and context. Park et al.'s
+generative agents \cite{park2023generative} demonstrate that LLMs can sustain coherent
+behavior across multi-turn interactions through memory and identity representations, but
+their setting is social simulation rather than structured creative production---the agents'
+outputs are not artifacts consumed as inputs by downstream generation stages.
+
+The key gap is that no prior work addresses coherent \emph{multi-artifact system generation}
+across multiple independent generation runs, where each run's output becomes a structured
+constraint on subsequent runs. Single-artifact systems cannot be trivially composed into
+multi-artifact pipelines: coherence drift accumulates across generations unless explicitly
+suppressed by a cross-stage consistency mechanism. Our pipeline addresses this gap through
+stage-gated generation with a canonical world document that functions as a shared
+read-only constraint across all stages.
+
+\subsection{Procedural Content Generation with Constraints}
+
+Procedural content generation (PCG) provides the nearest prior framework for understanding
+structured creative pipelines. Shaker et al.\ \cite{shaker2016} survey the field broadly,
+distinguishing generate-and-test approaches, constructive algorithms, and search-based
+methods. Smith and Whitehead \cite{smith2010} develop Tanagra, a mixed-initiative level
+design system that treats design constraints as real-time feedback to the generator,
+demonstrating that constraint propagation across design decisions improves both output
+quality and designer agency. The PCG-via-search paradigm in particular operationalizes
+quality as a fitness function and treats generation as search over an artifact space
+bounded by explicit constraints.
+
+Our pipeline is constraint-based in the same spirit, but the constraint structure is
+sequential across stages rather than concurrent within a single generation pass. Each
+stage's output artifacts become binding constraints on subsequent stages: the world document
+(Stage 1) constrains all thematic content generated in later stages; the puzzle pool ranking
+(Stage 3) constrains which puzzle designs proceed to authoring; the feeder answers committed
+at authoring time (Stage 6) constrain meta-puzzle design (Stage 5). This staged constraint
+propagation differs from mixed-initiative PCG \cite{yannakakis2011} in an important
+respect: the constraints are not relaxed or negotiated during generation, but locked at
+explicit gate conditions. The world lock mechanism is not a soft preference but a hard
+read-only boundary---downstream stages are explicitly prohibited from modifying it. This
+design choice prioritizes coherence over flexibility, accepting that late-stage discoveries
+cannot propagate back to world-level decisions.
+
+The review-gate pattern that enforces these constraints---requiring an explicit pass verdict
+from an evaluation stage before proceeding to the next generation stage---has no direct
+precedent in the PCG literature, where quality filters are typically applied
+post-hoc or embedded as fitness functions within a generative loop. Our gates are
+pre-hoc: they prevent low-quality artifacts from entering the pipeline segment where
+downstream authoring investment would be wasted on them.
+
+\subsection{Puzzle Design and Quality}
+
+The practitioner community has developed explicit quality standards for puzzle design that
+are more codified than most creative domains. The Riven Standard, articulated by Rand Miller
+in reflecting on the \emph{Myst} sequel, holds that a well-designed puzzle is one whose
+mechanic is inseparable from its setting: the puzzle should \emph{be} what the domain does,
+not merely occur within it \cite{miller2016riven}. Snyder \cite{snyder2019craftsmanship}
+enumerates craftsmanship criteria for puzzle construction that translate across types: every
+element should earn its presence, solutions should be uniquely determined, and the solver's
+confirmation should be unambiguous. Competitive puzzle construction standards from the World
+Puzzle Championship and U.S.\ Puzzle Championship instantiate these principles as
+elimination criteria, providing a community-validated quality bar that is unusually explicit
+relative to other creative fields.
+
+Puzzle hunts introduce quality dimensions not present in standalone puzzle evaluation. A
+puzzle hunt is not a collection of independent puzzles but a structured system: puzzles must
+yield answer words that interact correctly with the meta-puzzle, maintain consistent
+difficulty calibration across rounds, and sustain thematic coherence with the hunt's
+fictional premise. The meta-puzzle itself introduces a structural correctness criterion---it
+must be solvable from the feeder answers it receives, and it must close cleanly---that has
+no analog in standalone puzzle design. Answer confirmation, a dimension in our Stage 7
+rubric, is unique to the hunt context: it asks whether solving the puzzle produces an
+unambiguous signal of correctness, enabling teams to verify their answer without
+adjudication.
+
+The AI expert panel review system deployed at Stages 3 and 7 of our pipeline operationalizes
+these practitioner criteria as a six-dimension rubric (Clarity, Solvability, Elegance,
+Reading Reward, Fun, Confirmation) with empirically grounded thresholds. The design and
+calibration of this system is the subject of a companion paper
+\cite{dellaLibera2025panel}; the present paper treats it as a component and characterizes
+its behavior as a pipeline gate across six independent hunt scenarios.
+
+\subsection{AI Pipelines for Complex Tasks}
+
+The agent orchestration literature has proposed several frameworks for decomposing complex
+tasks across multiple LLM invocations. Park et al.\ \cite{park2023generative} demonstrate
+that generative agents with persistent memory and identity can sustain coherent behavior
+across multi-turn social simulations. Nakajima's BabyAGI \cite{nakajima2023babyagi} and
+Richards's AutoGPT \cite{richards2023autogpt} popularized autonomous agent loop
+architectures in which a planning agent generates, prioritizes, and executes subtasks
+without human intervention between steps. More structured orchestration frameworks such as
+AutoGen \cite{autogen} and LangChain \cite{langchain} provide scaffolding for multi-agent
+conversation and sequential tool use, enabling pipelines where agent outputs are routed as
+inputs to downstream agents.
+
+Our pipeline differs from this tradition in a design decision that is deliberate rather than
+incidental: we do \emph{not} use autonomous agent loops. Each of the eleven stages is
+human-triggerable and independently reviewable; no stage executes automatically as a
+consequence of the previous stage completing. This design makes the pipeline slower than an
+autonomous loop architecture, but it addresses a failure mode that autonomous loops inherit:
+unchecked error propagation. In an autonomous loop, a generation error at Stage 3 that
+escapes detection will cause downstream stages to invest authoring time on a flawed
+artifact, and the error may not be visible until Stage 7 or Stage 10. In our pipeline, a
+human reviews the output of each stage before triggering the next, and formal gate
+conditions at Stages 3 and 7 require an explicit pass verdict before downstream work begins.
+
+This \emph{review-gate pattern} relates to two bodies of practice outside the AI literature.
+In traditional publishing, editorial pipelines impose stage gates between acquisitions,
+developmental editing, copy editing, and production, with each gate requiring editorial
+approval before investment in the next stage \cite{schiffrin2010}. In software engineering,
+quality gates in continuous integration pipelines enforce structural analogs: automated and
+human checks must pass before a change is promoted to the next environment. Our pipeline
+adapts this logic to AI content generation, treating review stages not as overhead but as
+the primary mechanism by which generation quality is enforced. The empirical question this
+paper addresses is where in an eleven-stage pipeline these gates add the most value---and
+the answer, across six independent hunt scenarios, is that Stages 3 and 7 account for the
+majority of quality control, with failure rates at other stages negligible by comparison.

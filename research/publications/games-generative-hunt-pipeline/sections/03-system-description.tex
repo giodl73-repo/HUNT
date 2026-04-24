@@ -1,0 +1,301 @@
+\section{System Description}
+\label{sec:system}
+
+This section describes the 11-stage pipeline as a designed system: its stage structure,
+artifact dependencies, gate conditions, AI autonomy model, and implementation substrate.
+The system contribution is the pipeline specification itself --- a reusable process
+architecture that can be instantiated across hunt domains without modification.
+
+% ----------------------------------------------------------------
+\subsection{Pipeline Overview}
+\label{sec:pipeline-overview}
+
+The pipeline consists of eleven sequential stages, each producing a structured artifact
+that serves as the primary input to the next stage. Figure~\ref{fig:pipeline} provides a
+schematic of the full stage sequence; the two review gates (Stages~3 and~7) are marked as
+decision points. Table~\ref{tab:stages} provides the full stage reference.
+
+\begin{table}[h]
+\centering
+\caption{Pipeline stage reference. AI autonomy levels: \textbf{FA} = fully AI-autonomous;
+\textbf{AP} = AI-primary, human-confirms; \textbf{PD} = AI-panel-driven (review gate);
+\textbf{HP} = human-primary. Gate condition applies only to stages with a formal pass/fail
+threshold.}
+\label{tab:stages}
+\small
+\begin{tabular}{clllll}
+\toprule
+\textbf{\#} & \textbf{Stage} & \textbf{Primary Input} & \textbf{Primary Output} &
+\textbf{Gate Condition} & \textbf{AI Role} \\
+\midrule
+1 & Scope         & Hunt brief (prose)           & \texttt{SCOPE.md}, \texttt{CLAUDE.md}       & Human approval      & AP \\
+2 & World Build   & \texttt{SCOPE.md}            & \texttt{world/}, \texttt{LOCKED.md}         & ---                 & AP \\
+3 & Puzzle Pool   & World data, \texttt{ROUNDS.md} & \texttt{PUZZLE-POOL.md} (scored)           & Score $\geq$ 33/45  & PD \\
+4 & Assignment    & \texttt{PUZZLE-POOL.md}      & Per-puzzle \texttt{ASSIGNMENT.md}           & ---                 & FA \\
+5 & Meta Design   & Feeder answers               & \texttt{META-DESIGN.md}                     & Human verification  & AP \\
+6 & Authoring     & Per-puzzle \texttt{ASSIGNMENT.md} & Puzzle files (one per puzzle)          & Score $\geq$ 22/30  & FA \\
+7 & Editorial     & Puzzle files                 & Per-puzzle \texttt{REVIEW.md}               & Pass/revise/cut     & PD \\
+8 & Integration   & Editorial-passed puzzles     & \texttt{PUZZLES.md} integration checklist   & ---                 & FA \\
+9 & Delivery Build & Integrated puzzle set        & Site, print, or props package               & ---                 & AP \\
+10 & Platform Test & Delivery package             & Solver simulation report                    & ---                 & FA \\
+11 & Polish        & Simulation report            & Final artifacts, hint system                & ---                 & HP \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The pipeline is \emph{artifact-driven}: each stage's output is a version-controlled
+markdown document, and subsequent stages treat those documents as read-only inputs. This
+constraint enforces unidirectional information flow and prevents coherence drift, which
+would otherwise occur when late-stage authoring decisions propagate backwards to modify
+scope or world documents. A dedicated \emph{world lock} enforces this at the content level:
+Stage~2 produces a \texttt{LOCKED.md} canon declaration, and all subsequent stages are
+prohibited from introducing facts not present in the locked world files. Every factual
+claim in every puzzle must be traceable to a specific entry in the \texttt{world/}
+directory. This mechanism was validated empirically: across nine hunt scenarios, no
+post-lock canon violations were detected in Stage~7 editorial review, compared to a
+baseline of multiple coherence errors per scenario in early pilot runs conducted without
+the lock mechanism.
+
+Stage~1 (Scope) establishes the hunt's identity: domain, audience, scale, tone, delivery
+format, and thematic frame. The primary output is a \texttt{SCOPE.md} document and a
+per-scenario \texttt{CLAUDE.md} status tracker. The status tracker is the pipeline's
+runtime state: each stage updates it on completion, and the \texttt{/hunt resume} skill
+reads it to recover from session interruptions without duplicating completed work.
+
+Stage~2 (World Build) populates the content library from which puzzles draw their
+facts. For fictional domains (Ironfall's 1993 JRPG universe, Dead Reckoning's
+starship systems), the world is synthesized and populated into structured data tables.
+For real-world domains (Age of Empires, Wavelength's pop music corpus), the world
+stage collects, verifies, and canonicalizes factual data. The \texttt{/hunt world}
+skill organizes this data into individual system files (bestiary, items, locations,
+characters, and so on) and then issues the canon lock.
+
+Stage~3 (Puzzle Pool) generates a pool of candidates --- typically three times the
+number of puzzles needed for the final hunt --- and subjects them to AI panel ranking
+(see Section~\ref{sec:gates}). The scored pool is the primary input to Stage~4
+(Assignment), which allocates the highest-scoring candidates to puzzle slots and
+coordinates all feeder answer words to ensure meta compatibility.
+
+Stage~5 (Meta Design) is intentionally ordered before Stage~6 (Authoring): the meta
+puzzle's extraction mechanism determines which feeder answer words are required, and
+all feeder puzzles must be briefed with their target answer words before authoring
+begins. This ordering prevents the most common failure mode in AI-generated hunts ---
+meta answers that do not match the feeder set --- by establishing answer contracts
+before any puzzle content is written.
+
+Stage~6 (Authoring) writes puzzle files from the coordinated briefs. In the
+multi-scenario runs described in Section~\ref{sec:empirical}, Stage~6 was executed as
+parallel AI agent launches, with one or more independent agents per puzzle, running
+simultaneously without shared state. Each agent reads its assignment brief, the relevant
+world data files, and the design principles document, then produces a complete puzzle
+page. No human editing occurs between brief and authored output.
+
+Stages~7 through~11 constitute the review-to-ship pipeline: editorial review (with gate),
+cross-puzzle integration verification, delivery format construction, platform simulation,
+and final polish. Stage~11 is the only stage coded as human-primary (see
+Section~\ref{sec:ai-roles}): it encompasses hint writing, edge case detection, and final
+answer encoding --- tasks that require human judgment about solver experience that AI
+simulation does not reliably approximate.
+
+% ----------------------------------------------------------------
+\subsection{Gate Conditions}
+\label{sec:gates}
+
+The pipeline contains two primary review gates: Stage~3 (pool ranking) and Stage~7
+(editorial review). Both are implemented using the AI expert panel system described
+in \cite{dellaLibera2025panel}. A secondary gate operates within Stage~6 (authoring):
+each puzzle must pass an automated quality threshold before proceeding to editorial.
+
+\paragraph{Stage~3: Pool Ranking Gate.}
+
+The puzzle pool gate filters candidates before the investment of authoring work. The panel
+evaluates each candidate against the seven-dimension weighted rubric introduced in
+\cite{dellaLibera2025panel}: Clarity ($\times 1$), Solvability ($\times 1$), Elegance
+($\times 2$), Reading Reward ($\times 2$), Fun ($\times 1$), Confirmation ($\times 1$),
+and Riven Standard ($\times 1$), yielding a maximum score of 45. At Stage~3, candidates
+are evaluated on their \emph{brief} --- the one-to-two paragraph specification of the
+puzzle concept, mechanism, and extraction --- rather than on authored content. The pass
+threshold is 33/45 (73\%), matching the threshold calibrated in the rubric validation
+experiment of \cite{dellaLibera2025panel} against three quality tiers of published puzzle
+hunt puzzles.
+
+Candidates scoring below 33 are not assigned. Human override is permitted: a hunt
+designer may promote a candidate below threshold if the brief's weakness is judged
+recoverable in authoring, or suppress a high-scoring candidate for editorial reasons
+(e.g., domain overlap with another selected puzzle). In practice, across six scenarios,
+human override occurred in fewer than 5\% of pool decisions; the panel's ranking was
+treated as authoritative in the large majority of cases.
+
+The Stage~3 gate is designed to fail cheaply. At the point of pool evaluation, the only
+work invested is the candidate brief (typically 200--400 words). Failing a candidate at
+Stage~3 therefore wastes at most the brief --- not the full authoring effort, which for a
+complete puzzle is an order of magnitude larger. The gate is explicitly calibrated to
+have high recall rather than high precision: it is better to promote a borderline candidate
+that fails at Stage~7 than to suppress a strong candidate that a brief undersells.
+
+\paragraph{Stage~7: Editorial Review Gate.}
+
+The editorial gate operates on fully authored puzzles and produces a verdict in one of
+three categories: \textsc{pass} (puzzle proceeds to integration), \textsc{revise} (puzzle
+returns to Stage~6 with a specific revision brief), or \textsc{cut} (puzzle is removed
+from the hunt). The panel evaluates authored content against the same rubric used in
+Stage~3, augmented by three additional editorial checks: extraction chain verification
+(character-by-character), voice consistency audit (does the puzzle match the hunt's
+established narrative voice), and world-lock compliance (does every factual claim
+trace to a locked world file).
+
+A \textsc{revise} verdict triggers a targeted revision pass: the authoring agent receives
+the review feedback and rewrites the specific extraction mechanism, clueing logic, or
+presentation element flagged by the panel. In the scenarios reported here, revisions were
+executed in a single pass in all cases where revision was required; no puzzle required
+more than one revision cycle. A \textsc{cut} verdict was reserved for puzzles with
+fundamental mechanism failures that would require redesign from the brief, which was judged
+more efficient than revision.
+
+The Stage~7 gate is the pipeline's primary quality control mechanism. Unlike the Stage~3
+gate, which screens design concepts, Stage~7 screens executed construction. The failure
+modes it catches are different: not ``is this concept worth pursuing'' but ``does this
+puzzle actually work as built.'' The empirical data (Section~\ref{sec:empirical}) shows
+that Stage~7 catches failures that Stage~3 does not predict: concept-level scores are
+not reliable predictors of construction-level failures, which are typically mechanism
+errors (extraction chains that do not resolve) or answer coordination errors (feeder
+answers that do not match meta requirements).
+
+\paragraph{Why These Two Gates.}
+
+The two-gate design reflects a deliberate cost-staging argument. Creative pipeline failures
+are not equally expensive at all stages; the cost of failure is proportional to the
+downstream investment that must be discarded. Stage~3 failures are cheap (brief only);
+Stage~7 failures are moderate (authoring effort only, before integration); failures that
+reach Stage~8 or beyond are expensive (integration, delivery build, and test work is lost
+or must be redone). Placing review gates at Stages~3 and~7 maximizes the expected quality
+of work that reaches integration while minimizing total evaluation overhead. No gate is
+placed between Stage~7 and Stage~11 because the editorial and integration stages are
+jointly sufficient to catch remaining failures --- which, empirically, are concentrated
+in delivery format issues rather than puzzle construction failures.
+
+% ----------------------------------------------------------------
+\subsection{AI Roles by Stage}
+\label{sec:ai-roles}
+
+Each stage in the pipeline is coded on a four-level autonomy gradient: \textbf{FA} (fully
+AI-autonomous), \textbf{AP} (AI-primary, human confirms), \textbf{PD}
+(AI-panel-driven, with human deciding on revisions), and \textbf{HP} (human-primary).
+Figure~\ref{fig:autonomy} illustrates the gradient across the full pipeline. The coding
+is based on the empirical record of how each stage was executed across all scenarios
+in this study.
+
+\emph{Stages~2, 4, 6, 8, and~10} are fully AI-autonomous in practice. Stage~2 (World
+Build) generates and populates content tables from domain specifications with no human
+editing of individual entries. Stage~4 (Assignment) translates pool rankings to puzzle
+slot assignments and generates all briefs without human intervention. Stage~8 (Integration)
+runs the integration checklist --- answer verification, cross-reference checking, round
+structure validation --- autonomously. Stage~10 (Platform Test) executes a solver
+simulation against the delivery package, with each simulated solver personality working
+through the hunt independently and logging failures.
+
+Stage~6 (Authoring) warrants specific discussion as the most autonomous stage in the
+pipeline. Puzzles are authored by independent AI agents launched in parallel, one per
+puzzle (or one per module in large hunts), with no human review occurring between brief
+and authored output. The agents share no state; they communicate only through the
+coordinated answer words established in Stage~5. In the largest scenario in this
+study (Cosmere, 36 feeder puzzles across four modules), 36 puzzles were authored in
+parallel across a single session without human editorial intervention until Stage~7. This
+represents a qualitative shift from human-assisted authoring: the human's role in Stage~6
+is to launch agents and wait for completion, not to review or approve individual puzzle
+content. Stage~6 autonomy is feasible precisely because Stage~5 has pre-coordinated all
+answer words and Stage~7 will catch authoring failures.
+
+\emph{Stage~1 (Scope) and Stage~5 (Meta Design)} are coded AP: AI generates the scope
+document or meta mechanism, and the human confirms before proceeding. These confirmations
+are lightweight --- typically a review of the SCOPE.md document or a meta extraction trace
+--- but they are genuine decision points at which the human can redirect the hunt's
+identity before downstream work commits to a particular direction.
+
+\emph{Stages~3 and~7} are panel-driven. The AI panel produces scored rankings (Stage~3)
+or pass/revise/cut verdicts (Stage~7), but the human decides on override and revision
+scope. In practice, these stages are AI-primary in execution and human-primary in
+decision authority; the panel output is treated as a strong recommendation, not an
+automatic action.
+
+\emph{Stage~11 (Polish)} is the pipeline's most human-intensive stage. Hint writing
+requires calibrating the difficulty of each hint tier to the expected solver population
+--- a judgment about cognitive load that AI simulation does not reliably approximate. Edge
+case detection requires the human to reason about degenerate solver paths that the platform
+test simulation may not have exercised. Final answer encoding and security checks (ensuring
+no plaintext answers appear in any distributed file) are procedurally defined but require
+human sign-off before the hunt ships. Stage~11 is also where the hunt designer's creative
+voice is most directly expressed: the final pass shapes the solver's experience in ways
+that are not captured by the quality rubric.
+
+% ----------------------------------------------------------------
+\subsection{Implementation}
+\label{sec:implementation}
+
+The pipeline is implemented as a \emph{CLAUDE.md skill library}: a collection of
+persistent markdown documents, each encoding a named skill as a structured prompt with
+defined inputs, defined outputs, and explicit instructions for interacting with the
+scenario's artifact directory. Skills are installed into Claude Code's persistent skill
+store (the \texttt{\textasciitilde{}/.claude/skills/} directory) and invoked by slash
+command (e.g., \texttt{/hunt world}, \texttt{/puzzle P01 author}). No bespoke code is
+written for any scenario; the entire pipeline executes through natural language skill
+invocations against version-controlled artifact files.
+
+Skills are organized into two namespaces. The \texttt{/hunt} namespace contains
+hunt-level administrative skills run by the hunt director: \texttt{plan} (the full
+pipeline walkthrough), \texttt{world} (world build and lock), \texttt{review} (panel
+review invocation), \texttt{meta} (meta design and verification), \texttt{edit}
+(editorial review pass), \texttt{resume} (crash recovery), \texttt{print} (print package
+generation), \texttt{site} (website scaffold and puzzle pages), \texttt{props} (physical
+prop logistics), \texttt{publish} (solver-facing distribution package), \texttt{script}
+(game architecture script for interactive delivery), \texttt{status} (pipeline
+dashboard), and \texttt{profile} (reviewer profile management). The \texttt{/puzzle}
+namespace contains puzzle-level skills used by authoring agents: \texttt{author}
+(write puzzle from brief), \texttt{test} (blind test against quality threshold), and
+\texttt{check} (design principles audit).
+
+The skill library grew from 0 to 13 skills over the two-day study period (February~27--28,
+2026), with skills added reactively in response to pipeline needs discovered during
+scenario execution. Table~\ref{tab:skills} in Section~\ref{sec:empirical} provides the
+full growth timeline. This organic development trajectory is itself an empirical finding:
+the 13 skills that emerged are those that were actually needed to run the pipeline end-to-end,
+not a pre-specified design. Skills added late in the study (notably \texttt{/hunt script}
+and \texttt{/hunt publish}) address delivery and distribution tasks that only become
+visible as a bottleneck when multiple scenarios reach Stage~9 simultaneously.
+
+Each scenario's per-scenario \texttt{CLAUDE.md} references the toolkit skill library
+and specifies only three per-scenario parameters: domain (the content universe or real-world
+topic), audience (target solver population and experience level), and scale (puzzle count,
+round structure, and delivery format). No per-scenario modifications to skill prompts were
+required across any of the nine scenarios in this study. The same \texttt{/hunt world lock},
+\texttt{/puzzle P01 author}, and \texttt{/hunt edit} commands that ran the Age of Empires
+scenario in February also ran the Cosmere scenario with 36 puzzles and four meta layers,
+without any prompt engineering between scenarios. This cross-theme invariance is the
+primary evidence for the pipeline's transferability claim.
+
+The \texttt{/hunt resume} skill deserves specific mention as an infrastructure component.
+Claude Code sessions are stateful but not persistent: a session crash loses the in-context
+working memory of all stages executed in that session. The resume skill recovers from
+crashes by reading the per-scenario \texttt{CLAUDE.md} status tracker (updated at every
+stage boundary), identifying the first incomplete stage, and regenerating the necessary
+context from the artifact files on disk before continuing. In Stage~6, resume behavior is
+puzzle-aware: it checks each puzzle individually and re-authors only puzzles that do not
+yet have a completed file, skipping puzzles that were successfully authored before the
+crash. Across the multi-session, multi-scenario runs of this study, the resume skill was
+invoked at least once in the majority of scenarios, confirming that crash recovery is a
+practical operational requirement rather than an edge case.
+
+\begin{figure}[h]
+\centering
+% Placeholder for TikZ pipeline diagram
+% Figure 1: 11-stage pipeline with gate markers at Stages 3 and 7,
+% input/output artifact labels, and autonomy coding per stage.
+\fbox{\parbox{0.9\textwidth}{\centering [Figure~1: Pipeline diagram --- 11 stages in
+sequence, with gate condition markers at Stages~3 and~7, input/output artifact labels
+per stage, and autonomy gradient coding. TikZ source in \texttt{figures/fig1-pipeline.tex}.]}}
+\caption{The 11-stage AI-assisted puzzle hunt pipeline. Review gates (Stages~3 and~7)
+are the primary quality control interventions. The autonomy gradient shifts from
+AI-primary in the middle stages (authoring, integration, testing) to human-primary at
+the boundaries (scope and polish).}
+\label{fig:pipeline}
+\end{figure}

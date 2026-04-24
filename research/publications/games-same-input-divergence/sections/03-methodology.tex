@@ -1,0 +1,77 @@
+\section{Methodology}
+
+\subsection{The Same-Input Divergence Paradigm}
+
+Same-input divergence refers to the natural variation that arises when an AI creative pipeline is executed twice from identical inputs. In our experimental instantiation, the inputs held constant across both runs are: the domain knowledge base (world data files describing Age of Empires II civilizations, units, technologies, maps, and economy), the scope document specifying hunt scale, audience, and format, the pipeline specification (the puzzle hunt toolkit skill library and its design principles), and the reviewer profile library used for AI panel evaluation. The only source of variation between the two runs is LLM stochasticity at fixed temperature: the same sequence of generative prompts, applied to the same context, producing outputs that differ because the underlying language model samples from its conditional distribution independently on each run.
+
+Three experimental paradigms are superficially similar to same-input divergence and must be distinguished from it. \textit{Reproducibility studies} \citep{pineau2021improving} seek to eliminate divergence by fixing random seeds or controlling all sources of stochasticity; their goal is identical outputs across runs, and divergence is treated as an experimental failure. Our goal is the inverse: we deliberately allow stochasticity to operate and use the resulting divergence as data. \textit{Ablation studies} vary one component of the input pipeline at a time to measure its causal effect on outputs; our paradigm varies nothing in the input and instead characterizes the variation that arises endogenously from the generative process itself. \textit{Sensitivity analysis} \citep{jiang2020can,zhao2021calibrate} varies inputs (typically prompt phrasing) to measure output sensitivity to those variations; again, our paradigm inverts this by fixing all inputs and asking which output decisions are robust to stochastic variation and which are sensitive to it.
+
+The central question of same-input divergence is not \textit{how much} divergence a generator produces across runs --- a question that quality-diversity metrics answer --- but \textit{where} in the generative process divergence originates and \textit{why} some decisions converge across independent runs while others do not. This question is meaningful only when analyzed at multiple levels of abstraction within the generated artifact, which motivates the five-level comparison framework described in Section~\ref{sec:comparison-framework}.
+
+\subsection{Pipeline and Corpus}
+\label{sec:corpus}
+
+Our corpus consists of two independently generated puzzle hunts produced by the same AoE2 knowledge base, scope document, and generation toolkit.
+
+\paragraph{Hunt 1 (``Wololo'').} Hunt 1 is the primary Age of Empires II puzzle hunt scenario generated and fully documented in the companion generative pipeline paper \cite{paper2pipeline}. It comprises five feeder puzzles and one meta-puzzle, with meta answer \textsc{wololo} --- the distinctive sound of the in-game Monk unit performing a conversion. The meta mechanism is a crossword-style extraction: five feeder answers (\textsc{castle}, \textsc{onager}, \textsc{loom}, \textsc{tower}, \textsc{patrol}) each contribute one letter via a crossword grid, spelling the meta answer. All pipeline stages were completed and all five puzzles were authored and tested. AI panel scores for all five puzzles are available from the panel review stage (Stage 8), using the C8 panel of three expert reviewer profiles and a 7-dimension rubric scored on a 45-point scale.
+
+\paragraph{Hunt 2 (``Run 2'').} Hunt 2 was generated under clean-room conditions from the same inputs as Hunt 1. The world data files (\texttt{civs.md}, \texttt{units.md}, \texttt{techs.md}, \texttt{maps.md}, \texttt{economy.md}), SCOPE.md brief (a 5-puzzle AoE2 hunt for a casual solo audience, estimated 2--3 hours solve time), toolkit skill library, and 29-profile reviewer panel library are identical to Hunt 1. The generating agent was explicitly instructed not to access Hunt 1's \texttt{PUZZLE-POOL.md}, \texttt{ROUNDS.md}, \texttt{PUZZLES.md}, or \texttt{puzzles/} directory at any stage; generation of the candidate pool, round structure, meta design, and individual puzzles proceeded without any Hunt 1 artifacts in context. This clean-room isolation ensures that any convergence observed between the two hunts reflects genuine structural constraint rather than imitation, and any divergence reflects genuine stochastic variation rather than deliberate differentiation.
+
+Hunt 2 produced five feeder puzzles and one meta-puzzle, with meta answer \textsc{grail}. The feeder answers are \textsc{forge}, \textsc{march}, \textsc{siege}, \textsc{faith}, and \textsc{relic}. The meta mechanism is categorically distinct from Hunt 1: for each feeder answer, the solver counts the vowels in the answer word and adds one, obtaining an index; the letter at that index position is extracted; the five extracted letters (\textsc{r}, \textsc{a}, \textsc{g}, \textsc{i}, \textsc{l}) are anagrammed to yield \textsc{grail}. Three of the five feeder puzzles (P1--P3) were fully authored and submitted for AI panel review; P4 and P5 are structurally specified but not yet authored at the time of analysis. Panel scores for P1--P3 are available and are included in the panel score comparison analysis.
+
+Both hunts used the same 29-profile v2 reviewer library for AI panel evaluation, the same 7-dimension rubric, and the same three-reviewer C8 panel configuration (profiles corresponding to the Katz, Snyder, and Young reviewer personas).
+
+\subsection{Five-Level Comparison Framework}
+\label{sec:comparison-framework}
+
+We compare the two hunts at five levels of abstraction, proceeding from the most coarse-grained structural properties to the most fine-grained micro-design decisions. This multi-level architecture is necessary because divergence may be present at some levels and absent at others; a single aggregate similarity score would obscure precisely the structure we seek to characterize. Table~\ref{tab:comparison-methodology} summarizes all five levels, their comparison units, metrics, and stability thresholds.
+
+\textbf{Level 1 --- Structural.} The unit of comparison is the hunt as a whole. Metrics are: round count (exact match), meta mechanism category (categorical classification: crossword extraction, vowel-count index extraction, acrostic, anagram, etc.), and total puzzle count. This level asks whether the two hunts converge on the same overall architecture.
+
+\textbf{Level 2 --- Pool.} The unit of comparison is the 15-puzzle candidate pool generated in Stage 3 of the pipeline. Metrics are: puzzle type distribution (count per canonical type, with KL divergence as a summary statistic), overlap between the five puzzles selected from each pool (Jaccard similarity on 5-element sets), and score distribution comparison across the pool (mean, variance, and range of AI panel scores for the full candidate set).
+
+\textbf{Level 3 --- Assignment.} The unit of comparison is the answer word set. Metrics are: exact word overlap (Jaccard similarity on the 5-word feeder sets), semantic similarity of the two answer word sets computed as the mean pairwise cosine similarity of word embeddings after optimal bipartite matching, and meta feeder overlap (the subset of feeder answers that appear in both hunts).
+
+\textbf{Level 4 --- Mechanism.} The unit of comparison is the puzzle-level extraction method within each puzzle type. Each puzzle is manually coded for mechanism type (e.g., chain-following, property identification, grid traversal, sequence ordering) and mechanism variant within type. Metrics are: categorical mechanism type per puzzle slot, mechanism type distribution comparison across the five-puzzle set, and a mechanism similarity matrix computed from the coding.
+
+\textbf{Level 5 --- Micro-design.} The unit of comparison is individual clue formulations, flavor text, and grid content. After alignment of comparable puzzle slots by puzzle type, metrics are: character-level edit distance on equivalent clue sections, and semantic similarity of clue sets computed as cosine similarity on sentence embeddings of the full clue text per puzzle.
+
+\begin{table}[h]
+\centering
+\caption{Five-level comparison methodology. Each level specifies a unit of comparison, the metrics applied, the stability threshold, and the predicted direction (stable or variable) based on design-space theory.}
+\label{tab:comparison-methodology}
+\small
+\begin{tabular}{lllll}
+\toprule
+\textbf{Level} & \textbf{Unit} & \textbf{Metric(s)} & \textbf{Threshold} & \textbf{Predicted} \\
+\midrule
+1 -- Structural & Hunt (whole) & Round count (exact); meta type (categorical) & Exact match & Stable \\
+2 -- Pool & Candidate pool & Type KL divergence; Jaccard (top-5); score dist. & KL $<$ 0.5; Jaccard $>$ 0.4 & Stable \\
+3 -- Assignment & Answer word set & Jaccard (5-word sets); embedding cosine sim. & Jaccard $>$ 0.4 & Variable \\
+4 -- Mechanism & Puzzle mechanism & Mechanism type coding; distribution comparison & Type match & Variable \\
+5 -- Micro & Clue formulations & Edit distance; sentence embedding cosine sim. & Embedding sim. $>$ 0.6 & Variable \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Stability Classification}
+\label{sec:stability-classification}
+
+A design decision is classified as \textit{stable} if both independent runs produce the same or functionally equivalent output for that decision. A decision is classified as \textit{variable} if the outputs differ in ways that represent a genuine design choice rather than a surface paraphrase. Stability is assessed per level using the thresholds specified in Table~\ref{tab:comparison-methodology}; these thresholds are calibrated to domain properties rather than set at arbitrary conventional values.
+
+At Levels 1 and 2 (structural and pool), stability is assessed against exact-match and distributional thresholds: round count must exactly match; meta mechanism type must be from the same categorical class; puzzle type KL divergence must fall below 0.5 nats (corresponding to a distribution whose most probable type receives no more than twice the probability mass it would under the other run's distribution); and pool Jaccard similarity must exceed 0.4 (corresponding to more than one-third overlap in the top-5 selections from a 15-candidate pool).
+
+At Level 3 (assignment), a Jaccard threshold of 0.4 on the 5-word answer set is again used, and semantic similarity via embedding cosine distance provides a soft similarity measure that accounts for thematically related but lexically distinct answer words (e.g., \textsc{castle} and \textsc{siege} are distinct words but thematically proximate in the AoE2 domain). A decision at Level 3 is classified as variable if answer word Jaccard falls below 0.4 and the embedding similarity score places the two answer sets in different regions of the semantic space.
+
+At Levels 4 and 5 (mechanism and micro-design), stability requires that the dominant mechanism type assigned to comparable puzzle slots matches across the two runs. A variable classification is issued when different mechanism types are used for structurally analogous puzzle slots (e.g., when one run uses chain-following extraction for its civilizations puzzle and the other uses property-grid identification). At Level 5, semantic similarity of clue formulations is expected to be low in all cases, and the analysis focuses on characterizing the distribution and range of micro-design variation rather than a binary stable/variable classification.
+
+\subsection{Panel Score Comparison}
+\label{sec:panel-comparison}
+
+Panel scores for Hunt 2's three authored puzzles (P1, P2, P3) were generated using the same C8 panel (Katz, Snyder, Young reviewer profiles) and the same 7-dimension, 45-point rubric applied to Hunt 1 in the companion AI panel paper \cite{paper3}. Each puzzle is scored across seven dimensions: clue clarity, fairness of extraction, domain knowledge integration, difficulty calibration, thematic coherence, aha-moment quality, and solver experience. Dimension scores sum to a total panel score out of 45.
+
+Score stability is assessed by comparing the Hunt 1 and Hunt 2 score distributions across the same rubric dimensions. We compute the mean and variance of dimension scores across the three scored puzzles in each hunt, and report the per-dimension score difference between runs. If scores are stable (similar means and variance across dimensions), the panel's quality signal is robust to the specific design choices made at Levels 3--5 (answer word selection, mechanism type, micro-design): the panel is measuring a quality dimension that is invariant across the arbitrary choices that distinguish the two runs. If scores are variable --- particularly if certain rubric dimensions show large between-run differences while others do not --- the panel is sensitive to those dimensions' underlying design choices, indicating that those choices have genuine quality consequences despite being drawn from an apparently unconstrained design space.
+
+The panel score analysis thus serves a dual purpose: it directly compares the quality of the two hunts as creative artifacts, and it provides an empirical test of the stability of the AI panel's quality signal across independent runs of the same pipeline --- a question of practical importance for pipeline operators who rely on AI panel scores as a deployment gate.
+
+\label{sec:methodology-end}

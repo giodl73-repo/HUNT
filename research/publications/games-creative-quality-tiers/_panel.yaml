@@ -1,0 +1,71 @@
+version: "1.2.0"
+uuid: h5r6s7t8
+slug: creative-quality-tiers
+title: "Orientation Before Expertise: A Unified Tier Model of Creative Quality in AI Authoring and Reviewing"
+venue: "CHI 2026"
+stage: ready
+round: 2
+content_mode: full
+content_mode_confirmed: true
+
+# Review tracking
+reviewers:
+  - name: Anna Jordanous
+    expertise: CC evaluation, SPECS framework
+  - name: Elizabeth Churchill
+    expertise: HCI, design practice, experience-centered design
+  - name: Nic Lupfer
+    expertise: Creativity support tools, creative AI, HCI
+  - name: Pablo Gervás
+    expertise: Computational creativity, narrative generation
+  - name: Takashi Ikegami
+    expertise: Complex systems, artificial life, emergent creativity
+
+reviews:
+  round1:
+    avg: 3.1
+    gate: PASS
+    consensus: "Major Revision"
+  round2:
+    avg: 3.3
+    gate: PASS
+    consensus: "Accept with Minor Camera-Ready Corrections"
+p1_items:
+  - id: P1-A
+    description: Universality qualification — scope cross-domain claims
+    addressed: true
+  - id: P1-B
+    description: Rubric specification — 7-dimension rubric with weights
+    addressed: true
+  - id: P1-C
+    description: Computational mechanism — enumerate candidate mechanisms
+    addressed: true
+  - id: P1-D
+    description: Post-hoc CC-theory framing — structural analogue language
+    addressed: true
+
+# Stage history
+history:
+  - stage: draft
+    date: "2026-03-01"
+    note: "Paper initialized — synthesis of Papers #1, #3, #6"
+  - stage: full
+    date: "2026-03-01"
+    note: "All 8 sections + 4 figures written. All evidence in hand from Papers #1, #3, #6."
+  - stage: panel
+    date: "2026-03-01"
+    note: "Reviewers: Jordanous, Churchill, Lupfer, Gervas, Ikegami"
+  - stage: synthesis
+    date: "2026-03-01"
+    note: "Round 1 synthesis: avg 3.1/4, Major Revision, 4 P1 items"
+  - stage: revision
+    date: "2026-03-01"
+    note: "P1-A through P1-D addressed; universality qualifiers, rubric table, mechanism enumeration, structural-analogue framing"
+  - stage: recheck
+    date: "2026-03-01"
+    note: "Round 2 recheck: avg 3.3/4, gate PASS, all P1 resolved. Camera-ready only."
+  - stage: ready
+    date: "2026-03-01"
+    note: "State bug fix — yaml not updated after recheck. Correcting to ready."
+
+created: "2026-03-01"

@@ -1,0 +1,149 @@
+\section{Introduction}
+\label{sec:introduction}
+
+A puzzle hunt is not a puzzle. This distinction, obvious to the puzzle hunt community,
+carries real technical weight for anyone attempting to generate one with AI. A single puzzle
+--- a crossword, a logic grid, a cryptic clue --- is a contained artifact with a well-defined
+quality criterion: it either works mechanically or it does not. A puzzle hunt is a
+\emph{multi-artifact creative system}: a set of thematically unified puzzles, each with a
+confirmed final answer, feeding into a meta-puzzle whose extraction depends on the feeders'
+specific answers, all wrapped in an editorial voice, a narrative world, and a delivery
+package formatted for a specific medium (a website, a physical dossier, a print-and-play
+booklet). The quality bar for a hunt is not just ``does each puzzle work?'' but ``does the
+collection cohere? does the meta close? does the delivery hold together?''
+
+This problem class --- multi-artifact creative system generation --- is not well addressed by
+existing AI generation techniques. Single-shot prompting produces variable output
+uncorrelated across artifacts; it has no mechanism for the kind of global constraint
+propagation that puzzle hunt design requires. Agent-loop approaches
+\cite{park2023generativeagents,nakajima2023babyagi} introduce iteration but do not
+inherently impose the structured handoffs that keep downstream artifacts consistent with
+upstream decisions. Procedural content generation (PCG) research has addressed related
+problems in level generation \cite{shaker2016procedural,summerville2018procedural} and
+narrative \cite{roemmele2015creative,kreminski2020why}, but these systems typically target
+single-artifact or fixed-grammar outputs, not a heterogeneous pipeline of interdependent
+creative artifacts.
+
+The core difficulty is \emph{coordination across decisions}. A puzzle hunt requires that the
+world-building done at Stage~1 constrain the puzzle types admitted at Stage~3, that the
+puzzle answers selected at Stage~4 remain stable for the meta-puzzle designed at Stage~5,
+and that the delivery format chosen at Stage~1 be honored by the assets produced at
+Stage~9. Without explicit structure, AI generation at the scale of a hunt degenerates: the
+world drifts, the meta fails to close, puzzles assume facts the world has not established,
+and delivery assets reference puzzles that have been cut. Coherence collapse is the default
+outcome of unconstrained multi-artifact generation.
+
+\subsection*{Our Approach}
+
+We address this problem with a structured, 11-stage AI-assisted pipeline in which each stage
+produces a defined set of artifacts consumed by subsequent stages, and two stages function as
+formal review gates with explicit pass criteria. The pipeline is not an agent loop and not a
+single prompt chain. It is a decomposition of the full puzzle hunt production task into
+stages that can be executed, reviewed, and retried independently, with structured artifacts
+(markdown documents following defined templates) serving as the sole interface between
+stages. Stage~6 (Authoring) in particular operates under dense human constraints --- a
+fully-specified brief, a locked world, and a committed answer word --- so the pipeline is
+better characterized as AI-assisted execution under specification than as open-ended AI
+creativity. A \emph{world lock} mechanism --- a canonical world document treated as read-only
+after Stage~1 --- prevents coherence drift across the pipeline by ensuring that all
+downstream generation is grounded in a single approved source of truth
+\cite{smith2010tanagra}.
+
+Two stages are designated review gates:
+
+\begin{itemize}
+  \item \textbf{Stage~3 (Puzzle Pool Ranking):} An AI expert panel evaluates a pool of
+  puzzle candidates against a published rubric and assigns numeric scores. Only candidates
+  meeting the score threshold (or approved by human override) proceed to authoring. This
+  gate is deliberately early: catching weak candidates before authoring investment is made
+  is cheap; catching them after authoring is expensive.
+
+  \item \textbf{Stage~7 (Editorial Review):} After authoring, each puzzle is submitted to a
+  second AI panel for editorial review. The panel issues a pass/revise/cut verdict with
+  specific, actionable feedback. Only puzzles passing Stage~7 proceed to integration. This
+  gate prevents broken puzzles from entering the meta-puzzle and delivery package.
+\end{itemize}
+
+The pipeline is implemented as a library of 13 CLAUDE.md skill prompts --- persistent
+markdown instruction files that configure an AI assistant to execute a specific pipeline
+stage. The library runs without per-scenario code changes: the same skill prompts ran all
+five evaluated scenarios, with only per-scenario world and scope documents varying.
+
+\subsection*{Key Empirical Questions}
+
+Given a structured pipeline with explicit gate conditions, three empirical questions become
+tractable:
+
+\begin{enumerate}
+  \item \textbf{Does stage structure matter for output quality?} The 90.4\% first-pass pass
+  rate across 52 puzzles provides an aggregate quality signal; failure distribution across
+  stages provides the structural explanation.
+
+  \item \textbf{Which stages are the highest-leverage intervention points?} If failures are
+  uniformly distributed across stages, then gate placement is arbitrary. If failures
+  concentrate at specific stages, that concentration identifies where pipeline investment has
+  the highest return.
+
+  \item \textbf{Is the pipeline transferable across themes and settings?} If pipeline quality holds only for
+  the theme it was developed in, it is a one-off system, not a general contribution. If it
+  transfers to new themes and settings without code changes, the pipeline specification itself is the
+  contribution.
+\end{enumerate}
+
+We ground these questions in five fully-executed hunt scenarios spanning five distinct
+thematic domains (a real-time strategy game, noir detective fiction, science fiction
+role-playing, music, and print puzzles) and three delivery formats. The first scenario (Age
+of Empires ``Wololo'') completed Stages~1 through~10 in 3~hours and 17~minutes (elapsed
+wall-clock time; active human effort not separately measured) as measured by git commit
+timestamps; subsequent scenarios ran in overlapping sessions, with the full
+pipeline executed independently for each. Across all five scenarios, 52 puzzles were
+authored, reviewed, and tested.
+
+\subsection*{Contributions}
+
+This paper makes the following contributions:
+
+\begin{enumerate}
+  \item \textbf{Pipeline specification.} We specify an 11-stage AI-assisted puzzle hunt
+  pipeline with defined input/output artifacts per stage, explicit gate conditions at
+  Stages~3 and~7, and an autonomy gradient characterizing the degree of AI versus human
+  agency at each stage.
+
+  \item \textbf{Cross-scenario empirical characterization.} Across five hunt scenarios and
+  52 puzzles spanning five domains and three delivery formats, the pipeline achieves a
+  90.4\% first-pass pass rate (47/52). We provide per-scenario and aggregate pass rate
+  breakdowns. The first fully-executed scenario completed in 3h~17m (elapsed) from scope to ship-ready
+  artifacts.
+
+  \item \textbf{Failure analysis.} Five puzzles failed first-pass review. Three of the five
+  failures occurred at Stage~8 (testing and integration), downstream of both review gates;
+  zero failures were attributable to Stage~3 (pool gate). We categorize failure types
+  (mechanism failure, answer coordination failure, construction error, delivery format gap)
+  and map each to its earliest detectable stage.
+
+  \item \textbf{Identification of highest-leverage stages.} The failure distribution
+  confirms Stage~3 and Stage~7 as the pipeline's highest-leverage interventions. Stage~3
+  gates the investment of authoring work: failing here is cheap. Stage~7 gates integration:
+  failing here wastes authoring and blocks meta closure. The concentration of failures
+  \emph{after} Stage~7 (at Stage~8), and zero failures at Stage~3, confirms that both gates
+  are functioning as intended.
+
+  \item \textbf{Open pipeline specification.} The full pipeline is specified in a public git
+  repository: 142 commits over two calendar days, a skill library that grew from 0 to 13
+  skills, and a reviewer profile library that grew from 12 to 29 profiles. The repository
+  contains all scenario artifacts (scope documents, puzzle files, editorial review reports)
+  sufficient to replicate or extend the pipeline to new domains without proprietary
+  dependencies.
+\end{enumerate}
+
+\subsection*{Paper Organization}
+
+Section~\ref{sec:related} situates the pipeline within prior work on PCG, AI-assisted
+creative systems, and review-gate patterns in creative production. Section~\ref{sec:system}
+describes the pipeline in full, including stage-by-stage artifact specifications, gate
+conditions, and the implementation as a CLAUDE.md skill library. Section~\ref{sec:empirical}
+presents the empirical characterization: scenario overview, pass rate analysis, stage timing,
+failure analysis, and cross-theme transferability. Section~\ref{sec:discussion} discusses
+the implications of the failure distribution, the role of the world lock mechanism, and
+limitations of the current evaluation. Section~\ref{sec:conclusion} summarizes contributions
+and identifies open questions.

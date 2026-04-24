@@ -1,0 +1,147 @@
+\section{Results}
+
+\subsection{Authoring Profile Ablation (A0--A6)}
+
+Table~\ref{tab:ablation} reports panel-averaged scores across the seven authoring conditions. The gradient confirms the paper's first claim: authoring profile depth produces measurable quality improvement in the same non-monotonic pattern documented for reviewing profile depth in Paper~I.
+
+\begin{table}[h]
+\centering
+\caption{Authoring ablation results. Scores are panel averages on the weighted 45-point rubric (Clarity $\times 1$, Solvability $\times 1$, Elegance $\times 2$, Reading Reward $\times 2$, Fun $\times 1$, Confirmation $\times 1$, Riven Standard $\times 1$). Pass threshold: $\geq 33/45$. Range = min--max across the three reviewers; differences within this spread should be interpreted with caution given the small panel size.}
+\label{tab:ablation}
+\begin{tabular}{llrrrrcr}
+\toprule
+Condition & Context Added & DK & TS & DY & Avg/45 & Pass & Range \\
+\midrule
+A0 & None (bare persona) & 22 & 21 & 22 & 21.7 & N & 21--22 \\
+A1 & Task specification & 28 & 27 & 28 & 27.7 & N & 27--28 \\
+A2 & Domain world data & 28 & 29 & 28 & 28.3 & N & 28--29 \\
+A3 & Design principles (all 20) & 30 & 32 & 31 & 31.0 & N & 30--32 \\
+A4 & Authoring philosophy & 30 & 33 & 29 & 30.7 & N & 29--33 \\
+A5 & Full authoring profile & 33 & 35 & 28 & 32.0 & N & 28--35 \\
+A6 & Reviewer profile as author & 31 & 35 & 28 & 31.3 & N & 28--35 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The overall arc spans 9.6 points from A0 (21.7) to A5 (32.0), a range large enough to be meaningful against a rubric with an interior pass threshold at 33. The four lowest conditions (A0--A3) form a consistent improvement sequence, with the largest single step occurring at the principle-introduction boundary: A2 to A3 adds 2.7 points (28.3 to 31.0), the same structural jump seen in Paper~I's reviewer ablation when principles were introduced at C3. No condition in the A-series passes, however. The highest aggregate score is 32.0, one point below threshold. This is not a scoring artifact: all seven A-series puzzles score Riven Standard $\leq 3/5$, and since the rubric double-weights Elegance and Reading Reward while treating Riven Standard as a single-weight multiplier, the format ceiling propagates through the entire top of the score distribution. The first-letter acrostic mechanism is imported from puzzle hunt tradition; it is not native to the Age of Empires~II domain. No authoring profile, however fully elaborated, can substitute domain-native mechanism design when the rubric specifically rewards mechanism-domain integration.
+
+The most diagnostically important result in the ablation is the near-identity of A1 and A2. A2 adds extensive domain world data --- every clue carries factual citations to AoE2 source files --- yet scores only 0.6 points above A1 (28.3 vs.\ 27.7; reviewer range for A2: 28--29, for A1: 27--28), a difference within the panel's typical inter-reviewer spread and therefore best treated as a directional signal rather than a precise measurement. The evaluation panel converges on a consistent explanation: the A2 puzzle, \textit{Stone and Steel}, reads like a reference table with punctuation added. Its clues are factually unimpeachable; the Throwing Axeman's ranged-infantry paradox and the War Elephant's 600-hit-point ceiling are both verifiable and specific. But factual specificity is not the same as constructive tension. The clues do not make use of their facts to create an experience --- they deliver the fact and stop. Snyder describes this as clues that read as ``excerpts from a reference table rather than constructions''; Young notes that only one clue (War Elephant) carries a tactile surprise that causes a player to lean in. Domain expertise without a design framework passes the Computer Test for accuracy while failing the Computer Test for craft: a script can retrieve those facts, and a script retrieving them would produce the same clue texture. The gap from A2 to A3 --- when design principles are introduced --- is more than four times the gap from A1 to A2, confirming that the framework matters more than the content it organizes.
+
+The other notable non-linearity is the A4--A5--A6 plateau. A4 (authoring philosophy alone, 30.7; reviewer range: 29--33) is within 1.3 points of A5 (full authoring profile, 32.0; reviewer range: 28--35) --- the smallest gap between any adjacent condition pair after A1--A2, though the overlapping reviewer ranges at A4 and A5 indicate this difference should be read as a weak trend rather than a sharp boundary. The full profile's contribution over philosophy is primarily verification: A5's construction log documents systematic elimination of competing candidates for each letter position, exhaustive uniqueness checking, and instinct-avoidance accounting. This is quality control rather than quality generation. A designer who has internalized the worldview (\textit{BREACH}: strip each clue to the single irreducible fact that names the item; test every phrase for load-bearing status; let the title do double work) is already generating at near-peak quality for the format. The verification layer protects that quality from construction errors but does not elevate the mechanism.
+
+The retreat from A5 to A6 (32.0 to 31.3) is the expected consequence of repurposing a reviewing profile as an authoring guide when the reviewer's most distinctive instinct --- the coherence-and-coupling standard --- exposes a structural gap the format cannot close. The A6-Snyder puzzle, \textit{Escalating Force}, is intellectually honest about this: its authoring notes document the gap between the acrostic mechanism and Snyder's domain-integration standard. That honesty is admirable and accurate, but it describes a limit rather than solving one. The reviewer-as-author transposition adds metacognitive overhead to the authoring process without adding solver-visible quality to the result.
+
+The gradient shape mirrors the reviewer ablation gradient from Paper~I closely enough to support the symmetric-gradient hypothesis (Figure~1). The same three structural features appear in both: an early-plateau region where domain data adds little over task specification, a principle-introduction jump, and a high-conditions plateau where additional profile depth produces diminishing returns. The mirror is not exact --- the authoring plateau is lower in absolute terms because the format ceiling caps the A-series below the pass threshold --- but the functional shape is preserved.
+
+\subsection{Designer Comparison (A5 vs.\ A6 $\times$ 3 Designers)}
+
+Table~\ref{tab:designers} reports scores for all six conditions in the designer comparison, alongside the A5-to-A6 transfer gap for each designer and the lens-type classification introduced in Section~3.3.
+
+\begin{table}[h]
+\centering
+\caption{Designer comparison results. A5 = full authoring profile; A6 = reviewer profile repurposed for authoring. Gap = A6 score minus A5 score (positive indicates improvement under A6 mode). Lens type: C = construction, O = operational, P = perceptual.}
+\label{tab:designers}
+\begin{tabular}{lrrcrrrc}
+\toprule
+Designer & A5/45 & Pass & A6/45 & Pass & Gap & Lens \\
+\midrule
+Snyder & 32.0 & N & 31.3 & N & $-0.7$ & C \\
+Katz   & 33.7 & Y & 35.3 & Y & $+1.6$ & O \\
+Young  & 34.3 & Y & 38.0 & Y & $+3.7$ & P \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The most striking result is Young's gap. Moving from A5 (34.3) to A6 (38.0) adds 3.7 points --- more than twice Katz's gain and of opposite sign to Snyder's. \textit{Holding the Line}, the A6-Young puzzle, is the highest-scoring puzzle in the entire evaluated set and receives the only perfect Riven Standard score (5.0 average) and the only perfect Elegance score (5.0 average) across the full 13-puzzle corpus. It achieves this by finding a format-compatible substitute for Young's most distinctive instinct. Young's reviewing lens centers on visual grammar, world-model consistency, and what the outline calls perceptual-shift --- the moment when the answer produces a second reading that the domain knowledge alone makes available. In a text acrostic, visual grammar has no material to work with, and a pure visual-resolution check would fail immediately. The reviewer-as-author exercise forces a different question: what, within the format's constraints, can perform the function that visual grammar performs in a richer format? Young's answer is second-person present-tense narrative. ``You are playing Age of Empires~II. You queue this Castle Age research\ldots'' puts the solver inside a game decision rather than presenting trivia. The five items --- Treadmill Crane, Onager, Watch Tower, Elite Skirmisher, Ring Archer Armor --- are chosen not for their first letters but for their roles in a coherent defensive scenario; TOWER arrives as the name of the strategic role the solver has been defending throughout, which is a precise analog of visual resolution in the narrative register. The perceptual instinct transferred, but only because the reviewer-as-author exercise generated a format-specific workaround rather than importing the original check.
+
+Katz's improvement is more direct. His operational lens --- short-circuit check, Computer Test, variety constraint, backwards-read discipline --- inverts cleanly into authoring constraints. Each named test has an authoring-time analog: the short-circuit check becomes a constraint on clue ordering (do not let the first three letters become unambiguously suggestive before the fourth), the Computer Test becomes a candidate-selection filter (eliminate any item whose defining property is retrievable by a script), and the backwards-read test becomes a verification pass applied after drafting. The A6-Katz puzzle, \textit{WOLOLO: Five of a Kind}, shows all three constraints operating. The title is the most domain-saturated in the set: WOLOLO names the Monk conversion sound, which is an AoE2-specific piece of community knowledge rather than a game mechanic, establishing the world before the solver reads a clue. Clue 2's Onager friendly-fire detail is a piece of veteran community memory --- a non-player retrieving the Onager's unit table would find range and damage values, not the friendly-fire note --- passing the Computer Test by requiring social knowledge rather than data knowledge. The Snyder Computer Test, imported by Katz into his authoring pass, functions as a domain-integration filter: it eliminates technically correct clues that do not require the solver to have lived in the world. The 1.6-point gain from A5 to A6 is modest in absolute terms but significant as evidence that operational tests are generative --- they add authoring value when repurposed from reviewing.
+
+Snyder's near-zero gap confirms the construction-lens prediction. His reviewing profile asks whether each element is load-bearing, whether the solve path is singular, and whether the cross-clue dependencies form a coherent deduction chain. These are already authoring questions: they can be asked and answered before the puzzle exists in finished form. The A5 and A6 profiles generate functionally equivalent puzzles because they apply functionally equivalent constraints. The $-0.7$-point retreat in A6 mode reflects the metacognitive overhead noted in Section~4.1: the reviewer-as-author exercise causes the A6-Snyder puzzle to document its own limitations rather than resolve them, which is accurate self-assessment but not a design improvement. For a designer whose reviewing and authoring lenses are already unified, the reviewer-as-author transposition adds nothing and costs a small amount of authoring attention to the metacommentary.
+
+Taken together, the three gaps confirm the lens-type transfer model. Construction lenses (Snyder, $-0.7$) require no transposition because they are already generative. Operational lenses (Katz, $+1.6$) transfer cleanly because named tests have authoring-time analogs. Perceptual lenses (Young, $+3.7$) are format-dependent: when the output format can supply the required material, the reviewing instinct is powerful and produces the highest scores in the corpus; when it cannot, the reviewer-as-author exercise must generate a format-specific substitute, which is cognitively demanding but, in Young's case, productive.
+
+\subsection{The Six Evaluative Frameworks}
+
+The quantitative gradient reported in Sections~4.1 and 4.2 is supported by a qualitative finding: richer reviewer profiles introduce new evaluative \emph{language}, not merely more words about existing criteria. Paper~I's C6 reviews --- produced by the same three-reviewer panel under its richest profile condition --- surfaced six evaluative frameworks that do not appear in C0--C5 reviews at any scoring level. These frameworks are not refinements of existing rubric dimensions; they name new constructs that the bare and intermediate profiles lack the vocabulary to express. Table~\ref{tab:taxonomy} presents the taxonomy.
+
+\begin{table}[h]
+\centering
+\caption{Six evaluative frameworks surfaced in C6 reviews. None appear in C0--C5 reviews. Full empirical evidence --- review text instances, frequency analysis, cross-condition comparison --- is provided in the companion taxonomy paper~\cite{paper3taxonomy}.}
+\label{tab:taxonomy}
+\begin{tabular}{p{2.8cm}p{2.4cm}p{6.6cm}}
+\toprule
+Framework & Originating Profile & Definition \\
+\midrule
+A-ha economy & Foggy Brume & The design and pacing of insight moments: not merely whether a puzzle has an a-ha, but whether the density and timing of a-ha moments match the puzzle's promised experience. \\[4pt]
+Load-bearing test & Thomas Snyder & Every element must earn its structural place; strip it and test whether the puzzle collapses. Elements that survive removal were decorative; elements that collapse the puzzle are load-bearing. \\[4pt]
+World-model consistency & Emily Short & The puzzle's internal logic must hold within the fiction it inhabits; a clue that violates the world's own rules breaks the contract with the solver even if the extraction is mechanically correct. \\[4pt]
+Social fabric & Jordan Weisman & A puzzle genuinely requiring collaboration is architecturally different from a puzzle that merely occurs in a team context; the social fabric test distinguishes puzzles that would degrade if solved alone. \\[4pt]
+Perceptual-shift & Scott Kim & The answer should produce a second reading of the puzzle's surface that the domain knowledge makes available and that a non-player cannot experience; the reward is not recognition but transformation. \\[4pt]
+Visual grammar & Dana Young & The layout should communicate structure through form; when text substitutes for visual design, the puzzle is describing its structure rather than enacting it. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The following exemplars from the C6 review corpus illustrate each framework operating as an analytical lens on a specific puzzle feature.
+
+\textbf{A-ha economy.} Dan Katz on \textit{Scicabulary} (MIT Mystery Hunt 2023):
+\begin{quote}
+The gap between understanding the instruction and executing the first successful match is substantial. A solver who does not immediately grasp what ``opposite halves'' means will stall at the threshold. The canned hints address this, but that means the puzzle is partially relying on its hint structure to compensate for a presentation that could be clearer. Once you are in --- once you've cracked two or three pairings --- the mechanism is deeply satisfying.
+\end{quote}
+The Clarity score (3/5) does not capture this diagnosis: the framework identifies a timing displacement between entry and payoff that the rubric dimension cannot resolve.
+
+\textbf{Load-bearing test.} Thomas Snyder on \textit{What's Next?} (Huntinality III 2023):
+\begin{quote}
+The ten images represent a deliberate sample of the song's timeline, and the designer chose images where the ``next item'' yields letters that spell a coherent phrase. That sample selection is load-bearing design: not any ten entries would have worked, and these ten were chosen because they combine to spell a recognizable lyric.
+\end{quote}
+The test here operates at the construction-architecture level, classifying the entry-selection decision itself as structural rather than arbitrary.
+
+\textbf{World-model consistency.} Dana Young on \textit{Information Relay} (Huntinality III 2023):
+\begin{quote}
+The five bears each have distinct voices, and those voices are mechanically load-bearing --- the personality is the clue method. That is the mechanic being the theme in the purest sense I've seen in this batch. You spend the entire solve inhabiting a family dynamic where everyone is contributing to a shared task in their own broken way.
+\end{quote}
+The framework diagnoses thematic enactment rather than thematic accuracy: the fiction and the mechanism are the same object.
+
+\textbf{Social fabric.} Dan Katz on \textit{Bridge Building} (MIT Mystery Hunt 2023):
+\begin{quote}
+This two-stage structure is one of my favorite puzzle architectures because each stage rewards different solvers. A chemistry-blind team can get the Hashi; a chemistry team might backsolver from the polymer structure.
+\end{quote}
+The framework distinguishes architectural diversity-of-entry from difficulty variation: distinct roles arise because logic and chemistry competencies are uncorrelated.
+
+\textbf{Perceptual-shift.} Dana Young on \textit{Front and Center} (Huntinality III 2023):
+\begin{quote}
+The answer RADAR is perfect: it names a technology for detecting things that are both ahead and behind you, which resonates with the temporal symmetry of palindromes. This is Dana's definition of an inevitable answer: it reframes everything before it.
+\end{quote}
+The framework captures what a satisfaction rating cannot: the reorientation is available only to a solver who has worked through the palindrome mechanism.
+
+\textbf{Visual grammar.} Dana Young on \textit{Front and Center}:
+\begin{quote}
+This puzzle resolves visually at every scale: each palindrome headline reads the same forward and backward, the extracted word RADAR reads the same forward and backward, and the masthead crease that bisects the T in SEMI TIMES is a visual hint at the center-letter extraction. The visual grammar is consistent throughout. The newspaper format is not decorative --- it is the world of the puzzle.
+\end{quote}
+The failure mode appears in Young's review of \textit{H2No}: ``the visual presentation of this puzzle is doing almost no work to guide you through the intended experience. The layout is a list'' --- a format-level diagnosis that survives all content-level corrections.
+
+These frameworks are the qualitative evidence for a claim that the quantitative gradient alone cannot establish: that richer profiles change the \emph{kind} of evaluation being performed, not just its thoroughness. A C0 reviewer can identify that a clue is unclear; a C6 reviewer can identify that the clue's clarity problem is structural --- it describes the world-model relationship incorrectly, which cannot be fixed by rewording. The a-ha economy framework allows a reviewer to diagnose pacing failure as distinct from content failure; the load-bearing test distinguishes decoration from structure at the element level; visual grammar identifies format-level mismatches that survive all content-level improvements.
+
+Within the present study, three of these frameworks appear directly in the A5/A6 designer evaluation notes. The load-bearing test is explicit in both Snyder's authoring log (A5-Snyder: ``each phrase was tested for load-bearing status'') and Katz's reviewer notes on A6-Katz (``every clue is forced''). Perceptual-shift appears in Young's A6 construction log as the explicit design goal that second-person narrative grammar is intended to satisfy: the answer TOWER should arrive as a transformation of the solver's experience of the preceding scenario, not as the conclusion of a letter-reading procedure. Visual grammar is the framework whose absence is most diagnostic: none of the text-acrostic puzzles can satisfy it, and the Riven Standard scores for the A-series (capped at 3/5 for all seven conditions) reflect precisely this gap between content-domain integration and format-domain integration. The framework does not appear in A-series reviewer notes as a positive finding; it appears in Young's A5 notes as an acknowledged absence, and its workaround in A6-Young is what produces the highest Riven Standard score in the corpus (5.0).
+
+Table~\ref{tab:framework-presence} reports framework presence counts across all 15 C6 reviews compared to the C0 bare baseline, confirming that all six frameworks are emergent from the enriched profiles rather than present in unprompted reviews.
+
+\begin{table}[h]
+\centering
+\caption{Framework presence in C0 (bare prompt, 15 reviews) vs.\ C6 (full profile, 15 reviews). C0 counts are zero by construction: none of the six frameworks surface in unprompted reviews at any scoring level. C6 counts are drawn from the frequency analysis in the companion taxonomy paper~\cite{paper3taxonomy}.}
+\label{tab:framework-presence}
+\begin{tabular}{lrrr}
+\toprule
+Framework & C0 present & C6 present & Net gain \\
+\midrule
+A-ha economy & 0 & 8 & $+8$ \\
+Load-bearing test & 0 & 10 & $+10$ \\
+World-model consistency & 0 & 7 & $+7$ \\
+Social fabric & 0 & 4 & $+4$ \\
+Perceptual-shift & 0 & 9 & $+9$ \\
+Visual grammar & 0 & 6 & $+6$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Full empirical evidence for the six-framework taxonomy --- review text instances, frequency analysis by profile condition, and cross-condition presence/absence comparison --- is provided in the companion taxonomy paper~\cite{paper3taxonomy}. Here we present the taxonomy as interpretive context for the lens-type patterns reported in Section~4.2: the three lens types (construction, operational, perceptual) are the authoring-transfer manifestations of the same underlying profile properties that generate the six evaluative frameworks on the reviewing side.

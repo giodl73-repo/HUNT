@@ -1,0 +1,209 @@
+\section{Evidence}
+\label{sec:evidence}
+
+The tier model makes four falsifiable predictions. First, removing the Tier 1 component
+from a working creative profile should produce outcomes worse than the bare baseline ---
+not merely degraded but categorically worse. Second, Tier 2 components should be
+individually necessary but not individually sufficient: each causes a below-threshold
+failure when removed, yet none alone reaches threshold. Third, Tier 3 components should
+be individually additive but jointly non-monotonic: adding them in the wrong order (Tier
+3 before Tier 1) degrades performance. Fourth, personas that activate Tier 1 by identity
+should outperform personas that activate Tier 3 by identity, by a margin that reflects
+the full cost of missing the orientation layer. All four predictions are confirmed across
+the reviewing and authoring data sets.
+
+\subsection{The Reviewing-Side Tier Structure}
+
+The eight-condition ablation study from \citeauthor{paper1} \cite{paper1} varied which
+components of a structured expert reviewer profile were presented to an AI system, then
+scored the resulting reviews on a 30-point rubric across five dimensions. The resulting
+gradient runs C0 = 23.7 (bare baseline), C1 = 24.3 (credentials only), C2 = 23.3
+(principles only), C3 = 26.7 (full principles), C4 = 26.7 (philosophy only), C5 = 21.7
+(lens only), C6 = 25.3 (full profile), C7 = 22.3 (full profile plus all principles).
+
+The first Tier 1 prediction is confirmed by C4 and C5. Philosophy alone (C4 = 26.7)
+matches the full-principles condition (C3 = 26.7) despite containing far less information.
+The orientation component replicates the performance of eleven principles in a single
+sentence. More decisively, lens-only without philosophy (C5 = 21.7) falls 2.0 points
+below the bare baseline (C0 = 23.7). Domain specificity without orientation is not merely
+less helpful than orientation --- it actively degrades review quality, presumably by
+focusing the system on format compliance at the expense of experiential relevance. The
+lens is a Tier 3 tool: it sharpens defect detection within a category of concern, but
+without the Tier 1 orientation that defines what the review is for, it surfaces formally
+domain-appropriate observations that miss the solver experience entirely.
+
+The Tier 2 prediction is confirmed by the structure of the non-redundant principles
+identified in \citeauthor{paper1} \cite{paper1}: Verify the Last Mile, Blame the Player,
+and the Computer Test. These three principles add unique diagnostic signal that the other
+eight principles --- which load onto dimensions already captured by the philosophy ---
+cannot supply. Their uniqueness is operational: each specifies a concrete test that can
+be applied at any decision point in the review. The philosophy says ``evaluate from the
+solver's experience''; these principles say ``did you check whether the solver can
+actually complete the final extraction?'', ``did you consider whether the solver is at
+fault before blaming the puzzle?'', ``did you test whether the mechanism is computable
+without domain expertise?'' These are not restatements of the orientation; they are its
+instantiation as checkable gates.
+
+The non-monotonicity prediction is confirmed by comparing C6, C7, and C4. Full profile
+(C6 = 25.3) underperforms philosophy alone (C4 = 26.7) by 1.4 points. Adding the review
+lens and credentials to the philosophy dilutes rather than enriches. More strikingly, C7
+(full profile plus all eleven principles = 22.3) substantially underperforms C6 (full
+profile = 25.3). When Tier 2 non-redundant principles are bundled with Tier 3 redundant
+ones and delivered without a stable Tier 1 foundation, the system cannot integrate the
+additional constraints into a coherent evaluative stance. More context degrades
+performance because additional Tier 3 content overwhelms rather than supplements an
+orientation that has not been adequately activated. This is the tier model's central
+non-monotonic prediction: adding Tier 3 material without a stable Tier 1 produces noise,
+not signal.
+
+\subsection{The Authoring-Side Tier Structure}
+
+The trait decomposition study from \citeauthor{paper6} \cite{paper6} decomposed the
+artist persona into six cognitive traits, measured quality under each trait in isolation
+(Phase 1), under each single-trait removal from the full artist profile (Phase 2), and
+under progressive reconstruction from the minimum sufficient set (Phase 3). The scoring
+rubric was 45 points across nine dimensions.
+
+Phase 1 isolates each trait's unaided contribution. Experience-first alone (T1 = 31.3)
+substantially outperforms the bare baseline (A0 = 24.0) and falls below the full artist
+(AA = 41.0) by approximately ten points, confirming that T1 is necessary but not alone
+sufficient. Elegance drive alone (T4 = 26.0) falls \textit{below} the bare baseline ---
+a result that is not a failure of T4 but an artifact of isolation: without the
+orientation that tells the system what to optimize for, elegance becomes formal
+minimalism that strips content rather than sharpening it. Rigor alone (T5 = 27.0) shows
+the same pattern for the same reason. Neither Tier 2 trait can operate without Tier 1 to
+direct it.
+
+Phase 2 provides the cleanest test of tier membership. The leave-one-out drops from the
+full artist (AA = 41.7) rank the traits precisely as the model predicts. Removing T1
+produces a drop of $-$29.4 points (to 12.3), the only catastrophic failure in the
+experiment. No other single-trait removal approaches this magnitude: T5 removal produces
+$-$12.7, T4 removal $-$11.7, T2 removal $-$8.4, T6 removal $-$8.0, T3 removal $-$4.4.
+The gap between T1's drop and the next largest drop (T5, $-$12.7) is itself 16.7 points.
+Experience-first is not merely the most important trait; it occupies a qualitatively
+different tier from all others.
+
+Phase 3 tests the reconstruction curve: starting from zero, adding traits in Tier 1
+then Tier 2 then Tier 3 order, and tracking where the 35-point quality threshold is
+crossed. The baseline (R0 = 22.7) gives the starting point. Adding T1 alone (R1 = 28.3)
+raises quality but does not cross threshold. Adding T4 (R2 = 30.3) and T5 (R3 = 35.7)
+crosses the threshold at exactly the Tier 1 + Tier 2 boundary. This is the minimum
+sufficient prompt: three traits, corresponding to OLE's three sentences. Subsequent
+additions confirm the Tier 3 amplifying role: R4 = 37.3, R5 = 40.3, R6 = 42.3, each
+adding between 2.0 and 3.0 points. The curve flattens as it approaches the full artist
+ceiling (AA = 41.0 in Phase 1; 41.7 in Phase 2), consistent with diminishing returns in
+the amplifying tier.
+
+The threshold crossing at exactly R3 is the visual proof of the tier model's architecture.
+Quality passes the publishable threshold when and only when both Tier 1 and both Tier 2
+components are present. Adding any single Tier 3 component without that foundation
+(demonstrated in Phase 1) does not cross threshold. Adding one Tier 2 component without
+Tier 1 (also demonstrated in Phase 1) does not cross threshold. The model is not
+additive across tiers; it is conditional.
+
+\subsection{The Persona Natural Experiment}
+
+The persona motivating study from \citeauthor{paper3} \cite{paper3} constitutes a natural
+experiment in tier activation. Participants were given bare two-word persona labels ---
+``you are an artist,'' ``you are a puzzle designer,'' ``you are a game designer,'' ``you
+are a doctor,'' ``you are a programmer'' --- and scored on the same 45-point rubric. The
+results, ranked by score, are: artist (AA) = 40.3, game designer (AG) = 32.3, programmer
+= 24.0, puzzle designer (A0) = 24.7, doctor = 17.7.
+
+The tier model explains this ordering without appeal to domain competence. The ``artist''
+label activates Tier 1 by naming a practice whose defining criterion is the experience of
+the viewer, listener, or solver. Artistic training is, functionally, training to inhabit
+the receiver's experience before making any design decision --- which is exactly what the
+orientation tier requires. The artist label also activates a partial Tier 2 through the
+implicit elegance standard of artistic practice: ``does this need to be here?'' is a
+question artists are trained to ask. The result (40.3) is near the ceiling for a single
+bare label and approaches the carefully assembled full profile.
+
+The puzzle designer label activates Tier 3 by naming a domain: puzzle design involves
+acrostics, indexing, thematic assignment, answer extraction, and a set of genre
+conventions. These are all Tier 3 elements. The label says nothing about the solver's
+experience, nothing about removing unnecessary elements, nothing about verifying every
+claim. The 15.6-point gap between artist (40.3) and puzzle designer (24.7) is the cost
+of starting at Tier 3.
+
+The game designer score (32.3) falls between the two, approximately 7.1 points above
+puzzle designer and 8.0 points below artist. Game design training includes more
+orientation toward the player experience than puzzle design training does --- playtesting
+culture, player-experience vocabulary, the concept of ``game feel'' are all partial Tier
+1 activations --- but game design is also defined by systems and mechanics that pull
+toward Tier 3 operationalization. The partial Tier 1 activation explains approximately
+half the gap relative to the artist.
+
+The programmer (24.0) and doctor (17.7) scores confirm the model from the other
+direction. Both professions activate professional precision --- formal correctness,
+technical vocabulary, domain methodology --- which is Tier 3 domain-specificity with no
+orientation layer. A programmer's quality criterion is whether the code runs correctly; a
+doctor's is whether the clinical record is accurate. Neither criterion involves a theory
+of what the receiver will experience. Applied to puzzle design, this precision produces
+technically well-formed puzzles with no path for the solver --- formally correct and
+experientially absent.
+
+\subsection{The Designer Lens Comparison}
+
+The three-designer comparison from \citeauthor{paper3} \cite{paper3} provides a within-tier
+analysis of how different lens orientations in the reviewing role transfer to the
+authoring role. Three experts --- Katz (operational lens), Young (perceptual lens),
+Snyder (construction lens) --- were profiled in their reviewing roles (A5 conditions) and
+then had their profiles augmented with authoring-specific guidance (A6 conditions). The
+score deltas (A6 minus A5) are Katz $+$1.6, Young $+$3.7, Snyder $-$0.7.
+
+These deltas are exactly what the tier model predicts. Katz's operational lens is a Tier
+2 formulation: it specifies constraint-satisfaction tests applicable bidirectionally to
+reviewing and authoring. When operational constraints are present, switching from the
+reviewing to the authoring role requires only minor adaptation, because the constraints
+--- ``does this mechanism have exactly one valid solution?'', ``does this step have a
+recoverable error?'' --- apply in both directions. The $+$1.6 gain reflects the marginal
+authoring-specific guidance added in A6. Operational lenses transfer cleanly across
+roles.
+
+Young's perceptual lens is Tier 3 in reviewing: it targets specific format-dependent
+perceptual cues (contrast, visual grouping, typographic signaling) that reviewers use to
+evaluate puzzle presentation. In the authoring role, these specific cues do not directly
+transfer --- puzzle authors cannot replicate the exact perceptual grammar of a genre they
+are not producing. But the $+$3.7 gain in A6 reveals what happens when Tier 3
+format-specificity is blocked by a role boundary: Young's Tier 1 orientation (``how does
+the solver perceive this?'') fills the gap by generating format-compatible substitutions.
+The authoring profile produces novel perceptual solutions rather than replicating
+reviewing heuristics. When Tier 3 specificity cannot transfer directly, Tier 1 orientation
+activates creative substitution --- a result that cannot be explained by any additive or
+averaging model of domain expertise.
+
+Snyder's construction lens is already Tier 1 and Tier 2 in his reviewing profile. His
+evaluation criteria focus on mechanism elegance (Tier 2: elegance gate) and solver-path
+coherence (Tier 1: experience-first). These criteria are not role-bound: they apply
+identically to reviewing a puzzle mechanism and constructing one. The near-zero delta
+($-$0.7, within measurement noise) confirms that a profile with strong Tier 1 and Tier 2
+components faces no role-crossing penalty. There is no gap to close because the
+orientation and discipline are already authoring-compatible.
+
+\begin{table}[t]
+\centering
+\caption{Cross-role symmetry: Tier assignment, evidence component, and score impact
+across authoring and reviewing roles. All authoring scores are out of 45 (9 dimensions
+$\times$ 5 points); all reviewing scores are out of 30 (5 dimensions $\times$ 6 points).}
+\label{tab:symmetry}
+\begin{tabular}{llrr}
+\toprule
+\textbf{Tier} & \textbf{Evidence Component} & \textbf{Reviewing $\Delta$} & \textbf{Authoring $\Delta$} \\
+\midrule
+Tier 1 & Orientation / Experience-first & $-$2.0 vs.\ baseline & $-$29.4 (L-T1) \\
+Tier 2 & Operational discipline (non-redundant) & $+$3.0 (C3 vs.\ C0) & $-$12.2 avg.\ (L-T4, L-T5) \\
+Tier 3 & Lens / Surprise, Visual, Systematic & $+$1.6 (C6 vs.\ C4) & $+$2.3 avg.\ (R4--R6 increments) \\
+\midrule
+Inverted & Tier 3 without Tier 1 & $-$2.0 (C5 vs.\ C0) & $-$17.0 (T4 alone vs.\ A0) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The bottom row of Table~\ref{tab:symmetry} is the tier model's signature prediction, and
+the one most difficult to explain by any flat expertise model: Tier 3 content without
+Tier 1 activation produces performance \textit{below the bare baseline} in both roles.
+The lens without philosophy (C5 = 21.7) underperforms the no-persona condition (C0 =
+23.7). Elegance drive without experience-first (T4 alone = 26.0) underperforms the
+no-trait condition (A0 = 24.0). Domain expertise without orientation actively degrades
+creative quality.

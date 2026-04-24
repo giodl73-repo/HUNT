@@ -1,0 +1,59 @@
+\section{Discussion}
+
+\subsection{Why Stage~3 and Stage~7 Are Highest-Leverage}
+
+The asymmetry of failure costs is the central design insight of the pipeline. A puzzle concept that is rejected at Stage~3 (pool ranking) costs only the work of writing a brief — typically a few minutes of prompting and review. A puzzle that clears Stage~3 but fails at or after Stage~7 (editorial review) wastes the full authoring cycle: puzzle construction, answer confirmation, extraction mechanism design, and any associated world-building, amounting to 30–60 minutes of invested effort per puzzle. Two review gates rather than one is therefore not an aesthetic choice but an economic one: the first gate is cheap insurance against expensive downstream work; the second gate is the last high-signal checkpoint before integration costs compound further.
+
+The empirical data is consistent with this framing. Across the 52 puzzles in the five core scenarios, zero failures were detected at Stage~3. This does not mean Stage~3 catches nothing — it means the pool-ranking pass correctly elevated strong candidates and suppressed weak ones before any authoring investment was made. The three constructive failures (Age of Empires Puzzle~V, Ironfall~P01, Ironfall~P02) emerged at Stage~8 (testing and integration), after Stage~7 editorial review had passed them. These failures are attributable not to editorial blindness but to failure modes that only become visible during answer-path verification: a pure-computation mechanism with no deductive layer, and two answer-coordination mismatches arising from brief-to-meta handoff errors. Both are classes of failure that Stage~7 rubrics can be extended to detect, and both are recoverable at Stage~8 with moderate cost. The remaining two failures were a construction error caught at Stage~6 and a delivery-format gap at Stage~9 — neither attributable to editorial gate failure.
+
+The key operational recommendation from this analysis is direct: do not commit to authoring until Stage~3 ranking is complete, and do not commit to integration until Stage~7 editorial verdict is in hand. At any production scale, the cost savings per filtered puzzle are material.
+
+\subsection{The World Lock as a Coherence Mechanism}
+
+Stage~2 produces a canonical world document — \texttt{LOCKED.md} in the pipeline's artifact convention — which is treated as read-only by all subsequent stages. This single-document, single-commit mechanism is the pipeline's primary defense against generation drift: the gradual incoherence that accumulates when later-stage content is generated against a world that has itself been revised.
+
+Without a world lock, the failure mode is subtle and insidious. A character name changed in a late Stage~6 revision would invalidate puzzle flavor text written in Stage~4; a geography change would break a Stage~5 meta mechanism that depended on location names as answer components. These failures are difficult to detect in isolation because each individual artifact may be internally consistent, while the collection as a whole is not. In a multi-stage generative pipeline operating across parallel authoring sessions — as is the case in Stages~5 and~6 of this pipeline — incoherence accumulates silently across agent contexts.
+
+None of the five core scenarios experienced coherence failures attributable to world drift. This negative result is, we argue, precisely the point: the lock worked as intended and the failure class it prevents did not occur. The cost of the lock is negligible — it requires nothing beyond what a scope and structure stage would produce anyway, formalized as a committed artifact. The return is immunity to an entire failure class.
+
+For practitioners adapting the pipeline to new domains, the implication is clear: produce the world lock before running any generative stage, commit it to version control, and communicate its read-only status explicitly in the scenario's \texttt{CLAUDE.md}. The one-time setup cost is dominated by the coherence insurance it provides.
+
+\subsection{The Autonomy Gradient}
+
+A counterintuitive finding from the autonomy coding analysis (Section~4) is that the pipeline's middle stages — authoring (Stage~6) and editorial review (Stage~7) — are where AI operates most autonomously, while the earliest and latest stages involve the greatest proportion of human judgment. Stage~6 in particular was executed entirely by AI agents across all scenarios, with parallel agent launches and no human editing of puzzle files during construction. Stage~7 editorial review was AI-panel-driven in all cases, with human involvement limited to disposition decisions on borderline verdicts.
+
+This gradient is counterintuitive because creative work is typically assumed to require human oversight precisely at the point of creation. The explanation is structural: the middle stages are where domain knowledge is densest and most tractable for AI systems. Stage~6 operates against a fully specified brief (from Stage~4), a locked world (from Stage~2), and a known answer (from Stage~5). The generation task is highly constrained, and the quality rubric is explicit. Stage~7 applies a formalized editorial rubric against a completed artifact — a task well-suited to multi-profile panel evaluation. Constraint density, not creativity, is what drives AI autonomy.
+
+By contrast, Stage~1 (scope definition) requires human judgment about intent — what the hunt should \emph{mean}, what experience it should produce, who the audience is. Stage~11 (polish) requires judgment about edge cases the system did not anticipate: hint calibration for specific solver populations, accessibility accommodations, last-mile delivery decisions. Neither stage admits the kind of structured task decomposition that makes AI autonomous execution reliable. Human involvement is most valuable at the boundaries where structure is thinnest.
+
+This gradient has a practical implication for pipeline adoption: practitioners should expect to invest human time at Stage~1 and Stage~11, and should trust AI autonomy most heavily in the middle. Attempts to increase human involvement in Stage~6 authoring, perhaps out of skepticism about AI-generated puzzle content, are likely to add cost without proportionate quality benefit.
+
+\subsection{Limitations}
+
+Several limitations constrain the generalizability of these findings.
+
+\textbf{Single toolkit system.} All five scenarios were executed using the same \texttt{CLAUDE.md}-driven skill library and reviewer profile set. Cross-pipeline transferability — whether a different authoring system with different underlying LLM prompts would yield comparable stage-level pass rates — is not demonstrated here. The pipeline \emph{specification} is transferable; the empirical results are specific to this implementation.
+
+\textbf{AI panel as quality proxy.} Pass rates throughout this paper are assessed by AI expert panel review, not by human play-testing. Whether AI panel verdict at Stage~7 correlates with solver enjoyment, puzzle fairness, or aha-moment quality is studied in a companion paper~\cite{dellaLibera2025calibration}. The results reported here establish pipeline behavior under the AI-panel quality criterion; they should not be taken as evidence about human solver experience without that validation. All quality metrics are derived from AI panel review; correlation with solver enjoyment, engagement, and perceived difficulty is studied in companion work~\cite{dellaLibera2025calibration}. The pipeline optimizes for panel-pass quality, which is a proxy for but not identical to player experience.
+
+\textbf{Maturation confound.} The 90.4\% aggregate pass rate spans a materially evolving pipeline; improvement attributable to pipeline refinement, larger candidate pools, and accumulated session experience cannot be disentangled.
+
+\textbf{Absence of baseline condition.} We do not report a gate-disabled baseline condition; the causal attribution of quality improvement to pipeline structure is inferential rather than experimentally established.
+
+\textbf{Scale ceiling.} The largest scenario in the empirical set is Dead Reckoning at 19 puzzles (15 feeders, 4 metas). MIT Mystery Hunt scale — 200 or more puzzles with nested meta structure and cross-round interactions — is entirely untested. Pipeline behavior at that scale, particularly the coherence properties of the world lock and the compounding effects of Stage~8 answer-coordination failures, is an open empirical question.
+
+\textbf{Timing as proxy.} Stage timing data is derived from commit timestamps, which capture wall-clock intervals between artifact commits rather than active human-minutes per stage. Stages executed in overlapping sessions (Scenarios~3 through~6 ran in parallel contexts on Day~1) compound this measurement limitation. The timing analysis presented in Section~4 should be understood as an order-of-magnitude characterization, not a precise human-effort accounting.
+
+\subsection{Design Recommendations for Practitioners}
+
+Five recommendations follow from the empirical analysis.
+
+\textbf{Run Stage~3 pool ranking before committing to authoring.} The cost savings per filtered puzzle are significant at any scale. A pool of 15 candidates ranked by an AI panel requires less than 20 minutes (as observed in Stage~3 of the Age of Empires scenario at 8–20 minutes elapsed); committing to authoring without ranking exposes all candidate slots to the full authoring cost regardless of quality.
+
+\textbf{Invest in the world-lock document before running generative stages.} The lock prevents coherence failures at no additional cost beyond what the scope and structure stages produce in the normal course. The one-time overhead of committing \texttt{LOCKED.md} to version control is dominated by the coherence insurance it provides across all subsequent stages.
+
+\textbf{Run AI expert panels on every puzzle candidate, not only selected finalists.} Panel evaluation is cheap enough — and reliable enough relative to the cost of a wasted authoring cycle — that broad application is warranted. Reserving panel review for a pre-selected shortlist defeats the purpose of the Stage~3 gate.
+
+\textbf{Configure per-scenario scope and world documents; reuse the skill library unchanged.} The five-scenario empirical record confirms that the \texttt{CLAUDE.md} skill library transfers without modification across domains, scales, and delivery formats. Per-scenario effort should be concentrated in Stage~1 (scope) and Stage~2 (world design), not in pipeline reconfiguration.
+
+\textbf{Expect and plan for Stage~8 failures.} Three of the five pipeline failures surfaced at Stage~8, after editorial review had passed the puzzles. A small Stage~8 failure budget (10\% of final puzzle count) should be assumed when estimating delivery timelines, and the pipeline should be operated with sufficient puzzle-pool depth to absorb redesigns without missing the final count target.

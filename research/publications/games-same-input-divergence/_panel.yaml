@@ -1,0 +1,44 @@
+version: "1.2.0"
+uuid: g4s5i6d7
+slug: same-input-divergence
+title: "Structured Divergence in AI Creative Generation: A Same-Input Study of Puzzle Hunt Pipeline Outputs"
+venue: "ICCC 2026"
+stage: ready
+round: 1
+content_mode: full
+content_mode_confirmed: true
+
+# Review tracking
+reviewers:
+  - name: Anna Jordanous
+    profile_ref: anna-jordanous
+    expertise: Computational creativity evaluation, SPECS framework
+  - name: Julian Togelius
+    profile_ref: julian-togelius
+    expertise: Procedural content generation, game AI, diversity in generative systems
+  - name: Pablo Gervás
+    profile_ref: pablo-gervas
+    expertise: Computational creativity, narrative generation, creative cognition
+  - name: Michael Cook
+    profile_ref: michael-cook
+    expertise: Computational game design, AI creative systems, procedural generation
+  - name: Mark Riedl
+    profile_ref: mark-riedl
+    expertise: AI narrative intelligence, story generation, computational creativity
+
+reviews: {}
+p1_items: []
+
+# Stage history
+history:
+  - stage: draft
+    date: "2026-02-28"
+    note: "Paper initialized via plan.md authoring"
+  - stage: full
+    date: "2026-02-28"
+    note: "All 7 sections written, 5 figures generated, Hunt 2 complete, comparison data complete"
+  - stage: panel
+    date: "2026-02-28"
+    note: "Reviewers: Jordanous, Togelius, Gervas, Cook, Riedl"
+
+created: "2026-02-28"

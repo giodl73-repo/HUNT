@@ -1,0 +1,137 @@
+\section{The OLE Formula}
+\label{sec:ole}
+
+The empirical findings converge on a three-step practical prescription. The OLE formula\footnote{Originally termed ODE (Orientation--Discipline--Expertise). Renamed to OLE after empirical field elicitation research (Papers 47--50) established that \texttt{lens} is the field name that reliably produces Tier~2 content in structured persona authoring.}
+--- Orientation, Lens, Expertise --- is a minimum sufficient creative prompt
+construction protocol derivable from the tier model. It specifies not what content to
+include but in what order, and at what level of formulation, to construct a creative
+prompt that crosses the quality threshold in any domain.
+
+\subsection{Formalization}
+
+The OLE formula consists of three steps, corresponding to the three tiers.
+
+Step 1, Orientation, is a single sentence: \textit{``Think first about how the other
+person will experience this.''} This sentence activates Tier 1. It names the receiver,
+names the receiver's experience as the primary criterion, and establishes the evaluative
+frame before any domain content enters the system. It is not a domain claim and does not
+require domain knowledge to apply. The step 1 sentence is the irreplaceable component.
+Every piece of evidence in this paper converges on the same finding: a creative prompt
+without an orientation sentence fails at or below the bare baseline, regardless of how
+much domain expertise follows it. Do not skip step 1.
+
+Step 2, Lens, consists of two sentences: \textit{``Remove anything that is not
+necessary. Verify every claim before finishing.''} These sentences activate Tier 2. The
+first is an elegance gate: it enforces the operational constraint that the output contain
+no unnecessary elements, which is the authoring-side analog of the reviewer's test for
+over-scaffolding. The second is a rigor gate: it enforces verification of every factual
+claim embedded in the output, which is the authoring-side analog of Verify the Last Mile
+and the Computer Test in the reviewing profile. Together they operationalize the
+orientation into checkable decision criteria. The leave-one-out data confirm their load-bearing
+role: removing the elegance gate (L-T4 = $-$11.7 points) and removing the rigor gate
+(L-T5 = $-$12.7 points) both drop quality below the threshold.
+
+Step 3, Expertise, is domain content provided as context, not as persona identity. The
+correct form is: \textit{``Here is the relevant domain information: [world data, style
+guides, precedents, examples].''} The incorrect form is: \textit{``You are a [domain
+expert].''} The distinction is not cosmetic. Providing domain content as context
+activates Tier 3 in its amplifying role: the system uses the information to enrich an
+output already structured by Tier 1 and Tier 2. Providing domain content as a persona
+identity label activates Tier 3 first, before any orientation has been established, and
+inverts the quality hierarchy. The persona study quantifies the cost of this inversion at
+15.6 points on a 45-point scale.
+
+The three-step structure is the minimum sufficient creative prompt. The reconstruction
+curve from Phase 3 of the authoring study \cite{paper6} provides direct evidence: R3,
+which corresponds precisely to Steps 1 and 2 without Step 3 (T1 + T4 + T5 = 35.7 out of
+45), is the first condition to cross the publishable quality threshold. Every condition
+without T1, regardless of what else is present, fails to cross that threshold. Every
+condition with T1 and both Tier 2 traits, regardless of which Tier 3 traits are also
+present, crosses the threshold. OLE Step 3 content shifts performance from 35.7 toward
+42.3 --- a meaningful gain, but one that presupposes Steps 1 and 2.
+
+\subsection{Generalization Argument}
+
+We predict the OLE formula is not puzzle-specific (cross-domain validation pending).
+The three tiers map onto structural features of quality creative work that we predict
+are independent of domain.
+
+We predict Tier 1 orientation generalizes to any AI creative task in domains where quality
+is defined by receiver experience. The quality criterion of a piece of marketing copy is
+whether it moves the reader toward a decision. The quality criterion of a product
+specification is whether the team building from it can produce what the user needs. The
+quality criterion of a legal agreement is whether the parties who sign it understand what
+they have committed to. The quality criterion of training materials is whether the learner
+can apply the content after instruction. In each of these cases, quality is defined by
+the downstream person's experience, not by the producer's domain competence. We predict
+that a marketing-expert persona activating domain conventions before audience orientation
+will produce formally correct copy that fails to move readers. The tier model yields this
+prediction; OLE is proposed as the correction.
+
+We predict Tier 2 discipline generalizes similarly, because orientation must be
+operationalized into checkable constraints regardless of domain. Strunk and White's
+instruction to ``omit needless words'' \cite{strunkwhite} is the elegance gate expressed
+for prose. Professional quality standards for factual accuracy --- from medical
+record-keeping to legal cite-checking to journalistic sourcing to scientific peer review
+--- are the rigor gate expressed in specific domains. We predict these constraints are not
+domain-specific refinements but operational discipline that converts orientation into
+defensible output; cross-domain replication is required to confirm this prediction.
+
+Tier 3 expertise is domain-specific by definition. It is the content that makes the
+creative work relevant to its particular subject matter, audience, and genre expectations.
+For marketing copy, Tier 3 is product knowledge, competitor landscape, and brand voice.
+For product design, it is technical specifications, component constraints, and interface
+conventions. For legal drafting, it is statutory authority, precedent, and regulatory
+framework. For training materials, it is the pedagogical structure of the subject and the
+assumed prior knowledge of the learner. This content is necessary --- a puzzle without
+world data produces puzzles disconnected from their theme; a legal brief without statutory
+knowledge is merely formally structured reasoning --- but substitutable across sources
+and never sufficient alone.
+
+Table~\ref{tab:generalization} maps the OLE formula across four representative
+business-domain creative tasks. The predicted tier structure follows from the receiver
+criterion (Tier 1), the universal quality constraints (Tier 2), and the domain-specific
+content (Tier 3) in each case.
+
+\begin{table}[t]
+\centering
+\caption{Predicted OLE tier structure for representative business-domain creative tasks
+(cross-domain validation pending). Tier 1 specifies the orientation sentence content;
+Tier 2 specifies the discipline gates; Tier 3 specifies what domain content to provide
+as context.}
+\label{tab:generalization}
+\begin{tabular}{p{2.0cm}p{3.2cm}p{3.2cm}p{3.2cm}}
+\toprule
+\textbf{Domain} & \textbf{Tier 1 (orientation)} & \textbf{Tier 2 (lens)} & \textbf{Tier 3 (expertise)} \\
+\midrule
+Marketing copy & How does the reader feel after reading this? & Remove non-essential claims; verify every factual assertion & Product specifications, competitor positioning, brand voice guide \\
+\addlinespace
+Product design & What does the user experience at each step? & Remove unnecessary interactions; verify each state is reachable & Technical specs, component constraints, interface conventions \\
+\addlinespace
+Legal drafting & What does the signer need to understand to comply? & Remove ambiguous phrasing; verify every obligation is enforceable & Statutory authority, controlling precedent, regulatory framework \\
+\addlinespace
+Training materials & What does the learner experience and retain? & Remove unnecessary content; verify every claim against the subject & Pedagogical structure, prior knowledge baseline, domain content \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{When Domain Expertise Is Tier 1}
+
+The OLE formula makes a specific boundary-condition prediction: domain expertise occupies
+Tier 1 only in domains where the quality criterion is defined by domain convention rather
+than by receiver experience. The clearest examples are formal logic, mathematical proof,
+and programming correctness. In a formal proof, ``correct'' means that each step follows
+from the axioms by valid inference rules. The receiver's experience of the proof does not
+define its correctness; the proof's relationship to the formal system does. Tier 1 for a
+formal proof is therefore a domain criterion, not a receiver-experience criterion. OLE
+does not apply to formal proof in its standard form.
+
+For creative work broadly defined --- any work whose quality depends on what a human
+receiver experiences, understands, or decides after encountering it --- we predict Tier 1
+is always orientation toward the receiver. This class plausibly includes all the domains
+in Table~\ref{tab:generalization} and much of the content produced in the modern economy:
+creative and marketing content, interface and product design, communication and
+documentation, instruction and training, policy and legal interpretation addressed to
+non-specialist audiences. The boundary condition is narrow; we predict the scope of OLE's
+application is wide, but this prediction requires cross-domain replication to establish
+empirically.

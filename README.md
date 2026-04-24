@@ -256,6 +256,20 @@ If you run the pipeline on your own hunt, two things help:
 
 ---
 
+## Research
+
+Seven papers document the pipeline's creative evaluation methodology. LaTeX sources in [`research/publications/`](research/publications/); build all PDFs with `make -C research`.
+
+- [An AI-Assisted Pipeline for Puzzle Hunt Creation](research/publications/games-generative-hunt-pipeline/)
+- [Expert AI Panels for Creative Work Evaluation](research/publications/games-ai-expert-panel-creative/)
+- [Calibrating AI Expert Panel Scores Against Human Expert Judgment](research/publications/games-human-ai-calibration/)
+- [Orientation Before Expertise: A Unified Tier Model of Creative Quality](research/publications/games-creative-quality-tiers/)
+- [What Does a Persona Do? Cognitive Trait Decomposition](research/publications/games-persona-authoring-traits/)
+- [Profile Depth and the Reviewing-to-Authoring Transfer Problem](research/publications/games-profile-taxonomy-creative/)
+- [Structured Divergence in AI Creative Generation](research/publications/games-same-input-divergence/)
+
+---
+
 ## License
 
 MIT for the toolkit, skills, and pipeline code. Reviewer profiles synthesize publicly

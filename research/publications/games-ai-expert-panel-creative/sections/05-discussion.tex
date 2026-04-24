@@ -1,0 +1,213 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Feedback Quality Is the Primary Signal}
+\label{sec:feedback-quality}
+
+The primary finding of this study is not that richer reviewer profiles produce higher scores.
+The average score delta from v1 to v2 profiles across the three-puzzle ablation is +0.57---a
+modest increment that would be difficult to interpret as practically meaningful on its own.
+What increases with profile depth is something more valuable and less obvious: the specificity,
+transferability, and operational utility of the diagnostic output.
+
+The distinction is visible in the framework column of Table~\ref{tab:ablation}. Conditions C0
+and C1 produce zero named evaluative frameworks across all three puzzles. When a C0 reviewer
+identifies a problem, the diagnosis is cast in the rubric's own vocabulary: ``the extraction
+mechanism is insufficiently clear.'' When a C6 reviewer identifies the same problem, it is
+named as a \emph{visual grammar} failure (Dana Young's lens) or a \emph{load-bearing test}
+failure (Thomas Snyder's lens)---labels that are transferable across puzzles and actionable in
+isolation. The difference in practical utility is not subtle. A review that scores a puzzle
+24/30 and identifies that ``the Bonus B clue requires back-solving rather than forward
+deduction---this is a fairness-category failure, not a difficulty problem'' is more useful
+to the constructor than a review that scores 26/30 and observes that ``the extraction could
+be cleaner.'' The named mechanism is the contribution; the number is secondary.
+
+The six domain-emergent frameworks surfaced by C6 reviews---\emph{a-ha economy},
+\emph{load-bearing test}, \emph{world-model consistency}, \emph{social fabric},
+\emph{perceptual-shift}, and \emph{visual grammar}---did not appear in any input text
+provided to the reviewers. These frameworks were identified by the research team through
+two-pass manual coding of review transcripts: a first pass using automated keyword matching
+for known framework names, followed by manual review for novel or paraphrased analytical
+lenses. Inter-rater reliability was not assessed; this represents a limitation on the
+framework-count comparisons. Whether these frameworks are generated from the profile
+structure or retrieved from the model's training prior is a confound this study cannot
+fully resolve (see Section~\ref{sec:limitations}). What distinguishes them from C2
+frameworks is that they are applied as diagnostic tools to specific puzzle features rather
+than invoked as named criteria. The quality of named frameworks is the signal, not the
+count: six domain-emergent frameworks are more practically useful than ten retrieved
+principle names, irrespective of what the raw count implies.
+
+A methodological qualification applies to this claim. The profiles encode named frameworks
+attributed to documented practitioners (Thomas Snyder, Dana Young, Dan Katz); these
+practitioners' vocabulary is almost certainly present in the model's training data. When a
+C6 review applies the \emph{load-bearing test}, the named term may reflect profile-driven
+reasoning or may reflect the model's prior over Snyder's documented vocabulary. The study
+measures whether the term appears in C6 reviews and not in C0/C1 reviews---not whether it
+is caused by the profile rather than by the model's knowledge of the practitioner. A control
+using fictional practitioner profiles with structurally equivalent lens sections would
+disentangle these contributions; this is reserved for future work.
+
+\subsection{The Calibration Inversion: Why Rubric-Only Is Dangerous}
+\label{sec:calibration-inversion}
+
+The extended 15-puzzle corpus introduces a finding that is absent from the 3-puzzle ablation
+and has significant implications for practitioners: the rubric-only condition (C1) produces
+an \emph{inverted} tier hierarchy. Across the five MIT/Elite-tier puzzles, C1 yields a pass
+rate of approximately 40\% (2 of 5); across the five Standard Hunt puzzles, the pass rate rises to
+approximately 80\% (4 of 5). The expected ordering---elite puzzles rating higher than standard puzzles
+on a domain-informed rubric---is reversed by the one condition that provides rubric structure
+without reviewer identity. This pattern persists across the full corpus of 15 real puzzles
+spanning three quality tiers.
+
+The mechanism is traceable. Elite-tier hunt puzzles characteristically sacrifice Clarity and
+Solvability for Elegance and Reading Reward: the difficulty is intended, and the aha moment
+is withheld because withholding it is the source of its value. A bare rubric that weights all
+six dimensions equally treats this trade-off as a defect rather than a design choice. Standard
+Hunt puzzles, by contrast, are engineered for accessibility and score uniformly across
+dimensions because they optimize for consistent competence rather than concentrated brilliance
+on any single axis. The rubric, applied without contextual recalibration, rewards what it can
+measure uniformly and penalizes what it cannot.
+
+Expert identity reintroduces the missing calibration. Under C6, reviewers weight the six
+dimensions differently depending on the puzzle type under evaluation. Elegance and Reading
+Reward are not downweighted as such---they are contextualized: a C6 reviewer understands
+that a 3/5 on Clarity in an MIT-tier puzzle represents a different signal from a 3/5 on
+Clarity in an accessible feeder puzzle. The profile encodes not just evaluative criteria but
+the calibration layer that converts raw dimension scores into appropriate verdicts. The C6
+condition is the only condition in the ablation that passes all three AoE puzzles and produces
+tier-consistent verdicts across the full 15-puzzle corpus.
+
+This finding generalizes beyond puzzle hunt evaluation. Any creative domain where quality
+trades off across multiple dimensions---where ambitious work necessarily sacrifices some
+properties to achieve others---is vulnerable to the calibration inversion under rubric-only
+evaluation. Practitioners who adopt structured rubrics for creative work assessment without
+equally structured expert identity context risk systematically disadvantaging their most
+ambitious artifacts. The rubric-only condition is, empirically, the most dangerous condition
+in the ablation: it appears objective, it produces structured output, and it misleads.
+
+\subsection{The Riven Standard as a Universal Creative Quality Criterion}
+\label{sec:riven-standard}
+
+The most consequential rubric-design finding in this paper is the effect of adding the Riven
+Standard as an explicit scored dimension. Named after Rand Miller's design principle
+\cite{miller2016riven}---``the puzzle IS what the field does, not an obstacle overlaid on
+it''---the Riven Standard operationalizes a quality distinction that explains the gulf between
+the Games Magazine tier and the hunt tiers: does the puzzle embody the essential activity of
+its domain, or does it merely use the domain as content?
+
+Adding the Riven Standard as a scored seventh dimension (C11 configuration), combined with
+double-weighting Elegance and Reading Reward, achieves 24.5 percentage-point tier separation
+between the MIT/Elite average and the Games Magazine average, compared to 10.9pp for the
+equal-weight six-dimension baseline. This improvement substantially exceeds the gain from
+double-weighting Elegance and Reading Reward alone (C9 configuration), suggesting that the
+two weighted dimensions do not fully capture the variance the Riven Standard explains. The
+theoretical interpretation is that Elegance and Reading Reward are proxies for the Riven
+Standard criterion, but adding the criterion explicitly captures residual variance that the
+proxies leave unaccounted.
+
+The Riven Standard's formulation as a scored dimension---on a five-point scale from 1
+(\emph{theme is decorative; any content could substitute}) to 5 (\emph{mechanic is
+inseparable from the domain and could not exist in any other context})---proves more tractable
+than it might appear: reviewers in C11 conditions produce consistent Riven Standard scores
+with lower inter-reviewer variance than most other dimensions. This suggests that the
+underlying quality distinction, while philosophically subtle, is empirically recognizable by
+domain-informed reviewers. Experiment~4 (Section~\ref{sec:rubric-validation}) validates these
+results against the full 15-puzzle corpus.
+
+The Riven Standard criterion is not, we suggest, specific to puzzle hunt design. Any creative
+domain evaluation should explicitly ask whether the work embodies the essential activity of
+the tradition rather than using it as decoration. Music evaluation should ask whether the
+composition IS what the musical tradition does at its core, or merely sounds like it. Game
+design evaluation should ask whether the mechanic IS the genre's central activity, or is
+bolted on. Interactive fiction evaluation should ask whether the interactivity IS the
+narrative, or is incidental to it. In each case, the Riven Standard operationalizes the
+criterion that separates work that advances a tradition from work that deploys a tradition
+as scenery. The puzzle hunt domain provides a tractable testbed for this principle precisely
+because the tradition's core activity---using domain knowledge as a load-bearing extraction
+mechanism---is well-defined and verifiable.
+
+\subsection{Profile Design Implications}
+\label{sec:profile-implications}
+
+The ablation characterizes the internal structure of profile effectiveness with enough
+precision to support specific design recommendations. The findings warrant four conclusions
+about what makes a reviewer profile functional.
+
+First, the \textbf{review lens section} is the profile's primary functional contribution.
+Conditions C4 (philosophy only, no structured lens) and C5 (lens only, no philosophy) both
+demonstrate that the lens is load-bearing in a way that biography and philosophy are not when
+the two are separated. C5's unique detection of the duplicate label error in Puzzle II---a
+verifiable construction failure that no other condition identified---suggests that the lens
+checklist concentrates evaluative attention specifically on the visual-mechanical properties
+of the puzzle artifact in a way that higher-level framing does not. The lens is not merely a
+summary of the philosophy; it activates a different review mode.
+
+Second, \textbf{biography and credentials} provide the calibration context that prevents
+hunt-scope evaluative questions from being applied to feeder-scope puzzles and vice versa.
+The calibration inversion under C1 is partly attributable to the absence of this context:
+a rubric without identity cannot distinguish an ambitious puzzle that intentionally
+sacrifices accessibility from a poorly designed puzzle that fails accessibility by default.
+
+Third, the \textbf{redundancy analysis} identifies three principles that add unique signal
+beyond complete profiles: \emph{Verify the Last Mile} (character-level extraction tracing
+that no profile lens performs at this granularity), \emph{Blame the Player} (solver
+retrospective affect, a dimension profiles do not address because they are designer-centric),
+and \emph{Snyder's Computer Test} (explicit application of the test, as distinct from
+reasoning in its spirit). Eight of eleven principles tested are subsumed by well-designed
+profiles. The practical recommendation: supplement C6 with exactly these three principles,
+adding approximately 400 tokens of context, and omit the remainder. C3 (full principles,
+no profiles) achieves zero wrong verdicts on the 15-puzzle corpus against C6's two; we
+recommend C6 as the default because it produces richer diagnostic output---named frameworks,
+reviewer-specific concerns, voice---that C3 cannot generate, even where C3's binary accuracy
+is marginally better.
+
+Fourth, profile length itself is not the relevant variable. The v1 profiles (approximately
+50 lines each) and v2 profiles (approximately 95 lines each) differ less in length than in
+the presence of named evaluative frameworks and a structured review lens. Profile upgrade
+should target the specificity and operational content of the lens section, not line count as
+such.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+Several limitations bound the claims warranted by this data. First, and most fundamentally,
+the reviewers in this study are AI personas, not human experts. The profiles are constructed
+from publicly available writings, interviews, and published work by the named practitioners,
+but the evaluations they produce have not been calibrated against those practitioners' actual
+judgments on the same artifacts. The claim that C6 produces ``expert-quality'' evaluation is
+an inference from the internal coherence and domain specificity of the output, not a validated
+equivalence to human expert assessment. A calibration study---in which the same puzzles are
+evaluated both by the AI panel and by the named human experts or their recognized proxies---is
+necessary before the system's verdicts can be treated as proxies for human expert review. This
+calibration study is identified as a target for future work but was not feasible within the
+scope of the present paper.
+
+Second, puzzle hunt design is a domain with unusually well-defined quality criteria, recognized
+expert practitioners, and a documented evaluative vocabulary. The evidence that rich profiles
+improve AI panel performance in this domain does not straightforwardly generalize to domains
+with less codified quality criteria or less prominent expert figures. Adapting the profile
+architecture to a new domain requires identifying its equivalent of the hunt community's
+recognized practitioners and constructing profiles that encode their specific evaluative
+frameworks---a non-trivial effort whose costs and returns in other domains are unknown.
+Different creative domains may require different Review Lens formulations, different rubric
+dimensions, or different weighting schemes to achieve comparable tier separation.
+
+Third, the ground-truth problem is not fully resolved. The paper treats the extended-corpus
+tier assignments (MIT/Elite, Standard Hunt, Games Magazine) as ground truth against which
+panel verdicts can be assessed, but these assignments are themselves judgments made by the
+authors based on puzzle provenance and community consensus, not independent oracle verdicts.
+The verdicts reported here are AI-generated assessments of AI-generated and human-generated
+puzzles; no external oracle determines which assessments are correct. The paper reports verdicts
+and separation metrics, not claims that any particular verdict is definitively right.
+
+Fourth, the 15-puzzle extended corpus, while carefully stratified across three tiers and
+multiple domains, is not a random sample from any well-defined population. Selection was
+guided by tier representativeness, domain variety, and the availability of puzzles with known
+provenance. Conclusions about pass rates by tier and condition should be interpreted as
+tendencies in a purposive sample, not as population-level statistics.
+
+Fifth, \emph{profile construction.} The 29 reviewer profiles were constructed by the
+research team based on their reading of each practitioner's published work, interviews,
+and documented design positions---not based on self-descriptions by the named individuals.
+The profiles synthesize attributed positions rather than directly representing any
+individual's views, and this limits any claim about simulation fidelity.

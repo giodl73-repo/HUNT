@@ -1,0 +1,139 @@
+\section{Introduction}
+
+A puzzle hunt presents its participants with a peculiar evaluative duality: the answer to
+any given puzzle is either correct or it is not, but the puzzle itself is either elegant or
+it is not, and that second judgment---the one that separates a puzzle worth solving from one
+that merely has a solution---is far harder to make and far harder to teach.
+
+\subsection{The Problem: Domain Expertise Is Scarce}
+
+Evaluating creative work well requires more than intelligence and goodwill. It requires the
+accumulated vocabulary of a practice: the ability to name what is wrong, to point to the
+specific mechanism that fails, to distinguish a problem of clarity from a problem of
+elegance from a problem of fairness. In creative domains with recognized expert communities,
+this vocabulary is hard-won---it takes years of engagement with a tradition to develop the
+evaluative lens that allows a practitioner to say not just ``this puzzle is unsatisfying''
+but ``the confirmation mechanic is ambiguous, which shifts the cognitive load from
+\emph{aha} to \emph{relief}, and that is a fairness failure, not a difficulty setting.''
+Such expertise is scarce, expensive to access, inconsistently applied, and largely
+unavailable at the scale required for iterative creative pipelines. The consequence is that
+early-stage creative work---when the most is still malleable---is typically evaluated by
+creators themselves, by generalist colleagues, or not at all. Domain expert review arrives
+late, if at all, and is difficult to incorporate systematically.
+
+\subsection{The Insight: Persona Depth Is the Variable That Matters}
+
+Large language models have demonstrated capacity to simulate domain knowledge across a wide
+range of fields~\cite{park2023generative}, and recent work on AI-simulated review has
+shown that LLMs can approximate expert academic judgment under controlled
+conditions~\cite{shah2023llm,dellaLibera2025profiles}. However, the standard approach to
+persona simulation---supplying a brief role description such as ``you are an experienced
+puzzle designer''---produces correspondingly generic output. A bare prompt elicits the
+evaluative vocabulary the model associates with the role label, not the specific,
+idiosyncratic frameworks that distinguish one expert's perspective from another's. The
+result is feedback that is superficially domain-appropriate but operationally thin: it
+identifies that problems exist without naming the mechanisms that produce them, and it
+generates recommendations too vague to act on.
+
+The insight driving this work is that the quality of AI-simulated expert feedback is not a
+fixed property of the underlying model---it is a function of the richness of the persona
+description. When a reviewer profile captures not just a role label and a list of
+interests but a full evaluative lens, including characteristic frameworks, named concerns,
+design philosophy, and the vocabulary the reviewer reaches for when a puzzle misfires, the
+resulting simulated feedback is qualitatively different: more specific, more transferable,
+and more actionable. The profile is not window-dressing---it is the mechanism by which the
+model instantiates a distinctive evaluative stance rather than averaging across all
+evaluative stances it has encountered in training.
+
+\subsection{Our Approach: Persistent Profiles and Structured Evaluation}
+
+We operationalize this insight through a system of \emph{persistent expert profiles}:
+structured markdown documents of 80--120 lines each that capture a simulated reviewer's
+design philosophy, evaluative lens, characteristic concerns, analytical vocabulary, and
+voice. Profiles are loaded once per review session and reused across puzzles, building on
+the token-efficient profile architecture developed in prior work~\cite{dellaLibera2025profiles}.
+A panel of three reviewers is assembled from the profile library for each puzzle under
+evaluation, and each reviewer scores the puzzle on a six-dimension rubric (Clarity,
+Solvability, Elegance, Reading Reward, Fun, Confirmation) with a 1--5 scale per dimension,
+yielding a total out of 30 with a passing threshold of 22. Scores are accompanied by
+written feedback and a set of specific, actionable fix recommendations.
+
+We evaluate this system empirically against two lower-profile conditions: a bare-prompt
+baseline with no reviewer persona, and a generic profile set drawn from an earlier 12-profile
+library~\cite{dellaLibera2025profiles}. The comparison isolates the effect of profile depth
+from the effect of having a profile at all, allowing us to attribute outcome differences
+specifically to domain specificity rather than to the presence of any persona description.
+The testbed is the Age of Empires puzzle hunt, a set of original puzzles designed around
+the thematic and mechanical universe of the Age of Empires game franchise. All three
+puzzles evaluated in the main experiment were developed independently of the reviewer
+profiles, ensuring that the profiles do not encode any information about the specific
+artifacts being evaluated.
+
+\subsection{What Is a Puzzle Hunt?}
+
+For readers unfamiliar with the domain: a \emph{puzzle hunt} is a competitive or
+collaborative event in which teams solve a sequence of puzzles, each yielding an
+answer---typically a word or phrase---that feeds into a larger \emph{meta-puzzle} resolving
+the hunt's central mystery. The puzzles themselves range across a wide variety of types
+(word puzzles, logic grids, cryptic crosswords, visual puzzles, knowledge challenges) and
+are evaluated against a demanding set of craft criteria: they must be unambiguously solvable
+by the target audience, must reward careful reading, must produce an \emph{a-ha} moment at
+the point of solution, and must feel elegant and fair in retrospect. The hunt community has
+developed a sophisticated evaluative vocabulary around these criteria, and recognized
+practitioners---editors at MIT Mystery Hunt, MITMH-adjacent events, and independently
+organized hunts---bring a distinctive and largely codified expert perspective to the
+work~\cite{colton2012computational}. This makes puzzle hunt design an unusually appropriate
+testbed for studying AI-simulated expert review: the expertise is real, specialized, and
+reasonably well-documented, but access to it is constrained by the small size and
+geographic concentration of the expert community.
+
+\subsection{Contributions}
+
+This paper makes the following contributions:
+
+\begin{enumerate}
+
+\item \textbf{The calibration inversion.} Rubric-only evaluation (no reviewer identity)
+inverts the quality tier hierarchy: across 15 real published puzzles, it produces an 80\%
+pass rate for Standard Hunt puzzles but only 40\% for MIT/Elite-tier puzzles. The mechanism
+is traceable: elite puzzles deliberately sacrifice Clarity and Solvability for Elegance and
+Reading Reward, and an equal-weight rubric treats that trade-off as a defect. This finding
+is a concrete warning for practitioners---rubric-only evaluation appears objective but is
+miscalibrated for ambitious creative work.
+
+\item \textbf{Profile-based AI expert panel system.} A complete system for assembling and
+deploying AI reviewer panels for creative work evaluation, built on persistent structured
+profiles encoding domain-specific evaluative frameworks. The system is described in
+sufficient detail to support replication and adaptation to other creative domains.
+\emph{Note: all quantitative findings are valid within the authors' constructed evaluation
+framework; the rubric, tier assignments, and thresholds were constructed by the research
+team and have not been externally calibrated against a held-out human expert standard.}
+
+\item \textbf{Empirical eight-condition profile-depth ablation.} A controlled experiment
+across 15 real published puzzles from MIT Mystery Hunt 2023, Huntinality, and Teammate Hunt,
+comparing conditions from bare prompting to full domain-specific profiles to profile plus
+principles. The ablation isolates the contribution of domain specificity, profile
+component type, and rubric design.
+
+\item \textbf{Taxonomy of surfaced analytical frameworks.} Six named evaluative frameworks
+(\emph{world-model consistency}, \emph{a-ha economy}, \emph{load-bearing test},
+\emph{social fabric}, \emph{perceptual-shift}, \emph{visual grammar}) that appear in
+C6 reviews but in no input text provided to the reviewers, constituting a contribution to
+the vocabulary of puzzle design evaluation.
+
+\item \textbf{Open profile library and replication package.} The full set of 29
+domain-specific reviewer profiles (C8 format, $\sim$75 lines), the seven-dimension weighted
+rubric, all review transcripts, and analysis scripts, released to support replication and
+adaptation to other creative evaluation domains.
+
+\end{enumerate}
+
+\subsection{Paper Organization}
+
+Section~\ref{sec:related} situates this work relative to AI-simulated review, persona-based
+prompting, computational creativity evaluation, and the emerging literature on puzzle design
+as a research domain. Section~\ref{sec:methodology} describes the profile architecture,
+scoring rubric, and experimental design in detail. Section~\ref{sec:evaluation} reports
+results from the profile ablation and cross-hunt generalizability experiments.
+Section~\ref{sec:discussion} interprets the results and discusses limitations.
+Section~\ref{sec:conclusion} summarizes contributions and directions for future work.

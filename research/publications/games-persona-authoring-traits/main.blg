@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+The style file: ACM-Reference-Format.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: references.bib
+Warning--I didn't find a database entry for "dellaLibera2025taxonomy"
+Warning--I didn't find a database entry for "dellaLibera2025panel"
+Warning--I didn't find a database entry for "park2023generative"
+Warning--I didn't find a database entry for "zhang2018personas"
+Warning--I didn't find a database entry for "dang2023personas"
+Warning--I didn't find a database entry for "csikszentmihalyi1996creativity"
+Warning--I didn't find a database entry for "weisberg2006creativity"
+Warning--I didn't find a database entry for "sawyer2003improvisation"
+Warning--I didn't find a database entry for "norman2013design"
+Warning--I didn't find a database entry for "hassenzahl2010experience"
+Warning--I didn't find a database entry for "snyder2019craftsmanship"
+Warning--I didn't find a database entry for "rams1976design"
+Warning--I didn't find a database entry for "reber2004processing"
+Warning--I didn't find a database entry for "harrison2009minproof"
+Warning--I didn't find a database entry for "ries2011lean"
+Warning--I didn't find a database entry for "berlyne1971aesthetics"
+Warning--I didn't find a database entry for "arnheim1969visual"
+Warning--I didn't find a database entry for "shepard1971mental"
+Warning--I didn't find a database entry for "chi1981categorization"
+Warning--I didn't find a database entry for "boden2004creative"
+Warning--I didn't find a database entry for "perezyperez2001mexica"
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+You've used 0 entries,
+            6273 wiz_defined-function locations,
+            1539 strings with 18582 characters,
+and the built_in function-call counts, 103 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 14
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 1
+empty$ -- 1
+format.name$ -- 0
+if$ -- 2
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 39
+num.names$ -- 0
+pop$ -- 1
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 38
+(There were 21 warnings)

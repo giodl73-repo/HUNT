@@ -1,0 +1,156 @@
+% Figure 2: Phase 2 leave-one-out drops
+% Horizontal bar chart showing drop magnitude when each trait is removed.
+% Bars extend leftward (negative values). Tier annotations on right side.
+% Self-contained figure environment — requires pgfplots, xcolor, tikz.
+%
+% Usage in main.tex:  \input{figures/fig2-trait-isolation}
+
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  xbar,
+  xmin=-35, xmax=4,
+  width=0.78\linewidth,
+  height=6.2cm,
+  bar width=0.50cm,
+  enlarge y limits={abs=0.60cm},
+  xlabel={Score change from AA (41.7) when trait removed},
+  xlabel style={font=\small},
+  %% y-axis: sorted by drop magnitude, largest (most negative) at bottom
+  ytick={0,1,2,3,4,5},
+  yticklabels={
+    $-$T1\ (experience-first),
+    $-$T5\ (rigor),
+    $-$T4\ (elegance),
+    $-$T2\ (surprise instinct),
+    $-$T6\ (narrative),
+    $-$T3\ (visual thinking)
+  },
+  yticklabel style={font=\small},
+  xtick={-30,-20,-10,0},
+  xticklabels={$-30$, $-20$, $-10$, $0$},
+  xticklabel style={font=\small},
+  tick align=outside,
+  major tick length=3pt,
+  axis line style={thin},
+  axis x line*=bottom,
+  axis y line*=left,
+  clip=false,
+  %% score labels at bar tips (left end of each bar)
+  nodes near coords,
+  nodes near coords align={horizontal},
+  nodes near coords style={
+    font=\footnotesize,
+    anchor=east,
+    xshift=-3pt,
+  },
+]
+
+  %% Define tier colors
+  \definecolor{colTier1}{RGB}{210,55,45}     % T1 catastrophic — red
+  \definecolor{colTier2a}{RGB}{235,135,40}   % T5 load-bearing — orange
+  \definecolor{colTier2b}{RGB}{240,155,55}   % T4 load-bearing — orange (lighter)
+  \definecolor{colTier3a}{RGB}{248,210,55}   % T2 amplifying — yellow
+  \definecolor{colTier3b}{RGB}{250,218,70}   % T6 amplifying — yellow
+  \definecolor{colTier3c}{RGB}{252,225,85}   % T3 amplifying — yellow (lightest)
+
+  %% --- Row 0: L-T1 = -29.4  (Tier 1, red) ---
+  \addplot[xbar, fill=colTier1, draw=colTier1!75!black, bar shift=0pt]
+    coordinates { (-29.4, 0) };
+
+  %% --- Row 1: L-T5 = -12.7  (Tier 2, orange) ---
+  \addplot[xbar, fill=colTier2a, draw=colTier2a!75!black, bar shift=0pt]
+    coordinates { (-12.7, 1) };
+
+  %% --- Row 2: L-T4 = -11.7  (Tier 2, orange) ---
+  \addplot[xbar, fill=colTier2b, draw=colTier2b!75!black, bar shift=0pt]
+    coordinates { (-11.7, 2) };
+
+  %% --- Row 3: L-T2 = -8.4  (Tier 3, yellow) ---
+  \addplot[xbar, fill=colTier3a, draw=colTier3a!75!black, bar shift=0pt]
+    coordinates { (-8.4, 3) };
+
+  %% --- Row 4: L-T6 = -8.0  (Tier 3, yellow) ---
+  \addplot[xbar, fill=colTier3b, draw=colTier3b!75!black, bar shift=0pt]
+    coordinates { (-8.0, 4) };
+
+  %% --- Row 5: L-T3 = -4.4  (Tier 3, yellow) ---
+  \addplot[xbar, fill=colTier3c, draw=colTier3c!75!black, bar shift=0pt]
+    coordinates { (-4.4, 5) };
+
+  %% --- AA reference line at x=0 ---
+  \addplot[
+    color=black!50,
+    solid,
+    thin,
+    mark=none,
+    forget plot,
+  ] coordinates { (0, -0.75) (0, 5.75) };
+
+  \node[
+    font=\scriptsize,
+    anchor=south west,
+    text=black!60,
+    fill=white,
+    inner sep=1pt,
+    rotate=90,
+  ] at (axis cs: 0, 5.85) {AA = 41.7};
+
+  %% --- Threshold divider: dashed horizontal between row 2 and row 3
+  %% (Tier 2 = below threshold when removed; Tier 3 = stays above threshold)
+  \addplot[
+    color=black!55,
+    dashed,
+    thick,
+    mark=none,
+    forget plot,
+  ] coordinates { (-35, 2.5) (4, 2.5) };
+
+  %% --- Tier bracket labels on right side ---
+  %% Tier 1 bracket (row 0)
+  \draw[thick, black!60]
+    (axis cs: 2.5, -0.45) -- (axis cs: 2.5, 0.45)
+    (axis cs: 2.5, 0)     -- (axis cs: 3.2, 0);
+  \node[
+    font=\scriptsize\bfseries,
+    anchor=west,
+    text={RGB}{180,35,25},
+    align=left,
+    text width=3.2cm,
+  ] at (axis cs: 3.3, 0) {TIER 1\\\scriptsize Irreplaceable};
+
+  %% Tier 2 bracket (rows 1–2)
+  \draw[thick, black!60]
+    (axis cs: 2.5, 0.55) -- (axis cs: 2.5, 2.45)
+    (axis cs: 2.5, 1.5)  -- (axis cs: 3.2, 1.5);
+  \node[
+    font=\scriptsize\bfseries,
+    anchor=west,
+    text={RGB}{185,95,20},
+    align=left,
+    text width=3.2cm,
+  ] at (axis cs: 3.3, 1.5) {TIER 2\\\scriptsize Load-bearing};
+
+  %% Tier 3 bracket (rows 3–5)
+  \draw[thick, black!60]
+    (axis cs: 2.5, 2.55) -- (axis cs: 2.5, 5.45)
+    (axis cs: 2.5, 4.0)  -- (axis cs: 3.2, 4.0);
+  \node[
+    font=\scriptsize\bfseries,
+    anchor=west,
+    text={RGB}{160,130,10},
+    align=left,
+    text width=3.2cm,
+  ] at (axis cs: 3.3, 4.0) {TIER 3\\\scriptsize Amplifying};
+
+\end{axis}
+\end{tikzpicture}
+
+\caption{Score drop when each trait is removed from the full artist persona
+  (leave-one-out, Phase~2). Experience-first (T1) removal causes categorical
+  failure ($-29.4$ points). Elegance and rigor removal drops below the quality
+  threshold. Visual thinking removal is partially compensated by narrative
+  surprise.}
+\label{fig:trait-drops}
+\end{figure}

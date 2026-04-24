@@ -1,0 +1,23 @@
+\section{Conclusion}
+
+This paper establishes three results about how expert persona profiles govern AI creative authoring.
+The first is the \textit{symmetric profile effect}: the quality gradient produced by increasing authoring profile depth mirrors the non-monotonic reviewer ablation reported in Paper~1, with a salient inversion at the domain-expertise condition.
+Providing an AI author with domain world data alone (A2: 28.3/45) yields negligible improvement over the bare baseline (A0: 21.7/45) --- a gap of 6.6 points driven almost entirely by the shift to an acrostic mechanism, not by domain content.
+Design principles (A3: 31.0) and a generative worldview (A4: 30.7) each add more value than the domain data does, and the worldview alone captures most of the value of the full construction profile (A5: 32.0), differing by only 1.3 points.
+The implication is consistent with Paper~1's reviewer finding: \textit{framework} is the active ingredient in a profile; content without framework produces technically correct but experientially flat output.
+Why a design framework produces more quality lift than domain content remains an open question.
+One candidate explanation is that frameworks provide generative constraints that shape how content is selected and ordered, while raw content without framework produces the most salient associations rather than the most puzzle-appropriate ones --- but this hypothesis requires a cognitive study to test directly.
+
+The second result is the \textit{lens-type transfer model}, which predicts whether a reviewing profile will improve, preserve, or degrade quality when repurposed for authoring.
+Operational lenses, exemplified by Katz's named testable checks (the Computer Test, the backwards read, the variety audit), transfer cleanly and improve output: Katz A6 outscores Katz A5 by 1.6 points, with WOLOLO: Five of a Kind (35.3/45) the strongest puzzle produced by any A-series designer.
+Construction lenses, exemplified by Snyder's load-bearing and uniqueness tests, are already generatively oriented; the A5-to-A6 transposition is essentially neutral ($-$0.7 points) because the reviewing and authoring profiles converge on the same questions.
+Perceptual lenses, exemplified by Young's world-model consistency and visual-grammar checks, are format-dependent: at A5 the acrostic format provides no purchase for her world-first instinct; at A6 the reviewer-as-author exercise forces a structural solution (second-person present tense, scenario-driven item selection) that the A5 profile could not reach, producing the highest single score in the dataset (Young A6: 38.0/45) and a gap of $+$3.7 points.
+The practical corollary: when adapting a reviewing profile for authoring, identify the lens type first --- operational tests invert directly to authoring constraints; perceptual checks require reformulation as generative precursors before they transfer.
+
+The third result concerns the \textit{format ceiling}.
+Every A-series puzzle saturates at Riven Standard $\leq$~3 because the first-letter acrostic mechanism was imported from puzzle-hunt tradition rather than derived from Age of Empires~II.
+Profile depth raises the quality floor within a fixed mechanism --- reducing arbitrary extraction, improving clue texture, tightening the solve path --- but mechanism choice determines the ceiling.
+The Riven Standard dimension makes this boundary visible in a way the unweighted rubric did not; its double-weighting of Elegance and Reading Reward penalizes decorative domain content and rewards mechanism-domain integration.
+
+The ceiling question --- what authoring context produces mechanism novelty rather than incremental clue improvement --- lies beyond the scope of this study but is addressed directly in the companion paper~\cite{games-persona-authoring-traits}, where a bare artist persona outperforms all A-series conditions by inventing a domain-native mechanism rather than refining an imported one.
+Decomposing which traits of that persona drive the mechanism-generative behavior is the natural next step.

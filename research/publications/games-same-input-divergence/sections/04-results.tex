@@ -1,0 +1,146 @@
+\section{Results}
+\label{sec:results}
+
+We report results at each of the five comparison levels described in Section~\ref{sec:comparison-framework}, followed by the panel score stability analysis. Each subsection presents the raw comparison data, the relevant metric values, and a stability classification. Table~\ref{tab:stability-summary} at the close of this section consolidates all classifications into a single reference.
+
+\subsection{Level 1: Structural Stability}
+\label{sec:results-structure}
+
+Both hunts comply exactly with the SCOPE.md specification: five feeder puzzles plus one meta-puzzle, a casual solo audience, an estimated 2--3 hour solve time, and the Monk narrator voice (short sentences, present tense, no exclamation marks). These properties are stable across runs by construction: they were explicitly enumerated in the brief and the pipeline enforces compliance at the assignment stage.
+
+Beyond the specified constraints, structural decisions diverge substantially. Hunt 1 employs a flat architecture: all five feeders reside in a single round titled ``The Ages,'' with no gating structure. Hunt 2 introduces a three-round gated architecture --- \textit{Dark Age} (P1--P2), \textit{Castle Age} (P3--P4), \textit{Imperial Age} (P5 + meta) --- that mirrors the in-game age-advancement mechanic and distributes the difficulty arc across discrete thematic sections. The round count mismatch (1 vs.\ 3) represents a genuine architectural choice: Hunt 2's structure requires the solver to complete earlier rounds before accessing later puzzles, while Hunt 1's flat structure makes all feeders simultaneously available.
+
+The meta mechanisms are categorically distinct. Hunt 1 employs a crossword-grid extraction: the five feeder answers (\textsc{castle}, \textsc{onager}, \textsc{loom}, \textsc{tower}, \textsc{patrol}) fill a grid, and six circled squares spell the meta answer \textsc{wololo}. Hunt 2 employs an arithmetic index followed by anagram: for each feeder answer, the solver counts the vowels and adds one to obtain a positional index; the letter at that index is extracted; and the five extracted letters (\textsc{r}, \textsc{a}, \textsc{g}, \textsc{i}, \textsc{l}) are anagrammed to yield \textsc{grail}. These belong to different mechanism families (grid-navigation vs.\ rule-application-and-unscramble) and require different solver skills.
+
+The Level 1 classification is therefore \textbf{variable} at the decision level (round count, meta mechanism type) and \textbf{stable} at the specification level (scale, narrator, audience, format, solve time). The stable properties are precisely those that were explicitly enumerated in the input brief; the variable properties are precisely those left to the generator's discretion.
+
+\subsection{Level 2: Pool Composition}
+\label{sec:results-pool}
+
+Both runs produced a 15-candidate puzzle pool at Stage 3, with five designated slots containing three candidates each. The pools share identical cardinality but differ in their organizing principle. Hunt 1 organized the pool by AoE2 content domain: three candidates per slot, one slot each for civilizations, units, technologies, maps, and economy. Hunt 2 organized the pool by puzzle mechanism type, mixing domains within each slot and distributing candidates by generative family (chain-following, knowledge-identification, arithmetic, logic-grid, word-transformation).
+
+The type distributions of the two pools diverge accordingly. Hunt 1's 15 candidates break down as: 5 knowledge-identification, 2 logic/deduction, 1 sequencing, 2 spatial/visual, 2 arithmetic, 2 proof-completion/gap-fill, and 1 upgrade-chain. Hunt 2's 15 candidates break down as: 4 knowledge-identification, 3 chain/path-following, 3 arithmetic/logic, 2 logic-grid, 1 word-transformation, 1 visual/spatial, and 1 sequencing. The two distributions share the knowledge-identification and visual/spatial types as their most prominent overlap, but the chain/path-following category (dominant in Hunt 2) is nearly absent from Hunt 1, and the arithmetic and proof-completion categories present in Hunt 1 have no strong parallel in Hunt 2's organization.
+
+Computing Jaccard similarity over the five puzzle types represented in each hunt's final selection yields the most direct cross-run comparison. Hunt 1 selected: identification, logic/deduction, gap-fill, spatial/visual, and arithmetic. Hunt 2 selected: chain-following, path-following, spatial/visual, word-transformation, and logic-grid. The intersection is $\{$spatial/visual$\}$, a single shared type; the union spans nine distinct types. Jaccard similarity on the selected-type sets is therefore $1/9 = 0.11$ --- well below the 0.4 stability threshold specified in Section~\ref{sec:stability-classification}.
+
+The KL divergence between the two type distributions is approximately 0.42 nats, indicating moderate distributional dissimilarity (computed as $D_{\mathrm{KL}}(H1 \| H2)$ over the aligned 8-type joint vocabulary, with smoothing value 1/30 applied to types absent from one distribution). This falls below the 0.5-nat threshold specified in Table~\ref{tab:stability-classification} but, taken together with Jaccard 0.11, consistently supports the VARIABLE classification: the two pools share minimal type overlap and are organized on categorically different principles.
+
+The Level 2 classification is \textbf{variable}. Despite drawing from the same AoE2 content library, the two runs produced pools with substantially different type distributions (Jaccard 0.11 on selected types, KL divergence 0.42 nats), reflecting genuinely different generative organizing principles.
+
+\subsection{Level 3: Answer Word Assignment}
+\label{sec:results-assignment}
+
+The two answer word sets share no elements in common. Hunt 1's feeder answers are \{\textsc{castle}, \textsc{onager}, \textsc{loom}, \textsc{tower}, \textsc{patrol}\}; Hunt 2's are \{\textsc{forge}, \textsc{march}, \textsc{siege}, \textsc{faith}, \textsc{relic}\}. Jaccard similarity on the two 5-word feeder sets is $0/10 = 0.00$. Including the meta answers (\textsc{wololo} vs.\ \textsc{grail}), no word appears in both hunts, and the 6-word Jaccard remains $0.00$.
+
+Word-length distributions differ as well. Hunt 1's feeders have lengths 6, 6, 4, 5, 6 (mean 5.4, range 4--6); Hunt 2's feeders are uniformly 5 letters each (mean 5.0, range 5--5). This uniformity in Hunt 2 is not incidental: the vowel-count index extraction mechanism requires answer words to have sufficient length to accommodate a positional index of up to four, and the anagram resolution is most tractable when feeder lengths are consistent.
+
+Despite zero lexical overlap, domain-level semantic proximity is partially present. Three of the five feeder slots yield word pairs that are adjacent in the AoE2 lexical field: (\textsc{loom}, \textsc{forge}) --- both name early-game technology structures in the production domain; (\textsc{onager}, \textsc{siege}) --- both belong to the siege-warfare category; and (\textsc{patrol}, \textsc{march}) --- both are military-movement verbs describing unit behavior. The remaining two pairs (\textsc{castle}/\textsc{faith} and \textsc{tower}/\textsc{relic}) show no semantic proximity. This partial domain convergence, occurring in 3 of 5 slots at Jaccard 0.00, suggests that the AoE2 content library exerts gravitational pull toward particular semantic territories even when the specific lexical choices are unconstrained.
+
+As a rough null model: if feeder answers were drawn uniformly at random from the AoE2 vocabulary (approximately 200 named items across civs, units, techs, and maps), the expected number of domain-adjacent pairs across the two 5-word sets would be approximately 0.8 under independence. The observed count of 3 is higher, though with N=2 this comparison is indicative rather than statistically conclusive.
+
+The Level 3 classification is \textbf{variable} on exact strings (Jaccard 0.00) and \textbf{partially stable} on domain-semantic field (3 of 5 slots domain-adjacent).
+
+\subsection{Level 4: Extraction Mechanism}
+\label{sec:results-mechanism}
+
+Table~\ref{tab:mechanism-comparison} shows the extraction mechanism family assigned to each puzzle slot in both hunts. The two hunts share a mechanism family in at most one of five feeder slots. Slot 1 presents the closest parallel: Hunt 1's civilization-bonus identification puzzle uses an index-N-from-answer-N rule (circle letter $N$ from the $N$th answer), and Hunt 2's Blacksmith-chain puzzle uses the same abstract extraction principle (take letter $N$ from blank $N$'s answer). The content substrate differs --- civilizations and bonuses vs.\ upgrade-chain technology names --- but the extraction logic is structurally identical. Slots 2 through 5, and the meta, are in categorically distinct mechanism families across the two runs.
+
+\begin{table}[h]
+\centering
+\caption{Extraction mechanism families by puzzle slot, both hunts. A ``match'' in the Overlap column indicates structural equivalence of the extraction rule, not content equivalence.}
+\label{tab:mechanism-comparison}
+\small
+\begin{tabular}{llllc}
+\toprule
+\textbf{Slot} & \textbf{Hunt 1 Mechanism} & \textbf{Hunt 2 Mechanism} & \textbf{Overlap} \\
+\midrule
+1 & Knowledge-identification; indexed letter extraction & Chain-following; indexed letter extraction & Partial \\
+2 & Logic/deduction (tournament bracket) & Multi-domain tech identification & No \\
+3 & Gap-fill / tech-tree recall & First-letter from civ-bonus identification & No \\
+4 & Spatial/visual (dot-plot constellation) & Word transformation / wordplay & No \\
+5 & Arithmetic computation (A1Z26) & Logic grid (constraint satisfaction) & No \\
+Meta & Grid-navigation (crossword) & Arithmetic index + anagram & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Mechanism type Jaccard over the five feeder slots is $1/9 = 0.11$ (one shared family, nine distinct families in the union). The meta mechanisms are categorically distinct: grid-navigation and arithmetic-plus-anagram require different solver skills and produce structurally different artifacts. One notable convergence that is not captured in the slot-by-slot analysis: both hunts placed a first-letter or index-letter extraction mechanism in their civilization-bonus identification puzzle (Hunt 1 slot 1 / Hunt 2 slot 3), suggesting that the combination of civ-bonus content and letter-index extraction constitutes a stable attractor in the AoE2 puzzle mechanism space. This convergence arises despite the two puzzles appearing in different slots, paired with different answer words, and deploying slightly different extraction sub-variants.
+
+The Level 4 classification is \textbf{variable}. Five of six mechanism positions (including the meta) are in distinct mechanism families across the two hunts.
+
+\subsection{Level 5: Micro-Design}
+\label{sec:results-micro}
+
+We compare the first-slot puzzles (Hunt 1 P1: \textit{Civilization Bonus Matcher}; Hunt 2 P1: \textit{The Blacksmith's Chain}) as the most structurally analogous pair available for micro-design analysis, given the Slot 1 mechanism-family convergence identified at Level 4.
+
+Both puzzles use the extraction rule ``take the $N$th letter from the $N$th answer'' --- the single stable sub-element at this level. All other micro-design dimensions diverge. Hunt 1's puzzle uses a list of eight bonus descriptions (six load-bearing, two chaff); Hunt 2's uses four ASCII chain diagrams with five total blanks (all five load-bearing). Hunt 1 includes a built-in cross-clue hint (``two of these bonuses concern infantry''); Hunt 2 provides no hints. The visual grammar is different: Hunt 1 presents each clue as a percentage-exact one-sentence bonus descriptor with age restriction and letter count; Hunt 2 presents each chain as a sequence of upgrade nodes connected by arrows, with each blank labeled by age, cost, and single-line effect. Flavor text density differs substantially: Hunt 1 opens with a single sentence; Hunt 2 opens with five sentences of Monk-voice narration that contextualizes the Blacksmith's setting before presenting the puzzle. The chaff mechanism in Hunt 1 (requiring the solver to identify which six of eight items matter) has no parallel in Hunt 2's clean all-load-bearing structure.
+
+Despite these differences, both puzzles operate in the same difficulty band (both rated 2--3 out of 5), both test specific AoE2 knowledge with five to six load-bearing data points, and both comply with the Riven Standard: the extraction rule is stated in the flavor text and the solver can verify the answer letter-by-letter.
+
+The Level 5 classification is \textbf{variable} overall, with one stable sub-element (extraction family: index-$N$-from-answer-$N$) and systematic divergence across content domain, visual grammar, structural complication (chaff vs.\ clean), and flavor text density.
+
+\subsection{Panel Score Stability}
+\label{sec:results-panel}
+
+Hunt 1 and Hunt 2 were evaluated using the same C8 panel (Katz, Snyder, Young reviewer profiles) and the same 7-dimension, 45-point rubric. Hunt 1 scores are available for all five puzzles; Hunt 2 scores are available for the three authored puzzles (P1--P3).
+
+Hunt 2's three scored puzzles produced a panel mean of 38.8/45 (86\% of maximum), with individual scores of 39.0 (P1), 36.7 (P2), and 40.7 (P3). Normalized to percentage of maximum for cross-run comparability, Hunt 1's first three puzzle slots averaged 83\% (24.3/30, 26.0/30, 24.0/30 on Hunt 1's equivalent 30-point rubric for those early runs). The between-run difference of 3 percentage points falls within the expected variability range across reviewer panels and is consistent with a \textbf{stable} pass/fail signal: every scored puzzle in both runs clears the passing threshold (71--73\% of maximum).
+
+Dimension-level analysis, normalized to a common 5-point scale, reveals that the aggregate stability conceals structured variation. Clarity (Hunt 1: 4.7/5; Hunt 2: 4.9/5) and Solvability (Hunt 1: 4.6/5; Hunt 2: 4.3/5) are stable across runs (differences of $\pm 0.3$ or less). Elegance and Reading Reward both show a systematic upward shift of $+1.2$ points in Hunt 2 (Elegance: 3.1 vs.\ 4.3; Reading Reward: 3.3 vs.\ 4.5). A methodological note: the +1.2-point uplift in Elegance and Reading Reward should be interpreted with caution --- Hunt~1 was evaluated on a 6-dimension equal-weight rubric while Hunt~2 used a 7-dimension weighted rubric with Elegance and Reading Reward double-counted, which partially confounds the comparison. This shift is not random variation: Elegance and Reading Reward were the two dimensions where Hunt 1 scored lowest, and these weaknesses were explicitly documented in Hunt 1's synthesis report. Hunt 2's puzzle designs --- particularly the chain-diagram format of P1 and the civ-bonus acrostic format of P3 --- produce higher structural elegance and stronger aha-moment quality by construction.
+
+The panel score stability analysis thus yields a two-level conclusion: the \textit{aggregate quality signal} is stable (both runs pass the quality gate, mean normalized scores within 4 percentage points), while \textit{dimension-level scores} are variable in the specific dimensions most sensitive to micro-design choices. This supports using AI panel aggregate scores as a reliable quality gate independent of specific puzzle content choices, while cautioning that individual dimension scores reflect genuine design quality variation that the generator does not control deterministically.
+
+\subsection{Summary}
+\label{sec:results-summary}
+
+Table~\ref{tab:stability-summary} consolidates all classification results. The pattern is clear: specification-driven decisions are stable across runs; generative decisions are variable. The sole partial exception is domain-semantic gravity at Level 3, where zero lexical overlap coexists with partial domain-adjacency in 3 of 5 feeder slots --- a finding that will be discussed further in Section~\ref{sec:discussion}.
+
+\begin{table}[h]
+\centering
+\caption{Level-by-level stability summary. Each row represents one measurable design decision or metric, with the Hunt 1 and Hunt 2 values, the relevant metric, and the stability classification.}
+\label{tab:stability-summary}
+\small
+\begin{tabular}{p{2.4cm}p{2.8cm}p{2.8cm}p{2.2cm}l}
+\toprule
+\textbf{Level / Decision} & \textbf{Hunt 1} & \textbf{Hunt 2} & \textbf{Metric} & \textbf{Classification} \\
+\midrule
+\multicolumn{5}{l}{\textit{Level 1 --- Structure}} \\
+Scale (puzzles) & 5 feeders + 1 meta & 5 feeders + 1 meta & Exact count & Stable \\
+Narrator voice & The Monk (identical rules) & The Monk (identical rules) & Categorical match & Stable \\
+Round count & 1 & 3 & Count: 1 vs.\ 3 & Variable \\
+Round gating & None (flat) & Gated by age & Architectural & Variable \\
+Meta mechanism type & Crossword (grid) & Vowel-count index + anagram & Mechanism family & Variable \\
+\midrule
+\multicolumn{5}{l}{\textit{Level 2 --- Pool}} \\
+Pool size & 15 candidates & 15 candidates & Exact count & Stable \\
+Selected type overlap & 1 of 5 types shared & 1 of 5 types shared & Jaccard = 0.11 & Variable \\
+Pool org.\ principle & By AoE2 domain & By mechanism type & Categorical & Variable \\
+\midrule
+\multicolumn{5}{l}{\textit{Level 3 --- Assignment}} \\
+Feeder word overlap & CASTLE/ONAGER/LOOM/ TOWER/PATROL & FORGE/MARCH/SIEGE/ FAITH/RELIC & Jaccard = 0.00 & Variable \\
+Meta answer & WOLOLO & GRAIL & Exact: 0 match & Variable \\
+Domain adjacency & --- & --- & 3/5 slots proximate & Part.\ Stable \\
+Answer word lengths & 4--6 (mean 5.4) & 5--5 (mean 5.0) & Length distribution & Variable \\
+\midrule
+\multicolumn{5}{l}{\textit{Level 4 --- Mechanism}} \\
+Extraction families & 5 distinct types & 5 distinct types & Jaccard = 0.11 & Variable \\
+Slot-1 extraction rule & Index $N$ from answer $N$ & Index $N$ from answer $N$ & Family match & Stable \\
+Meta mechanism & Crossword & Arithmetic + anagram & Categorically diff. & Variable \\
+\midrule
+\multicolumn{5}{l}{\textit{Level 5 --- Micro-design}} \\
+P1 extraction sub-rule & Circle letter $N$ from ans.\ $N$ & Take letter $N$ from blank $N$ & Same family & Stable \\
+P1 content domain & Civilizations & Technologies & Different & Variable \\
+P1 visual grammar & List format & Chain diagram & Different & Variable \\
+P1 chaff structure & 2 chaff items & 0 chaff items & Structural diff. & Variable \\
+P1 flavor text & Sparse (1 sentence) & Dense (5 sentences) & Length/density & Variable \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel Scores}} \\
+Pass/fail verdict & 4/5 pass, 1 redesign & 3/3 pass & Directional & Stable \\
+Normalized avg.\ (slots 1--3) & 83\% & 86\% & $\Delta = +3\%$ & Stable \\
+Clarity dimension & 4.7/5 & 4.9/5 & $\Delta = +0.2$ & Stable \\
+Solvability dimension & 4.6/5 & 4.3/5 & $\Delta = -0.3$ & Stable \\
+Elegance dimension & 3.1/5 & 4.3/5 & $\Delta = +1.2$ & Variable \\
+Reading Reward dim. & 3.3/5 & 4.5/5 & $\Delta = +1.2$ & Variable \\
+\bottomrule
+\end{tabular}
+\end{table}

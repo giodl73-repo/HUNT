@@ -1,0 +1,64 @@
+version: "1.2.0"
+uuid: g3p4t5x6
+slug: profile-taxonomy-creative
+title: "Profile Depth and the Reviewing-to-Authoring Transfer Problem: Evidence from AI Expert Personas in Puzzle Hunt Design"
+venue: "ICCC 2026"
+stage: ready
+round: 2
+content_mode: full
+content_mode_confirmed: true
+
+# Review tracking
+reviewers:
+  - name: Anna Jordanous
+    profile_ref: anna-jordanous
+    expertise: Computational creativity evaluation, SPECS framework, AI assessment methodology
+  - name: Tony Veale
+    profile_ref: tony-veale
+    expertise: Computational creativity, creative language, AI-generated humor and narrative
+  - name: Pablo Gervás
+    profile_ref: pablo-gervas
+    expertise: Computational creativity, narrative generation, creative cognition models
+  - name: James Lester
+    profile_ref: james-lester
+    expertise: AI in games, narrative intelligence, game-based learning systems
+  - name: Mark Riedl
+    profile_ref: mark-riedl
+    expertise: AI narrative intelligence, computational creativity, story generation
+
+reviews: {}
+p1_items:
+  - id: P1.1
+    description: Score reliability — range column added to tables, small gaps hedged
+    addressed: true
+    section: sections/04-results.tex
+  - id: P1.2
+    description: Rubric validity — CC-theoretic grounding paragraph added (Boden, Jordanous)
+    addressed: true
+    section: sections/03-methodology.tex
+  - id: P1.3
+    description: Lens taxonomy N=1 — reframed as proposed, classification procedure added
+    addressed: true
+    section: sections/05-discussion.tex
+  - id: P1.4
+    description: Companion paper dependency — presence/absence table added inline
+    addressed: true
+    section: sections/04-results.tex
+  - id: P1.5
+    description: CC positioning — new subsection connecting to Boden, Colton/Wiggins, Stokes
+    addressed: true
+    section: sections/05-discussion.tex
+
+# Stage history
+history:
+  - stage: draft
+    date: "2026-02-28"
+    note: "Paper initialized via plan.md authoring"
+  - stage: full
+    date: "2026-02-28"
+    note: "Content mode upgraded to full — 7 sections written (~6070 words), 4 figures, taxonomy mining complete"
+  - stage: panel
+    date: "2026-02-28"
+    note: "Reviewers assigned: Jordanous, Veale, Gervas, Lester, Riedl"
+
+created: "2026-02-28"

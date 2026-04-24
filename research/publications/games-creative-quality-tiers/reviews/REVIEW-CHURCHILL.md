@@ -1,0 +1,29 @@
+# Review: Orientation Before Expertise: A Unified Tier Model of Creative Quality in AI Authoring and Reviewing
+**Reviewer:** Elizabeth Churchill | **Expertise:** HCI, design practice, experience-centered design, creativity support tools | **Round:** 1
+
+## Scores (1-4)
+Novelty: 3 | Rigor: 3 | Clarity: 4 | Significance: 4 | **Overall: 3.5**
+
+## Overall Assessment
+This paper is directly actionable for HCI practitioners who design creativity support tools, and the OLE formula's three-sentence form is unusually practical for a CHI contribution. The cross-role evidence for orientation primacy is compelling and the finding that domain-expertise labels actively degrade performance is striking enough to shift practitioner behavior. The main gap from a design-practice perspective is that the paper's generalization argument treats "domain" as a flat variable, ignoring how role context, organizational constraints, and user identity interact with orientation — all of which are live variables in any deployed creativity support tool.
+
+## Strengths
+1. **OLE formula is immediately actionable.** The three-sentence structure is specific enough to deploy without domain knowledge, and the quantitative evidence for its ordering is stronger than most design heuristics receive. A CST designer reading this paper has a concrete, empirically grounded starting point for system-prompt architecture.
+2. **The "artist vs. puzzle designer" result reframes a standard CST assumption.** HCI creativity support research often treats domain scaffolding (templates, genre conventions, role assignment) as the primary design variable. The 15.6-point gap measured here is a direct empirical challenge to that assumption; the finding will be surprising and useful to this community.
+3. **Section 5.3 (boundary conditions) is appropriately cautious.** The distinction between domains where quality is receiver-defined versus formally defined (proof, code correctness) is a meaningful constraint on the universality claim and prevents the kind of overreach that often accompanies framework papers.
+4. **Tables 3 and 4 are well structured.** The generalization table (marketing, product design, legal, training) gives practitioners an immediate mapping framework. The fact that the Tier 1 content is domain-invariant while Tier 3 is domain-specific is a useful design principle for tool builders.
+
+## P1 — Blocking Issues
+
+1. **The OLE formula is validated in a single domain (puzzle-hunt design) by a single evaluator type (AI agents).** The generalization argument in Section 5.2 is entirely predictive — it consists of applying the tier model to new domains by analogy, with no empirical data from those domains. For a CHI paper claiming a "universal prompt design principle," this is a significant gap. The paper should either (a) narrow the universality claim explicitly ("OLE is empirically validated in puzzle-hunt design and theoretically predicted to generalize; cross-domain validation is future work"), or (b) include at least one pilot cross-domain validation. As currently written, the claim that "OLE corrects" marketing-copy, product-design, and legal-drafting failures is predictive speculation presented as derivable fact. The discussion section acknowledges this limitation briefly (§6.3) but the abstract, introduction, and conclusion all assert universality without qualification.
+
+2. **The paper does not account for how role context and organizational identity interact with orientation.** In most deployed CST contexts, the AI agent is not prompted in isolation — it is interacting with a user who has a professional identity, an organizational role, and constraints that may require domain-expertise-first framing (e.g., a lawyer cannot bracket legal conventions to "orient toward the reader" without risking professional liability). The OLE formula is a prompt-construction protocol, but it is unclear whether it is intended for the system designer (writing the system prompt before user interaction) or for the user (restructuring their own prompts). For the former, the practitioner implications are clear; for the latter, the interaction design implications are entirely unexplored. This is not a fatal flaw but the paper needs to specify its deployment model.
+
+## P2 — Important Issues
+
+1. **Creative domain diversity is missing from the study design.** Puzzle-hunt design is an unusual creative domain: it has fully verifiable solutions, a specific and shared solver-experience criterion, and an unusual evaluability structure that most creative domains lack. The paper acknowledges this in §6.3 but does not address whether orientation-first design is observable and actionable in domains where the receiver's experience criterion is more contested (e.g., contemporary art, experimental music, political rhetoric). The OLE formula's universality is most plausible in domains with defined receiver-experience outcomes, which is worth making explicit in the generalization argument.
+
+2. **No discussion of how OLE interacts with iterative creative processes.** The paper treats prompt construction as a one-shot design decision, but most real creative workflows are iterative: the practitioner writes a prompt, receives an output, and revises. Does the OLE ordering matter in the second and third iterations? Can orientation be re-activated by a mid-session sentence, or must it precede all domain content? The minimum sufficient set result (R3 crossing threshold) applies to an initial prompt, but the implications for iterative CST tool design are not addressed.
+
+## Recommendation
+Accept with minor revisions. The empirical contribution is strong enough for CHI 2026. The universality claim must be clearly qualified as predictive rather than validated, and the deployment model (system prompt vs. user prompt) must be specified. These are revisions of framing, not of the empirical content.

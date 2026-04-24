@@ -1,0 +1,34 @@
+Evaluating creative work requires the kind of domain expertise that is scarce, expensive,
+and difficult to apply consistently at scale. This paper reports an unexpected finding
+about structured evaluation: a rubric applied without expert identity context systematically
+\emph{inverts} the quality hierarchy, producing higher scores for accessible work than for
+ambitious work. Across a fifteen-puzzle corpus spanning three quality tiers, rubric-only
+evaluation yields a pass rate of 80\% for Standard Hunt puzzles but only 40\% for
+MIT/Elite-tier puzzles---because elite puzzles deliberately sacrifice Clarity and
+Solvability for Elegance and Reading Reward, and an equal-weight rubric treats that
+trade-off as a defect. Expert identity, encoded in rich reviewer profiles, reintroduces
+the calibration that converts raw dimension scores into verdicts appropriate to the paradigm
+under review.
+
+We ground this investigation in puzzle hunt design, a collaborative creative practice with
+well-defined quality criteria, a recognized expert community, and the property that answer
+correctness is binary while quality is contested. We assemble panels of AI reviewers
+instantiated from persistent, domain-specific profiles---structured markdown documents
+capturing each simulated reviewer's design philosophy, evaluative lens, and named
+evaluative frameworks---and compare eight conditions in a controlled ablation across 15
+real published puzzles from MIT Mystery Hunt 2023, Huntinality, and Teammate Hunt.
+
+The eight-condition ablation reveals two additional findings. First, a \emph{feedback
+quality gradient}: richer profiles surface six analytical frameworks (\emph{a-ha economy},
+\emph{load-bearing test}, \emph{world-model consistency}, \emph{social fabric},
+\emph{perceptual-shift}, \emph{visual grammar}) that generic profiles and bare prompting
+do not introduce; these frameworks appear in C6 reviews but in no input text provided to
+the reviewers. Second, adding the \emph{Riven Standard} as a scored seventh dimension
+(``the puzzle IS what the field does, not an obstacle overlaid on it'') achieves a
+24.5 percentage-point tier-separation gap between elite and magazine-tier puzzles,
+compared to 10.9 points for the equal-weight baseline.
+
+All results are characterized as valid within the authors' constructed evaluation
+framework; a human calibration study remains future work. We release the full profile
+library, scoring rubric, and replication corpus to support adaptation to other
+creative evaluation domains.

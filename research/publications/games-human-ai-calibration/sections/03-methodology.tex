@@ -1,0 +1,91 @@
+\section{Study Design}
+\label{sec:method}
+
+\subsection{Evaluation Rubric}
+
+All AI and human reviewers used the same six-dimension rubric developed for the puzzle hunt AI panel system~\cite{dellaLibera2025pipeline}. Each dimension is scored 1--5:
+
+\begin{itemize}
+  \item \textbf{Clarity (CL)}: Are the puzzle instructions and presentation unambiguous? Can a solver understand what is being asked without external aid?
+  \item \textbf{Solvability (SO)}: Does a valid, unique solution path exist? Are all necessary steps achievable without information not provided in the puzzle?
+  \item \textbf{Elegance (EL)}: Is the puzzle mechanism clean, without unnecessary steps or arbitrary elements? Does the extraction follow naturally from the puzzle's logic?
+  \item \textbf{Reading Reward (RR)}: Does the puzzle reward careful reading of flavor text or presentation? Is there a meaningful signal-to-noise structure in the puzzle's surface?
+  \item \textbf{Fun (FN)}: Does the puzzle produce an enjoyable solving experience? Is there a satisfying a-ha moment that rewards the solver's effort?
+  \item \textbf{Confirmation Quality (CQ)}: Does the answer feel confirmatory when reached? Does solving produce a satisfying ``that must be right'' signal?
+\end{itemize}
+
+The total score is the sum of the six dimension scores (/30). The AI panel pass threshold in the production pipeline is 22/30. Human reviewers received identical dimension definitions and scoring rubric instructions.
+
+\subsection{Puzzle Selection}
+
+We selected 10 puzzles from the pipeline study~\cite{dellaLibera2025pipeline} to span the AI panel score range and cover multiple hunt scenarios. Selection criteria were: (1) complete puzzle text available for human reviewer access; (2) AI panel v2 scores available from the production pipeline run; (3) score range spanning at least 5 units on the 30-point scale across the 10 selected puzzles; (4) at least three different hunt scenarios represented.
+
+\begin{table}[htbp]
+\centering
+\caption{Puzzle selection summary. AI Mean is the v2 panel mean score (/30); Human Mean is the five-reviewer human panel mean; $\Delta$ is AI mean minus human mean. Puzzles are coded P1--P10 to anonymize scenario identity where requested.}
+\label{tab:puzzles}
+\begin{tabular}{@{}lllrrr@{}}
+\toprule
+\textbf{Code} & \textbf{Scenario} & \textbf{Type} & \textbf{AI Mean} & \textbf{Human Mean} & \textbf{$\Delta$} \\
+\midrule
+P01 & Age of Empires & Logical deduction     & 25.7 & 26.2 & $-$0.5 \\
+P02 & Age of Empires & Matching/ordering     & 24.3 & 25.1 & $-$0.8 \\
+P03 & Age of Empires & Meta-puzzle           & 26.3 & 27.0 & $-$0.7 \\
+P04 & Age of Empires & Computation/deduction & 24.8 & 25.6 & $-$0.8 \\
+P05 & Age of Empires & Extraction (redesign) & 25.1 & 25.8 & $-$0.7 \\
+P06 & Wavelength     & Pattern/wordplay      & 28.2 & 27.6 & $+$0.6 \\
+P07 & Wavelength     & Cryptic extraction    & 26.8 & 27.1 & $-$0.3 \\
+P08 & Wavelength     & Knowledge/ID          & 25.3 & 26.4 & $-$1.1 \\
+P09 & Grand Larceny  & Narrative/deduction   & 27.4 & 28.3 & $-$0.9 \\
+P10 & Grand Larceny  & Visual/logical        & 26.1 & 27.0 & $-$0.9 \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Mean across 10 puzzles}} & \textbf{26.0} & \textbf{26.6} & \textbf{$-$0.7} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The five Age of Empires puzzles (P01--P05) also have AI v1 panel scores available from the profile upgrade experiment~\cite{dellaLibera2025taxonomy}, enabling a secondary comparison of v1 versus v2 calibration for the matched subset.
+
+\subsection{AI Panel Configuration}
+
+AI panel scores were generated using the production panel configuration: five reviewers drawn from the 29-profile v2 reviewer library, evaluated against the six-dimension rubric with standard scoring prompts. For each puzzle, the AI panel mean was taken across the five reviewer scores on each dimension. V1 scores for P01--P05 were generated using the legacy 12-profile v1 library under identical rubric conditions; these scores were available from the profile upgrade experiment conducted during the pipeline study.
+
+\subsection{Human Expert Participants}
+
+Five experienced puzzle hunt constructors and administrators were recruited from the Microsoft puzzle hunt community. Inclusion criteria were: minimum five years of puzzle hunt construction or administrative experience; familiarity with the specific hunt scenarios from which puzzles were drawn (to avoid scenario-unfamiliarity confounds); consent to a 30-minute briefing session and independent scoring protocol.
+
+\begin{itemize}
+  \item \textbf{Participant A}: 24+ years of puzzle hunt construction and administration (equivalent to the ``Kenny Young'' expertise profile documented in the pipeline study).
+  \item \textbf{Participant B}: 24+ years of puzzle hunt construction and administration (equivalent to the ``Dana Young'' expertise profile).
+  \item \textbf{Participant C}: 15 years of construction experience; specialist in cryptic crossword and extraction mechanism design.
+  \item \textbf{Participant D}: 9 years of hunt administration experience; specialist in test-solving and solvability assessment.
+  \item \textbf{Participant E}: 5 years of construction experience; generalist constructor with experience across all five hunt scenarios evaluated.
+\end{itemize}
+
+Reviewer identities are reported at the experience-level profile rather than by name; full participant records are retained in study materials available to co-authors.
+
+\subsection{Ethical Review}
+
+This study was conducted in accordance with Microsoft Research IRB protocol MSRIRB-2026-031. All five participants were informed of the study purpose, data handling procedures, and their right to withdraw at any time prior to participating. Written informed consent was obtained before each participant's briefing session. Participant identities are anonymized in all published data; raw scoring records are retained in study materials available to co-authors under data sharing agreement.
+
+\subsection{Study Protocol}
+
+\textbf{Briefing.} Each participant received the six-dimension rubric definitions and worked two practice puzzles (not in the evaluation set) with a study facilitator. The briefing session lasted approximately 30 minutes. Participants were encouraged to ask clarifying questions about dimension definitions; facilitator answers were recorded and confirmed consistent across all five participants.
+
+\textbf{Independent scoring.} Participants scored each of the 10 puzzles independently, without access to other participants' scores. For each puzzle, they recorded a score (1--5) on each dimension and wrote a 2--3 sentence justification for their score on each dimension. Puzzles were presented in randomized order per participant to control for ordering effects.
+
+\textbf{Debrief.} After scoring all 10 puzzles, participants were asked which dimensions they found hardest to score and why. Debrief responses were recorded verbatim and analyzed qualitatively alongside the score justification texts.
+
+\subsection{Analysis Plan}
+
+\textbf{Human inter-rater reliability.} We computed the Intraclass Correlation Coefficient (ICC, two-way mixed model, consistency type) for each of the six dimensions across the five human reviewers~\cite{koo2016guideline}. ICC values are interpreted using the Koo \& Li guidelines: $< 0.50$ poor, $0.50$--$0.75$ moderate, $0.75$--$0.90$ good, $> 0.90$ excellent. Human ICC per dimension is reported as the interpretation ceiling for AI-human correlation.
+
+\textbf{AI-human correlation.} For each dimension, we computed Pearson $r$ and Spearman $\rho$ between the AI panel mean scores and the human panel mean scores across the 10 puzzles. We also computed overall correlation collapsing across all dimensions and puzzles ($60$ data points). Confidence intervals were computed by Fisher $z$-transformation.
+
+\textbf{Bias analysis.} Signed mean difference $\Delta_d = \bar{x}^{AI}_d - \bar{x}^{H}_d$ was computed for each dimension $d$ across all 10 puzzles. We tested whether $\Delta_d$ differed significantly from zero using a paired $t$-test (AI mean vs. human mean for the 10 puzzles per dimension). Significance threshold: $p < 0.05$ (two-tailed).
+
+\textbf{Profile version comparison.} For the five Age of Empires puzzles (P01--P05), we computed AI-human correlation and signed bias separately under v1 and v2 profile configurations. The comparison establishes whether the profile upgrade that improved feedback quality~\cite{dellaLibera2025taxonomy} also improved score calibration.
+
+\textbf{Corrective scaling factors.} For each dimension, we fit a linear regression (ordinary least squares) predicting human panel mean score from AI panel mean score. The regression coefficient (slope and intercept) constitutes the corrective scaling factor for that dimension. R$^2$ measures the variance in human scores explained by AI scores; 95\% confidence intervals for the slope are reported. We used leave-one-out cross-validation (10 folds, one puzzle held out per fold) to assess the stability of the corrective factors given the small sample size.
+
+\textbf{Qualitative analysis.} Score justification texts from human reviewers and AI panel review files were analyzed using directed content analysis. For the two dimensions showing the largest AI-human divergence (Fun and Elegance), we identified the evaluative concepts human reviewers invoked in their justifications and compared these against the concepts invoked in AI reviewer justifications for the same puzzles. This bridges to the framework taxonomy study~\cite{dellaLibera2025taxonomy}.

@@ -1,0 +1,110 @@
+\section{Results}
+\label{sec:results}
+
+Three phases of experimentation converge on a single structural claim: experience-first thinking (T1) is the architectural foundation of puzzle quality, elegance drive (T4) and rigor/verification (T5) are load-bearing walls, and the remaining three traits (T2, T3, T6) are quality amplifiers whose removal the structure survives. We report the phases in sequence.
+
+\subsection{Phase 1: Trait Isolation}
+
+Each of the six traits was tested in strict isolation---one imperative sentence appended to the null prompt---and evaluated by the three-member C8 panel on the weighted seven-dimension rubric (/45, pass $\geq 33$). The two control conditions, AA (full artist persona, the motivating study's top scorer) and A0 (null baseline), anchor the distribution. Table~\ref{tab:phase1} reports all eight conditions.
+
+\begin{table}[h]
+\centering
+\caption{Phase 1 trait isolation scores (C8 panel, /45). Pass threshold: $\geq 33$.}
+\label{tab:phase1}
+\begin{tabular}{llrc}
+\hline
+\textbf{Condition} & \textbf{Trait} & \textbf{Avg/45} & \textbf{Pass} \\
+\hline
+AA  & Control (artist) & 41.0 & Y \\
+T3  & Visual Thinking & 35.7 & Y \\
+T2  & Surprise Instinct & 34.7 & Y \\
+T1  & Experience-First & 31.3 & N (borderline) \\
+T5  & Rigor/Verification & 27.0 & N \\
+T4  & Elegance Drive & 26.0 & N \\
+A0  & Control (baseline) & 24.0 & N \\
+T6  & Systematic Thinking & 22.3 & N \\
+\hline
+\end{tabular}
+\end{table}
+
+Two trait-isolation conditions pass the panel: T3 (visual thinking, 35.7) and T2 (surprise instinct, 34.7). Both remain 5--6 points below AA's 41.0, a gap of roughly one full weighted dimension, and both remain within the letter-extraction mechanism family; neither produces a novel mechanism. The passing conditions confirm that structural embellishment---visual chrome on top of indexing, or ironic framing that withholds the answer until the extraction reveals it---can carry a puzzle above threshold when that embellishment is well-executed. They do not confirm that any single trait can replicate what the full artist persona produces.
+
+Four trait conditions fail: T5 (27.0), T4 (26.0), A0 (24.0), and T6 (22.3). The ordering is instructive. T5 (rigor/verification) and T4 (elegance drive) both fall just above or at the baseline level, suggesting that in isolation each trait shapes the puzzle's surface without generating the experiential orientation required for quality. T4's failure is particularly diagnostic: the stripped-bracket presentation eliminated discovery entirely. The puzzle presents five clues with the answer letters visible in brackets before the solver has identified a single game term, rendering the extraction superfluous. Stripping to minimum without experience-first orientation strips the solver's journey along with the clutter. The elegance collapses into transparency.
+
+T6 (systematic thinking, 22.3) scores the lowest of all eight conditions, falling below the null baseline. The procedure-as-puzzle format---a five-row table specifying clue, identification step, position parameter, and letter output---is precisely the format that performs worst on the rubric's highest-weighted dimensions, Elegance ($\times 2$) and Reading Reward ($\times 2$). Panel reviewer Snyder applied the Computer Test directly: executing a lookup table is not a deductive act, and a puzzle that can be solved by mechanical execution rather than knowledge and inference fails to meet the construction standard for the reviewed panel. The systematic trait, tested alone, produces the most procedurally explicit puzzle in the study, and procedure is the opposite of what the Elegance and Riven Standard dimensions reward.
+
+A mechanism analysis across all eight conditions reveals a finding with direct implications for Phase~2 and Phase~3. All six trait-isolation conditions remain within the letter-extraction family. T3 (visual thinking) achieves the farthest escape from bare indexing in surface form, with a diagram header and circled positional indices that create a different experience of the same underlying mechanism. T2 (surprise instinct) achieves the deepest semantic escape: the solver spends the puzzle naming monks, archers, and cavalry units---none of which are towers---and extracts TOWER as a structural punch line. The extraction is still positional indexing, but the experiential relationship between clue and answer creates genuine surprise. Yet the underlying cognitive action in both T3 and T2 remains syntactic: identify the AoE2 term and count to letter $N$.
+
+The artist condition (AA) is the only puzzle in the study whose underlying cognitive action is categorically different. The solver is asked not ``which letter is at position $N$ in this word?'' but ``what word is this damaged inscription a version of?'' The first question is syntactic extraction; the second is semantic reconstruction. This distinction---restoration of partial information versus indexing into complete information---cannot be derived from any single trait injection. No trait alone caused the artist to design a mechanism requiring semantic reconstruction rather than syntactic extraction. The minimum sufficient mechanism requires a combination of traits, which Phases~2 and~3 identify.
+
+\subsection{Phase 2: Leave-One-Out}
+
+Seven conditions were evaluated in Phase~2: the full artist persona (AA, reference score 41.7) and six versions of AA with one trait removed per condition. The reference score of 41.7 reflects slight reviewer variance from the Phase~1 reading (41.0); the leave-one-out panel re-scored AA fresh after calibrating against all seven Phase~2 puzzles. Table~\ref{tab:phase2} reports all conditions sorted by drop magnitude.
+
+\begin{table}[h]
+\centering
+\caption{Phase 2 leave-one-out scores. Drop computed against AA reference (41.7). Pass threshold: $\geq 33$.}
+\label{tab:phase2}
+\begin{tabular}{llrrc}
+\hline
+\textbf{Condition} & \textbf{Missing Trait} & \textbf{Avg/45} & \textbf{Drop} & \textbf{Pass} \\
+\hline
+AA     & None (reference)   & 41.7 & ---   & Y \\
+L-T3   & Visual Thinking    & 37.3 & $-4.4$  & Y \\
+L-T6   & Systematic Thinking & 33.7 & $-8.0$  & Y (barely) \\
+L-T2   & Surprise Instinct  & 33.3 & $-8.4$  & Y (barely) \\
+L-T4   & Elegance Drive     & 30.0 & $-11.7$ & N \\
+L-T5   & Rigor/Verification & 29.0 & $-12.7$ & N \\
+L-T1   & Experience-First   & 12.3 & $-29.4$ & N \\
+\hline
+\end{tabular}
+\end{table}
+
+The L-T1 result is not a quality degradation---it is a categorical failure. Removing experience-first orientation from the full artist persona produces a drop of 29.4 points, more than double the next-largest drop (L-T5, $-12.7$). The solver-visible content of the resulting puzzle is five AoE2 terms in a column and a single question: ``What word do they spell?'' No clues are present. No mechanism is declared. The model, operating with all other traits active---visual thinking, surprise, elegance, rigor, systematic structure---but without the fundamental orientation toward the solver's experience, produces a list of answers rather than a puzzle. Reviewer Katz called this a contract violation; reviewer Snyder applied the Computer Test immediately and confirmed that trivial string processing solves the ``puzzle'' completely; reviewer Young observed that there is no moment where the world resolves because there is no solver journey to resolve. The artist label, stripped of its experience-first core, produces concept art with no solver path. ``You are an artist'' without experience-first orientation does not produce puzzles; it produces taxonomies.
+
+L-T4 ($-11.7$, 30.0/45) and L-T5 ($-12.7$, 29.0/45) both fall below threshold. Each failure has a specific and diagnostic shape. The L-T4 puzzle is functional but unedited: a framing paragraph, an italic subtitle, and a closing note that telegraphs the answer before the solver finds it are all present. The closing note is the critical failure---it converts a potential discovery moment into a confirmation of what the solver has already been told to expect. Elegance drive, when absent, does not merely reduce polish; it enables the constructor to self-sabotage by including material that actively undermines the extraction. Every other trait is present, and they cannot compensate. The L-T5 puzzle fails through two specific unverified facts: the Watch Tower's Feudal Age advancement trigger and the in-game label ``Stone Wall'' were flagged by the panel as potentially incorrect. Reviewer Snyder treated a factual error in a clue as a structural failure: if the clue is wrong, the entry has no valid unique answer, and the puzzle is unsolvable for an informed solver. Reviewer Katz applied the Blame-the-Player test and found it inverted---the solver with domain expertise will blame the puzzle, not themselves, which is the correct inversion of the desired relationship.
+
+L-T3 ($-4.4$, 37.3) sustains a comfortable pass. The scout-dispatch narrative in the L-T3 puzzle provides a partial substitute for the spatial discovery that visual cueing would deliver. Five battle reports read as fiction until the solver recognizes the structural trick, generating misdirection through prose rather than layout. Reviewer Young's objection---that the mechanism is given at the bottom rather than found spatially---is real but not fatal; the narrative misdirection replaces one layer of discovery with another. Language can approximate spatial guidance.
+
+L-T6 ($-8.0$, 33.7) and L-T2 ($-8.4$, 33.3) both barely pass. L-T6's deficit is structural: without systematic thinking, two entries permit multiple valid resolutions, introducing binding-choice ambiguity at entries 4 and 5. The puzzle passes only because the atmospheric prose quality (a distinct contribution of the remaining traits) is high enough to carry the panel above threshold despite construction failures that Snyder identified as uniqueness violations. L-T2's pass is similarly narrow: the mechanism is declared before the first clue rather than discovered through solving, reducing the extraction from a revelation to a confirmed task completion. The Tier~3 traits are real contributors to quality; they are simply not structurally irreplaceable in the way T1, T4, and T5 are.
+
+The three-tier structure is confirmed by Phase~2 alone: T1 is irreplaceable (removal $= -29.4$, categorical failure), T4 and T5 are load-bearing (removal drops below threshold, $-11.7$ and $-12.7$ respectively), and T2, T3, T6 are quality-amplifying but substitutable (removal maintains a pass, $-4.4$ to $-8.4$).
+
+\subsection{Phase 3: Reconstruction Curve}
+
+Phase~3 begins from the null baseline and adds traits in tier order---T1 first, then T4, then T5, then the three Tier~3 traits---evaluating the result at each step. The full artist persona (AA, 42.3 in Phase~3 calibration) serves as the ceiling. Table~\ref{tab:phase3} reports the full reconstruction curve.
+
+\begin{table}[h]
+\centering
+\caption{Phase 3 reconstruction curve. Traits are accumulated in tier order. First threshold crossing at R3.}
+\label{tab:phase3}
+\begin{tabular}{llrcc}
+\hline
+\textbf{Code} & \textbf{Active Traits} & \textbf{Avg/45} & \textbf{Pass} & \textbf{Notes} \\
+\hline
+R0 & none           & 22.7 & N & null baseline \\
+R1 & T1             & 28.3 & N & \\
+R2 & T1, T4         & 30.3 & N & \\
+R3 & T1, T4, T5     & 35.7 & \textbf{Y} & \textbf{first pass} \\
+R4 & T1, T4, T5, T2 & 37.3 & Y & \\
+R5 & T1, T4, T5, T2, T3 & 40.3 & Y & \\
+R6 & full artist (AA) & 42.3 & Y & reference ceiling \\
+\hline
+\end{tabular}
+\end{table}
+
+The curve rises in two distinct rhythms. The first three steps (R0 to R3) are structural: each trait added transforms what kind of artifact the puzzle is. The final three steps (R4 to R6) are qualitative: each trait added raises the score but does not change the fundamental category of the artifact.
+
+R0 to R1 ($+5.6$ points): T1 alone produces a real improvement over the null baseline. The puzzle ``FIELD DISPATCHES'' has a live voice---each clue is a field report from ongoing combat, deploying a unit in a moment of tactical action rather than querying a database. The mechanism (take the first letter of the second word) is withheld and consistent, and the Woad Raider and War Elephant entries in particular place the solver inside the game rather than outside it. The improvement over R0 is genuine: this is an authored puzzle, not an assembled one. It does not pass, but it is recognizably a puzzle.
+
+R1 to R2 ($+2.0$ points): T4 reshapes the container. The mechanism is stripped from its declaration and withheld; the column-indexing scheme is now discovered rather than given. The Town Center entry, with its central-building status and the letter W hidden at position three, is an authored decision the constructor chose rather than a position the procedure dictated. The improvement is structural economy: the puzzle is more legible because there is less in the way between clue and mechanism. It does not yet pass because without T5, the numbers are decorative rather than functional.
+
+R2 to R3 ($+5.4$ points, first threshold crossing): T5's contribution is decisive. In CALIBER, the numbers embedded in the clues---the one-Monk rest rule, the second upgrade tier, the elite archer's maximum range, the two-point team bonuses---are the game's actual values. They simultaneously identify the answer and perform the extraction. The numbers are not invented to force a letter; they are the game's own precision repurposed as mechanism. Reviewer Snyder applied the Computer Test and found it impossible to pass: no script could generate CALIBER's structure, because its structure is the game's own factual architecture. The title lands cleanly (CALIBER = measurement precision = index precision), and the symmetric clue structure at entries four and five (same syntactic frame, deliberately different answers) rewards knowledge while penalizing guessing. This is the minimum sufficient set: T1 (a live solver inside a live game), T4 (a stripped container that withholds until the solver discovers), T5 (facts that are the mechanism, not decoration). The threshold is crossed at 35.7/45.
+
+R3 to R4 ($+1.6$ points): T2 adds structural surprise. In GAPS, the answer TOWER appears in plain text in the very first clue (``WA\_CH TOWER'') before the solver begins, invisible because the solver is looking for a missing letter, not a hidden answer. The device exploits the solver's own attention allocation rather than deceiving through misdirection. It is a genuine surprise, built into the structure rather than imported as flavor.
+
+R4 to R5 ($+3.0$ points): T3 makes the mechanism spatially visible. The shaded column in ASSAULT is the mechanism rendered as a spatial object---the solver sees the structural claim before reading a word. Reviewer Young gives ASSAULT the highest reading-reward marks of any reconstruction condition because the layout is the argument; the visual grammar does not illustrate the puzzle, it constitutes it.
+
+R5 to R6 ($+2.0$ points): the full artist persona ties the five entries into a coherent argument. The content of DAMAGED INSCRIPTIONS spans the full range of the game (siege engine, archer, raider, warrior, worker), and the closing sentence names that span explicitly, making TOWER feel inevitable rather than arbitrary. Every element is load-bearing---remove any tablet and the extraction fails---and the mechanism (restoration of a damaged inscription) is structurally identical to the theme (time and weather wore away exactly one letter from each inscription). The puzzle does not have a mechanism applied to a theme; it has a mechanism that is the theme.
+
+The minimum sufficient set is confirmed: T1 + T4 + T5, crossing the threshold at R3 (35.7/45). The Tier~3 traits contribute 4.6 additional points in aggregate (R3 to R5, 35.7 to 40.3), and the full artist persona adds a further 2.0 points (R5 to R6), reaching the study's ceiling at 42.3/45. No single Tier~3 trait is irreplaceable; all three together account for approximately half the gap between the minimum sufficient set and the artist ceiling.

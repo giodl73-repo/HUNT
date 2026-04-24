@@ -1,0 +1,88 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+This paper has shown that the choice of evaluation condition matters substantially for
+creative work assessment---and that the most practically consequential finding is a warning,
+not a capability claim. All quantitative results reported here are valid within the authors'
+constructed evaluation framework (author-designed rubric, author-assigned tiers,
+author-calibrated thresholds); they characterize discriminative power within that framework
+and should not be read as validated against an external human expert standard.
+
+Three findings stand up clearly within that framework.
+
+First, the \emph{calibration inversion}: rubric-only evaluation (C1) inverts the expected
+tier hierarchy, producing a pass rate for Standard Hunt puzzles that exceeds the pass rate
+for MIT/Elite-tier puzzles (80\% versus 40\%). This is consistent across 15 real published
+puzzles. The mechanism is traceable: elite puzzles deliberately sacrifice Clarity and
+Solvability for Elegance and Reading Reward, and an equal-weight rubric treats that
+trade-off as a defect. Expert identity, encoded in the full profile, reintroduces the
+calibration that converts raw dimension scores into tier-appropriate verdicts.
+\textbf{For practitioners: a bare rubric without expert identity context systematically
+disadvantages your most ambitious work.}
+
+Second, the \emph{feedback quality gradient}: C0 and C1 produce zero named evaluative
+frameworks across all fifteen puzzles; C6 produces six---\emph{a-ha economy},
+\emph{load-bearing test}, \emph{world-model consistency}, \emph{social fabric},
+\emph{perceptual-shift}, \emph{visual grammar}---none of which appears in any input text
+provided to the reviewers in those sessions.
+(These counts were derived from two-pass manual coding of review transcripts by the research team; inter-rater reliability was not assessed.) Whether this reflects profile-driven emergence
+or retrieval from the model's training prior is not established by this study. What is
+established is that these frameworks appear in C6 reviews, not in C0/C1 reviews, and that
+they identify specific, repair-pointing issues that rubric vocabulary does not surface.
+
+Third, the \emph{Riven Standard as discriminator}: adding the Riven Standard as a scored
+seventh dimension---with Elegance and Reading Reward double-weighted as proxies---achieves
+a 24.5 percentage-point tier-separation gap between the MIT/Elite and Games Magazine tiers,
+compared to 10.9 points for the equal-weight baseline. The Riven Standard~\cite{miller2016riven}
+names whether a creative artifact's mechanism and its subject matter are structurally
+inseparable; any creative domain can ask this question.
+
+For practitioners building creative evaluation pipelines, the recommendation from this work
+is compact. Use C6 profiles with the seven-dimension weighted rubric as the default
+evaluation condition; it provides the most reliable verdicts and the richest actionable
+feedback. Supplement with a C5 pass (lens only, no biography) for mechanical defect
+detection, which catches visual and extraction errors that higher-level evaluation frameworks
+do not surface. Add three non-redundant principles---\emph{Verify the Last Mile},
+\emph{Blame the Player}, \emph{Snyder's Computer Test}---if the deepest available analysis
+is required. Avoid C1 (rubric only) for any creative work with dimensional trade-offs by design; it
+will invert your quality hierarchy and systematically disadvantage your most ambitious
+artifacts.
+
+Several questions are not resolved by this study and warrant dedicated future work:
+
+\begin{itemize}
+
+\item \emph{Human calibration.} The panel's verdicts have not been compared against
+assessments by the named human practitioners on the same artifacts. Without a calibration
+study on a shared puzzle set, the system's output can be characterized as internally coherent
+and domain-grounded but not as validated against the human expert standard it simulates.
+Closing this gap is the most direct path to practical deployment in high-stakes evaluation
+contexts~\cite[cf.][]{dellaLibera2025calibration}.
+
+\item \emph{Authoring symmetry.} This study examines whether reviewer profile quality
+affects evaluation quality; an open question is whether authoring profile quality affects
+creation quality by the same mechanism. If the same profile depth that makes a reviewer
+more specific also makes a constructor more deliberate, the architecture has implications
+for AI-assisted creative production, not just assessment.
+
+\item \emph{Cross-domain generalization.} The evidence that rich profiles improve AI panel
+performance in puzzle hunt design does not straightforwardly generalize to domains with
+less codified quality criteria or less prominent expert communities. Level design,
+interactive fiction, tabletop game mechanics, and musical composition are plausible
+candidates, but it is an open question how much of the present methodology transfers
+without modification.
+
+\item \emph{Profile design as a research problem.} Which sections of a profile are
+necessary for calibration, which are sufficient for framework emergence, and whether
+profiles can be constructed to surface specific evaluative frameworks on demand are
+questions that bear on both the efficiency and the reliability of the system.
+
+\end{itemize}
+
+The 29 domain-specific reviewer profiles (C8 format, $\sim$75 lines; approximately 1,800--2,200 tokens per profile, versus 2,800--3,400 tokens for the full C6 profiles), the seven-dimension
+weighted rubric with anchor examples, all review transcripts from the eight-condition
+ablation, and the analysis scripts used to compute tier separations and framework counts
+are available at \url{[URL]}. We hope the profile architecture, the Riven Standard rubric,
+and the calibration inversion result are useful to researchers working on AI-mediated
+evaluation in other creative domains: the infrastructure is designed to be adapted, and the
+failure modes documented here are not specific to puzzle hunts.

@@ -1,0 +1,99 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Why AI Systems Get the Tier Order Wrong}
+
+The training distribution of large language models encodes domain identity as the primary
+differentiator among creative professionals. Legal documents in the training corpus are
+written by lawyers, annotated as legal, and evaluated against legal genre conventions.
+Medical records are written by clinicians and evaluated against clinical documentation
+standards. Marketing copy is written by marketers and evaluated against brand and
+conversion metrics. When a system learns from this distribution, it learns that the
+salient variable distinguishing a lawyer from a doctor from a marketer is their domain
+--- and that activating the right domain identity produces domain-appropriate outputs.
+This is a locally correct inference about the training data and a systematically wrong
+inference about creative quality.
+
+The training data is labeled by domain, but creative quality is defined by receiver
+experience. The lawyer's document that a client cannot understand is a domain-correct
+creative failure. The marketer's copy that fails to move the reader is a brand-consistent
+creative failure. The medical record that the patient cannot act on is a
+clinically-accurate creative failure. These failures are invisible in the training
+distribution because they are rarely labeled as such: the signal about receiver experience
+is sparse, indirect, and unevenly distributed across the corpus. The signal about domain
+identity is dense, explicit, and systematic. AI systems learn the available signal, which
+is Tier 3, and treat it as primary.
+
+The OLE formula is a prompt-level correction for this training distribution bias. It does
+not require retraining; it requires reordering. By establishing the orientation sentence
+before any domain content enters the prompt, the practitioner provides a signal that the
+training distribution undersupplied: here is who this is for and what they need to
+experience. The discipline sentences then operationalize that orientation into the kinds
+of checkable constraints that the training distribution does encode --- quality-control
+conventions, fact-checking norms, editorial standards --- but directs them at the
+receiver's experience rather than the domain's formal expectations.
+
+\subsection{The Orientation as the Hardest Thing to Train}
+
+Tier 1 orientation requires what developmental psychologists call a theory of the other:
+the ability to model what another person perceives, understands, and experiences before
+making any design decision \cite{premack_woodruff}. In human creative practice, this
+capacity is developed through years of training that is explicitly organized around
+receiver feedback: the artist shows work and watches how the audience responds; the
+designer conducts usability testing; the teacher observes whether students can apply the
+material. The feedback loop is direct and constitutive of the training. Artistic education
+is, in substantial part, an institutionalized practice for building the theory of the
+other that Tier 1 requires.
+
+Language models are trained on the outputs of this process --- on artifacts produced by
+people who have already internalized the orientation --- but not on the feedback loops
+that produced the orientation itself. The resulting latent capacity is real but requires
+activation. The orientation sentence (``Think first about how the other person will
+experience this'') is the activation key: it makes the criterion explicit at the point
+where the system begins generating, before domain conventions have organized the output
+around Tier 3 categories. The single sentence outperforms eleven domain principles
+precisely because it activates the capacity that is most latent and most consequential,
+rather than the capacity that is most explicit in the training signal.
+
+The mechanism by which the orientation sentence produces its effect remains unestablished;
+three candidate accounts are consistent with the data. Under a \emph{distribution-shift
+account}, the sentence narrows the generation distribution toward receiver-experience
+framings, suppressing domain-convention patterns. Under an \emph{attractor-competition
+account}, orientation and domain-convention representations compete in early layers and
+the orientation sentence biases this competition. Under a \emph{saliency-weighting
+account}, the sentence increases attention to experience-relevant task features,
+disproportionately represented in output. These accounts predict different intervention
+points and different transfer properties; distinguishing them requires interpretability
+methods beyond this study's scope. The computational mechanism of orientation is an open
+question.
+
+\subsection{The Symmetric Architecture}
+
+The same Tier 1 orientation that makes a good author makes a good reviewer, because both
+roles are ultimately evaluated by the same criterion: the quality of the downstream
+person's experience. A reviewer operating from Tier 3 --- surfacing domain-correct
+observations without an orientation toward the solver or the author --- produces feedback
+that is formally accurate and experientially irrelevant. The author cannot use it to
+improve the puzzle; the solver cannot use it to navigate the puzzle. C5's failure in the
+reviewing study (lens without philosophy = 21.7, below the 23.7 bare baseline) is the
+reviewing-side analog of the authoring-side L-T1 failure (experience-first removed =
+12.3, categorical failure). Both failures occur for the same structural reason: Tier 3
+without Tier 1 produces outputs organized around domain format rather than receiver
+experience.
+
+This symmetry has implications beyond the two roles studied here. Any role in a creative
+production chain --- editing, curating, directing, commissioning --- that involves
+evaluating or shaping creative work for a downstream receiver should exhibit the same
+tier structure. The Tier 1 orientation, expressed appropriately for each role, is the
+universal entry point for quality in the chain.
+
+This study has three limitations that bound the generalization. First, the empirical base
+is a single creative domain: puzzle-hunt design, which has unusual properties (fully
+verifiable solutions, established evaluation rubrics, a specific solver-experience
+criterion) that may not transfer directly to domains where quality criteria are more
+contested. Second, the authoring and reviewing agents are AI systems simulating human
+expert roles rather than human professionals responding to prompts; the transfer to
+human-in-the-loop creative systems requires separate validation. Third, this study
+examines only authoring and reviewing roles; other roles in the creative production chain
+--- editing, directing, commissioning --- may exhibit different tier weightings or
+different orderings within Tier 2.

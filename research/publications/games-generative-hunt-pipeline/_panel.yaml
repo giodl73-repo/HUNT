@@ -1,0 +1,56 @@
+version: "1.2.0"
+uuid: g2p1p2l3
+slug: generative-hunt-pipeline
+title: "A Generative Pipeline for AI-Assisted Puzzle Hunt Creation: Design, Empirical Characterization, and Leverage Points"
+venue: "FDG 2026"
+stage: ready
+round: 1
+content_mode: full
+content_mode_confirmed: true
+
+# Review tracking
+reviewers:
+  - name: Nelson
+    profile_ref: mark-nelson-adobe-falmouth
+  - name: Smith
+    profile_ref: adam-smith-ucsc
+  - name: Cook
+    profile_ref: michael-cook-qmul
+  - name: Koenitz
+    profile_ref: hartmut-koenitz-sodertorn
+  - name: Dormans
+    profile_ref: joris-dormans-ludomotion
+reviews:
+  round0:
+    avg: 2.75
+    gate: PASS
+    consensus: "Major Revision"
+  round1:
+    avg: 3.0
+    gate: PASS
+    consensus: "Accept with Minor Camera-Ready Corrections"
+p1_items:
+  - id: P1.1
+    addressed: true
+  - id: P1.2
+    addressed: true
+
+# Stage history
+history:
+  - stage: draft
+    date: "2026-02-28"
+    note: "Paper initialized via plan.md authoring"
+  - stage: panel
+    date: "2026-02-28"
+    note: "5 reviewers assigned: Nelson, Smith, Cook, Koenitz, Dormans"
+  - stage: synthesis
+    date: "2026-02-28"
+    note: "Round 1 synthesis: avg 2.75/4, Major Revision, 2 P1 + 5 P2 items"
+  - stage: revision
+    date: "2026-02-28"
+    note: "All P1+P2 items addressed; title changed to AI-Assisted; maturation confound section added"
+  - stage: recheck
+    date: "2026-02-28"
+    note: "Round 1 recheck: avg 3.0/4, gate PASS, advance to ready"
+
+created: "2026-02-28"

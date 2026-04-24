@@ -1,0 +1,61 @@
+version: "1.2.0"
+uuid: h4q5r6s7
+slug: persona-authoring-traits
+title: "What Does a Persona Do? Cognitive Trait Decomposition of Authoring Identity in AI Creative Task Generation"
+venue: "ICCC 2026"
+stage: ready
+round: 2
+content_mode: full
+content_mode_confirmed: true
+
+# Review tracking
+reviewers:
+  - name: Anna Jordanous
+  - name: Tony Veale
+  - name: Pablo Gervás
+  - name: Rafael Pérez y Pérez
+  - name: Mark Riedl
+
+reviews:
+  round1:
+    avg: 3.3
+    gate: PASS
+    consensus: "Major Revision"
+  round2:
+    avg: 3.5
+    gate: PASS
+    consensus: "Accept with Minor Camera-Ready Corrections"
+
+p1_items:
+  - id: P1-A
+    description: AI panel circularity — disclose C8 panel is AI-instantiated, add validity caveat
+    addressed: true
+  - id: P1-B
+    description: Generalizability overclaim — scope all cross-domain claims as predictions not findings
+    addressed: true
+  - id: P1-C
+    description: No process account of mechanism novelty — add hypothesis subsection connecting to MEXICA engagement/reflection
+    addressed: true
+  - id: P1-D
+    description: Taxonomy lacks principled grounding — map 6 traits onto Boden's three-type framework
+    addressed: true
+
+# Stage history
+history:
+  - stage: draft
+    date: "2026-02-28"
+    note: "Paper initialized from persona study findings in games-profile-taxonomy-creative"
+  - stage: full
+    date: "2026-03-01"
+    note: "All 7 sections + 3 figures written, 3-phase data complete"
+  - stage: revision
+    date: "2026-03-01"
+    note: "Panel avg 3.3/4 — PASS gate. 4 P1 items, all text-only. Jordanous/Riedl highest (3.5), Gervas lowest (3.0)."
+  - stage: recheck
+    date: "2026-03-01"
+    note: "Round 2 recheck: avg 3.5/4, gate PASS, all P1 resolved. Camera-ready only."
+  - stage: ready
+    date: "2026-03-01"
+    note: "State bug fix — yaml not updated after recheck completed. Advancing to ready."
+
+created: "2026-02-28"

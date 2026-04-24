@@ -1,0 +1,59 @@
+\section{Introduction}
+
+Two bare persona prompts. One task. Radically different outputs.
+
+In a controlled authoring study~\cite{dellaLibera2025taxonomy}, a large language model was given the instruction ``You are an artist'' and asked to design a puzzle hunt feeder puzzle around the answer TOWER, with access to a locked Age of Empires~II world file as its only domain resource. The result was \emph{Damaged Inscriptions}: five stone tablets rendered in monospace, each missing one letter from an AoE2 game term, the missing letters reading in sequence to spell TOWER. The mechanism --- reconstruction of a damaged inscription rather than extraction of a letter from a known word --- was unlike anything else in the eight-puzzle study. The panel of three domain experts, evaluating on a seven-dimension weighted rubric (/45, pass $\geq 33$), scored it 40.3/45.
+
+The same model, given the instruction ``You are a puzzle designer,'' produced \emph{The Indexed Garrison}: five AoE2 clues with explicit position markers, a visible extraction table, an acrostic reading TOWER. Clear, solvable, correct---and scored 24.7/45. The difference, 15.6 points, is larger than the gap between any two adjacent reviewer ablation conditions in the companion reviewer-profile depth study~\cite{dellaLibera2025panel}.
+
+The anomaly is structural. ``Puzzle designer'' carries domain knowledge that ``artist'' does not. The advantage should run the other way.
+
+\subsection{The Question}
+
+The central question this paper addresses is not whether persona prompts affect AI creative output---that they do is now well-established~\cite{park2023generative,zhang2018personas}---but \emph{which component of a persona is doing the work}. When a single word (``artist'') produces a 15.6-point quality advantage over a comparably sparse domain-specific label (``puzzle designer''), the gain cannot be attributed to domain knowledge, because the artist persona encodes none. It must be attributed to something else---a cognitive orientation, a set of values, an implicit theory of what good work means---that the artist identity activates and the puzzle designer identity does not.
+
+Prior work treats personas as holistic units. A role label is applied, the model responds from that role, and the quality of the response is attributed to the persona as a whole. No study, to our knowledge, has decomposed a persona prompt into its constituent cognitive traits, isolated those traits experimentally, and identified which subset is causally responsible for the quality outcome. That is the contribution of this paper.
+
+\subsection{Our Approach}
+
+We decompose the ``artist'' persona into six cognitive traits and test each one independently, using the same puzzle authoring task as the motivating study.
+
+The six traits were identified by asking: what does ``artist'' activate that ``puzzle designer'' does not? The answer, cross-referenced against creativity research and design theory, yielded the following: (T1) \emph{experience-first thinking}, the disposition to design toward what the other person will feel before deciding what the puzzle will contain; (T2) \emph{surprise instinct}, the drive to produce the moment of ``wait, really?''; (T3) \emph{visual thinking}, a preference for images and spatial relationships as the first representational format; (T4) \emph{elegance drive}, the practice of removing anything that is not strictly necessary; (T5) \emph{rigor and verification}, the habit of checking claims before declaring work done; and (T6) \emph{systematic thinking}, the discipline of building a coherent structure before filling in details.
+
+Each trait is operationalized as a single imperative sentence appended to the bare task prompt, enabling clean experimental manipulation. Three phases of experimentation test the traits in complementary ways. Phase~1 (trait isolation) runs each trait in isolation---one sentence, one agent, one puzzle---and evaluates the result against the AA and A0 controls. Phase~2 (leave-one-out) runs the full artist persona with one trait removed per condition, identifying which trait's absence most damages quality. Phase~3 (cumulative reconstruction) starts from the null baseline and adds traits in tier order until artist-level performance is reached, identifying the minimum sufficient trait set.
+
+\subsection{Key Findings}
+
+The experimental results yield four findings that together constitute a causal account of the artist advantage.
+
+First, no single trait in isolation replicates the artist's mechanism novelty. All six trait-isolation conditions remain within the letter-indexing and acrostic mechanism family; the damaged-inscription mechanism that AA invented requires a trait combination rather than any individual trait. The highest isolation score, T3 (visual thinking), reaches 35.7/45---substantially below AA's 40.3 and still mechanically conventional.
+
+Second, experience-first thinking is irreplaceable. Removing T1 from the full artist persona produces a 29.4-point drop (41.7 to 12.3), the largest catastrophic failure in the study. The result is not a degraded puzzle but an absent one: without the experience-first orientation, the model generates a list of AoE2 terms with no clue layer, no solver task, and no mechanism. No other trait removal approaches this severity. Removing elegance drive produces the next-largest drop at 11.7 points; removing rigor and verification drops 12.7 points.
+
+Third, the minimum sufficient trait set is T1 (experience-first) + T4 (elegance drive) + T5 (rigor and verification). Phase~3 reconstruction confirms that adding these three traits in order produces the first threshold crossing at 35.7/45---a passing score no individual trait achieves alone. Tier~3 traits (visual thinking, surprise instinct, systematic thinking) each contribute 4--8 additional points of quality above the minimum sufficient set, but none is structurally irreplaceable.
+
+Fourth, domain labels activate template-matching; artistic orientation activates experience-design. The puzzle designer persona produced an acrostic with an extraction table because that is the template the label activates. The artist persona produced a damaged-inscription mechanism because it asked first what the solver would \emph{do}, not what structure would yield the answer. This distinction---between designing toward a structure and designing toward an experience---is the operative difference between the two personas, and it is instantiated by the experience-first trait.
+
+\subsection{Broader Significance}
+
+The practical implication extends well beyond puzzle hunt authoring. The three traits that constitute the minimum sufficient set---experience-first framing, elegance drive, and rigor and verification---are domain-agnostic quality dispositions. They do not encode knowledge of puzzle mechanisms, AoE2 unit costs, or letter-extraction conventions. They encode a way of working that makes domain knowledge serve the audience rather than serve itself. A prompt engineer adding T1+T4+T5 to any creative generation task---marketing copy, product design specifications, legal plain-language drafting, training material authoring---is not adding puzzle domain knowledge; they are adding the three-trait cognitive stance that the artist label activates as a bundle. The ``artist'' label works not because artists know puzzles, but because artistic training cultivates the exact dispositions that produce quality in any domain where a human being will eventually have to experience the output.
+
+\subsection{Contributions}
+
+This paper makes the following contributions.
+
+\begin{enumerate}
+
+\item \textbf{First trait-level decomposition of a persona prompt effect.} We decompose the artist advantage over the puzzle designer baseline into six constituent cognitive traits and measure each trait's independent contribution to authoring quality, identifying the causal structure behind a persona prompting result that holistic analysis cannot explain.
+
+\item \textbf{Empirically identified minimum sufficient trait set.} Phase~2 and Phase~3 experiments jointly confirm that T1 + T4 + T5 constitute the minimum sufficient set for passing-threshold puzzle quality---a finding generalizable to any creative generation task where audience experience is the primary design constraint.
+
+\item \textbf{Domain-naive artistic orientation outperforms domain-specific expertise for creative generation.} The artist persona, encoding no puzzle design knowledge, outperforms the puzzle designer persona by 15.6 points. The trait decomposition explains why: domain expertise activates conventions; artistic orientation activates the disposition to transcend them.
+
+\item \textbf{Three-sentence creative enhancement applicable across domains.} We provide the exact three-sentence trait injection (T1, T4, T5) that crosses the quality threshold, with empirical evidence of its effect and a theoretical account of why it generalizes.
+
+\end{enumerate}
+
+\subsection{Paper Organization}
+
+Section~\ref{sec:related} situates this work relative to persona prompting literature, creative cognition research, experience-design theory, and the minimalism tradition in design practice. Section~\ref{sec:methodology} describes the trait taxonomy, prompt construction, artist persona formulation, and three-phase experimental design in detail. Section~\ref{sec:results} reports Phase~1, Phase~2, and Phase~3 results with full score tables and mechanism novelty analysis. Section~\ref{sec:discussion} interprets the findings and discusses implications for prompt engineering and creative AI system design. Section~\ref{sec:conclusion} summarizes contributions and directions for future work.

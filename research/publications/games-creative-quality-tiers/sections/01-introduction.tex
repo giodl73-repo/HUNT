@@ -1,0 +1,87 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The field of AI creative systems rests on an implicit assumption: domain expertise is
+the primary quality variable. Add a puzzle-designer persona, get better puzzle design.
+Add a legal-analyst persona, get better legal analysis. Add a marketing-expert persona,
+get better marketing copy. This assumption shapes how practitioners write prompts, how
+researchers parameterize personas, and how creative AI systems are evaluated. It is
+wrong --- wrong not in degree but in kind, in a specific and actionable way.
+
+Three empirical studies across authoring and reviewing roles in puzzle-hunt design
+reveal a consistent three-tier structure in which domain expertise occupies only the
+outermost and most substitutable tier. The irreplaceable tier is not expertise at all.
+It is an orientation: a stance toward the person on the other end of the creative
+interaction --- the solver who will encounter the puzzle, the reader who will consult the
+review, the user who will inhabit the artifact. This orientation, expressible as a
+single sentence, outperforms any domain label as a predictor of creative quality. Our
+motivating result: the bare two-word persona ``you are an artist'' outperformed ``you
+are a puzzle designer'' by 15.6 points on a 45-point weighted rubric. Game designer
+scored 32.3 out of 45, programmer 24.0, doctor 17.7. The artist was the only condition
+to escape mechanism gravity --- producing a structurally novel puzzle mechanism rather
+than reusing the acrostic-and-indexing family that dominated all domain-labeled
+conditions.
+
+This result sets the explanatory challenge for the paper. Why does a domain-naive
+label outperform a domain-specific one? The answer is not that the artist label is
+superior by accident. It is that the two labels activate different tiers of the
+creative quality hierarchy. ``You are a puzzle designer'' activates Tier 3 content:
+domain conventions, format expectations, the surface grammar of the target artifact.
+``You are an artist'' activates Tier 1 content: an orientation toward experience,
+toward the receiver, toward the question of what the artifact will feel like to
+encounter. When a system optimizes for Tier 3 without Tier 1, it produces work that
+is formally correct and experientially inert.
+
+The empirical decomposition that follows the motivating study identifies a three-tier
+structure across both the authoring and reviewing roles. In authoring, we decomposed
+the artist persona into six cognitive traits and measured quality under each possible
+ablation. The experience-first trait (Tier 1) was irreplaceable: removing it caused a
+catastrophic drop from 41.7 to 12.3 out of 45, the only condition to produce
+categorical failure. Elegance drive and rigor formed the load-bearing Tier 2: removing
+either dropped quality below a 35-point threshold associated with publishable puzzle
+quality. The remaining traits --- surprise, visual thinking, systematic reasoning ---
+were Tier 3 amplifiers: each added value but none was necessary for threshold crossing.
+
+In reviewing, an eight-condition ablation study of a structured expert reviewer profile
+revealed the same structure. The design philosophy and worldview component (Tier 1) was
+irreplaceable: the lens-only condition (Tier 3 without Tier 1) scored 21.7, falling
+below the bare baseline condition with no persona at all (23.7). Three non-redundant
+operational principles formed the load-bearing Tier 2. The review lens and credentials
+were Tier 3 amplifiers. When all eleven reviewer principles were included without the
+underlying philosophy, quality degraded from 25.3 to 22.3 --- principles without
+orientation produce noise, not signal.
+
+The symmetry between the authoring and reviewing findings is not coincidental. It
+follows from a general principle: creative quality is defined from the receiver's
+perspective, enforced through operational constraints, and enriched by domain
+knowledge. This ordering holds regardless of whether the role is creating or
+evaluating, because in both cases the ultimate criterion is the experience of the
+downstream person.
+
+The practical implication is the OLE formula: Orientation before Lens before
+Expertise. Every AI creative prompt should begin with an orientation sentence
+(``Think first about what the other person will experience''), proceed to discipline
+sentences (operational constraints that enforce the orientation at decision points),
+and conclude with domain content (world data, style guides, precedents) as enrichment
+rather than identity. Three sentences constitute the minimum sufficient creative prompt
+for AI creative tasks in domains where quality is defined by receiver experience.
+We predict this prescription generalizes beyond puzzle-hunt design (cross-domain validation pending).
+
+This paper makes four contributions. First, we present a unified three-tier model of
+creative quality that applies symmetrically across authoring and reviewing roles, with
+specific empirical grounding for each tier in each role. Second, we formalize the OLE
+formula as a practical prescription for AI creative prompt design with quantitative
+support for its ordering. Third, we demonstrate empirically that a domain-naive
+orientation outperforms a domain-specific expertise label in a controlled authoring
+study, and explain the mechanism via the tier model. Fourth, we argue for the
+generalizability of the tier structure beyond puzzle design, identifying predicted tier
+assignments for business-domain creative tasks and specifying the boundary conditions
+under which the ordering might differ.
+
+The remainder of the paper proceeds as follows. Section~\ref{sec:related} positions the
+tier model relative to prior work on AI persona prompting, expertise structure, and
+experience-first design. Section~\ref{sec:tiermodel} presents the model with its
+empirical grounding. Section~\ref{sec:evidence} presents the cross-role evidence in
+detail. Section~\ref{sec:ole} formalizes the OLE formula and develops the
+generalization argument. Sections~\ref{sec:discussion} and~\ref{sec:conclusion} discuss
+implications and open questions.

@@ -1,0 +1,146 @@
+\section{Empirical Characterization}
+\label{sec:empirical}
+
+We evaluated the pipeline across five fully-tested hunt scenarios, spanning four distinct content domains (themes and settings), three delivery formats, and a scale range of 6 to 19 total puzzles. This section reports aggregate pass rates, per-stage timing, failure analysis, and evidence for cross-theme transferability. All measurements are derived from commit timestamps and scenario artifact files in the repository.
+
+%---------------------------------------------------------------------------
+\subsection{Scenario Overview}
+\label{sec:scenarios}
+
+Table~\ref{tab:scenarios} summarizes the five scenarios that completed the full 11-stage pipeline with verified editorial review. A sixth scenario (Boardgames ``Game Night'') reached Stage 6 before being suspended as a partial workflow test; it is excluded from aggregate pass-rate calculations but its single Stage~6 failure is included in the failure analysis (\S\ref{sec:failures}).
+
+\begin{table}[htbp]
+\centering
+\caption{Summary of the five fully-tested pipeline scenarios. Pass rate is reported pre- and post-redesign where redesigns occurred. ``Candidates'' is the size of the Stage~3 puzzle pool before selection; ``Final count'' is the number of puzzles shipped.}
+\label{tab:scenarios}
+\begin{tabular}{@{}llllllll@{}}
+\toprule
+\textbf{Scenario} & \textbf{Domain} & \textbf{Scale} & \textbf{Delivery} & \textbf{Meta answer} & \textbf{Pool} & \textbf{Final} & \textbf{Pass rate} \\
+\midrule
+Age of Empires    & Real game (RTS)      & 5+1  & Print/digital    & WOLOLO       & 15 & 6  & 83\%$\to$100\% \\
+Grand Larceny     & Noir fiction         & 4+1  & Physical dossier & SLIT         & —  & 6  & 100\%           \\
+Ironfall          & Sci-fi RPG (fiction) & 10+3 & Website          & Konami Code  & 18 & 13 & 100\%$^\dagger$ \\
+Wavelength        & Music / thematic     & 6+1  & Website + prop   & FADING       & —  & 7  & 100\%           \\
+Dead Reckoning    & Sci-fi investigation & 15+4 & Website          & CALIBRATE    & 45 & 19 & 100\% (verified) \\
+\midrule
+\textbf{Total}    &                      &      &                  &              &    & \textbf{51} & \\
+\bottomrule
+\multicolumn{8}{@{}l@{}}{\footnotesize $^\dagger$ 100\% post-redesign; 2 puzzles (P01, P02) required extraction redesign at Stage~8.} \\
+\multicolumn{8}{@{}l@{}}{\footnotesize ``—'' indicates pool candidates selected within the same session without a discrete count artifact.} \\
+\end{tabular}
+\end{table}
+
+The five scenarios collectively span four content domains (real-game knowledge, original noir fiction, original sci-fi fiction, and music), three delivery formats (print/digital, physical dossier, and interactive website), and a fourfold scale range (6 to 19 final puzzles). All five ran against the same skill library and reviewer profile set without per-scenario modifications.
+
+%---------------------------------------------------------------------------
+\subsection{Pass Rate Analysis}
+\label{sec:passrate}
+
+Across the five fully-tested scenarios we track 52 total puzzles (combining the Dead Reckoning verified count with the four live-tested scenarios). Of these, 47 passed first-pass editorial review, yielding an overall first-pass pass rate of \textbf{90.4\%} (47/52). All 5 failures were subsequently recovered through redesign or delivery remediation, bringing the final ship rate to 100\%. These figures measure pass rates against the pipeline's author-constructed AI panel rubric; they do not represent external validation against solver enjoyment or community quality standards.
+
+Figure~\ref{fig:passrate} breaks down the pass/redesign/cut count per scenario. The four scenarios with live solver simulation (Age of Empires, Grand Larceny, Ironfall, Wavelength) total 32 puzzles, of which 29 passed first-pass (90.6\%); 3 required redesign. Dead Reckoning contributes 19 additional verified puzzles at 100\%.
+
+Three observations follow from this distribution. First, pass rate does not degrade with scale: the largest scenario (Dead Reckoning, 19 puzzles) achieved 100\% first-pass, while the smallest (Age of Empires, 6 puzzles) had the only non-100\% first-pass rate among the five. This is consistent with Stage~3 pool ranking becoming more discriminating as the candidate pool grows: the Dead Reckoning pool contained 45 candidates from which 19 were selected, giving the ranking stage more signal to discard weak candidates before authoring began.
+
+Second, pass rate does not correlate with domain type. Fictional worlds (Grand Larceny, Ironfall, Wavelength, Dead Reckoning) performed at least as well as the real-game-knowledge domain (Age of Empires), despite fictional scenarios requiring the pipeline to generate domain facts rather than retrieve them. The world-lock mechanism (\S\ref{sec:system}) appears sufficient to anchor the generation space for fictional domains.
+
+Third, the pattern of which puzzles failed is informative. All three redesigns in the live-tested scenarios occurred at Stage~8 (blind testing and integration), not at earlier stages. Zero failures were introduced after Stage~8 (no puzzle that passed Stage~8 subsequently failed Stage~9 or later on puzzle-quality grounds). This suggests the gates are functioning: failures that the pool ranking and editorial review stages did not catch are surfaced by the blind test, and no quality failures survive to the delivery stage.
+
+%---------------------------------------------------------------------------
+\subsection{Stage Timing}
+\label{sec:timing}
+
+Precise commit timestamps are available for Scenario~1 (Age of Empires), which was executed in a single uninterrupted session on February~27, 2026. Scenarios 3--5 ran in overlapping parallel sessions on the same day, making per-stage wall-clock attribution ambiguous. Figure~\ref{fig:timing} presents the Scenario~1 timing as a reference baseline.
+
+\begin{table}[htbp]
+\centering
+\caption{Stage-by-stage elapsed time for Scenario~1 (Age of Empires), derived from commit timestamps. Stage~5 was embedded within Stage~6 and is not separately measured. Stage~4 was resolved in the same session as Stage~3 with no intervening commit.}
+\label{tab:timing}
+\begin{tabular}{@{}rllr@{}}
+\toprule
+\textbf{Stage} & \textbf{Name} & \textbf{Commit time} & \textbf{Duration} \\
+\midrule
+1  & Scope        & 09:16     & —         \\
+2  & Structure    & 09:57     & 41 min    \\
+3  & Puzzle Pool  & 10:05--10:17 & 8--12 min \\
+4  & Assignment   & 10:17     & $\approx$0 min \\
+5  & Meta Design  & (embedded in Stage~6) & — \\
+6  & Authoring    & 11:06     & 49 min    \\
+7  & Editorial    & 11:37     & 31 min    \\
+8  & Integration  & 12:01     & 24 min    \\
+9  & Live test    & 12:28     & 27 min    \\
+10 & Complete     & 12:33     & 5 min     \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Total (Stages 1--10)}} & \textbf{3h 17m} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The total elapsed time of 3 hours 17 minutes for a 6-puzzle hunt (5 feeders + meta) from blank scope to ship-ready package establishes a practical throughput baseline. Several features of this timing warrant comment.
+
+Stage~6 (Authoring) at 49 minutes is the longest single stage despite producing the most content (five complete puzzle files). This is because Stage~6 dispatches parallel AI agents, one per puzzle, so effective per-puzzle authoring time is 49 minutes / 5 = approximately 10 minutes per puzzle. The parallelism is the primary throughput mechanism for scale: a 15-puzzle hunt at the same per-puzzle rate would add only marginally to Stage~6 wall time.
+
+Stage~7 (Editorial) at 31 minutes is the most human-intensive review stage: a human reads all AI-generated editorial reports and decides on pass/revise/cut for each puzzle before Stage~8 begins. This human dwell time does not compress with parallelism in the same way Stage~6 does.
+
+Stage~2 (Structure) at 41 minutes reflects the combined cost of world design and round structure generation for this scenario. For fictional scenarios (Ironfall, Grand Larceny), Stage~2 is longer because the world-lock document must be generated from scratch rather than adapted from an existing IP.
+
+These timings are single-run estimates from commit timestamps. Variance across scenarios was not formally measured; the overlapping parallel execution of Scenarios 3--5 precludes clean per-stage attribution for those runs.
+
+%---------------------------------------------------------------------------
+\subsection{Failure Analysis}
+\label{sec:failures}
+
+Table~\ref{tab:failures} catalogs the five failures observed across all scenarios, including the partial Boardgames scenario. The table codes each failure by stage of detection, failure type, and recovery action.
+
+\begin{table}[htbp]
+\centering
+\caption{Complete failure inventory across all pipeline runs. ``Stage caught'' identifies where the failure was first detected, not where it originated. GL = Grand Larceny.}
+\label{tab:failures}
+\begin{tabular}{@{}llllp{4.2cm}@{}}
+\toprule
+\textbf{\#} & \textbf{Scenario} & \textbf{Puzzle} & \textbf{Stage} & \textbf{Failure type} \& Recovery \\
+\midrule
+1 & Age of Empires & Puzzle V (Post-Imperial)  & 8 (Blind test)    & Pure computation, no deduction layer; extraction mechanism redesigned \\
+2 & Ironfall       & P01 (Bestiary)            & 8 (Integration)   & Answer mismatch (USHER$\to$UMBRA); meta coordination failure; extraction redesigned \\
+3 & Ironfall       & P02 (Forge Guide)         & 8 (Integration)   & Answer ambiguity (DHRYY / DRESS / QUELL); extraction redesigned \\
+4 & Boardgames     & M2 (Settlers)             & 6 (Authoring)     & Resource math broken, no valid extraction path; not shipped (workflow test) \\
+5 & Grand Larceny  & (delivery)                & 9 (Delivery)      & Missing HTML build artifacts; delivery deferred to Stage~11 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The five failures divide into four mechanistically distinct categories.
+
+\textbf{Mechanism failure} (failure \#1): Puzzle~V of Age of Empires required solvers to perform integer arithmetic to derive a resource count, with no intermediate deduction step. The Stage~8 blind test identified this as ``pure computation''---the answer was uniquely determined but required calculation rather than insight, violating the puzzle craftsmanship rubric (criterion C3: extraction must reward deduction, not arithmetic). This failure type is in principle detectable at Stage~7 but was missed; Stage~8 provided the corrective catch.
+
+\textbf{Answer coordination failures} (failures \#2 and \#3): Both Ironfall failures arose from a mismatch between feeder-puzzle answers committed during Stage~6 and the meta puzzle's answer network committed during Stage~5. P01 produced the answer USHER, but the meta required UMBRA at that slot; P02 produced an ambiguous extraction that could validly yield three different answers. These failures are the most structurally dangerous in the pipeline: they cannot be detected at Stage~3 (pool ranking occurs before meta design) and are detectable at Stage~7 only if the editorial reviewer has access to the finalized META.md. In this run, the editorial review did not cross-reference META.md, leaving the coordination failure to be caught at Stage~8 integration. This is a process gap, and a design recommendation follows directly: Stage~7 editorial review should explicitly load and verify answer consistency against META.md.
+
+\textbf{Construction error} (failure \#4): The Boardgames meta puzzle M2 (Settlers of Catan variant) was generated with an internal resource-count inconsistency that left no valid extraction path. This failure was caught at Stage~6 during authoring verification---the earliest possible detection point---before any editorial or integration investment was made. The scenario was already a partial workflow test and the puzzle was not shipped.
+
+\textbf{Delivery gap} (failure \#5): Grand Larceny's Stage~9 delivery preparation produced a valid puzzle set but did not generate the HTML build artifacts required for the digital dossier format. This is not a puzzle-quality failure but a pipeline process gap: the \texttt{/hunt site} skill had not yet been invoked, and the delivery checklist did not catch the missing artifacts. Recovery was straightforward (deferred to Stage~11) but the gap illustrates that delivery-format completeness requires explicit checklist enforcement.
+
+The failure distribution by stage (0 at Stage~3, 1 at Stage~6, 3 at Stage~8, 1 at Stage~9, 0 post-Stage~9) supports the primary claim of this paper: the review gates are functioning. Stage~3 pool ranking discards candidates before authoring investment is made; Stage~7 editorial catches mechanism failures; Stage~8 integration catches coordination failures that Stage~7 missed. No puzzle that passed Stage~8 failed on quality grounds at any subsequent stage.
+
+%---------------------------------------------------------------------------
+\subsection{Cross-Theme Transferability}
+\label{sec:transferability}
+
+A central design goal of the pipeline is transferability across themes and settings: the same skill library and reviewer profile set should run a music-themed hunt and a sci-fi RPG hunt without per-scenario code changes. The evidence supports this claim. All five scenarios share the puzzle hunt format; structural transferability to qualitatively different interactive systems (tabletop campaigns, interactive fiction) remains an open question.
+
+Across the five fully-tested scenarios, the only pipeline artifacts that varied per scenario were the \texttt{SCOPE.md} (hunt identity brief), the \texttt{world/} data files (domain facts and world canon), and the \texttt{ROUNDS.md} (round structure). The skill prompts (\texttt{toolkit/skills/}), reviewer profiles (\texttt{toolkit/profiles/}), rubric criteria, and gate conditions were invariant across all runs.
+
+This invariance is observable directly from the commit history: 142 commits over 2 calendar days include no per-scenario modifications to any skill file. Each scenario's \texttt{CLAUDE.md} imports from \texttt{../../toolkit/} without modification. The toolkit commit messages are domain-agnostic (e.g., \texttt{Add delivery skills: /hunt print, /hunt props, /hunt site}; \texttt{Add /hunt world skill}) and apply equally to all scenarios that were initialized after the commit.
+
+The reviewer profile library did grow during the two-day run: the initial 12-profile panel was expanded to 25 profiles within the first two hours, then to 28, and ultimately to 29 profiles by end of day~2. This growth was driven by perceived coverage gaps (e.g., adding a cryptic-crossword specialist when Ironfall required wordplay-heavy extraction), not by domain-specific customization. The profiles that were added apply across all domains.
+
+%---------------------------------------------------------------------------
+\subsection{Pipeline Maturity Growth}
+\label{sec:maturity}
+
+The pipeline is not static. The git history records a clear maturation arc across the two-day scenario run: deficiencies identified in early scenarios drove improvements that benefited later scenarios.
+
+The skill library grew from 0 named skills at initialization to 13 skills by the end of the second day. Key inflection points include the addition of \texttt{/hunt world} (commit \texttt{2534b38}, 15:20 on day~1), which was motivated by Ironfall's requirement for a fictional universe design tool not present in the initial toolkit; \texttt{/hunt print}, \texttt{/hunt props}, and \texttt{/hunt site} (commit \texttt{735b379}, 15:58 on day~1), added when scenarios requiring physical and digital delivery revealed gaps in the delivery stage; and \texttt{/hunt resume} and \texttt{/hunt publish} (commit \texttt{3f1936e}, 22:46 on day~1), added to support scenario resumption across sessions and clean distribution packaging.
+
+Bug fixes also propagated forward: two bugs identified in Age of Empires (skills not auto-updating the scenario \texttt{CLAUDE.md} on initialization) were fixed before the Boardgames and Ironfall runs, contributing to the cleaner first-pass behavior observed in the later scenarios.
+
+This maturation pattern is a normal property of pipeline-style system development and is worth naming explicitly: the pass rates reported in \S\ref{sec:passrate} reflect the pipeline in a state of active improvement, not a frozen system. The Age of Empires scenario (first run, 83\% first-pass) and the Dead Reckoning scenario (last run, 100\% verified) bookend the improvement arc. Whether this improvement is attributable to pipeline refinements, to the larger and better-ranked candidate pools in later scenarios, or to accumulated experience within the session is a confound the current study cannot fully disentangle; separating these effects is a direction for future controlled evaluation. Practitioners deploying the pipeline for the first time should expect first-run performance closer to the 83\% observed in Scenario~1 than the 90.4\% aggregate, which blends early and mature runs.

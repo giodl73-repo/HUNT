@@ -1,0 +1,104 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  t1style/.style={fill=gold!40, draw=gold!80!black, thick},
+  t2style/.style={fill=orange!30, draw=orange!70!black, thick},
+  t3style/.style={fill=blue!18, draw=blue!55!black, thick},
+  annot/.style={font=\scriptsize\itshape, text=gray!65!black},
+]
+
+%% ---- Pyramid geometry ----
+%% Three trapezoid bands stacked. Widest at bottom (Tier 3), narrowest at top (Tier 1).
+%% We draw each as a trapezoid path.
+%%
+%% Total height: 7.2 cm. Band heights: T1=1.8, T2=2.1, T3=2.4 (widening down)
+%% Half-widths: T1 top=2.0 bot=2.9 | T2 top=2.9 bot=3.9 | T3 top=3.9 bot=5.0
+%% All bands centered at x=0.
+
+% --- Tier 1 (top, gold) ---
+\fill[t1style]
+  (-2.0, 5.4) -- (2.0, 5.4) -- (2.9, 3.6) -- (-2.9, 3.6) -- cycle;
+\draw[t1style, thick]
+  (-2.0, 5.4) -- (2.0, 5.4) -- (2.9, 3.6) -- (-2.9, 3.6) -- cycle;
+
+% Tier 1 text
+\node[font=\bfseries\normalsize, text=gold!70!black] at (0, 5.05) {ORIENTATION};
+\node[align=center, font=\small] at (0, 4.55)
+  {\textit{``Think first about how the other}};
+\node[align=center, font=\small] at (0, 4.20)
+  {\textit{person will experience this.''}};
+
+% --- Tier 2 (middle, orange) ---
+\fill[t2style]
+  (-2.9, 3.55) -- (2.9, 3.55) -- (3.9, 1.45) -- (-3.9, 1.45) -- cycle;
+\draw[t2style, thick]
+  (-2.9, 3.55) -- (2.9, 3.55) -- (3.9, 1.45) -- (-3.9, 1.45) -- cycle;
+
+% Tier 2 text
+\node[font=\bfseries\normalsize, text=orange!80!black] at (0, 3.18) {LENS};
+\node[align=center, font=\small] at (0, 2.72)
+  {\textit{``Remove anything unnecessary.}};
+\node[align=center, font=\small] at (0, 2.38)
+  {\textit{Verify every claim.''}};
+\node[annot] at (0, 1.90) {Score impact: $-11$ to $-29$ pts when absent};
+
+% --- Tier 3 (bottom, blue) ---
+\fill[t3style]
+  (-3.9, 1.40) -- (3.9, 1.40) -- (5.0, -0.95) -- (-5.0, -0.95) -- cycle;
+\draw[t3style, thick]
+  (-3.9, 1.40) -- (3.9, 1.40) -- (5.0, -0.95) -- (-5.0, -0.95) -- cycle;
+
+% Tier 3 text
+\node[font=\bfseries\normalsize, text=blue!70!black] at (0, 1.05) {EXPERTISE};
+\node[align=center, font=\small] at (0, 0.58)
+  {\textit{[Domain content as context,}};
+\node[align=center, font=\small] at (0, 0.24)
+  {\textit{not persona identity]}};
+\node[annot] at (0, -0.30) {Score impact: $+2$ to $+8$ pts each};
+\node[annot] at (0, -0.62) {(amplifying, not substituting)};
+
+%% ---- Tier 1 irreplaceable annotation (inside top) ----
+\node[font=\scriptsize\bfseries, text=gold!70!black]
+  at (0, 5.40) {\scriptsize Score impact: irreplaceable};
+
+%% ---- LEFT side: OLE arrow ----
+\draw[-Stealth, very thick, gray!60!black]
+  (-5.45, -0.95) -- (-5.45, 5.5);
+\node[font=\bfseries\small, text=gray!55!black, rotate=90]
+  at (-5.85, 2.2) {\textsc{ole} sequence};
+\node[annot, rotate=90] at (-5.10, 4.5) {Orientation};
+\node[annot, rotate=90] at (-5.10, 2.5) {Lens};
+\node[annot, rotate=90] at (-5.10, 0.3) {Expertise};
+
+%% ---- RIGHT side: threshold annotation ----
+\draw[dashed, thick, red!60!black]
+  (-3.44, 3.60) -- (5.3, 3.60);   % threshold line at Tier1/2 boundary
+
+\node[font=\scriptsize\bfseries, text=red!60!black, align=left, fill=white,
+      inner sep=1pt]
+  at (4.35, 3.85)
+  {\scriptsize quality threshold};
+\node[font=\scriptsize, text=red!50!black, fill=white, inner sep=1pt]
+  at (4.45, 3.52)
+  {\scriptsize 33/45 crossed here};
+
+\draw[-Stealth, red!60!black, thick]
+  (3.45, 3.72) -- (3.0, 3.61);
+
+%% ---- Bottom label ----
+\node[font=\small, align=center, fill=gray!8, draw=gray!35,
+      rounded corners=3pt, inner sep=5pt, minimum width=9.2cm]
+  at (0, -1.70) {%
+    \textit{The artist persona activates Tier~1} $\to$
+    \textit{the puzzle designer persona activates Tier~3}
+  };
+
+\end{tikzpicture}
+\caption{The OLE formula (Orientation, Lens, Expertise) as a layered creative
+prompt structure. The quality threshold is crossed at the Tier~1+2 boundary---domain
+expertise (Tier~3) amplifies but never substitutes. The conventional approach (domain
+persona first) inverts the pyramid, activating Tier~3 without the load-bearing Tier~1+2
+foundation.}
+\label{fig:ole}
+\end{figure}

@@ -1,0 +1,174 @@
+% Figure 5: Stability structure conceptual model
+% 2D scatter: x = Degree of Specification, y = Observed Stability
+% Compile with pdflatex.  Required in preamble:
+%   \usepackage{tikz}
+%   \usetikzlibrary{arrows.meta,positioning,shapes,calc}
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[
+      %% --- base font ---
+      font=\small,
+      %% --- node styles ---
+      level/.style  = {circle, draw=#1!80!black, fill=#1!25, thick,
+                        inner sep=2pt, minimum size=22pt, font=\footnotesize\bfseries},
+      scopenode/.style = {diamond, draw=blue!70!black, fill=blue!15, thick,
+                           inner sep=1.5pt, minimum size=14pt},
+      zonelabel/.style = {font=\scriptsize\itshape, text=#1, align=center},
+      annlabel/.style  = {font=\scriptsize, text=black!70, align=left},
+    ]
+
+    %% ----------------------------------------------------------------
+    %% Coordinate system: 10cm wide x 8cm tall drawing canvas
+    %% Data coords: x in [0,1], y in [0,1]  → scaled to (10cm, 8cm)
+    %% Helper macro: \pt{<xdata>}{<ydata>} = (10*x cm, 8*y cm)
+    %% ----------------------------------------------------------------
+
+    \def\W{10}   % canvas width  in cm
+    \def\H{8}    % canvas height in cm
+
+    %% --- bounding box / axes ---
+    \draw[gray!40, thin] (0,0) rectangle (\W cm, \H cm);
+
+    %% x-axis
+    \draw[->, thick, gray!70] (-0.1cm, 0) -- (\W cm + 0.4cm, 0)
+      node[right, font=\small, gray!70] {};
+    %% y-axis
+    \draw[->, thick, gray!70] (0, -0.1cm) -- (0, \H cm + 0.4cm)
+      node[above, font=\small, gray!70] {};
+
+    %% axis labels
+    \node[below=0.55cm, font=\small] at (\W cm / 2, 0)
+      {Degree of Specification $\longrightarrow$};
+    \node[left=0.7cm, font=\small, rotate=90] at (0, \H cm / 2)
+      {Observed Stability $\longrightarrow$};
+
+    %% tick marks and numeric labels on axes
+    \foreach \xv/\xl in {0/0, 0.25/0.25, 0.5/0.5, 0.75/0.75, 1.0/1.0}{
+      \draw[gray!50, thin] (\xv*\W cm, -3pt) -- (\xv*\W cm, 3pt);
+      \node[below, font=\scriptsize, gray!60] at (\xv*\W cm, -3pt) {\xl};
+    }
+    \foreach \yv/\yl in {0/0, 0.25/0.25, 0.5/0.5, 0.75/0.75, 1.0/1.0}{
+      \draw[gray!50, thin] (-3pt, \yv*\H cm) -- (3pt, \yv*\H cm);
+      \node[left, font=\scriptsize, gray!60] at (-3pt, \yv*\H cm) {\yl};
+    }
+
+    %% ----------------------------------------------------------------
+    %% ZONE SHADING
+    %% ----------------------------------------------------------------
+
+    %% Bottom-left: design-space-variable zone
+    \fill[red!6] (0,0) rectangle (0.5*\W cm, 0.5*\H cm);
+
+    %% Top-right: specification-stable zone
+    \fill[green!6] (0.5*\W cm, 0.5*\H cm) rectangle (\W cm, \H cm);
+
+    %% Zone dividers (light dashed)
+    \draw[gray!30, dashed, thin]
+      (0.5*\W cm, 0) -- (0.5*\W cm, \H cm);
+    \draw[gray!30, dashed, thin]
+      (0, 0.5*\H cm) -- (\W cm, 0.5*\H cm);
+
+    %% Zone labels
+    \node[zonelabel=red!60, align=center] at (0.25*\W cm, 0.25*\H cm + 0.4cm)
+      {Design-space-\\variable zone};
+    \node[zonelabel=green!60!black, align=center] at (0.75*\W cm, 0.75*\H cm + 0.4cm)
+      {Specification-\\stable zone};
+
+    %% ----------------------------------------------------------------
+    %% DASHED DIAGONAL  (0,0) → (1,1)
+    %% ----------------------------------------------------------------
+    \draw[dashed, thick, gray!55]
+      (0,0) -- (\W cm, \H cm);
+    \node[font=\scriptsize\itshape, gray!60, rotate=38.66, anchor=south west]
+      at (0.38*\W cm, 0.38*\H cm)
+      {specification $\to$ stability};
+
+    %% ----------------------------------------------------------------
+    %% DATA POINTS — five levels
+    %% Colors match fig2: red=very low, orange=low, yellow=partial, green=high
+    %% ----------------------------------------------------------------
+
+    %% L5 Micro-design  x=0.10, y=0.10
+    \node[level=red] (L5) at (0.10*\W cm, 0.10*\H cm) {L5};
+    \node[annlabel, above left=1pt and 2pt of L5, anchor=south east]
+      {Micro-design};
+
+    %% L3 Answer words  x=0.15, y=0.15
+    \node[level=red] (L3) at (0.15*\W cm, 0.15*\H cm) {L3};
+    \node[annlabel, above right=4pt and 2pt of L3, anchor=south west]
+      {Answer words};
+
+    %% L2 Pool composition  x=0.20, y=0.20
+    \node[level=orange] (L2) at (0.20*\W cm, 0.20*\H cm) {L2};
+    \node[annlabel, below right=4pt and 2pt of L2, anchor=north west]
+      {Pool composition};
+
+    %% L4 Mechanism  x=0.22, y=0.20  (nudged slightly right to avoid L2 overlap)
+    \node[level=orange] (L4) at (0.27*\W cm, 0.20*\H cm) {L4};
+    \node[annlabel, below right=4pt and 2pt of L4, anchor=north west]
+      {Mechanism};
+
+    %% L1 Structural decisions  x=0.40, y=0.50
+    \node[level=yellow] (L1) at (0.40*\W cm, 0.50*\H cm) {L1};
+    \node[annlabel, above right=4pt and 2pt of L1, anchor=south west]
+      {Structural decisions\\(round count, meta type)};
+
+    %% Panel Scores  x=0.80, y=0.85
+    \node[level=green] (PS) at (0.80*\W cm, 0.85*\H cm) {PS};
+    \node[annlabel, above left=4pt and 2pt of PS, anchor=south east]
+      {Panel Scores};
+
+    %% ----------------------------------------------------------------
+    %% SCOPE.MD ITEMS — small diamonds  x=0.90, y=0.95
+    %% ----------------------------------------------------------------
+    \node[scopenode] (SC) at (0.90*\W cm, 0.95*\H cm) {};
+    \node[annlabel, below right=2pt and 4pt of SC, anchor=north west,
+          text=blue!70!black]
+      {\textsc{scope.md} items\\(narrator, scale, format)};
+
+    %% ----------------------------------------------------------------
+    %% DOMAIN SEMANTIC GRAVITY ARROW
+    %% Starts near L3, curves rightward, ends a short distance away
+    %% ----------------------------------------------------------------
+    \draw[-{Stealth[length=6pt]}, thick, purple!70!black,
+          bend left=30]
+      (0.175*\W cm, 0.145*\H cm)
+      to
+      (0.33*\W cm, 0.12*\H cm);
+    \node[annlabel, below=2pt, text=purple!70!black, align=left]
+      at (0.255*\W cm, 0.06*\H cm)
+      {domain semantic gravity\\(partial anchor, no convergence)};
+
+    %% ----------------------------------------------------------------
+    %% LEGEND BOX  (bottom right of canvas)
+    %% ----------------------------------------------------------------
+    \begin{scope}[shift={(0.63*\W cm, 0.02*\H cm)}]
+      \node[level=green,  minimum size=14pt, inner sep=1pt] (lg) at (0,    1.05cm) {};
+      \node[level=yellow, minimum size=14pt, inner sep=1pt] (ly) at (0,    0.70cm) {};
+      \node[level=orange, minimum size=14pt, inner sep=1pt] (lo) at (0,    0.35cm) {};
+      \node[level=red,    minimum size=14pt, inner sep=1pt] (lr) at (0,    0.00cm) {};
+      \node[scopenode,    minimum size=10pt, inner sep=1pt]      at (0,   -0.35cm) {};
+      \node[right=3pt of lg, font=\scriptsize] {High stability};
+      \node[right=3pt of ly, font=\scriptsize] {Partial stability};
+      \node[right=3pt of lo, font=\scriptsize] {Low stability};
+      \node[right=3pt of lr, font=\scriptsize] {Very low stability};
+      \node[font=\scriptsize, text=blue!70!black] at (1.55cm, -0.35cm)
+        {\textsc{scope.md} (maximally specified)};
+      \draw[rounded corners=3pt, gray!50, thin]
+        (-0.35cm, -0.58cm) rectangle (3.3cm, 1.25cm);
+    \end{scope}
+
+  \end{tikzpicture}
+
+  \caption{Stability as a function of specification degree across the five
+  comparison levels and panel scoring. The dashed diagonal represents the
+  specification-drives-convergence principle: stability increases with the
+  degree to which the creative brief explicitly defines a decision.
+  \textsc{scope.md} items (narrator, scale, format) are maximally stable
+  because they are maximally specified; answer words (Level~3) are minimally
+  stable because the brief does not constrain word choice. Domain semantic
+  gravity (arrow) exerts partial pull at Level~3, reducing variability without
+  achieving stability.}
+  \label{fig:structure}
+\end{figure}

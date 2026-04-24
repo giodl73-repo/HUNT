@@ -1,0 +1,29 @@
+# Review: Orientation Before Expertise: A Unified Tier Model of Creative Quality in AI Authoring and Reviewing
+**Reviewer:** Anna Jordanous | **Expertise:** Computational creativity, SPECS framework, CC evaluation | **Round:** 1
+
+## Scores (1-4)
+Novelty: 3 | Rigor: 3 | Clarity: 4 | Significance: 3 | **Overall: 3.3**
+
+## Overall Assessment
+This paper makes a genuine empirical contribution by demonstrating a hierarchical structure among persona prompt components — a finer-grained analysis than the field has previously seen — and the cross-role symmetry finding is its most interesting result. However, the claimed relationship to computational creativity theory is largely cosmetic: the paper invokes Csikszentmihalyi's systems model as post-hoc vocabulary rather than deploying it as generative scaffolding, and the tier model as presented is primarily an empirical description of a specific testbed rather than a principled theoretical contribution to CC. The synthesis across the three underlying studies is real and the OLE formula is actionable, but the paper over-claims on universality.
+
+## Strengths
+1. **Ablation methodology is credible.** The leave-one-out and progressive-reconstruction design (Phases 1–3 of the authoring study; eight conditions in the reviewing study) is well suited to identifying hierarchical contributions. The T1 catastrophic failure result (12.3 from 41.7) is striking and the four falsifiable predictions framing in Section 4 is exactly the right rhetorical structure for an empirical claim.
+2. **Cross-role symmetry is the paper's strongest result.** Demonstrating that orientation is irreplaceable in both authoring and reviewing — and that the failure modes are structurally analogous (L-T1 and C5 both fall below the no-context baseline) — is a finding that the CC literature has not documented before. The asymmetry between role-specific Tier 2 components (elegance/rigor vs. three principles) while preserving the tier structure is a genuinely informative detail.
+3. **OLE formula operationalizes the theoretical claim.** The three-sentence prescription is precise enough to be tested, replicated, and falsified. The reconstruction curve (R3 crossing threshold at 35.7) gives it quantitative grounding.
+4. **Literature positioning is thorough.** The Dreyfus, Csikszentmihalyi, Norman, Hassenzahl connections are appropriate, even if their theoretical load is understated.
+
+## P1 — Blocking Issues
+
+1. **The tier model is not grounded in CC theory; it is post-hoc vocabulary.** The paper repeatedly invokes Csikszentmihalyi's tripartite structure (domain / field / worldview) and claims the tier model "maps onto" it. But the tier model was derived from ablation data and only subsequently mapped to CC vocabulary. There is no moment in the paper where CC theory generates a prediction that the empirical data then confirms or falsifies — the causal arrow runs the wrong way. To make a theoretical contribution the paper would need to show either (a) that the tier model follows from CC-theoretical first principles, or (b) that the data confirm a prediction uniquely derivable from CC theory rather than from simpler models (e.g., a simple additive model). As currently written, the CC framing is decorative. The paper should either make the CC-theoretic derivation rigorous or limit the claim to "empirical synthesis with theoretical analogues."
+
+2. **The synthesis claim needs a more explicit account of what the three underlying studies share and what they do not.** The abstract claims this is "the first cross-role synthesis of creative quality architecture in AI prompting," but the three studies (persona comparison, trait decomposition, reviewing ablation) differ in rubric, role, domain instantiation, and agent configuration. The paper does not establish that the tier boundaries identified in the authoring study and the reviewing study are measured on a commensurate scale — it cannot, since they use different point maxima (45 vs. 30) and different dimensional weightings. The synthesis is therefore relational ("both show the same structural pattern") rather than quantitative ("the tier contributions are of the same magnitude"). The paper should be clearer about this limitation; currently the cross-table comparisons in Tables 1 and 2 imply a level of commensurability that the data do not support.
+
+## P2 — Important Issues
+
+1. **SPECS framework applicability is not addressed.** Given the explicit CC evaluation framing in the introduction and conclusion, reviewers in this subfield will immediately ask: how do the OLE tiers map onto SPECS dimensions (Skilled, Persevering, Explicit, Collaborative, Sensitive)? The orientation tier appears to map to "Sensitive" (responsiveness to the receiver), the lens tier to "Explicit" (verifiable procedure), and the expertise tier to "Skilled." If this mapping is correct, OLE is not a new architecture but a SPECS-derived ordering claim. The paper should either engage with this mapping or explain why SPECS is not the right evaluation frame.
+
+2. **Evaluation rubrics for both studies are not reproduced.** The authoring rubric (45 points, 9 dimensions) and the reviewing rubric (30 points, 5 dimensions) are referenced but never defined in this paper. The tier assignments depend critically on where the quality threshold is drawn (35/45 and implicitly ~25/30), but the reader cannot assess the threshold's validity without seeing the rubric. At minimum, the rubric dimensions should be listed; ideally the threshold derivation should be justified explicitly.
+
+## Recommendation
+Accept with major revisions. The empirical contribution is real and the cross-role symmetry finding justifies publication at CHI 2026. The CC-theory grounding must be either made rigorous or substantially downgraded in the claims. Rubrics must be included or clearly referenced.

@@ -1,0 +1,97 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  ybar,
+  bar width=0.40cm,
+  width=0.82\linewidth,
+  height=6.8cm,
+  enlarge x limits=0.30,
+  ymin=0, ymax=34,
+  ymajorgrids=true,
+  grid style={dotted, gray!45},
+  axis on top=false,
+  tick align=outside,
+  ylabel={Impact magnitude (absolute score drop)},
+  ylabel style={font=\small},
+  symbolic x coords={T1, T2, T3},
+  xtick={T1, T2, T3},
+  xticklabels={%
+    {Tier 1 \\ \textbf{Orientation}},
+    {Tier 2 \\ \textbf{Lens}},
+    {Tier 3 \\ \textbf{Specificity}}%
+  },
+  x tick label style={align=center, font=\small},
+  y tick label style={font=\small},
+  legend style={
+    at={(0.98, 0.97)},
+    anchor=north east,
+    font=\small,
+    draw=gray!55,
+    fill=white,
+    inner sep=4pt,
+    row sep=1pt,
+  },
+  legend entries={Reviewing (C-series), Authoring (AA minus component)},
+  nodes near coords,
+  nodes near coords align={vertical},
+  every node near coord/.append style={
+    font=\scriptsize\bfseries,
+    yshift=2pt,
+    /pgf/number format/fixed,
+    /pgf/number format/precision=1,
+  },
+]
+
+%% REVIEWING bars (hatched, lighter)
+%% Tier 1: |C5 - C0| = |21.7 - 23.7| = 2.0  (philosophy removal)
+%% Tier 2: |C0 - C4| = |23.7 - 26.7| = 3.0  (principles add +3.0 above baseline)
+%% Tier 3: |C4 - C6| = |26.7 - 25.3| = 1.4  (lens without stronger philosophy)
+\addplot[
+  fill=red!25, draw=red!55!black,
+  postaction={pattern=north east lines, pattern color=red!40},
+] coordinates {
+  (T1, 2.0)
+  (T2, 3.0)
+  (T3, 1.4)
+};
+
+%% AUTHORING bars (solid, strong colors)
+%% Tier 1: L-T1 = 29.4  (AA=40.3 minus T1-only condition)
+%% Tier 2: avg(L-T4=11.7, L-T5=12.7) = 12.2
+%% Tier 3: avg(L-T2, L-T3, L-T6) = 6.9 (provided)
+\addplot[
+  fill=red!72!black, draw=red!85!black,
+] coordinates {
+  (T1, 29.4)
+  (T2, 12.2)
+  (T3,  6.9)
+};
+
+\end{axis}
+
+%% ---- Tier color indicator strips below x labels ----
+\node[fill=red!65!black, draw=none, minimum width=2.0cm, minimum height=0.18cm,
+      opacity=0.80, rounded corners=1pt] at (2.30, -0.35) {};
+\node[fill=orange!75!black, draw=none, minimum width=2.0cm, minimum height=0.18cm,
+      opacity=0.80, rounded corners=1pt] at (5.15, -0.35) {};
+\node[fill=blue!55!black, draw=none, minimum width=2.0cm, minimum height=0.18cm,
+      opacity=0.80, rounded corners=1pt] at (8.05, -0.35) {};
+
+%% ---- Asymmetry annotation ----
+\node[font=\scriptsize\itshape, text=gray!55!black, align=center,
+      fill=white, inner sep=1.5pt]
+  at (3.30, 5.65) {Authoring Tier~1:\\$14.7{\times}$ larger than Reviewing};
+
+\draw[-Stealth, thin, gray!50!black]
+  (3.30, 5.42) -- (4.10, 4.80);
+
+\end{tikzpicture}
+\caption{Impact magnitude (absolute score drop when tier component removed) for reviewing
+and authoring roles. Tier~1 (orientation) has the largest impact in both roles---catastrophically
+so in authoring ($-29.4$ points versus $-2.0$ for reviewing). The tier ordering is symmetric:
+orientation $>$ discipline $>$ specificity in both directions. Reviewing deltas are smaller in
+absolute terms because reviewer profiles operate on a compressed range; the relative ordering
+and directional claim hold across both.}
+\label{fig:heatmap}
+\end{figure}

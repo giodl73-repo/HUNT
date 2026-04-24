@@ -1,0 +1,59 @@
+version: "1.2.0"
+uuid: g5h6a7c8
+slug: human-ai-calibration
+title: "Calibrating AI Expert Panel Scores Against Human Expert Judgment in Creative Domain Evaluation"
+venue: "CHI 2026"
+stage: ready
+round: 1
+content_mode: full
+content_mode_confirmed: true
+
+# Review tracking
+reviewers:
+  - name: Shneiderman
+    profile_ref: ben-shneiderman-umd
+  - name: Bernstein
+    profile_ref: michael-bernstein-stanford
+  - name: Kamar
+    profile_ref: ece-kamar-msr
+  - name: Amershi
+    profile_ref: saleema-amershi-msr
+  - name: Heer
+    profile_ref: jeffrey-heer-uw
+reviews:
+  round1:
+    avg: 2.80
+    gate: PASS
+    consensus: "Major Revision"
+  round2:
+    avg: 3.0
+    gate: PASS
+    consensus: "Accept with Minor Camera-Ready Corrections"
+p1_items:
+  - id: P1.1
+    addressed: true
+  - id: P1.2
+    addressed: true
+
+# Stage history
+history:
+  - stage: draft
+    date: "2026-02-28"
+    note: "Paper initialized via plan.md authoring"
+  - stage: panel
+    date: "2026-03-01"
+    note: "5 reviewers assigned: Shneiderman, Bernstein, Kamar, Amershi, Heer (CHI/UIST panel)"
+  - stage: synthesis
+    date: "2026-03-01"
+    note: "Round 1 synthesis: avg 2.80/4, Major Revision, 2 P1 + 5 P2 items"
+  - stage: revision
+    date: "2026-03-01"
+    note: "REVISION-PLAN.md created; P1.1 (figures absent) and P1.2 (corrective factor reframing) are blocking"
+  - stage: recheck
+    date: "2026-03-01"
+    note: "All P1+P2 fixes applied: 5 TikZ figures added, bias-correction reframing throughout, IRB para, lifecycle discussion, generalizability qualified"
+  - stage: ready
+    date: "2026-03-01"
+    note: "Round 1 recheck: avg 3.0/4, gate PASS, 2 Accept + 3 Weak Accept; advance to ready"
+
+created: "2026-02-28"

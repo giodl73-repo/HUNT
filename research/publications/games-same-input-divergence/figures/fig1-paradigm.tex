@@ -1,0 +1,184 @@
+% Preamble requirements (add to main.tex if not present):
+%   \usepackage{tikz}
+%   \usepackage{xcolor}
+%   \usetikzlibrary{arrows.meta,shapes.rounded,positioning,fit}
+%
+\begin{figure*}[t]
+\centering
+\usetikzlibrary{arrows.meta,shapes.rounded,positioning,fit}
+\begin{tikzpicture}[
+  font=\small,
+  >=Stealth,
+  % Box styles
+  inputbox/.style={
+    draw, rounded corners=4pt,
+    fill=gray!10, text width=3.6cm,
+    align=left, inner sep=6pt,
+    line width=0.7pt
+  },
+  pipelinebox/.style={
+    draw, rounded corners=4pt,
+    fill=blue!8, text width=2.4cm,
+    align=center, inner sep=6pt,
+    line width=0.7pt
+  },
+  huntbox/.style={
+    draw, rounded corners=4pt,
+    fill=orange!8, text width=3.4cm,
+    align=left, inner sep=6pt,
+    line width=0.7pt
+  },
+  % Level band styles — green→yellow→orange→red
+  levelband/.style={
+    draw, rounded corners=2pt,
+    text width=12.8cm,
+    align=left, inner sep=4pt 5pt,
+    minimum height=0.62cm,
+    line width=0.6pt
+  },
+  l1band/.style={levelband, fill=green!25,  draw=green!60!black},
+  l2band/.style={levelband, fill=yellow!30, draw=yellow!70!black},
+  l3band/.style={levelband, fill=orange!25, draw=orange!70!black},
+  l4band/.style={levelband, fill=orange!50, draw=orange!80!black},
+  l5band/.style={levelband, fill=red!20,   draw=red!60!black},
+  % Column label style
+  collabel/.style={font=\small\bfseries, align=center},
+  % Annotations inside bands
+  bandlabel/.style={font=\footnotesize\bfseries},
+  bandmeta/.style={font=\footnotesize},
+]
+
+%% ─────────────────────────────────────────────
+%% COLUMN LABELS (row 0)
+%% ─────────────────────────────────────────────
+\node[collabel] (lbl-in) at (0, 0)         {Shared Inputs};
+\node[collabel] (lbl-pipe) at (5.35, 0)    {Independent Runs};
+\node[collabel] (lbl-out) at (10.2, 0)     {Outputs};
+
+%% ─────────────────────────────────────────────
+%% LEFT COLUMN — Shared Inputs
+%% ─────────────────────────────────────────────
+\node[inputbox, below=0.35cm of lbl-in] (inputs) {
+  \textbf{AoE2 World Data}\\[1pt]
+  \hspace*{4pt}\textit{civs, units, techs,}\\
+  \hspace*{4pt}\textit{maps, economy}\\[4pt]
+  \textbf{SCOPE.md}\\[1pt]
+  \hspace*{4pt}\textit{5+1 puzzles, casual}\\
+  \hspace*{4pt}\textit{solo, The Monk}\\[4pt]
+  \textbf{Toolkit Skills}\\[1pt]
+  \hspace*{4pt}\textit{Stages 3–8}\\[4pt]
+  \textbf{Profile Library}\\[1pt]
+  \hspace*{4pt}\textit{29 v2 profiles}
+};
+
+%% ─────────────────────────────────────────────
+%% MIDDLE COLUMN — Pipeline boxes
+%% ─────────────────────────────────────────────
+\node[pipelinebox] (pipe1) at (5.35, -1.05) {
+  \textbf{Run 1}\\[3pt]
+  Stage 3\\[1pt]
+  \(\downarrow\)\\[1pt]
+  Stage 4\\[1pt]
+  \(\downarrow\)\\[1pt]
+  Stage 8
+};
+
+\node[pipelinebox, below=0.5cm of pipe1] (pipe2) {
+  \textbf{Run 2}\\[3pt]
+  Stage 3\\[1pt]
+  \(\downarrow\)\\[1pt]
+  Stage 4\\[1pt]
+  \(\downarrow\)\\[1pt]
+  Stage 8
+};
+
+%% ─────────────────────────────────────────────
+%% RIGHT COLUMN — Hunt outputs
+%% ─────────────────────────────────────────────
+\node[huntbox] (hunt1) at (10.2, -1.05) {
+  \textbf{Hunt 1 ``Wololo''}\\[4pt]
+  Answer: \textsc{wololo}\\[2pt]
+  Meta: crossword\\
+  \hspace*{10pt}grid extraction\\[2pt]
+  Rounds: 1 (flat)\\[2pt]
+  Feeders: \textsc{castle,}\\
+  \hspace*{10pt}\textsc{onager, loom,}\\
+  \hspace*{10pt}\textsc{tower, patrol}
+};
+
+\node[huntbox, below=0.5cm of hunt1] (hunt2) {
+  \textbf{Hunt 2 ``Run 2''}\\[4pt]
+  Answer: \textsc{grail}\\[2pt]
+  Meta: index \(+\)\\
+  \hspace*{10pt}anagram\\[2pt]
+  Rounds: 3 (gated)\\[2pt]
+  Feeders: \textsc{forge,}\\
+  \hspace*{10pt}\textsc{march, siege,}\\
+  \hspace*{10pt}\textsc{faith, relic}
+};
+
+%% ─────────────────────────────────────────────
+%% ARROWS  inputs → pipelines
+%% ─────────────────────────────────────────────
+\draw[->, line width=0.8pt] (inputs.east) -- (pipe1.west);
+\draw[->, line width=0.8pt] (inputs.east) -- (pipe2.west);
+
+%% ─────────────────────────────────────────────
+%% ARROWS  pipelines → hunts
+%% ─────────────────────────────────────────────
+\draw[->, line width=0.8pt] (pipe1.east) -- (hunt1.west);
+\draw[->, line width=0.8pt] (pipe2.east) -- (hunt2.west);
+
+%% ─────────────────────────────────────────────
+%% FIVE-LEVEL COMPARISON HIERARCHY (below main diagram)
+%% ─────────────────────────────────────────────
+
+% Anchor: below the lower hunt box
+\node[l1band, below=1.1cm of hunt2.south west, anchor=north west,
+      xshift=-10.4cm] (l1) {%
+  \bandlabel{Level~1 \;Structural}\quad
+  \bandmeta{Hunt scale, narrator voice, format \textperiodcentered{} specification-driven \textperiodcentered{} stable across runs}%
+};
+
+\node[l2band, below=0.18cm of l1.south west, anchor=north west] (l2) {%
+  \bandlabel{Level~2 \;Pool}\quad
+  \bandmeta{Candidate pool composition, type distributions \textperiodcentered{} organizing principle variable (Jaccard\,=\,0.11)}%
+};
+
+\node[l3band, below=0.18cm of l2.south west, anchor=north west] (l3) {%
+  \bandlabel{Level~3 \;Assignment}\quad
+  \bandmeta{Answer word sets \textperiodcentered{} zero lexical overlap (Jaccard\,=\,0.00); partial domain adjacency (3/5 slots)}%
+};
+
+\node[l4band, below=0.18cm of l3.south west, anchor=north west] (l4) {%
+  \bandlabel{Level~4 \;Mechanism}\quad
+  \bandmeta{Extraction mechanism families \textperiodcentered{} 5 of 6 positions in distinct families; Jaccard\,=\,0.11}%
+};
+
+\node[l5band, below=0.18cm of l4.south west, anchor=north west] (l5) {%
+  \bandlabel{Level~5 \;Micro-design}\quad
+  \bandmeta{Clue formulations, visual grammar, flavor text \textperiodcentered{} systematically variable within every puzzle slot}%
+};
+
+%% Stability key (right of bands)
+\node[font=\footnotesize, align=left, right=0.35cm of l1.east, anchor=west,
+      yshift=0pt] (key1) {\textcolor{green!50!black}{\rule{8pt}{8pt}}\;Stable};
+\node[font=\footnotesize, align=left, right=0.35cm of l3.east, anchor=west] (key3)
+      {\textcolor{orange!70!black}{\rule{8pt}{8pt}}\;Variable};
+\node[font=\footnotesize, align=left, right=0.35cm of l5.east, anchor=west] (key5)
+      {\textcolor{red!60!black}{\rule{8pt}{8pt}}\;Most variable};
+
+%% Downward arrow alongside bands (leftmost edge)
+\draw[->, line width=1.0pt, gray!70]
+  ([xshift=-0.45cm]l1.north west) -- ([xshift=-0.45cm]l5.south west)
+  node[midway, left=2pt, font=\footnotesize\itshape, gray] {increasing\\[-2pt]variability};
+
+\end{tikzpicture}
+
+\caption{The same-input divergence paradigm. Shared inputs (left) feed two independent
+pipeline runs (center), producing structurally distinct hunts (right). The five-level
+comparison hierarchy (bottom) measures divergence from coarse architectural decisions
+(Level~1) to individual clue formulations (Level~5). Color indicates observed stability:
+green~= stable across runs, red~= variable.}
+\label{fig:paradigm}
+\end{figure*}

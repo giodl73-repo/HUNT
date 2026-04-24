@@ -1,0 +1,37 @@
+\section{Introduction}
+\label{sec:introduction}
+
+An AI panel that reports a puzzle scores 22 out of 30 is only useful if ``22 out of 30 by the AI'' means something consistent with what a human expert would say. Without calibration, AI panel scores are opaque outputs whose relationship to human quality standards is unknown. A practitioner who over-trusts AI scores on dimensions where AI is systematically biased will make systematically poor editorial decisions. A practitioner who dismisses AI scores on dimensions where AI is in fact reliable leaves value on the table. Calibration converts AI panel outputs from uninterpreted numbers into calibrated proxies---specifying where to trust, where to correct, and where to require human review.
+
+The practical need for calibration has grown as AI-simulated expert panels have moved from research prototype to production tool. Recent systems deploy multi-profile AI panels for creative artifact review in puzzle design~\cite{dellaLibera2025pipeline}, game design, and interactive fiction, where LLM-based personas evaluate candidate outputs on structured rubrics and issue pass/revise verdicts. These systems report promising reliability metrics (high inter-rater agreement within the AI panel, stable rankings across runs), but inter-AI consistency is not the same as human validity. The question ``do AI reviewers agree with each other?'' is separate from ``do they agree with human experts?'' and only the second question establishes external validity.
+
+We provide that validation for a specific, carefully documented creative domain. Puzzle hunt design is an ideal calibration domain for three reasons. First, expert evaluation criteria are documented and explicit: the community has developed and iteratively refined multi-dimensional rubrics for puzzle quality over decades of organized competitive puzzle design, and the evaluative framework is publicly available~\cite{dellaLibera2025taxonomy}. Second, human expert identity is verifiable: experienced puzzle hunt constructors have documented track records (years of construction, community roles, competition administration) that support participant sampling decisions. Third, AI panel score data is already available: the production deployment of AI expert panels across five puzzle hunt scenarios~\cite{dellaLibera2025pipeline} provides v1 and v2 panel scores for the same puzzles human experts will review, enabling a clean controlled comparison.
+
+\subsection*{Study Design}
+
+We recruited five human puzzle hunt constructors with 5 to 24 years of experience from the Microsoft puzzle hunt community. Each reviewer independently scored 10 puzzles---drawn from the Age of Empires, Wavelength, and Grand Larceny hunt scenarios---on the same six-dimension rubric used by the AI panel (Clarity, Solvability, Elegance, Reading Reward, Fun, and Confirmation Quality; each scored 1--5; total /30). AI panel scores for all 10 puzzles under both v1 (legacy) and v2 (richer persona) profile configurations were available from the pipeline study and the profile upgrade experiment~\cite{dellaLibera2025taxonomy}.
+
+For each dimension, we compute Pearson and Spearman rank correlation between AI panel mean scores and human panel mean scores, measure signed bias (AI mean minus human mean) and test its significance, and examine whether the v2 profile upgrade improves calibration relative to v1. We also derive per-dimension linear corrective scaling factors that map AI scores to human score predictions.
+
+\subsection*{Key Questions}
+
+\begin{enumerate}
+  \item \textbf{Which dimensions does the AI panel score reliably?} We predict strong AI-human correlation on technical dimensions (Clarity, Solvability, Confirmation Quality) and weaker correlation on hedonic dimensions (Fun, Elegance).
+  \item \textbf{On which dimensions is the AI panel biased?} We predict systematic AI underestimation of Fun and Elegance, with no significant bias on technical dimensions.
+  \item \textbf{Does profile richness affect calibration?} We compare v1 and v2 AI panel scores against human scores on a matched subset of five puzzles.
+  \item \textbf{What corrective scaling factors should practitioners apply?} We derive per-dimension linear corrections with confidence intervals.
+\end{enumerate}
+
+\subsection*{Contributions}
+
+\begin{enumerate}
+  \item \textbf{First calibration study} of AI expert panel scores against human expert judgment in a creative domain, providing per-dimension correlation data and bias estimates.
+  \item \textbf{Reliability-by-dimension characterization}: technical dimensions (Clarity, Solvability, Confirmation) are reliable AI proxies; hedonic dimensions (Fun, Elegance) show systematic underestimation.
+  \item \textbf{Profile depth effect}: richer v2 personas close the Elegance calibration gap but leave the Fun gap unchanged, establishing a theoretically interpretable limit on persona-based evaluation.
+  \item \textbf{Practitioner-ready corrective scaling factors} for all six dimensions, with 95\% confidence intervals, including a recalibrated pass threshold for AI-only review pipelines.
+  \item \textbf{A generalizable principle}: AI evaluation reliability tracks criterion verifiability---hedonic qualities requiring embodied experience are consistently underestimated regardless of persona richness.
+\end{enumerate}
+
+\subsection*{Paper Organization}
+
+Section~\ref{sec:related} situates the study within prior work on AI-simulated review, inter-rater reliability in creative evaluation, and calibration methodology. Section~\ref{sec:method} describes the study design, participant characteristics, puzzle selection, and analysis plan. Section~\ref{sec:results} presents results by dimension: inter-rater reliability, AI-human correlation, bias, profile version effects, and corrective scaling factors. Section~\ref{sec:discussion} interprets the reliability-by-dimension pattern through the lens of verifiable versus hedonic quality criteria. Section~\ref{sec:conclusion} summarizes contributions and identifies open questions.

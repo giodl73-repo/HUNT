@@ -1,0 +1,32 @@
+AI creative generators are stochastic: the same pipeline, given the same inputs, produces
+different outputs across independent runs. Practitioners deploying these systems lack principled
+guidance on which design decisions will be stable across runs---and can therefore be trusted
+on a single execution---and which will vary, requiring multiple runs and human selection
+to control quality.
+
+We address this problem through a \emph{same-input divergence} study: two fully independent,
+clean-room runs of a complete AI puzzle hunt generation pipeline from identical inputs---the
+same Age of Empires~II world data, scope document, and toolkit specification---compared at
+five levels of abstraction (structural, pool, answer-word assignment, extraction mechanism,
+and micro-design). An AI expert panel evaluated both outputs on a 7-dimension, 45-point
+weighted rubric using identical reviewer configurations.
+
+The results reveal a structured, not random, pattern of divergence. Every decision explicitly
+specified in the creative brief---scale (5 feeders + 1 meta), narrator voice, audience,
+format, and solve-time target---is identical across both runs. Every decision left to the
+pipeline diverges substantially: round count (1 vs.~3), meta mechanism family (crossword
+grid vs.~vowel-count index followed by anagram resolution), and answer words
+(Jaccard~$= 0.00$ across all six words including the meta). We identify a distinct
+phenomenon, \emph{domain semantic gravity}: despite zero lexical overlap, 3 of 5 feeder
+slots yield domain-adjacent word pairs (e.g., \textsc{onager}/\textsc{siege};
+\textsc{patrol}/\textsc{march}), revealing that the domain exerts a semantic basin of
+attraction without constraining specific word choice. Panel quality scores are stable at
+the pass/fail level (all authored puzzles pass in both runs; normalized aggregate scores
+within 3 percentage points) while showing a systematic $+1.2$-point uplift in Elegance
+and Reading Reward in the second run, consistent with a genuine mechanism-level improvement.
+
+We introduce same-input divergence as a generalizable experimental paradigm for
+characterizing AI pipeline reliability, establish \emph{specification drives convergence}
+as the primary practical principle---every under-specified decision is a variable
+decision---and derive actionable deployment guidance for practitioners operating AI creative
+pipelines at scale.

@@ -1,0 +1,22 @@
+version: "1.2.0"
+uuid: g1a2m3e4
+slug: ai-expert-panel-creative
+title: "Expert AI Panels for Creative Work Evaluation: Evidence from Puzzle Hunt Design"
+venue: "ICCC 2026"
+stage: ready
+round: 1
+content_mode: full
+content_mode_confirmed: true
+
+# Review tracking
+reviewers: []
+reviews: {}
+p1_items: []
+
+# Stage history
+history:
+  - stage: draft
+    date: "2026-02-28"
+    note: "Paper initialized via panel:setup"
+
+created: "2026-02-28"

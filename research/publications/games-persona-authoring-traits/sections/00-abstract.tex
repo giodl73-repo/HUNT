@@ -1,0 +1,45 @@
+Domain-specific persona prompts are a natural choice for AI creative generation tasks:
+instruct the model to adopt the identity of a practitioner, and domain conventions should
+follow. Yet in a controlled puzzle authoring study, a bare professional label
+(\emph{``You are an artist''}) outperformed an equally sparse domain-specific label
+(\emph{``You are a puzzle designer''}) by 15.6 points on a seven-dimension weighted
+rubric (/45), scoring 40.3 against 24.7. The cognitive mechanism behind this reversal
+is unknown: the artist persona encodes no puzzle design knowledge, yet produces
+categorically superior output. Prior work treats persona prompts as holistic units;
+no study has decomposed a persona into constituent cognitive traits and identified
+which subset is causally responsible for a quality outcome.
+
+We address this gap through a three-phase decomposition study. Phase~1 isolates each
+of six candidate traits---experience-first thinking, surprise instinct, visual thinking,
+elegance drive, rigor and verification, and systematic thinking---as a single imperative
+sentence evaluated by an expert panel on the same weighted rubric. Phase~2 applies
+leave-one-out ablation from the full artist persona, measuring each trait's structural
+contribution. Phase~3 performs cumulative reconstruction from the null baseline, adding
+traits in tier order to identify the minimum sufficient set. All conditions are evaluated
+by a three-member C8 expert panel on the same seven-dimension weighted rubric ($\geq 33$
+passing threshold).
+
+Experience-first thinking (T1) is architecturally irreplaceable: removing it from the
+full artist persona causes a catastrophic $-29.4$~point drop (from 41.7 to 12.3),
+producing a list of domain terms with no solver mechanism rather than a degraded puzzle.
+Elegance drive (T4) and rigor with verification (T5) are load-bearing: removing either
+drops the score below threshold ($-11.7$ and $-12.7$, respectively). In Phase~1, visual
+thinking (T3) and surprise instinct (T2) pass in isolation (35.7 and 34.7,
+respectively), while elegance drive (T4, 26.0) and systematic thinking (T6, 22.3) fall
+at or below the domain-specific baseline---T4 because stripping without an
+experience-first target removes the solver's journey along with the clutter. Phase~3
+reconstruction confirms that T1\,+\,T4\,+\,T5 is the minimum sufficient set: their
+cumulative combination (R3) is the first condition to cross the passing threshold, at
+35.7/45. Visual thinking, surprise instinct, and systematic thinking are quality
+amplifiers whose removal the structure survives.
+
+This paper makes three contributions. First, it provides the first trait-level
+decomposition of a creative persona prompt effect, replacing a holistic persona result
+with a causal account. Second, it empirically identifies a minimum sufficient trait set
+(T1\,+\,T4\,+\,T5)---three sentences encoding experience-first framing, elegance drive,
+and verified rigor---that crosses the quality threshold and generalizes to any creative
+generation task where audience experience is the primary design constraint. Third, it
+demonstrates that domain-naive artistic orientation outperforms domain-specific expertise
+for creative AI generation, and explains why: domain labels activate template conventions,
+while artistic orientation activates the experience-design stance that makes domain
+knowledge serve the audience rather than serve itself.

@@ -1,0 +1,131 @@
+\section{Related Work}
+\label{sec:related}
+
+\subsection{AI Persona Prompting for Creative Tasks}
+
+The use of persona conditioning to shape AI creative output has a well-established
+empirical literature. Park et al.\ demonstrate that generative agents endowed with
+biographical persona descriptions produce more coherent long-horizon social behavior,
+underscoring the functional role of identity framing in steering model behavior
+\cite{park2023generative}. Dang et al.\ show that creative task framing --- including
+role assignment --- affects the novelty and appropriateness of AI-generated artifacts,
+though their focus is on task description rather than persona decomposition
+\cite{dang2023creative}. Zhang et al.\ explore persona specification in dialogue
+systems, finding that persona consistency correlates with perceived quality in
+human evaluation \cite{zhang2018personas}.
+
+The common architecture across this prior work treats personas as holistic units: a
+persona is injected as a label (``you are a marketing expert'') or as a biographical
+summary, and the resulting outputs are compared to a no-persona baseline. What the
+literature does not do is decompose a persona into constituent cognitive traits,
+measure the marginal quality contribution of each trait, and identify a hierarchical
+tier structure among them. Our work is the first to perform this decomposition in a
+controlled empirical setting and the first to identify orientation as a categorically
+distinct and irreplaceable tier rather than one feature among many.
+
+A separate strand of work examines system-prompt engineering for creative tasks,
+including chain-of-thought framing \cite{wei2022chain}, role-playing instructions, and
+few-shot exemplars \cite{brown2020language}. These methods improve output quality but
+do not distinguish among the functional roles of different prompt components. Our tier
+model provides a principled vocabulary for that distinction.
+
+\subsection{Expertise Structure and Creative Cognition}
+
+The Dreyfus model of skill acquisition identifies a progression from novice through
+expert in which early stages are characterized by rule-following and domain-knowledge
+application while expert performance becomes intuitive, context-sensitive, and
+orientation-driven \cite{dreyfus1980mind}. The expert does not consult explicit
+domain principles; they perceive the situation directly through an internalized
+stance toward what matters. This phenomenological account of expertise predicts that
+domain knowledge is an early-stage resource, not the defining feature of expert
+output --- a prediction our empirical results confirm in the AI setting.
+
+Chi et al.\ demonstrate that expert and novice physicists solving mechanics problems
+organize the same domain knowledge differently: experts categorize by deep structure
+and underlying principle, novices by surface feature and problem format
+\cite{chi1981categorization}. This distinction maps directly onto our Tier 1 and Tier
+3 distinction. The expert's organizational principle is an orientation (``what physical
+law governs this situation?'') rather than a domain label (``this is an inclined-plane
+problem''). The quality gain from orientation over domain labeling, documented here in
+an AI creative setting, is the artificial analog of the expert-novice gap Chi et al.\
+document in human cognition.
+
+Csikszentmihalyi's systems model of creativity distinguishes the creator's domain
+knowledge, the field's evaluative criteria, and the generative worldview that
+determines what counts as a worthwhile creative direction \cite{csikszentmihalyi1997creativity}.
+Our tier model maps onto this tripartite structure: Tier 3 (specificity) corresponds
+to domain knowledge, Tier 2 (discipline) to the field's operational standards, and
+Tier 1 (orientation) to the generative worldview. Csikszentmihalyi identifies the
+worldview as the least teachable and most consequential component of creative
+expertise, consistent with our finding that orientation is irreplaceable while domain
+specificity is substitutable.
+
+We note that these theoretical frameworks are post-hoc structural convergences: the tier
+model was derived empirically from ablation data and only subsequently mapped to existing
+theory. These mappings lend interpretive coherence but are not the model's theoretical
+foundation.
+
+\subsection{Orientation-First Design Principles}
+
+The primacy of the receiver's experience as the organizing criterion for design has
+been articulated across multiple traditions. Norman's account of human-centered design
+establishes user experience as the primary constraint from which all functional
+specifications are derived \cite{norman2013design}: the designer's first question is
+``what will the person experience?'', not ``what should the artifact do?''. This is
+the exact priority ordering we identify empirically in creative AI systems --- the
+orientation question precedes and determines the evaluation of all subsequent design
+decisions.
+
+Hassenzahl's framework for experience design formalizes the distinction between
+pragmatic quality (what the artifact does) and hedonic quality (how it is experienced)
+and argues that hedonic quality is the primary design criterion for artifacts whose
+success is defined by use rather than function alone \cite{hassenzahl2010experience}.
+In puzzle design, the relevant distinction is between mechanical correctness (does the
+extraction procedure work?) and experiential quality (is there a satisfying aha moment?).
+Our Tier 1 orientation corresponds to hedonic primacy; our Tier 3 specificity
+corresponds to pragmatic quality. The finding that removing Tier 1 causes catastrophic
+failure while adding Tier 3 without Tier 1 fails to cross the quality threshold
+confirms Hassenzahl's priority ordering in an empirical AI setting.
+
+Rams's ten principles of good design converge on a single meta-principle: good design
+removes the unnecessary \cite{rams1976design}. The principle is not a domain claim
+--- it does not specify what is unnecessary in any particular artifact type. It is an
+orientation: a stance that determines what counts as relevant information during design
+decisions. Strunk and White's directive to ``omit needless words'' is the writing
+analog: an orientation principle that precedes and overrides all domain-specific style
+conventions \cite{strunkwhite1999}. Both examples illustrate that the most powerful
+constraints in creative practice are orientation constraints, not domain constraints,
+consistent with our empirical findings.
+
+\subsection{Minimum Sufficient Conditions in Creative Systems}
+
+The concept of the minimum sufficient set --- the smallest set of components that
+produces a target outcome --- has a formal home in diagnostic reasoning. Reiter's
+minimal diagnosis theory identifies the minimal set of component faults consistent
+with observed system behavior as the natural unit of explanation in model-based
+diagnosis \cite{reiter1987theory}. The minimum sufficient set concept from our
+empirical reconstruction methodology (Tier 1 + Tier 2 alone crosses the quality
+threshold; Tier 3 is enrichment, not requirement) is the creative quality analog of
+minimal diagnosis.
+
+In product development, the minimum viable product (MVP) concept captures a similar
+structure: the smallest set of features that delivers the core value proposition to an
+early user. The MVP is not the product minus domain features --- it is the product
+minus everything except the features that constitute the core orientation toward the
+user's need. Our Tier 1+2 minimum sufficient set is the MVP of creative AI prompting:
+it delivers the core value without the domain enrichment that is necessary for ceiling
+performance but not for threshold crossing.
+
+Feature selection in machine learning provides a formal precedent for the distinction
+between irreplaceable, load-bearing, and amplifying components. Guyon and Elisseeff's
+treatment of variable selection identifies features by their marginal contribution to
+predictive accuracy rather than their domain relevance, and shows that domain-relevant
+features are often redundant given other features already selected \cite{guyon2003introduction}.
+Our ablation methodology follows this logic: we measure quality under individual
+feature removal rather than inferring contribution from domain relevance, and we find
+that domain-relevant features (Tier 3) are indeed redundant given Tier 1 and Tier 2.
+
+What no prior work provides is the identification of a tier structure in AI creative
+prompts, the demonstration that this structure is symmetric across authoring and
+reviewing roles, or the derivation of a minimum sufficient creative prompt formula
+from empirical decomposition. These are the contributions of the present paper.

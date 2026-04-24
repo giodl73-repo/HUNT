@@ -1,0 +1,124 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  tier1/.style={fill=gold!30, draw=gold!70!black, rounded corners=3pt, thick},
+  tier2/.style={fill=orange!25, draw=orange!70!black, rounded corners=3pt, thick},
+  tier3/.style={fill=blue!15, draw=blue!60!black, rounded corners=3pt, thick},
+  header/.style={font=\bfseries\normalsize, draw=none, fill=none},
+  label/.style={font=\bfseries\scriptsize, rotate=90, align=center},
+  evidence/.style={font=\scriptsize\itshape, text=gray!70!black},
+  arrow/.style={-Stealth, thick, gray!60!black},
+]
+
+%% Column widths and positions
+\def\lx{0}        % left column center
+\def\cx{5.4}      % center column center
+\def\rx{10.8}     % right column center
+\def\colw{4.6}    % column width
+\def\cenw{0.9}    % center strip width
+
+%% ---- HEADERS ----
+\node[header] at (\lx, 0.35) {REVIEWING};
+\node[header] at (\rx, 0.35) {AUTHORING};
+\draw[thick, gray!40] (\lx-\colw/2, 0) -- (\lx+\colw/2, 0);
+\draw[thick, gray!40] (\rx-\colw/2, 0) -- (\rx+\colw/2, 0);
+
+%% ---- TIER 1 ROW (y = -1.5 center) ----
+% Left cell
+\node[tier1, minimum width=\colw cm, minimum height=1.5cm, align=center] (L1)
+  at (\lx, -1.5) {%
+    \textbf{Design Philosophy / Worldview}\\[2pt]
+    \textit{\scriptsize C5 without philosophy = 21.7 $<$ C0 = 23.7}
+  };
+% Right cell
+\node[tier1, minimum width=\colw cm, minimum height=1.5cm, align=center] (R1)
+  at (\rx, -1.5) {%
+    \textbf{Experience-First (T1)}\\[2pt]
+    \textit{\scriptsize L-T1 drop $= {-}29.4$ pts}
+  };
+% Tier label (center)
+\node[tier1, minimum width=\cenw cm, minimum height=1.5cm, align=center,
+      font=\bfseries\scriptsize] (C1)
+  at (\cx, -1.5) {\rotatebox{90}{TIER 1}};
+% Row label — right margin
+\node[font=\bfseries\scriptsize, text=gold!70!black, align=center]
+  at (\rx+\colw/2+0.7, -1.5) {\rotatebox{-90}{ORIENTATION}};
+\node[font=\scriptsize, text=gold!60!black, align=center]
+  at (\rx+\colw/2+1.1, -1.5) {\rotatebox{-90}{Irreplaceable}};
+
+%% ---- TIER 2 ROW (y = -3.3 center) ----
+\node[tier2, minimum width=\colw cm, minimum height=1.6cm, align=center] (L2)
+  at (\lx, -3.3) {%
+    \textbf{3 Non-redundant Principles}\\[2pt]
+    {\scriptsize Verify Last Mile, Blame Player,}\\[-1pt]
+    {\scriptsize Computer Test}
+  };
+\node[tier2, minimum width=\colw cm, minimum height=1.6cm, align=center] (R2)
+  at (\rx, -3.3) {%
+    \textbf{Elegance (T4) + Rigor (T5)}\\[2pt]
+    \textit{\scriptsize L-T4 $= {-}11.7$,\ L-T5 $= {-}12.7$}
+  };
+\node[tier2, minimum width=\cenw cm, minimum height=1.6cm, align=center,
+      font=\bfseries\scriptsize] (C2)
+  at (\cx, -3.3) {\rotatebox{90}{TIER 2}};
+\node[font=\bfseries\scriptsize, text=orange!80!black, align=center]
+  at (\rx+\colw/2+0.7, -3.3) {\rotatebox{-90}{LENS}};
+\node[font=\scriptsize, text=orange!70!black, align=center]
+  at (\rx+\colw/2+1.1, -3.3) {\rotatebox{-90}{Load-bearing}};
+
+%% ---- TIER 3 ROW (y = -5.15 center) ----
+\node[tier3, minimum width=\colw cm, minimum height=1.6cm, align=center] (L3)
+  at (\lx, -5.15) {%
+    \textbf{Review Lens + Credentials}\\[2pt]
+    {\scriptsize Lens specificity,}\\[-1pt]
+    {\scriptsize authority calibration}
+  };
+\node[tier3, minimum width=\colw cm, minimum height=1.6cm, align=center] (R3)
+  at (\rx, -5.15) {%
+    \textbf{T2 + T3 + T6 + Domain Data}\\[2pt]
+    \textit{\scriptsize $+1.6$ to $+5.4$ pts each}
+  };
+\node[tier3, minimum width=\cenw cm, minimum height=1.6cm, align=center,
+      font=\bfseries\scriptsize] (C3)
+  at (\cx, -5.15) {\rotatebox{90}{TIER 3}};
+\node[font=\bfseries\scriptsize, text=blue!70!black, align=center]
+  at (\rx+\colw/2+0.7, -5.15) {\rotatebox{-90}{SPECIFICITY}};
+\node[font=\scriptsize, text=blue!60!black, align=center]
+  at (\rx+\colw/2+1.1, -5.15) {\rotatebox{-90}{Amplifying}};
+
+%% ---- CENTER ARROWS with OLE label ----
+\draw[arrow] (\cx, -1.0) -- (\cx, -2.2);
+\draw[arrow] (\cx, -2.6) -- (\cx, -3.9);
+\draw[arrow] (\cx, -4.2) -- (\cx, -4.7);
+
+\node[font=\bfseries\scriptsize, text=gray!70!black, align=center,
+      fill=white, inner sep=1pt] at (\cx, -2.0) {\small $\downarrow$};
+
+% OLE vertical label along center arrows
+\node[font=\bfseries\small, text=gray!60!black, rotate=90]
+  at (\cx-0.45, -3.1) {Orientation};
+\node[font=\bfseries\small, text=gray!60!black, rotate=90]
+  at (\cx-0.45, -3.9) {$\to$ Lens};
+\node[font=\bfseries\small, text=gray!60!black, rotate=90]
+  at (\cx-0.45, -4.6) {$\to$ Expertise};
+
+%% ---- BOTTOM OLE FORMULA ----
+\node[font=\bfseries\normalsize, fill=gray!10, draw=gray!40,
+      rounded corners=3pt, inner sep=5pt, minimum width=9cm]
+  at (\cx, -6.6) {\textsc{ole}: Orientation $\to$ Lens $\to$ Expertise};
+
+%% ---- THRESHOLD LINE ----
+% Implied between rows 1 and 2 — annotate right side
+\draw[dashed, thick, red!60!black]
+  (\lx-\colw/2-0.1, -2.53) -- (\rx+\colw/2+0.1, -2.53);
+\node[font=\scriptsize\bfseries, text=red!60!black, align=left]
+  at (\cx, -2.35) {\scriptsize quality threshold ($\geq$33/45)};
+
+\end{tikzpicture}
+\caption{The three-tier model of creative quality, symmetric across reviewing (left) and authoring
+(right) roles. Tier~1 (orientation) is irreplaceable in both---its removal causes quality collapse
+regardless of role. Tier~2 (lens) is load-bearing---the minimum sufficient set for threshold
+crossing. Tier~3 (specificity) is amplifying---domain expertise lives here.}
+\label{fig:tier-model}
+\end{figure}

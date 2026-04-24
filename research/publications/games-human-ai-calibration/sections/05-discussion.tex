@@ -1,0 +1,52 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Why Technical Dimensions Are Reliable}
+
+Clarity, Solvability, and Confirmation Quality are verifiable against the puzzle's structure: a clue is either unambiguous or it is not; a solution path either exists or it does not; an answer confirmation mechanism either fires or it does not. A reviewer---human or AI---can assess these dimensions by working through the puzzle's logic without needing to simulate the experience of solving under conditions of ignorance. The evaluation criteria are explicit, non-hedonic, and do not depend on the reviewer's affective state or embodied experience.
+
+This structural verifiability explains both findings: why AI-human correlation is strong on technical dimensions (both human and AI reviewers are performing the same logical check) and why bias is absent (neither human nor AI reviewers have an affective investment that systematically tilts scores away from the verified assessment).
+
+The implication for practice is direct: AI panels are appropriate primary gatekeepers for technically verifiable quality. A puzzle that fails on Clarity or Solvability should fail the AI panel gate, and the AI verdict on this failure is as reliable as a human verdict would be. Deploying AI review as the first-pass Clarity/Solvability gate is justified by our calibration data.
+
+\subsection{Why Fun Is Irreducibly Unreliable}
+
+Fun is a hedonic judgment---it evaluates an experience, not a structure. The a-ha moment is not a property of the puzzle; it is a property of the solving event: the moment when the mechanism becomes visible, the sense of having been cleverly misled, the social pleasure of sharing the discovery. AI personas can model the structural conditions that tend to produce a-ha moments (high misdirection density, clean extraction, single-path uniqueness), but they cannot simulate whether the a-ha moment occurs for a specific solver in a specific solving context.
+
+The profile version result confirms this. The v2 profile upgrade substantially enriched the AI reviewers' vocabulary for evaluating Fun---introducing explicit frameworks for a-ha economy, misdirection structure, and solve-path clarity---but did not improve Fun calibration at all. A richer model of what Fun looks like from the outside does not substitute for the experience of Fun from the inside. This is a practical instance of the explanatory gap in philosophy of mind: structural description of a hedonic experience does not reduce to the experience itself.
+
+This finding suggests a principled limit on profile-enrichment as a calibration strategy: no amount of profile depth will close the Fun gap if the gap is constitutive of the difference between evaluation-by-inspection and evaluation-by-experience. Practitioners who require reliable Fun assessment must include human reviewers. AI Fun scores should be corrected for the mean bias ($+0.83$ at the threshold comparison step), and high-Fun-weight editorial decisions should require human sign-off.
+
+\subsection{Why Elegance Is Partially Reliable}
+
+Elegance occupies an intermediate position because it has two components. The structural component of Elegance---mechanism cleanliness, extraction necessity, absence of arbitrary elements---is assessable by inspection: a puzzle with unnecessary steps, redundant clues, or arbitrary extraction rules fails structural elegance regardless of how it feels to solve. The v2 profiles' explicit structural elegance framework captures this component, which accounts for the substantial improvement in Elegance calibration from v1 to v2 ($r = 0.49 \rightarrow 0.68$; $\Delta = -1.04 \rightarrow -0.54$).
+
+The hedonic component of Elegance---what human reviewers describe as ``aesthetic surplus'' beyond structural necessity---remains inaccessible to persona-based evaluation. This is the pleasure of a \emph{particularly} minimal mechanism, the aesthetic experience of mathematical sufficiency, what Participant A described as elegance ``in the mathematical sense.'' Profile enrichment can improve structural elegance evaluation; the hedonic component requires human reviewers who have internalized puzzle aesthetics through years of solving.
+
+\subsection{Implications for AI Panel Deployment}
+
+\textbf{Technical dimensions: use AI scores as-is.} Our calibration data supports using AI panel scores on Clarity, Solvability, and Confirmation Quality without correction. These scores are as reliable as a single additional human reviewer's scores on the same dimensions. Practitioners can set threshold conditions on technical dimensions using AI scores confidently.
+
+\textbf{Hedonic dimensions: apply bias correction.} AI Fun and Elegance scores systematically underestimate human expert assessments. Practitioners should apply the mean-bias corrections established in Section~\ref{sec:threshold}: add approximately $+0.83$ to AI Fun scores and $+0.58$ to AI Elegance scores when comparing against the 22/30 pass threshold. These are mean-shift corrections, not per-puzzle predictors---the LOO-CV $R^2$ values (Fun: 0.26; Elegance: 0.44) confirm that the per-puzzle regression lines in Table~\ref{tab:scaling} do not reliably predict individual puzzle human scores at $N=10$. The corrections should be treated as directional estimates to be refined as larger calibration samples become available.
+
+\textbf{Pass threshold recalibration.} The 22/30 pass threshold in AI-only review pipelines is effectively a 20.6/30 threshold in human-calibrated terms, due to systematic Fun and Elegance underestimation. Practitioners operating AI-only pipelines should lower the AI pass threshold to approximately 20--21/30 to maintain a comparable human-calibrated quality bar, or should require human review for puzzles scoring between 20 and 22/30 that would otherwise be excluded solely due to hedonic score depression.
+
+\textbf{Human review for final hedonic decisions.} For decisions where Fun and Elegance are primary quality criteria---selecting between near-threshold puzzles, curating for aesthetic coherence, evaluating meta-puzzle satisfaction---human reviewer involvement is not optional. AI panel scores are structurally inadequate for these decisions regardless of how the pass threshold is set.
+
+\subsection{A Generalizable Hypothesis}
+
+The reliability-by-dimension pattern we document is interpretable through a single hypothesis: \emph{AI evaluation reliability tracks criterion verifiability}. Criteria that can be verified by inspection of the artifact---does a unique solution path exist, is the presentation unambiguous---are reliably assessable by AI personas. Criteria that require the hedonic experience of engaging with the artifact---is this fun, is this aesthetically satisfying---are not.
+
+This hypothesis, if confirmed by replication, would generalize beyond puzzle hunt design. AI evaluation of academic papers may be more reliable for methodology soundness (verifiable: does the experimental design control for confounds?) than for novelty and impact (hedonic: does this work produce the intellectual excitement that marks a significant contribution?). AI evaluation of interactive fiction may be more reliable for internal consistency (verifiable) than for emotional resonance (hedonic). The calibration methodology we describe---per-criterion correlation and bias analysis against human expert ground truth---is transferable to any creative domain where an explicit evaluation rubric and accessible human expert sample are available.
+
+We emphasize that these cross-domain predictions are hypotheses generated by a single-domain study. Multi-domain replication---across game design, interactive fiction, and academic peer review---is needed to establish whether the criterion-verifiability principle holds as a general law or is a domain-specific observation from puzzle hunt evaluation. The current study provides a well-specified hypothesis and a replicable methodology, not a demonstrated general principle.
+
+\subsection{Limitations}
+
+\textbf{Small human expert sample.} N=5 human reviewers is at the lower bound for reliable ICC estimation and provides only 10 data points for per-dimension correlation analysis. The corrective scaling factors derived with this sample size have wide confidence intervals and should be treated as preliminary. Replication with N$\geq$10 human reviewers would substantially narrow the confidence intervals and improve the stability of the corrective factors.
+
+\textbf{Range-selection bias.} The 10 calibration puzzles were selected to span the AI panel score range, not sampled representatively from the production pipeline. This non-representative selection strategy likely inflates our Pearson $r$ estimates relative to correlations that would be observed on a representative puzzle sample. The directional findings (technical dimensions reliably scored; hedonic dimensions biased) are unlikely to reverse under representative sampling, but the specific $r$ values should be interpreted with this inflation in mind.
+
+\textbf{Community-specific expertise.} Human participants were drawn from the Microsoft puzzle hunt community, which has a specific aesthetic tradition shaped by 25 years of community practice. Expert evaluators from other puzzle hunt communities (MIT Mystery Hunt, various university hunts) may apply different standards, particularly on Elegance and Fun.
+
+\textbf{Profile library specificity.} The calibration results are specific to the v2 profile library. AI panels using a different set of reviewer personas---including our own v1 profiles---require separate calibration. The v1$\to$v2 transition documented in this paper is itself evidence that calibration results go stale after profile updates; organizations deploying AI review panels should plan for periodic recalibration triggered by model updates, profile library changes, or community standard shifts. A practical recalibration study requires approximately 20--30 puzzle-reviewer pairs to achieve stable per-dimension correlation estimates; the current $N=10$ should be treated as a minimum for obtaining directional estimates, not a sufficient sample for production use.

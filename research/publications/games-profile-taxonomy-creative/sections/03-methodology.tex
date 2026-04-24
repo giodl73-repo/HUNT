@@ -1,0 +1,93 @@
+\section{Methodology}
+
+\subsection{Authoring Ablation Design}
+\label{sec:ablation-design}
+
+We constructed a seven-condition authoring ablation that mirrors, layer by layer, the reviewer ablation reported in Paper~I~\cite{paper1}. Each condition adds exactly one element of authoring context to a fixed task; no condition removes context once introduced. The design isolates the marginal contribution of each context type while keeping the underlying task, domain, and evaluation rubric constant across all conditions.
+
+\textbf{A0 (Bare persona)} provides only a minimal role declaration: \textit{``You are a puzzle designer. Design a puzzle.''} No domain, no mechanism, no format, no quality criteria. This condition establishes the floor --- the output of role priming alone, without task specification or any domain knowledge.
+
+\textbf{A1 (Task specification)} adds a complete task description: domain (Age of Empires~II, Definitive Edition), mechanism (five-clue first-letter acrostic), fixed answer word (\textsc{tower}), and the scoring rubric against which the output will be evaluated. A1 is the minimum viable authoring prompt: a model that produces a puzzle satisfying A1 has received all logistically necessary information. The condition tests whether framework alone (task + rubric) can drive quality in the absence of domain grounding.
+
+\textbf{A2 (Domain world data)} adds the full locked AoE2 world data: civilization roster with bonuses and unique unit/technology pairings, unit statistics, technology tree with costs and prerequisites, and map pool with terrain properties. No design guidance accompanies the data. A2 tests whether domain expertise in isolation --- content richness without constructive framework --- improves output quality over bare task specification, or whether the framework is the operative variable.
+
+\textbf{A3 (Design principles)} adds all twenty design principles from the puzzle hunt toolkit \texttt{PRINCIPLES.md}, covering generative principles (Framing Is Structural, Reading Reward, Mechanism Owns the Domain) alongside craft principles governing clue fairness, extraction honesty, and solver trust. A3 represents the toolkit's contribution: domain-agnostic design wisdom that can be applied to any authoring context. The condition tests whether principled design guidance, without a specific designer's voice or construction sequence, is sufficient to cross the quality threshold.
+
+\textbf{A4 (Authoring philosophy)} adds Thomas Snyder's generative worldview: his account of how he starts designing --- backward from the target deduction, designing each constraint for what it closes off rather than what it states, structuring the solve path as a deliberate sequence rather than discovering it after clue-writing. The A4 profile contains no construction checklist; it captures worldview and starting orientation only. This condition isolates the contribution of a designer's philosophical frame, separable from the operational details of their construction practice.
+
+\textbf{A5 (Full authoring profile)} adds Snyder's complete construction profile: his six-step design sequence (deduction identification, uniqueness verification, entry-point placement, solve-path tracing, decorative stripping, extraction verification), his signature moves (single solve path, designed entry point, load-balanced constraints, answer-key-first structural verification), his voice register (clinical and declarative, without explanation), and an explicit list of construction avoidances (decorative elements, multiple valid extraction paths, noise-based difficulty, incomplete verification, ambiguous clue phrasing, thematic decoration separable from mechanism). A5 is the richest generative condition and the primary comparison point for the designer comparison study described in Section~\ref{sec:designer-comparison}.
+
+\textbf{A6 (Reviewer profile repurposed for authoring)} substitutes Snyder's C8-tier reviewing profile --- the same profile used as the most elaborated reviewer condition in Paper~I --- for the authoring profile of A5. The reviewing profile asks evaluation questions: does every step in the deduction sequence contribute load? Is the solve path unique? Are all constraints necessary and sufficient? A6 tests whether reviewing expertise transfers to authoring when the reviewing profile is the only generative context provided, and whether the profile's lens type mediates the quality of that transfer.
+
+Table~\ref{tab:conditions} summarizes all seven conditions, the context layers each provides, and the parallel reviewer condition in Paper~I's ablation.
+
+\begin{table}[h]
+\centering
+\caption{Authoring ablation conditions (A0--A6) with cumulative context layers and parallel reviewer conditions from Paper~I~\protect\cite{paper1}.}
+\label{tab:conditions}
+\begin{tabular}{llp{5.2cm}l}
+\toprule
+\textbf{Cond.} & \textbf{Cumulative context} & \textbf{Content added} & \textbf{Reviewer parallel} \\
+\midrule
+A0 & Bare persona & Role declaration only & C0 \\
+A1 & + Task specification & Domain, mechanism, answer word, scoring rubric & C1 \\
+A2 & + World data & AoE2 civs, units, technologies, maps (no design guidance) & C2 \\
+A3 & + Design principles & 20 toolkit principles (\texttt{PRINCIPLES.md}) & C3 \\
+A4 & + Authoring philosophy & Snyder generative worldview (backward design, deduction-first) & C4 \\
+A5 & + Full authoring profile & Snyder construction sequence, signature moves, voice, avoidances & C5 \\
+A6 & Reviewer profile as author & Snyder C8 reviewing profile substituted for A5 content & C6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Designer Comparison Design}
+\label{sec:designer-comparison}
+
+We extended the ablation with a 3-designer $\times$ 2-mode comparison, yielding six additional authored puzzles. The three designers --- Thomas Snyder, Dan Katz, and Dana Young --- are the same domain experts whose C8-tier reviewing profiles were used in Paper~I. Selecting the same experts for both studies enables direct cross-study comparison and controls for domain expertise as a confound: any quality difference between modes reflects the profile type, not the underlying expertise level.
+
+Each designer authored puzzles in two conditions. The \textbf{A5 mode} used a full authoring profile constructed specifically for this study. Authoring profiles are generatively oriented: they ask how the designer \emph{starts} designing (worldview and entry point), document their signature construction moves, characterize their voice and register, and enumerate what they avoid by instinct. These profiles are distinct from reviewing profiles in orientation and question frame, even when the underlying expertise is identical.
+
+The three A5 profiles differ substantially in starting orientation. Snyder starts with the target deduction; Katz starts with the answer word and works backward from the aha moment; Young starts with the world, asking what it feels like to be inside the domain as an expert before selecting a mechanism. This divergence in starting orientation is not incidental --- it structures the different construction sequences that follow and is the primary reason authoring profiles cannot be derived from reviewing profiles by simple inversion.
+
+The \textbf{A6 mode} used each designer's existing C8 reviewing profile from Paper~I, presented to the generation model as authoring guidance without modification. This condition tests whether the reviewing profile, which asks evaluative rather than generative questions, transfers to authoring without redesign, and whether the answer depends on the reviewing lens the designer applies.
+
+\subsection{Profile Lens Taxonomy}
+\label{sec:lens-taxonomy}
+
+The designer comparison findings are structured by three lens categories that emerged from analysis of the A5 and A6 profiles across all three designers.
+
+\textbf{Operational lenses} (exemplified by Katz) consist of named testable operations: the short-circuit check (can the solver guess the answer after two clues?), the Computer Test (is this the kind of puzzle a program could generate without domain knowledge?), the backwards read (does each clue uniquely identify its intended item when read in extraction direction?), and the Blame-the-Player test (after solving, does the solver feel they should have known each answer?). Operational tests are applied to finished puzzles as evaluation checks, but each inverts cleanly into an authoring-time constraint. ``Would a solver short-circuit after clue 2?'' becomes ``ensure that no subset of $k < n$ clues reveals the answer''; ``Does this clue work in any domain?'' becomes ``every clue must require AoE2-specific knowledge to solve.'' The inversion is direct and lossless.
+
+\textbf{Construction-facing lenses} (exemplified by Snyder) ask questions about deduction uniqueness and load-bearing constraint structure. In a reviewing context, these are applied as checks: is the solve path unique? Does removing any single clue allow the deduction to fail? In an authoring context, these are already generative: ``build each constraint so that removing it allows the deduction to fail'' is an authoring instruction, not a post-hoc check. For construction lenses, the distinction between reviewing and authoring profiles collapses. The A5 and A6 profiles are functionally equivalent, which predicts (and is confirmed by) the near-zero score difference between Snyder's two modes.
+
+\textbf{Perceptual lenses} (exemplified by Young) ask questions about visual grammar consistency, layout hierarchy resolution, and the visual landing of the final answer. These checks require finished visual or experiential material to apply: ``does the layout hierarchy guide the eye to the entry point?'' presupposes a layout. In a text-only format --- a printed or plaintext puzzle hunt feeder with no graphic design layer --- the material the perceptual lens requires does not exist. Perceptual checks cannot be applied during construction in this format, and they cannot be meaningfully inverted into authoring constraints when the format cannot supply the medium they require. This makes perceptual lenses format-dependent in a way that operational and construction lenses are not.
+
+\subsection{Authoring Task}
+\label{sec:task}
+
+All 13 conditions (A0--A6 plus 6 designer comparison conditions) used a single fixed authoring task. The domain was Age of Empires~II (Definitive Edition), with a locked world data file containing the full civilization roster, unit statistics, technology tree, and map pool as used in Paper~I. Locking the world data ensures that any quality difference between conditions reflects profile context, not variation in how models retrieve or weigh domain knowledge.
+
+The mechanism was knowledge extraction: five clues, each identifying one AoE2 item (civilization, unit, technology, or map), where the first letter of each identified item spells the answer word. The answer word was \textsc{tower}, fixed across all 13 conditions. The output format was a complete puzzle hunt feeder puzzle as the solver would encounter it --- problem statement, five clues, extraction instruction --- plus a solution key identifying each intended AoE2 item and tracing each extraction letter.
+
+\subsection{Evaluation Rubric}
+\label{sec:rubric}
+
+Puzzles were evaluated on a seven-dimension weighted rubric totaling 45 points. Each dimension is scored 1--5 by the reviewer panel; Elegance and Reading Reward are double-weighted (each contributing up to 10 points) because both are the strongest tier discriminators in our calibration data from Paper~I~\cite{paper1}. The remaining five dimensions are single-weighted (each contributing up to 5 points).
+
+\textbf{Clarity} (1--5) measures whether a solver can determine what action the puzzle requires from the instructions alone, without ambiguity about the extraction mechanism or clue format.
+
+\textbf{Solvability} (1--5) measures whether all five clues are resolvable by a solver with AoE2 domain knowledge, where a score of 5 requires that each clue uniquely identifies one AoE2 item and that no other item satisfies the clue description with the same initial letter.
+
+\textbf{Elegance} ($\times 2$, 2--10) measures construction economy: a score of 5 (10 after weighting) requires that every clue phrase does double duty, constraining both the item's category and its specific identity, with no decorative language present and no clue phrase redundant with another.
+
+\textbf{Reading Reward} ($\times 2$, 2--10) measures the quality of the solving experience --- whether the puzzle produces the deductive satisfaction characteristic of well-constructed puzzle hunt feeders, rather than the experience of a domain knowledge quiz. High scores require that each clue lands as recognition (``of course'') rather than lookup or guesswork.
+
+\textbf{Fun} (1--5) captures overall solver enjoyment as rated by the panel using their own experience as the reference frame.
+
+\textbf{Confirmation} (1--5) measures whether the answer word \textsc{tower} arrives as a satisfying conclusion --- whether, at the moment of extraction, the answer reframes what the solver just did rather than appearing arbitrary.
+
+\textbf{Riven Standard} (1--5) measures domain integration depth: a score of 1 indicates that the domain theme is decorative and any content domain could be substituted without changing the puzzle's mechanism; a score of 5 indicates that the mechanism is inseparable from the specific domain, and the puzzle could not exist outside of AoE2. The name references Riven and Myst as canonical examples of world-mechanism integration in game design. All A-series conditions using the first-letter acrostic mechanism are expected to cap below 4 on this dimension, since the acrostic is imported from puzzle hunt tradition rather than derived from AoE2's internal logic.
+
+The rubric is a proxy for creative quality, not a direct measure. The double-weighting of Elegance and Reading Reward reflects their alignment with established computational creativity criteria: Elegance maps to Boden's \emph{combinational creativity} criterion~\cite{boden2004creative} --- novel but valued recombination of existing elements, where economy of expression signals that the combination is doing genuine work --- and Reading Reward maps to the SPECS framework's \emph{domain-competent} criterion~\cite{jordanous2012standardised}, which requires that outputs demonstrate knowledge of the domain rather than merely invoking its surface vocabulary. The Riven Standard dimension operationalizes Boden's \emph{exploratory creativity} criterion: working within an established conceptual space (here, AoE2's unit and technology relationships) rather than importing structure from outside it. The rubric has face validity established against 15 real puzzle hunt puzzles spanning three quality tiers in Paper~I's Experiment~4~\cite{paper1}, where the same seven dimensions separated tier populations with no overlapping score distributions.
+
+The pass threshold is a panel average of 33/45 (73\% of maximum; this ratio matches the 22/30 = 0.733 threshold used in Paper~I's reviewer ablation~\cite{paper1}, which was calibrated against the quality level at which puzzles in well-regarded MIT Mystery Hunt and Microsoft Puzzlehunt rounds have shipped). All 13 puzzles were evaluated by the same three-reviewer C8 panel (Katz, Snyder, Young, each presented with trimmed credentials and three injected design principles to fix the evaluation context). All 13 puzzles were read by the panel before any scores were assigned, ensuring calibration consistency across conditions and eliminating the session-order drift that would otherwise make cross-condition score comparisons unreliable.
