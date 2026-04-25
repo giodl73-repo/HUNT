@@ -825,4 +825,4 @@ WOLOLO coverage: O appears in 4/5 words, L appears in 4/5 words. **More than suf
 
 ---
 
-*Report generated 2026-02-27. All file references are to `C:\src\puzzlehunt\scenarios\age-of-empires\world\`.*
+*Report generated 2026-02-27. All file references are to `puzzlehunt\scenarios\age-of-empires\world\`.*

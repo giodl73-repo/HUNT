@@ -128,7 +128,7 @@ All 19 SHA-256 hashes computed from `SHA256(ANSWER.toUpperCase().trim())` and wr
 
 ### Option A — Local (for in-person play on a local network)
 ```bash
-cd C:/src/puzzlehunt/scenarios/space-game/delivery/site/
+cd puzzlehunt/scenarios/space-game/delivery/site/
 # Use any static file server:
 npx serve .
 # or: python3 -m http.server 8080
@@ -137,7 +137,7 @@ npx serve .
 
 ### Option B — GitHub Pages (free, permanent URL)
 ```bash
-cd C:/src/puzzlehunt/scenarios/space-game/delivery/site/
+cd puzzlehunt/scenarios/space-game/delivery/site/
 git init
 git add .
 git commit -m "DEAD RECKONING — hunt site"

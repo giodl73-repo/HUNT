@@ -240,7 +240,7 @@ This was bug #7 in `BUGS.md`. It stays blocking for every scenario.
 - **Outstanding bugs:** tracked in `BUGS.md` — fixable issues become toolkit
   improvements, which are then backported.
 - **Backport loop:** every toolkit change is mirrored to
-  `C:\src\reference\puzzle-hunt\` and `.claude/skills/` (see `CLAUDE.md` for the
+  `reference\puzzle-hunt\` and `.claude/skills/` (see `CLAUDE.md` for the
   checklist).
 
 ---

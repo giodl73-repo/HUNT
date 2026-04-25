@@ -13,7 +13,7 @@ A reusable framework for building puzzle hunts with Claude Code. Two audiences:
 1. **Develop** toolkit features in `toolkit/`
 2. **Test** by running scenarios in `scenarios/`
 3. **Track bugs** in `BUGS.md`
-4. **Backport** improvements to `C:\src\reference\puzzle-hunt\` and `.claude/skills/`
+4. **Backport** improvements to `reference\puzzle-hunt\` and `.claude/skills/`
 
 ## Active Test Scenario
 
@@ -45,6 +45,6 @@ puzzlehunt/
 
 When a toolkit improvement is ready:
 - [ ] Update `toolkit/` files
-- [ ] Update corresponding files in `C:\src\reference\.claude\skills\`
-- [ ] Update `C:\src\reference\puzzle-hunt\PRINCIPLES.md` if principles changed
+- [ ] Update corresponding files in `reference\.claude\skills\`
+- [ ] Update `reference\puzzle-hunt\PRINCIPLES.md` if principles changed
 - [ ] Commit in both repos

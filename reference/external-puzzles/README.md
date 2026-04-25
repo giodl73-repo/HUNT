@@ -14,7 +14,7 @@ Real puzzle hunt puzzles collected for research use. These are publicly availabl
 ## Usage
 
 These puzzles were classified by an AI expert panel (Dan Katz, Thomas Snyder, Dana Young profiles) and then subjected to an 8-condition ablation study. Results are in:
-`C:\src\craftworks\research\games\games-ai-expert-panel-creative\results\`
+`craftworks\research\games\games-ai-expert-panel-creative\results\`
 
 ## Selected for ablation (5-5-5 corpus)
 
