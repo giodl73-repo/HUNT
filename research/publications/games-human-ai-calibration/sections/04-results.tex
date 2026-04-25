@@ -6,8 +6,8 @@ Figure~\ref{fig:studydesign} illustrates the overall study design and analysis f
 \begin{figure}[t]
 \centering
 \begin{tikzpicture}[
-  box/.style={draw, rounded corners, minimum height=1cm, minimum width=3.2cm, text centered, font=\small, fill=gray!8},
-  wbox/.style={draw, rounded corners, minimum height=1cm, minimum width=3.2cm, text centered, font=\small, fill=blue!8},
+  box/.style={draw, rounded corners, minimum height=1cm, minimum width=3.2cm, align=center, text width=2.8cm, font=\small, fill=gray!8},
+  wbox/.style={draw, rounded corners, minimum height=1cm, minimum width=3.2cm, align=center, text width=2.8cm, font=\small, fill=blue!8},
   arr/.style={->, thick, >=stealth},
   node distance=0.6cm and 1.6cm
 ]
@@ -95,24 +95,24 @@ The three technical dimensions show uniformly strong AI-human correlation, with 
     width=0.82\textwidth,
     height=6.2cm,
     xlabel={Pearson $r$ (AI panel mean vs.\ human panel mean)},
-    symbolic y coords={{Fun (FN)},{Elegance (EL)},{Rdg.\ Reward (RR)},{Confirmation (CQ)},{Solvability (SO)},{Clarity (CL)}},
+    symbolic y coords={{Fun},{Elegance},{Rdg Reward},{Confirmation},{Solvability},{Clarity}},
     ytick=data,
     y tick label style={font=\small},
     xmin=0, xmax=1.15,
     xtick={0,0.2,0.4,0.6,0.8,1.0},
     bar width=7pt,
     enlarge y limits=0.14,
-    error bars/.cd, x dir=both, x explicit,
+    error bars/x dir=both, error bars/x explicit,
     every axis plot/.append style={fill=blue!25, draw=blue!55},
 ]
 \addplot+[]
 coordinates {
-    (0.88,{Clarity (CL)})      +- (0.22,0.08)
-    (0.84,{Solvability (SO)})  +- (0.26,0.11)
-    (0.86,{Confirmation (CQ)}) +- (0.23,0.10)
-    (0.74,{Rdg.\ Reward (RR)}) +- (0.37,0.17)
-    (0.68,{Elegance (EL)})     +- (0.42,0.21)
-    (0.52,{Fun (FN)})          +- (0.49,0.29)
+    (0.88,{Clarity})      +- (0.22,0.08)
+    (0.84,{Solvability})  +- (0.26,0.11)
+    (0.86,{Confirmation}) +- (0.23,0.10)
+    (0.74,{Rdg Reward}) +- (0.37,0.17)
+    (0.68,{Elegance})     +- (0.42,0.21)
+    (0.52,{Fun})          +- (0.49,0.29)
 };
 \end{axis}
 \end{tikzpicture}
@@ -153,24 +153,24 @@ Three patterns emerge. Technical dimensions show no significant bias: the signed
     width=0.82\textwidth,
     height=6.2cm,
     xlabel={Signed difference ($\bar{x}_{AI} - \bar{x}_{H}$); \textit{negative = AI underestimates}},
-    symbolic y coords={Fun,Elegance,{Rdg.\ Reward},Confirmation,Solvability,Clarity},
+    symbolic y coords={Fun,Elegance,{Rdg Reward},Confirmation,Solvability,Clarity},
     ytick=data,
     y tick label style={font=\small},
     xmin=-1.7, xmax=0.35,
     xtick={-1.5,-1.0,-0.5,0,0.3},
     xticklabel style={font=\small},
     enlarge y limits=0.14,
-    error bars/.cd, x dir=both, x explicit,
+    error bars/x dir=both, error bars/x explicit,
     every axis plot/.append style={mark=square*, mark size=2.5pt, fill=black},
 ]
 \addplot+[only marks]
 coordinates {
-    (-0.12, Clarity)         +- (0.16,0.16)
-    (-0.09, Solvability)     +- (0.15,0.15)
-    (-0.14, Confirmation)    +- (0.17,0.17)
-    (-0.31, {Rdg.\ Reward})  +- (0.33,0.33)
-    (-0.58, Elegance)        +- (0.52,0.52)
-    (-0.83, Fun)             +- (0.44,0.44)
+    (-0.12,Clarity)         +- (0.16,0.16)
+    (-0.09,Solvability)     +- (0.15,0.15)
+    (-0.14,Confirmation)    +- (0.17,0.17)
+    (-0.31, {Rdg Reward})  +- (0.33,0.33)
+    (-0.58,Elegance)        +- (0.52,0.52)
+    (-0.83,Fun)             +- (0.44,0.44)
 };
 \draw[dashed, gray!70, thick] (axis cs:0,-0.5) -- (axis cs:0,6.5)
     node[above, font=\scriptsize, gray!70] {no bias};
@@ -214,7 +214,7 @@ The v2 upgrade substantially improves calibration across all dimensions \emph{ex
     width=0.90\textwidth,
     height=5.8cm,
     ylabel={Pearson $r$ (AI vs.\ human)},
-    symbolic x coords={Clarity,Solvability,Confirmation,{Rdg.\ Reward},Elegance,Fun},
+    symbolic x coords={Clarity,Solvability,Confirmation,{Rdg Reward},Elegance,Fun},
     xtick=data,
     x tick label style={font=\small, rotate=25, anchor=east},
     ymin=0, ymax=1.05,
@@ -225,11 +225,11 @@ The v2 upgrade substantially improves calibration across all dimensions \emph{ex
 ]
 \addplot+[fill=gray!45, draw=gray!65]
 coordinates {
-    (Clarity,0.81)(Solvability,0.79)(Confirmation,0.78)({Rdg.\ Reward},0.62)(Elegance,0.49)(Fun,0.51)
+    (Clarity,0.81)(Solvability,0.79)(Confirmation,0.78)({Rdg Reward},0.62)(Elegance,0.49)(Fun,0.51)
 };
 \addplot+[fill=blue!40, draw=blue!65]
 coordinates {
-    (Clarity,0.88)(Solvability,0.84)(Confirmation,0.86)({Rdg.\ Reward},0.73)(Elegance,0.68)(Fun,0.52)
+    (Clarity,0.88)(Solvability,0.84)(Confirmation,0.86)({Rdg Reward},0.73)(Elegance,0.68)(Fun,0.52)
 };
 \legend{v1 profiles, v2 profiles}
 \end{axis}
