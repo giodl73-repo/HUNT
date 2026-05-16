@@ -48,3 +48,29 @@ When a toolkit improvement is ready:
 - [ ] Update corresponding files in `reference\.claude\skills\`
 - [ ] Update `reference\puzzle-hunt\PRINCIPLES.md` if principles changed
 - [ ] Commit in both repos
+
+
+---
+
+## proof — documentation linting and guide compilation
+
+proof is the markdown QA and compilation tool for this repo. Binary lives at
+`C:/src/target/debug/proof` (workspace build — run `cd C:/src && cargo build` once).
+
+```bash
+# Lint all markdown
+C:/src/target/debug/proof check .
+
+# Compile guides: src/guides/ → docs/guides/
+bash scripts/build-guides.sh
+
+# Watch mode — recompiles on every save
+C:/src/target/debug/proof compile --watch
+
+# Check without writing
+bash scripts/build-guides.sh --check
+```
+
+Source guides go in `src/guides/*.source.md`. Compiled output lands in `docs/guides/`.
+Directives: `proof:tree`, `proof:element`, `proof:math`, `proof:bullets`, `proof:callout`.
+See `C:/src/proof/docs/guides/07-compile.md` for the full directive reference.
