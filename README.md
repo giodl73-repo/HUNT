@@ -5,6 +5,10 @@ agent that knows what good hunts look like, whose review gates block you until t
 clears the bar, and whose authors, editors, testers, and prop managers are all the same
 LLM playing different roles from different files.
 
+**Review roles:** This repo uses
+[ROLES](https://github.com/giodl73-repo/ROLES), the `.roles` convention for
+repository-local review panels.
+
 This is one of the first large, multi-stage **skills pipelines** built on Claude Code:
 17 slash-command skills, 30 reviewer personas, 12 solver archetypes, 20 design
 principles with failing/passing tests, and a crash-safe 11-stage workflow that has
