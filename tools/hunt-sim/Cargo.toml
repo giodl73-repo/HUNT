@@ -1,0 +1,13 @@
+[package]
+name = "hunt-sim"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[[bin]]
+name = "hunt-sim"
+path = "src/main.rs"
+
+[dependencies]
+rally-core = { git = "https://github.com/giodl73-repo/RALLY.git" }

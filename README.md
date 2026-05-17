@@ -111,6 +111,17 @@ Stage 11  POLISH             final pass, hints, answer encoding
 You can loop back to any earlier stage. The panel's job at each gate is to catch what
 you can't see.
 
+## Simulator
+
+`tools/hunt-sim/` is the RALLY-backed puzzle-hunt simulation pilot. It starts
+with `scenarios/wavelength/` and reports seeded feeder solve times, hint
+pressure, meta readiness, and target-window findings.
+
+```powershell
+cd tools\hunt-sim
+cargo run --quiet -- --seed wavelength-smoke
+```
+
 ---
 
 ## The skills
