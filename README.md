@@ -121,6 +121,7 @@ pressure, meta readiness, and target-window findings.
 cd tools\hunt-sim
 cargo run --quiet -- --seed wavelength-smoke
 cargo run --quiet -- --seed wavelength-smoke --runs 12
+cargo run --quiet -- --seed wavelength-smoke --compare-variants --runs 12
 ```
 
 ---

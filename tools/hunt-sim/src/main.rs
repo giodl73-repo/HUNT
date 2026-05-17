@@ -56,6 +56,62 @@ struct BatchSummary {
     bottlenecks: Vec<(&'static str, u32)>,
 }
 
+#[derive(Debug, Clone, Copy)]
+struct HuntVariant {
+    name: &'static str,
+    hard_feeder_relief: u32,
+    hint_threshold_shift: i32,
+    meta_base_reduction: u32,
+    parallelism_bonus: usize,
+}
+
+const BASELINE: HuntVariant = HuntVariant {
+    name: "baseline",
+    hard_feeder_relief: 0,
+    hint_threshold_shift: 0,
+    meta_base_reduction: 0,
+    parallelism_bonus: 0,
+};
+
+const VARIANTS: &[HuntVariant] = &[
+    BASELINE,
+    HuntVariant {
+        name: "stronger-hints",
+        hard_feeder_relief: 0,
+        hint_threshold_shift: -10,
+        meta_base_reduction: 0,
+        parallelism_bonus: 0,
+    },
+    HuntVariant {
+        name: "p5-p6-clue-relief",
+        hard_feeder_relief: 1,
+        hint_threshold_shift: 0,
+        meta_base_reduction: 0,
+        parallelism_bonus: 0,
+    },
+    HuntVariant {
+        name: "meta-prop-clarity",
+        hard_feeder_relief: 0,
+        hint_threshold_shift: 0,
+        meta_base_reduction: 8,
+        parallelism_bonus: 0,
+    },
+    HuntVariant {
+        name: "team-parallelism",
+        hard_feeder_relief: 0,
+        hint_threshold_shift: 0,
+        meta_base_reduction: 0,
+        parallelism_bonus: 1,
+    },
+    HuntVariant {
+        name: "guided-final-set",
+        hard_feeder_relief: 1,
+        hint_threshold_shift: -8,
+        meta_base_reduction: 4,
+        parallelism_bonus: 0,
+    },
+];
+
 const WAVELENGTH: &[Puzzle] = &[
     Puzzle {
         id: "P1",
@@ -118,11 +174,40 @@ fn main() {
     let runs = option_value("--runs")
         .and_then(|value| value.parse::<usize>().ok())
         .unwrap_or(1);
+    if has_flag("--compare-variants") {
+        let runs = runs.max(12);
+        println!("HUNT simulator: WAVELENGTH variant comparison");
+        println!("seed: {seed}");
+        println!("runs_per_variant: {}", runs * TEAM_PROFILES.len());
+        for variant in VARIANTS {
+            let results = simulate_batch(&seed, runs, *variant);
+            let summary = summarize_batch(&results);
+            println!(
+                "variant:{} avg_minutes={:.1} p95={} pass_rate={:.1}% avg_hints={:.1} top_bottleneck={}",
+                variant.name,
+                summary.average_minutes,
+                summary.p95_minutes,
+                summary.pass_rate,
+                summary.average_hints,
+                summary
+                    .bottlenecks
+                    .first()
+                    .map(|(id, count)| format!("{id}:{count}"))
+                    .unwrap_or_else(|| "-".to_string())
+            );
+        }
+        return;
+    }
+    let variant = option_value("--variant")
+        .as_deref()
+        .and_then(find_variant)
+        .unwrap_or(BASELINE);
     if runs > 1 {
-        let results = simulate_batch(&seed, runs);
+        let results = simulate_batch(&seed, runs, variant);
         let summary = summarize_batch(&results);
         println!("HUNT simulator: WAVELENGTH batch");
         println!("seed: {seed}");
+        println!("variant: {}", variant.name);
         println!("runs: {}", summary.runs);
         println!("average_minutes: {:.1}", summary.average_minutes);
         println!("p95_minutes: {}", summary.p95_minutes);
@@ -134,9 +219,10 @@ fn main() {
         return;
     }
 
-    let result = simulate_wavelength(&seed, TEAM_PROFILES[1]);
+    let result = simulate_wavelength(&seed, TEAM_PROFILES[1], variant);
     println!("HUNT simulator: WAVELENGTH");
     println!("run_id: {}", result.run.run_id);
+    println!("variant: {}", variant.name);
     println!("status: {}", result.report.status());
     println!("team: {}", result.team.id);
     println!("total_minutes: {}", result.total_minutes);
@@ -155,6 +241,10 @@ fn main() {
     }
 }
 
+fn has_flag(name: &str) -> bool {
+    env::args().any(|arg| arg == name)
+}
+
 fn option_value(name: &str) -> Option<String> {
     let args = env::args().collect::<Vec<_>>();
     args.windows(2)
@@ -162,11 +252,18 @@ fn option_value(name: &str) -> Option<String> {
         .map(|pair| pair[1].clone())
 }
 
-fn simulate_batch(seed: &str, runs: usize) -> Vec<HuntResult> {
+fn find_variant(name: &str) -> Option<HuntVariant> {
+    VARIANTS
+        .iter()
+        .copied()
+        .find(|variant| variant.name == name)
+}
+
+fn simulate_batch(seed: &str, runs: usize, variant: HuntVariant) -> Vec<HuntResult> {
     (0..runs)
         .flat_map(|idx| {
             TEAM_PROFILES.iter().map(move |profile| {
-                simulate_wavelength(&format!("{seed}-{idx}-{}", profile.id), *profile)
+                simulate_wavelength(&format!("{seed}-{idx}-{}", profile.id), *profile, variant)
             })
         })
         .collect()
@@ -215,19 +312,19 @@ fn summarize_batch(results: &[HuntResult]) -> BatchSummary {
     }
 }
 
-fn simulate_wavelength(seed: &str, profile: TeamProfile) -> HuntResult {
-    let run = SimulationRun::new("hunt-sim", "wavelength", seed);
+fn simulate_wavelength(seed: &str, profile: TeamProfile, variant: HuntVariant) -> HuntResult {
+    let run = SimulationRun::new("hunt-sim", &format!("wavelength-{}", variant.name), seed);
     let mut rng = run.rng();
     let mut team = SolverTeam {
         id: profile.id,
         skill: profile.skill,
-        parallelism: profile.parallelism,
+        parallelism: profile.parallelism + variant.parallelism_bonus,
         trace: ActorTrace::new(profile.id, "solver-team"),
     };
 
     let mut solved = WAVELENGTH
         .iter()
-        .map(|puzzle| solve_puzzle(puzzle, &mut team, &mut rng))
+        .map(|puzzle| solve_puzzle(puzzle, &mut team, &mut rng, variant))
         .collect::<Vec<_>>();
     solved.sort_by_key(|solved| solved.minutes);
 
@@ -237,7 +334,8 @@ fn simulate_wavelength(seed: &str, profile: TeamProfile) -> HuntResult {
         .sum::<u32>();
     let meta_ready_count = solved.len().min(5);
     let missing_penalty = if meta_ready_count >= 5 { 8 } else { 25 };
-    let meta_minutes = 18 + rng.next_bounded(15) + missing_penalty;
+    let meta_minutes =
+        18u32.saturating_sub(variant.meta_base_reduction) + rng.next_bounded(15) + missing_penalty;
     team.trace.record_action();
     let total_minutes = feeder_wall_clock + meta_minutes;
 
@@ -281,6 +379,8 @@ fn simulate_wavelength(seed: &str, profile: TeamProfile) -> HuntResult {
             SimulationMetric::new("target_window_used", percent_of(total_minutes, 180)),
             SimulationMetric::new("total_hints", total_hints as f64),
             SimulationMetric::new("team_actions", 7.0),
+            SimulationMetric::new("hard_feeder_relief", variant.hard_feeder_relief as f64),
+            SimulationMetric::new("parallelism_bonus", variant.parallelism_bonus as f64),
         ],
         report: ValidationReport {
             subject: "wavelength".to_string(),
@@ -289,15 +389,27 @@ fn simulate_wavelength(seed: &str, profile: TeamProfile) -> HuntResult {
     }
 }
 
-fn solve_puzzle(puzzle: &Puzzle, team: &mut SolverTeam, rng: &mut RunSeed) -> SolvedPuzzle {
-    let base = 12 + puzzle.difficulty * 12 + puzzle.answer_len;
+fn solve_puzzle(
+    puzzle: &Puzzle,
+    team: &mut SolverTeam,
+    rng: &mut RunSeed,
+    variant: HuntVariant,
+) -> SolvedPuzzle {
+    let difficulty = if matches!(puzzle.id, "P5" | "P6") {
+        puzzle.difficulty.saturating_sub(variant.hard_feeder_relief)
+    } else {
+        puzzle.difficulty
+    };
+    let base = 12 + difficulty * 12 + puzzle.answer_len;
     let noise = rng.next_bounded(18);
     let skill_discount = team.skill * 4;
     let minutes = base + noise - skill_discount.min(base / 2);
-    let hints = if minutes > 70 {
+    let first_hint_threshold = (50 + variant.hint_threshold_shift).max(25) as u32;
+    let second_hint_threshold = (70 + variant.hint_threshold_shift).max(40) as u32;
+    let hints = if minutes > second_hint_threshold {
         team.trace.record_blocked_turn();
         2
-    } else if minutes > 50 {
+    } else if minutes > first_hint_threshold {
         1
     } else {
         0
@@ -317,8 +429,8 @@ mod tests {
 
     #[test]
     fn wavelength_sim_is_repeatable() {
-        let left = simulate_wavelength("fixed", TEAM_PROFILES[1]);
-        let right = simulate_wavelength("fixed", TEAM_PROFILES[1]);
+        let left = simulate_wavelength("fixed", TEAM_PROFILES[1], BASELINE);
+        let right = simulate_wavelength("fixed", TEAM_PROFILES[1], BASELINE);
 
         assert_eq!(left.total_minutes, right.total_minutes);
         assert_eq!(left.solved[0].minutes, right.solved[0].minutes);
@@ -326,7 +438,7 @@ mod tests {
 
     #[test]
     fn wavelength_sim_solves_all_feeders_and_meta() {
-        let result = simulate_wavelength("coverage", TEAM_PROFILES[1]);
+        let result = simulate_wavelength("coverage", TEAM_PROFILES[1], BASELINE);
 
         assert_eq!(result.solved.len(), 6);
         assert!(result.meta_minutes > 0);
@@ -335,11 +447,24 @@ mod tests {
 
     #[test]
     fn batch_summary_reports_pass_rate_and_bottlenecks() {
-        let results = simulate_batch("batch", 3);
+        let results = simulate_batch("batch", 3, BASELINE);
         let summary = summarize_batch(&results);
 
         assert_eq!(summary.runs, 9);
         assert!(summary.average_minutes > 0.0);
         assert_eq!(summary.bottlenecks.len(), 6);
+    }
+
+    #[test]
+    fn guided_final_set_improves_pass_rate() {
+        let baseline = summarize_batch(&simulate_batch("variant", 12, BASELINE));
+        let guided = summarize_batch(&simulate_batch(
+            "variant",
+            12,
+            find_variant("guided-final-set").unwrap(),
+        ));
+
+        assert!(guided.pass_rate >= baseline.pass_rate);
+        assert!(guided.average_minutes <= baseline.average_minutes);
     }
 }
