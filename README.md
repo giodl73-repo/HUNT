@@ -122,6 +122,7 @@ cd tools\hunt-sim
 cargo run --quiet -- --seed wavelength-smoke
 cargo run --quiet -- --seed wavelength-smoke --runs 12
 cargo run --quiet -- --seed wavelength-smoke --compare-variants --runs 12
+cargo run --quiet -- --scenario boardgames --seed game-night-smoke --compare-variants --runs 12
 ```
 
 ---
