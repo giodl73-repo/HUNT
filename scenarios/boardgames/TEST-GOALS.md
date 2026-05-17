@@ -70,7 +70,7 @@ Fill in during and after the scenario.
 | G4 | | |
 | G5 | | |
 | G6 | | |
-| G7 | | |
+| G7 | Simulator follow-up: serial admin review is the schedule bottleneck; `parallel-review` and `ship-room` variants materially improve target-window success. | PROMOTE |
 | G8 | | |
 
 ---

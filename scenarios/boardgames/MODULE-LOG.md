@@ -6,6 +6,25 @@ This log captures the human side of the authoring process: who asked for help, w
 
 ---
 
+## Simulator follow-up
+
+After the live scenario, `tools/hunt-sim` replayed Game Night as a seeded
+multi-author simulation. The comparison run found that the original serial admin
+workflow is the schedule bottleneck: baseline integration exceeded the target
+window, while `parallel-review` moved most runs back inside it. The strongest
+variant was `ship-room`, which combines:
+
+1. parallel review lanes for submitted modules,
+2. explicit editorial relief for Speedster/Social-style cleanup,
+3. lightweight meta briefing before final answer lock,
+4. admin standups to close Lurker-style visibility gaps.
+
+Recommendation for future Game Night-style hunts: keep module isolation, but do
+not keep review serial. The Captain should run a ship-room cadence once the
+first module lands.
+
+---
+
 ## Timeline
 
 ### Hour 0:00 — Briefs Issued

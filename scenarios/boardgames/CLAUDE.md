@@ -94,3 +94,24 @@ Reusing solver profiles as author personalities — tests whether the profiles a
 4. **Conflict resolution** — what happens when The Rebel disagrees?
 5. **Meta dependency** — meta can't start until all 5 answers are locked
 6. **Integration** — do 5 independently authored puzzles feel like one hunt?
+
+## Simulator-backed operating guidance
+
+`tools/hunt-sim` now includes a Game Night mode that pressure-tests this
+scenario's multi-author risks:
+
+```powershell
+cd tools\hunt-sim
+cargo run --quiet -- --scenario boardgames --seed game-night-smoke --compare-variants --runs 12
+```
+
+The useful product finding is that serial review is the dominant schedule risk.
+The baseline simulation regularly overruns the 2-3 hour window because module
+review, rework, and meta integration queue behind one admin. `parallel-review`
+is the first major unlock, and `ship-room` is the recommended operating mode for
+future multi-author hunts: parallel review lanes, explicit editorial relief,
+light meta briefing, and admin standups for low-visibility authors.
+
+For this scenario, treat `ship-room` as the postmortem recommendation rather
+than a retcon of the recorded run. The original log remains the evidence of what
+happened; the simulator finding is the workflow to use next time.

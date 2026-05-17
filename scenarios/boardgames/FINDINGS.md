@@ -220,6 +220,19 @@ When every puzzle IS its game, five different authors with five different styles
 
 The Host's voice was effective in the opening but absent from individual puzzles. Adding Host flavor text to each puzzle's opening and closing would create the narrator consistency that G6 requires. Each author wrote their own flavor text (the Methodical's napkin framing, the Social's "how did it get this bad?" opening) — these should be supplemented, not replaced, by the Host's wrapping voice.
 
+### Lesson 7: Multi-author hunts need a ship-room, not a serial admin queue.
+
+The RALLY-backed Game Night simulator replayed the scenario across author
+handoff, rework, admin visibility, and meta integration risk. The baseline model
+confirmed the postmortem intuition: once five modules exist independently, the
+bottleneck is no longer authoring, it is serial review plus late meta assembly.
+
+`parallel-review` was the first strong variant because it removes the admin
+queue without changing puzzle content. `ship-room` was the best full operating
+mode because it combines parallel review, editorial relief, light meta briefing,
+and standups for low-visibility authors. This should become the default
+multi-author workflow for future Scenario 2 descendants.
+
 ---
 
 ## Scenario 2 vs Scenario 1 Comparison
