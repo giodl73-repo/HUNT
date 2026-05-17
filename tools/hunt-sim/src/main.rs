@@ -20,6 +20,13 @@ struct SolverTeam {
     trace: ActorTrace,
 }
 
+#[derive(Debug, Clone, Copy)]
+struct TeamProfile {
+    id: &'static str,
+    skill: u32,
+    parallelism: usize,
+}
+
 #[derive(Debug, Clone)]
 struct SolvedPuzzle {
     id: &'static str,
@@ -37,6 +44,16 @@ struct HuntResult {
     team: SolverTeam,
     metrics: Vec<SimulationMetric>,
     report: ValidationReport,
+}
+
+#[derive(Debug, Clone)]
+struct BatchSummary {
+    runs: usize,
+    average_minutes: f64,
+    p95_minutes: u32,
+    pass_rate: f64,
+    average_hints: f64,
+    bottlenecks: Vec<(&'static str, u32)>,
 }
 
 const WAVELENGTH: &[Puzzle] = &[
@@ -78,9 +95,46 @@ const WAVELENGTH: &[Puzzle] = &[
     },
 ];
 
+const TEAM_PROFILES: &[TeamProfile] = &[
+    TeamProfile {
+        id: "speedster-duo",
+        skill: 4,
+        parallelism: 2,
+    },
+    TeamProfile {
+        id: "casual-music-lovers",
+        skill: 3,
+        parallelism: 3,
+    },
+    TeamProfile {
+        id: "methodical-newcomers",
+        skill: 2,
+        parallelism: 2,
+    },
+];
+
 fn main() {
     let seed = option_value("--seed").unwrap_or_else(|| "wavelength-smoke".to_string());
-    let result = simulate_wavelength(&seed);
+    let runs = option_value("--runs")
+        .and_then(|value| value.parse::<usize>().ok())
+        .unwrap_or(1);
+    if runs > 1 {
+        let results = simulate_batch(&seed, runs);
+        let summary = summarize_batch(&results);
+        println!("HUNT simulator: WAVELENGTH batch");
+        println!("seed: {seed}");
+        println!("runs: {}", summary.runs);
+        println!("average_minutes: {:.1}", summary.average_minutes);
+        println!("p95_minutes: {}", summary.p95_minutes);
+        println!("pass_rate: {:.1}%", summary.pass_rate);
+        println!("average_hints: {:.1}", summary.average_hints);
+        for (id, count) in summary.bottlenecks {
+            println!("bottleneck:{}={}", id, count);
+        }
+        return;
+    }
+
+    let result = simulate_wavelength(&seed, TEAM_PROFILES[1]);
     println!("HUNT simulator: WAVELENGTH");
     println!("run_id: {}", result.run.run_id);
     println!("status: {}", result.report.status());
@@ -108,14 +162,67 @@ fn option_value(name: &str) -> Option<String> {
         .map(|pair| pair[1].clone())
 }
 
-fn simulate_wavelength(seed: &str) -> HuntResult {
+fn simulate_batch(seed: &str, runs: usize) -> Vec<HuntResult> {
+    (0..runs)
+        .flat_map(|idx| {
+            TEAM_PROFILES.iter().map(move |profile| {
+                simulate_wavelength(&format!("{seed}-{idx}-{}", profile.id), *profile)
+            })
+        })
+        .collect()
+}
+
+fn summarize_batch(results: &[HuntResult]) -> BatchSummary {
+    let mut totals = results
+        .iter()
+        .map(|result| result.total_minutes)
+        .collect::<Vec<_>>();
+    totals.sort_unstable();
+    let sum_minutes = totals.iter().sum::<u32>();
+    let hint_sum = results
+        .iter()
+        .flat_map(|result| result.solved.iter())
+        .map(|solved| solved.hints)
+        .sum::<u32>();
+    let pass_count = results
+        .iter()
+        .filter(|result| result.report.status() == "pass")
+        .count();
+    let mut bottleneck_counts = WAVELENGTH
+        .iter()
+        .map(|puzzle| (puzzle.id, 0u32))
+        .collect::<Vec<_>>();
+    for result in results {
+        if let Some(slowest) = result.solved.iter().max_by_key(|solved| solved.minutes) {
+            if let Some((_, count)) = bottleneck_counts
+                .iter_mut()
+                .find(|(id, _)| *id == slowest.id)
+            {
+                *count += 1;
+            }
+        }
+    }
+    bottleneck_counts.sort_by(|left, right| right.1.cmp(&left.1).then(left.0.cmp(right.0)));
+    let p95_index = ((totals.len() as f64 * 0.95).ceil() as usize).saturating_sub(1);
+
+    BatchSummary {
+        runs: results.len(),
+        average_minutes: sum_minutes as f64 / results.len().max(1) as f64,
+        p95_minutes: totals.get(p95_index).copied().unwrap_or(0),
+        pass_rate: percent_of(pass_count as u32, results.len() as u32),
+        average_hints: hint_sum as f64 / results.len().max(1) as f64,
+        bottlenecks: bottleneck_counts,
+    }
+}
+
+fn simulate_wavelength(seed: &str, profile: TeamProfile) -> HuntResult {
     let run = SimulationRun::new("hunt-sim", "wavelength", seed);
     let mut rng = run.rng();
     let mut team = SolverTeam {
-        id: "casual-music-lovers",
-        skill: 3,
-        parallelism: 3,
-        trace: ActorTrace::new("casual-music-lovers", "solver-team"),
+        id: profile.id,
+        skill: profile.skill,
+        parallelism: profile.parallelism,
+        trace: ActorTrace::new(profile.id, "solver-team"),
     };
 
     let mut solved = WAVELENGTH
@@ -210,8 +317,8 @@ mod tests {
 
     #[test]
     fn wavelength_sim_is_repeatable() {
-        let left = simulate_wavelength("fixed");
-        let right = simulate_wavelength("fixed");
+        let left = simulate_wavelength("fixed", TEAM_PROFILES[1]);
+        let right = simulate_wavelength("fixed", TEAM_PROFILES[1]);
 
         assert_eq!(left.total_minutes, right.total_minutes);
         assert_eq!(left.solved[0].minutes, right.solved[0].minutes);
@@ -219,10 +326,20 @@ mod tests {
 
     #[test]
     fn wavelength_sim_solves_all_feeders_and_meta() {
-        let result = simulate_wavelength("coverage");
+        let result = simulate_wavelength("coverage", TEAM_PROFILES[1]);
 
         assert_eq!(result.solved.len(), 6);
         assert!(result.meta_minutes > 0);
         assert!(result.team.trace.actions >= 7);
+    }
+
+    #[test]
+    fn batch_summary_reports_pass_rate_and_bottlenecks() {
+        let results = simulate_batch("batch", 3);
+        let summary = summarize_batch(&results);
+
+        assert_eq!(summary.runs, 9);
+        assert!(summary.average_minutes > 0.0);
+        assert_eq!(summary.bottlenecks.len(), 6);
     }
 }

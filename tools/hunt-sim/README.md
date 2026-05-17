@@ -12,6 +12,7 @@ deterministic run, actor trace, metric, and validation primitives.
 ```powershell
 cargo test --quiet
 cargo run --quiet -- --seed wavelength-smoke
+cargo run --quiet -- --seed wavelength-smoke --runs 12
 ```
 
 ## Current validation signal
@@ -19,4 +20,6 @@ cargo run --quiet -- --seed wavelength-smoke
 - Per-puzzle solve time and hint pressure.
 - Meta solve time after the 80% feeder threshold.
 - Total wall-clock time against the 2-3 hour target.
+- Batch pass rate across speedster, casual, and methodical solver profiles.
+- Bottleneck counts showing which feeder most often dominates wall-clock time.
 - RALLY validation status and findings.

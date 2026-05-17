@@ -120,6 +120,7 @@ pressure, meta readiness, and target-window findings.
 ```powershell
 cd tools\hunt-sim
 cargo run --quiet -- --seed wavelength-smoke
+cargo run --quiet -- --seed wavelength-smoke --runs 12
 ```
 
 ---
