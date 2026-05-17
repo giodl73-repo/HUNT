@@ -12,4 +12,4 @@ dependencies = [
 [[package]]
 name = "rally-core"
 version = "0.1.0"
-source = "git+https://github.com/giodl73-repo/RALLY.git#0ff4245b2f9f06e19425562adb35fb6ac37ad039"
+source = "git+https://github.com/giodl73-repo/RALLY.git#f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7"

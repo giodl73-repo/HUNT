@@ -25,6 +25,8 @@ cargo run --quiet -- --seed wavelength-smoke --compare-variants --runs 12
 - Bottleneck counts showing which feeder most often dominates wall-clock time.
 - Variant comparison for hint, clue-relief, meta-prop, and team-parallelism
   tuning.
+- RALLY comparison-report status for each variant (`improved`, `mixed`, or
+  `regressed`) against baseline pass rate, average time, and p95 time.
 - RALLY validation status and findings.
 
 ## Variants

@@ -1,6 +1,6 @@
 use rally_core::{
-    percent_of, ActorTrace, RunSeed, SimulationMetric, SimulationRun, ValidationFinding,
-    ValidationReport,
+    percent_of, ActorTrace, ComparisonDelta, ComparisonReport, RunSeed, SimulationMetric,
+    SimulationRun, ValidationFinding, ValidationReport,
 };
 use std::env;
 
@@ -176,15 +176,34 @@ fn main() {
         .unwrap_or(1);
     if has_flag("--compare-variants") {
         let runs = runs.max(12);
+        let baseline_results = simulate_batch(&seed, runs, BASELINE);
+        let baseline = summarize_batch(&baseline_results);
         println!("HUNT simulator: WAVELENGTH variant comparison");
         println!("seed: {seed}");
         println!("runs_per_variant: {}", runs * TEAM_PROFILES.len());
         for variant in VARIANTS {
             let results = simulate_batch(&seed, runs, *variant);
             let summary = summarize_batch(&results);
+            let comparison = compare_to_baseline("wavelength", &baseline, variant.name, &summary);
+            let status = if variant.name == "baseline" {
+                "baseline".to_string()
+            } else {
+                comparison.status().to_string()
+            };
+            let improved = if variant.name == "baseline" {
+                "-".to_string()
+            } else {
+                format!(
+                    "{}/{}",
+                    comparison.improved_count(),
+                    comparison.deltas.len()
+                )
+            };
             println!(
-                "variant:{} avg_minutes={:.1} p95={} pass_rate={:.1}% avg_hints={:.1} top_bottleneck={}",
+                "variant:{} status={} improved={} avg_minutes={:.1} p95={} pass_rate={:.1}% avg_hints={:.1} top_bottleneck={}",
                 variant.name,
+                status,
+                improved,
                 summary.average_minutes,
                 summary.p95_minutes,
                 summary.pass_rate,
@@ -310,6 +329,31 @@ fn summarize_batch(results: &[HuntResult]) -> BatchSummary {
         average_hints: hint_sum as f64 / results.len().max(1) as f64,
         bottlenecks: bottleneck_counts,
     }
+}
+
+fn compare_to_baseline(
+    subject: &str,
+    baseline: &BatchSummary,
+    candidate_id: &str,
+    candidate: &BatchSummary,
+) -> ComparisonReport {
+    let mut report = ComparisonReport::new(subject, "baseline", candidate_id);
+    report.add_delta(ComparisonDelta::higher_is_better(
+        "pass_rate",
+        baseline.pass_rate,
+        candidate.pass_rate,
+    ));
+    report.add_delta(ComparisonDelta::lower_is_better(
+        "average_minutes",
+        baseline.average_minutes,
+        candidate.average_minutes,
+    ));
+    report.add_delta(ComparisonDelta::lower_is_better(
+        "p95_minutes",
+        baseline.p95_minutes as f64,
+        candidate.p95_minutes as f64,
+    ));
+    report
 }
 
 fn simulate_wavelength(seed: &str, profile: TeamProfile, variant: HuntVariant) -> HuntResult {
@@ -466,5 +510,19 @@ mod tests {
 
         assert!(guided.pass_rate >= baseline.pass_rate);
         assert!(guided.average_minutes <= baseline.average_minutes);
+    }
+
+    #[test]
+    fn comparison_report_marks_guided_variant_improved() {
+        let baseline = summarize_batch(&simulate_batch("comparison", 12, BASELINE));
+        let guided = summarize_batch(&simulate_batch(
+            "comparison",
+            12,
+            find_variant("guided-final-set").unwrap(),
+        ));
+        let report = compare_to_baseline("wavelength", &baseline, "guided-final-set", &guided);
+
+        assert_ne!(report.status(), "regressed");
+        assert!(report.improved_count() >= 2);
     }
 }
