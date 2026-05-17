@@ -1,0 +1,35 @@
+name: HUNT sim gates
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  hunt-sim:
+    name: HUNT sim
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+
+      - name: Allow GitHub Cargo dependencies
+        run: |
+          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
+      - name: Format check
+        run: cargo fmt --manifest-path tools/hunt-sim/Cargo.toml -- --check
+
+      - name: Test
+        run: cargo test --quiet --manifest-path tools/hunt-sim/Cargo.toml
+
+      - name: Release build
+        run: cargo build --quiet --release --manifest-path tools/hunt-sim/Cargo.toml

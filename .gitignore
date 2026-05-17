@@ -28,6 +28,10 @@ __pycache__/
 .venv/
 venv/
 
+# Rust build artifacts
+target/
+tools/hunt-sim/target/
+
 # Env files with potential secrets
 .env
 .env.local
