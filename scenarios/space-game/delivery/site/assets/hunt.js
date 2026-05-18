@@ -101,23 +101,12 @@ function isPuzzleUnlocked(puzzleId) {
   if (!rule) return false; // unknown puzzle — locked
 
   const solved = getSolvedPuzzles();
-
-  switch (rule.type) {
-    case 'start':
-      return true;
-
-    case 'solved':
-      // All listed puzzles must be solved
-      return rule.requires.every(id => solved.has(id));
-
-    case 'count':
-      // At least `threshold` puzzles from pool must be solved
-      const solvedCount = rule.pool.filter(id => solved.has(id)).length;
-      return solvedCount >= rule.threshold;
-
-    default:
-      return false;
-  }
+  const unlockChecks = {
+    start: () => true,
+    solved: () => rule.requires.every(id => solved.has(id)),
+    count: () => rule.pool.filter(id => solved.has(id)).length >= rule.threshold,
+  };
+  return (unlockChecks[rule.type] || (() => false))();
 }
 
 /**
@@ -126,21 +115,13 @@ function isPuzzleUnlocked(puzzleId) {
  * @returns {{ solved: number, total: number, ids: string[] }}
  */
 function getRoundProgress(roundNumber) {
-  const allIds = Object.keys(UNLOCK_RULES);
-  let ids;
-
-  if (roundNumber === 1) {
-    ids = ['R1-01','R1-02','R1-03','R1-04','R1-05','R1-META'];
-  } else if (roundNumber === 2) {
-    ids = ['R2-01','R2-02','R2-03','R2-04','R2-05','R2-META'];
-  } else if (roundNumber === 3) {
-    ids = ['R3-01','R3-02','R3-03','R3-04','R3-05','R3-META'];
-  } else if (roundNumber === 0) {
-    ids = ['FINAL'];
-  } else {
-    ids = allIds;
-  }
-
+  const roundIds = {
+    0: ['FINAL'],
+    1: ['R1-01','R1-02','R1-03','R1-04','R1-05','R1-META'],
+    2: ['R2-01','R2-02','R2-03','R2-04','R2-05','R2-META'],
+    3: ['R3-01','R3-02','R3-03','R3-04','R3-05','R3-META'],
+  };
+  const ids = roundIds[roundNumber] || Object.keys(UNLOCK_RULES);
   const solved = getSolvedPuzzles();
   const solvedCount = ids.filter(id => solved.has(id)).length;
 
@@ -215,22 +196,23 @@ async function checkAnswer(puzzleId, input) {
   const puzzles = await loadPuzzlesData();
   const puzzle = puzzles.find(p => p.id === puzzleId);
 
-  if (!puzzle) {
-    return { correct: false, puzzleId, flavor: null };
-  }
-
-  // answerHash === 'TODO' means hashes not yet computed — never match
-  if (!puzzle.answerHash || puzzle.answerHash === 'TODO') {
-    return { correct: false, puzzleId, flavor: null };
-  }
+  if (!hasPuzzleAnswerHash(puzzle)) return answerResult(false, puzzleId, null);
 
   const correct = hash === puzzle.answerHash;
+  if (correct) markSolved(puzzleId);
+  return answerResult(correct, puzzleId, solvedFlavor(correct, puzzle));
+}
 
-  if (correct) {
-    markSolved(puzzleId);
-  }
+function hasPuzzleAnswerHash(puzzle) {
+  return Boolean(puzzle && puzzle.answerHash && puzzle.answerHash !== 'TODO');
+}
 
-  return { correct, puzzleId, flavor: correct ? (puzzle.solvedFlavor || null) : null };
+function solvedFlavor(correct, puzzle) {
+  return correct ? (puzzle.solvedFlavor || null) : null;
+}
+
+function answerResult(correct, puzzleId, flavor) {
+  return { correct, puzzleId, flavor };
 }
 
 // ============================================================
@@ -246,53 +228,50 @@ function updatePuzzleCard(card) {
   const id = card.dataset.puzzleId;
   if (!id) return;
 
-  const unlocked = isPuzzleUnlocked(id);
-  const solved   = isSolved(id);
+  const state = puzzleState(id);
 
-  // Remove all state classes first
+  updatePuzzleCardState(card, state);
+  updatePuzzleStatus(card.querySelector('.puzzle-status'), state);
+  updatePuzzleAnswer(card.querySelector('.puzzle-card__answer'), state);
+  updatePuzzleLink(card.querySelector('.puzzle-card__title a'), state !== 'locked');
+}
+
+function puzzleState(id) {
+  if (isSolved(id)) return 'solved';
+  if (isPuzzleUnlocked(id)) return 'unlocked';
+  return 'locked';
+}
+
+function updatePuzzleCardState(card, state) {
   card.classList.remove('puzzle-card--locked', 'puzzle-card--unlocked', 'puzzle-card--solved');
+  card.classList.add(`puzzle-card--${state}`);
+}
 
-  if (solved) {
-    card.classList.add('puzzle-card--solved');
-  } else if (unlocked) {
-    card.classList.add('puzzle-card--unlocked');
-  } else {
-    card.classList.add('puzzle-card--locked');
-  }
+function updatePuzzleAnswer(answerEl, state) {
+  if (answerEl) answerEl.style.display = state === 'solved' ? '' : 'none';
+}
 
-  // Update status text
-  const statusEl = card.querySelector('.puzzle-status');
-  if (statusEl) {
-    statusEl.classList.remove('puzzle-status--locked','puzzle-status--unlocked','puzzle-status--solved');
-    if (solved) {
-      statusEl.textContent = '◉ ONLINE';
-      statusEl.classList.add('puzzle-status--solved');
-    } else if (unlocked) {
-      statusEl.textContent = '◇ READY';
-      statusEl.classList.add('puzzle-status--unlocked');
-    } else {
-      statusEl.textContent = '◌ STANDBY';
-      statusEl.classList.add('puzzle-status--locked');
-    }
-  }
+function updatePuzzleStatus(statusEl, state) {
+  if (!statusEl) return;
+  const labels = {
+    solved: '◉ ONLINE',
+    unlocked: '◇ READY',
+    locked: '◌ STANDBY',
+  };
+  statusEl.classList.remove('puzzle-status--locked','puzzle-status--unlocked','puzzle-status--solved');
+  statusEl.textContent = labels[state];
+  statusEl.classList.add(`puzzle-status--${state}`);
+}
 
-  // Show/hide answer display
-  const answerEl = card.querySelector('.puzzle-card__answer');
-  if (answerEl) {
-    answerEl.style.display = solved ? '' : 'none';
+function updatePuzzleLink(titleLink, enabled) {
+  if (!titleLink) return;
+  if (enabled) {
+    titleLink.removeAttribute('aria-disabled');
+    titleLink.style.pointerEvents = '';
+    return;
   }
-
-  // Enable/disable link on title
-  const titleLink = card.querySelector('.puzzle-card__title a');
-  if (titleLink) {
-    if (unlocked || solved) {
-      titleLink.removeAttribute('aria-disabled');
-      titleLink.style.pointerEvents = '';
-    } else {
-      titleLink.setAttribute('aria-disabled', 'true');
-      titleLink.style.pointerEvents = 'none';
-    }
-  }
+  titleLink.setAttribute('aria-disabled', 'true');
+  titleLink.style.pointerEvents = 'none';
 }
 
 /**
@@ -326,60 +305,86 @@ function updateRoundProgress() {
  * @param {HTMLFormElement} form
  */
 function attachAnswerHandler(form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const puzzleId  = form.dataset.puzzleId;
-    const inputEl   = form.querySelector('.answer-input');
-    const resultEl  = form.querySelector('.answer-result');
-    const submitBtn = form.querySelector('button[type="submit"]');
-
-    if (!puzzleId || !inputEl) return;
-
-    const userInput = inputEl.value.trim();
-    if (!userInput) return;
-
-    // Disable during async check
-    if (submitBtn) submitBtn.disabled = true;
-    inputEl.classList.remove('answer-input--correct', 'answer-input--incorrect');
-    if (resultEl) {
-      resultEl.className = 'answer-result';
-      resultEl.textContent = '';
-    }
-
-    try {
-      const result = await checkAnswer(puzzleId, userInput);
-
-      if (result.correct) {
-        inputEl.classList.add('answer-input--correct');
-        if (resultEl) {
-          resultEl.classList.add('answer-result--correct');
-          resultEl.textContent = result.flavor || 'CORRECT. Log updated.';
-        }
-        // Refresh all card states — solving this puzzle may unlock others
-        updateAllPuzzleCards();
-        updateRoundProgress();
-        // Check if FINAL was just solved
-        if (puzzleId === 'FINAL') {
-          triggerCommissionReveal();
-        }
-      } else {
-        inputEl.classList.add('answer-input--incorrect');
-        if (resultEl) {
-          resultEl.classList.add('answer-result--incorrect');
-          resultEl.textContent = 'INCORRECT. No match in log.';
-        }
-      }
-    } catch (err) {
-      console.error('Answer check failed:', err);
-      if (resultEl) {
-        resultEl.classList.add('answer-result--incorrect');
-        resultEl.textContent = 'ERROR. Could not verify answer.';
-      }
-    } finally {
-      if (submitBtn) submitBtn.disabled = false;
-    }
+  form.addEventListener('submit', async e => {
+    await handleAnswerSubmit(e, form);
   });
+}
+
+function answerFormParts(form) {
+  return {
+    puzzleId: form.dataset.puzzleId,
+    inputEl: form.querySelector('.answer-input'),
+    resultEl: form.querySelector('.answer-result'),
+    submitBtn: form.querySelector('button[type="submit"]'),
+  };
+}
+
+function resetAnswerResult(inputEl, resultEl, submitBtn) {
+  if (submitBtn) submitBtn.disabled = true;
+  inputEl.classList.remove('answer-input--correct', 'answer-input--incorrect');
+  if (resultEl) {
+    resultEl.className = 'answer-result';
+    resultEl.textContent = '';
+  }
+}
+
+function showAnswerResult(inputEl, resultEl, result, puzzleId) {
+  if (result.correct) return showCorrectAnswer(inputEl, resultEl, result, puzzleId);
+  showIncorrectAnswer(inputEl, resultEl);
+}
+
+function showCorrectAnswer(inputEl, resultEl, result, puzzleId) {
+  inputEl.classList.add('answer-input--correct');
+  if (resultEl) {
+    resultEl.classList.add('answer-result--correct');
+    resultEl.textContent = result.flavor || 'CORRECT. Log updated.';
+  }
+  updateAllPuzzleCards();
+  updateRoundProgress();
+  if (puzzleId === 'FINAL') triggerCommissionReveal();
+}
+
+function showIncorrectAnswer(inputEl, resultEl) {
+  inputEl.classList.add('answer-input--incorrect');
+  if (resultEl) {
+    resultEl.classList.add('answer-result--incorrect');
+    resultEl.textContent = 'INCORRECT. No match in log.';
+  }
+}
+
+function showAnswerError(resultEl) {
+  if (resultEl) {
+    resultEl.classList.add('answer-result--incorrect');
+    resultEl.textContent = 'ERROR. Could not verify answer.';
+  }
+}
+
+async function handleAnswerSubmit(e, form) {
+  e.preventDefault();
+  const parts = answerFormParts(form);
+  const userInput = answerInputValue(parts);
+  if (userInput === null) return;
+  await verifyAnswer(parts, userInput);
+}
+
+function answerInputValue({ puzzleId, inputEl }) {
+  if (!puzzleId || !inputEl) return null;
+  const userInput = inputEl.value.trim();
+  return userInput || null;
+}
+
+async function verifyAnswer({ puzzleId, inputEl, resultEl, submitBtn }, userInput) {
+  resetAnswerResult(inputEl, resultEl, submitBtn);
+
+  try {
+    const result = await checkAnswer(puzzleId, userInput);
+    showAnswerResult(inputEl, resultEl, result, puzzleId);
+  } catch (err) {
+    console.error('Answer check failed:', err);
+    showAnswerError(resultEl);
+  } finally {
+    if (submitBtn) submitBtn.disabled = false;
+  }
 }
 
 // ============================================================
