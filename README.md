@@ -1,4 +1,4 @@
-# HUNT — A Puzzle Hunt Production Pipeline for Claude Code
+﻿# HUNT — A Puzzle Hunt Production Pipeline for Claude Code
 
 Build a real puzzle hunt — from blank page to ship-ready print-and-web package — with an
 agent that knows what good hunts look like, whose review gates block you until the work
@@ -287,6 +287,10 @@ Seven papers document the pipeline's creative evaluation methodology. LaTeX sour
 - [Structured Divergence in AI Creative Generation](research/publications/games-same-input-divergence/main.pdf)
 
 ---
+
+## Games infrastructure
+
+HUNT shares the Games Design series validation approach through [RALLY](https://github.com/giodl73-repo/RALLY), the shared simulation and validation substrate for deterministic seeded runs, event traces, validation findings, and comparison packets. RALLY is the planned path for HUNT puzzle-graph validation, solver coverage, blind-test manifests, and hint-timing evidence as the pipeline grows. Other game-design repos also host interactive experiences through [MUDDLE](https://github.com/giodl73-repo/MUDDLE), the shared room-command UX engine, and prove scalable experience contracts through [COURT](https://github.com/giodl73-repo/COURT) and [RACKET](https://github.com/giodl73-repo/RACKET).
 
 ## License
 
