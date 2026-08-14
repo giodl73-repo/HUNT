@@ -36,3 +36,4 @@ tools/hunt-sim/target/
 .env
 .env.local
 
+.cargo/config.toml
