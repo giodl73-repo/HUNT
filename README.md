@@ -263,6 +263,20 @@ This was bug #7 in `BUGS.md`. It stays blocking for every scenario.
 
 ---
 
+## Maintenance ownership
+
+- **Active owner:** the `giodl73-repo/HUNT` repository maintainer.
+- **2026-08-16 reduction:** removed 552 tracked Playwright dependency files
+  (12.43 MiB) from `evidence/node_modules/`.
+- **Reconstruction:** `evidence/package.json` and
+  `evidence/package-lock.json` remain canonical; run `npm ci` from `evidence/`
+  when the scraper is needed.
+- **Boundary:** installed dependencies are local build state and must not be
+  recommitted. Research inputs, scraper source, and captured evidence remain
+  tracked.
+
+---
+
 ## Contributing
 
 If you run the pipeline on your own hunt, two things help:

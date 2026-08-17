@@ -36,4 +36,7 @@ tools/hunt-sim/target/
 .env
 .env.local
 
+# Reproducible JavaScript dependencies stay local.
+node_modules/
+
 .cargo/config.toml
