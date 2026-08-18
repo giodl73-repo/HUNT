@@ -28,9 +28,10 @@ already produced nine end-to-end hunts in the `scenarios/` directory.
 3. **Prove the methodology with real scenarios.** Every skill in `toolkit/` earned its
    place by being needed during an actual run. If a stage in `scenarios/` hit a problem
    the toolkit couldn't solve, the fix became a skill, and `BUGS.md` tracked it.
-4. **Ship something a non-expert can use.** A first-time hunt runner copies `toolkit/`,
-   types `/hunt plan`, and the pipeline walks them through every decision with the
-   panel grading as they go.
+4. **Define the path to non-expert use.** The toolkit records the intended
+   workflow, while distributable skill packaging and a clean-install acceptance
+   test remain required before that workflow is supported outside this source
+   repository.
 
 ---
 
@@ -62,6 +63,11 @@ implementation.
 
 ## Quickstart
 
+> **Packaging status:** `toolkit/skills/` currently contains source command
+> documents rather than discoverable `SKILL.md` entry points. The commands below
+> describe the intended workflow; they are not a supported clean-install
+> contract yet.
+
 ```bash
 # Clone
 git clone https://github.com/giodl73-repo/HUNT.git
@@ -78,6 +84,16 @@ claude
 
 A 10-step walkthrough — from blank directory to print-ready hunt — is in
 `toolkit/GETTING-STARTED.md`.
+
+### Portfolio reuse posture
+
+HUNT is a standalone puzzle-hunt authoring product, not a shared code-library
+foundation, and it is not currently a distributable portfolio dependency.
+Portfolio repositories should not depend on or copy its internal vocabulary
+files, reviewer profiles, scenario layouts, or stage command documents as
+stable APIs. The bundled scenarios are first-party validation evidence, not
+downstream adopters. Revisit reuse only after discoverable skill entry points,
+one coherent command hierarchy, and a clean-install acceptance test ship.
 
 ---
 
