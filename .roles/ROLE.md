@@ -37,3 +37,11 @@ Playtest roles represent solver experience and blind-testing evidence.
 1. Use craft roles while authoring or revising puzzle concepts.
 2. Use Playtest roles for blind-test setup, scoring, and failure interpretation.
 3. Use Parliament roles before a stage gate, publish step, or toolkit release.
+
+## PITFALL Gates
+
+| Gate | Required roles | Blocks |
+|---|---|---|
+| Generic toolkit release | Gate Integrity Steward, Ship Readiness Auditor | Treating scenario-specific command paths, answer protocols, secrets, files, or workflows as reusable toolkit contracts before clean-install acceptance exists. |
+| Publish and answer custody | Ship Readiness Auditor, Gate Integrity Steward | Shipping tracked plaintext answers, spoilers, hidden-layer material, prohibited lyric text, or unscrubbed solver-facing artifacts. |
+| Brief and extraction feasibility | Puzzle Fairness Editor, Solver Experience Advocate, Gate Integrity Steward | Advancing clever mechanisms or themes before answer words and extraction paths are feasible and verified character by character. |

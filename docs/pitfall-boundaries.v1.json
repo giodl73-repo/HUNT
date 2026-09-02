@@ -1,0 +1,57 @@
+{
+  "schema": "pitfall-boundaries.v1",
+  "repo": "HUNT",
+  "updated": "2026-09-02",
+  "boundaries": [
+    {
+      "id": "HUNT-PB-01",
+      "pitfalls": ["HUNT-PF-02"],
+      "name": "scenario-success-is-not-generic-toolkit",
+      "rule": "A scenario-specific command, path, answer protocol, secret encoding, project file, or author workflow cannot be advertised as a generic toolkit contract until relative paths, prompts, scenario contracts, discoverable skill entry points, and clean-install acceptance tests exist.",
+      "required_reviewers": [
+        "gate-integrity-steward",
+        "ship-readiness-auditor"
+      ],
+      "required_evidence": [
+        "README.md",
+        "BUGS.md",
+        "toolkit/GETTING-STARTED.md",
+        "tests/check-pitfall-policy.ps1"
+      ]
+    },
+    {
+      "id": "HUNT-PB-02",
+      "pitfalls": ["HUNT-PF-03"],
+      "name": "answer-and-prohibited-content-custody",
+      "rule": "Plaintext answers, spoilers, hidden-layer material, and prohibited lyric text must not enter tracked solver-facing artifacts. Publishing requires encoded or ignored answer custody plus scrub and known-answer checks.",
+      "required_reviewers": [
+        "ship-readiness-auditor",
+        "gate-integrity-steward"
+      ],
+      "required_evidence": [
+        "README.md",
+        "BUGS.md",
+        "toolkit/skills/hunt/publish.md",
+        "toolkit/skills/puzzle/author.md",
+        "tests/check-pitfall-policy.ps1"
+      ]
+    },
+    {
+      "id": "HUNT-PB-03",
+      "pitfalls": ["HUNT-PF-04"],
+      "name": "mechanism-quality-is-not-extraction-proof",
+      "rule": "A clever puzzle mechanism, theme, or brief cannot advance unless answer words are feasible against world or source data and extraction is verified character by character before authoring and blind tests.",
+      "required_reviewers": [
+        "puzzle-fairness-editor",
+        "solver-experience-advocate",
+        "gate-integrity-steward"
+      ],
+      "required_evidence": [
+        "toolkit/PRINCIPLES.md",
+        "toolkit/skills/puzzle/author.md",
+        "BUGS.md",
+        "tests/check-pitfall-policy.ps1"
+      ]
+    }
+  ]
+}

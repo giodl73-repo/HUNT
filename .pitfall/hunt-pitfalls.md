@@ -25,7 +25,7 @@ scenario review files, and simulator validation as separate acceptance signals.
 
 ## HUNT-PF-02: Scenario Coupling Ships As Generic Toolkit
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** A toolkit skill hardcodes one scenario's path, answer protocol,
 secret encoding, project-specific file, or author workflow and then fails for
@@ -61,14 +61,15 @@ the command.
 **Structural solution:** Replace hardcoded paths and secrets with scenario
 contracts, prompts, relative paths, and a clean-install acceptance test.
 
-**Evidence:** `README.md`, `CLAUDE.md`, and `BUGS.md` issues 1, 3, 4, 5, 6,
-10, and 11.
+**Evidence:** `README.md`, `CLAUDE.md`, `BUGS.md` issues 1, 3, 4, 5, 6,
+10, and 11, `docs/pitfall-boundaries.v1.json`, and
+`tests/check-pitfall-policy.ps1`.
 
 **Test:** `pwsh -NoProfile -File tests\check-pitfall-policy.ps1`
 
 ## HUNT-PF-03: Plaintext Or Prohibited Content Leaks Into Git
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** Answers, spoilers, hidden-layer material, or copyrighted lyric text
 enter tracked files or solver-facing delivery artifacts.
@@ -104,13 +105,14 @@ lyrics in puzzle content, and make publish/package checks reject exposed answer
 or prohibited text.
 
 **Evidence:** `README.md`, `BUGS.md` issues 7 and 17,
-`toolkit/skills/hunt/publish.md`, and `scenarios/wavelength/`.
+`toolkit/skills/hunt/publish.md`, `docs/pitfall-boundaries.v1.json`, and
+`tests/check-pitfall-policy.ps1`.
 
 **Test:** `pwsh -NoProfile -File tests\check-pitfall-policy.ps1`
 
 ## HUNT-PF-04: Mechanism Works But Extraction Fails
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** A puzzle has a strong concept but the final answer cannot be
 derived because indices, letters, source data, answer words, or meta
@@ -148,7 +150,8 @@ answer words against world/source data before issue, and verify extraction
 letter by letter.
 
 **Evidence:** `toolkit/PRINCIPLES.md`, `BUGS.md` issues 9 and 18,
-`scenarios/boardgames/tests/`, and `tools/hunt-sim/README.md`.
+`docs/pitfall-boundaries.v1.json`, `tests/check-pitfall-policy.ps1`, and
+`tools/hunt-sim/README.md`.
 
 **Test:** `pwsh -NoProfile -File tests\check-pitfall-policy.ps1`
 
