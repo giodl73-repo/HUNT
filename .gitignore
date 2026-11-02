@@ -40,3 +40,7 @@ tools/hunt-sim/target/
 node_modules/
 
 .cargo/config.toml
+
+# Browser qualification captures and reports are private build evidence.
+browser/planner/.cache/
+browser/planner/test-results/

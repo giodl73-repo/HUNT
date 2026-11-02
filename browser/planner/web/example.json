@@ -1,0 +1,35 @@
+{
+  "seed": "synthetic-reader",
+  "runs": 12,
+  "variant": "guided-final-set",
+  "team": {
+    "skill": 3,
+    "parallelism": 2
+  },
+  "puzzles": [
+    {
+      "difficulty": 2,
+      "answer_length": 5
+    },
+    {
+      "difficulty": 3,
+      "answer_length": 7
+    },
+    {
+      "difficulty": 2,
+      "answer_length": 4
+    },
+    {
+      "difficulty": 3,
+      "answer_length": 8
+    },
+    {
+      "difficulty": 4,
+      "answer_length": 6
+    },
+    {
+      "difficulty": 4,
+      "answer_length": 5
+    }
+  ]
+}

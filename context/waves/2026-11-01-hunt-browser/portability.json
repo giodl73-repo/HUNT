@@ -1,0 +1,596 @@
+{
+  "schema": "hunt.planner-portability.v1",
+  "checked_at_utc": "2026-11-02T05:04:54.558382+00:00",
+  "status": "Local prototype; no Pages/source-package/live qualification",
+  "canonical_entry": "edd0f6e6fd447be78c869cfccf7101bd3f6e608b",
+  "public_entry": "9872929",
+  "native_existing_tests_passed": 7,
+  "native_cli_exact_before_after": 48,
+  "native_cli_scopes": "Both scenarios, all six variants each, single/batch/comparison, three empty/ASCII/Unicode seeds; each original outcome repeated twice. Raw outputs stay private ignored QA, not upload artifacts.",
+  "native_cli_case_pins": [
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "baseline"
+      ],
+      "sha256": "15cd79f9fb10ea16a7982d85de14cdf700d4a1ef20c7f6df02eee835ffe238ac"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "stronger-hints"
+      ],
+      "sha256": "df8b2c9025e4aa5d58e4415d9089007c6c4988d07523cddaf95cbd29d4f25a5f"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "p5-p6-clue-relief"
+      ],
+      "sha256": "7f421dbdc27b3bb7957e49e1ef006c9ff07f74672202be60d2ab4fe4436ea014"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "meta-prop-clarity"
+      ],
+      "sha256": "51b4a80a493070649c6f5e1ad6b53f2776d5ec5ba3a2b3602c118d15cfd50b82"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "team-parallelism"
+      ],
+      "sha256": "81f917ca891ce37e5d17abf7268ac890028ec09e2c6ca68f0d809bca05e50285"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "guided-final-set"
+      ],
+      "sha256": "dccc7368416ef134681243943390e78a046958c3b2055baf207728228cebd185"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "native-custody",
+        "--runs",
+        "3"
+      ],
+      "sha256": "9ae17e25dfea69bff2224ac406d66419180fd86874f73766b900462d39574633"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "native-custody",
+        "--runs",
+        "12",
+        "--compare-variants"
+      ],
+      "sha256": "5c00da33f49e27d66522985e6743ba4e47546aa30d1b085f5f3ea67e19a54e61"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "",
+        "--variant",
+        "baseline"
+      ],
+      "sha256": "f4679d8080e14f25424a727f1ad4540c97c935855ecd9f81d7b44438069bf51e"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "",
+        "--variant",
+        "stronger-hints"
+      ],
+      "sha256": "87fbc7810b52783e8a311e4fab9dca12bfb043172dc646f30e5c25087f07511b"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "",
+        "--variant",
+        "p5-p6-clue-relief"
+      ],
+      "sha256": "e87eacf63283ccba835764a8cac389cf0a8028504f848fa87c20fd4f2246753c"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "",
+        "--variant",
+        "meta-prop-clarity"
+      ],
+      "sha256": "a5129c04493e48c3f0a73bcd2a6a9e415a9e24c61731ed25206717e602dd82ed"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "",
+        "--variant",
+        "team-parallelism"
+      ],
+      "sha256": "64481d86e8bae09f9c287ecf4f9be288ac33efc6fe0ab02ac7c92b9f46edd253"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "",
+        "--variant",
+        "guided-final-set"
+      ],
+      "sha256": "e11294518afb3078ce4b42c2283350010ad2e3739cb4157abc624e68cd8fa460"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "",
+        "--runs",
+        "3"
+      ],
+      "sha256": "94efcd252e392ad445059f7d1918779f1efd6c028032726d8d8ebfff6261fe03"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "",
+        "--runs",
+        "12",
+        "--compare-variants"
+      ],
+      "sha256": "933c4850a8a95d7145da84983e6dcc11ebf568bf165a3fe28186908e38d99719"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "baseline"
+      ],
+      "sha256": "41b8e9ac55a0edf8f8cb31257ec66e1ad8e8344225f5bf7a7fa47e6227c968e7"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "stronger-hints"
+      ],
+      "sha256": "a46c07f5f2160747b38c06b2dffafe1a17b3a7f670187e6a7dd8baf88225d3ae"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "p5-p6-clue-relief"
+      ],
+      "sha256": "3b17a9e1c55e113bc2af4ffa035374aad281a321a8a9e57f80f394e76687e567"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "meta-prop-clarity"
+      ],
+      "sha256": "95ae8ee59e4325151e0fc0b8f1833d85002176f2d4cfbc4a20226a3c3af1f172"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "team-parallelism"
+      ],
+      "sha256": "6a356e2b4073703b98fd583127f73bed3476b7089373516924d74821f76a13eb"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "guided-final-set"
+      ],
+      "sha256": "249d7c43e1c0ad095b56acc039c1f466adafb6d031ee41bca3f47bad323a0da7"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "seed-\u03b1",
+        "--runs",
+        "3"
+      ],
+      "sha256": "0f044144fef8092f1d21a1098d36d376975c4aa1b94badf5d0bda39922d2fefb"
+    },
+    {
+      "args": [
+        "--scenario",
+        "wavelength",
+        "--seed",
+        "seed-\u03b1",
+        "--runs",
+        "12",
+        "--compare-variants"
+      ],
+      "sha256": "87db2d48086c608882b1f99cb3f934cb2509544bb7426a3734712960867f4482"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "baseline"
+      ],
+      "sha256": "2d5a5a2538e09613e40fb48cf98039fcbdf65f82e40a1a154cb6b5659cc97924"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "editorial-pass"
+      ],
+      "sha256": "2f2188a41f9a716073a73803ecc563e1216db6c356c29d73c2701d50a00cc6c4"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "admin-standups"
+      ],
+      "sha256": "179b0ee86447f6b3249309ee67c9aec7e47c4fd4d848b749de41c756709c8f91"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "meta-briefing"
+      ],
+      "sha256": "47b9aeae98ff7323dfee569b803c3cf2d7171ff13f821cf1a8e401dfb2c62064"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "parallel-review"
+      ],
+      "sha256": "94838046c395297ccfc071e45274505f24f812221c3a128313dbac9ee41964fa"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "native-custody",
+        "--variant",
+        "ship-room"
+      ],
+      "sha256": "bbc86090a836fcfab0ba34d5be509826109e5ae6b709f231c7d0bddd3b8e67cd"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "native-custody",
+        "--runs",
+        "3"
+      ],
+      "sha256": "7a165320f1e3c38005855db8a8e09449f02fdea16620d63f8846e33b41a654f5"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "native-custody",
+        "--runs",
+        "12",
+        "--compare-variants"
+      ],
+      "sha256": "43ec6bb81407afad825348345a73a04bc77ab76a0b2b288b60059d0cfe32c01d"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "",
+        "--variant",
+        "baseline"
+      ],
+      "sha256": "17683a069e70c91f844f03414edef898082c36e44d32a3c1e5f3a19cc498f12f"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "",
+        "--variant",
+        "editorial-pass"
+      ],
+      "sha256": "e85859b75e4240e83d78cb3d67057a6feb9ae3f462df171bf3ce8dca227fd827"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "",
+        "--variant",
+        "admin-standups"
+      ],
+      "sha256": "a4e8a6a12508440415ae4f5e905c3f5ec0b6f37ef25ba06628b931c6ccccfe0b"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "",
+        "--variant",
+        "meta-briefing"
+      ],
+      "sha256": "ee92b1531c50ca4aa1b024cc24d5c0bb79a79f586739608708fdbc8e91e2be98"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "",
+        "--variant",
+        "parallel-review"
+      ],
+      "sha256": "181e3eeb03ca56476fd59e9b08d64eeef6a84a3752b87585af0cb5b1722ed998"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "",
+        "--variant",
+        "ship-room"
+      ],
+      "sha256": "b52530f3eedcea0fa7c3dc8bd2479ee4bf8787d801edbf77c58cc4bfcee328ae"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "",
+        "--runs",
+        "3"
+      ],
+      "sha256": "8f20c1020a1f378e9c904177aaa3f51f805b2559dffb85112443112d21bf51a1"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "",
+        "--runs",
+        "12",
+        "--compare-variants"
+      ],
+      "sha256": "1db1ab61df827c2b5d64c8ff094ad198fc5b502c230227a0668cbc4e51f79c9a"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "baseline"
+      ],
+      "sha256": "e07215c5adb4bc5ae0e443ec4aff4b2e15d4ad7df158284107982f1525771893"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "editorial-pass"
+      ],
+      "sha256": "080540b47e5c16055bbdfaa586718a3b329c763091d32a4e3ee7296e618410e5"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "admin-standups"
+      ],
+      "sha256": "f95c0b4e2cbe005eb22c9c65efae992514d215439dc49e9c7f6255d8b1c03fa2"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "meta-briefing"
+      ],
+      "sha256": "1f33e4407613be1c24104974f98d63d06e0c00860dbedfe28e55a62a71409625"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "parallel-review"
+      ],
+      "sha256": "3bca9abe382cace6f9a2728935c2e7cef47a75f82d5ac8c1a4081c936435c2be"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "seed-\u03b1",
+        "--variant",
+        "ship-room"
+      ],
+      "sha256": "a330dcadc3f221f51650799753692d4249594555f222d422a40cdf77d2381527"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "seed-\u03b1",
+        "--runs",
+        "3"
+      ],
+      "sha256": "c3a8764da2c7825c54f94530bde24d5727ac89831664996752f0cc96e3d67288"
+    },
+    {
+      "args": [
+        "--scenario",
+        "boardgames",
+        "--seed",
+        "seed-\u03b1",
+        "--runs",
+        "12",
+        "--compare-variants"
+      ],
+      "sha256": "12ed7773054f876e075eb678c9958c75ecf8af508534b450feffa7af318f3848"
+    }
+  ],
+  "adapter_tests_passed": 4,
+  "native_wasm_exact_responses": 46,
+  "both_targets_repeated": true,
+  "browser_stats": {
+    "startTime": "2026-11-02T05:02:29.451Z",
+    "duration": 5548.031,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "foundation": {
+    "entry": "edd0f6e6fd447be78c869cfccf7101bd3f6e608b",
+    "native_functions_unchanged": 12,
+    "shared_functions_token_exact_except_explicit_bindings": 4,
+    "native_variant_constants_exact": 2,
+    "rally_revision": "f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7",
+    "protected_policy_and_grants": "exact"
+  },
+  "prototype_custody": {
+    "prototype_files": 9,
+    "known_native_answers_checked": 5,
+    "scenario_content_included": false,
+    "source_zip_qualified": false
+  },
+  "wasm": {
+    "bytes": 242313,
+    "sha256": "78132b5ddab151e4f5240bb858fc3f366eecf8a93d74c6b6b9d0b1eda1359c0b",
+    "maximum_linear_memory_bytes": 67108864
+  },
+  "limits": {
+    "request_utf8_bytes": 65536,
+    "seed_utf8_bytes": 128,
+    "runs_per_side": 128,
+    "feeders": 6,
+    "report_bytes": 2097152
+  },
+  "model_boundary": "Existing WAVELENGTH heuristic with native variant-dependent RNG, not paired causal intervention, generic graph scheduling, actual solving, blind playtest, fairness/delight, schedule certification, stage gate or generic toolkit acceptance. Raw native zero-improvement regressed includes ties.",
+  "failures_retained": [
+    "Initial extraction missed public p95 field; compiler caught it before tests. Field visibility fixed; no algorithm change.",
+    "Prototype npm prefix was resolved at repo root; installed from companion directory instead.",
+    "Initial display helper used local Windows encoding; corrected UTF-8 rendering and LF regex before final browser run.",
+    "Foundation guard corrected rustfmt signature commas and Git CRLF/mixed-license byte handling, retaining exact protected blob checks."
+  ],
+  "remaining": [
+    "Worker/read/edit/stale/crash/resource/deadline coverage",
+    "Complete portable software source packaging and known-answer scan of expanded source/dependency/public artifact, appropriate notices and exact per-file custody",
+    "Independent buildable-source replay outside Git, retaining pinned RALLY input",
+    "Exact final hosted/default/live qualification; separate TRACKER pulse only afterwards"
+  ]
+}

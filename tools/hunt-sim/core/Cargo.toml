@@ -1,0 +1,12 @@
+[package]
+name = "hunt-sim-core"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+description = "HUNT's shared six-feeder heuristic forecast"
+
+[workspace]
+
+[dependencies]
+rally-core = { git = "https://github.com/giodl73-repo/RALLY.git", rev = "f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7" }
