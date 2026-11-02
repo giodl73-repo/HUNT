@@ -40,6 +40,7 @@ jobs:
           cargo fmt --manifest-path tools/hunt-sim/core/Cargo.toml -- --check
           cargo fmt --manifest-path browser/planner/Cargo.toml -- --check
           cargo test --locked --manifest-path tools/hunt-sim/Cargo.toml
+          python tools/hunt-sim/verify-native-controls.py
           cargo clippy --locked --manifest-path tools/hunt-sim/Cargo.toml --all-targets -- -D warnings
           cargo test --locked --manifest-path browser/planner/Cargo.toml
           cargo clippy --locked --manifest-path browser/planner/Cargo.toml --all-targets -- -D warnings

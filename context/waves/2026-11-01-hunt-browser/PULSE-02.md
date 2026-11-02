@@ -22,7 +22,8 @@ Stopping now invalidates queued callbacks as well as terminating CPU execution.
 Synthetic lifecycle faults are not forecast outcomes or golden controls.
 
 Required final qualification is fourteen complete browser cases, seven existing
-native and four adapter tests, 46 native/WASM controls, full artifact/source
+native and four adapter tests, all 48 original native CLI hashes repeated twice
+without publishing raw scenario output, 46 native/WASM controls, full artifact/source
 custody, and independent source replay outside Git in a path with spaces. Replay
 must reproduce 46 native and 46 WASM outcomes separately plus twelve behavior
 cases. This candidate has not passed those final gates merely by implementing
