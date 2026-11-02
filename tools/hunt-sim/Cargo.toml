@@ -4,10 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [workspace]
+exclude = ["core"]
 
 [[bin]]
 name = "hunt-sim"
 path = "src/main.rs"
 
 [dependencies]
-rally-core = { git = "https://github.com/giodl73-repo/RALLY.git" }
+rally-core = { git = "https://github.com/giodl73-repo/RALLY.git", rev = "f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7" }
+hunt-sim-core = { path = "core" }

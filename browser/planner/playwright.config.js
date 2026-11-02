@@ -1,0 +1,2 @@
+import { defineConfig } from "@playwright/test";
+export default defineConfig({testDir:"./tests",workers:1,retries:0,timeout:30000,use:{baseURL:process.env.HUNT_BASE_URL||"http://127.0.0.1:4195/HUNT/"},reporter:[["list"],["json",{outputFile:".cache/browser-results.json"}]],webServer:process.env.HUNT_BASE_URL?undefined:{command:'python -m http.server 4195 --directory "../../target/hunt-prototype"',url:"http://127.0.0.1:4195/HUNT/",reuseExistingServer:false}});

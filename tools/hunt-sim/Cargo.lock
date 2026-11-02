@@ -6,10 +6,18 @@ version = 4
 name = "hunt-sim"
 version = "0.1.0"
 dependencies = [
+ "hunt-sim-core",
+ "rally-core",
+]
+
+[[package]]
+name = "hunt-sim-core"
+version = "0.1.0"
+dependencies = [
  "rally-core",
 ]
 
 [[package]]
 name = "rally-core"
 version = "0.1.0"
-source = "git+https://github.com/giodl73-repo/RALLY.git#f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7"
+source = "git+https://github.com/giodl73-repo/RALLY.git?rev=f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7#f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7"

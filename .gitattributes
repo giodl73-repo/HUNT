@@ -1,0 +1,4 @@
+browser/planner/** text eol=lf
+tools/hunt-sim/core/** text eol=lf
+context/waves/2026-11-01-hunt-browser/** text eol=lf
+.github/workflows/planner.yml text eol=lf
