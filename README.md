@@ -331,3 +331,21 @@ non-software content is licensed CC BY-NC 4.0 (copyright Gio Della-Libera);
 commercial use of that content requires separate written permission.
 Third-party material remains under its own terms.
 See [LICENSE](./LICENSE) for the complete notice.
+
+## Rust/WASM planning sandbox
+
+The [six-feeder planning sandbox](https://giodl73-repo.github.io/HUNT/) runs
+HUNT's existing Rust forecast in your browser. Edit synthetic difficulty,
+answer-length and team assumptions, compare native variants, inspect every
+modeled run/finding and export exact requests/reports. Source, compiled WASM,
+build provenance and scoped licenses are linked independently in the tool.
+
+This is a bounded WAVELENGTH heuristic, not an actual solve, blind playtest,
+fairness/delight judgment, stage approval, production schedule or generic toolkit
+installation contract. Native variant names change RNG streams; comparisons
+combine assumptions and sampled noise. Source downloads contain the complete
+buildable portable software subset, excluding native scenario/answer material.
+See [model and custody details](browser/planner/MODEL.md) and the
+[software source scope](docs/planner-source-scope.md). Publication qualification
+and its limits are recorded in the child wave; this link alone is not evidence
+that a particular revision has passed deployment verification.

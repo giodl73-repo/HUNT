@@ -23,11 +23,12 @@ for release. Blind solver/editorial reviews remain separate.
 
 The browser package excludes native scenario data, Game Night answers, scenario
 assets, research, examples, reference and hidden-layer material. Its source
-download will be the complete buildable portable core and browser companion,
+download contains the complete buildable portable core and browser companion,
 with pinned RALLY Git dependency and lockfiles, rather than a full repository
 archive. HUNT's split MIT software / CC BY-NC content grants remain intact.
 An explicit file allowlist and native-known-answer scan must qualify delivery.
 
-This prototype is not the generic HUNT toolkit's clean-install acceptance or a
-solver-facing scenario release. Its actual Pages/source packaging and final
-qualification are pending.
+This planner is not the generic HUNT toolkit's clean-install acceptance or a
+solver-facing scenario release. Source, provenance, dependency/Rust notices and
+build routes are independent of WASM startup; see `SOURCE-SCOPE.md` for the exact
+corresponding software boundary. Publication qualification is recorded separately.

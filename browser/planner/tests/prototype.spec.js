@@ -12,6 +12,7 @@ test("real worker exactly repeats every native synthetic control outcome",async(
     const results=[];for(const c of cases){const a=await call(c.request),b=await call(c.request);if(a.report!==b.report)throw new Error("nonrepeatable WASM output");results.push({request:c.request,response:JSON.parse(a.report),elapsedMs:a.elapsedMs});}worker.terminate();return results;
   },cases);
   const retained=outcomes.map(({request,response})=>({request,response}));
+  if(process.env.HUNT_BASE_URL)expect(retained).toEqual(JSON.parse(fs.readFileSync(".cache/hosted-wasm-cases.json","utf8")));
   fs.writeFileSync(".cache/wasm-cases.json",JSON.stringify(retained,null,2)+"\n");
   fs.writeFileSync(".cache/worker-timings.json",JSON.stringify(outcomes.map(({elapsedMs,request,response})=>({elapsedMs,requestBytes:Buffer.byteLength(request),kind:response.kind})),null,2)+"\n");
   expect(retained).toEqual(cases);

@@ -4,8 +4,8 @@ p=argparse.ArgumentParser();p.add_argument('--bindgen',required=True,type=pathli
 B=pathlib.Path(__file__).resolve().parent;R=B.parents[1];env=os.environ.copy();target=pathlib.Path(env.get('CARGO_TARGET_DIR',str(R/'target/cargo'))).resolve();env['CARGO_TARGET_DIR']=str(target)
 env['CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUSTFLAGS']='-C link-arg=--max-memory=67108864'
 def run(args):subprocess.run([str(x)for x in args],cwd=R,env=env,check=True)
-run(['cargo','build','--locked','--manifest-path',B/'Cargo.toml','--release'])
-run(['cargo','build','--locked','--manifest-path',B/'Cargo.toml','--release','--target','wasm32-unknown-unknown'])
+run(['cargo','+1.95.0','build','--locked','--manifest-path',B/'Cargo.toml','--release'])
+run(['cargo','+1.95.0','build','--locked','--manifest-path',B/'Cargo.toml','--release','--target','wasm32-unknown-unknown'])
 site=R/'target/hunt-prototype/HUNT';assert site.resolve()==R/'target/hunt-prototype/HUNT'
 if site.exists():shutil.rmtree(site)
 shutil.copytree(B/'web',site);run([a.bindgen.resolve(),target/'wasm32-unknown-unknown/release/hunt_planner.wasm','--target','web','--out-dir',site/'pkg'])

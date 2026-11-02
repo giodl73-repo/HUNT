@@ -38,9 +38,11 @@ for name,next_name in [('BASELINE','VARIANTS'),('VARIANTS','GAME_NIGHT_BASELINE'
 assert all(x not in core for x in ['const WAVELENGTH','const GAME_NIGHT_MODULES','answer:', 'std::env'])
 for file in ['tools/hunt-sim/Cargo.lock','tools/hunt-sim/core/Cargo.lock','browser/planner/Cargo.lock']:
  data=(R/file).read_text(encoding='utf-8');assert 'f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7' in data
-for path in ['README.md','LICENSE','BUGS.md','docs/pitfall-boundaries.v1.json','tests/check-pitfall-policy.ps1']:
+old_readme=subprocess.check_output(['git','show',entry+':README.md'],cwd=R).decode()
+assert (R/'README.md').read_text(encoding='utf-8').startswith(old_readme),'README original content must be retained; only planner front-door append is scoped'
+for path in ['LICENSE','BUGS.md','docs/pitfall-boundaries.v1.json','tests/check-pitfall-policy.ps1']:
  expected=subprocess.check_output(['git','rev-parse',entry+':'+path],cwd=R).strip()
  current=subprocess.check_output(['git','hash-object','--path',path,path],cwd=R).strip()
  raw=subprocess.check_output(['git','hash-object','--no-filters',path],cwd=R).strip()
  assert expected in [current,raw],path
-print(json.dumps({'entry':entry,'native_functions_unchanged':12,'shared_functions_token_exact_except_explicit_bindings':4,'native_variant_constants_exact':2,'rally_revision':'f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7','protected_policy_and_grants':'exact'}))
+print(json.dumps({'entry':entry,'native_functions_unchanged':12,'shared_functions_token_exact_except_explicit_bindings':4,'native_variant_constants_exact':2,'rally_revision':'f64d8d4a5a04d8890ebcb9448ce28eb4f25861e7','protected_policy_and_grants':'exact; README original prefix retained with planner front-door append'}))
